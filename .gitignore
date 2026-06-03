@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.next/
+
+# Runtime / local artifacts
+results/
+*.bundle.json
+*.report.json
+prompts.json
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Sandbox scratch / probe leftovers (never commit)
+.junk/
+*.lock

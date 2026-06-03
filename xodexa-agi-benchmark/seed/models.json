@@ -1,0 +1,20 @@
+[
+  {"id": "m_frontier_closed", "name": "Frontier-Closed-XL (placeholder)", "provider": "closed-lab",
+   "kind": "api", "is_open_source": false, "params_b": null, "context_length": 1000000,
+   "connect": "anthropic|openai-compatible"},
+  {"id": "m_open_70b", "name": "OpenLlama-70B (placeholder)", "provider": "open-source",
+   "kind": "open-source", "is_open_source": true, "params_b": 70, "context_length": 131072,
+   "connect": "vllm"},
+  {"id": "m_open_400b_moe", "name": "MoE-400B-A40B (placeholder)", "provider": "open-source",
+   "kind": "open-source", "is_open_source": true, "params_b": 400, "context_length": 262144,
+   "connect": "vllm"},
+  {"id": "m_local_ollama", "name": "Local Ollama llama3 (placeholder)", "provider": "local",
+   "kind": "local", "is_open_source": true, "params_b": 8, "context_length": 8192,
+   "connect": "ollama"},
+  {"id": "m_vllm_hosted", "name": "Self-hosted vLLM model (placeholder)", "provider": "local",
+   "kind": "local", "is_open_source": true, "params_b": 32, "context_length": 32768,
+   "connect": "vllm"},
+  {"id": "m_research", "name": "Research-Preview-R1 (placeholder)", "provider": "research-lab",
+   "kind": "api", "is_open_source": false, "params_b": null, "context_length": 200000,
+   "connect": "custom-http"}
+]

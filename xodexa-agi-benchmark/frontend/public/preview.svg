@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="ui-monospace,Menlo,monospace">
+<rect width="1000" height="560" fill="#05070c"/>
+<circle cx="46" cy="34" r="13" fill="none" stroke="#34e1e1" stroke-width="1.5"/><circle cx="46" cy="34" r="3.5" fill="#34e1e1"/>
+<text x="70" y="30" fill="#e9eff8" font-size="18" font-family="system-ui">Xodexa AGI Benchmark</text>
+<text x="262" y="30" fill="#7c8aa3" font-size="18" font-family="system-ui"> · Frontier Observatory</text>
+<text x="70" y="50" fill="#34e1e1" font-size="11.5" font-family="system-ui">Built to break the best.</text>
+<text x="232" y="50" fill="#7c8aa3" font-size="11.5" font-family="system-ui"> We map how far models fall short of AGI — capability against honesty.</text>
+<line x1="120" y1="84" x2="120" y2="470" stroke="#0e1729"/>
+<line x1="202" y1="84" x2="202" y2="470" stroke="#0e1729"/>
+<line x1="284" y1="84" x2="284" y2="470" stroke="#0e1729"/>
+<line x1="366" y1="84" x2="366" y2="470" stroke="#0e1729"/>
+<line x1="448" y1="84" x2="448" y2="470" stroke="#0e1729"/>
+<line x1="530" y1="84" x2="530" y2="470" stroke="#0e1729"/>
+<line x1="612" y1="84" x2="612" y2="470" stroke="#0e1729"/>
+<line x1="694" y1="84" x2="694" y2="470" stroke="#0e1729"/>
+<line x1="776" y1="84" x2="776" y2="470" stroke="#0e1729"/>
+<line x1="858" y1="84" x2="858" y2="470" stroke="#0e1729"/>
+<line x1="940" y1="84" x2="940" y2="470" stroke="#0e1729"/>
+<line x1="120" y1="470" x2="940" y2="470" stroke="#0e1729"/>
+<text x="110" y="473" fill="#5f6e88" font-size="10" text-anchor="end">0</text>
+<line x1="120" y1="374" x2="940" y2="374" stroke="#0e1729"/>
+<text x="110" y="376" fill="#5f6e88" font-size="10" text-anchor="end">25</text>
+<line x1="120" y1="277" x2="940" y2="277" stroke="#0e1729"/>
+<text x="110" y="280" fill="#5f6e88" font-size="10" text-anchor="end">50</text>
+<line x1="120" y1="180" x2="940" y2="180" stroke="#0e1729"/>
+<text x="110" y="184" fill="#5f6e88" font-size="10" text-anchor="end">75</text>
+<line x1="120" y1="84" x2="940" y2="84" stroke="#0e1729"/>
+<text x="110" y="87" fill="#5f6e88" font-size="10" text-anchor="end">100</text>
+<text x="120" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">0</text>
+<text x="120" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">Weak</text>
+<text x="284" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">200</text>
+<text x="284" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">Basic</text>
+<text x="448" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">400</text>
+<text x="448" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">Strong</text>
+<text x="612" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">600</text>
+<text x="612" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">Frontier</text>
+<text x="735" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">750</text>
+<text x="735" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">Proto-AGI</text>
+<text x="858" y="488" fill="#46546e" font-size="9.5" text-anchor="middle">900</text>
+<text x="858" y="500" fill="#3a475f" font-size="9.5" text-anchor="middle">AGI</text>
+<text x="530" y="518" fill="#5f6e88" font-size="10" text-anchor="middle">CAPABILITY · Xodexa Score →</text>
+<text transform="translate(34,277) rotate(-90)" fill="#5f6e88" font-size="10" text-anchor="middle">HONESTY · 100 − calibration error →</text>
+<defs><linearGradient id="hz" x1="0" x2="1"><stop offset="0" stop-color="#34e1e1" stop-opacity="0"/><stop offset="1" stop-color="#34e1e1" stop-opacity="0.5"/></linearGradient></defs>
+<rect x="858" y="84" width="82" height="386" fill="url(#hz)" opacity="0.22"/>
+<line x1="940" y1="78" x2="940" y2="470" stroke="#34e1e1" stroke-width="1.5" stroke-dasharray="2 4" opacity="0.85"/>
+<text transform="translate(934,176) rotate(-90)" fill="#34e1e1" font-size="9.5" text-anchor="middle" opacity="0.9">AGI HORIZON — UNREACHED</text>
+<path d="M598.6 265.4 L654.4 277.0 L704.2 280.9" fill="none" stroke="#34e1e1" stroke-width="1.4" stroke-dasharray="4 5" opacity="0.55"/>
+<text x="700" y="271" fill="#34e1e1" font-size="9.5" text-anchor="end">PARETO FRONTIER</text>
+<circle cx="704.2" cy="280.9" r="11.5" fill="#ffb454" fill-opacity="0.18" stroke="#ffb454" stroke-width="1.5"/>
+<circle cx="704.2" cy="280.9" r="2.4" fill="#ffb454"/>
+<text x="704.2" y="263.4" fill="#9fb0c8" font-size="9.5" text-anchor="middle">Apex-Frontier-XL</text>
+<circle cx="654.4" cy="277.0" r="11.5" fill="#27d796" fill-opacity="0.18" stroke="#27d796" stroke-width="1.5"/>
+<circle cx="654.4" cy="277.0" r="2.4" fill="#27d796"/>
+<text x="654.4" y="259.5" fill="#9fb0c8" font-size="9.5" text-anchor="middle">MoE-400B-A40B</text>
+<circle cx="615.4" cy="304.0" r="10.7" fill="#27d796" fill-opacity="0.18" stroke="#27d796" stroke-width="1.5"/>
+<circle cx="615.4" cy="304.0" r="2.4" fill="#27d796"/>
+<text x="615.4" y="287.3" fill="#9fb0c8" font-size="9.5" text-anchor="middle">OpenLlama-70B-Instruct</text>
+<circle cx="598.6" cy="265.4" r="12.2" fill="#ffd166" fill-opacity="0.18" stroke="#ffd166" stroke-width="1.5"/>
+<circle cx="598.6" cy="265.4" r="2.4" fill="#ffd166"/>
+<circle cx="579.9" cy="365.8" r="10.7" fill="#ffb454" fill-opacity="0.18" stroke="#ffb454" stroke-width="1.5"/>
+<circle cx="579.9" cy="365.8" r="2.4" fill="#ffb454"/>
+<circle cx="528.6" cy="277.0" r="10.7" fill="#27d796" fill-opacity="0.18" stroke="#27d796" stroke-width="1.5"/>
+<circle cx="528.6" cy="277.0" r="2.4" fill="#27d796"/>
+<circle cx="465.7" cy="334.9" r="9.9" fill="#27d796" fill-opacity="0.18" stroke="#27d796" stroke-width="1.5"/>
+<circle cx="465.7" cy="334.9" r="2.4" fill="#27d796"/>
+<circle cx="409.3" cy="392.8" r="9.9" fill="#27d796" fill-opacity="0.18" stroke="#27d796" stroke-width="1.5"/>
+<circle cx="409.3" cy="392.8" r="2.4" fill="#27d796"/>
+<circle cx="282.7" cy="404.4" r="9.1" fill="#7c8aa3" fill-opacity="0.18" stroke="#7c8aa3" stroke-width="1.5"/>
+<circle cx="282.7" cy="404.4" r="2.4" fill="#7c8aa3"/>
+<circle cx="217.3" cy="427.5" r="8.3" fill="#7c8aa3" fill-opacity="0.18" stroke="#7c8aa3" stroke-width="1.5"/>
+<circle cx="217.3" cy="427.5" r="2.4" fill="#7c8aa3"/>
+<circle cx="600" cy="34" r="5" fill="#ffd166"/>
+<text x="610" y="38" fill="#7c8aa3" font-size="11" font-family="system-ui">attested</text>
+<circle cx="692" cy="34" r="5" fill="#27d796"/>
+<text x="702" y="38" fill="#7c8aa3" font-size="11" font-family="system-ui">verified</text>
+<circle cx="784" cy="34" r="5" fill="#ffb454"/>
+<text x="794" y="38" fill="#7c8aa3" font-size="11" font-family="system-ui">flagged</text>
+<circle cx="876" cy="34" r="5" fill="#7c8aa3"/>
+<text x="886" y="38" fill="#7c8aa3" font-size="11" font-family="system-ui">local</text>
+</svg>

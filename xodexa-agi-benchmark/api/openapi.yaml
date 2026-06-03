@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Xodexa AGI Benchmark — Scoring Authority API
+  version: 1.0.0
+  description: >
+    The central, trusted scoring authority for Xodexa AGI Benchmark. Implements the runner
+    API flow: register → key challenge → signed manifest → submit raw outputs →
+    central verification + re-scoring → publish official record.
+    INVARIANT: the runner never receives answer keys or hidden tests, and can never
+    write a leaderboard score. Official scores are issued only by this service.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      summary: Liveness + server public-key fingerprint
+      responses: { "200": { description: ok } }
+
+  /v1/benchmarks:
+    get:
+      summary: List available benchmark packs
+      responses: { "200": { description: pack list } }
+
+  /v1/runners/register:
+    post:
+      summary: Register a self-hosted runner (step 1–2)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/RegisterReq" }
+      responses:
+        "200":
+          description: runner_id + challenge nonce + server public key
+
+  /v1/runners/confirm:
+    post:
+      summary: Prove possession of the runner private key (step 3)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ConfirmReq" }
+      responses:
+        "200": { description: verified }
+        "401": { description: challenge verification failed }
+
+  /v1/runs/manifest:
+    post:
+      summary: Issue a server-signed run manifest + prompts-only task bundle (step 5–6)
+      description: >
+        mode=official withholds graders (central-only scoring). mode=comparison ships
+        graders so the runner may compute a LOCAL, non-official score. Generated tasks
+        are expanded server-side from the manifest nonce, so each run is a unique
+        variant and its answer key is retained centrally.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ManifestReq" }
+      responses:
+        "200": { description: signed manifest + public_tasks }
+        "403": { description: runner not registered/verified }
+        "404": { description: unknown pack }
+
+  /v1/runs/submit:
+    post:
+      summary: Submit a signed result bundle for verification + central scoring (step 10–14)
+      description: >
+        Verifies runner signature, manifest binding, nonce freshness/replay, and hash-
+        chain integrity; re-scores from raw outputs; runs canary/timing/perfect-score
+        contamination checks; assigns status (rejected | flagged | verified |
+        verified+attested) and, if verified, publishes a server-signed official record.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/SubmitReq" }
+      responses:
+        "200": { description: verification report + apex score (if issued) }
+
+  /v1/leaderboard:
+    get:
+      summary: Read the public leaderboard
+      parameters:
+        - { name: verified_only, in: query, schema: { type: boolean, default: true } }
+        - { name: attested_only, in: query, schema: { type: boolean, default: false } }
+      responses: { "200": { description: ranked entries } }
+
+components:
+  schemas:
+    RegisterReq:
+      type: object
+      required: [runner_pub]
+      properties:
+        runner_pub: { type: string, description: base64 Ed25519 public key }
+        runner_version: { type: string, default: "0.1.0" }
+    ConfirmReq:
+      type: object
+      required: [runner_id, signed_challenge]
+      properties:
+        runner_id: { type: string }
+        signed_challenge: { type: string, description: base64 Ed25519 signature over the challenge }
+    ManifestReq:
+      type: object
+      required: [runner_id]
+      properties:
+        runner_id: { type: string }
+        pack_id: { type: string, default: xodexa-omega }
+        mode: { type: string, enum: [official, comparison], default: official }
+    SubmitReq:
+      type: object
+      required: [bundle]
+      properties:
+        bundle:
+          type: object
+          description: Signed result bundle (raw outputs, tool traces, env metadata, hash-chained event log).
