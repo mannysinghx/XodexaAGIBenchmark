@@ -1,4 +1,32 @@
-# Deploying: Vercel frontend + external backend
+# Deploying
+
+## Fastest path — one-click Render Blueprint (recommended)
+
+The repo ships a [`render.yaml`](../../render.yaml) that deploys the **whole app** (API +
+static site) as a single Render web service using your **Neon** Postgres, running jobs
+**inline** (no separate Redis/worker needed for the MVP).
+
+1. Render Dashboard → **New → Blueprint** → select this GitHub repo → Apply.
+2. When prompted, set the **4 secrets** (the rest are pre-filled in `render.yaml`):
+   - `DATABASE_URL` — your Neon **direct** URL:
+     `postgresql+psycopg://<user>:<pass>@ep-...<id>.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require`
+     (the host WITHOUT `-pooler`)
+   - `KEY_ENCRYPTION_KEY` — from your local `.env`
+   - `SESSION_SECRET` — from your local `.env`
+   - `SMTP_PASSWORD` — the `info@xodexabenchmark.com` mailbox password
+3. Deploy. Render auto-sets the public URL (`RENDER_EXTERNAL_URL`), so verification
+   links work with no extra config. Your full site is live at `https://<service>.onrender.com`
+   — registration, login, keys, and runs all work.
+
+That's the entire deployment. **Vercel is then optional** — either point your domain at
+the Render URL, or keep Vercel as the front door with the rewrite in the next section.
+
+For production scale (many concurrent runs), split the worker out and add a Key Value
+(Redis) instance, then drop `RUN_INLINE` — see the bottom of this doc.
+
+---
+
+## Vercel frontend + external backend (optional)
 
 **Vercel cannot run this backend.** It needs a long-running FastAPI server, a separate
 RQ **worker** process, **Postgres**, and **Redis** — none of which fit Vercel's

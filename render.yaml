@@ -1,0 +1,46 @@
+# Render Blueprint — one-click deploy of the whole Xodexa AI Benchmark app.
+# This single web service serves the REST API AND the static frontend, runs benchmark
+# jobs inline (RUN_INLINE=1, so no separate Redis/worker needed for the MVP), and uses
+# your external Neon Postgres. Render auto-detects the public URL (RENDER_EXTERNAL_URL).
+#
+# Deploy: Render Dashboard → New → Blueprint → pick this repo. Then set the 4 secret
+# env vars marked "sync: false" (Render will prompt for them). That's it.
+#
+# For production scale, split out a worker + a Key Value (Redis) instance and drop
+# RUN_INLINE — see docs/DEPLOY_VERCEL.md.
+
+services:
+  - type: web
+    name: xodexa
+    runtime: python
+    rootDir: xodexa-agi-benchmark
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn apps.server.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: RUN_INLINE
+        value: "1"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: SMTP_HOST
+        value: mail.privateemail.com
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_USER
+        value: info@xodexabenchmark.com
+      - key: MAIL_FROM
+        value: info@xodexabenchmark.com
+      - key: BENCHMARK_VERSION
+        value: "1.0.0"
+      # --- secrets: set these in the Render dashboard (not committed) ---
+      - key: DATABASE_URL          # your Neon DIRECT url, postgresql+psycopg://...sslmode=require
+        sync: false
+      - key: KEY_ENCRYPTION_KEY    # from your local .env
+        sync: false
+      - key: SESSION_SECRET        # from your local .env
+        sync: false
+      - key: SMTP_PASSWORD         # the info@xodexabenchmark.com mailbox password
+        sync: false
