@@ -6,7 +6,8 @@ evaluate, failure_analysis, agi_readiness, improvement, report, registry, anchor
 """
 from .crypto import KeyPair, HashChain, verify, sha256_hex, canonical, fingerprint
 from .authority import ScoringAuthority, BENCHMARK_VERSION
-from .runner import RunnerAgent, CallableConnector, OpenAICompatibleConnector, OllamaConnector
+from .runner import (RunnerAgent, CallableConnector, OpenAICompatibleConnector,
+                     OllamaConnector, AnthropicConnector)
 from .calibration import (accuracy, wilson_ci, rms_calibration_error, rank_upper_bound)
 from . import (scoring, suites, calibration, families, schema, grade, generators,
                contamination, pipeline, evaluate, failure_analysis, agi_readiness,
@@ -18,7 +19,8 @@ from .contamination import CorpusIndex
 __all__ = [
     "KeyPair", "HashChain", "verify", "sha256_hex", "canonical", "fingerprint",
     "ScoringAuthority", "BENCHMARK_VERSION", "RunnerAgent", "CallableConnector",
-    "OpenAICompatibleConnector", "OllamaConnector", "scoring", "suites", "calibration",
+    "OpenAICompatibleConnector", "OllamaConnector", "AnthropicConnector",
+    "scoring", "suites", "calibration",
     "accuracy", "wilson_ci", "rms_calibration_error", "rank_upper_bound",
     # platform layer
     "families", "schema", "grade", "generators", "contamination", "pipeline",

@@ -1,23 +1,20 @@
-# Xodexa AGI Benchmark — local development stack (Phase 1 scaffold).
-# Opinionated subset of the spec's infrastructure (see ANALYSIS.md §3.2):
-# Postgres + Redis + MinIO + the FastAPI scoring authority. ClickHouse/Grafana/Loki/
-# Keycloak/OpenBao are deferred behind interfaces and added at scale, not on day one.
-
-version: "3.9"
+# Xodexa AI Benchmark — all-in-one stack.
+# The `server` serves BOTH the REST API (/api, /v1) and the static frontend (/).
+# Postgres is the source of truth; the `worker` runs benchmark jobs against users'
+# own model APIs. Copy .env.example -> .env and fill the secrets before `up`.
 
 services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-apex}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-apex}
+      POSTGRES_USER: ${POSTGRES_USER:-xodexa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-xodexa}
       POSTGRES_DB: ${POSTGRES_DB:-xodexa}
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
     ports: ["5432:5432"]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-apex}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-xodexa}"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -27,34 +24,30 @@ services:
     command: ["redis-server", "--save", "", "--appendonly", "no"]
     ports: ["6379:6379"]
 
-  minio:
-    image: minio/minio:latest
-    command: server /data --console-address ":9001"
-    environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-apexadmin}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-apexadmin123}
-    volumes:
-      - miniodata:/data
-    ports: ["9000:9000", "9001:9001"]
-
   server:
     build: { context: ., dockerfile: apps/server/Dockerfile }
     command: uvicorn apps.server.main:app --host 0.0.0.0 --port 8000
+    env_file: [.env]
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-apex}:${POSTGRES_PASSWORD:-apex}@db:5432/${POSTGRES_DB:-xodexa}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-xodexa}:${POSTGRES_PASSWORD:-xodexa}@db:5432/${POSTGRES_DB:-xodexa}
       REDIS_URL: redis://redis:6379/0
-      S3_ENDPOINT: http://minio:9000
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8000}
     depends_on:
       db: { condition: service_healthy }
       redis: { condition: service_started }
-      minio: { condition: service_started }
     ports: ["8000:8000"]
 
-  # worker:  # RQ worker for long-horizon / agentic runs (Phase 4) — enable when needed
-  #   build: { context: ., dockerfile: apps/server/Dockerfile }
-  #   command: rq worker -u redis://redis:6379/0 apex
-  #   depends_on: [redis, db]
+  worker:
+    build: { context: ., dockerfile: apps/server/Dockerfile }
+    command: python -m apps.worker.worker
+    env_file: [.env]
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-xodexa}:${POSTGRES_PASSWORD:-xodexa}@db:5432/${POSTGRES_DB:-xodexa}
+      REDIS_URL: redis://redis:6379/0
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8000}
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_started }
 
 volumes:
   pgdata:
-  miniodata:

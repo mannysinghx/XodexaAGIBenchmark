@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Create account</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Create account</h1>
+        <div class="sub">Run your own model through the benchmark and get a signed AGI Readiness report</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page="register"></nav>
+
+  <form class="authcard" id="form" autocomplete="on" novalidate>
+    <h2>Create your account</h2>
+    <p class="muted">Free to create. You'll bring your own provider API key to run benchmarks.</p>
+
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+    <div class="field">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="field">
+      <label for="password">Password <span style="color:var(--muted);font-weight:500">(min 8 characters)</span></label>
+      <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+    </div>
+
+    <button class="btn-primary" id="submit" type="submit">Create account</button>
+
+    <p class="muted" style="margin-top:16px;text-align:center">
+      Already have an account? <a href="/login.html">Log in</a>
+    </p>
+  </form>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById("form");
+  var msg = document.getElementById("msg");
+  var btn = document.getElementById("submit");
+
+  function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
+
+  // prime CSRF cache (also makes nav consistent)
+  if (window.XAPI) XAPI.me();
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    var username = document.getElementById("username").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value;
+
+    if (!username || !email || password.length < 8) {
+      show("err", "Please fill in all fields. Password must be at least 8 characters.");
+      return;
+    }
+    btn.disabled = true; var label = btn.textContent; btn.textContent = "Creating…";
+    try {
+      var r = await XAPI.post("/auth/register", { username: username, email: email, password: password });
+      show("ok", (r && r.message) ? r.message
+        : "Account created — check your email for a verification link. It expires in 24 hours.");
+      form.reset();
+    } catch (err) {
+      show("err", err.message || "Could not create account. Please try again.");
+    } finally {
+      btn.disabled = false; btn.textContent = label;
+    }
+  });
+})();
+</script>
+</body>
+</html>

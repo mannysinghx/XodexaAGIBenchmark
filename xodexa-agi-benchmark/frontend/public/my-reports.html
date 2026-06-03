@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — My Reports</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+<style>
+  .toolbar{display:flex;align-items:center;gap:12px;margin:10px 0 6px;flex-wrap:wrap}
+  .toolbar .navspring{flex:1}
+  .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:var(--shadow-soft)}
+  table{width:100%;border-collapse:collapse;min-width:980px}
+  thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);
+    padding:11px 13px;border-bottom:1px solid var(--line);background:var(--panel2);white-space:nowrap}
+  tbody td{padding:11px 13px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--txt);vertical-align:middle}
+  tbody tr:last-child td{border-bottom:none}
+  .mono{font-family:var(--mono)}
+  .muted{color:var(--muted)}
+  .chip{display:inline-block;font-size:10px;padding:3px 8px;border-radius:999px;border:1px solid var(--line2);
+    background:var(--panel2);color:var(--muted2);white-space:nowrap;text-transform:capitalize}
+  .chip.ok{color:var(--good);border-color:rgba(14,157,110,.4);background:rgba(14,157,110,.08)}
+  .chip.run{color:var(--accent);border-color:rgba(37,99,235,.4);background:rgba(37,99,235,.07)}
+  .chip.bad{color:var(--bad);border-color:rgba(216,58,75,.4);background:rgba(216,58,75,.07)}
+  .chip.q{color:var(--warn);border-color:rgba(193,116,10,.4);background:rgba(193,116,10,.08)}
+  .minibar{width:110px;display:inline-block;vertical-align:middle}
+  .act{color:var(--accent);font-weight:600;white-space:nowrap}
+  .act + .act{margin-left:10px}
+  .scorev{font-family:var(--mono);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — My Reports</h1>
+        <div class="sub">Every benchmark run you've launched, with scores and downloadable reports</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page="my-reports"></nav>
+
+  <div class="toolbar">
+    <div class="secttl" style="margin:0">Your runs</div>
+    <span class="navspring"></span>
+    <button class="btn-ghost" id="refreshBtn" type="button">Refresh</button>
+    <a class="btn-ghost" href="/run.html" style="text-decoration:none">+ New run</a>
+  </div>
+
+  <div id="mount">
+    <div class="xstate"><span class="xspin"></span> Loading your runs…</div>
+  </div>
+
+  <div class="note">
+    Reports are free to generate and download. Runs use your own provider key — start one on
+    <a href="/run.html">Run a benchmark</a>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var esc = (window.XAUTH && XAUTH.esc) || function(s){ return String(s); };
+  var mount = document.getElementById("mount");
+
+  function statusChip(s){
+    var cls = "chip", t = s || "—";
+    if (s === "scored") cls = "chip ok";
+    else if (s === "running") cls = "chip run";
+    else if (s === "failed") cls = "chip bad";
+    else if (s === "queued") cls = "chip q";
+    return '<span class="' + cls + '">' + esc(t) + '</span>';
+  }
+
+  function fmtDate(s){
+    if (!s) return "—";
+    try { var d = new Date(s); if (!isNaN(d)) return d.toLocaleString(); } catch (e) {}
+    return esc(s);
+  }
+
+  function progressCell(run){
+    var pct = Math.max(0, Math.min(100, parseFloat(run.progress) || 0));
+    return '<div class="minibar bar"><i style="width:' + pct + '%"></i></div> <span class="muted">' + Math.round(pct) + '%</span>';
+  }
+
+  function actionsCell(run){
+    if (run.status === "scored") {
+      var reportUrl = "/reports.html?run=" + encodeURIComponent(run.id);
+      var mdUrl = XAPI.base + "/runs/" + encodeURIComponent(run.id) + "/report.md";
+      return '<a class="act" href="' + reportUrl + '">View report</a>' +
+             '<a class="act" href="' + mdUrl + '">Download .md</a>';
+    }
+    if (run.status === "failed") {
+      return '<span class="muted" title="' + esc(run.error || "") + '">' + esc(run.error ? "Error" : "Failed") + '</span>';
+    }
+    return progressCell(run);
+  }
+
+  function render(runs){
+    if (!runs.length) {
+      mount.innerHTML = '<div class="xstate">No runs yet. <a href="/run.html">Launch your first benchmark →</a></div>';
+      return;
+    }
+    var rows = runs.map(function(r){
+      var score = (r.status === "scored" && r.xodexa_score !== undefined && r.xodexa_score !== null)
+        ? '<span class="scorev">' + esc(r.xodexa_score) + '</span> <span class="muted">/1000</span>' : '<span class="muted">—</span>';
+      return '<tr>' +
+        '<td class="mono">' + esc(r.model_name || "—") + '</td>' +
+        '<td>' + esc(r.provider || "—") + '</td>' +
+        '<td>' + esc(r.family || "all") + '</td>' +
+        '<td>' + esc(r.n_tasks !== undefined ? r.n_tasks : "—") + '</td>' +
+        '<td>' + statusChip(r.status) + '</td>' +
+        '<td>' + score + '</td>' +
+        '<td>' + (r.grade ? esc(r.grade) : '<span class="muted">—</span>') + '</td>' +
+        '<td>' + (r.agi_level ? esc(r.agi_level) : '<span class="muted">—</span>') + '</td>' +
+        '<td class="muted">' + fmtDate(r.created_at) + '</td>' +
+        '<td>' + actionsCell(r) + '</td>' +
+      '</tr>';
+    }).join("");
+    mount.innerHTML =
+      '<div class="tablewrap"><table>' +
+      '<thead><tr>' +
+        '<th>Model</th><th>Provider</th><th>Family</th><th>Tasks</th><th>Status</th>' +
+        '<th>Score</th><th>Grade</th><th>AGI level</th><th>Created</th><th>Actions</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
+
+  async function load(){
+    try {
+      var r = await XAPI.get("/runs");
+      render((r && r.runs) || []);
+    } catch (err) {
+      mount.innerHTML = '<div class="xstate err">Could not load your runs: ' + esc(err.message || "error") + '</div>';
+    }
+  }
+
+  document.getElementById("refreshBtn").addEventListener("click", function(){
+    mount.innerHTML = '<div class="xstate"><span class="xspin"></span> Refreshing…</div>';
+    load();
+  });
+
+  (async function init(){
+    var me = await XAUTH.guard("user");
+    if (!me) return;
+    load();
+  })();
+})();
+</script>
+</body>
+</html>

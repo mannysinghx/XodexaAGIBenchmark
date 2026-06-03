@@ -97,6 +97,36 @@ class OllamaConnector(ModelConnector):
             return json.load(r).get("response", "")
 
 
+class AnthropicConnector(ModelConnector):
+    """Anthropic Messages API (api.anthropic.com/v1/messages)."""
+    name = "anthropic"
+
+    def __init__(self, api_key: str, model: str = "claude-sonnet-4-6",
+                 max_tokens: int = 1024, timeout: float = 120.0,
+                 base_url: str = "https://api.anthropic.com"):
+        self.api_key = api_key
+        self.model = model
+        self.max_tokens = max_tokens
+        self.timeout = timeout
+        self.base_url = base_url.rstrip("/")
+
+    def complete(self, prompt: str) -> str:
+        import json
+        import urllib.request
+        body = json.dumps({
+            "model": self.model,
+            "max_tokens": self.max_tokens,
+            "messages": [{"role": "user", "content": prompt}],
+        }).encode()
+        req = urllib.request.Request(
+            self.base_url + "/v1/messages", data=body,
+            headers={"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
+                     "content-type": "application/json"})
+        with urllib.request.urlopen(req, timeout=self.timeout) as r:
+            data = json.load(r)
+        return "".join(b.get("text", "") for b in data.get("content", []))
+
+
 # --------------------------------------------------------------------------- #
 # Runner agent
 # --------------------------------------------------------------------------- #

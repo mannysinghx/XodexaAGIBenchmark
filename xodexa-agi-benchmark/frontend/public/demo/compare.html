@@ -26,6 +26,7 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="demo-banner"><span class="demo-badge">Demo</span> &nbsp;Illustrative simulated data — not real model measurements. See the <a href="/leaderboard.html">live results</a> or <a href="/run.html">run your own benchmark</a>.</div>
   <header>
     <div class="brand">
       <div class="logo">Ω</div>
@@ -37,9 +38,7 @@
     <div class="pill" id="ver">best-in-row ★</div>
   </header>
 
-  <nav class="mainnav" data-page="compare"></nav>
-
-  <div class="lead" style="font-size:12.5px;margin-bottom:0">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <nav class="mainnav" data-page="demo"></nav>
 
   <div class="lead">
     Pick models to compare. <b>Best-in-row is highlighted</b> with a ★ (lower is better for calibration error,
@@ -50,7 +49,7 @@
   <div id="mount"><div class="tablewrap"><table id="cmp"></table></div></div>
 
   <div class="note">
-    Rendered live from the central scoring API, with labels from <code>catalog.json</code>.
+    Rendered live from <code>./data/leaderboard.json</code> with labels from <code>./data/catalog.json</code>.
     Time horizon and contamination risk come straight from each model's signed report.
   </div>
 </div>
@@ -126,46 +125,19 @@ function buildPicker(){
   });
 }
 
-async function renderEmpty(mount){
-  document.getElementById("picker").innerHTML="";
-  let authed=false;
-  try{const me=await XAPI.me();authed=!!(me&&me.authenticated);}catch(e){}
-  mount.innerHTML=
-    '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:8px">'
-    +'<div style="font-size:16px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
-    +'<div>Be the first — run a benchmark against your own model.</div>'
-    +'<div style="display:flex;gap:10px;margin-top:6px">'
-    +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
-    +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
-    +'</div></div>';
-}
-
-document.addEventListener("DOMContentLoaded", async ()=>{
-  const mount=document.getElementById("mount");
-  mount.innerHTML='<div class="xstate"><span class="xspin"></span> Loading live results…</div>';
-  let cat,lb;
-  try{
-    [cat,lb]=await Promise.all([XODEXA.load("catalog.json"),XAPI.get("/leaderboard")]);
-  }catch(e){
-    mount.innerHTML='<div class="xstate err">⚠ Could not load live comparison data ('+String(e&&e.message||e)+').</div>';
-    console.error("[xodexa] live load failed:",e);
-    return;
-  }
+XODEXA.ready(["catalog.json","leaderboard.json"], data => {
+  const cat = data.catalog, lb = data.leaderboard;
   ENTRIES = lb.entries || [];
-  if(!ENTRIES.length){ await renderEmpty(mount); return; }
   // Family labels in a stable order from catalog.families.
   FAMS = Object.entries(cat.families||{}).map(([k,f])=>[k, f.title || XODEXA.fmt.cap(k)]);
   SUBS = (cat.subscores||[]).map(s=>[s.key, s.label]);
   document.getElementById("ver").textContent = "v"+(lb.benchmark_version||cat.benchmark_version||"")+" · best-in-row ★";
-  // Restore the table mount (the spinner replaced it).
-  const note = ENTRIES.length<2
-    ? '<div class="demo-banner">Comparison needs more runs — only one verified run exists so far. Add another model from the <a href="/run.html">Run</a> page to compare side by side.</div>'
-    : '';
-  mount.innerHTML = note + '<div class="tablewrap"><table id="cmp"></table></div>';
+  // Restore the table mount (ready() replaced it with a spinner).
+  document.getElementById("mount").innerHTML = '<div class="tablewrap"><table id="cmp"></table></div>';
   selected = new Set(ENTRIES.map(e=>e.model));
   buildPicker();
   render();
-});
+}, "#mount");
 </script>
 </body>
 </html>

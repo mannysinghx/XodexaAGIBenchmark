@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Log in</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Log in</h1>
+        <div class="sub">Sign in to run benchmarks and view your reports</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page="login"></nav>
+
+  <form class="authcard" id="form" autocomplete="on" novalidate>
+    <h2>Welcome back</h2>
+    <p class="muted">Log in with your username or email.</p>
+
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+    <div class="field">
+      <label for="identifier">Username or email</label>
+      <input id="identifier" name="identifier" type="text" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+    </div>
+
+    <button class="btn-primary" id="submit" type="submit">Log in</button>
+
+    <div id="resendWrap" style="display:none;margin-top:14px">
+      <button class="btn-ghost" id="resendBtn" type="button" style="width:100%">Resend verification email</button>
+    </div>
+
+    <p class="muted" style="margin-top:16px;text-align:center">
+      Need an account? <a href="/register.html">Sign up</a>
+      &nbsp;·&nbsp;
+      <a href="/verify.html">Resend verification</a>
+    </p>
+  </form>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById("form");
+  var msg = document.getElementById("msg");
+  var btn = document.getElementById("submit");
+  var resendWrap = document.getElementById("resendWrap");
+  var resendBtn = document.getElementById("resendBtn");
+
+  function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
+
+  function nextUrl(){
+    try {
+      var p = new URLSearchParams(location.search).get("next");
+      if (p && p.charAt(0) === "/" && p.charAt(1) !== "/") return p;
+    } catch (e) {}
+    return "/run.html";
+  }
+
+  if (window.XAPI) XAPI.me();
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    resendWrap.style.display = "none";
+    var identifier = document.getElementById("identifier").value.trim();
+    var password = document.getElementById("password").value;
+    if (!identifier || !password) { show("err", "Please enter your username/email and password."); return; }
+
+    btn.disabled = true; var label = btn.textContent; btn.textContent = "Signing in…";
+    try {
+      await XAPI.login(identifier, password);
+      show("ok", "Signed in. Redirecting…");
+      location.href = nextUrl();
+    } catch (err) {
+      if (err.status === 403) {
+        show("err", "Your email is not verified yet. Check your inbox for the verification link, or resend it below.");
+        resendWrap.style.display = "block";
+      } else {
+        show("err", err.message || "Invalid username/email or password.");
+      }
+    } finally {
+      btn.disabled = false; btn.textContent = label;
+    }
+  });
+
+  resendBtn.addEventListener("click", async function(){
+    var identifier = document.getElementById("identifier").value.trim();
+    if (identifier.indexOf("@") === -1) {
+      show("err", "Enter your email address in the field above, then click resend.");
+      return;
+    }
+    resendBtn.disabled = true;
+    try { await XAPI.post("/auth/resend", { email: identifier }); } catch (e) {}
+    show("ok", "If that email is registered and unverified, a new verification link is on its way.");
+    resendBtn.disabled = false;
+  });
+})();
+</script>
+</body>
+</html>

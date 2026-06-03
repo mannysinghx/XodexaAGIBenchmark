@@ -4,9 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Frontier Observatory</title>
-<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="/assets/theme.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-<script src="assets/data.js" defer></script>
+<script src="/assets/data.js" defer></script>
+<script src="/assets/auth.js" defer></script>
 <style>
   .hero{margin-top:18px;border:1px solid var(--line);border-radius:18px;overflow:hidden;
     background:var(--panel);box-shadow:var(--shadow)}
@@ -81,18 +82,7 @@
     <div class="navpill" id="brandPill">capability × honesty</div>
   </div>
 
-  <nav class="mainnav">
-    <a href="index.html" class="on">Observatory</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="agi-readiness.html">AGI Readiness</a>
-    <a href="compare.html">Compare</a>
-    <a href="reports.html">Reports</a>
-    <a href="datasets.html">Datasets</a>
-    <a href="plugins.html">Plugins</a>
-    <a href="security.html">Security</a>
-    <a href="about.html">About</a>
-  </nav>
+  <nav class="mainnav" data-page="index"></nav>
 
   <div id="mount"></div>
 
@@ -328,9 +318,40 @@ function ledger(){
   document.querySelectorAll(".lrow").forEach(r=>r.onclick=()=>select(DATA.findIndex(d=>d.m===r.dataset.m)));
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-  XODEXA.ready(["leaderboard.json","catalog.json","site.json"], init, "#mount");
-});
+async function boot(){
+  const mount=document.getElementById("mount");
+  mount.innerHTML='<div class="xstate"><span class="xspin"></span> Loading live results…</div>';
+  let cat, site, lb;
+  try{
+    cat = await XODEXA.load("catalog.json");      // real catalog (not demo)
+    site = await XODEXA.load("site.json");          // brand text (not demo)
+    lb = await XAPI.get("/leaderboard");            // LIVE results only
+  }catch(e){
+    mount.innerHTML='<div class="xstate err">⚠ Could not load live data ('+String(e&&e.message||e)+').</div>';
+    return;
+  }
+  if(site && site.brand){
+    document.getElementById("brandTag").innerHTML =
+      '<b style="color:var(--accent);font-weight:600">'+site.brand.tagline+'</b> '+site.brand.blurb;
+  }
+  if(!lb.entries || !lb.entries.length){
+    let authed=false; try{const me=await XAPI.me(); authed=!!(me&&me.authenticated);}catch(e){}
+    mount.innerHTML=
+      '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:10px">'
+      +'<div style="font-size:18px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
+      +'<div>The Observatory plots real models on a capability × honesty field. '
+      +'Be the first to put one on the board.</div>'
+      +'<div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap">'
+      +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
+      +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
+      +'<a class="btn-ghost" style="text-decoration:none" href="/demo/leaderboard.html">See the demo</a>'
+      +'</div></div>';
+    return;  // hero/panels stay hidden until real data exists
+  }
+  mount.innerHTML="";
+  init({leaderboard: lb, catalog: cat, site: site});
+}
+document.addEventListener("DOMContentLoaded", boot);
 </script>
 </body>
 </html>

@@ -164,5 +164,32 @@ if FastAPI:
     @app.post("/v1/plugins/install")
     def plugin_install(manifest: dict):
         return PLUGIN_REGISTRY.install(manifest)
+
+    # ===================== Product layer (auth, keys, runs, live data) =========
+    from fastapi.middleware.cors import CORSMiddleware
+    from fastapi.staticfiles import StaticFiles
+    from apps.server.config import get_settings as _get_settings
+    from apps.server.db import init_db as _init_db
+    from apps.server import (routes_auth, routes_keys, routes_runs, routes_public)
+
+    _settings = _get_settings()
+
+    if _settings.cors_origins:
+        app.add_middleware(CORSMiddleware, allow_origins=_settings.cors_origins,
+                           allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+
+    @app.on_event("startup")
+    def _startup():
+        _init_db()
+
+    app.include_router(routes_auth.router)
+    app.include_router(routes_keys.router)
+    app.include_router(routes_runs.router)
+    app.include_router(routes_public.router)
+
+    # Serve the static frontend LAST so /api and /v1 routes take precedence.
+    _STATIC = _REPO / "frontend" / "public"
+    if _STATIC.is_dir():
+        app.mount("/", StaticFiles(directory=str(_STATIC), html=True), name="static")
 else:  # pragma: no cover
     app = None

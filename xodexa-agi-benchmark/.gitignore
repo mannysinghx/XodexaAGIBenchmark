@@ -8,3 +8,6 @@ node_modules/
 
 # Trust boundary: hidden-set answer keys must NEVER be committed/shipped.
 server_keys/
+
+# local sqlite dev artifacts
+*.db

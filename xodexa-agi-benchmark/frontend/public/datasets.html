@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Dataset Catalog</title>
-<link rel="stylesheet" href="assets/theme.css">
-<script src="assets/data.js"></script>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/data.js"></script>
+<script src="/assets/auth.js" defer></script>
 <style>
   .layers{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
   .layer{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--panel);position:relative;overflow:hidden;box-shadow:var(--shadow-soft)}
@@ -80,18 +81,7 @@
     <div class="pill" id="ver">seed corpus</div>
   </header>
 
-  <nav class="mainnav">
-    <a href="index.html">Observatory</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="agi-readiness.html">AGI Readiness</a>
-    <a href="compare.html">Compare</a>
-    <a href="reports.html">Reports</a>
-    <a href="datasets.html" class="on">Datasets</a>
-    <a href="plugins.html">Plugins</a>
-    <a href="security.html">Security</a>
-    <a href="about.html">About</a>
-  </nav>
+  <nav class="mainnav" data-page="datasets"></nav>
 
   <div class="lead">
     Xodexa is built so that <b>memorizing the public set cannot earn an official score</b>. The corpus is split into

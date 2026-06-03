@@ -72,6 +72,7 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="demo-banner"><span class="demo-badge">Demo</span> &nbsp;Illustrative simulated data — not real model measurements. See the <a href="/leaderboard.html">live results</a> or <a href="/run.html">run your own benchmark</a>.</div>
   <header>
     <div class="brand">
       <div class="logo">Ω</div>
@@ -83,17 +84,13 @@
     <div class="pill" id="ver">report</div>
   </header>
 
-  <nav class="mainnav" data-page="reports"></nav>
-
-  <div class="lead" style="font-size:12.5px;margin:10px 0 0">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <nav class="mainnav" data-page="demo"></nav>
 
   <div class="modelpick">
-    <label for="modelsel">Run</label>
+    <label for="modelsel">Model</label>
     <select id="modelsel"></select>
-    <a id="dlmd" class="btn-ghost" style="text-decoration:none;display:none" href="#">Download .md</a>
   </div>
 
-  <div id="repstatus"></div>
   <div id="mount">
   <div class="card">
     <div class="hero">
@@ -204,7 +201,7 @@
   </div>
 
   <div class="note">
-    Report renders live from the central scoring API. Public scored runs are viewable without an account.
+    Report renders live from <code>./data/reports.json</code> (falling back to <code>./data/sample_report.json</code>).
   </div>
 </div>
 
@@ -212,8 +209,8 @@
 <script src="/assets/auth.js" defer></script>
 <script>
 let agiChart;
+let REPORTS = null;       // reports.json (or null if only sample available)
 let CURRENT = null;       // the report being shown
-let RUNS = [];            // [{run_id, model, submitted_by}, ...] from /leaderboard
 const P = () => XODEXA.palette();
 
 function pct(x){return (x*100).toFixed(1);}
@@ -340,72 +337,30 @@ function renderReport(d){
   document.getElementById("vnote").textContent = v.note;
 }
 
+function selectModel(name){
+  if(REPORTS && REPORTS.reports && REPORTS.reports[name]){
+    renderReport(REPORTS.reports[name]);
+  }
+}
+
 window.addEventListener("resize",()=>agiChart&&agiChart.resize());
 
-function updateDownload(run_id){
-  const dl=document.getElementById("dlmd");
-  dl.href=XAPI.base+"/runs/"+encodeURIComponent(run_id)+"/report.md";
-  dl.style.display="";
-}
-
-function setStatus(html){ document.getElementById("repstatus").innerHTML=html||""; }
-function showTemplate(on){ document.getElementById("mount").style.display=on?"":"none"; }
-
-async function selectRun(run_id){
-  setStatus('<div class="xstate"><span class="xspin"></span> Loading report…</div>');
-  showTemplate(false);
-  try{
-    const rep=await XAPI.get("/runs/"+encodeURIComponent(run_id)+"/report");
-    setStatus("");
-    showTemplate(true);
-    renderReport(rep);
-    updateDownload(run_id);
-  }catch(e){
-    setStatus('<div class="xstate err">⚠ Could not load this report ('+String(e&&e.message||e)+').</div>');
-    console.error("[xodexa] report load failed:",e);
-  }
-}
-
-async function renderEmpty(){
-  document.querySelector(".modelpick").style.display="none";
-  showTemplate(false);
-  let authed=false;
-  try{const me=await XAPI.me();authed=!!(me&&me.authenticated);}catch(e){}
-  setStatus(
-    '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:8px">'
-    +'<div style="font-size:16px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
-    +'<div>Be the first — run a benchmark against your own model.</div>'
-    +'<div style="display:flex;gap:10px;margin-top:6px">'
-    +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
-    +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
-    +'</div></div>');
-}
-
-document.addEventListener("DOMContentLoaded", async ()=>{
-  setStatus('<div class="xstate"><span class="xspin"></span> Loading live runs…</div>');
-  showTemplate(false);
-  let lb;
-  try{
-    lb=await XAPI.get("/leaderboard");
-  }catch(e){
-    setStatus('<div class="xstate err">⚠ Could not load live runs ('+String(e&&e.message||e)+').</div>');
-    console.error("[xodexa] live load failed:",e);
-    return;
-  }
-  RUNS=(lb.entries||[]).filter(e=>e.run_id);
-  if(!RUNS.length){ await renderEmpty(); return; }
-  const sel=document.getElementById("modelsel");
-  sel.innerHTML=RUNS.map(r=>{
-    const by=r.submitted_by?" — "+r.submitted_by:"";
-    return '<option value="'+XAUTH.esc(r.run_id)+'">'+XAUTH.esc(r.model+by)+'</option>';
-  }).join("");
-  sel.onchange=()=>selectRun(sel.value);
-  // honor ?run=<id> deep-link (e.g. from My Reports); fall back to the first run.
-  const wanted=new URLSearchParams(location.search).get("run");
-  const pick=(wanted && RUNS.some(r=>r.run_id===wanted)) ? wanted : RUNS[0].run_id;
-  sel.value=pick;
-  await selectRun(pick);
-});
+// Prefer reports.json (multi-model + picker). Fall back to sample_report.json.
+XODEXA.load("reports.json")
+  .then(r => {
+    REPORTS = r;
+    const sel = document.getElementById("modelsel");
+    sel.innerHTML = (r.models||[]).map(m=>`<option value="${m}">${m}</option>`).join("");
+    const def = (r.models||[]).includes(r.default) ? r.default : (r.models||[])[0];
+    sel.value = def;
+    sel.onchange = () => selectModel(sel.value);
+    renderReport(r.reports[def]);
+  })
+  .catch(() => {
+    // Fallback: single sample report, hide the picker.
+    document.querySelector(".modelpick").style.display = "none";
+    XODEXA.ready(["sample_report.json"], data => renderReport(data.sample_report), "#mount");
+  });
 </script>
 </body>
 </html>

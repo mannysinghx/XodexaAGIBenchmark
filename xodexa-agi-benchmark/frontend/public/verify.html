@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Verify email</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Verify email</h1>
+        <div class="sub">Confirm your address to start running benchmarks</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page=""></nav>
+
+  <div class="authcard">
+    <h2 id="title">Email verification</h2>
+    <p class="muted" id="lead">Checking your verification status…</p>
+
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+    <div id="loginLink" style="display:none">
+      <a class="btn-primary" href="/login.html" style="text-decoration:none">Go to log in</a>
+    </div>
+
+    <form id="resendForm" style="display:none">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <button class="btn-primary" id="resendSubmit" type="submit">Resend verification link</button>
+      <p class="muted" style="margin-top:14px;text-align:center">
+        Back to <a href="/login.html">log in</a> · <a href="/register.html">create an account</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var title = document.getElementById("title");
+  var lead = document.getElementById("lead");
+  var msg = document.getElementById("msg");
+  var loginLink = document.getElementById("loginLink");
+  var resendForm = document.getElementById("resendForm");
+  var resendSubmit = document.getElementById("resendSubmit");
+
+  function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
+
+  var status = "";
+  try { status = new URLSearchParams(location.search).get("status") || ""; } catch (e) {}
+
+  if (status === "success") {
+    title.textContent = "Email verified";
+    lead.textContent = "Your email address has been confirmed.";
+    show("ok", "Email verified — you can log in now.");
+    loginLink.style.display = "block";
+  } else if (status === "invalid") {
+    title.textContent = "Link invalid or expired";
+    lead.textContent = "That verification link is no longer valid (links expire after 24 hours). Request a new one below.";
+    resendForm.style.display = "block";
+  } else {
+    title.textContent = "Resend verification";
+    lead.textContent = "Enter the email you registered with and we'll send a fresh verification link.";
+    resendForm.style.display = "block";
+  }
+
+  if (window.XAPI) XAPI.me();
+
+  resendForm.addEventListener("submit", async function(e){
+    e.preventDefault();
+    var email = document.getElementById("email").value.trim();
+    if (!email) { show("err", "Please enter your email address."); return; }
+    resendSubmit.disabled = true; var label = resendSubmit.textContent; resendSubmit.textContent = "Sending…";
+    try { await XAPI.post("/auth/resend", { email: email }); } catch (e) {}
+    show("ok", "If that email is registered and unverified, a new verification link is on its way. It expires in 24 hours.");
+    resendForm.reset();
+    resendSubmit.disabled = false; resendSubmit.textContent = label;
+  });
+})();
+</script>
+</body>
+</html>

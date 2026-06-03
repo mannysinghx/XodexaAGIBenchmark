@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Run a benchmark</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+<style>
+  .panelcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+    box-shadow:var(--shadow-soft);max-width:680px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.row2{grid-template-columns:1fr}}
+  .field input[type=radio]{width:auto}
+  .keymode{display:flex;gap:18px;margin:6px 0 4px;flex-wrap:wrap}
+  .keymode label{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--txt);font-weight:600;cursor:pointer}
+  .hint{color:var(--muted);font-size:11.5px;line-height:1.6;margin-top:4px}
+  .progresscard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+    box-shadow:var(--shadow-soft);max-width:680px;margin-top:18px;display:none}
+  .progresscard.show{display:block}
+  .pstatus{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;margin-bottom:10px}
+  .bar{margin:10px 0 6px}
+  .pmeta{color:var(--muted);font-size:12px}
+  .score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:10px 0 6px}
+  .score .big{font-size:34px;font-weight:800;font-family:var(--mono);color:var(--accent)}
+  .score .of{color:var(--muted);font-size:14px}
+  .scorerow{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .chip{display:inline-block;font-size:11px;padding:5px 11px;border-radius:999px;border:1px solid var(--line2);
+    background:var(--panel2);color:var(--muted2);white-space:nowrap}
+  .chip b{color:var(--txt)}
+  .resultlinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .reslink{padding:9px 14px;border-radius:10px;font-weight:700;font-size:13px;text-decoration:none}
+  .reslink.pri{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  .reslink.sec{color:var(--accent);border:1px solid var(--line2);background:var(--panel)}
+  .reslink:hover{filter:brightness(1.04);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Run a benchmark</h1>
+        <div class="sub">Launch a run against your model and get a signed AGI Readiness report</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page="run"></nav>
+
+  <div id="verifyNotice" class="demo-banner" style="display:none">
+    Your email is not verified yet. Please <a href="/verify.html">verify your email</a> before running a benchmark.
+  </div>
+
+  <div class="demo-banner">
+    Runs use <b>YOUR</b> provider key and may incur provider costs. Generating and viewing reports is free.
+  </div>
+
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+  <form class="panelcard" id="form">
+    <h3 style="margin:0 0 12px;font-size:16px">Configure your run</h3>
+
+    <div class="field">
+      <label>Provider key</label>
+      <div class="keymode">
+        <label><input type="radio" name="keymode" value="saved" checked> Use a saved key</label>
+        <label><input type="radio" name="keymode" value="onetime"> Use a one-time key</label>
+      </div>
+    </div>
+
+    <div id="savedBlock">
+      <div class="field">
+        <label for="credential_id">Saved provider key</label>
+        <select id="credential_id" name="credential_id">
+          <option value="">Loading…</option>
+        </select>
+        <div class="hint">Manage keys on the <a href="/account.html">Account</a> page.</div>
+      </div>
+    </div>
+
+    <div id="onetimeBlock" style="display:none">
+      <div class="row2">
+        <div class="field">
+          <label for="provider">Provider</label>
+          <select id="provider" name="provider">
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="openai-compatible">OpenAI-compatible</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ot_key">API key</label>
+          <input id="ot_key" name="ot_key" type="password" autocomplete="off" placeholder="sk-…">
+        </div>
+      </div>
+      <div class="field" id="otBaseField" style="display:none">
+        <label for="ot_base_url">Base URL</label>
+        <input id="ot_base_url" name="ot_base_url" type="url" placeholder="https://api.example.com/v1">
+      </div>
+      <div class="hint">This key is used once and not saved (save_key=false).</div>
+    </div>
+
+    <div class="field">
+      <label for="model_name">Model name</label>
+      <input id="model_name" name="model_name" type="text" list="modelOptions" placeholder="e.g. gpt-4o-mini" required>
+      <datalist id="modelOptions"></datalist>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label for="family">Capability family</label>
+        <select id="family" name="family">
+          <option value="">All families</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="n_tasks">Number of tasks</label>
+        <input id="n_tasks" name="n_tasks" type="number" min="5" max="200" value="40" required>
+        <div class="hint">Between 5 and 200. A per-day quota applies.</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="visibility">Visibility</label>
+      <select id="visibility" name="visibility">
+        <option value="private">Private — only you can see it</option>
+        <option value="public">Public — may appear on the leaderboard</option>
+      </select>
+    </div>
+
+    <button class="btn-primary" id="submit" type="submit">Launch benchmark</button>
+  </form>
+
+  <div class="progresscard" id="progress">
+    <div class="pstatus" id="pstatus"><span class="xspin"></span> <span id="pstatusText">Queued…</span></div>
+    <div class="bar"><i id="pbar" style="width:0%"></i></div>
+    <div class="pmeta" id="pmeta"></div>
+    <div id="result"></div>
+  </div>
+
+  <div class="note">
+    Looking for past runs? See <a href="/my-reports.html">My Reports</a>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var esc = (window.XAUTH && XAUTH.esc) || function(s){ return String(s); };
+  var msg = document.getElementById("msg");
+  function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
+
+  var FALLBACK_FAMILIES = ["reasoning","math","science","code","agent","multimodal",
+    "truthfulness","safety","memory","strategy","creativity","meta_learning"];
+
+  // key mode toggle
+  var savedBlock = document.getElementById("savedBlock");
+  var onetimeBlock = document.getElementById("onetimeBlock");
+  function currentMode(){
+    var r = document.querySelector('input[name="keymode"]:checked');
+    return r ? r.value : "saved";
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="keymode"]'), function(r){
+    r.addEventListener("change", function(){
+      var m = currentMode();
+      savedBlock.style.display = m === "saved" ? "block" : "none";
+      onetimeBlock.style.display = m === "onetime" ? "block" : "none";
+    });
+  });
+
+  var provider = document.getElementById("provider");
+  var otBaseField = document.getElementById("otBaseField");
+  provider.addEventListener("change", function(){
+    otBaseField.style.display = provider.value === "openai-compatible" ? "block" : "none";
+  });
+
+  // load families
+  async function loadFamilies(){
+    var sel = document.getElementById("family");
+    var keys = FALLBACK_FAMILIES, titles = {};
+    try {
+      var r = await fetch("/data/catalog.json");
+      if (r.ok) {
+        var d = await r.json();
+        if (d && d.families) {
+          keys = Object.keys(d.families);
+          keys.forEach(function(k){ titles[k] = d.families[k].title || k; });
+        }
+      }
+    } catch (e) {}
+    keys.forEach(function(k){
+      var o = document.createElement("option");
+      o.value = k; o.textContent = (titles[k] || k).replace(/ Gauntlet$/, "");
+      sel.appendChild(o);
+    });
+  }
+
+  // load saved credentials
+  async function loadCreds(){
+    var sel = document.getElementById("credential_id");
+    try {
+      var r = await XAPI.get("/credentials");
+      var creds = (r && r.credentials) || [];
+      if (!creds.length) {
+        sel.innerHTML = '<option value="">No saved keys — add one on Account, or use a one-time key</option>';
+        return;
+      }
+      sel.innerHTML = creds.map(function(c){
+        var t = (c.label || c.provider) + " (" + c.provider + (c.key_last4 ? " ••••" + c.key_last4 : "") + ")";
+        return '<option value="' + esc(c.id) + '">' + esc(t) + '</option>';
+      }).join("");
+      loadModelsFor(creds[0].id);
+    } catch (e) {
+      sel.innerHTML = '<option value="">Could not load keys</option>';
+    }
+  }
+
+  async function loadModelsFor(credId){
+    var dl = document.getElementById("modelOptions");
+    dl.innerHTML = "";
+    if (!credId) return;
+    try {
+      var r = await XAPI.get("/credentials/" + encodeURIComponent(credId) + "/models");
+      var models = (r && r.models) || [];
+      dl.innerHTML = models.map(function(m){
+        var name = m.id || m.model_name || m.name || m;
+        return '<option value="' + esc(name) + '"></option>';
+      }).join("");
+    } catch (e) {}
+  }
+
+  document.getElementById("credential_id").addEventListener("change", function(){
+    loadModelsFor(this.value);
+  });
+
+  // submit
+  document.getElementById("form").addEventListener("submit", async function(e){
+    e.preventDefault();
+    msg.className = "msg";
+    var model_name = document.getElementById("model_name").value.trim();
+    var family = document.getElementById("family").value;
+    var n_tasks = parseInt(document.getElementById("n_tasks").value, 10);
+    var visibility = document.getElementById("visibility").value;
+
+    if (!model_name) { show("err", "Please enter a model name."); return; }
+    if (!(n_tasks >= 5 && n_tasks <= 200)) { show("err", "Number of tasks must be between 5 and 200."); return; }
+
+    var body = { model_name: model_name, n_tasks: n_tasks, visibility: visibility };
+    if (family) body.family = family;
+
+    if (currentMode() === "saved") {
+      var cid = document.getElementById("credential_id").value;
+      if (!cid) { show("err", "Select a saved key or switch to a one-time key."); return; }
+      body.credential_id = cid;
+    } else {
+      var key = document.getElementById("ot_key").value;
+      var prov = provider.value;
+      body.provider = prov;
+      body.save_key = false;
+      if (prov === "openai-compatible") {
+        var bu = document.getElementById("ot_base_url").value.trim();
+        if (!bu) { show("err", "Base URL is required for OpenAI-compatible providers."); return; }
+        body.base_url = bu;
+        if (key) body.key = key;
+      } else {
+        if (!key) { show("err", "Enter your API key for the one-time run."); return; }
+        body.key = key;
+      }
+    }
+
+    var btn = document.getElementById("submit");
+    btn.disabled = true; var label = btn.textContent; btn.textContent = "Launching…";
+    try {
+      var r = await XAPI.post("/runs", body);
+      var run = (r && r.run) || {};
+      show("ok", "Benchmark launched. Tracking progress below.");
+      startPolling(run.id, run);
+    } catch (err) {
+      if (err.status === 429) {
+        show("err", "Daily run quota exceeded — " + (err.message || "try again tomorrow."));
+      } else {
+        show("err", err.message || "Could not launch the benchmark.");
+      }
+    } finally {
+      btn.disabled = false; btn.textContent = label;
+    }
+  });
+
+  // polling
+  var pollTimer = null;
+  function startPolling(id, initial){
+    if (!id) return;
+    var card = document.getElementById("progress");
+    card.classList.add("show");
+    document.getElementById("result").innerHTML = "";
+    if (pollTimer) clearTimeout(pollTimer);
+    if (initial) renderProgress(initial);
+
+    async function tick(){
+      try {
+        var r = await XAPI.get("/runs/" + encodeURIComponent(id));
+        var run = (r && r.run) || {};
+        renderProgress(run);
+        var st = run.status;
+        if (st === "scored") { renderResult(run); return; }
+        if (st === "failed") { renderFailed(run); return; }
+        pollTimer = setTimeout(tick, 2000);
+      } catch (err) {
+        document.getElementById("pmeta").textContent = "Polling error: " + (err.message || "retrying…");
+        pollTimer = setTimeout(tick, 3000);
+      }
+    }
+    pollTimer = setTimeout(tick, 1500);
+  }
+
+  function renderProgress(run){
+    var st = run.status || "queued";
+    var pct = Math.max(0, Math.min(100, parseFloat(run.progress) || 0));
+    var spin = (st === "queued" || st === "running") ? '<span class="xspin"></span> ' : '';
+    var labelMap = { queued: "Queued…", running: "Running…", scored: "Scored", failed: "Failed" };
+    document.getElementById("pstatus").innerHTML = spin + '<span id="pstatusText">' + esc(labelMap[st] || st) + '</span>';
+    document.getElementById("pbar").style.width = pct + "%";
+    var bits = [];
+    if (run.model_name) bits.push(esc(run.model_name));
+    if (run.family) bits.push(esc(run.family)); else bits.push("all families");
+    if (run.n_tasks) bits.push(run.n_tasks + " tasks");
+    bits.push(Math.round(pct) + "%");
+    document.getElementById("pmeta").textContent = bits.join(" · ");
+  }
+
+  function renderResult(run){
+    var score = (run.xodexa_score !== undefined && run.xodexa_score !== null) ? run.xodexa_score : "—";
+    var reportUrl = "/reports.html?run=" + encodeURIComponent(run.id);
+    var mdUrl = XAPI.base + "/runs/" + encodeURIComponent(run.id) + "/report.md";
+    document.getElementById("result").innerHTML =
+      '<div class="score"><span class="big">' + esc(score) + '</span><span class="of">/ 1000</span></div>' +
+      '<div class="scorerow">' +
+        (run.grade ? '<span class="chip">Grade <b>' + esc(run.grade) + '</b></span>' : '') +
+        (run.agi_level ? '<span class="chip">AGI level <b>' + esc(run.agi_level) + '</b></span>' : '') +
+        (run.accuracy !== undefined && run.accuracy !== null ? '<span class="chip">Accuracy <b>' + esc(run.accuracy) + '</b></span>' : '') +
+      '</div>' +
+      '<div class="resultlinks">' +
+        '<a class="reslink pri" href="' + reportUrl + '">View full report</a>' +
+        '<a class="reslink sec" href="' + mdUrl + '">Download .md</a>' +
+        '<a class="reslink sec" href="/my-reports.html">My Reports</a>' +
+      '</div>';
+  }
+
+  function renderFailed(run){
+    document.getElementById("result").innerHTML =
+      '<div class="msg err" style="display:block">Run failed: ' + esc(run.error || "unknown error") + '</div>';
+  }
+
+  (async function init(){
+    var me = await XAUTH.guard("verified");
+    if (!me) return;
+    loadFamilies();
+    loadCreds();
+  })();
+})();
+</script>
+</body>
+</html>

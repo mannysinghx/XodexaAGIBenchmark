@@ -47,6 +47,7 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="demo-banner"><span class="demo-badge">Demo</span> &nbsp;Illustrative simulated data — not real model measurements. See the <a href="/leaderboard.html">live results</a> or <a href="/run.html">run your own benchmark</a>.</div>
   <header>
     <div class="brand">
       <div class="logo">Ω</div>
@@ -58,9 +59,7 @@
     <div class="pill" id="ver">AGI Readiness Index</div>
   </header>
 
-  <nav class="mainnav" data-page="agi-readiness"></nav>
-
-  <div class="lead" style="font-size:12.5px;margin:10px 0 0">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <nav class="mainnav" data-page="demo"></nav>
 
   <div class="never">
     <b>Important.</b> Xodexa <b>never declares a model "AGI."</b> The highest attainable status on this ladder is
@@ -114,7 +113,7 @@ function renderCards(){
   const P = XODEXA.palette();
   charts.forEach(c=>c.dispose()); charts.length=0;
   const el = document.getElementById("cards");
-  if(!ENTRIES.length){ renderEmpty(el); return; }
+  if(!ENTRIES.length){ el.innerHTML = '<div class="xstate">No models in leaderboard.json.</div>'; return; }
   el.innerHTML = ENTRIES.map((e,i)=>{
     const cap = e.agi_level>=5 ? "AGI-Level Candidate" : e.agi_level_name;
     const radar = `<div class="radarwrap" id="r${i}"></div>`;
@@ -181,30 +180,8 @@ document.getElementById("bRadar").onclick=()=>setMode("radar");
 document.getElementById("bBars").onclick=()=>setMode("bars");
 window.addEventListener("resize",()=>charts.forEach(c=>c.resize()));
 
-async function renderEmpty(el){
-  let authed=false;
-  try{const me=await XAPI.me();authed=!!(me&&me.authenticated);}catch(e){}
-  el.innerHTML=
-    '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:8px;grid-column:1/-1">'
-    +'<div style="font-size:16px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
-    +'<div>Be the first — run a benchmark against your own model.</div>'
-    +'<div style="display:flex;gap:10px;margin-top:6px">'
-    +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
-    +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
-    +'</div></div>';
-}
-
-document.addEventListener("DOMContentLoaded", async function boot(){
-  const cardsEl=document.getElementById("cards");
-  cardsEl.innerHTML='<div class="xstate" style="grid-column:1/-1"><span class="xspin"></span> Loading live results…</div>';
-  let cat,lb;
-  try{
-    [cat,lb]=await Promise.all([XODEXA.load("catalog.json"),XAPI.get("/leaderboard")]);
-  }catch(e){
-    cardsEl.innerHTML='<div class="xstate err" style="grid-column:1/-1">⚠ Could not load live AGI readiness data ('+String(e&&e.message||e)+').</div>';
-    console.error("[xodexa] live load failed:",e);
-    return;
-  }
+XODEXA.ready(["catalog.json","leaderboard.json"], data => {
+  const cat = data.catalog, lb = data.leaderboard;
   SUB = (cat.subscores||[]).map(s=>[s.key, s.label]);
   LEVELS = cat.agi_levels || [];
   ENTRIES = lb.entries || [];
@@ -215,11 +192,11 @@ document.addEventListener("DOMContentLoaded", async function boot(){
   document.getElementById("weightsNote").innerHTML =
     `Sub-score weights (AGI Readiness Index): ${wl}. Levels are gated by the <i>lagging</i> sub-scores, not the average — `+
     `a model can be expert in some families and still be held at a lower level by a weak gate (e.g. Safety). `+
-    `Rendered live from the central scoring API, with labels from <code>catalog.json</code>.`;
+    `Rendered live from <code>./data/leaderboard.json</code> and <code>./data/catalog.json</code>.`;
 
   renderLevels();
   renderCards();
-});
+}, "#cards");
 </script>
 </body>
 </html>

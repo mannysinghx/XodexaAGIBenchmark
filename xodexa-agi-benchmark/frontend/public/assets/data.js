@@ -5,8 +5,12 @@
 (function (w) {
   "use strict";
 
+  function dataBase() {
+    return (w.XODEXA_DATA_BASE || "/data").replace(/\/$/, "");
+  }
+
   async function load(name) {
-    const r = await fetch("./data/" + name, { cache: "no-store" });
+    const r = await fetch(dataBase() + "/" + name, { cache: "no-store" });
     if (!r.ok) throw new Error(name + " → HTTP " + r.status);
     return r.json();
   }

@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Plugin Registry</title>
-<link rel="stylesheet" href="assets/theme.css">
-<script src="assets/data.js"></script>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/data.js"></script>
+<script src="/assets/auth.js" defer></script>
 <style>
   .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
   .card h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
@@ -55,18 +56,7 @@
     <div class="pill" id="ver">registry · Ed25519 required</div>
   </header>
 
-  <nav class="mainnav">
-    <a href="index.html">Observatory</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="agi-readiness.html">AGI Readiness</a>
-    <a href="compare.html">Compare</a>
-    <a href="reports.html">Reports</a>
-    <a href="datasets.html">Datasets</a>
-    <a href="plugins.html" class="on">Plugins</a>
-    <a href="security.html">Security</a>
-    <a href="about.html">About</a>
-  </nav>
+  <nav class="mainnav" data-page="plugins"></nav>
 
   <div class="lead">
     Plugins extend Xodexa with new benchmark packs, dataset adapters, tool simulators and safety probes. Every plugin

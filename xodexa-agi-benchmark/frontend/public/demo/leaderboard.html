@@ -41,6 +41,7 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="demo-banner"><span class="demo-badge">Demo</span> &nbsp;Illustrative simulated data — not real model measurements. See the <a href="/leaderboard.html">live results</a> or <a href="/run.html">run your own benchmark</a>.</div>
   <header>
     <div class="brand">
       <div class="logo">Ω</div>
@@ -52,9 +53,7 @@
     <div class="pill" id="hpill">Rank (Upper Bound) · 95% CI · central scoring authority</div>
   </header>
 
-  <nav class="mainnav" data-page="leaderboard"></nav>
-
-  <div class="lead" style="font-size:12.5px;margin-top:10px">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <nav class="mainnav" data-page="demo"></nav>
 
   <div id="mount"></div>
 
@@ -112,7 +111,7 @@
       sub-scores (0–1). <b>Acc</b> is Frontier-Exam accuracy with a 95% CI; <b>CE</b> is RMS calibration error — high CE
       means the model is confidently wrong. <b>Rank (UB)</b> is the statistical upper-bound rank, so tied models share a
       rank. <b>Contam.</b> is the contamination-risk estimate. Scores are issued only by the central authority. The board
-      reads live results from the central scoring API.
+      reads live JSON from <code>./data/</code>.
     </div>
   </div>
 </div>
@@ -139,7 +138,7 @@ function init(d){
 
   DATA = lb.entries.map(e=>{
     const r={
-      m:e.model, by:e.submitted_by, apex:e.xodexa_score, grade:e.grade, color:XODEXA.gradeColor(e.xodexa_score,P),
+      m:e.model, apex:e.xodexa_score, grade:e.grade, color:XODEXA.gradeColor(e.xodexa_score,P),
       agi_level:e.agi_level, agi_level_name:e.agi_level_name, agi_index:e.agi_index,
       acc:e.accuracy, ci:e.ci, ce:e.calibration_error, contam:e.contamination_risk,
       rank_ub:e.rank_ub, time_horizon:e.time_horizon
@@ -225,7 +224,7 @@ function visible(){
 function render(){
   const rows=visible();
   const head=document.getElementById("head");
-  let h='<th class="l">Rank</th><th class="l">Model</th><th class="l">Submitted by</th>';
+  let h='<th class="l">Rank</th><th class="l">Model</th>';
   COLS.filter(c=>colOn[c.k]).forEach(c=>h+='<th data-k="'+c.k+'">'+c.t+'</th>');
   head.innerHTML=h;
   head.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{
@@ -235,8 +234,7 @@ function render(){
   body.innerHTML=rows.map(r=>{
     let tds='<td class="l rank">'+r.rank_ub+'</td>'+
       '<td class="l"><span class="model">'+r.m+'</span><br>'+
-        '<span class="meta">'+r.time_horizon+'</span></td>'+
-      '<td class="l"><span class="meta">'+(r.by?XAUTH.esc(r.by):'—')+'</span></td>';
+        '<span class="meta">'+r.time_horizon+'</span></td>';
     COLS.filter(c=>colOn[c.k]).forEach(c=>tds+='<td>'+c.fmt(r,c.k)+'</td>');
     return '<tr>'+tds+'</tr>';
   }).join("");
@@ -285,31 +283,8 @@ function draw(){
         itemStyle:{color:r.ce>=45?P.bad:r.ce>=30?P.warn:P.good,opacity:.8}}))}]});
 }
 
-async function emptyState(mount){
-  let authed=false;
-  try{const me=await XAPI.me();authed=!!(me&&me.authenticated);}catch(e){}
-  mount.innerHTML=
-    '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:8px">'
-    +'<div style="font-size:16px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
-    +'<div>Be the first — run a benchmark against your own model.</div>'
-    +'<div style="display:flex;gap:10px;margin-top:6px">'
-    +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
-    +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
-    +'</div></div>';
-}
-
-document.addEventListener("DOMContentLoaded",async ()=>{
-  const mount=document.getElementById("mount");
-  mount.innerHTML='<div class="xstate"><span class="xspin"></span> Loading live results…</div>';
-  try{
-    const [lb,catalog]=await Promise.all([XAPI.get("/leaderboard"),XODEXA.load("catalog.json")]);
-    if(!lb||!lb.entries||!lb.entries.length){await emptyState(mount);return;}
-    mount.innerHTML="";
-    init({leaderboard:lb,catalog:catalog});
-  }catch(e){
-    mount.innerHTML='<div class="xstate err">⚠ Could not load live leaderboard ('+String(e&&e.message||e)+').</div>';
-    console.error("[xodexa] live load failed:",e);
-  }
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["leaderboard.json","catalog.json"], init, "#mount");
 });
 </script>
 </body>

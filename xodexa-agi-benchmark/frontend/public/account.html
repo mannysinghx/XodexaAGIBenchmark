@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Account</title>
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/auth.js" defer></script>
+<style>
+  .acct{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:8px 0 4px}
+  .kv{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .kv:last-child{border-bottom:none}
+  .kv .k{color:var(--muted)} .kv .v{color:var(--txt);font-weight:600;text-align:right;word-break:break-all}
+  .reslist{display:flex;flex-direction:column;gap:10px;margin:8px 0}
+  .resrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;box-shadow:var(--shadow-soft)}
+  .resrow .main{flex:1;min-width:200px}
+  .resrow .rtitle{font-weight:700;font-size:13.5px;color:var(--txt)}
+  .resrow .rmeta{color:var(--muted);font-size:11.5px;margin-top:3px}
+  .mono{font-family:var(--mono)}
+  .chip{display:inline-block;font-size:9.5px;padding:3px 8px;border-radius:999px;border:1px solid var(--line2);
+    background:var(--panel2);color:var(--muted2);white-space:nowrap;text-transform:uppercase;letter-spacing:.4px}
+  .chip.ok{color:var(--good);border-color:rgba(14,157,110,.4);background:rgba(14,157,110,.08)}
+  .chip.bad{color:var(--bad);border-color:rgba(216,58,75,.4);background:rgba(216,58,75,.07)}
+  .chip.warn{color:var(--warn);border-color:rgba(193,116,10,.4);background:rgba(193,116,10,.08)}
+  .btn-del{padding:7px 11px;border:1px solid rgba(216,58,75,.4);border-radius:9px;background:rgba(216,58,75,.05);
+    color:var(--bad);font:inherit;cursor:pointer;font-size:12px}
+  .btn-del:hover{background:rgba(216,58,75,.1)}
+  .btn-small{padding:7px 11px;border:1px solid var(--line2);border-radius:9px;background:var(--panel);
+    color:var(--accent);font:inherit;cursor:pointer;font-size:12px}
+  .btn-small:hover{background:var(--panel2)}
+  .panelcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+    box-shadow:var(--shadow-soft);max-width:620px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.row2{grid-template-columns:1fr}}
+  .modelpick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Account</h1>
+        <div class="sub">Your profile, provider API keys, and validated models</div>
+      </div>
+    </div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
+  </header>
+
+  <nav class="mainnav" data-page="account"></nav>
+
+  <div id="verifyNotice" class="demo-banner" style="display:none">
+    Your email is not verified yet. Please verify your email to add keys and run benchmarks —
+    <a href="/verify.html">resend the verification link</a>.
+  </div>
+
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+  <div class="secttl">Profile</div>
+  <div class="panelcard" id="profile">
+    <div class="xstate"><span class="xspin"></span> Loading profile…</div>
+  </div>
+
+  <div class="secttl">Provider API keys</div>
+  <p class="lead" style="margin-top:0;max-width:620px">
+    Keys are validated live when added and stored encrypted. Only the last 4 characters are ever shown.
+    Benchmarks run with <b>your</b> key and may incur provider costs.
+  </p>
+  <div id="credList" class="reslist">
+    <div class="xstate"><span class="xspin"></span> Loading keys…</div>
+  </div>
+
+  <div class="panelcard" style="margin-top:14px">
+    <h3 style="margin:0 0 4px;font-size:15px">Add a provider key</h3>
+    <form id="credForm">
+      <div class="msg" id="credMsg" role="status" aria-live="polite"></div>
+      <div class="row2">
+        <div class="field">
+          <label for="provider">Provider</label>
+          <select id="provider" name="provider" required>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="openai-compatible">OpenAI-compatible</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="label">Label</label>
+          <input id="label" name="label" type="text" placeholder="e.g. Personal OpenAI" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="key">API key <span id="keyOpt" style="color:var(--muted);font-weight:500"></span></label>
+        <input id="key" name="key" type="password" autocomplete="off" placeholder="sk-…">
+      </div>
+      <div class="field" id="baseUrlField" style="display:none">
+        <label for="base_url">Base URL <span style="color:var(--muted);font-weight:500">(required for OpenAI-compatible)</span></label>
+        <input id="base_url" name="base_url" type="url" placeholder="https://api.example.com/v1">
+      </div>
+      <button class="btn-primary" id="credSubmit" type="submit">Add &amp; validate key</button>
+    </form>
+
+    <div id="availModels" style="display:none;margin-top:16px">
+      <div class="secttl" style="margin:6px 0 8px">Models available with this key</div>
+      <p class="muted" style="font-size:12px;margin:0 0 6px">Click a model to save it for benchmarking.</p>
+      <div class="modelpick" id="availModelsList"></div>
+    </div>
+  </div>
+
+  <div class="secttl">Validated models</div>
+  <div id="modelList" class="reslist">
+    <div class="xstate"><span class="xspin"></span> Loading models…</div>
+  </div>
+
+  <div class="note">
+    Need to run a benchmark? Head to <a href="/run.html">Run a benchmark</a>. Past runs live in
+    <a href="/my-reports.html">My Reports</a>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var esc = (window.XAUTH && XAUTH.esc) || function(s){ return String(s); };
+  var msg = document.getElementById("msg");
+  var credMsg = document.getElementById("credMsg");
+  function show(el, kind, text){ el.className = "msg " + kind; el.textContent = text; }
+
+  var lastCredentialId = null; // for saving available models
+
+  var providerSel = document.getElementById("provider");
+  var baseUrlField = document.getElementById("baseUrlField");
+  var keyOpt = document.getElementById("keyOpt");
+  function syncProviderFields(){
+    var compat = providerSel.value === "openai-compatible";
+    baseUrlField.style.display = compat ? "block" : "none";
+    keyOpt.textContent = compat ? "(optional)" : "";
+    document.getElementById("base_url").required = compat;
+  }
+  providerSel.addEventListener("change", syncProviderFields);
+  syncProviderFields();
+
+  function statusChip(s){
+    var c = "chip", t = s || "unknown";
+    if (s === "valid" || s === "validated" || s === "active" || s === "ok") c = "chip ok";
+    else if (s === "invalid" || s === "rejected" || s === "error") c = "chip bad";
+    else if (s === "pending" || s === "unvalidated") c = "chip warn";
+    return '<span class="' + c + '">' + esc(t) + '</span>';
+  }
+
+  function renderProfile(user){
+    var verified = user.email_verified
+      ? '<span class="chip ok">verified</span>'
+      : '<span class="chip warn">unverified</span>';
+    document.getElementById("profile").innerHTML =
+      '<div class="kv"><span class="k">Username</span><span class="v">' + esc(user.username || "—") + '</span></div>' +
+      '<div class="kv"><span class="k">Email</span><span class="v">' + esc(user.email || "—") + ' ' + verified + '</span></div>' +
+      (user.is_admin ? '<div class="kv"><span class="k">Role</span><span class="v"><span class="chip">admin</span></span></div>' : '');
+  }
+
+  async function loadCreds(){
+    var box = document.getElementById("credList");
+    try {
+      var r = await XAPI.get("/credentials");
+      var creds = (r && r.credentials) || [];
+      if (!creds.length) {
+        box.innerHTML = '<div class="xstate">No provider keys yet. Add one below to start running benchmarks.</div>';
+        return;
+      }
+      box.innerHTML = creds.map(function(c){
+        var meta = [];
+        meta.push(esc(c.provider));
+        if (c.key_last4) meta.push('key ••••' + esc(c.key_last4));
+        if (c.base_url) meta.push(esc(c.base_url));
+        if (c.validated_at) meta.push('validated ' + esc(c.validated_at));
+        return '<div class="resrow">' +
+          '<div class="main"><div class="rtitle">' + esc(c.label || c.provider) + '</div>' +
+          '<div class="rmeta mono">' + meta.join(' · ') + '</div></div>' +
+          statusChip(c.status) +
+          '<button class="btn-del" data-del-cred="' + esc(c.id) + '">Delete</button>' +
+          '</div>';
+      }).join("");
+    } catch (err) {
+      box.innerHTML = '<div class="xstate err">Could not load keys: ' + esc(err.message || "error") + '</div>';
+    }
+  }
+
+  async function loadModels(){
+    var box = document.getElementById("modelList");
+    try {
+      var r = await XAPI.get("/models");
+      var models = (r && (r.models || r)) || [];
+      if (!Array.isArray(models)) models = models.models || [];
+      if (!models.length) {
+        box.innerHTML = '<div class="xstate">No validated models yet. Add a key, then save a model from the list above.</div>';
+        return;
+      }
+      box.innerHTML = models.map(function(m){
+        var name = m.model_name || m.name || m;
+        var prov = m.provider ? (' · ' + esc(m.provider)) : '';
+        var id = (m.id !== undefined && m.id !== null) ? m.id : name;
+        return '<div class="resrow">' +
+          '<div class="main"><div class="rtitle mono">' + esc(name) + '</div>' +
+          '<div class="rmeta">model' + prov + '</div></div>' +
+          '<button class="btn-del" data-del-model="' + esc(id) + '">Delete</button>' +
+          '</div>';
+      }).join("");
+    } catch (err) {
+      box.innerHTML = '<div class="xstate err">Could not load models: ' + esc(err.message || "error") + '</div>';
+    }
+  }
+
+  // delete handlers (delegated)
+  document.addEventListener("click", async function(e){
+    var dc = e.target.getAttribute && e.target.getAttribute("data-del-cred");
+    var dm = e.target.getAttribute && e.target.getAttribute("data-del-model");
+    if (dc) {
+      if (!confirm("Delete this provider key?")) return;
+      e.target.disabled = true;
+      try { await XAPI.del("/credentials/" + encodeURIComponent(dc)); show(msg, "ok", "Key deleted."); }
+      catch (err) { show(msg, "err", err.message || "Could not delete key."); }
+      loadCreds();
+    }
+    if (dm) {
+      if (!confirm("Delete this validated model?")) return;
+      e.target.disabled = true;
+      try { await XAPI.del("/models/" + encodeURIComponent(dm)); show(msg, "ok", "Model deleted."); }
+      catch (err) { show(msg, "err", err.message || "Could not delete model."); }
+      loadModels();
+    }
+  });
+
+  // add credential
+  document.getElementById("credForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    var provider = providerSel.value;
+    var label = document.getElementById("label").value.trim();
+    var key = document.getElementById("key").value;
+    var base_url = document.getElementById("base_url").value.trim();
+    if (!label) { show(credMsg, "err", "Please add a label."); return; }
+    var body = { provider: provider, label: label };
+    if (key) body.key = key;
+    if (provider === "openai-compatible") {
+      if (!base_url) { show(credMsg, "err", "Base URL is required for OpenAI-compatible providers."); return; }
+      body.base_url = base_url;
+    } else if (!key) {
+      show(credMsg, "err", "API key is required for this provider."); return;
+    }
+
+    var btn = document.getElementById("credSubmit");
+    btn.disabled = true; var label0 = btn.textContent; btn.textContent = "Validating…";
+    try {
+      var r = await XAPI.post("/credentials", body);
+      show(credMsg, "ok", "Key validated and saved.");
+      document.getElementById("credForm").reset(); syncProviderFields();
+      lastCredentialId = r && r.credential && r.credential.id;
+      renderAvailModels((r && r.available_models) || []);
+      loadCreds();
+    } catch (err) {
+      show(credMsg, "err", err.message || "Key was rejected by the provider.");
+    } finally {
+      btn.disabled = false; btn.textContent = label0;
+    }
+  });
+
+  function renderAvailModels(models){
+    var wrap = document.getElementById("availModels");
+    var list = document.getElementById("availModelsList");
+    if (!models.length || !lastCredentialId) { wrap.style.display = "none"; return; }
+    wrap.style.display = "block";
+    list.innerHTML = models.map(function(m){
+      var name = m.id || m.model_name || m.name || m;
+      return '<button type="button" class="btn-small" data-save-model="' + esc(name) + '">+ ' + esc(name) + '</button>';
+    }).join("");
+  }
+
+  document.getElementById("availModelsList").addEventListener("click", async function(e){
+    var name = e.target.getAttribute && e.target.getAttribute("data-save-model");
+    if (!name || !lastCredentialId) return;
+    e.target.disabled = true;
+    try {
+      await XAPI.post("/models", { credential_id: lastCredentialId, model_name: name });
+      e.target.textContent = "✓ " + name;
+      show(msg, "ok", "Model \"" + name + "\" saved.");
+      loadModels();
+    } catch (err) {
+      e.target.disabled = false;
+      show(msg, "err", err.message || "Could not save model.");
+    }
+  });
+
+  (async function init(){
+    var me = await XAUTH.guard("verified");
+    if (!me) return;
+    renderProfile(me.user || {});
+    loadCreds();
+    loadModels();
+  })();
+})();
+</script>
+</body>
+</html>

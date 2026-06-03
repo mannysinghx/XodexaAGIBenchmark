@@ -32,6 +32,7 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="demo-banner"><span class="demo-badge">Demo</span> &nbsp;Illustrative simulated data — not real model measurements. See the <a href="/leaderboard.html">live results</a> or <a href="/run.html">run your own benchmark</a>.</div>
   <header>
     <div class="brand">
       <div class="logo">Ω</div>
@@ -43,9 +44,7 @@
     <div class="pill" id="hpill">central scoring authority · Ed25519 verified</div>
   </header>
 
-  <nav class="mainnav" data-page="dashboard"></nav>
-
-  <div class="sub" style="font-size:12.5px;margin-top:10px;color:var(--muted)">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <nav class="mainnav" data-page="demo"></nav>
 
   <div id="mount"></div>
 
@@ -54,9 +53,9 @@
       <div class="stat"><div class="n" id="s_models">—</div><div class="l">Models Evaluated</div></div>
       <div class="stat"><div class="n" id="s_avgscore">—</div><div class="l">Average Xodexa Score</div></div>
       <div class="stat"><div class="n" id="s_avgagi">—</div><div class="l">Average AGI Index</div></div>
-      <div class="stat"><div class="n" id="s_tasks">—</div><div class="l">Seed Tasks</div></div>
+      <div class="stat"><div class="n" id="s_tasks">—</div><div class="l">Total Seed Tasks</div></div>
       <div class="stat"><div class="n" id="s_families">—</div><div class="l">Task Families</div></div>
-      <div class="stat"><div class="n" id="s_variants">—</div><div class="l">Generators</div></div>
+      <div class="stat"><div class="n" id="s_variants">—</div><div class="l">Dynamic Sample Variants</div></div>
     </div>
 
     <div class="grid">
@@ -84,10 +83,14 @@ let P;
 
 function init(d){
   P = XODEXA.palette();
-  const lb=d.leaderboard, cat=d.catalog, dash=d.dashboard;
-  const kpis=dash.kpis||{};
-  const ver = lb.benchmark_version||cat.benchmark_version||"";
+  const lb=d.leaderboard, cat=d.catalog, sum=d.summary, site=d.site;
+  const ver = site.benchmark_version||lb.benchmark_version||cat.benchmark_version;
 
+  // brand header
+  if(site.brand){
+    document.getElementById("brandName").textContent=site.brand.name;
+    document.getElementById("brandSub").textContent=site.brand.blurb;
+  }
   document.getElementById("hpill").textContent="benchmark v"+ver+" · central scoring authority · Ed25519 verified";
 
   // family labels
@@ -98,16 +101,24 @@ function init(d){
   const label=k=>(fam[k]&&fam[k].title?fam[k].title.replace(/ Gauntlet$/,''):XODEXA.fmt.cap(k));
 
   const entries=[...lb.entries].sort((a,b)=>b.xodexa_score-a.xodexa_score);
+  const n=entries.length;
 
-  // KPIs from live /api/dashboard
-  document.getElementById("s_models").textContent=XODEXA.fmt.int(kpis.models_evaluated);
-  document.getElementById("s_avgscore").textContent=(kpis.average_xodexa_score!=null?kpis.average_xodexa_score.toFixed(1):"—");
-  if(kpis.average_xodexa_score!=null) document.getElementById("s_avgscore").style.color=XODEXA.gradeColor(kpis.average_xodexa_score,P);
-  document.getElementById("s_avgagi").textContent=(kpis.average_agi_index!=null?kpis.average_agi_index.toFixed(3):"—");
+  // KPIs (all computed)
+  const sumTasks=
+    (sum.releases||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    (sum.focused_packs||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    (sum.family_minis||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    ((sum.dynamic&&sum.dynamic.sample_variants)||0);
+
+  document.getElementById("s_models").textContent=n;
+  const avgScore=entries.reduce((s,e)=>s+e.xodexa_score,0)/n;
+  document.getElementById("s_avgscore").textContent=avgScore.toFixed(1);
+  document.getElementById("s_avgscore").style.color=XODEXA.gradeColor(avgScore,P);
+  document.getElementById("s_avgagi").textContent=(entries.reduce((s,e)=>s+e.agi_index,0)/n).toFixed(3);
   document.getElementById("s_avgagi").style.color=P.accent;
-  document.getElementById("s_tasks").textContent=XODEXA.fmt.int(kpis.seed_tasks);
-  document.getElementById("s_families").textContent=XODEXA.fmt.int(kpis.task_families!=null?kpis.task_families:Object.keys(fam).length);
-  document.getElementById("s_variants").textContent=XODEXA.fmt.int(kpis.generators);
+  document.getElementById("s_tasks").textContent=XODEXA.fmt.int(sumTasks);
+  document.getElementById("s_families").textContent=Object.keys(fam).length;
+  document.getElementById("s_variants").textContent=XODEXA.fmt.int((sum.dynamic&&sum.dynamic.sample_variants)||0);
   document.getElementById("s_variants").style.color=P.accent2;
 
   // leaderboard table
@@ -140,38 +151,16 @@ function init(d){
     '<span><span class="dot" style="background:'+colors[i]+'"></span>'+e.model+'</span>').join("");
   window.addEventListener("resize",()=>radar.resize());
 
-  // footer
-  document.getElementById("foot").textContent=
-    "Official scores are issued only by the central authority after cryptographic verification + central re-scoring.";
+  // footer = site principle
+  const pr=(site.principles||[])[1];
+  document.getElementById("foot").textContent= pr ? (pr.title+" — "+pr.body)
+    : "Official scores are issued only by the central authority after cryptographic verification + central re-scoring.";
 
   document.getElementById("content").style.display="";
 }
 
-async function emptyState(mount){
-  let authed=false;
-  try{const me=await XAPI.me();authed=!!(me&&me.authenticated);}catch(e){}
-  mount.innerHTML=
-    '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:8px">'
-    +'<div style="font-size:16px;font-weight:700;color:var(--txt)">No verified runs yet</div>'
-    +'<div>Be the first — run a benchmark against your own model.</div>'
-    +'<div style="display:flex;gap:10px;margin-top:6px">'
-    +'<a class="btn-primary" style="width:auto;text-decoration:none" href="/run.html">Run a benchmark</a>'
-    +(authed?'':'<a class="btn-ghost" style="text-decoration:none" href="/register.html">Create an account</a>')
-    +'</div></div>';
-}
-
-document.addEventListener("DOMContentLoaded",async ()=>{
-  const mount=document.getElementById("mount");
-  mount.innerHTML='<div class="xstate"><span class="xspin"></span> Loading live results…</div>';
-  try{
-    const [dash,lb,catalog]=await Promise.all([XAPI.get("/dashboard"),XAPI.get("/leaderboard"),XODEXA.load("catalog.json")]);
-    if((dash&&dash.empty)||!lb||!lb.entries||!lb.entries.length){await emptyState(mount);return;}
-    mount.innerHTML="";
-    init({dashboard:dash,leaderboard:lb,catalog:catalog});
-  }catch(e){
-    mount.innerHTML='<div class="xstate err">⚠ Could not load live dashboard ('+String(e&&e.message||e)+').</div>';
-    console.error("[xodexa] live load failed:",e);
-  }
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["leaderboard.json","catalog.json","SUMMARY.json","site.json"], init, "#mount");
 });
 </script>
 </body>

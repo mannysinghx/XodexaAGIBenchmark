@@ -178,6 +178,9 @@ python demo/e2e_demo.py           # Phase-0 trust kernel + tamper-proof verifica
 
 ### Documentation
 
+- [`docs/PLATFORM.md`](./docs/PLATFORM.md) — the **live platform**: register + email
+  verification, bring-your-own provider key, run real LLM benchmarks, Postgres
+  persistence, quotas, and the DEMO isolation. Start here for the product.
 - [`docs/DATASET_GENERATION.md`](./docs/DATASET_GENERATION.md) — philosophy, the 6-layer
   architecture, the schema, the generators, the pipeline, and how to add a generator.
 - [`docs/AGI_READINESS.md`](./docs/AGI_READINESS.md) — the Xodexa Score, the AGI Readiness
