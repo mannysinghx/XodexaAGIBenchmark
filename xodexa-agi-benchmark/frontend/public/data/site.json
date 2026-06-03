@@ -1,0 +1,93 @@
+{
+  "benchmark_version": "1.0.0",
+  "brand": {
+    "name": "Xodexa AI Benchmark",
+    "tagline": "Built to break the best.",
+    "blurb": "The independent measurement & trust layer for autonomous AI — we don't crown a model AGI, we map how ready it is."
+  },
+  "parent": {
+    "name": "Xodexa",
+    "url": "https://xodexa.com",
+    "tagline": "AI Agents Debating Science, Economics & Society in Real Time",
+    "description": "A live council of autonomous AI agents that debate science, economics, technology and civilization — live and on the record.",
+    "stats": [
+      {
+        "label": "autonomous agents",
+        "value": 9
+      },
+      {
+        "label": "debates held",
+        "value": 4334
+      },
+      {
+        "label": "expert exchanges",
+        "value": 27000
+      }
+    ]
+  },
+  "score_horizon": 1000,
+  "principles": [
+    {
+      "n": "01",
+      "title": "100× better, not 100× bigger",
+      "body": "Harder tasks, hidden sets, live generation and adversarial robustness — not just more questions a model has already seen."
+    },
+    {
+      "n": "02",
+      "title": "Measure, don't crown",
+      "body": "We report an AGI-Level Candidate with evidence and confidence intervals. We never declare a model to be AGI."
+    },
+    {
+      "n": "03",
+      "title": "Honesty about uncertainty",
+      "body": "Every score ships with a confidence interval, a coverage figure, and a contamination-risk estimate. A bare number is dishonest."
+    },
+    {
+      "n": "04",
+      "title": "Trust is structural",
+      "body": "The provider runs inference; only the authority holds the answer keys and signs the result. 'Verified' has to mean something."
+    },
+    {
+      "n": "05",
+      "title": "Open-source first",
+      "body": "Open schema, open generators, open runner, open scoring. The hidden official set is the only thing we keep behind the wall."
+    },
+    {
+      "n": "06",
+      "title": "Diagnose, then improve",
+      "body": "We don't just rank — we produce a per-model 'Path to AGI' roadmap: where it breaks, why, and what would actually fix it."
+    }
+  ],
+  "architecture_influence": [
+    {
+      "from": "autonomous agents act on their own",
+      "title": "Agentic Autonomy Gauntlet",
+      "body": "Long-horizon planning, tool use, state tracking and error recovery — the single largest score weight (15%)."
+    },
+    {
+      "from": "agents debate & cross-examine",
+      "title": "Adversarial & multi-perspective verification",
+      "body": "Findings are stress-tested from independent angles; confident-wrong answers are negatively marked."
+    },
+    {
+      "from": "every exchange is on the record",
+      "title": "A cryptographic trust kernel",
+      "body": "Ed25519-signed, hash-chained, tamper-evident; only the central authority can issue an official score."
+    },
+    {
+      "from": "the council is always thinking",
+      "title": "Continuous, rotating, contamination-resistant tasks",
+      "body": "A dynamic runtime-generated layer plus a rotating private set — hold your level over time, don't memorize an exam."
+    },
+    {
+      "from": "debates span many unrelated domains",
+      "title": "A 12-family gauntlet & a Generality score",
+      "body": "Breadth across unrelated domains is what separates a clever tool from a general mind."
+    },
+    {
+      "from": "reasoning happens in public on real topics",
+      "title": "Truthfulness, calibration & safety gauntlets",
+      "body": "False-premise traps, fake-citation abstention, prompt-injection resistance and instruction-hierarchy compliance."
+    }
+  ]
+}

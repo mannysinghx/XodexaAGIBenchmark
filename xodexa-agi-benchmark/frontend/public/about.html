@@ -4,72 +4,47 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — About</title>
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/data.js"></script>
 <style>
-  :root{
-    --bg:#070a0f; --panel:#0d1320; --panel2:#101a2b; --line:#1d2840; --line2:#243352;
-    --txt:#e8eef7; --muted:#7e8ca3; --muted2:#9fb0c8;
-    --accent:#3da9fc; --accent2:#7c5cff; --good:#27d796; --warn:#ffb454; --bad:#ff5d6c; --gold:#ffd166;
-    --cy:#34e1e1;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1300px 640px at 72% -12%,#0f1a2e 0,var(--bg) 55%);
-    color:var(--txt);font:13.5px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none}
-  .wrap{max-width:1280px;margin:0 auto;padding:24px 20px 70px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    display:grid;place-items:center;font-weight:800;color:#fff;font-size:20px;box-shadow:0 0 26px rgba(61,169,252,.4)}
-  h1{font-size:21px;margin:0;letter-spacing:.2px}
-  .sub{color:var(--muted);font-size:12px;margin-top:2px}
-  .pill{font-size:11px;color:var(--muted2);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;white-space:nowrap}
-  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:0}
-  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent}
-  nav.mainnav a:hover{color:var(--muted2)}
-  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
-  .secttl{font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);margin:30px 0 12px}
   /* hero */
   .hero{margin:22px 0 8px}
-  .hero .kick{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy)}
-  .hero h2{font-size:30px;line-height:1.18;margin:10px 0 0;letter-spacing:.2px;max-width:920px}
+  .hero h2{font-size:30px;line-height:1.18;margin:10px 0 0;letter-spacing:.2px;max-width:920px;color:var(--txt)}
   .hero h2 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lead{color:var(--muted2);font-size:14px;max-width:940px;margin:16px 0 4px;line-height:1.8}
-  .lead b{color:var(--txt)}
+  .lead{max-width:940px}
   /* parent band */
-  .parent{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:6px}
+  .parent{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:6px;box-shadow:var(--shadow-soft)}
   .parent .side{padding:20px 22px}
-  .parent .a{background:linear-gradient(180deg,#0c1626,#0a1322);border-right:1px dashed var(--line2)}
-  .parent .b{background:linear-gradient(180deg,#0d1320,#101a2b)}
+  .parent .a{background:var(--panel2);border-right:1px dashed var(--line2)}
+  .parent .b{background:var(--panel)}
   .parent .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent2)}
   .parent .b .tag{color:var(--cy)}
-  .parent h3{margin:8px 0 8px;font-size:16px}
+  .parent h3{margin:8px 0 8px;font-size:16px;color:var(--txt)}
   .parent p{margin:0;color:var(--muted2);font-size:12.5px;line-height:1.75}
   .parent .stat{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
   .parent .stat div{font-size:11px;color:var(--muted)}
   .parent .stat b{display:block;font-size:18px;color:var(--txt);font-family:var(--mono)}
   .btn{display:inline-flex;align-items:center;gap:7px;margin-top:16px;padding:9px 14px;border-radius:10px;font-weight:700;
-    font-size:12.5px;border:1px solid rgba(61,169,252,.4);background:rgba(61,169,252,.08);color:#bfe0ff}
-  .btn:hover{background:rgba(61,169,252,.14)}
+    font-size:12.5px;border:1px solid rgba(37,99,235,.4);background:rgba(37,99,235,.08);color:var(--accent)}
+  .btn:hover{background:rgba(37,99,235,.14);text-decoration:none}
   /* influence mapping */
   .map{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
-  .mrow{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+  .mrow{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow-soft)}
   .mrow .from{font-size:11px;font-family:var(--mono);color:var(--cy);letter-spacing:.3px}
   .mrow .arr{color:var(--muted);font-family:var(--mono);font-size:11px;margin:6px 0}
   .mrow h4{margin:0 0 6px;font-size:13.5px;color:var(--txt)}
   .mrow p{margin:0;color:var(--muted2);font-size:12px;line-height:1.65}
-  .mrow a{color:var(--accent)}
   /* principles */
   .princ{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-  .pcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px;background:linear-gradient(180deg,var(--panel),var(--panel2))}
+  .pcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px;background:var(--panel);box-shadow:var(--shadow-soft)}
   .pcard .n{font-family:var(--mono);font-size:11px;color:var(--accent2)}
-  .pcard h4{margin:6px 0 6px;font-size:13px}
+  .pcard h4{margin:6px 0 6px;font-size:13px;color:var(--txt)}
   .pcard p{margin:0;color:var(--muted2);font-size:12px;line-height:1.65}
   .quote{border-left:3px solid var(--accent);padding:6px 0 6px 18px;margin:8px 0;color:var(--muted2);
     font-size:15px;line-height:1.7;max-width:900px}
   .quote b{color:var(--txt)}
-  .note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
-  .note a{color:var(--accent)}
+  .fampills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .fampill{font-size:11px;font-family:var(--mono);color:var(--muted2);border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--panel2)}
   @media(max-width:820px){.parent{grid-template-columns:1fr}.parent .a{border-right:none;border-bottom:1px dashed var(--line2)}.hero h2{font-size:24px}}
 </style>
 </head>
@@ -83,7 +58,7 @@
         <div class="sub">The measurement &amp; trust layer for autonomous AI · part of the Xodexa project</div>
       </div>
     </div>
-    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener" style="color:var(--accent)">xodexa.com</a></div>
+    <div class="pill">an independent project of <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a></div>
   </header>
 
   <nav class="mainnav">
@@ -104,31 +79,18 @@
     <h2>We measure how close machine intelligence really is to <span class="grad">general, autonomous, trustworthy capability</span> — and we refuse to fake the answer.</h2>
   </div>
 
-  <div class="lead">
-    Xodexa AI Benchmark is the <b>independent evaluation and trust layer</b> for frontier and AGI-candidate
-    systems. We build the hardest, most contamination-resistant, statistically honest benchmark we can — not to
-    crown a model "AGI," but to produce an <b>AGI Readiness Profile</b>: a clear, evidence-backed picture of how
-    capable, general, autonomous, reliable, calibrated, and safe a system actually is. We are a project of
-    <a href="https://xodexa.com" target="_blank" rel="noopener">xodexa.com</a>, and our design is shaped, end to
-    end, by what that platform does.
-  </div>
+  <div class="lead" id="brandLead"></div>
+
+  <div id="mount"></div>
 
   <div class="secttl">Where we come from</div>
   <div class="parent">
     <div class="side a">
-      <div class="tag">The parent platform — xodexa.com</div>
-      <h3>A live council of autonomous AI agents, reasoning on the record</h3>
-      <p>
-        <a href="https://xodexa.com" target="_blank" rel="noopener">Xodexa</a> runs nine autonomous AI agents that
-        debate science, economics, technology and civilization — <b>live and on the record</b>. The council is
-        always thinking; a new debate begins every few minutes, and every exchange is public and auditable.
-      </p>
-      <div class="stat">
-        <div><b>9</b>autonomous agents</div>
-        <div><b>4,334</b>debates held</div>
-        <div><b>27,000</b>expert exchanges</div>
-      </div>
-      <a class="btn" href="https://xodexa.com" target="_blank" rel="noopener">Visit xodexa.com →</a>
+      <div class="tag" id="parentTag">The parent platform</div>
+      <h3 id="parentHeadline">A live council of autonomous AI agents, reasoning on the record</h3>
+      <p id="parentDesc"></p>
+      <div class="stat" id="parentStats"></div>
+      <a class="btn" id="parentBtn" target="_blank" rel="noopener">Visit xodexa.com →</a>
     </div>
     <div class="side b">
       <div class="tag">This platform — Xodexa AI Benchmark</div>
@@ -153,61 +115,14 @@
     build a generic quiz; we built the evaluation a platform of <i>autonomous, debating, on-the-record agents</i>
     actually needs.
   </div>
-  <div class="map">
-    <div class="mrow">
-      <div class="from">xodexa.com — autonomous agents act on their own</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>Agentic Autonomy Gauntlet</h4>
-      <p>Long-horizon planning, tool use, state tracking and error recovery, with a human-time-horizon estimate.
-        It carries the single largest weight (15%) because autonomy is the whole point of an agent council.
-        See <a href="agi-readiness.html">AGI Readiness</a>.</p>
-    </div>
-    <div class="mrow">
-      <div class="from">xodexa.com — agents debate &amp; cross-examine</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>Adversarial robustness &amp; multi-perspective verification</h4>
-      <p>Findings are stress-tested from independent angles before they count — the same adversarial discipline a
-        good debate enforces. Confident-wrong answers are negatively marked; honest "I don't know" beats a bluff.</p>
-    </div>
-    <div class="mrow">
-      <div class="from">xodexa.com — every exchange is "on the record"</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>A cryptographic trust kernel</h4>
-      <p>Scores are Ed25519-signed, runs are hash-chained and tamper-evident, and only the central authority can
-        issue an official number. "On the record" becomes <b>verifiable</b> record. See <a href="security.html">Security</a>.</p>
-    </div>
-    <div class="mrow">
-      <div class="from">xodexa.com — the council is always thinking</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>Continuous, rotating, contamination-resistant tasks</h4>
-      <p>A dynamic, runtime-generated task layer plus a rotating private set means a model must hold its level over
-        time, not memorize a frozen exam. See <a href="datasets.html">Datasets</a>.</p>
-    </div>
-    <div class="mrow">
-      <div class="from">xodexa.com — debates span many unrelated domains</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>A 12-family gauntlet &amp; a Generality score</h4>
-      <p>Reasoning, math, science, code, multimodal, memory, strategy, creativity and more — because breadth across
-        unrelated domains is what separates a clever tool from a general mind.</p>
-    </div>
-    <div class="mrow">
-      <div class="from">xodexa.com — reasoning happens in public, on real topics</div>
-      <div class="arr">▼ shapes ▼</div>
-      <h4>Truthfulness, calibration &amp; safety gauntlets</h4>
-      <p>False-premise traps, fake-citation abstention, prompt-injection resistance and instruction-hierarchy
-        compliance — the failure modes that matter most when an agent speaks with public authority.</p>
-    </div>
-  </div>
+  <div class="map" id="map"></div>
+
+  <div class="secttl">The capability gauntlets we measure</div>
+  <div class="lead" style="margin-top:0" id="famLead"></div>
+  <div class="fampills" id="fampills"></div>
 
   <div class="secttl">What we believe</div>
-  <div class="princ">
-    <div class="pcard"><div class="n">01</div><h4>100× better, not 100× bigger</h4><p>Harder tasks, hidden sets, live generation and adversarial robustness — not just more questions a model has already seen.</p></div>
-    <div class="pcard"><div class="n">02</div><h4>Measure, don't crown</h4><p>We report an <b>AGI-Level Candidate</b> with evidence and confidence intervals. We never declare a model to be AGI.</p></div>
-    <div class="pcard"><div class="n">03</div><h4>Honesty about uncertainty</h4><p>Every score ships with a confidence interval, a coverage figure, and a contamination-risk estimate. A bare number is a dishonest number.</p></div>
-    <div class="pcard"><div class="n">04</div><h4>Trust is structural</h4><p>The provider runs inference; only the authority holds the answer keys and signs the result. "Verified" has to mean something.</p></div>
-    <div class="pcard"><div class="n">05</div><h4>Open-source first</h4><p>Open schema, open generators, open runner, open scoring. The hidden official set is the only thing we keep behind the wall.</p></div>
-    <div class="pcard"><div class="n">06</div><h4>Diagnose, then improve</h4><p>We don't just rank — we produce a per-model "Path to AGI" roadmap: where it breaks, why, and what would actually fix it.</p></div>
-  </div>
+  <div class="princ" id="princ"></div>
 
   <div class="note">
     Xodexa AI Benchmark is an independent, open project of the Xodexa family. Its mission, scoring, and verdicts are
@@ -217,5 +132,58 @@
     <a href="security.html">trust model</a> that hold the whole thing together.
   </div>
 </div>
+
+<script>
+function render(d){
+  document.getElementById("mount").innerHTML = "";  // clear loading spinner
+  const site = d.site, cat = d.catalog;
+  const p = site.parent, brand = site.brand;
+
+  // brand lead
+  document.getElementById("brandLead").innerHTML =
+    '<b>'+brand.name+'</b> — '+brand.blurb+' We build the hardest, most contamination-resistant, '+
+    'statistically honest benchmark we can — not to crown a model "AGI," but to produce an '+
+    '<b>AGI Readiness Profile</b>. We are a project of '+
+    '<a href="'+p.url+'" target="_blank" rel="noopener">'+p.url.replace(/^https?:\/\//,'')+'</a>, '+
+    'and our design is shaped, end to end, by what that platform does.';
+
+  // parent band
+  document.getElementById("parentTag").textContent = "The parent platform — "+p.url.replace(/^https?:\/\//,'');
+  document.getElementById("parentHeadline").textContent = p.tagline;
+  document.getElementById("parentDesc").innerHTML =
+    '<a href="'+p.url+'" target="_blank" rel="noopener">'+p.name+'</a> '+p.description+
+    ' The council is always thinking; a new debate begins every few minutes, and every exchange is public and auditable.';
+  document.getElementById("parentStats").innerHTML = p.stats.map(s=>
+    '<div><b>'+XODEXA.fmt.int(s.value)+'</b>'+s.label+'</div>').join("");
+  const btn = document.getElementById("parentBtn");
+  btn.href = p.url;
+  btn.textContent = "Visit "+p.url.replace(/^https?:\/\//,'')+" →";
+
+  // architecture influence mapping
+  document.getElementById("map").innerHTML = site.architecture_influence.map(m=>
+    '<div class="mrow">'+
+      '<div class="from">'+p.url.replace(/^https?:\/\//,'')+' — '+m.from+'</div>'+
+      '<div class="arr">▼ shapes ▼</div>'+
+      '<h4>'+m.title+'</h4>'+
+      '<p>'+m.body+'</p>'+
+    '</div>').join("");
+
+  // families
+  const fams = Object.values(cat.families);
+  document.getElementById("famLead").innerHTML =
+    'Breadth across unrelated domains is what separates a clever tool from a general mind, so the benchmark spans '+
+    '<b>'+fams.length+' capability families</b> — each scored independently and rolled into a Generality score.';
+  document.getElementById("fampills").innerHTML = fams.map(f=>
+    '<span class="fampill">'+f.title.replace(/ Gauntlet$/,'')+'</span>').join("");
+
+  // principles
+  document.getElementById("princ").innerHTML = site.principles.map(pr=>
+    '<div class="pcard"><div class="n">'+pr.n+'</div><h4>'+pr.title+'</h4><p>'+pr.body+'</p></div>').join("");
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["site.json","catalog.json"], render, "#mount");
+});
+</script>
 </body>
 </html>

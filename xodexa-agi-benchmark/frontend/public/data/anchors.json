@@ -1,0 +1,288 @@
+{
+  "summary": {
+    "total_anchors": 25,
+    "by_contamination_risk": {
+      "low": 7,
+      "medium": 8,
+      "high": 10
+    },
+    "note": "high-risk anchors are likely in training data; use for calibration context only, never as evidence of capability."
+  },
+  "anchors": [
+    {
+      "key": "browsecomp",
+      "name": "BrowseComp (style)",
+      "dimension": "agentic_autonomy",
+      "license": "see-source",
+      "contamination_risk": "low",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "see-source",
+      "notes": "Hard browsing tasks."
+    },
+    {
+      "key": "gaia",
+      "name": "GAIA",
+      "dimension": "agentic_autonomy",
+      "license": "see-source",
+      "contamination_risk": "medium",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:gaia-benchmark/GAIA",
+      "notes": "Tool-using assistant tasks."
+    },
+    {
+      "key": "tau_bench",
+      "name": "tau-bench",
+      "dimension": "agentic_autonomy",
+      "license": "MIT",
+      "contamination_risk": "low",
+      "metric": "pass^k",
+      "normalize": "pass_at_1",
+      "loader": "github:sierra-research/tau-bench",
+      "notes": "Policy-bound conversations."
+    },
+    {
+      "key": "webarena",
+      "name": "WebArena",
+      "dimension": "agentic_autonomy",
+      "license": "Apache-2.0",
+      "contamination_risk": "medium",
+      "metric": "success_rate",
+      "normalize": "success/100",
+      "loader": "github:web-arena-x/webarena",
+      "notes": "Web tasks."
+    },
+    {
+      "key": "bigcodebench",
+      "name": "BigCodeBench",
+      "dimension": "code",
+      "license": "Apache-2.0",
+      "contamination_risk": "medium",
+      "metric": "pass@1",
+      "normalize": "pass_at_1",
+      "loader": "hf:bigcode/bigcodebench",
+      "notes": "Library-use coding."
+    },
+    {
+      "key": "humaneval",
+      "name": "HumanEval",
+      "dimension": "code",
+      "license": "MIT",
+      "contamination_risk": "high",
+      "metric": "pass@1",
+      "normalize": "pass_at_1",
+      "loader": "hf:openai_humaneval",
+      "notes": "Saturated/contaminated — calibration only."
+    },
+    {
+      "key": "livecodebench",
+      "name": "LiveCodeBench",
+      "dimension": "code",
+      "license": "CC",
+      "contamination_risk": "low",
+      "metric": "pass@1",
+      "normalize": "pass_at_1",
+      "loader": "hf:livecodebench/code_generation",
+      "notes": "Time-windowed fresh problems → low contamination."
+    },
+    {
+      "key": "swe_bench_verified",
+      "name": "SWE-bench Verified",
+      "dimension": "code",
+      "license": "MIT",
+      "contamination_risk": "medium",
+      "metric": "resolved_rate",
+      "normalize": "resolved/100",
+      "loader": "hf:princeton-nlp/SWE-bench_Verified",
+      "notes": "Real GitHub issues; hidden tests."
+    },
+    {
+      "key": "aime",
+      "name": "AIME (style)",
+      "dimension": "mathematics",
+      "license": "see-source",
+      "contamination_risk": "medium",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "see-source",
+      "notes": "Olympiad-style short-answer."
+    },
+    {
+      "key": "frontiermath",
+      "name": "FrontierMath (style)",
+      "dimension": "mathematics",
+      "license": "see-source",
+      "contamination_risk": "low",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "see-source",
+      "notes": "Research-level math; very hard."
+    },
+    {
+      "key": "gsm8k",
+      "name": "GSM8K",
+      "dimension": "mathematics",
+      "license": "MIT",
+      "contamination_risk": "high",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:openai/gsm8k",
+      "notes": "Grade-school math; largely saturated."
+    },
+    {
+      "key": "math",
+      "name": "MATH",
+      "dimension": "mathematics",
+      "license": "MIT",
+      "contamination_risk": "high",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:hendrycks/competition_math",
+      "notes": "Competition math."
+    },
+    {
+      "key": "hotpotqa",
+      "name": "HotpotQA",
+      "dimension": "memory",
+      "license": "CC-BY-SA-4.0",
+      "contamination_risk": "high",
+      "metric": "f1",
+      "normalize": "f1/100",
+      "loader": "hf:hotpotqa/hotpot_qa",
+      "notes": "Multi-hop QA."
+    },
+    {
+      "key": "chartqa",
+      "name": "ChartQA",
+      "dimension": "multimodal",
+      "license": "GPL-3.0",
+      "contamination_risk": "high",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:HuggingFaceM4/ChartQA",
+      "notes": "Chart understanding."
+    },
+    {
+      "key": "docvqa",
+      "name": "DocVQA",
+      "dimension": "multimodal",
+      "license": "see-source",
+      "contamination_risk": "high",
+      "metric": "anls",
+      "normalize": "anls",
+      "loader": "hf:lmms-lab/DocVQA",
+      "notes": "Document VQA."
+    },
+    {
+      "key": "mathvista",
+      "name": "MathVista",
+      "dimension": "multimodal",
+      "license": "CC-BY-SA-4.0",
+      "contamination_risk": "medium",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:AI4Math/MathVista",
+      "notes": "Visual math."
+    },
+    {
+      "key": "mmmu",
+      "name": "MMMU",
+      "dimension": "multimodal",
+      "license": "Apache-2.0",
+      "contamination_risk": "medium",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:MMMU/MMMU",
+      "notes": "College-level multimodal."
+    },
+    {
+      "key": "arc_agi",
+      "name": "ARC-AGI (style)",
+      "dimension": "reasoning",
+      "license": "Apache-2.0",
+      "contamination_risk": "low",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "github:fchollet/ARC-AGI",
+      "notes": "Abstraction & reasoning grids."
+    },
+    {
+      "key": "bbh",
+      "name": "BIG-Bench Hard",
+      "dimension": "reasoning",
+      "license": "Apache-2.0",
+      "contamination_risk": "high",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:lukaemon/bbh",
+      "notes": "Hard BIG-Bench subset."
+    },
+    {
+      "key": "drop",
+      "name": "DROP",
+      "dimension": "reasoning",
+      "license": "CC-BY-SA-4.0",
+      "contamination_risk": "high",
+      "metric": "f1",
+      "normalize": "f1/100",
+      "loader": "hf:ucinlp/drop",
+      "notes": "Discrete reasoning over paragraphs."
+    },
+    {
+      "key": "hle",
+      "name": "Humanity's Last Exam (style)",
+      "dimension": "reasoning",
+      "license": "see-source",
+      "contamination_risk": "low",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:cais/hle",
+      "notes": "Expert frontier exam; calibration error is the key honesty signal."
+    },
+    {
+      "key": "mmlu_pro",
+      "name": "MMLU-Pro",
+      "dimension": "reasoning",
+      "license": "MIT",
+      "contamination_risk": "high",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:TIGER-Lab/MMLU-Pro",
+      "notes": "10-choice harder MMLU."
+    },
+    {
+      "key": "gpqa_diamond",
+      "name": "GPQA Diamond",
+      "dimension": "science",
+      "license": "CC-BY-4.0",
+      "contamination_risk": "medium",
+      "metric": "accuracy",
+      "normalize": "accuracy/100",
+      "loader": "hf:Idavidrein/gpqa",
+      "notes": "Graduate-level google-proof QA."
+    },
+    {
+      "key": "healthbench",
+      "name": "HealthBench (style)",
+      "dimension": "science",
+      "license": "see-source",
+      "contamination_risk": "low",
+      "metric": "rubric",
+      "normalize": "rubric",
+      "loader": "see-source",
+      "notes": "Rubric-scored medical (medical_safe only)."
+    },
+    {
+      "key": "truthfulqa",
+      "name": "TruthfulQA",
+      "dimension": "truthfulness",
+      "license": "Apache-2.0",
+      "contamination_risk": "high",
+      "metric": "mc2",
+      "normalize": "mc2",
+      "loader": "hf:truthfulqa/truthful_qa",
+      "notes": "Imitative falsehoods."
+    }
+  ]
+}

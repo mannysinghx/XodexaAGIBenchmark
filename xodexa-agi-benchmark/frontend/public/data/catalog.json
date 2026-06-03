@@ -1,0 +1,369 @@
+{
+  "benchmark_version": "1.0.0",
+  "families": {
+    "reasoning": {
+      "key": "reasoning",
+      "title": "Reasoning Gauntlet",
+      "blurb": "Abstract, symbolic, causal and compositional reasoning; hidden-rule induction; adversarial logic; minimal-example generalization.",
+      "subdomains": [
+        "abstract_grids",
+        "symbolic_strings",
+        "hidden_rule_induction",
+        "causal_graphs",
+        "counterfactual",
+        "analogy_transfer",
+        "compositional",
+        "adversarial_logic",
+        "misleading_context"
+      ],
+      "dimension": "reasoning"
+    },
+    "math": {
+      "key": "math",
+      "title": "Mathematics Gauntlet",
+      "blurb": "Competition and research-style math: algebra, number theory, combinatorics, geometry, probability, proofs and counterexamples.",
+      "subdomains": [
+        "algebra",
+        "number_theory",
+        "combinatorics",
+        "geometry",
+        "probability",
+        "statistics",
+        "analysis",
+        "optimization",
+        "proof",
+        "counterexample"
+      ],
+      "dimension": "mathematics"
+    },
+    "science": {
+      "key": "science",
+      "title": "Science Gauntlet",
+      "blurb": "Graduate-level scientific reasoning, experiment critique, causal inference, statistical interpretation and conflicting-evidence resolution.",
+      "subdomains": [
+        "physics",
+        "chemistry",
+        "biology",
+        "medicine",
+        "neuroscience",
+        "climate",
+        "materials",
+        "engineering",
+        "experimental_design",
+        "causal_inference",
+        "stats_interpretation"
+      ],
+      "dimension": "science"
+    },
+    "code": {
+      "key": "code",
+      "title": "Code & Software Engineering Gauntlet",
+      "blurb": "Real bug fixing, multi-file repos, hidden unit tests, performance and security hardening, refactoring and code review.",
+      "subdomains": [
+        "bugfix",
+        "repo_issue",
+        "fresh_coding",
+        "library_use",
+        "perf",
+        "security_patch",
+        "refactor",
+        "test_writing",
+        "migration",
+        "review"
+      ],
+      "dimension": "code"
+    },
+    "agent": {
+      "key": "agent",
+      "title": "Agentic Autonomy Gauntlet",
+      "blurb": "Long-horizon planning, tool-use, multi-step execution, policy adherence, state tracking and recovery from errors.",
+      "subdomains": [
+        "planning",
+        "tool_use",
+        "policy_adherence",
+        "state_tracking",
+        "error_recovery",
+        "workflow",
+        "filesystem",
+        "database",
+        "spreadsheet",
+        "customer_support"
+      ],
+      "dimension": "agentic_autonomy"
+    },
+    "multimodal": {
+      "key": "multimodal",
+      "title": "Multimodal Gauntlet",
+      "blurb": "Charts, tables, diagrams, documents, screenshots and figures; cross-modal reasoning and contradiction detection.",
+      "subdomains": [
+        "chart_qa",
+        "table_extract",
+        "doc_qa",
+        "diagram",
+        "screenshot_debug",
+        "visual_contradiction",
+        "scientific_figure"
+      ],
+      "dimension": "multimodal"
+    },
+    "truthfulness": {
+      "key": "truthfulness",
+      "title": "Truthfulness & Calibration Gauntlet",
+      "blurb": "False-premise detection, impossible questions, fake-citation traps, uncertain knowledge, source conflict and abstention quality.",
+      "subdomains": [
+        "false_premise",
+        "unanswerable",
+        "fake_citation",
+        "conflicting_sources",
+        "underspecified",
+        "confidence_estimation"
+      ],
+      "dimension": "truthfulness"
+    },
+    "safety": {
+      "key": "safety",
+      "title": "Safety & Robustness Gauntlet",
+      "blurb": "Prompt-injection resistance, instruction-hierarchy compliance, sycophancy, privacy boundaries, refusal precision and adversarial paraphrase consistency.",
+      "subdomains": [
+        "prompt_injection",
+        "instruction_hierarchy",
+        "sycophancy",
+        "privacy",
+        "refusal_precision",
+        "role_confusion",
+        "paraphrase_consistency"
+      ],
+      "dimension": "safety"
+    },
+    "memory": {
+      "key": "memory",
+      "title": "Memory & Context Gauntlet",
+      "blurb": "Long-context recall, cross-document synthesis, contradiction tracking, needle-in-haystack with distractors and context compression.",
+      "subdomains": [
+        "needle",
+        "multi_needle",
+        "cross_doc_synthesis",
+        "contradiction_tracking",
+        "delayed_instruction",
+        "distractor_resistance"
+      ],
+      "dimension": "memory"
+    },
+    "strategy": {
+      "key": "strategy",
+      "title": "Strategy & Decision-Making Gauntlet",
+      "blurb": "Business reasoning, resource allocation, risk assessment, forecasting and tradeoff analysis under uncertainty.",
+      "subdomains": [
+        "resource_allocation",
+        "risk_assessment",
+        "forecasting",
+        "tradeoff",
+        "policy_analysis",
+        "negotiation"
+      ],
+      "dimension": "strategy"
+    },
+    "creativity": {
+      "key": "creativity",
+      "title": "Creativity & Synthesis Gauntlet",
+      "blurb": "Original synthesis, design reasoning, constraint satisfaction, critique and revision, and creative problem solving.",
+      "subdomains": [
+        "design",
+        "constraint_satisfaction",
+        "ideation",
+        "critique_revision",
+        "synthesis"
+      ],
+      "dimension": "reasoning"
+    },
+    "meta_learning": {
+      "key": "meta_learning",
+      "title": "Meta-Learning & Adaptation Gauntlet",
+      "blurb": "Learning a novel rule system inside the task, adapting after feedback, few-shot transfer, self-correction and strategy shift.",
+      "subdomains": [
+        "in_context_rule",
+        "feedback_adaptation",
+        "few_shot_transfer",
+        "self_correction",
+        "strategy_shift"
+      ],
+      "dimension": "reasoning"
+    }
+  },
+  "score_weights": {
+    "reasoning": 0.12,
+    "mathematics": 0.08,
+    "science": 0.08,
+    "code": 0.12,
+    "agentic_autonomy": 0.15,
+    "tool_use": 0.08,
+    "multimodal": 0.08,
+    "truthfulness": 0.08,
+    "safety": 0.1,
+    "memory": 0.05,
+    "strategy": 0.04,
+    "efficiency": 0.02
+  },
+  "grade_bands": [
+    {
+      "lo": 0,
+      "hi": 199,
+      "name": "Weak AI"
+    },
+    {
+      "lo": 200,
+      "hi": 399,
+      "name": "Narrow Competent AI"
+    },
+    {
+      "lo": 400,
+      "hi": 599,
+      "name": "Strong General Assistant"
+    },
+    {
+      "lo": 600,
+      "hi": 749,
+      "name": "Frontier AI"
+    },
+    {
+      "lo": 750,
+      "hi": 849,
+      "name": "Proto-AGI Candidate"
+    },
+    {
+      "lo": 850,
+      "hi": 924,
+      "name": "Advanced Proto-AGI Candidate"
+    },
+    {
+      "lo": 925,
+      "hi": 1000,
+      "name": "AGI-Level Candidate"
+    }
+  ],
+  "agi_levels": [
+    {
+      "level": 0,
+      "name": "Tool-like narrow model",
+      "blurb": "Solves narrow tasks; no transfer, no autonomy."
+    },
+    {
+      "level": 1,
+      "name": "Skilled narrow assistant",
+      "blurb": "Strong in a few domains; brittle outside them; minimal autonomy."
+    },
+    {
+      "level": 2,
+      "name": "Broad assistant",
+      "blurb": "Competent across many domains with human oversight; short-horizon tools."
+    },
+    {
+      "level": 3,
+      "name": "Frontier generalist",
+      "blurb": "Strong, transferable capability; reliable multi-step tool use."
+    },
+    {
+      "level": 4,
+      "name": "Proto-AGI candidate",
+      "blurb": "Long-horizon autonomy with limited help; good calibration & robustness."
+    },
+    {
+      "level": 5,
+      "name": "AGI-level candidate",
+      "blurb": "Near/above expert humans across broad task families; safe, reliable, autonomous."
+    },
+    {
+      "level": 6,
+      "name": "Superhuman generalist candidate",
+      "blurb": "Consistently above expert humans across unrelated domains with strong safety."
+    }
+  ],
+  "subscores": [
+    {
+      "key": "generality",
+      "label": "Generality",
+      "weight": 0.15
+    },
+    {
+      "key": "autonomy",
+      "label": "Autonomy",
+      "weight": 0.15
+    },
+    {
+      "key": "reliability",
+      "label": "Reliability",
+      "weight": 0.12
+    },
+    {
+      "key": "transfer",
+      "label": "Transfer",
+      "weight": 0.1
+    },
+    {
+      "key": "grounding",
+      "label": "Grounding",
+      "weight": 0.1
+    },
+    {
+      "key": "safety",
+      "label": "Safety",
+      "weight": 0.12
+    },
+    {
+      "key": "calibration",
+      "label": "Calibration",
+      "weight": 0.08
+    },
+    {
+      "key": "economic_usefulness",
+      "label": "Economic Usefulness",
+      "weight": 0.08
+    },
+    {
+      "key": "human_parity",
+      "label": "Human-Parity",
+      "weight": 0.06
+    },
+    {
+      "key": "failure_severity",
+      "label": "Failure-Severity",
+      "weight": 0.04
+    }
+  ],
+  "failure_types": [
+    "hallucination",
+    "invalid_reasoning",
+    "math_error",
+    "proof_error",
+    "code_error",
+    "hidden_test_failure",
+    "tool_misuse",
+    "context_loss",
+    "prompt_injection_failure",
+    "unsafe_compliance",
+    "excessive_refusal",
+    "overconfidence",
+    "poor_calibration",
+    "policy_violation",
+    "planning_failure",
+    "memory_failure",
+    "multimodal_grounding_failure",
+    "source_misuse",
+    "task_abandonment",
+    "inconsistent_retry"
+  ],
+  "severities": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "difficulty_bands": [
+    "easy",
+    "medium",
+    "hard",
+    "expert",
+    "frontier",
+    "superhuman"
+  ]
+}

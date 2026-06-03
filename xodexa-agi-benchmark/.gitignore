@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 .env
 node_modules/
+.claude/
+.vercel/
 
 # Trust boundary: hidden-set answer keys must NEVER be committed/shipped.
 server_keys/

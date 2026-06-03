@@ -4,96 +4,68 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Frontier Observatory</title>
+<link rel="stylesheet" href="assets/theme.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="assets/data.js" defer></script>
 <style>
-  :root{
-    --bg:#05070c; --ink:#e9eff8; --mut:#7c8aa3; --mut2:#9fb0c8;
-    --cy:#34e1e1; --vi:#8a7bff; --gd:#ffd166; --gn:#27d796; --am:#ffb454; --rd:#ff5d6c;
-    --line:#16203a; --line2:#22324f;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:
-      radial-gradient(900px 480px at 88% 8%,rgba(52,225,225,.06),transparent 60%),
-      radial-gradient(1100px 600px at 12% 0%,rgba(138,123,255,.07),transparent 55%),
-      var(--bg);
-    color:var(--ink);font:13.5px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    -webkit-font-smoothing:antialiased}
-  .wrap{max-width:1320px;margin:0 auto;padding:22px 22px 60px}
-  .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:13px}
-  .mark{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--cy);position:relative;
-    box-shadow:0 0 22px rgba(52,225,225,.35),inset 0 0 14px rgba(52,225,225,.18)}
-  .mark::after{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--cy);
-    box-shadow:0 0 12px var(--cy)}
-  h1{font-size:18px;margin:0;letter-spacing:.4px;font-weight:600}
-  .tag{color:var(--mut);font-size:11.5px;margin-top:2px;letter-spacing:.3px}
-  .navpill{font-family:var(--mono);font-size:10.5px;color:var(--mut2);border:1px solid var(--line);
-    border-radius:999px;padding:6px 12px;letter-spacing:.4px}
   .hero{margin-top:18px;border:1px solid var(--line);border-radius:18px;overflow:hidden;
-    background:linear-gradient(180deg,#080c15,#070a11)}
-  .herohead{display:flex;align-items:baseline;justify-content:space-between;padding:14px 18px 6px}
-  .herohead .t{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--mut)}
-  .herohead .t b{color:var(--cy);font-weight:600}
-  .herohead .legend{display:flex;gap:14px;font-size:11px;color:var(--mut)}
+    background:var(--panel);box-shadow:var(--shadow)}
+  .herohead{display:flex;align-items:baseline;justify-content:space-between;padding:14px 18px 6px;flex-wrap:wrap;gap:8px}
+  .herohead .t{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted)}
+  .herohead .t b{color:var(--accent);font-weight:600}
+  .herohead .legend{display:flex;gap:14px;font-size:11px;color:var(--muted)}
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
-  .stage{display:grid;grid-template-columns:54px 1fr 320px;gap:0}
+  .stage{display:grid;grid-template-columns:54px 1fr 340px;gap:0}
   .ascent{padding:14px 6px 14px 14px}
-  .field{position:relative}
+  .field{position:relative;background:var(--panel)}
   #field{width:100%;display:block}
-  .dossier{border-left:1px solid var(--line);padding:14px 16px;min-height:520px}
-  .tip{position:absolute;pointer-events:none;background:#0a1120;border:1px solid var(--line2,#22324f);
-    border-radius:9px;padding:7px 9px;font-family:var(--mono);font-size:11px;color:var(--ink);
-    box-shadow:0 8px 24px rgba(0,0,0,.5);opacity:0;transition:opacity .08s;white-space:nowrap;z-index:9}
-  .dchip{display:inline-block;font-size:9.5px;padding:3px 8px;border-radius:6px;border:1px solid var(--line);font-family:var(--mono);letter-spacing:.3px}
-  .c-att{color:#0a0f17;background:linear-gradient(90deg,var(--gd),#ffe6a0);border:none;font-weight:800}
-  .c-ver{color:var(--gn);border-color:rgba(39,215,150,.4);background:rgba(39,215,150,.08)}
-  .c-flag{color:var(--am);border-color:rgba(255,180,84,.4);background:rgba(255,180,84,.08)}
-  .c-local{color:var(--mut)}
-  .dname{font-size:16px;font-weight:600;margin:8px 0 2px}
-  .dmeta{color:var(--mut);font-size:11.5px;font-family:var(--mono)}
-  .bigscore{font-family:var(--mono);font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin-top:10px}
-  .bigscore small{font-size:14px;color:var(--mut);font-weight:400}
-  .grade{font-size:12px;color:var(--cy);letter-spacing:.5px;margin-top:-2px}
+  .dossier{border-left:1px solid var(--line);padding:14px 16px;min-height:520px;background:var(--panel2)}
+  .tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line2);
+    border-radius:9px;padding:7px 9px;font-family:var(--mono);font-size:11px;color:var(--txt);
+    box-shadow:var(--shadow);opacity:0;transition:opacity .08s;white-space:nowrap;z-index:9}
+  .dchip{display:inline-block;font-size:9.5px;padding:3px 8px;border-radius:6px;border:1px solid var(--line2);font-family:var(--mono);letter-spacing:.3px;color:var(--muted2);background:var(--panel)}
+  .dname{font-size:16px;font-weight:700;margin:8px 0 2px;color:var(--txt)}
+  .dmeta{color:var(--muted);font-size:11.5px;font-family:var(--mono)}
+  .bigscore{font-family:var(--mono);font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin-top:10px;color:var(--txt)}
+  .bigscore small{font-size:14px;color:var(--muted);font-weight:400}
+  .grade{font-size:12px;color:var(--accent);letter-spacing:.5px;margin-top:-2px;font-weight:600}
   .twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-  .stat{border:1px solid var(--line);border-radius:10px;padding:8px 10px}
-  .stat .l{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.7px}
-  .stat .v{font-family:var(--mono);font-size:16px;margin-top:3px}
-  #dradar{height:170px;margin-top:4px}
+  .stat{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--panel)}
+  .stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
+  .stat .v{font-family:var(--mono);font-size:16px;margin-top:3px;color:var(--txt)}
+  #dradar{height:185px;margin-top:4px}
   .failrow{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:11px}
-  .failrow .nm{width:78px;color:var(--mut2)}
-  .bar{flex:1;height:7px;border-radius:4px;background:#101a2e;overflow:hidden;position:relative}
-  .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:linear-gradient(90deg,#5a1f28,var(--rd))}
-  .failrow .pc{width:44px;text-align:right;font-family:var(--mono);color:var(--rd)}
+  .failrow .nm{width:96px;color:var(--muted2)}
+  .fbar{flex:1;height:7px;border-radius:4px;background:var(--panel2);overflow:hidden;position:relative;border:1px solid var(--line)}
+  .fbar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--bad)}
+  .failrow .pc{width:44px;text-align:right;font-family:var(--mono);color:var(--bad)}
   .panels{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:16px}
-  .card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#080c15,#070a11);padding:14px 16px}
-  .card h3{margin:0 0 4px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut)}
-  .card .sub{color:var(--mut);font-size:11px;margin-bottom:12px}
+  .ocard{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:14px 16px;box-shadow:var(--shadow-soft)}
+  .ocard h3{margin:0 0 4px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .ocard .csub{color:var(--muted);font-size:11px;margin-bottom:12px}
   .spec{display:flex;flex-direction:column;gap:9px}
   .specrow{display:flex;align-items:center;gap:10px}
-  .specrow .g{width:104px;font-size:11.5px;color:var(--mut2)}
-  .track{flex:1;height:14px;border-radius:7px;background:#0c1424;overflow:hidden;position:relative;border:1px solid var(--line)}
-  .track i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#4a1820,var(--rd))}
-  .track b{position:absolute;right:0;top:0;bottom:0;background:rgba(39,215,150,.16)}
-  .specrow .v{width:84px;text-align:right;font-family:var(--mono);font-size:11px;color:var(--rd)}
+  .specrow .g{width:120px;font-size:11.5px;color:var(--muted2)}
+  .track{flex:1;height:14px;border-radius:7px;background:var(--panel2);overflow:hidden;position:relative;border:1px solid var(--line)}
+  .track i{position:absolute;left:0;top:0;bottom:0;background:var(--bad)}
+  .track b{position:absolute;right:0;top:0;bottom:0;background:rgba(14,157,110,.16)}
+  .specrow .v{width:84px;text-align:right;font-family:var(--mono);font-size:11px;color:var(--bad)}
   .ledger{display:flex;flex-direction:column;gap:2px}
-  .lrow{display:grid;grid-template-columns:22px 1fr 66px 86px 74px;align-items:center;gap:8px;
+  .lrow{display:grid;grid-template-columns:22px 1fr 70px 90px 64px;align-items:center;gap:8px;
     padding:7px 8px;border-radius:9px;cursor:pointer;border:1px solid transparent}
-  .lrow:hover{background:#0b1322;border-color:var(--line)}
-  .lrow.sel{background:rgba(52,225,225,.06);border-color:rgba(52,225,225,.35)}
-  .lrk{font-family:var(--mono);color:var(--mut);font-size:12px}
-  .lnm{font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:7px;min-width:0}
-  .lnm small{color:var(--mut);font-weight:400;font-family:var(--mono);font-size:10px}
-  .lap{font-family:var(--mono);font-size:13px;text-align:right}
+  .lrow:hover{background:var(--panel2);border-color:var(--line)}
+  .lrow.sel{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.35)}
+  .lrk{font-family:var(--mono);color:var(--muted);font-size:12px}
+  .lnm{font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:7px;min-width:0;color:var(--txt)}
+  .lnm small{color:var(--muted);font-weight:400;font-family:var(--mono);font-size:10px}
+  .lap{font-family:var(--mono);font-size:13px;text-align:right;color:var(--txt)}
   .spark{display:flex;gap:2px;align-items:flex-end;height:20px}
-  .spark i{width:7px;background:var(--cy);border-radius:1px;opacity:.85}
-  .foot{color:var(--mut);font-size:11px;line-height:1.7;margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
-  .ax{fill:#5f6e88;font-family:var(--mono);font-size:10px}
-  .axl{fill:#46546e;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px}
-  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
-  nav.mainnav a{padding:9px 13px;color:var(--mut);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
-  nav.mainnav a:hover{color:var(--mut2)}
-  nav.mainnav a.on{color:var(--ink);border-color:var(--cy)}
+  .spark i{width:6px;border-radius:1px;opacity:.9}
+  .ll{font-family:var(--mono);font-size:9.5px;text-align:right;color:var(--muted)}
+  .foot{color:var(--muted);font-size:11px;line-height:1.7;margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
+  .foot b{color:var(--txt)}
+  .ax{fill:var(--muted);font-family:var(--mono);font-size:10px}
+  .axl{fill:var(--muted);font-family:var(--mono);font-size:9.5px;letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -102,11 +74,11 @@
     <div class="brand">
       <div class="mark"></div>
       <div>
-        <h1>Xodexa&nbsp;AGI&nbsp;Benchmark&nbsp;<span style="color:var(--mut);font-weight:400">· Frontier Observatory</span></h1>
-        <div class="tag"><b style="color:var(--cy);font-weight:600">Built to break the best.</b> The unforgiving open benchmark for frontier AI — we don't rank models, we map how far they fall short of AGI.</div>
+        <h1 id="brandName">Xodexa&nbsp;AGI&nbsp;Benchmark&nbsp;<span style="color:var(--muted);font-weight:400">· Frontier Observatory</span></h1>
+        <div class="tag" id="brandTag"></div>
       </div>
     </div>
-    <div class="navpill">v1.0.0 · capability × honesty · AGI horizon = 1000</div>
+    <div class="navpill" id="brandPill">capability × honesty</div>
   </div>
 
   <nav class="mainnav">
@@ -122,15 +94,12 @@
     <a href="about.html">About</a>
   </nav>
 
-  <div class="hero">
+  <div id="mount"></div>
+
+  <div class="hero" id="hero" style="display:none">
     <div class="herohead">
       <div class="t">The Frontier Field — <b>capability</b> against <b>honesty</b></div>
-      <div class="legend">
-        <span><span class="dot" style="background:var(--gd)"></span>attested</span>
-        <span><span class="dot" style="background:var(--gn)"></span>verified</span>
-        <span><span class="dot" style="background:var(--am)"></span>flagged</span>
-        <span><span class="dot" style="background:var(--mut)"></span>local</span>
-      </div>
+      <div class="legend" id="bandLegend"></div>
     </div>
     <div class="stage">
       <div class="ascent"><svg id="ascent" viewBox="0 0 54 520" width="54" height="520"></svg></div>
@@ -140,105 +109,135 @@
     </div>
   </div>
 
-  <div class="panels">
-    <div class="card">
+  <div class="panels" id="panels" style="display:none">
+    <div class="ocard">
       <h3>Where models break</h3>
-      <div class="sub">Average failure rate per gauntlet across all evaluated models. This is the product: the red is the point.</div>
+      <div class="csub">Average failure rate per gauntlet across all evaluated models. The red is the point.</div>
       <div class="spec" id="spec"></div>
     </div>
-    <div class="card">
+    <div class="ocard">
       <h3>The field, as a ledger</h3>
-      <div class="sub">Same models, ranked by Xodexa Score. Click any row or orb to inspect. Bars = the seven gauntlets.</div>
+      <div class="csub">Same models, ranked by Xodexa Score. Click any row or orb to inspect. Bars = gauntlet sub-scores.</div>
       <div class="ledger" id="ledger"></div>
     </div>
   </div>
 
-  <div class="foot">
-    Two coordinates per model. <b>Capability</b> (x) is the Xodexa Score, 0 → an <b>AGI horizon at 1000 that nothing reaches</b>.
-    <b>Honesty</b> (y) is 100 − RMS calibration error, so a confidently-wrong model literally sinks regardless of how clever it is —
-    the failure mode Scale's HLE found in every frontier model. The glowing arc is the Pareto frontier: the current edge of the
-    possible. Numbers are illustrative seed data; the live observatory reads <code>/v1/leaderboard</code>.
+  <div class="foot" id="foot" style="display:none">
+    Two coordinates per model. <b>Capability</b> (x) is the Xodexa Score, 0 → an <b>AGI horizon</b> that nothing reaches.
+    <b>Honesty</b> (y) is 100 − calibration error, so a confidently-wrong model sinks regardless of how clever it is.
+    The dashed arc is the Pareto frontier — the current edge of the possible. The observatory reads live JSON from <code>./data/</code>.
   </div>
 </div>
 
 <script>
-const DATA=[
- {m:"Apex-Frontier-XL",lab:"closed-lab",os:false,apex:712.4,acc:46.44,ci:1.96,ce:51.0,cov:0.78,st:"flag",
-  g:{Reasoning:761.2,"Long-Horizon":803.5,Truthful:548.9,Code:739.1,Agent:690.4,Multimodal:701.8,Safety:712.0}},
- {m:"MoE-400B-A40B",lab:"open-source",os:true,apex:651.7,acc:40.56,ci:1.92,ce:50.0,cov:0.78,st:"ver",
-  g:{Reasoning:690.3,"Long-Horizon":744.2,Truthful:560.1,Code:642.7,Agent:560.3,Multimodal:611.9,Safety:639.4}},
- {m:"OpenLlama-70B-Instruct",lab:"open-source",os:true,apex:604.2,acc:37.52,ci:1.90,ce:57.0,cov:0.67,st:"ver",
-  g:{Reasoning:651.0,"Long-Horizon":690.6,Truthful:521.4,Code:588.2,Agent:512.7,Multimodal:540.0,Safety:600.1}},
- {m:"Frontier-Closed-Pro",lab:"closed-lab",os:false,apex:583.6,acc:36.20,ci:1.88,ce:47.0,cov:0.89,st:"att",
-  g:{Reasoning:620.4,"Long-Horizon":660.1,Truthful:498.0,Code:611.5,Agent:548.9,Multimodal:590.2,Safety:578.3}},
- {m:"Research-Preview-R1",lab:"research-lab",os:false,apex:560.9,acc:34.44,ci:1.86,ce:73.0,cov:0.67,st:"flag",
-  g:{Reasoning:712.0,"Long-Horizon":540.2,Truthful:430.0,Code:690.1,Agent:470.3,Multimodal:520.4,Safety:505.5}},
- {m:"Mixtral-Next-8x22B",lab:"open-source",os:true,apex:498.3,acc:25.32,ci:1.70,ce:50.0,cov:0.67,st:"ver",
-  g:{Reasoning:540.1,"Long-Horizon":560.7,Truthful:441.2,Code:520.0,Agent:430.6,Multimodal:470.1,Safety:489.9}},
- {m:"Self-hosted vLLM-32B",lab:"local",os:true,apex:421.6,acc:19.20,ci:1.54,ce:65.0,cov:0.56,st:"ver",
-  g:{Reasoning:470.2,"Long-Horizon":430.9,Truthful:388.5,Code:441.0,Agent:360.2,Multimodal:401.4,Safety:420.0}},
- {m:"Gemma-Plus-13B",lab:"open-source",os:true,apex:352.8,acc:12.08,ci:1.28,ce:80.0,cov:0.56,st:"ver",
-  g:{Reasoning:401.0,"Long-Horizon":360.3,Truthful:300.2,Code:370.5,Agent:280.1,Multimodal:330.0,Safety:351.7}},
- {m:"Local Ollama llama3-8B",lab:"local",os:true,apex:198.4,acc:5.68,ci:0.91,ce:83.0,cov:0.44,st:"local",
-  g:{Reasoning:240.1,"Long-Horizon":190.0,Truthful:160.6,Code:210.3,Agent:120.4,Multimodal:170.2,Safety:200.5}},
- {m:"Nano-Chat-1.5B",lab:"open-source",os:true,apex:118.7,acc:2.72,ci:0.64,ce:89.0,cov:0.33,st:"local",
-  g:{Reasoning:150.2,"Long-Horizon":110.4,Truthful:90.1,Code:130.0,Agent:70.2,Multimodal:101.3,Safety:120.8}},
-];
-const COL={att:"var(--gd)",ver:"var(--gn)",flag:"var(--am)",local:"var(--mut)"};
-const HEX={att:"#ffd166",ver:"#27d796",flag:"#ffb454",local:"#7c8aa3"};
-const BADGE={att:["Verified + Attested","c-att"],ver:["Verified","c-ver"],flag:["Flagged · review","c-flag"],local:["Local · unofficial","c-local"]};
-const GAUNTLETS=["Reasoning","Long-Horizon","Truthful","Code","Agent","Multimodal","Safety"];
-const BANDS=[[0,"Weak"],[200,"Basic"],[400,"Strong"],[600,"Frontier"],[750,"Proto-AGI"],[900,"AGI"]];
-DATA.forEach(d=>d.hon=100-d.ce);
+let DATA=[], GAUNTLETS=[], GKEYS=[], BANDS=[], HORIZON=1000, P, selected=null, dradar=null;
 
-const X0=86,X1=872,Y0=58,Y1=452;
-const sx=a=>X0+(a/1000)*(X1-X0);
+function init(d){
+  P = XODEXA.palette();
+  const site = d.site, cat = d.catalog, lb = d.leaderboard;
+  HORIZON = (site && site.score_horizon) || 1000;
+
+  // brand text
+  if(site && site.brand){
+    document.getElementById("brandTag").innerHTML =
+      '<b style="color:var(--accent);font-weight:600">'+site.brand.tagline+'</b> '+site.brand.blurb;
+  }
+  document.getElementById("brandPill").textContent =
+    "v"+(lb.benchmark_version||cat.benchmark_version||"")+" · capability × honesty · horizon = "+HORIZON;
+
+  // gauntlet families (use family_scores keys present on the first entry, ordered by catalog families)
+  const fam = cat.families || {};
+  const firstFs = (lb.entries[0] && lb.entries[0].family_scores) || {};
+  GKEYS = Object.keys(fam).filter(k => k in firstFs);
+  if(!GKEYS.length) GKEYS = Object.keys(firstFs);
+  GAUNTLETS = GKEYS.map(k => (fam[k] && fam[k].title ? fam[k].title.replace(/ Gauntlet$/,'') : XODEXA.fmt.cap(k)));
+
+  // grade bands (0..1000 scaled to horizon if horizon != 1000)
+  BANDS = (cat.grade_bands||[]).map(b => ({lo:b.lo, name:b.name}));
+
+  // map entries → working rows (capability 0..horizon, honesty 0..100)
+  DATA = lb.entries.map(e => ({
+    m: e.model,
+    cap: e.xodexa_score,
+    hon: 100 - e.calibration_error,
+    ce: e.calibration_error,
+    acc: e.accuracy,
+    ci: e.ci,
+    agi_index: e.agi_index,
+    agi_level: e.agi_level,
+    agi_level_name: e.agi_level_name,
+    grade: e.grade,
+    contamination_risk: e.contamination_risk,
+    time_horizon: e.time_horizon,
+    rank_ub: e.rank_ub,
+    fs: e.family_scores || {},
+    sub: e.subscores || {},
+    color: XODEXA.gradeColor(e.xodexa_score, P)
+  })).sort((a,b)=>b.cap-a.cap);
+
+  selected = DATA[0];
+
+  document.getElementById("hero").style.display="";
+  document.getElementById("panels").style.display="";
+  document.getElementById("foot").style.display="";
+  legend();
+  field(); ascent(); dossier(); spectrum(); ledger();
+  window.addEventListener("resize",()=>{ dradar && dradar.resize(); });
+}
+
+function legend(){
+  // legend = grade bands shown via gradeColor at representative scores
+  const reps=[120,300,500,675,800,950];
+  document.getElementById("bandLegend").innerHTML = reps.map(v=>{
+    const b = BANDS.slice().reverse().find(x=>v>=x.lo);
+    return '<span><span class="dot" style="background:'+XODEXA.gradeColor(v,P)+'"></span>'+(b?b.name:'')+'</span>';
+  }).join("");
+}
+
+// scales
+const X0=92,X1=872,Y0=58,Y1=452;
+const sx=a=>X0+(a/HORIZON)*(X1-X0);
 const sy=h=>Y1-(h/100)*(Y1-Y0);
 
 function pareto(){
-  const s=[...DATA].sort((a,b)=>b.apex-a.apex);
+  const s=[...DATA].sort((a,b)=>b.cap-a.cap);
   let best=-1,fr=[];
-  s.forEach(d=>{if(d.hon>best){best=d.hon;fr.push(d);}});
-  return fr.sort((a,b)=>a.apex-b.apex);
+  s.forEach(d=>{ if(d.hon>best){ best=d.hon; fr.push(d); } });
+  return fr.sort((a,b)=>a.cap-b.cap);
 }
-
-let selected=DATA[0];
 
 function field(){
   const f=document.getElementById("field");
   let s="";
-  for(let gx=0;gx<=1000;gx+=100){const x=sx(gx);
-    s+=`<line x1="${x}" y1="${Y0}" x2="${x}" y2="${Y1}" stroke="#0e1729" stroke-width="1"/>`;}
+  for(let gx=0;gx<=HORIZON;gx+=HORIZON/10){const x=sx(gx);
+    s+='<line x1="'+x+'" y1="'+Y0+'" x2="'+x+'" y2="'+Y1+'" stroke="'+P.line+'" stroke-width="1"/>';}
   for(let gy=0;gy<=100;gy+=25){const y=sy(gy);
-    s+=`<line x1="${X0}" y1="${y}" x2="${X1}" y2="${y}" stroke="#0e1729" stroke-width="1"/>`;
-    s+=`<text class="ax" x="${X0-10}" y="${y+3}" text-anchor="end">${gy}</text>`;}
-  // grade bands on x
-  BANDS.forEach(([v,nm])=>{const x=sx(v);
-    s+=`<text class="axl" x="${x}" y="${Y1+18}" text-anchor="middle">${v}</text>`;
-    s+=`<text class="axl" x="${x}" y="${Y1+30}" text-anchor="middle" fill="#3a475f">${nm}</text>`;});
-  s+=`<text class="ax" x="${(X0+X1)/2}" y="${Y1+46}" text-anchor="middle" fill="#5f6e88">CAPABILITY  ·  Xodexa Score →</text>`;
-  s+=`<text class="ax" transform="translate(20,${(Y0+Y1)/2}) rotate(-90)" text-anchor="middle" fill="#5f6e88">HONESTY  ·  100 − calibration error →</text>`;
-  // AGI horizon (unreached) at x=1000
-  const xh=sx(1000);
-  s+=`<defs><linearGradient id="hz" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="rgba(52,225,225,0)"/><stop offset="1" stop-color="rgba(52,225,225,.5)"/></linearGradient></defs>`;
-  s+=`<rect x="${sx(900)}" y="${Y0}" width="${xh-sx(900)}" height="${Y1-Y0}" fill="url(#hz)" opacity=".25"/>`;
-  s+=`<line x1="${xh}" y1="${Y0-6}" x2="${xh}" y2="${Y1}" stroke="var(--cy)" stroke-width="1.5" stroke-dasharray="2 4" opacity=".8"/>`;
-  s+=`<text class="axl" transform="translate(${xh-6},${Y0+86}) rotate(-90)" text-anchor="middle" fill="#34e1e1" opacity=".9">AGI HORIZON — UNREACHED</text>`;
-  // pareto frontier arc
+    s+='<line x1="'+X0+'" y1="'+y+'" x2="'+X1+'" y2="'+y+'" stroke="'+P.line+'" stroke-width="1"/>';
+    s+='<text class="ax" x="'+(X0-10)+'" y="'+(y+3)+'" text-anchor="end">'+gy+'</text>';}
+  // grade band ticks on x
+  BANDS.forEach(b=>{const x=sx(b.lo);
+    s+='<text class="axl" x="'+x+'" y="'+(Y1+18)+'" text-anchor="middle">'+b.lo+'</text>';
+    s+='<text class="axl" x="'+x+'" y="'+(Y1+30)+'" text-anchor="middle" fill="'+P.muted+'">'+b.name+'</text>';});
+  s+='<text class="ax" x="'+((X0+X1)/2)+'" y="'+(Y1+48)+'" text-anchor="middle" fill="'+P.muted2+'">CAPABILITY · Xodexa Score →</text>';
+  s+='<text class="ax" transform="translate(22,'+((Y0+Y1)/2)+') rotate(-90)" text-anchor="middle" fill="'+P.muted2+'">HONESTY · 100 − calibration error →</text>';
+  // AGI horizon line at x=HORIZON
+  const xh=sx(HORIZON);
+  s+='<line x1="'+xh+'" y1="'+(Y0-6)+'" x2="'+xh+'" y2="'+Y1+'" stroke="'+P.accent+'" stroke-width="1.5" stroke-dasharray="2 4" opacity=".8"/>';
+  s+='<text class="axl" transform="translate('+(xh-6)+','+(Y0+90)+') rotate(-90)" text-anchor="middle" fill="'+P.accent+'">AGI HORIZON — UNREACHED</text>';
+  // pareto frontier
   const fr=pareto();
   if(fr.length>1){
-    let dpath=fr.map((d,i)=>`${i?"L":"M"}${sx(d.apex).toFixed(1)} ${sy(d.hon).toFixed(1)}`).join(" ");
-    s+=`<path d="${dpath}" fill="none" stroke="#34e1e1" stroke-width="1.4" stroke-dasharray="4 5" opacity=".55"/>`;
-    s+=`<text class="axl" x="${sx(fr[fr.length-1].apex)-4}" y="${sy(fr[fr.length-1].hon)-10}" text-anchor="end" fill="#34e1e1">PARETO FRONTIER</text>`;
+    const dpath=fr.map((d,i)=>(i?"L":"M")+sx(d.cap).toFixed(1)+" "+sy(d.hon).toFixed(1)).join(" ");
+    s+='<path d="'+dpath+'" fill="none" stroke="'+P.accent+'" stroke-width="1.4" stroke-dasharray="4 5" opacity=".5"/>';
+    const last=fr[fr.length-1];
+    s+='<text class="axl" x="'+(sx(last.cap)-4)+'" y="'+(sy(last.hon)-10)+'" text-anchor="end" fill="'+P.accent+'">PARETO FRONTIER</text>';
   }
-  // orbs
+  // orbs (size from agi_index)
   DATA.forEach((d,i)=>{
-    const x=sx(d.apex),y=sy(d.hon),r=6+d.cov*7,c=HEX[d.st];
-    s+=`<circle class="orb" data-i="${i}" cx="${x}" cy="${y}" r="${r}"
-        fill="${c}" fill-opacity=".18" stroke="${c}" stroke-width="1.5" style="cursor:pointer"/>`;
-    s+=`<circle class="orbcore" data-i="${i}" cx="${x}" cy="${y}" r="2.4" fill="${c}" style="cursor:pointer"/>`;
-    if(i<3) s+=`<text class="axl" x="${x}" y="${y-r-6}" text-anchor="middle" fill="#9fb0c8">${d.m}</text>`;
+    const x=sx(d.cap),y=sy(d.hon),r=6+(d.agi_index||0)*12,c=d.color;
+    s+='<circle class="orb" data-i="'+i+'" cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+c+'" fill-opacity=".16" stroke="'+c+'" stroke-width="1.5" style="cursor:pointer"/>';
+    s+='<circle class="orbcore" data-i="'+i+'" cx="'+x+'" cy="'+y+'" r="2.6" fill="'+c+'" style="cursor:pointer"/>';
+    if(i<3) s+='<text class="axl" x="'+x+'" y="'+(y-r-6)+'" text-anchor="middle" fill="'+P.muted2+'">'+d.m+'</text>';
   });
   f.innerHTML=s;
   f.querySelectorAll(".orb,.orbcore").forEach(o=>{
@@ -249,7 +248,7 @@ function field(){
 }
 function showtip(e,d){
   const t=document.getElementById("tip");
-  t.innerHTML=`${d.m} — Xodexa ${d.apex.toFixed(2)} · acc ${d.acc.toFixed(2)}% · CE ${d.ce.toFixed(1)}`;
+  t.innerHTML=d.m+" — Xodexa "+d.cap.toFixed(1)+" · acc "+d.acc.toFixed(2)+"% · CE "+d.ce.toFixed(1);
   const host=document.getElementById("field").getBoundingClientRect();
   t.style.left=(e.clientX-host.left+12)+"px";t.style.top=(e.clientY-host.top-6)+"px";t.style.opacity=1;
 }
@@ -257,82 +256,81 @@ function hidetip(){document.getElementById("tip").style.opacity=0;}
 
 function ascent(){
   const a=document.getElementById("ascent");const T=30,B=500;
-  const yv=v=>B-(v/1000)*(B-T);
-  let s=`<text class="axl" x="27" y="18" text-anchor="middle" fill="#34e1e1">1000</text>`;
-  s+=`<line x1="27" y1="${T}" x2="27" y2="${B}" stroke="#1a2740" stroke-width="3"/>`;
-  BANDS.forEach(([v,nm])=>{const y=yv(v);
-    s+=`<line x1="20" y1="${y}" x2="34" y2="${y}" stroke="#26344e" stroke-width="1"/>`;
-    s+=`<text class="axl" transform="translate(14,${y-3}) rotate(-90)" text-anchor="end" fill="#3a475f">${nm}</text>`;});
-  // top model marker
-  const top=Math.max(...DATA.map(d=>d.apex));
-  s+=`<circle cx="27" cy="${yv(top)}" r="4" fill="#34e1e1"/>`;
-  s+=`<text class="axl" x="40" y="${yv(top)+3}" fill="#34e1e1">${top.toFixed(0)}</text>`;
-  // selected marker
-  s+=`<rect id="selmark" x="22" y="${yv(selected.apex)-1.5}" width="10" height="3" fill="#fff"/>`;
+  const yv=v=>B-(v/HORIZON)*(B-T);
+  let s='<text class="axl" x="27" y="18" text-anchor="middle" fill="'+P.accent+'">'+HORIZON+'</text>';
+  s+='<line x1="27" y1="'+T+'" x2="27" y2="'+B+'" stroke="'+P.line2+'" stroke-width="3"/>';
+  BANDS.forEach(b=>{const y=yv(b.lo);
+    s+='<line x1="20" y1="'+y+'" x2="34" y2="'+y+'" stroke="'+P.line2+'" stroke-width="1"/>';
+    s+='<text class="axl" transform="translate(14,'+(y-3)+') rotate(-90)" text-anchor="end" fill="'+P.muted+'">'+b.name+'</text>';});
+  const top=Math.max(...DATA.map(d=>d.cap));
+  s+='<circle cx="27" cy="'+yv(top)+'" r="4" fill="'+P.accent+'"/>';
+  s+='<text class="axl" x="40" y="'+(yv(top)+3)+'" fill="'+P.accent+'">'+top.toFixed(0)+'</text>';
+  s+='<rect x="22" y="'+(yv(selected.cap)-1.5)+'" width="10" height="3" fill="'+P.muted2+'"/>';
   a.innerHTML=s;
 }
 
-let dradar;
 function dossier(){
-  const d=selected,[blab,bcls]=BADGE[d.st],el=document.getElementById("dossier");
-  el.innerHTML=`
-    <span class="dchip ${bcls}">${blab}</span>
-    <div class="dname">${d.m}</div>
-    <div class="dmeta">${d.os?"open-source":"closed"} · ${d.lab} · coverage ${(d.cov*100).toFixed(0)}%</div>
-    <div class="bigscore">${d.apex.toFixed(2)} <small>/ 1000</small></div>
-    <div class="grade">${grade(d.apex)} · ${(1000-d.apex).toFixed(2)} below AGI horizon</div>
-    <div class="twocol">
-      <div class="stat"><div class="l">Frontier accuracy</div><div class="v">${d.acc.toFixed(2)}<span style="color:var(--mut);font-size:11px"> ±${d.ci.toFixed(2)}</span></div></div>
-      <div class="stat"><div class="l">Calibration error</div><div class="v" style="color:${d.ce>=70?'var(--rd)':d.ce>=45?'var(--am)':'var(--gn)'}">${d.ce.toFixed(1)} <span style="font-size:10px;color:var(--mut)">${d.ce>=60?'overconfident':'calibrated'}</span></div></div>
-    </div>
-    <div id="dradar"></div>
-    <div style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);margin:6px 0 6px">Failure profile (decimal % failed)</div>
-    ${GAUNTLETS.map(g=>{const fr=(100-d.g[g]/10);return `<div class="failrow"><span class="nm">${g}</span>
-      <span class="bar"><i style="width:${fr}%"></i></span><span class="pc">${fr.toFixed(1)}%</span></div>`;}).join("")}`;
+  const d=selected,el=document.getElementById("dossier");
+  const ceColor = d.ce>=45 ? P.bad : d.ce>=30 ? P.warn : P.good;
+  el.innerHTML=
+    '<span class="dchip">'+d.grade+'</span>'+
+    '<div class="dname">'+d.m+'</div>'+
+    '<div class="dmeta">AGI L'+d.agi_level+' · '+d.agi_level_name+' · rank '+d.rank_ub+'</div>'+
+    '<div class="bigscore" style="color:'+d.color+'">'+d.cap.toFixed(1)+' <small>/ '+HORIZON+'</small></div>'+
+    '<div class="grade">'+(HORIZON-d.cap).toFixed(1)+' below AGI horizon · '+d.time_horizon+'</div>'+
+    '<div class="twocol">'+
+      '<div class="stat"><div class="l">Frontier accuracy</div><div class="v">'+d.acc.toFixed(2)+'<span style="color:var(--muted);font-size:11px"> ±'+d.ci.toFixed(2)+'</span></div></div>'+
+      '<div class="stat"><div class="l">Calibration error</div><div class="v" style="color:'+ceColor+'">'+d.ce.toFixed(1)+' <span style="font-size:10px;color:var(--muted)">'+(d.ce>=45?'overconfident':'calibrated')+'</span></div></div>'+
+    '</div>'+
+    '<div id="dradar"></div>'+
+    '<div style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:6px 0 6px">Failure profile (% failed per family)</div>'+
+    GKEYS.map((k,idx)=>{const fr=100-(d.fs[k]||0)*100;return '<div class="failrow"><span class="nm">'+GAUNTLETS[idx]+'</span>'+
+      '<span class="fbar"><i style="width:'+fr.toFixed(1)+'%"></i></span><span class="pc">'+fr.toFixed(0)+'%</span></div>';}).join("");
+
   if(dradar){dradar.dispose();dradar=null;}
   dradar=echarts.init(document.getElementById("dradar"),null,{renderer:"svg"});
-  dradar.setOption({textStyle:{color:"#7c8aa3"},radar:{radius:"62%",center:["50%","52%"],
-    indicator:GAUNTLETS.map(g=>({name:g,max:1000})),splitNumber:4,
-    axisLine:{lineStyle:{color:"#16203a"}},splitLine:{lineStyle:{color:"#16203a"}},
-    splitArea:{areaStyle:{color:["rgba(255,255,255,.01)","rgba(255,255,255,.025)"]}},
-    name:{color:"#8696b0",fontSize:9.5}},
-    series:[{type:"radar",symbolSize:3,areaStyle:{color:"rgba(52,225,225,.16)"},
-      lineStyle:{color:"#34e1e1"},itemStyle:{color:"#34e1e1"},
-      data:[{value:GAUNTLETS.map(g=>d.g[g])}]}]});
+  dradar.setOption({textStyle:{color:P.muted},radar:{radius:"60%",center:["50%","52%"],
+    indicator:GKEYS.map((k,idx)=>({name:GAUNTLETS[idx],max:1})),splitNumber:4,
+    axisLine:{lineStyle:{color:P.line}},splitLine:{lineStyle:{color:P.line}},
+    splitArea:{areaStyle:{color:[P.panel,P.panel2]}},
+    name:{color:P.muted2,fontSize:9}},
+    series:[{type:"radar",symbolSize:3,areaStyle:{color:d.color,opacity:.15},
+      lineStyle:{color:d.color},itemStyle:{color:d.color},
+      data:[{value:GKEYS.map(k=>d.fs[k]||0)}]}]});
+
   document.querySelectorAll(".lrow").forEach(r=>r.classList.toggle("sel",r.dataset.m===d.m));
-  const sm=document.getElementById("selmark");
 }
-function grade(s){return s<200?"Weak":s<400?"Basic":s<600?"Strong":s<750?"Frontier":s<900?"Proto-AGI":"AGI-Level Candidate";}
 
 function select(i){selected=DATA[i];dossier();ascent();}
 
 function spectrum(){
-  const avg=GAUNTLETS.map(g=>{const f=DATA.map(d=>100-d.g[g]/10);return {g,v:f.reduce((a,b)=>a+b)/f.length};})
-    .sort((a,b)=>b.v-a.v);
-  document.getElementById("spec").innerHTML=avg.map(r=>`
-    <div class="specrow"><span class="g">${r.g}</span>
-      <span class="track"><i style="width:${r.v}%"></i><b style="width:${100-r.v}%"></b></span>
-      <span class="v">${r.v.toFixed(2)}% fail</span></div>`).join("");
+  const avg=GKEYS.map((k,idx)=>{
+    const f=DATA.map(d=>100-(d.fs[k]||0)*100);
+    return {g:GAUNTLETS[idx],v:f.reduce((a,b)=>a+b,0)/f.length};
+  }).sort((a,b)=>b.v-a.v);
+  document.getElementById("spec").innerHTML=avg.map(r=>
+    '<div class="specrow"><span class="g">'+r.g+'</span>'+
+      '<span class="track"><i style="width:'+r.v.toFixed(1)+'%"></i><b style="width:'+(100-r.v).toFixed(1)+'%"></b></span>'+
+      '<span class="v">'+r.v.toFixed(1)+'% fail</span></div>').join("");
 }
 
 function ledger(){
-  const rows=[...DATA].sort((a,b)=>b.apex-a.apex);
-  const mx=Math.max(...DATA.flatMap(d=>GAUNTLETS.map(g=>d.g[g])));
+  const rows=[...DATA].sort((a,b)=>b.cap-a.cap);
   document.getElementById("ledger").innerHTML=rows.map((d,i)=>{
-    const[,bcls]=BADGE[d.st];
-    const spark=GAUNTLETS.map(g=>`<i style="height:${4+(d.g[g]/mx)*16}px;background:${HEX[d.st]}"></i>`).join("");
-    return `<div class="lrow" data-m="${d.m}">
-      <span class="lrk">${i+1}</span>
-      <span class="lnm"><span class="dot" style="background:${HEX[d.st]}"></span>${d.m}<small>${d.os?'OSS':'closed'}</small></span>
-      <span class="lap">${d.apex.toFixed(2)}</span>
-      <span class="spark">${spark}</span>
-      <span><span class="dchip ${bcls}" style="font-size:8.5px">${d.st.toUpperCase()}</span></span>
-    </div>`;}).join("");
+    const spark=GKEYS.map(k=>'<i style="height:'+(4+(d.fs[k]||0)*16)+'px;background:'+d.color+'"></i>').join("");
+    return '<div class="lrow" data-m="'+d.m+'">'+
+      '<span class="lrk">'+(i+1)+'</span>'+
+      '<span class="lnm"><span class="dot" style="background:'+d.color+'"></span>'+d.m+'<small>L'+d.agi_level+'</small></span>'+
+      '<span class="lap">'+d.cap.toFixed(1)+'</span>'+
+      '<span class="spark">'+spark+'</span>'+
+      '<span class="ll">'+d.grade.split(" ")[0]+'</span>'+
+    '</div>';}).join("");
   document.querySelectorAll(".lrow").forEach(r=>r.onclick=()=>select(DATA.findIndex(d=>d.m===r.dataset.m)));
 }
 
-field();ascent();dossier();spectrum();ledger();
-window.addEventListener("resize",()=>{dradar&&dradar.resize();});
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["leaderboard.json","catalog.json","site.json"], init, "#mount");
+});
 </script>
 </body>
 </html>

@@ -75,8 +75,10 @@ def simulate(keys: dict, profile: dict, seed: int) -> list[dict]:
     return responses
 
 
-def main():
-    signer = KeyPair.generate()
+def build_demo_data(signer=None, verbose=False):
+    """Run the demo evaluation and return (leaderboard, reports). Reused by the
+    frontend data exporter so the served JSON always comes from a real eval run."""
+    signer = signer or KeyPair.generate()
     # one shared hidden pack so models are comparable
     tasks = G.generate(n=180, seed=24680, visibility="private_hidden")
     keys = {t.task_id: schema.answer_key(t) for t in tasks}
@@ -87,9 +89,6 @@ def main():
 
     reports = {}
     leaderboard = []
-    print("=" * 78)
-    print("  XODEXA PLATFORM DEMO — evaluate, score, profile, diagnose")
-    print("=" * 78)
     for i, (model_id, profile) in enumerate(MODELS.items()):
         responses = simulate(keys, profile, seed=100 + i)
         er = evaluate.score_pack(keys, responses)
@@ -116,16 +115,17 @@ def main():
             "contamination_risk": rep["contamination_risk"],
             "time_horizon": rep["time_horizon"]["estimated_task_horizon"],
         })
-        print(f"\n  {model_id}")
-        print(f"     Xodexa Score : {rep['xodexa_score']}/1000 ({rep['grade']})  "
-              f"CI {rep['score_ci95']}")
-        print(f"     AGI Readiness: Level {ar['level']} — {ar['level_name']} "
-              f"(index {ar['agi_readiness_index']})")
-        print(f"     Accuracy     : {rep['frontier_metrics']['accuracy']}% "
-              f"± {rep['frontier_metrics']['accuracy_ci95']}  | "
-              f"calib err {rep['frontier_metrics']['calibration_error']}")
-        print(f"     Top gap      : {ar['missing_capability']}")
-        print(f"     Fix at       : {rep['improvement_path']['likely_root_layer']}-level")
+        if verbose:
+            print(f"\n  {model_id}")
+            print(f"     Xodexa Score : {rep['xodexa_score']}/1000 ({rep['grade']})  "
+                  f"CI {rep['score_ci95']}")
+            print(f"     AGI Readiness: Level {ar['level']} — {ar['level_name']} "
+                  f"(index {ar['agi_readiness_index']})")
+            print(f"     Accuracy     : {rep['frontier_metrics']['accuracy']}% "
+                  f"± {rep['frontier_metrics']['accuracy_ci95']}  | "
+                  f"calib err {rep['frontier_metrics']['calibration_error']}")
+            print(f"     Top gap      : {ar['missing_capability']}")
+            print(f"     Fix at       : {rep['improvement_path']['likely_root_layer']}-level")
 
     # HLE-style ranking by score significance
     ranked = rank_upper_bound([{"model": e["model"], "score": e["accuracy"],
@@ -134,6 +134,14 @@ def main():
     for e in leaderboard:
         e["rank_ub"] = rank_by_model[e["model"]]
     leaderboard.sort(key=lambda e: e["xodexa_score"], reverse=True)
+    return leaderboard, reports
+
+
+def main():
+    print("=" * 78)
+    print("  XODEXA PLATFORM DEMO — evaluate, score, profile, diagnose")
+    print("=" * 78)
+    leaderboard, reports = build_demo_data(verbose=True)
 
     # write artifacts (results/ + frontend data dir)
     out = ROOT / "results"

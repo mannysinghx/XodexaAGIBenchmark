@@ -1,10 +1,10 @@
 {
   "report_version": "1.0",
-  "generated_at": "2026-06-03T15:44:11Z",
+  "generated_at": "2026-06-03T16:02:46Z",
   "model_id": "frontier-generalist-x",
   "pack": "Xodexa Hidden Official (demo)",
   "benchmark_version": "1.0.0",
-  "executive_summary": "frontier-generalist-x scored 752.1/1000 (Proto-AGI Candidate) on Xodexa Hidden Official (demo), placing it at AGI Readiness Level 4 (Proto-AGI candidate). Primary gap: Safety (0.61) \u2014 it still complies unsafely or violates the instruction hierarchy. Failure rate 18% over 180 items; 7 critical. Assessed at Proto-AGI candidate. Primary gap: Safety (0.61) \u2014 it still complies unsafely or violates the instruction hierarchy. Most failures appear model-level \u2014 weights/training \u2014 improve via fine-tuning data and RL targets below.",
+  "executive_summary": "frontier-generalist-x scored 752.1/1000 (Proto-AGI Candidate) on Xodexa Hidden Official (demo), placing it at AGI Readiness Level 4 (Proto-AGI candidate). Primary gap: Safety (0.61) — it still complies unsafely or violates the instruction hierarchy. Failure rate 18% over 180 items; 7 critical. Assessed at Proto-AGI candidate. Primary gap: Safety (0.61) — it still complies unsafely or violates the instruction hierarchy. Most failures appear model-level — weights/training — improve via fine-tuning data and RL targets below.",
   "xodexa_score": 752.1,
   "grade": "Proto-AGI Candidate",
   "grade_legacy": "Proto-AGI",
@@ -154,7 +154,7 @@
         "value": 0.6082
       }
     ],
-    "missing_capability": "Primary gap: Safety (0.61) \u2014 it still complies unsafely or violates the instruction hierarchy.",
+    "missing_capability": "Primary gap: Safety (0.61) — it still complies unsafely or violates the instruction hierarchy.",
     "next_level_requirement": "To reach Level 5 (AGI-level candidate), raise the lagging sub-scores (Generality, Autonomy, Safety) and hold them across the rotated private set.",
     "telemetry": {
       "tokens": 1474,
@@ -520,7 +520,7 @@
     "avg_latency_ms_per_task": 1884.3
   },
   "improvement_path": {
-    "headline": "Assessed at Proto-AGI candidate. Primary gap: Safety (0.61) \u2014 it still complies unsafely or violates the instruction hierarchy. Most failures appear model-level \u2014 weights/training \u2014 improve via fine-tuning data and RL targets below.",
+    "headline": "Assessed at Proto-AGI candidate. Primary gap: Safety (0.61) — it still complies unsafely or violates the instruction hierarchy. Most failures appear model-level — weights/training — improve via fine-tuning data and RL targets below.",
     "current_strengths": [
       "Human-Parity",
       "Transfer",
@@ -631,22 +631,22 @@
       {
         "layer": "model",
         "count": 19,
-        "interpretation": "weights/training \u2014 improve via fine-tuning data and RL targets below."
+        "interpretation": "weights/training — improve via fine-tuning data and RL targets below."
       },
       {
         "layer": "scaffold",
         "count": 6,
-        "interpretation": "agent scaffolding \u2014 fixable without retraining (planner, validators, loops)."
+        "interpretation": "agent scaffolding — fixable without retraining (planner, validators, loops)."
       },
       {
         "layer": "training-data",
         "count": 6,
-        "interpretation": "training-data \u2014 behavioral patterns (honesty, refusal, overconfidence)."
+        "interpretation": "training-data — behavioral patterns (honesty, refusal, overconfidence)."
       },
       {
         "layer": "context",
         "count": 2,
-        "interpretation": "context handling \u2014 long-context / retrieval / state management."
+        "interpretation": "context handling — long-context / retrieval / state management."
       }
     ],
     "recommended_next_evals": [
@@ -2903,9 +2903,9 @@
     }
   ],
   "verification_appendix": {
-    "body_sha256": "2188b4e2a78467a0ac5b6b8d77eb1ff8ed329a7a1bbff5d56e64392678a085d7",
-    "signer_pub": "C/qxzzfor8b1Ihn4eXXAZIl966HVduLIkG15TZD9TCk=",
-    "signature": "vL0H5bUxViVD6YMfxPDrUDNItdZHUX5X2J+s+Dd/PnqSJBFQY6yswItcP2v+eiaJw6Rry4auEBhUwSyxasg0DA==",
+    "body_sha256": "d2dd38621dcca96c78977285bc207b3a3d516547291ab7391dc3171ad2a53637",
+    "signer_pub": "d10P9ix/umNE4GsPoq4RPZXq5Z7Ih1MObU7n+ddmfqg=",
+    "signature": "2qXAHOC0U2vQHheM5Ua8eMDufsyAJYbVN6IulsJPhqYGaIad073+KdJqvdW0F1zZReFzuaBINnTjDcnMLczvDg==",
     "note": "Signature covers the report body (excluding bulky appendices). Official scores are issued only by the central authority (authority.ScoringAuthority), never by a self-hosted runner."
   }
 }

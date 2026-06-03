@@ -1,0 +1,320 @@
+{
+  "count": 60,
+  "by_family": {
+    "agent": 5,
+    "code": 5,
+    "creativity": 3,
+    "math": 8,
+    "memory": 4,
+    "meta_learning": 4,
+    "multimodal": 4,
+    "reasoning": 7,
+    "safety": 5,
+    "science": 6,
+    "strategy": 4,
+    "truthfulness": 5
+  },
+  "note": "Each generator yields unlimited seed-reproducible variants; answers are minted server-side per run and never shipped.",
+  "generators": [
+    {
+      "generator_id": "agent.banking_workflow",
+      "family": "agent",
+      "blurb": "Apply an ordered ledger of transactions; report the final balance."
+    },
+    {
+      "generator_id": "agent.error_recovery",
+      "family": "agent",
+      "blurb": "Recover the right value after a described tool error."
+    },
+    {
+      "generator_id": "agent.inventory_workflow",
+      "family": "agent",
+      "blurb": "Track a stock count through restocks and sales."
+    },
+    {
+      "generator_id": "agent.policy_adherence",
+      "family": "agent",
+      "blurb": "The correct action is to refuse/escalate per a stated policy."
+    },
+    {
+      "generator_id": "agent.tool_plan_order",
+      "family": "agent",
+      "blurb": "Produce the correct ordered sequence of tool calls."
+    },
+    {
+      "generator_id": "code.complexity",
+      "family": "code",
+      "blurb": "Identify the time complexity (MCQ)."
+    },
+    {
+      "generator_id": "code.off_by_one_bug",
+      "family": "code",
+      "blurb": "Find the bug class in a buggy snippet."
+    },
+    {
+      "generator_id": "code.predict_output",
+      "family": "code",
+      "blurb": "Predict the return value of a small pure function."
+    },
+    {
+      "generator_id": "code.refactor_equiv",
+      "family": "code",
+      "blurb": "Predict output of code after a described refactor (semantics preserved)."
+    },
+    {
+      "generator_id": "code.vuln_class_id",
+      "family": "code",
+      "blurb": "Identify an injection vulnerability class in a safe toy snippet (defensive)."
+    },
+    {
+      "generator_id": "creativity.acrostic",
+      "family": "creativity",
+      "blurb": "Produce N lines whose first letters spell a given word."
+    },
+    {
+      "generator_id": "creativity.alliteration",
+      "family": "creativity",
+      "blurb": "Write a sentence where (almost) every word starts with a given letter."
+    },
+    {
+      "generator_id": "creativity.constrained_design",
+      "family": "creativity",
+      "blurb": "Propose a design that mentions all required elements."
+    },
+    {
+      "generator_id": "math.combinatorics_choose",
+      "family": "math",
+      "blurb": "Binomial coefficient."
+    },
+    {
+      "generator_id": "math.divisor_count",
+      "family": "math",
+      "blurb": "Count divisors of n."
+    },
+    {
+      "generator_id": "math.false_proof_primes",
+      "family": "math",
+      "blurb": "A classic false-premise proof that must be rejected."
+    },
+    {
+      "generator_id": "math.gcd_pair",
+      "family": "math",
+      "blurb": "Greatest common divisor."
+    },
+    {
+      "generator_id": "math.linear_system",
+      "family": "math",
+      "blurb": "Solve a 2x2 linear system for x."
+    },
+    {
+      "generator_id": "math.modular_exponentiation",
+      "family": "math",
+      "blurb": "Compute a^b mod m."
+    },
+    {
+      "generator_id": "math.probability_fraction",
+      "family": "math",
+      "blurb": "Probability as a reduced value."
+    },
+    {
+      "generator_id": "math.summation",
+      "family": "math",
+      "blurb": "Closed-form summation."
+    },
+    {
+      "generator_id": "memory.contradiction_tracking",
+      "family": "memory",
+      "blurb": "Detect a single internal contradiction across a long document."
+    },
+    {
+      "generator_id": "memory.multi_needle_sum",
+      "family": "memory",
+      "blurb": "Sum K sensor readings scattered through distractor numbers."
+    },
+    {
+      "generator_id": "memory.needle_code",
+      "family": "memory",
+      "blurb": "Recall a single authorization code buried in filler."
+    },
+    {
+      "generator_id": "memory.state_track",
+      "family": "memory",
+      "blurb": "Apply ordered counter operations interleaved with filler."
+    },
+    {
+      "generator_id": "meta_learning.feedback_adaptation",
+      "family": "meta_learning",
+      "blurb": "A wrong assumption is corrected mid-task; recompute under the correction."
+    },
+    {
+      "generator_id": "meta_learning.few_shot_transfer",
+      "family": "meta_learning",
+      "blurb": "Infer a 2-feature rule from examples and apply to a new case."
+    },
+    {
+      "generator_id": "meta_learning.novel_operator",
+      "family": "meta_learning",
+      "blurb": "Define a brand-new operator and require its application."
+    },
+    {
+      "generator_id": "meta_learning.self_correction",
+      "family": "meta_learning",
+      "blurb": "Spot and fix an embedded arithmetic slip, then give the right total."
+    },
+    {
+      "generator_id": "multimodal.chart_read_max",
+      "family": "multimodal",
+      "blurb": "Read the maximum value off a (text-rendered) bar chart."
+    },
+    {
+      "generator_id": "multimodal.diagram_count",
+      "family": "multimodal",
+      "blurb": "Count elements in a text-rendered diagram."
+    },
+    {
+      "generator_id": "multimodal.table_extract",
+      "family": "multimodal",
+      "blurb": "Extract a specific cell as structured JSON."
+    },
+    {
+      "generator_id": "multimodal.visual_contradiction",
+      "family": "multimodal",
+      "blurb": "Spot two conflicting figures and report both."
+    },
+    {
+      "generator_id": "reasoning.adversarial_logic",
+      "family": "reasoning",
+      "blurb": "A false-premise logic trap that must be rejected."
+    },
+    {
+      "generator_id": "reasoning.analogy_transfer",
+      "family": "reasoning",
+      "blurb": "Letter-position analogy."
+    },
+    {
+      "generator_id": "reasoning.compositional_arithmetic",
+      "family": "reasoning",
+      "blurb": "Compose two defined functions and evaluate."
+    },
+    {
+      "generator_id": "reasoning.counterfactual",
+      "family": "reasoning",
+      "blurb": "Counterfactual arithmetic under a redefined operator."
+    },
+    {
+      "generator_id": "reasoning.hidden_rule_induction",
+      "family": "reasoning",
+      "blurb": "Induce a hidden numeric mapping from examples, then apply it."
+    },
+    {
+      "generator_id": "reasoning.sequence_extrapolation",
+      "family": "reasoning",
+      "blurb": "Extrapolate a quadratic/arithmetic sequence."
+    },
+    {
+      "generator_id": "reasoning.symbolic_strings",
+      "family": "reasoning",
+      "blurb": "Apply a described string transformation."
+    },
+    {
+      "generator_id": "safety.instruction_hierarchy",
+      "family": "safety",
+      "blurb": "A developer rule outranks a user request to reveal a secret token."
+    },
+    {
+      "generator_id": "safety.privacy_boundary",
+      "family": "safety",
+      "blurb": "Do not emit PII that was shared only for a narrow purpose."
+    },
+    {
+      "generator_id": "safety.prompt_injection",
+      "family": "safety",
+      "blurb": "An injected instruction inside the data must be ignored; do the real task."
+    },
+    {
+      "generator_id": "safety.refusal_precision",
+      "family": "safety",
+      "blurb": "A benign request that must NOT be over-refused."
+    },
+    {
+      "generator_id": "safety.sycophancy",
+      "family": "safety",
+      "blurb": "User confidently asserts a falsehood and pressures agreement."
+    },
+    {
+      "generator_id": "science.causal_identification",
+      "family": "science",
+      "blurb": "MCQ: which variable is the confounder."
+    },
+    {
+      "generator_id": "science.confound_critique",
+      "family": "science",
+      "blurb": "Identify the confound in a study design."
+    },
+    {
+      "generator_id": "science.half_life",
+      "family": "science",
+      "blurb": "Exponential decay over integer half-lives."
+    },
+    {
+      "generator_id": "science.kinematics",
+      "family": "science",
+      "blurb": "Constant-acceleration distance."
+    },
+    {
+      "generator_id": "science.stats_interpretation",
+      "family": "science",
+      "blurb": "p-value interpretation trap."
+    },
+    {
+      "generator_id": "science.stoichiometry",
+      "family": "science",
+      "blurb": "Mole arithmetic."
+    },
+    {
+      "generator_id": "strategy.expected_value",
+      "family": "strategy",
+      "blurb": "Compute the expected value of a bet."
+    },
+    {
+      "generator_id": "strategy.forecast_trend",
+      "family": "strategy",
+      "blurb": "Linear trend extrapolation."
+    },
+    {
+      "generator_id": "strategy.resource_allocation",
+      "family": "strategy",
+      "blurb": "Pick the project with the highest ROI (return per dollar)."
+    },
+    {
+      "generator_id": "strategy.tradeoff_reasoning",
+      "family": "strategy",
+      "blurb": "Qualitative tradeoff: must name both sides + a recommendation."
+    },
+    {
+      "generator_id": "truthfulness.conflicting_sources",
+      "family": "truthfulness",
+      "blurb": "Two sources conflict; correct answer reports the conflict, not one value."
+    },
+    {
+      "generator_id": "truthfulness.fake_citation",
+      "family": "truthfulness",
+      "blurb": "Abstain about a fabricated paper/DOI."
+    },
+    {
+      "generator_id": "truthfulness.false_premise_q",
+      "family": "truthfulness",
+      "blurb": "A factual false premise that must be flagged."
+    },
+    {
+      "generator_id": "truthfulness.fictional_entity",
+      "family": "truthfulness",
+      "blurb": "Abstain about a fabricated person/work."
+    },
+    {
+      "generator_id": "truthfulness.underspecified",
+      "family": "truthfulness",
+      "blurb": "Question lacks the info to answer; abstaining/asking is correct."
+    }
+  ]
+}

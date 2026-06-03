@@ -3,57 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Xodexa AGI Benchmark — Leaderboard</title>
+<title>Xodexa AGI Benchmark — Dashboard</title>
+<link rel="stylesheet" href="assets/theme.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="assets/data.js" defer></script>
 <style>
-  :root{
-    --bg:#070a0f; --panel:#0d1320; --panel2:#111a2b; --line:#1e2a40;
-    --txt:#e6edf6; --muted:#7e8ca3; --accent:#3da9fc; --accent2:#7c5cff;
-    --good:#27d796; --warn:#ffb454; --bad:#ff5d6c; --gold:#ffd166;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#0f1a2e 0,var(--bg) 55%);
-    color:var(--txt);font:14px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:6px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    display:grid;place-items:center;font-weight:800;color:#fff;box-shadow:0 0 24px rgba(61,169,252,.35)}
-  h1{font-size:20px;margin:0;letter-spacing:.3px}
-  .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
-  .pill{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
   .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-top:22px}
-  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
-    border-radius:16px;padding:18px}
-  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin:0 0 14px}
+  .dcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-soft)}
+  .dcard h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin:0 0 14px}
   table{width:100%;border-collapse:collapse}
   th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}
   th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.8px}
   td.rank{color:var(--muted);width:30px;font-variant-numeric:tabular-nums}
-  .model{font-weight:600}
+  .model{font-weight:600;color:var(--txt)}
   .score{font-weight:800;font-variant-numeric:tabular-nums;font-size:15px}
   .ci{color:var(--muted);font-size:11px}
-  .badge{display:inline-block;font-size:10.5px;padding:3px 8px;border-radius:6px;border:1px solid var(--line);white-space:nowrap}
-  .b-att{color:#0a0f17;background:linear-gradient(90deg,var(--gold),#ffe6a0);border:none;font-weight:700}
-  .b-ver{color:var(--good);border-color:rgba(39,215,150,.4);background:rgba(39,215,150,.08)}
-  .b-flag{color:var(--warn);border-color:rgba(255,180,84,.4);background:rgba(255,180,84,.08)}
-  .b-local{color:var(--muted)}
   .grade{font-size:11px;color:var(--muted)}
-  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
-  .stat{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .stat .n{font-size:22px;font-weight:800}
-  .stat .l{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow-soft)}
+  .stat .n{font-size:22px;font-weight:800;color:var(--txt)}
+  .stat .l{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
   #radar{height:300px}
   .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;color:var(--muted);font-size:11.5px}
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
-  .foot{color:var(--muted);font-size:11.5px;margin-top:26px;text-align:center}
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-  .chip{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:default}
-  .chip.on{color:var(--txt);border-color:var(--accent);background:rgba(61,169,252,.1)}
-  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
-  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
-  nav.mainnav a:hover{color:#9fb0c8}
-  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
+  .foot{color:var(--muted);font-size:11.5px;margin-top:26px;text-align:center;border-top:1px solid var(--line);padding-top:14px}
 </style>
 </head>
 <body>
@@ -62,11 +35,11 @@
     <div class="brand">
       <div class="logo">Ω</div>
       <div>
-        <h1>Xodexa AGI Benchmark</h1>
-        <div class="sub">The world's most unforgiving open benchmark infrastructure for frontier AI</div>
+        <h1 id="brandName">Xodexa AGI Benchmark</h1>
+        <div class="sub" id="brandSub">The world's most unforgiving open benchmark infrastructure for frontier AI</div>
       </div>
     </div>
-    <div class="pill">benchmark v1.0.0 · central scoring authority · Ed25519 verified</div>
+    <div class="pill" id="hpill">central scoring authority · Ed25519 verified</div>
   </header>
 
   <nav class="mainnav">
@@ -82,98 +55,122 @@
     <a href="about.html">About</a>
   </nav>
 
-  <div class="cards">
-    <div class="stat"><div class="n" style="color:var(--accent)">650</div><div class="l">Top Xodexa Score</div></div>
-    <div class="stat"><div class="n">3 / 9</div><div class="l">Categories live (MVP)</div></div>
-    <div class="stat"><div class="n" style="color:var(--good)">6</div><div class="l">Verified runs</div></div>
-    <div class="stat"><div class="n" style="color:var(--warn)">2</div><div class="l">Flagged for review</div></div>
-  </div>
+  <div id="mount"></div>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Official Leaderboard</h2>
-      <div class="filters">
-        <span class="chip on">Verified</span><span class="chip">Verified + Attested</span>
-        <span class="chip">Open-source</span><span class="chip">Reasoning</span>
-        <span class="chip">Agentic</span><span class="chip">Safety</span>
-      </div>
-      <table>
-        <thead><tr><th class="rank">#</th><th>Model</th><th>Xodexa Score</th><th>Grade</th><th>Status</th></tr></thead>
-        <tbody id="lb"></tbody>
-      </table>
+  <div id="content" style="display:none">
+    <div class="stats">
+      <div class="stat"><div class="n" id="s_models">—</div><div class="l">Models Evaluated</div></div>
+      <div class="stat"><div class="n" id="s_avgscore">—</div><div class="l">Average Xodexa Score</div></div>
+      <div class="stat"><div class="n" id="s_avgagi">—</div><div class="l">Average AGI Index</div></div>
+      <div class="stat"><div class="n" id="s_tasks">—</div><div class="l">Total Seed Tasks</div></div>
+      <div class="stat"><div class="n" id="s_families">—</div><div class="l">Task Families</div></div>
+      <div class="stat"><div class="n" id="s_variants">—</div><div class="l">Dynamic Sample Variants</div></div>
     </div>
 
-    <div class="card">
-      <h2>Category Profile — top 2</h2>
-      <div id="radar"></div>
-      <div class="legend">
-        <span><span class="dot" style="background:var(--accent)"></span>Frontier-Closed-XL</span>
-        <span><span class="dot" style="background:var(--accent2)"></span>MoE-400B-A40B</span>
+    <div class="grid">
+      <div class="dcard">
+        <h2>Official Leaderboard</h2>
+        <table>
+          <thead><tr><th class="rank">#</th><th>Model</th><th>Xodexa Score</th><th>AGI Level</th><th>Grade</th></tr></thead>
+          <tbody id="lb"></tbody>
+        </table>
       </div>
-      <div class="legend" style="margin-top:14px">
-        <span><span class="dot" style="background:var(--good)"></span>Verified</span>
-        <span><span class="dot" style="background:var(--gold)"></span>Verified + Attested</span>
-        <span><span class="dot" style="background:var(--warn)"></span>Flagged</span>
-        <span><span class="dot" style="background:var(--muted)"></span>Local (unofficial)</span>
+
+      <div class="dcard">
+        <h2 id="radarTitle">Capability profile — top 2</h2>
+        <div id="radar"></div>
+        <div class="legend" id="radarleg"></div>
       </div>
     </div>
-  </div>
 
-  <div class="foot">
-    Local scores are advisory and never official. Official scores are issued only by the Xodexa main app
-    after cryptographic verification + central re-scoring. "Verified, non-attested" trusts the provider's
-    honesty; "Verified + Attested" adds a confidential-computing attestation. See the threat model in README.
+    <div class="foot" id="foot"></div>
   </div>
 </div>
 
 <script>
-// Seed leaderboard (placeholder models). In production this reads /v1/leaderboard.
-const rows = [
-  {m:"Frontier-Closed-XL",     s:650, ci:"±90", g:"Frontier",   st:"att", os:false},
-  {m:"MoE-400B-A40B",          s:604, ci:"±84", g:"Frontier",   st:"ver", os:true},
-  {m:"Research-Preview-R1",    s:712, ci:"±61", g:"Frontier",   st:"flag",os:false},
-  {m:"OpenLlama-70B",          s:421, ci:"±77", g:"Strong",     st:"ver", os:true},
-  {m:"Self-hosted vLLM-32B",   s:338, ci:"±70", g:"Basic",      st:"ver", os:true},
-  {m:"Local Ollama llama3-8B", s:142, ci:"±58", g:"Weak",       st:"local",os:true},
-];
-const BADGE = {
-  att:['Verified + Attested','b-att'], ver:['Verified','b-ver'],
-  flag:['Flagged · review','b-flag'], local:['Local · unofficial','b-local badge']
-};
-const tb = document.getElementById('lb');
-rows.sort((a,b)=>b.s-a.s).forEach((r,i)=>{
-  const [label,cls]=BADGE[r.st];
-  const tr=document.createElement('tr');
-  tr.innerHTML=`<td class="rank">${i+1}</td>
-    <td><div class="model">${r.m}</div><div class="grade">${r.os?'open-source':'closed'}</div></td>
-    <td><span class="score">${r.s}</span> <span class="ci">${r.ci}</span></td>
-    <td class="grade">${r.g}</td>
-    <td><span class="badge ${cls}">${label}</span></td>`;
-  tb.appendChild(tr);
-});
+let P;
 
-// Radar
-const radar = echarts.init(document.getElementById('radar'), null, {renderer:'svg'});
-radar.setOption({
-  textStyle:{color:'#7e8ca3'},
-  radar:{
-    radius:'66%',
-    indicator:[
-      {name:'Reasoning',max:1000},{name:'Long-horizon',max:1000},{name:'Truthful',max:1000},
-      {name:'Coding',max:1000},{name:'Tool use',max:1000},{name:'Safety',max:1000}
-    ],
-    splitLine:{lineStyle:{color:'#1e2a40'}},
-    splitArea:{areaStyle:{color:['rgba(255,255,255,0.01)','rgba(255,255,255,0.03)']}},
-    axisLine:{lineStyle:{color:'#1e2a40'}}, name:{color:'#9fb0c8',fontSize:11}
-  },
-  series:[{type:'radar',areaStyle:{opacity:.18},symbolSize:4,data:[
-    {value:[667,778,520,690,640,610],name:'Frontier-Closed-XL',
-     lineStyle:{color:'#3da9fc'},itemStyle:{color:'#3da9fc'},areaStyle:{color:'#3da9fc'}},
-    {value:[610,690,560,640,560,520],name:'MoE-400B-A40B',
-     lineStyle:{color:'#7c5cff'},itemStyle:{color:'#7c5cff'},areaStyle:{color:'#7c5cff'}}
-  ]}]
+function init(d){
+  P = XODEXA.palette();
+  const lb=d.leaderboard, cat=d.catalog, sum=d.summary, site=d.site;
+  const ver = site.benchmark_version||lb.benchmark_version||cat.benchmark_version;
+
+  // brand header
+  if(site.brand){
+    document.getElementById("brandName").textContent=site.brand.name;
+    document.getElementById("brandSub").textContent=site.brand.blurb;
+  }
+  document.getElementById("hpill").textContent="benchmark v"+ver+" · central scoring authority · Ed25519 verified";
+
+  // family labels
+  const fam=cat.families||{};
+  const firstFs=(lb.entries[0]&&lb.entries[0].family_scores)||{};
+  const FAMKEYS=Object.keys(fam).filter(k=>k in firstFs);
+  const keys=FAMKEYS.length?FAMKEYS:Object.keys(firstFs);
+  const label=k=>(fam[k]&&fam[k].title?fam[k].title.replace(/ Gauntlet$/,''):XODEXA.fmt.cap(k));
+
+  const entries=[...lb.entries].sort((a,b)=>b.xodexa_score-a.xodexa_score);
+  const n=entries.length;
+
+  // KPIs (all computed)
+  const sumTasks=
+    (sum.releases||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    (sum.focused_packs||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    (sum.family_minis||[]).reduce((s,r)=>s+(r.task_count||0),0)+
+    ((sum.dynamic&&sum.dynamic.sample_variants)||0);
+
+  document.getElementById("s_models").textContent=n;
+  const avgScore=entries.reduce((s,e)=>s+e.xodexa_score,0)/n;
+  document.getElementById("s_avgscore").textContent=avgScore.toFixed(1);
+  document.getElementById("s_avgscore").style.color=XODEXA.gradeColor(avgScore,P);
+  document.getElementById("s_avgagi").textContent=(entries.reduce((s,e)=>s+e.agi_index,0)/n).toFixed(3);
+  document.getElementById("s_avgagi").style.color=P.accent;
+  document.getElementById("s_tasks").textContent=XODEXA.fmt.int(sumTasks);
+  document.getElementById("s_families").textContent=Object.keys(fam).length;
+  document.getElementById("s_variants").textContent=XODEXA.fmt.int((sum.dynamic&&sum.dynamic.sample_variants)||0);
+  document.getElementById("s_variants").style.color=P.accent2;
+
+  // leaderboard table
+  const tb=document.getElementById("lb");
+  tb.innerHTML=entries.map((e,i)=>{
+    const c=XODEXA.gradeColor(e.xodexa_score,P);
+    return '<tr><td class="rank">'+(i+1)+'</td>'+
+      '<td><div class="model">'+e.model+'</div><div class="grade">'+e.time_horizon+'</div></td>'+
+      '<td><span class="score" style="color:'+c+'">'+e.xodexa_score.toFixed(1)+'</span> <span class="ci">±'+e.ci.toFixed(2)+'</span></td>'+
+      '<td class="grade">L'+e.agi_level+' · '+e.agi_level_name+'</td>'+
+      '<td class="grade" style="color:'+c+';font-weight:600">'+e.grade+'</td></tr>';
+  }).join("");
+
+  // radar — top 2 models, family sub-scores
+  const top=entries.slice(0,2);
+  const colors=[P.accent,P.accent2];
+  document.getElementById("radarTitle").textContent="Capability profile — top "+top.length;
+  const radar=echarts.init(document.getElementById("radar"),null,{renderer:"svg"});
+  radar.setOption({
+    textStyle:{color:P.muted},backgroundColor:"transparent",
+    radar:{radius:"66%",splitNumber:4,
+      indicator:keys.map(k=>({name:label(k),max:1})),
+      splitLine:{lineStyle:{color:P.line}},axisLine:{lineStyle:{color:P.line}},
+      splitArea:{areaStyle:{color:[P.panel,P.panel2]}},
+      name:{color:P.muted2,fontSize:10}},
+    series:[{type:"radar",areaStyle:{opacity:.15},symbolSize:4,
+      data:top.map((e,i)=>({value:keys.map(k=>(e.family_scores||{})[k]),name:e.model,
+        lineStyle:{color:colors[i]},itemStyle:{color:colors[i]},areaStyle:{color:colors[i]}}))}]});
+  document.getElementById("radarleg").innerHTML=top.map((e,i)=>
+    '<span><span class="dot" style="background:'+colors[i]+'"></span>'+e.model+'</span>').join("");
+  window.addEventListener("resize",()=>radar.resize());
+
+  // footer = site principle
+  const pr=(site.principles||[])[1];
+  document.getElementById("foot").textContent= pr ? (pr.title+" — "+pr.body)
+    : "Official scores are issued only by the central authority after cryptographic verification + central re-scoring.";
+
+  document.getElementById("content").style.display="";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["leaderboard.json","catalog.json","SUMMARY.json","site.json"], init, "#mount");
 });
-window.addEventListener('resize',()=>radar.resize());
 </script>
 </body>
 </html>

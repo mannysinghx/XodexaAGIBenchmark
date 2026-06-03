@@ -24,6 +24,10 @@ prompts.json
 Thumbs.db
 *.swp
 
+# Local tooling (preview server config, vercel link)
+.claude/
+.vercel/
+
 # Sandbox scratch / probe leftovers (never commit)
 .junk/
 *.lock

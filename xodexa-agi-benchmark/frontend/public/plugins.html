@@ -4,61 +4,41 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Plugin Registry</title>
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/data.js"></script>
 <style>
-  :root{
-    --bg:#070a0f; --panel:#0d1320; --panel2:#101a2b; --line:#1d2840; --line2:#243352;
-    --txt:#e8eef7; --muted:#7e8ca3; --muted2:#9fb0c8;
-    --accent:#3da9fc; --accent2:#7c5cff; --good:#27d796; --warn:#ffb454; --bad:#ff5d6c; --gold:#ffd166;
-    --cy:#34e1e1;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1300px 640px at 72% -12%,#0f1a2e 0,var(--bg) 55%);
-    color:var(--txt);font:13.5px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1340px;margin:0 auto;padding:24px 20px 70px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    display:grid;place-items:center;font-weight:800;color:#fff;font-size:20px;box-shadow:0 0 26px rgba(61,169,252,.4)}
-  h1{font-size:21px;margin:0;letter-spacing:.2px}
-  .sub{color:var(--muted);font-size:12px;margin-top:2px}
-  .pill{font-size:11px;color:var(--muted2);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;white-space:nowrap}
-  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:0}
-  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
-  nav.mainnav a:hover{color:var(--muted2)}
-  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
-  .lead{color:var(--muted2);font-size:13px;max-width:920px;margin:16px 0 4px;line-height:1.7}
-  .lead b{color:var(--txt)}
-  .secttl{font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);margin:24px 0 10px}
   .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
-  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .card h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
-  pre{margin:0;background:#070b13;border:1px solid var(--line2);border-radius:10px;padding:14px;overflow:auto;
-    font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--muted2)}
-  .k{color:var(--accent)} .s{color:var(--good)} .n{color:var(--gold)} .b{color:var(--accent2)} .cmt{color:#4a5870}
+  pre{margin:0;background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:14px;overflow:auto;
+    font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--txt)}
+  .k{color:var(--accent)} .s{color:var(--good)} .n{color:var(--gold)} .b{color:var(--accent2)} .cmt{color:var(--muted)}
   .policy{display:flex;flex-direction:column;gap:10px}
   .prow{display:flex;gap:11px;align-items:flex-start}
   .pico{flex-shrink:0;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:12px;
-    background:rgba(39,215,150,.12);color:var(--good);border:1px solid rgba(39,215,150,.3)}
-  .prow .pt{font-weight:600;font-size:12.5px} .prow .pd{color:var(--muted);font-size:11.5px;line-height:1.5}
-  .deny .pico{background:rgba(255,93,108,.12);color:var(--bad);border-color:rgba(255,93,108,.3)}
+    background:rgba(14,157,110,.12);color:var(--good);border:1px solid rgba(14,157,110,.3)}
+  .prow .pt{font-weight:600;font-size:12.5px;color:var(--txt)} .prow .pd{color:var(--muted);font-size:11.5px;line-height:1.5}
+  .deny .pico{background:rgba(216,58,75,.1);color:var(--bad);border-color:rgba(216,58,75,.3)}
+  .lists{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:6px}
+  .llist h4{margin:0 0 6px;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .chip{font-size:10px;font-family:var(--mono);color:var(--muted2);border:1px solid var(--line);border-radius:5px;padding:2px 7px;background:var(--panel2)}
   .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:4px}
-  .pcard{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow-soft)}
   .pcard .ptop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-  .pcard .pname{font-weight:700;font-size:14px}
+  .pcard .pname{font-weight:700;font-size:14px;color:var(--txt)}
   .pcard .pkind{font-family:var(--mono);font-size:10px;color:var(--cy);margin-top:2px;letter-spacing:.4px}
-  .signed{font-size:9.5px;font-family:var(--mono);color:var(--good);border:1px solid rgba(39,215,150,.4);background:rgba(39,215,150,.08);border-radius:6px;padding:3px 7px;white-space:nowrap}
+  .signed{font-size:9.5px;font-family:var(--mono);color:var(--good);border:1px solid rgba(14,157,110,.4);background:rgba(14,157,110,.08);border-radius:6px;padding:3px 7px;white-space:nowrap}
+  .invalid{color:var(--bad);border-color:rgba(216,58,75,.4);background:rgba(216,58,75,.08)}
   .pdesc{color:var(--muted2);font-size:12px;line-height:1.6;margin:10px 0}
   .perms{display:flex;flex-direction:column;gap:5px;margin-top:8px;border-top:1px solid var(--line);padding-top:10px}
   .perm{display:flex;justify-content:space-between;align-items:center;font-size:11px}
   .perm .pl{color:var(--muted);font-family:var(--mono)}
   .pv{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:5px}
-  .pv.deny{color:var(--bad);background:rgba(255,93,108,.1);border:1px solid rgba(255,93,108,.3)}
-  .pv.allow{color:var(--good);background:rgba(39,215,150,.1);border:1px solid rgba(39,215,150,.3)}
-  .pv.lim{color:var(--warn);background:rgba(255,180,84,.1);border:1px solid rgba(255,180,84,.3)}
+  .pv.deny{color:var(--bad);background:rgba(216,58,75,.08);border:1px solid rgba(216,58,75,.3)}
+  .pv.allow{color:var(--good);background:rgba(14,157,110,.08);border:1px solid rgba(14,157,110,.3)}
+  .pv.lim{color:var(--warn);background:rgba(193,116,10,.08);border:1px solid rgba(193,116,10,.3)}
   .pmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:10px;color:var(--muted);font-family:var(--mono)}
   .pmeta span b{color:var(--muted2)}
-  .note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
   @media(max-width:840px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -72,7 +52,7 @@
         <div class="sub">Signed, sandboxed, default-deny extensions · benchmark packs, dataset adapters, tool simulators, safety packs</div>
       </div>
     </div>
-    <div class="pill">registry v1.0.0 · Ed25519 required</div>
+    <div class="pill" id="ver">registry · Ed25519 required</div>
   </header>
 
   <nav class="mainnav">
@@ -94,14 +74,17 @@
     sandbox-only filesystem, no secrets, no shell — unless explicitly granted and approved.
   </div>
 
+  <div id="mount"></div>
+
   <div class="grid">
     <div class="card">
-      <h3>Example signed plugin manifest — benchmark_pack</h3>
+      <h3 id="manifestTitle">Example signed plugin manifest</h3>
       <pre id="manifest"></pre>
     </div>
     <div class="card">
       <h3>Registry security policy (enforced)</h3>
       <div class="policy" id="policy"></div>
+      <div class="lists" id="policyLists"></div>
     </div>
   </div>
 
@@ -111,87 +94,99 @@
   <div class="note">
     Permissions shown are the plugin's <i>declared</i> requests; the registry applies the default-deny baseline and an
     admin must approve any non-default grant before an org install. Local installs run sandboxed and can never write an
-    official score — that authority stays with the central server. These examples are illustrative seed data.
+    official score — that authority stays with the central server. These examples are illustrative seed data, fetched
+    live from <code>./data/plugins.json</code>.
   </div>
 </div>
 
 <script>
-const POLICY=[
-  {ok:true,t:"Must be signed (Ed25519)",d:"Unsigned or signature-mismatched bundles are rejected at upload."},
-  {ok:false,t:"Network: default-deny",d:"No outbound network unless explicitly granted and admin-approved."},
-  {ok:false,t:"Filesystem: sandbox-only",d:"Reads/writes confined to a per-run scratch sandbox; no host paths."},
-  {ok:false,t:"Secrets: none",d:"Plugins never receive API keys, tokens, or answer keys."},
-  {ok:false,t:"Shell: restricted / none",d:"No arbitrary process execution by default."},
-  {ok:true,t:"SBOM + checksum required",d:"Software bill of materials and SHA-256 must accompany every release."},
-  {ok:true,t:"Admin approval for org installs",d:"Org-wide installation requires an administrator to review and approve."}
-];
-
-const MANIFEST=`{
-<span class="k">"schema"</span>: <span class="s">"xodexa.plugin/v1"</span>,
-<span class="k">"name"</span>: <span class="s">"xodexa-bio-reasoning-pack"</span>,
-<span class="k">"kind"</span>: <span class="s">"benchmark_pack"</span>,
-<span class="k">"version"</span>: <span class="s">"1.2.0"</span>,
-<span class="k">"families"</span>: [<span class="s">"science"</span>, <span class="s">"reasoning"</span>],
-<span class="k">"task_count"</span>: <span class="n">120</span>,
-<span class="k">"checksum"</span>: <span class="s">"sha256:9c41a0…e2b7"</span>,
-<span class="k">"sbom"</span>: <span class="s">"sbom.spdx.json"</span>,
-<span class="k">"permissions"</span>: {
-  <span class="k">"network"</span>: <span class="b">false</span>,        <span class="cmt">// default-deny</span>
-  <span class="k">"filesystem"</span>: <span class="s">"sandbox"</span>,  <span class="cmt">// scratch only</span>
-  <span class="k">"secrets"</span>: <span class="b">false</span>,
-  <span class="k">"shell"</span>: <span class="b">false</span>
-},
-<span class="k">"answer_keys"</span>: <span class="s">"server_side"</span>,   <span class="cmt">// never bundled</span>
-<span class="k">"signature"</span>: {
-  <span class="k">"alg"</span>: <span class="s">"ed25519"</span>,
-  <span class="k">"signer_pub"</span>: <span class="s">"cgWTxXoSbLI10xXADYp31x…"</span>,
-  <span class="k">"sig"</span>: <span class="s">"6HhkF8imQ94Qvc5iIelYOw…"</span>
+// JSON → light syntax-highlighted HTML (keys, strings, numbers, booleans/null)
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function highlight(obj){
+  const json = JSON.stringify(obj, null, 2);
+  return esc(json)
+    .replace(/&quot;([^&]+?)&quot;(\s*:)/g, '<span class="k">"$1"</span>$2')   // keys
+    .replace(/:\s&quot;([^&]*?)&quot;/g, ': <span class="s">"$1"</span>')        // string values
+    .replace(/: (true|false|null)/g, ': <span class="b">$1</span>')              // booleans/null
+    .replace(/: (-?\d+(?:\.\d+)?)/g, ': <span class="n">$1</span>');             // numbers
 }
-}`;
 
-const PLUGINS=[
-  {name:"xodexa-bio-reasoning-pack",kind:"benchmark_pack",signed:true,
-   desc:"A 120-task science + reasoning gauntlet probing biology and experimental-design reasoning. Answer keys stay server-side.",
-   perms:{network:"deny",filesystem:"sandbox",secrets:"deny",shell:"deny"},
-   meta:{tasks:120,sbom:"yes",approval:"admin"}},
-  {name:"hf-dataset-adapter",kind:"dataset_adapter",signed:true,
-   desc:"Maps an external dataset format into Xodexa task schema for validation packs. Read-only, conversion runs in-sandbox.",
-   perms:{network:"granted",filesystem:"sandbox",secrets:"deny",shell:"deny"},
-   meta:{tasks:"—",sbom:"yes",approval:"admin"}},
-  {name:"banking-tool-simulator",kind:"tool_simulator",signed:true,
-   desc:"Deterministic mock of a banking API for agentic-autonomy tasks. Exposes simulated tools; no real network egress.",
-   perms:{network:"deny",filesystem:"sandbox",secrets:"deny",shell:"limited"},
-   meta:{tasks:"—",sbom:"yes",approval:"admin"}},
-  {name:"prompt-injection-safety-pack",kind:"safety_pack",signed:true,
-   desc:"Adversarial prompt-injection and instruction-hierarchy probes feeding the Safety & Robustness gauntlet.",
-   perms:{network:"deny",filesystem:"sandbox",secrets:"deny",shell:"deny"},
-   meta:{tasks:60,sbom:"yes",approval:"admin"}}
-];
+function permClass(v){
+  if(v===false||v==="none") return "deny";
+  if(v===true||v==="granted"||v==="allow") return "allow";
+  return "lim";
+}
+function permLabel(k,v){
+  if(v===true) return "enabled";
+  if(v===false) return "denied";
+  return String(v);
+}
 
-document.getElementById("manifest").innerHTML=MANIFEST;
-document.getElementById("policy").innerHTML=POLICY.map(p=>`
-  <div class="prow ${p.ok?'':'deny'}">
-    <div class="pico">${p.ok?'✓':'⊘'}</div>
-    <div><div class="pt">${p.t}</div><div class="pd">${p.d}</div></div>
-  </div>`).join("");
+function render(d){
+  document.getElementById("mount").innerHTML = "";  // clear loading spinner
+  const P = d.plugins;
+  document.getElementById("ver").textContent = "registry · "+(P.policy.must_be_signed?"Ed25519 required":"unsigned allowed");
 
-function permClass(v){return v==="deny"?"deny":v==="granted"||v==="allow"?"allow":"lim";}
-function permLabel(v){return v==="deny"?"deny":v==="sandbox"?"sandbox":v==="granted"?"granted ⚑":v==="limited"?"limited":v;}
-document.getElementById("plugins").innerHTML=PLUGINS.map(p=>`
-  <div class="pcard">
-    <div class="ptop">
-      <div><div class="pname">${p.name}</div><div class="pkind">${p.kind}</div></div>
-      <span class="signed">● ed25519 signed</span>
-    </div>
-    <div class="pdesc">${p.desc}</div>
-    <div class="perms">
-      ${Object.entries(p.perms).map(([k,v])=>`
-        <div class="perm"><span class="pl">${k}</span><span class="pv ${permClass(v)}">${permLabel(v)}</span></div>`).join("")}
-    </div>
-    <div class="pmeta">
-      <span>tasks <b>${p.meta.tasks}</b></span><span>sbom <b>${p.meta.sbom}</b></span><span>install <b>${p.meta.approval}</b></span>
-    </div>
-  </div>`).join("");
+  // example signed manifest (light code block)
+  const m = P.example_manifest;
+  document.getElementById("manifestTitle").textContent = "Example signed plugin manifest — "+m.type;
+  document.getElementById("manifest").innerHTML = highlight(m);
+
+  // policy rules
+  const pol = P.policy;
+  const ROWS = [
+    {ok:true,  t:"Must be signed (Ed25519)", d:"Required: "+(pol.must_be_signed?"yes":"no")+". Unsigned or mismatched bundles are rejected at upload."},
+    {ok:false, t:"Network: default-deny", d:"No outbound network unless explicitly granted and admin-approved."},
+    {ok:false, t:"Filesystem: "+pol.allowed_filesystem.join(" / "), d:"Reads/writes confined to the allowed modes; no host paths."},
+    {ok:false, t:"Secrets: "+pol.allowed_secrets.join(" / "), d:"Plugins never receive API keys, tokens, or answer keys."},
+    {ok:false, t:"Shell: "+pol.allowed_shell.join(" / "), d:"No arbitrary process execution by default."}
+  ];
+  // append the explicit policy rules from data
+  pol.rules.forEach(r=>ROWS.push({ok:true, t:r, d:""}));
+
+  document.getElementById("policy").innerHTML = ROWS.map(p=>
+    '<div class="prow '+(p.ok?'':'deny')+'">'+
+      '<div class="pico">'+(p.ok?'✓':'⊘')+'</div>'+
+      '<div><div class="pt">'+p.t+'</div>'+(p.d?'<div class="pd">'+p.d+'</div>':'')+'</div>'+
+    '</div>').join("");
+
+  // allowed lists + plugin types
+  function listBlock(title, arr){
+    return '<div class="llist"><h4>'+title+'</h4><div class="chips">'+
+      arr.map(x=>'<span class="chip">'+x+'</span>').join("")+'</div></div>';
+  }
+  document.getElementById("policyLists").innerHTML =
+    listBlock("Plugin types", pol.plugin_types)+
+    listBlock("Filesystem", pol.allowed_filesystem)+
+    listBlock("Shell", pol.allowed_shell)+
+    listBlock("Secrets", pol.allowed_secrets);
+
+  // example plugin cards
+  document.getElementById("plugins").innerHTML = P.examples.map(ex=>{
+    const x = ex.manifest, pm = x.permissions;
+    const permRows = Object.entries(pm).map(([k,v])=>
+      '<div class="perm"><span class="pl">'+k+'</span><span class="pv '+permClass(v)+'">'+permLabel(k,v)+'</span></div>').join("");
+    const badge = ex.valid
+      ? '<span class="signed">● ed25519 signed</span>'
+      : '<span class="signed invalid">⊘ signature invalid</span>';
+    return '<div class="pcard">'+
+      '<div class="ptop">'+
+        '<div><div class="pname">'+x.name+'</div><div class="pkind">'+x.type+'</div></div>'+badge+
+      '</div>'+
+      '<div class="pdesc">'+x.description+'</div>'+
+      '<div class="perms">'+permRows+'</div>'+
+      '<div class="pmeta">'+
+        '<span>license <b>'+x.license+'</b></span>'+
+        '<span>datasets <b>'+(x.datasets||[]).length+'</b></span>'+
+        '<span>sbom <b>'+(x.sbom?'yes':'no')+'</b></span>'+
+      '</div>'+
+    '</div>';
+  }).join("");
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["plugins.json"], render, "#mount");
+});
 </script>
 </body>
 </html>

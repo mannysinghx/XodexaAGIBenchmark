@@ -1,0 +1,178 @@
+{
+  "policy": {
+    "must_be_signed": true,
+    "plugin_types": [
+      "agent_environment",
+      "benchmark_pack",
+      "dataset_adapter",
+      "enterprise_workflow_pack",
+      "model_adapter",
+      "safety_pack",
+      "scoring_plugin",
+      "tool_simulator"
+    ],
+    "allowed_filesystem": [
+      "none",
+      "read-only",
+      "sandbox-only"
+    ],
+    "allowed_shell": [
+      "none",
+      "restricted"
+    ],
+    "allowed_secrets": [
+      "none"
+    ],
+    "rules": [
+      "Every plugin must be signed (Ed25519) and the signature must verify.",
+      "Default-deny permissions; no network access by default.",
+      "No unrestricted shell; no secrets access.",
+      "A sandbox is required; SBOM + checksum are required and verified.",
+      "Organization installs require admin approval."
+    ]
+  },
+  "examples": [
+    {
+      "manifest": {
+        "name": "xodexa-code-gauntlet",
+        "version": "1.0.0",
+        "type": "benchmark_pack",
+        "license": "Apache-2.0",
+        "author": "xodexa",
+        "permissions": {
+          "network": false,
+          "filesystem": "sandbox-only",
+          "secrets": "none",
+          "shell": "restricted",
+          "sandbox": true
+        },
+        "datasets": [
+          "code_mini.jsonl"
+        ],
+        "scorers": [
+          "pytest_hidden"
+        ],
+        "tools": [],
+        "sbom": "spdx:example",
+        "description": "Code & SWE gauntlet pack with hidden pytest scorers.",
+        "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
+        "signer_pub": "E6uu0kAjmk+Muo2Y37b6eAHCuqg30u/64zKu8E7n9dk=",
+        "signature": "aDtLN4IMqcjmCmid0d7SXzCZtg5m98CqyHXts27MNEgJdwxG0Ce1qLOqHkhjMKkeR5mSjNGUAXDn67WoStjECg=="
+      },
+      "valid": true
+    },
+    {
+      "manifest": {
+        "name": "xodexa-lm-eval-adapter",
+        "version": "1.0.0",
+        "type": "dataset_adapter",
+        "license": "MIT",
+        "author": "xodexa",
+        "permissions": {
+          "network": false,
+          "filesystem": "sandbox-only",
+          "secrets": "none",
+          "shell": "restricted",
+          "sandbox": true
+        },
+        "datasets": [
+          "code_mini.jsonl"
+        ],
+        "scorers": [
+          "pytest_hidden"
+        ],
+        "tools": [],
+        "sbom": "spdx:example",
+        "description": "Imports lm-evaluation-harness suites as Layer-0 calibration anchors.",
+        "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
+        "signer_pub": "E6uu0kAjmk+Muo2Y37b6eAHCuqg30u/64zKu8E7n9dk=",
+        "signature": "YBMCprmN9KTP0+BdptyB9aSa7goqlEsTBEhAsM52oc/+osqhSQbLD4meibDWQVryr3AQLpha+hI6T5u3oDOiCw=="
+      },
+      "valid": true
+    },
+    {
+      "manifest": {
+        "name": "xodexa-airline-sim",
+        "version": "1.0.0",
+        "type": "tool_simulator",
+        "license": "Apache-2.0",
+        "author": "xodexa",
+        "permissions": {
+          "network": false,
+          "filesystem": "sandbox-only",
+          "secrets": "none",
+          "shell": "restricted",
+          "sandbox": true
+        },
+        "datasets": [
+          "code_mini.jsonl"
+        ],
+        "scorers": [
+          "pytest_hidden"
+        ],
+        "tools": [],
+        "sbom": "spdx:example",
+        "description": "Sandboxed airline-domain tool environment for agentic tasks.",
+        "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
+        "signer_pub": "E6uu0kAjmk+Muo2Y37b6eAHCuqg30u/64zKu8E7n9dk=",
+        "signature": "V5I48v3C7TKB2CxOmu1ey1OOx6OCFDj9V5wGJYhQedGlx5u17ZgPzIGVgXncjGUxnvE0XAo6l6A7+xBmrt8sDw=="
+      },
+      "valid": true
+    },
+    {
+      "manifest": {
+        "name": "xodexa-safety-redteam",
+        "version": "1.0.0",
+        "type": "safety_pack",
+        "license": "CC-BY-4.0",
+        "author": "xodexa",
+        "permissions": {
+          "network": false,
+          "filesystem": "sandbox-only",
+          "secrets": "none",
+          "shell": "restricted",
+          "sandbox": true
+        },
+        "datasets": [
+          "code_mini.jsonl"
+        ],
+        "scorers": [
+          "pytest_hidden"
+        ],
+        "tools": [],
+        "sbom": "spdx:example",
+        "description": "Benign, abstracted prompt-injection & instruction-hierarchy probes.",
+        "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
+        "signer_pub": "E6uu0kAjmk+Muo2Y37b6eAHCuqg30u/64zKu8E7n9dk=",
+        "signature": "OOuuOYpRGwrno1AiVdnc4P6h7T81kzdxG/GEfY+1PkZMxTPIQrZVOMCODd1Sghff5BCVwFSLBvfd46lKZLM6BA=="
+      },
+      "valid": true
+    }
+  ],
+  "example_manifest": {
+    "name": "xodexa-code-gauntlet",
+    "version": "1.0.0",
+    "type": "benchmark_pack",
+    "license": "Apache-2.0",
+    "author": "xodexa",
+    "permissions": {
+      "network": false,
+      "filesystem": "sandbox-only",
+      "secrets": "none",
+      "shell": "restricted",
+      "sandbox": true
+    },
+    "datasets": [
+      "code_mini.jsonl"
+    ],
+    "scorers": [
+      "pytest_hidden"
+    ],
+    "tools": [],
+    "sbom": "spdx:example",
+    "description": "Code & SWE gauntlet pack with hidden pytest scorers.",
+    "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
+    "signer_pub": "E6uu0kAjmk+Muo2Y37b6eAHCuqg30u/64zKu8E7n9dk=",
+    "signature": "aDtLN4IMqcjmCmid0d7SXzCZtg5m98CqyHXts27MNEgJdwxG0Ce1qLOqHkhjMKkeR5mSjNGUAXDn67WoStjECg=="
+  }
+}

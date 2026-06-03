@@ -4,67 +4,38 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Industry Leaderboard</title>
+<link rel="stylesheet" href="assets/theme.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="assets/data.js" defer></script>
 <style>
-  :root{
-    --bg:#070a0f; --panel:#0d1320; --panel2:#101a2b; --line:#1d2840; --line2:#243352;
-    --txt:#e8eef7; --muted:#7e8ca3; --muted2:#9fb0c8;
-    --accent:#3da9fc; --accent2:#7c5cff; --good:#27d796; --warn:#ffb454; --bad:#ff5d6c; --gold:#ffd166;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1300px 640px at 72% -12%,#0f1a2e 0,var(--bg) 55%);
-    color:var(--txt);font:13.5px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-  .wrap{max-width:1340px;margin:0 auto;padding:24px 20px 70px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    display:grid;place-items:center;font-weight:800;color:#fff;font-size:20px;box-shadow:0 0 26px rgba(61,169,252,.4)}
-  h1{font-size:21px;margin:0;letter-spacing:.2px}
-  .sub{color:var(--muted);font-size:12px;margin-top:2px}
-  .pill{font-size:11px;color:var(--muted2);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;white-space:nowrap}
-  .tabs{display:flex;gap:6px;margin:18px 0 14px;border-bottom:1px solid var(--line);padding-bottom:0}
-  .tab{padding:9px 14px;color:var(--muted);font-weight:600;font-size:13px;border-bottom:2px solid transparent;cursor:pointer}
-  .tab.on{color:var(--txt);border-color:var(--accent)}
-  .panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;box-shadow:var(--shadow-soft)}
   .panel h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
   .row{display:flex;flex-wrap:wrap;gap:8px}
-  .chk{display:flex;align-items:center;gap:6px;border:1px solid var(--line2);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--muted2);cursor:pointer;user-select:none}
+  .chk{display:flex;align-items:center;gap:6px;border:1px solid var(--line2);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--muted2);cursor:pointer;user-select:none;background:var(--panel)}
   .chk input{accent-color:var(--accent);width:13px;height:13px}
-  .chk.on{color:var(--txt);border-color:var(--accent);background:rgba(61,169,252,.08)}
+  .chk.on{color:var(--txt);border-color:var(--accent);background:rgba(37,99,235,.08)}
   .controls{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
-  .search{width:100%;background:#0a111d;border:1px solid var(--line2);border-radius:10px;color:var(--txt);padding:11px 13px;font-size:13px}
-  .search::placeholder{color:#5d6b82}
-  .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel),var(--panel2))}
+  .search{width:100%;background:var(--panel);border:1px solid var(--line2);border-radius:10px;color:var(--txt);padding:11px 13px;font-size:13px}
+  .search::placeholder{color:var(--muted)}
+  .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:var(--shadow-soft)}
   table{width:100%;border-collapse:collapse;min-width:1180px}
   th,td{padding:10px 10px;border-bottom:1px solid var(--line);font-size:12.5px;white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
-  th{color:var(--muted);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;position:sticky;top:0;background:#0c1320;cursor:pointer;z-index:2}
+  th{color:var(--muted);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;position:sticky;top:0;background:var(--panel2);cursor:pointer;z-index:2}
   th.l,td.l{text-align:left}
   td.rank{color:var(--muted);width:34px}
   .model{font-weight:600;color:var(--txt)}
   .meta{color:var(--muted);font-size:11px}
   .apex{font-weight:800;font-size:14px}
-  .a-hi{color:var(--accent)} .a-mid{color:var(--good)} .a-lo{color:var(--muted2)}
   .ci{color:var(--muted);font-size:10.5px}
-  .ce-bad{color:var(--bad)} .ce-warn{color:var(--warn)} .ce-good{color:var(--good)}
-  .badge{display:inline-block;font-size:9.5px;padding:3px 7px;border-radius:6px;border:1px solid var(--line2);white-space:nowrap}
-  .b-att{color:#0a0f17;background:linear-gradient(90deg,var(--gold),#ffe6a0);border:none;font-weight:800}
-  .b-ver{color:var(--good);border-color:rgba(39,215,150,.4);background:rgba(39,215,150,.08)}
-  .b-flag{color:var(--warn);border-color:rgba(255,180,84,.4);background:rgba(255,180,84,.08)}
-  .b-local{color:var(--muted)}
-  .b-new{color:var(--accent);border-color:rgba(61,169,252,.5);background:rgba(61,169,252,.1);font-weight:700;margin-left:6px}
-  .typ{display:inline-block;width:18px;text-align:center;margin-right:6px}
+  .badge{display:inline-block;font-size:9.5px;padding:3px 7px;border-radius:6px;border:1px solid var(--line2);white-space:nowrap;color:var(--muted2);background:var(--panel)}
   .grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
   #radar,#scatter{height:320px}
   .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;color:var(--muted);font-size:11px}
   .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
-  .note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
   .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:16px 0}
-  .kpi{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-  .kpi .n{font-size:20px;font-weight:800} .kpi .l{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;margin-top:2px}
-  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
-  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
-  nav.mainnav a:hover{color:var(--muted2)}
-  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow-soft)}
+  .kpi .n{font-size:20px;font-weight:800;color:var(--txt)} .kpi .l{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;margin-top:2px}
+  .bandlegend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:11px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -77,7 +48,7 @@
         <div class="sub">Frontier-hard · cryptographically verified · calibration-aware · the unforgiving open benchmark</div>
       </div>
     </div>
-    <div class="pill">v1.0.0 · Rank (Upper Bound) · 95% CI · central scoring authority</div>
+    <div class="pill" id="hpill">Rank (Upper Bound) · 95% CI · central scoring authority</div>
   </header>
 
   <nav class="mainnav">
@@ -93,237 +64,237 @@
     <a href="about.html">About</a>
   </nav>
 
-  <div class="tabs">
-    <div class="tab on">Xodexa Gauntlet</div>
-    <div class="tab">Frontier Exam (HLE-class)</div>
-    <div class="tab">Calibration</div>
-    <div class="tab">Metrics through time</div>
-    <div class="tab">About</div>
-  </div>
+  <div id="mount"></div>
 
-  <div class="kpis">
-    <div class="kpi"><div class="n a-hi" id="k_top">—</div><div class="l">Top Xodexa Score</div></div>
-    <div class="kpi"><div class="n" id="k_acc">—</div><div class="l">Best Frontier-Exam Accuracy</div></div>
-    <div class="kpi"><div class="n ce-bad" id="k_ce">—</div><div class="l">Median Calibration Error</div></div>
-    <div class="kpi"><div class="n a-mid" id="k_ver">—</div><div class="l">Verified models</div></div>
-    <div class="kpi"><div class="n ce-warn" id="k_flag">—</div><div class="l">Flagged / contaminated</div></div>
-  </div>
-
-  <div class="controls">
-    <div class="panel">
-      <h3>Columns</h3>
-      <div class="row" id="cols"></div>
+  <div id="content" style="display:none">
+    <div class="kpis">
+      <div class="kpi"><div class="n" id="k_top">—</div><div class="l">Top Xodexa Score</div></div>
+      <div class="kpi"><div class="n" id="k_acc">—</div><div class="l">Best Frontier-Exam Accuracy</div></div>
+      <div class="kpi"><div class="n" id="k_ce">—</div><div class="l">Median Calibration Error</div></div>
+      <div class="kpi"><div class="n" id="k_agi">—</div><div class="l">Mean AGI Index</div></div>
+      <div class="kpi"><div class="n" id="k_models">—</div><div class="l">Models Evaluated</div></div>
     </div>
-    <div class="panel">
-      <h3>Filter</h3>
-      <input class="search" id="search" placeholder="Search models or labs (e.g. 'gpt', 'open-source')…">
-      <div class="row" id="filters" style="margin-top:10px"></div>
-    </div>
-  </div>
 
-  <div class="tablewrap">
-    <table id="lb">
-      <thead><tr id="head"></tr></thead>
-      <tbody id="body"></tbody>
-    </table>
-  </div>
-
-  <div class="grid2" style="margin-top:14px">
     <div class="panel">
-      <h3>Category Profile — top 3 by Xodexa Score (decimals, /1000)</h3>
-      <div id="radar"></div>
-      <div class="legend" id="radarleg"></div>
+      <h3>Grade bands</h3>
+      <div class="bandlegend" id="bandlegend"></div>
     </div>
-    <div class="panel">
-      <h3>Honesty map — accuracy vs calibration error (HLE finding: frontier ≠ calibrated)</h3>
-      <div id="scatter"></div>
-      <div class="legend"><span><span class="dot" style="background:var(--good)"></span>well-calibrated (low CE)</span>
-        <span><span class="dot" style="background:var(--bad)"></span>overconfident (high CE)</span>
-        <span class="meta">bubble size = Xodexa Score</span></div>
-    </div>
-  </div>
 
-  <div class="note">
-    <b>How to read this.</b> <b>Xodexa Score</b> (0–1000) is the composite capability index, re-scored centrally
-    from raw outputs. Per-gauntlet columns are decimal sub-scores (/1000). <b>Acc</b> is Frontier-Exam (HLE-class)
-    accuracy with a 95% CI; <b>CE</b> is RMS calibration error — high CE means the model is confidently wrong
-    (Scale's HLE shows >80% CE for most frontier models). <b>Rank (UB)</b> = 1 + the number of models whose lower CI
-    bound exceeds this model's upper CI bound, so statistically-tied models share a rank. Badges: <b>Verified+Attested</b>
-    (confidential-computing) ▸ <b>Verified</b> (central re-score, non-attested) ▸ <b>Local</b> (advisory, never official)
-    ▸ <b>Flagged</b> (canary / timing / contamination). Numbers here are illustrative seed data; the live board reads
-    <code>/v1/leaderboard</code>.
+    <div class="controls">
+      <div class="panel">
+        <h3>Columns</h3>
+        <div class="row" id="cols"></div>
+      </div>
+      <div class="panel">
+        <h3>Filter</h3>
+        <input class="search" id="search" placeholder="Search models or grades…">
+        <div class="row" id="filters" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table id="lb">
+        <thead><tr id="head"></tr></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="panel">
+        <h3>Capability profile — top 3 by Xodexa Score (family sub-scores)</h3>
+        <div id="radar"></div>
+        <div class="legend" id="radarleg"></div>
+      </div>
+      <div class="panel">
+        <h3>Honesty map — accuracy vs calibration error</h3>
+        <div id="scatter"></div>
+        <div class="legend">
+          <span><span class="dot" id="dgood"></span>well-calibrated (low CE)</span>
+          <span><span class="dot" id="dbad"></span>overconfident (high CE)</span>
+          <span class="meta">bubble size = Xodexa Score</span></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>How to read this.</b> <b>Xodexa Score</b> (0–1000) is the composite capability index. Per-family columns are
+      sub-scores (0–1). <b>Acc</b> is Frontier-Exam accuracy with a 95% CI; <b>CE</b> is RMS calibration error — high CE
+      means the model is confidently wrong. <b>Rank (UB)</b> is the statistical upper-bound rank, so tied models share a
+      rank. <b>Contam.</b> is the contamination-risk estimate. Scores are issued only by the central authority. The board
+      reads live JSON from <code>./data/</code>.
+    </div>
   </div>
 </div>
 
 <script>
-// ---- Seed data (illustrative). Xodexa sub-scores /1000, frontier-exam accuracy %, CE %. ----
-const DATA = [
-  {m:"Apex-Frontier-XL",      lab:"closed-lab", os:false, type:"chat",  prec:"bf16", size:"70+",
-   apex:712.4, reasoning:761.2, longh:803.5, truth:548.9, code:739.1, agent:690.4, multi:701.8, safety:712.0,
-   acc:46.44, ci:1.96, ce:51.0, cost:14.2, lat:38.6, st:"flag", new:true},
-  {m:"MoE-400B-A40B",         lab:"open-source", os:true,  type:"pretrained", prec:"bf16", size:"70+",
-   apex:651.7, reasoning:690.3, longh:744.2, truth:560.1, code:642.7, agent:560.3, multi:611.9, safety:639.4,
-   acc:40.56, ci:1.92, ce:50.0, cost:6.1, lat:52.0, st:"ver", new:true},
-  {m:"OpenLlama-70B-Instruct",lab:"open-source", os:true,  type:"chat", prec:"bf16", size:"70+",
-   apex:604.2, reasoning:651.0, longh:690.6, truth:521.4, code:588.2, agent:512.7, multi:540.0, safety:600.1,
-   acc:37.52, ci:1.90, ce:57.0, cost:5.4, lat:55.3, st:"ver", new:false},
-  {m:"Frontier-Closed-Pro",   lab:"closed-lab", os:false, type:"chat", prec:"?", size:"70+",
-   apex:583.6, reasoning:620.4, longh:660.1, truth:498.0, code:611.5, agent:548.9, multi:590.2, safety:578.3,
-   acc:36.20, ci:1.88, ce:47.0, cost:11.0, lat:41.2, st:"att", new:false},
-  {m:"Research-Preview-R1",   lab:"research-lab", os:false, type:"chat", prec:"?", size:"70+",
-   apex:560.9, reasoning:712.0, longh:540.2, truth:430.0, code:690.1, agent:470.3, multi:520.4, safety:505.5,
-   acc:34.44, ci:1.86, ce:73.0, cost:9.8, lat:120.5, st:"flag", new:false},
-  {m:"Mixtral-Next-8x22B",    lab:"open-source", os:true, type:"merge", prec:"bf16", size:"70+",
-   apex:498.3, reasoning:540.1, longh:560.7, truth:441.2, code:520.0, agent:430.6, multi:470.1, safety:489.9,
-   acc:25.32, ci:1.70, ce:50.0, cost:4.2, lat:60.1, st:"ver", new:false},
-  {m:"Self-hosted vLLM-32B",  lab:"local", os:true, type:"fine-tuned", prec:"fp16", size:"~35",
-   apex:421.6, reasoning:470.2, longh:430.9, truth:388.5, code:441.0, agent:360.2, multi:401.4, safety:420.0,
-   acc:19.20, ci:1.54, ce:65.0, cost:2.1, lat:70.4, st:"ver", new:false},
-  {m:"Gemma-Plus-13B",        lab:"open-source", os:true, type:"chat", prec:"bf16", size:"~13",
-   apex:352.8, reasoning:401.0, longh:360.3, truth:300.2, code:370.5, agent:280.1, multi:330.0, safety:351.7,
-   acc:12.08, ci:1.28, ce:80.0, cost:1.4, lat:48.0, st:"ver", new:false},
-  {m:"Local Ollama llama3-8B",lab:"local", os:true, type:"chat", prec:"4bit", size:"~7",
-   apex:198.4, reasoning:240.1, longh:190.0, truth:160.6, code:210.3, agent:120.4, multi:170.2, safety:200.5,
-   acc:5.68, ci:0.91, ce:83.0, cost:0.4, lat:33.2, st:"local", new:false},
-  {m:"Nano-Chat-1.5B",        lab:"open-source", os:true, type:"fine-tuned", prec:"8bit", size:"~1.5",
-   apex:118.7, reasoning:150.2, longh:110.4, truth:90.1, code:130.0, agent:70.2, multi:101.3, safety:120.8,
-   acc:2.72, ci:0.64, ce:89.0, cost:0.2, lat:22.1, st:"local", new:false},
-];
+let DATA=[], P, FAMKEYS=[], FAMLABELS={}, GRADE_BANDS=[], COLS=[], colOn={}, sortKey="apex", sortDir=-1, query="";
+let bandFilter=new Set();
+let radar=null, scatter=null;
 
-const COLS = [
-  {k:"apex",   t:"Xodexa ⬆", on:true, fmt:apexCell},
-  {k:"acc",    t:"Acc ± CI", on:true, fmt:accCell},
-  {k:"ce",     t:"Calib Err", on:true, fmt:ceCell},
-  {k:"reasoning", t:"Reasoning", on:true, fmt:d},
-  {k:"longh",  t:"Long-Horizon", on:true, fmt:d},
-  {k:"truth",  t:"Truthful", on:true, fmt:d},
-  {k:"code",   t:"Code", on:true, fmt:d},
-  {k:"agent",  t:"Agent", on:false, fmt:d},
-  {k:"multi",  t:"Multimodal", on:false, fmt:d},
-  {k:"safety", t:"Safety", on:false, fmt:d},
-  {k:"cost",   t:"Cost $/Mtok", on:false, fmt:(r,k)=>r[k].toFixed(2)},
-  {k:"lat",    t:"Latency s", on:false, fmt:(r,k)=>r[k].toFixed(1)},
-];
-const TYPE_ICON={pretrained:"🟢",fine_tuned:"🔶","fine-tuned":"🔶",chat:"💬",merge:"🤝"};
+function fnum(r,k){return r[k]==null?"—":(+r[k]).toFixed(2);}
 
-function d(r,k){return r[k]==null?"—":r[k].toFixed(2);}
-function apexCell(r){const c=r.apex>=600?"a-hi":r.apex>=400?"a-mid":"a-lo";return `<span class="apex ${c}">${r.apex.toFixed(2)}</span>`;}
-function accCell(r){return `${r.acc.toFixed(2)} <span class="ci">±${r.ci.toFixed(2)}</span>`;}
-function ceCell(r){const c=r.ce>=70?"ce-bad":r.ce>=45?"ce-warn":"ce-good";return `<span class="${c}">${r.ce.toFixed(1)}</span>`;}
+function init(d){
+  P = XODEXA.palette();
+  const lb=d.leaderboard, cat=d.catalog;
+  GRADE_BANDS = cat.grade_bands||[];
+  document.getElementById("hpill").textContent =
+    "v"+(lb.benchmark_version||cat.benchmark_version)+" · Rank (Upper Bound) · 95% CI · central scoring authority";
 
-const BADGE={att:["Verified + Attested","b-att"],ver:["Verified","b-ver"],
-  flag:["Flagged","b-flag"],local:["Local","b-local"]};
+  const fam=cat.families||{};
+  const firstFs=(lb.entries[0]&&lb.entries[0].family_scores)||{};
+  FAMKEYS=Object.keys(fam).filter(k=>k in firstFs);
+  if(!FAMKEYS.length) FAMKEYS=Object.keys(firstFs);
+  FAMKEYS.forEach(k=>FAMLABELS[k]=(fam[k]&&fam[k].title?fam[k].title.replace(/ Gauntlet$/,''):XODEXA.fmt.cap(k)));
 
-// ---- Rank (Upper Bound), HLE methodology, computed from acc ± ci ----
-function rankUB(rows){
-  rows.forEach(r=>{r._lo=r.acc-r.ci;r._hi=r.acc+r.ci;});
-  rows.forEach(r=>{r.rankub=1+rows.filter(o=>o!==r&&o._lo>r._hi).length;});
+  DATA = lb.entries.map(e=>{
+    const r={
+      m:e.model, apex:e.xodexa_score, grade:e.grade, color:XODEXA.gradeColor(e.xodexa_score,P),
+      agi_level:e.agi_level, agi_level_name:e.agi_level_name, agi_index:e.agi_index,
+      acc:e.accuracy, ci:e.ci, ce:e.calibration_error, contam:e.contamination_risk,
+      rank_ub:e.rank_ub, time_horizon:e.time_horizon
+    };
+    FAMKEYS.forEach(k=>r["fam_"+k]=(e.family_scores||{})[k]);
+    return r;
+  });
+
+  // band filter starts all-on
+  GRADE_BANDS.forEach(b=>bandFilter.add(b.name));
+
+  // columns: fixed metric columns + a family column per family
+  COLS=[
+    {k:"apex",   t:"Xodexa ⬆", on:true, fmt:apexCell},
+    {k:"grade",  t:"Grade", on:true, fmt:gradeCell},
+    {k:"agi_level", t:"AGI Lvl", on:true, fmt:agiCell},
+    {k:"acc",    t:"Acc ± CI", on:true, fmt:accCell},
+    {k:"ce",     t:"Calib Err", on:true, fmt:ceCell},
+    {k:"contam", t:"Contam.", on:true, fmt:contamCell},
+    {k:"rank_ub",t:"Rank UB", on:true, fmt:(r,k)=>r[k]},
+  ];
+  FAMKEYS.forEach((k,i)=>COLS.push({k:"fam_"+k, t:FAMLABELS[k], on:i<4, fmt:fnum}));
+  colOn=Object.fromEntries(COLS.map(c=>[c.k,c.on]));
+
+  document.getElementById("content").style.display="";
+  document.getElementById("dgood").style.background=P.good;
+  document.getElementById("dbad").style.background=P.bad;
+
+  buildBandLegend();
+  buildColumnToggles();
+  buildFilters();
+  document.getElementById("search").oninput=e=>{query=e.target.value.toLowerCase();render();};
+  render();
+  window.addEventListener("resize",()=>{radar&&radar.resize();scatter&&scatter.resize();});
 }
-rankUB(DATA);
 
-// ---- State ----
-const colOn=Object.fromEntries(COLS.map(c=>[c.k,c.on]));
-const filt={type:new Set(["pretrained","fine-tuned","chat","merge"]),
-            prec:new Set(["bf16","fp16","8bit","4bit","?"]),
-            size:new Set(["~1.5","~7","~13","~35","70+"]),
-            status:new Set(["att","ver","flag","local"])};
-let sortKey="apex", sortDir=-1, query="";
+function apexCell(r){return '<span class="apex" style="color:'+r.color+'">'+r.apex.toFixed(1)+'</span>';}
+function gradeCell(r){return '<span style="color:'+r.color+';font-weight:600">'+r.grade+'</span>';}
+function agiCell(r){return 'L'+r.agi_level+' <span class="meta">'+r.agi_level_name+'</span>';}
+function accCell(r){return r.acc.toFixed(2)+' <span class="ci">±'+r.ci.toFixed(2)+'</span>';}
+function ceCell(r){const c=r.ce>=45?P.bad:r.ce>=30?P.warn:P.good;return '<span style="color:'+c+'">'+r.ce.toFixed(1)+'</span>';}
+function contamCell(r){const c=r.contam>=0.5?P.bad:r.contam>=0.2?P.warn:P.good;return '<span style="color:'+c+'">'+(r.contam*100).toFixed(0)+'%</span>';}
 
-// ---- Build column toggles ----
-const colsEl=document.getElementById("cols");
-COLS.forEach(c=>{
-  const el=document.createElement("label");el.className="chk"+(colOn[c.k]?" on":"");
-  el.innerHTML=`<input type="checkbox" ${colOn[c.k]?"checked":""}> ${c.t}`;
-  el.querySelector("input").onchange=e=>{colOn[c.k]=e.target.checked;el.classList.toggle("on",e.target.checked);render();};
-  colsEl.appendChild(el);
-});
-// ---- Build filter chips ----
-const fEl=document.getElementById("filters");
-const groups=[["status",[["att","Attested"],["ver","Verified"],["flag","Flagged"],["local","Local"]]],
-  ["type",[["pretrained","pretrained"],["fine-tuned","fine-tuned"],["chat","chat"],["merge","merge"]]],
-  ["prec",[["bf16","bf16"],["fp16","fp16"],["8bit","8bit"],["4bit","4bit"],["?","?"]]],
-  ["size",[["~1.5","~1.5"],["~7","~7"],["~13","~13"],["~35","~35"],["70+","70+"]]]];
-groups.forEach(([g,opts])=>{
-  opts.forEach(([v,lab])=>{
+function bandFor(score){return GRADE_BANDS.slice().reverse().find(b=>score>=b.lo)||GRADE_BANDS[0]||{name:""};}
+
+function buildBandLegend(){
+  document.getElementById("bandlegend").innerHTML=GRADE_BANDS.map(b=>{
+    const c=XODEXA.gradeColor((b.lo+b.hi)/2,P);
+    return '<span><span class="dot" style="background:'+c+'"></span>'+b.name+' <span class="meta">'+b.lo+'–'+b.hi+'</span></span>';
+  }).join("");
+}
+
+function buildColumnToggles(){
+  const colsEl=document.getElementById("cols");
+  colsEl.innerHTML="";
+  COLS.forEach(c=>{
+    const el=document.createElement("label");el.className="chk"+(colOn[c.k]?" on":"");
+    el.innerHTML='<input type="checkbox" '+(colOn[c.k]?"checked":"")+'> '+c.t;
+    el.querySelector("input").onchange=e=>{colOn[c.k]=e.target.checked;el.classList.toggle("on",e.target.checked);render();};
+    colsEl.appendChild(el);
+  });
+}
+
+function buildFilters(){
+  const fEl=document.getElementById("filters");
+  fEl.innerHTML="";
+  GRADE_BANDS.forEach(b=>{
     const el=document.createElement("label");el.className="chk on";
-    el.innerHTML=`<input type="checkbox" checked> ${lab}`;
-    el.querySelector("input").onchange=e=>{e.target.checked?filt[g].add(v):filt[g].delete(v);el.classList.toggle("on",e.target.checked);render();};
+    el.innerHTML='<input type="checkbox" checked> '+b.name;
+    el.querySelector("input").onchange=e=>{e.target.checked?bandFilter.add(b.name):bandFilter.delete(b.name);el.classList.toggle("on",e.target.checked);render();};
     fEl.appendChild(el);
   });
-});
-document.getElementById("search").oninput=e=>{query=e.target.value.toLowerCase();render();};
-
-// ---- Render ----
-function visible(){
-  return DATA.filter(r=>filt.status.has(r.st)&&filt.type.has(r.type)&&filt.prec.has(r.prec)
-    &&filt.size.has(r.size)&&(r.m.toLowerCase().includes(query)||r.lab.toLowerCase().includes(query)
-      ||(r.os?"open-source":"closed").includes(query)))
-    .sort((a,b)=>(a[sortKey]>b[sortKey]?1:-1)*sortDir);
 }
+
+function visible(){
+  return DATA.filter(r=>bandFilter.has(bandFor(r.apex).name)
+      &&(r.m.toLowerCase().includes(query)||r.grade.toLowerCase().includes(query)))
+    .sort((a,b)=>{const av=a[sortKey],bv=b[sortKey];
+      if(typeof av==="string") return av.localeCompare(bv)*sortDir;
+      return (av>bv?1:av<bv?-1:0)*sortDir;});
+}
+
 function render(){
   const rows=visible();
-  // head
   const head=document.getElementById("head");
-  let h=`<th class="l">Rank</th><th class="l">Model</th>`;
-  COLS.filter(c=>colOn[c.k]).forEach(c=>h+=`<th data-k="${c.k}">${c.t}</th>`);
+  let h='<th class="l">Rank</th><th class="l">Model</th>';
+  COLS.filter(c=>colOn[c.k]).forEach(c=>h+='<th data-k="'+c.k+'">'+c.t+'</th>');
   head.innerHTML=h;
   head.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{
     const k=th.dataset.k; if(sortKey===k)sortDir*=-1; else {sortKey=k;sortDir=-1;} render();});
-  // body
+
   const body=document.getElementById("body");
   body.innerHTML=rows.map(r=>{
-    const [lab,cls]=BADGE[r.st];
-    let tds=`<td class="l rank">${r.rankub}</td>
-      <td class="l"><span class="typ">${TYPE_ICON[r.type]||"•"}</span><span class="model">${r.m}</span>
-        ${r.new?'<span class="badge b-new">NEW</span>':''}<br>
-        <span class="meta">${r.os?"open-source":"closed"} · ${r.prec} · ${r.size}B · </span>
-        <span class="badge ${cls}">${lab}</span></td>`;
-    COLS.filter(c=>colOn[c.k]).forEach(c=>tds+=`<td>${c.fmt(r,c.k)}</td>`);
-    return `<tr>${tds}</tr>`;
+    let tds='<td class="l rank">'+r.rank_ub+'</td>'+
+      '<td class="l"><span class="model">'+r.m+'</span><br>'+
+        '<span class="meta">'+r.time_horizon+'</span></td>';
+    COLS.filter(c=>colOn[c.k]).forEach(c=>tds+='<td>'+c.fmt(r,c.k)+'</td>');
+    return '<tr>'+tds+'</tr>';
   }).join("");
-  // KPIs
-  document.getElementById("k_top").textContent=Math.max(...DATA.map(r=>r.apex)).toFixed(2);
+
+  const n=DATA.length;
+  document.getElementById("k_top").textContent=Math.max(...DATA.map(r=>r.apex)).toFixed(1);
+  document.getElementById("k_top").style.color=XODEXA.gradeColor(Math.max(...DATA.map(r=>r.apex)),P);
   document.getElementById("k_acc").textContent=Math.max(...DATA.map(r=>r.acc)).toFixed(2)+"%";
   const ces=DATA.map(r=>r.ce).sort((a,b)=>a-b);
-  document.getElementById("k_ce").textContent=ces[Math.floor(ces.length/2)].toFixed(0);
-  document.getElementById("k_ver").textContent=DATA.filter(r=>r.st==="ver"||r.st==="att").length;
-  document.getElementById("k_flag").textContent=DATA.filter(r=>r.st==="flag").length;
-  draw(rows);
+  document.getElementById("k_ce").textContent=ces[Math.floor(ces.length/2)].toFixed(1);
+  document.getElementById("k_ce").style.color=P.warn;
+  document.getElementById("k_agi").textContent=(DATA.reduce((s,r)=>s+r.agi_index,0)/n).toFixed(3);
+  document.getElementById("k_models").textContent=n;
+
+  draw();
 }
 
-// ---- Charts ----
-let radar, scatter;
-function draw(rows){
-  const top3=[...DATA].sort((a,b)=>b.xodexa-a.apex).slice(0,3);
-  const colors=["#3da9fc","#7c5cff","#27d796"];
+function draw(){
+  const top3=[...DATA].sort((a,b)=>b.apex-a.apex).slice(0,3);
+  const colors=[P.accent,P.accent2,P.good];
   if(!radar)radar=echarts.init(document.getElementById("radar"),null,{renderer:"svg"});
-  radar.setOption({textStyle:{color:"#7e8ca3"},
+  radar.setOption({textStyle:{color:P.muted},backgroundColor:"transparent",
     radar:{radius:"64%",splitNumber:4,
-      indicator:[{name:"Reasoning",max:1000},{name:"Long-Horizon",max:1000},{name:"Truthful",max:1000},
-        {name:"Code",max:1000},{name:"Agent",max:1000},{name:"Multimodal",max:1000},{name:"Safety",max:1000}],
-      splitLine:{lineStyle:{color:"#1d2840"}},axisLine:{lineStyle:{color:"#1d2840"}},
-      splitArea:{areaStyle:{color:["rgba(255,255,255,.01)","rgba(255,255,255,.03)"]}},
-      name:{color:"#9fb0c8",fontSize:10.5}},
-    series:[{type:"radar",areaStyle:{opacity:.14},symbolSize:3,
-      data:top3.map((r,i)=>({value:[r.reasoning,r.longh,r.truth,r.code,r.agent,r.multi,r.safety],
+      indicator:FAMKEYS.map(k=>({name:FAMLABELS[k],max:1})),
+      splitLine:{lineStyle:{color:P.line}},axisLine:{lineStyle:{color:P.line}},
+      splitArea:{areaStyle:{color:[P.panel,P.panel2]}},
+      name:{color:P.muted2,fontSize:10}},
+    series:[{type:"radar",areaStyle:{opacity:.12},symbolSize:3,
+      data:top3.map((r,i)=>({value:FAMKEYS.map(k=>r["fam_"+k]),
         name:r.m,lineStyle:{color:colors[i]},itemStyle:{color:colors[i]},areaStyle:{color:colors[i]}}))}]});
   document.getElementById("radarleg").innerHTML=top3.map((r,i)=>
-    `<span><span class="dot" style="background:${colors[i]}"></span>${r.m}</span>`).join("");
+    '<span><span class="dot" style="background:'+colors[i]+'"></span>'+r.m+'</span>').join("");
 
+  const maxAcc=Math.ceil(Math.max(...DATA.map(r=>r.acc))/10)*10;
   if(!scatter)scatter=echarts.init(document.getElementById("scatter"),null,{renderer:"svg"});
-  scatter.setOption({textStyle:{color:"#7e8ca3"},grid:{left:48,right:18,top:18,bottom:38},
-    xAxis:{name:"Accuracy %",nameTextStyle:{color:"#9fb0c8"},min:0,max:50,
-      axisLine:{lineStyle:{color:"#243352"}},splitLine:{lineStyle:{color:"#141d2e"}}},
-    yAxis:{name:"Calibration Error",nameTextStyle:{color:"#9fb0c8"},min:0,max:100,
-      axisLine:{lineStyle:{color:"#243352"}},splitLine:{lineStyle:{color:"#141d2e"}}},
-    tooltip:{formatter:p=>`${p.data.m}<br>acc ${p.data.value[0].toFixed(2)}% · CE ${p.data.value[1]} · Xodexa ${p.data.ax.toFixed(1)}`},
+  scatter.setOption({textStyle:{color:P.muted},backgroundColor:"transparent",grid:{left:52,right:18,top:18,bottom:42},
+    xAxis:{name:"Accuracy %",nameLocation:"middle",nameGap:26,nameTextStyle:{color:P.muted2},min:0,max:maxAcc,
+      axisLine:{lineStyle:{color:P.line2}},axisLabel:{color:P.muted},splitLine:{lineStyle:{color:P.line}}},
+    yAxis:{name:"Calibration Error",nameTextStyle:{color:P.muted2},min:0,max:100,
+      axisLine:{lineStyle:{color:P.line2}},axisLabel:{color:P.muted},splitLine:{lineStyle:{color:P.line}}},
+    tooltip:{backgroundColor:P.panel,borderColor:P.line2,textStyle:{color:P.txt},
+      formatter:p=>p.data.m+"<br>acc "+p.data.value[0].toFixed(2)+"% · CE "+p.data.value[1].toFixed(1)+" · Xodexa "+p.data.ax.toFixed(1)},
     series:[{type:"scatter",
       data:DATA.map(r=>({value:[r.acc,r.ce],m:r.m,ax:r.apex,
-        symbolSize:Math.max(8,r.apex/45),
-        itemStyle:{color:r.ce>=70?"#ff5d6c":r.ce>=45?"#ffb454":"#27d796",opacity:.85}}))}]});
+        symbolSize:Math.max(10,r.apex/40),
+        itemStyle:{color:r.ce>=45?P.bad:r.ce>=30?P.warn:P.good,opacity:.8}}))}]});
 }
-window.addEventListener("resize",()=>{radar&&radar.resize();scatter&&scatter.resize();});
-render();
+
+document.addEventListener("DOMContentLoaded",()=>{
+  XODEXA.ready(["leaderboard.json","catalog.json"], init, "#mount");
+});
 </script>
 </body>
 </html>
