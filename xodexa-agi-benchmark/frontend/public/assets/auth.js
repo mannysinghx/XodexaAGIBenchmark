@@ -111,8 +111,29 @@
     return me;
   }
 
+  // Friendly error for the live pages. A 404 / network failure means the benchmarking
+  // backend isn't connected to this host (e.g. the static Vercel site) — show guidance
+  // toward the DEMO set instead of a scary raw error. Other errors are shown verbatim.
+  function liveErrorHTML(e) {
+    var msg = String((e && e.message) || e || "");
+    var noBackend = !e || e.status === 404 || e.status === 0 || e.status === 502 ||
+      /Failed to fetch|NetworkError|Load failed/i.test(msg);
+    if (noBackend) {
+      return '<div class="xstate" style="flex-direction:column;align-items:flex-start;gap:10px">'
+        + '<div style="font-size:16px;font-weight:700;color:var(--txt)">Live results aren\'t available here</div>'
+        + '<div>This static site isn\'t connected to the Xodexa benchmarking backend, so there '
+        + 'are no live runs to show yet. Explore the illustrative dataset under the '
+        + '<b>DEMO</b> menu, or run the full platform to get real results.</div>'
+        + '<div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap">'
+        + '<a class="btn-primary" style="width:auto;text-decoration:none" href="/demo/leaderboard.html">See the demo</a>'
+        + '<a class="btn-ghost" style="text-decoration:none" href="/datasets.html">Explore the benchmark</a>'
+        + '</div></div>';
+    }
+    return '<div class="xstate err">⚠ ' + esc(msg) + '</div>';
+  }
+
   w.XAPI = api;
-  w.XAUTH = { renderNav: renderNav, guard: guard, esc: esc };
+  w.XAUTH = { renderNav: renderNav, guard: guard, esc: esc, liveErrorHTML: liveErrorHTML };
   if (d.readyState !== "loading") renderNav();
   else d.addEventListener("DOMContentLoaded", renderNav);
 })(window, document);

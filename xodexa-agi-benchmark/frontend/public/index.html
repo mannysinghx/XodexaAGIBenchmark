@@ -327,7 +327,7 @@ async function boot(){
     site = await XODEXA.load("site.json");          // brand text (not demo)
     lb = await XAPI.get("/leaderboard");            // LIVE results only
   }catch(e){
-    mount.innerHTML='<div class="xstate err">⚠ Could not load live data ('+String(e&&e.message||e)+').</div>';
+    mount.innerHTML=XAUTH.liveErrorHTML(e);
     return;
   }
   if(site && site.brand){

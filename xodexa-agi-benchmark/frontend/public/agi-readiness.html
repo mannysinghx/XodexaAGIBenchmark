@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", async function boot(){
   try{
     [cat,lb]=await Promise.all([XODEXA.load("catalog.json"),XAPI.get("/leaderboard")]);
   }catch(e){
-    cardsEl.innerHTML='<div class="xstate err" style="grid-column:1/-1">⚠ Could not load live AGI readiness data ('+String(e&&e.message||e)+').</div>';
+    cardsEl.innerHTML=XAUTH.liveErrorHTML(e);
     console.error("[xodexa] live load failed:",e);
     return;
   }

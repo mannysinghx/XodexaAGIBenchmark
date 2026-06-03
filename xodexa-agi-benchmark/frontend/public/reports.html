@@ -361,7 +361,7 @@ async function selectRun(run_id){
     renderReport(rep);
     updateDownload(run_id);
   }catch(e){
-    setStatus('<div class="xstate err">⚠ Could not load this report ('+String(e&&e.message||e)+').</div>');
+    setStatus(XAUTH.liveErrorHTML(e));
     console.error("[xodexa] report load failed:",e);
   }
 }
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   try{
     lb=await XAPI.get("/leaderboard");
   }catch(e){
-    setStatus('<div class="xstate err">⚠ Could not load live runs ('+String(e&&e.message||e)+').</div>');
+    setStatus(XAUTH.liveErrorHTML(e));
     console.error("[xodexa] live load failed:",e);
     return;
   }

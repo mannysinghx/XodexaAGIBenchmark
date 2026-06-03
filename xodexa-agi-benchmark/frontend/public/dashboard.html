@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded",async ()=>{
     mount.innerHTML="";
     init({dashboard:dash,leaderboard:lb,catalog:catalog});
   }catch(e){
-    mount.innerHTML='<div class="xstate err">⚠ Could not load live dashboard ('+String(e&&e.message||e)+').</div>';
+    mount.innerHTML=XAUTH.liveErrorHTML(e);
     console.error("[xodexa] live load failed:",e);
   }
 });
