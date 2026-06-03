@@ -130,6 +130,8 @@ def add_model(body: ModelReq, request: Request,
     model_name = body.model_name.strip()
     if not model_name:
         raise HTTPException(422, "model_name required")
+    if not providers.is_safe_model_name(model_name):
+        raise HTTPException(422, "model_name has invalid characters")
     try:
         ok = providers.validate_model(cred.provider, key, model_name, cred.base_url)
     except providers.ProviderError as e:

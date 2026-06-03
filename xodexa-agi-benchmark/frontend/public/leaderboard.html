@@ -234,7 +234,7 @@ function render(){
   const body=document.getElementById("body");
   body.innerHTML=rows.map(r=>{
     let tds='<td class="l rank">'+r.rank_ub+'</td>'+
-      '<td class="l"><span class="model">'+r.m+'</span><br>'+
+      '<td class="l"><span class="model">'+XAUTH.esc(r.m)+'</span><br>'+
         '<span class="meta">'+r.time_horizon+'</span></td>'+
       '<td class="l"><span class="meta">'+(r.by?XAUTH.esc(r.by):'—')+'</span></td>';
     COLS.filter(c=>colOn[c.k]).forEach(c=>tds+='<td>'+c.fmt(r,c.k)+'</td>');

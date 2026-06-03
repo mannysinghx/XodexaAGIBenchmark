@@ -57,6 +57,15 @@ def check(name, cond):
     print(("  ✓ " if cond else "  ✗ ") + name)
 
 
+def _ssrf_blocked(url):
+    # assert_safe_base_url is NOT stubbed (only validate_key/validate_model/connector are)
+    try:
+        providers.assert_safe_base_url(url)
+        return False
+    except providers.ProviderError:
+        return True
+
+
 def run():
     # 1. register
     r = client.post("/api/auth/register",
@@ -145,6 +154,18 @@ def run():
     check("hash-chained events persisted", db.query(M.RunEvent).filter_by(run_id=run_id).count() >= 13)
     check("report row persisted", db.query(M.Report).filter_by(run_id=run_id).count() == 1)
     check("audit log populated", db.query(M.AuditLog).count() >= 3)
+
+    # 10b. security guards (SSRF + model-name charset) — see security review
+    check("SSRF guard blocks metadata IP", _ssrf_blocked("http://169.254.169.254/"))
+    check("SSRF guard blocks loopback", _ssrf_blocked("http://127.0.0.1:6379"))
+    check("SSRF guard blocks private 10.x", _ssrf_blocked("http://10.0.0.5/v1"))
+    check("SSRF guard blocks file scheme", _ssrf_blocked("file:///etc/passwd"))
+    check("SSRF guard allows public https", not _ssrf_blocked("https://api.openai.com/v1"))
+    check("model name rejects markup", not providers.is_safe_model_name("<img src=x onerror=1>"))
+    check("model name allows gpt-4o", providers.is_safe_model_name("gpt-4o"))
+    r = client.post("/api/runs", headers=H, json={"credential_id": cred_id,
+                    "model_name": "<svg onload=alert(1)>", "n_tasks": 10})
+    check("run rejects XSS model_name (422)", r.status_code == 422)
 
     # 11. logout
     r = client.post("/api/auth/logout", headers=H)

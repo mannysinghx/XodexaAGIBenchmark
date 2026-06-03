@@ -60,6 +60,8 @@ def create_run(body: RunReq, request: Request,
         raise HTTPException(422, f"unknown family; choose from {list(families.FAMILY_KEYS)}")
     if body.visibility not in ("public", "private"):
         raise HTTPException(422, "visibility must be public or private")
+    if not providers.is_safe_model_name(body.model_name.strip()):
+        raise HTTPException(422, "model_name has invalid characters")
     enforce_run_quota(db, user.id, body.n_tasks)
 
     inline_key = None
