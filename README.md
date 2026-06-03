@@ -220,10 +220,31 @@ runner and graders stay central**, plus `grade_response(key, output)` for centra
 re-scoring. Map your tasks' categories onto the nine Xodexa categories. Re-run the
 gauntlet self-test before trusting a new item.
 
-## 📄 License
+## 📄 License & ownership
 
-Apache-2.0 (recommended) — permissive enough for labs to self-host and extend. See
-`LICENSE`.
+Licensed under **Apache-2.0** — anyone may use, modify, and build on Xodexa, including
+commercially. That's by design: a benchmark only becomes a standard if everyone can run it.
+
+**Ownership stays with the author.** A license grants permission to *use* the code; it
+does not transfer ownership. Copyright in the original work is owned by **Maninder Singh
+(Xodexa)**, and the names *Xodexa*, *Xodexa AGI Benchmark*, and *Xodexa-Ω*, plus the
+project's visual identity, are **trademarks** — the Apache license (§6) does **not** grant
+the right to use them. So others can use the software, but not the brand, and cannot issue
+"official" Xodexa scores. See [`NOTICE`](NOTICE).
+
+**Contributions** are accepted under a [Contributor License Agreement](CLA.md) that lets
+the Owner keep all project IP consolidated (including the right to relicense), so "everyone
+can use it, the Owner owns the IP" holds for the whole codebase — not just the original files.
+
+| File | Purpose |
+|---|---|
+| [`LICENSE`](LICENSE) | Apache-2.0 — the usage grant |
+| [`NOTICE`](NOTICE) | Ownership assertion + trademark reservation |
+| [`CLA.md`](CLA.md) | Keeps contributors' IP licensed to the Owner |
+
+*Not legal advice — for anything high-stakes, have a lawyer review the final terms. If you
+later want to block closed-source forks (AGPL-3.0) or competing commercial services (BSL),
+those are drop-in alternatives.*
 
 <div align="center">
 

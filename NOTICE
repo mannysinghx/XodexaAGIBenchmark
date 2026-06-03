@@ -1,0 +1,42 @@
+Xodexa AGI Benchmark
+Copyright 2026 Maninder Singh.
+
+This software and its associated materials are licensed under the Apache
+License, Version 2.0 (the "License"). You may obtain a copy of the License in
+the accompanying LICENSE file or at http://www.apache.org/licenses/LICENSE-2.0
+
+
+OWNERSHIP
+---------
+All copyright in this software and its original materials is owned by
+Maninder Singh ("the Owner"). The Apache-2.0 license grants you broad rights to
+use the software (including commercially) — it does NOT transfer ownership. The
+Owner remains the sole owner of the intellectual property in the original work.
+
+
+TRADEMARKS
+----------
+The names "Xodexa", "Xodexa AGI Benchmark", "Xodexa-Omega" / "Xodexa-Ω", and the
+project logo and visual identity are trademarks of Maninder Singh.
+
+Consistent with Section 6 of the Apache License, this license does NOT grant
+permission to use these names or marks, except for reasonable and customary use
+in describing the origin of the work. In particular, without prior written
+permission you may not:
+
+  (a) use the Xodexa marks for your own product, service, or a competing
+      benchmark, leaderboard, or distribution;
+  (b) imply endorsement by, sponsorship by, or affiliation with Xodexa or
+      Maninder Singh;
+  (c) issue "official" Xodexa scores — official scoring is reserved to the
+      central authority operated by the Owner (see the project's trust model).
+
+You may, of course, state truthfully that your work is "built on" or "compatible
+with" Xodexa AGI Benchmark.
+
+
+CONTRIBUTIONS
+-------------
+Contributions to this project are accepted under the Contributor License
+Agreement in CLA.md, which keeps the project's intellectual property
+consolidated under the Owner.

@@ -205,5 +205,7 @@ categories onto the nine Xodexa categories. That's the whole contract.
 
 ## License
 
-Open-source-first. Apache-2.0 recommended for the runner and adapters (permissive
-enough for labs to self-host and extend).
+Licensed under **Apache-2.0** — anyone may use, modify, and commercialize the software.
+Copyright and the *Xodexa* trademarks remain owned by Maninder Singh; the license covers
+the code, not the brand, and official scoring is reserved to the central authority. See
+the repo-root `LICENSE`, `NOTICE`, and `CLA.md`.
