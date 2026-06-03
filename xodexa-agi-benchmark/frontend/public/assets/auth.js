@@ -132,8 +132,27 @@
     return '<div class="xstate err">⚠ ' + esc(msg) + '</div>';
   }
 
+  // True when the failure means the API backend isn't reachable from this host
+  // (e.g. the static Vercel site with no /api). 404/502/network all qualify.
+  function isNoBackend(e) {
+    var msg = String((e && e.message) || e || "");
+    return !e || e.status === 404 || e.status === 0 || e.status === 502 ||
+      /Failed to fetch|NetworkError|Load failed/i.test(msg);
+  }
+
+  // Friendly message for auth forms when there's no backend connected.
+  function friendlyAuthError(e) {
+    if (isNoBackend(e)) {
+      return "Accounts aren't available here yet — this static site isn't connected to "
+        + "the Xodexa backend. Once the backend is deployed and linked (see "
+        + "docs/DEPLOY_VERCEL.md), registration and login will work.";
+    }
+    return String((e && e.message) || e || "Something went wrong. Please try again.");
+  }
+
   w.XAPI = api;
-  w.XAUTH = { renderNav: renderNav, guard: guard, esc: esc, liveErrorHTML: liveErrorHTML };
+  w.XAUTH = { renderNav: renderNav, guard: guard, esc: esc, liveErrorHTML: liveErrorHTML,
+              isNoBackend: isNoBackend, friendlyAuthError: friendlyAuthError };
   if (d.readyState !== "loading") renderNav();
   else d.addEventListener("DOMContentLoaded", renderNav);
 })(window, document);

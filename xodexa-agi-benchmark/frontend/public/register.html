@@ -77,7 +77,7 @@
         : "Account created — check your email for a verification link. It expires in 24 hours.");
       form.reset();
     } catch (err) {
-      show("err", err.message || "Could not create account. Please try again.");
+      show("err", XAUTH.friendlyAuthError(err));
     } finally {
       btn.disabled = false; btn.textContent = label;
     }

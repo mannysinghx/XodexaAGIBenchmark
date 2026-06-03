@@ -87,8 +87,10 @@
       if (err.status === 403) {
         show("err", "Your email is not verified yet. Check your inbox for the verification link, or resend it below.");
         resendWrap.style.display = "block";
+      } else if (err.status === 401) {
+        show("err", "Invalid username/email or password.");
       } else {
-        show("err", err.message || "Invalid username/email or password.");
+        show("err", XAUTH.friendlyAuthError(err));
       }
     } finally {
       btn.disabled = false; btn.textContent = label;
