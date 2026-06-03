@@ -61,6 +61,10 @@
   .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:16px 0}
   .kpi{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:12px 14px}
   .kpi .n{font-size:20px;font-weight:800} .kpi .l{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;margin-top:2px}
+  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
+  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
+  nav.mainnav a:hover{color:var(--muted2)}
+  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -75,6 +79,18 @@
     </div>
     <div class="pill">v1.0.0 · Rank (Upper Bound) · 95% CI · central scoring authority</div>
   </header>
+
+  <nav class="mainnav">
+    <a href="index.html">Observatory</a>
+    <a href="leaderboard.html" class="on">Leaderboard</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="agi-readiness.html">AGI Readiness</a>
+    <a href="compare.html">Compare</a>
+    <a href="reports.html">Reports</a>
+    <a href="datasets.html">Datasets</a>
+    <a href="plugins.html">Plugins</a>
+    <a href="security.html">Security</a>
+  </nav>
 
   <div class="tabs">
     <div class="tab on">Xodexa Gauntlet</div>

@@ -115,6 +115,82 @@ docker compose -f xodexa-agi-benchmark/docker-compose.yml up --build
 # dashboard -> open xodexa-agi-benchmark/frontend/public/dashboard.html
 ```
 
+## What's built now — Phase 1: the platform layer
+
+On top of the Phase-0 trust kernel, the repository now implements the **evaluation
+science and data engine** in [`packages/xodexa/`](./packages/xodexa). All of it is
+pure-Python + stdlib (no DB, no network) so the same code runs in CI and in an
+air-gapped generator.
+
+- **12 task families** (`families.py`): reasoning, math, science, code, agent,
+  multimodal, truthfulness, safety, memory, strategy, creativity, meta_learning — rolling
+  up into 12 weighted scoring dimensions.
+- **A strict task schema** (`schema.py`): the `Task` dataclass with a hard, enforced
+  invariant — hidden/dynamic tasks carry no `expected_answer`, and `public_view` strips
+  the answer key before any task crosses the trust boundary.
+- **60 procedural generators + a generation pipeline** (`generators/`, `pipeline.py`):
+  each generator (`generator_id = family.subdomain`) yields *unlimited* seed-reproducible
+  variants and mints a per-task canary; the pipeline runs
+  `generate → difficulty_filter → contamination_filter → quality_review → calibration →
+  versioning/sign`, emitting a signed, checksummed manifest. *(Multimodal items are
+  text-rendered proxies in this MVP.)*
+- **Contamination subsystem** (`contamination.py`): build-time similarity filtering via
+  `CorpusIndex` (MinHash + shingle Jaccard + n-gram containment) and run-time canary-echo,
+  timing-anomaly, and suspicious-perfect-score detection.
+- **The Xodexa Score + AGI Readiness Index + Level**: the 0–1000 capability score over 12
+  dimensions with bounded penalties + 95% CI (`scoring.py`), a separate AGI Readiness
+  Index (10 weighted sub-scores → a 0–6 readiness level, `agi_readiness.py`), and the
+  7-band grade model (`families.py`). The platform reports an *AGI-Level Candidate*, never
+  actual AGI.
+- **Failure analysis** (`failure_analysis.py`): a deterministic 20-type / 4-severity
+  failure taxonomy with root-layer mapping.
+- **The "Path to AGI" improvement roadmap engine** (`improvement.py`): turns the readiness
+  profile + failure ledger into recommended next evals, fine-tuning data, RL targets, and
+  scaffolding changes.
+- **The plugin registry** (`registry.py`): signed, default-deny plugin manifests (no
+  network, sandbox-only filesystem, no secrets, SBOM + checksum required, admin approval
+  for org installs).
+- **Layer-0 calibration anchors** (`anchors.py`): 25 public benchmarks (MMLU-Pro, GPQA,
+  HLE, SWE-bench, GAIA, …) as metadata + adapter contracts with contamination-risk labels
+  — used for calibration context only, never as the official score, and never shipped.
+
+### The MVP seed corpus
+
+`python scripts/build_seed.py` produces the corpus recorded in
+[`datasets/SUMMARY.json`](./datasets/SUMMARY.json):
+
+- **Xodexa Public Validation** — **1,000** tasks (answers public).
+- **Xodexa Hidden Official** — **500** tasks (public views shipped; answer keys go to
+  the git-ignored `server_keys/`).
+- **Dynamic** — **60** generators (+ **100** sample variants).
+- **Focused packs** — agent **50**, code **50**, multimodal **50**, safety **25**,
+  truthfulness **25**.
+- **Family minis** — **12** packs (one per family, ~40 tasks each).
+
+### Quickstart
+
+```bash
+pip install -r requirements.txt   # cryptography + FastAPI stack
+python scripts/build_seed.py      # build the seed corpus (datasets/ + server_keys/)
+python demo/platform_demo.py      # evaluate → score → AGI readiness → improvement roadmap
+python demo/e2e_demo.py           # Phase-0 trust kernel + tamper-proof verification
+```
+
+### Documentation
+
+- [`docs/DATASET_GENERATION.md`](./docs/DATASET_GENERATION.md) — philosophy, the 6-layer
+  architecture, the schema, the generators, the pipeline, and how to add a generator.
+- [`docs/AGI_READINESS.md`](./docs/AGI_READINESS.md) — the Xodexa Score, the AGI Readiness
+  Index + Levels, the failure taxonomy, and the improvement roadmap.
+- [`docs/SECURITY_MODEL.md`](./docs/SECURITY_MODEL.md) — the trust boundary, signing,
+  hash-chained logs, the two score types, and what crypto does/doesn't prove.
+- [`docs/PLUGIN_GUIDE.md`](./docs/PLUGIN_GUIDE.md) — building, signing, and installing a
+  plugin under the enforced security policy.
+- [`docs/RUNNER.md`](./docs/RUNNER.md) — the self-hosted runner: connectors, the official
+  scoring flow, and the CLI commands.
+- [`docs/FRONTIER_BENCHMARK_DESIGN.md`](./docs/FRONTIER_BENCHMARK_DESIGN.md) — the Open-LLM
+  + HLE synthesis behind the leaderboard.
+
 ## Architecture
 
 ```

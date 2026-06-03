@@ -90,6 +90,10 @@
   .foot{color:var(--mut);font-size:11px;line-height:1.7;margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
   .ax{fill:#5f6e88;font-family:var(--mono);font-size:10px}
   .axl{fill:#46546e;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px}
+  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
+  nav.mainnav a{padding:9px 13px;color:var(--mut);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
+  nav.mainnav a:hover{color:var(--mut2)}
+  nav.mainnav a.on{color:var(--ink);border-color:var(--cy)}
 </style>
 </head>
 <body>
@@ -104,6 +108,18 @@
     </div>
     <div class="navpill">v1.0.0 · capability × honesty · AGI horizon = 1000</div>
   </div>
+
+  <nav class="mainnav">
+    <a href="index.html" class="on">Observatory</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="agi-readiness.html">AGI Readiness</a>
+    <a href="compare.html">Compare</a>
+    <a href="reports.html">Reports</a>
+    <a href="datasets.html">Datasets</a>
+    <a href="plugins.html">Plugins</a>
+    <a href="security.html">Security</a>
+  </nav>
 
   <div class="hero">
     <div class="herohead">
@@ -179,10 +195,10 @@ const sx=a=>X0+(a/1000)*(X1-X0);
 const sy=h=>Y1-(h/100)*(Y1-Y0);
 
 function pareto(){
-  const s=[...DATA].sort((a,b)=>b.xodexa-a.apex);
+  const s=[...DATA].sort((a,b)=>b.apex-a.apex);
   let best=-1,fr=[];
   s.forEach(d=>{if(d.hon>best){best=d.hon;fr.push(d);}});
-  return fr.sort((a,b)=>a.xodexa-b.apex);
+  return fr.sort((a,b)=>a.apex-b.apex);
 }
 
 let selected=DATA[0];
@@ -299,7 +315,7 @@ function spectrum(){
 }
 
 function ledger(){
-  const rows=[...DATA].sort((a,b)=>b.xodexa-a.apex);
+  const rows=[...DATA].sort((a,b)=>b.apex-a.apex);
   const mx=Math.max(...DATA.flatMap(d=>GAUNTLETS.map(g=>d.g[g])));
   document.getElementById("ledger").innerHTML=rows.map((d,i)=>{
     const[,bcls]=BADGE[d.st];

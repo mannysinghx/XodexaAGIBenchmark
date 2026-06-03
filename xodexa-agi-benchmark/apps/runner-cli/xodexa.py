@@ -34,7 +34,8 @@ sys.path.insert(0, str(ROOT / "packages"))
 
 from xodexa import (ScoringAuthority, RunnerAgent, CallableConnector,  # noqa: E402
                       OpenAICompatibleConnector, OllamaConnector, HashChain, verify,
-                      suites)
+                      suites, families, generators as gens, schema, grade, evaluate,
+                      report as report_mod, anchors)
 
 RESULTS = Path("./results")
 
@@ -161,6 +162,128 @@ def cmd_status(args):
     return 0
 
 
+# --------------------------------------------------------------------------- #
+# Platform-layer commands (catalog browsing, dataset generation, local eval)
+# --------------------------------------------------------------------------- #
+
+def cmd_families(args):
+    print("Xodexa task families (12):\n")
+    for k, f in families.FAMILIES.items():
+        dim = families.FAMILY_TO_DIMENSION[k]
+        print(f"  {k:<14} {f.title}")
+        print(f"  {'':<14} -> dimension '{dim}' (weight "
+              f"{families.SCORE_WEIGHTS.get(dim, 0):.0%})")
+    print("\nScoring dimensions (weights sum to 1.0):")
+    for d, w in families.SCORE_WEIGHTS.items():
+        print(f"  {d:<18} {w:.0%}")
+    print("\nAGI Readiness levels:")
+    for L in families.AGI_LEVELS:
+        print(f"  L{L.level}  {L.name}")
+    return 0
+
+
+def cmd_generators(args):
+    specs = gens.list_generators(args.family)
+    print(f"{len(specs)} procedural generators"
+          + (f" for family '{args.family}'" if args.family else "") + ":\n")
+    for s in specs:
+        print(f"  {s.generator_id:<34} [{s.family}]")
+    print("\nEach generator yields unlimited seed-reproducible variants.")
+    return 0
+
+
+def cmd_anchors(args):
+    a = anchors.list_anchors(args.dimension)
+    summ = anchors.contamination_summary()
+    print(f"Layer-0 public calibration anchors ({summ['total_anchors']}), "
+          f"contamination risk {summ['by_contamination_risk']}:\n")
+    for x in a:
+        print(f"  {x.name:<28} dim={x.dimension:<16} risk={x.contamination_risk:<6} "
+              f"license={x.license}")
+    print("\nThese calibrate/contextualize only — never the official Xodexa Score.")
+    return 0
+
+
+def cmd_dataset_generate(args):
+    RESULTS.mkdir(exist_ok=True)
+    tasks = gens.generate(family=args.family, n=args.n, seed=args.seed,
+                          visibility=args.visibility)
+    rows = [schema.public_view(t) for t in tasks]
+    out = Path(args.out) if args.out else RESULTS / f"generated_{args.family or 'mixed'}.jsonl"
+    out.write_text("\n".join(json.dumps(r) for r in rows))
+    print(f"generated {len(rows)} {args.visibility} tasks"
+          + (f" (family={args.family})" if args.family else " (all families)"))
+    print(f"  public views (no answers/graders) -> {out}")
+    return 0
+
+
+def _simulate_responses(keys, kind):
+    """Build responses for the built-in simulated models (callable:*)."""
+    import random as _r
+    rng = _r.Random(0)
+    responses = []
+    for i, (tid, key) in enumerate(keys.items()):
+        g = key["grader"]
+        if kind == "good":
+            ok = True
+        elif kind == "bad":
+            ok = False
+        else:  # mixed
+            ok = (i % 3 != 0)
+        out = grade.synth_good(g) if ok else grade.synth_bad(g)
+        conf = rng.uniform(0.6, 0.95) if ok else rng.uniform(0.75, 0.99)
+        responses.append({"id": tid, "output": out, "confidence": round(conf, 3),
+                          "latency_ms": rng.uniform(700, 2500)})
+    return responses
+
+
+def cmd_evaluate(args):
+    """Generate a pack locally, run a model, centrally re-score IN-PROCESS, and emit a
+    full platform report (Xodexa Score + AGI Readiness). LOCAL = not official."""
+    RESULTS.mkdir(exist_ok=True)
+    tasks = gens.generate(family=args.family, n=args.n, seed=args.seed,
+                          visibility="validation")
+    keys = {t.task_id: schema.answer_key(t) for t in tasks}
+
+    if args.model.startswith("callable:"):
+        kind = args.model.split(":", 1)[1]
+        responses = _simulate_responses(keys, kind)
+    else:
+        conn = build_connector(args.model)
+        responses = []
+        for t in tasks:
+            t0 = time.perf_counter()
+            out = conn.complete(t.prompt)
+            responses.append({"id": t.task_id, "output": out,
+                              "latency_ms": (time.perf_counter() - t0) * 1000})
+
+    er = evaluate.score_pack(keys, responses)
+    rep = report_mod.build_report(args.model, f"local:{args.family or 'mixed'}", er,
+                                  telemetry={"tokens": sum(len(r.get("output", "")) // 4
+                                                           for r in responses)})
+    rep["_label"] = "UNVERIFIED LOCAL SCORE — not eligible for the official leaderboard"
+    path = RESULTS / f"local_report_{args.model.replace(':', '_')}.json"
+    path.write_text(json.dumps(rep, indent=2))
+
+    ar = rep["agi_readiness"]
+    print("=" * 64)
+    print(f"  UNVERIFIED LOCAL EVALUATION — {args.model}")
+    print("=" * 64)
+    print(f"  Xodexa Score : {rep['xodexa_score']}/1000  ({rep['grade']})  "
+          f"coverage {rep['coverage']}")
+    print(f"  AGI Readiness: Level {ar['level']} — {ar['level_name']} "
+          f"(index {ar['agi_readiness_index']})")
+    print(f"  Accuracy     : {rep['frontier_metrics']['accuracy']}% "
+          f"± {rep['frontier_metrics']['accuracy_ci95']}")
+    print(f"  Failure rate : {rep['failure_analysis']['failure_rate']:.0%} "
+          f"({rep['failure_analysis']['total_failures']}/{rep['failure_analysis']['total_items']})")
+    print(f"  Top gap      : {ar['missing_capability']}")
+    print(f"  Next evals   : {', '.join(rep['next_recommended_benchmarks'][:3])}")
+    print(f"  saved        : {path}")
+    print("  NOTE: official scores are issued ONLY by the Xodexa main app.")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(prog="xodexa", description="Xodexa AGI Benchmark runner CLI")
     ap.add_argument("--server", help="Xodexa main app base URL")
@@ -190,6 +313,36 @@ def main():
 
     s = sub.add_parser("status")
     s.set_defaults(func=cmd_status)
+
+    fam = sub.add_parser("families", help="list the 12 task families + scoring weights")
+    fam.set_defaults(func=cmd_families)
+
+    g = sub.add_parser("generators", help="list procedural task generators (Layer 3)")
+    g.add_argument("--family")
+    g.set_defaults(func=cmd_generators)
+
+    an = sub.add_parser("anchors", help="list Layer-0 public calibration benchmarks")
+    an.add_argument("--dimension")
+    an.set_defaults(func=cmd_anchors)
+
+    d = sub.add_parser("dataset")
+    dsub = d.add_subparsers(dest="dcmd", required=True)
+    dg = dsub.add_parser("generate", help="generate public-view tasks to JSONL")
+    dg.add_argument("--family")
+    dg.add_argument("--n", type=int, default=20)
+    dg.add_argument("--seed", type=int, default=0)
+    dg.add_argument("--visibility", default="dynamic",
+                    choices=["public", "validation", "private_hidden", "dynamic"])
+    dg.add_argument("--out")
+    dg.set_defaults(func=cmd_dataset_generate)
+
+    ev = sub.add_parser("evaluate", help="LOCAL eval -> Xodexa Score + AGI Readiness")
+    ev.add_argument("--model", required=True,
+                    help="callable:good|bad|mixed, or openai:<base>#<model>, ollama:<base>#<model>")
+    ev.add_argument("--family", help="restrict to one family (default: all)")
+    ev.add_argument("--n", type=int, default=60)
+    ev.add_argument("--seed", type=int, default=0)
+    ev.set_defaults(func=cmd_evaluate)
 
     args = ap.parse_args()
     sys.exit(args.func(args))

@@ -24,9 +24,21 @@ try:
 except Exception:  # allow import without fastapi installed (scaffold inspection)
     FastAPI = None
 
-from xodexa import ScoringAuthority, suites  # noqa: E402
+import json  # noqa: E402
+
+from xodexa import (ScoringAuthority, suites, families, generators, anchors,  # noqa: E402
+                    registry)
 
 AUTH = ScoringAuthority()
+PLUGIN_REGISTRY = registry.PluginRegistry()
+_REPO = Path(__file__).resolve().parents[2]
+
+
+def _read_json(rel: str):
+    p = _REPO / rel
+    if not p.exists():
+        return None
+    return json.loads(p.read_text(encoding="utf-8"))
 
 if FastAPI:
     app = FastAPI(title="Xodexa AGI Benchmark — Scoring Authority", version="1.0.0",
@@ -95,5 +107,62 @@ if FastAPI:
             rows = [r for r in rows if r["attestation"] != "none"]
         rows.sort(key=lambda r: r["apex_score"], reverse=True)
         return {"entries": rows, "count": len(rows)}
+
+    # ---- platform layer (read surfaces over the catalog + generated artifacts) ----
+
+    @app.get("/v1/families")
+    def families_catalog():
+        """The 12 task families + the 12 scoring dimensions + grade/AGI bands."""
+        return {
+            "families": {k: {"title": f.title, "blurb": f.blurb,
+                             "subdomains": list(f.subdomains)}
+                         for k, f in families.FAMILIES.items()},
+            "score_weights": families.SCORE_WEIGHTS,
+            "grade_bands": [{"lo": lo, "hi": hi, "name": n}
+                            for lo, hi, n in families.GRADE_BANDS],
+            "agi_levels": [{"level": L.level, "name": L.name, "blurb": L.blurb}
+                           for L in families.AGI_LEVELS],
+        }
+
+    @app.get("/v1/generators")
+    def generator_catalog(family: str | None = None):
+        """Layer-3 dynamic generator catalog."""
+        specs = generators.list_generators(family)
+        return {"count": len(specs),
+                "generators": [{"generator_id": s.generator_id, "family": s.family,
+                                "blurb": (s.blurb or "").strip().split("\n")[0][:160]}
+                               for s in specs]}
+
+    @app.get("/v1/anchors")
+    def anchor_catalog(dimension: str | None = None):
+        """Layer-0 public calibration benchmark anchors (with contamination risk)."""
+        a = anchors.list_anchors(dimension)
+        return {"summary": anchors.contamination_summary(),
+                "anchors": [vars(x) for x in a]}
+
+    @app.get("/v1/datasets")
+    def datasets():
+        """The seed corpus summary (run scripts/build_seed.py to populate)."""
+        s = _read_json("datasets/SUMMARY.json")
+        if s is None:
+            raise HTTPException(404, "no datasets built yet — run scripts/build_seed.py")
+        return s
+
+    @app.get("/v1/platform/leaderboard")
+    def platform_leaderboard():
+        """The AGI-readiness leaderboard from demo/platform_demo.py."""
+        s = _read_json("results/platform_leaderboard.json")
+        if s is None:
+            raise HTTPException(404, "no platform leaderboard yet — run demo/platform_demo.py")
+        return s
+
+    @app.post("/v1/plugins/validate")
+    def plugin_validate(manifest: dict):
+        """Validate a plugin manifest against the registry security policy."""
+        return {"violations": registry.validate_manifest(manifest)}
+
+    @app.post("/v1/plugins/install")
+    def plugin_install(manifest: dict):
+        return PLUGIN_REGISTRY.install(manifest)
 else:  # pragma: no cover
     app = None

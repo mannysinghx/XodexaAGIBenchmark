@@ -1,0 +1,721 @@
+{
+  "xodexa_creativity_acrostic_300f6989f9": {
+    "task_id": "xodexa_creativity_acrostic_300f6989f9",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*S\\w*.*\\s*E\\w*.*\\s*W\\w*.*",
+      "ignorecase": true,
+      "example": "Sverse here\nEverse here\nWverse here"
+    },
+    "expected_answer": "Acrostic spelling SEW.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0b8552bbd8db"
+  },
+  "xodexa_creativity_alliteration_cb5f38715b": {
+    "task_id": "xodexa_creativity_alliteration_cb5f38715b",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*t\\w*\\W+){5,}t\\w*\\W*$",
+      "ignorecase": true,
+      "example": "tad tad tad tad tad tad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 't'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f44ed5b80b4f"
+  },
+  "xodexa_creativity_constrained_design_f75310def7": {
+    "task_id": "xodexa_creativity_constrained_design_f75310def7",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "recyclable",
+        "lightweight",
+        "solar"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-594a52eb4175"
+  },
+  "xodexa_creativity_acrostic_99e96c8c98": {
+    "task_id": "xodexa_creativity_acrostic_99e96c8c98",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*P\\w*.*\\s*J\\w*.*\\s*C\\w*.*",
+      "ignorecase": true,
+      "example": "Pverse here\nJverse here\nCverse here"
+    },
+    "expected_answer": "Acrostic spelling PJC.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-dec9a55bb72d"
+  },
+  "xodexa_creativity_alliteration_b7c8d206e3": {
+    "task_id": "xodexa_creativity_alliteration_b7c8d206e3",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*r\\w*\\W+){5,}r\\w*\\W*$",
+      "ignorecase": true,
+      "example": "rad rad rad rad rad rad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'r'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ece80f6f97c5"
+  },
+  "xodexa_creativity_constrained_design_7cf0a6425e": {
+    "task_id": "xodexa_creativity_constrained_design_7cf0a6425e",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "solar",
+        "lightweight",
+        "modular"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-ae824198787f"
+  },
+  "xodexa_creativity_acrostic_9f356fdf02": {
+    "task_id": "xodexa_creativity_acrostic_9f356fdf02",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*K\\w*.*\\s*C\\w*.*\\s*K\\w*.*",
+      "ignorecase": true,
+      "example": "Kverse here\nCverse here\nKverse here"
+    },
+    "expected_answer": "Acrostic spelling KCK.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fee6505adbc1"
+  },
+  "xodexa_creativity_alliteration_174a05fdff": {
+    "task_id": "xodexa_creativity_alliteration_174a05fdff",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*r\\w*\\W+){5,}r\\w*\\W*$",
+      "ignorecase": true,
+      "example": "rad rad rad rad rad rad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'r'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-796836b1cd3c"
+  },
+  "xodexa_creativity_constrained_design_34ac56361b": {
+    "task_id": "xodexa_creativity_constrained_design_34ac56361b",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "modular",
+        "lightweight",
+        "waterproof"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-20d35af6f566"
+  },
+  "xodexa_creativity_acrostic_713f257654": {
+    "task_id": "xodexa_creativity_acrostic_713f257654",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*J\\w*.*\\s*W\\w*.*\\s*X\\w*.*\\s*W\\w*.*",
+      "ignorecase": true,
+      "example": "Jverse here\nWverse here\nXverse here\nWverse here"
+    },
+    "expected_answer": "Acrostic spelling JWXW.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8c0bd4f0af44"
+  },
+  "xodexa_creativity_alliteration_29a66b5665": {
+    "task_id": "xodexa_creativity_alliteration_29a66b5665",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*t\\w*\\W+){5,}t\\w*\\W*$",
+      "ignorecase": true,
+      "example": "tad tad tad tad tad tad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 't'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-16fd42f7cb33"
+  },
+  "xodexa_creativity_constrained_design_1b43dbd7b2": {
+    "task_id": "xodexa_creativity_constrained_design_1b43dbd7b2",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "recyclable",
+        "solar",
+        "low-cost"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-d4251c947f60"
+  },
+  "xodexa_creativity_acrostic_fff9634583": {
+    "task_id": "xodexa_creativity_acrostic_fff9634583",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*I\\w*.*\\s*V\\w*.*\\s*M\\w*.*",
+      "ignorecase": true,
+      "example": "Iverse here\nVverse here\nMverse here"
+    },
+    "expected_answer": "Acrostic spelling IVM.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-74055677d987"
+  },
+  "xodexa_creativity_alliteration_30316986d2": {
+    "task_id": "xodexa_creativity_alliteration_30316986d2",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*m\\w*\\W+){5,}m\\w*\\W*$",
+      "ignorecase": true,
+      "example": "mad mad mad mad mad mad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'm'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-949059af13f2"
+  },
+  "xodexa_creativity_constrained_design_617a82f1fd": {
+    "task_id": "xodexa_creativity_constrained_design_617a82f1fd",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "solar",
+        "recyclable",
+        "lightweight"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-080f999dbc82"
+  },
+  "xodexa_creativity_acrostic_eb2d25bef9": {
+    "task_id": "xodexa_creativity_acrostic_eb2d25bef9",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*D\\w*.*\\s*U\\w*.*\\s*M\\w*.*\\s*H\\w*.*",
+      "ignorecase": true,
+      "example": "Dverse here\nUverse here\nMverse here\nHverse here"
+    },
+    "expected_answer": "Acrostic spelling DUMH.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-726c435faa2f"
+  },
+  "xodexa_creativity_alliteration_759b4f7001": {
+    "task_id": "xodexa_creativity_alliteration_759b4f7001",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*g\\w*\\W+){5,}g\\w*\\W*$",
+      "ignorecase": true,
+      "example": "gad gad gad gad gad gad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'g'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3c0a0a21c1db"
+  },
+  "xodexa_creativity_constrained_design_cb7da91150": {
+    "task_id": "xodexa_creativity_constrained_design_cb7da91150",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "waterproof",
+        "low-cost",
+        "recyclable"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-c3eb59396676"
+  },
+  "xodexa_creativity_acrostic_c9e9d26837": {
+    "task_id": "xodexa_creativity_acrostic_c9e9d26837",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*Y\\w*.*\\s*G\\w*.*\\s*O\\w*.*",
+      "ignorecase": true,
+      "example": "Yverse here\nGverse here\nOverse here"
+    },
+    "expected_answer": "Acrostic spelling YGO.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f635f96f33ac"
+  },
+  "xodexa_creativity_alliteration_5fd131b62b": {
+    "task_id": "xodexa_creativity_alliteration_5fd131b62b",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*c\\w*\\W+){5,}c\\w*\\W*$",
+      "ignorecase": true,
+      "example": "cad cad cad cad cad cad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'c'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5159f2aeec44"
+  },
+  "xodexa_creativity_constrained_design_6ee6378240": {
+    "task_id": "xodexa_creativity_constrained_design_6ee6378240",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "recyclable",
+        "solar",
+        "low-cost"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-236111f14e3d"
+  },
+  "xodexa_creativity_acrostic_ec4275dd68": {
+    "task_id": "xodexa_creativity_acrostic_ec4275dd68",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*D\\w*.*\\s*I\\w*.*\\s*B\\w*.*",
+      "ignorecase": true,
+      "example": "Dverse here\nIverse here\nBverse here"
+    },
+    "expected_answer": "Acrostic spelling DIB.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ef11ef981ec9"
+  },
+  "xodexa_creativity_alliteration_2eae4cab42": {
+    "task_id": "xodexa_creativity_alliteration_2eae4cab42",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*f\\w*\\W+){5,}f\\w*\\W*$",
+      "ignorecase": true,
+      "example": "fad fad fad fad fad fad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'f'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d422ee3a5ad9"
+  },
+  "xodexa_creativity_constrained_design_54ef8f9462": {
+    "task_id": "xodexa_creativity_constrained_design_54ef8f9462",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "low-cost",
+        "modular",
+        "recyclable"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-0a614c445672"
+  },
+  "xodexa_creativity_acrostic_1bd4d45aaa": {
+    "task_id": "xodexa_creativity_acrostic_1bd4d45aaa",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*C\\w*.*\\s*E\\w*.*\\s*X\\w*.*\\s*F\\w*.*",
+      "ignorecase": true,
+      "example": "Cverse here\nEverse here\nXverse here\nFverse here"
+    },
+    "expected_answer": "Acrostic spelling CEXF.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4788b29bcd81"
+  },
+  "xodexa_creativity_alliteration_fe0c102345": {
+    "task_id": "xodexa_creativity_alliteration_fe0c102345",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*r\\w*\\W+){5,}r\\w*\\W*$",
+      "ignorecase": true,
+      "example": "rad rad rad rad rad rad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'r'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f75e042a8b83"
+  },
+  "xodexa_creativity_constrained_design_2a3ca39da8": {
+    "task_id": "xodexa_creativity_constrained_design_2a3ca39da8",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "low-cost",
+        "recyclable",
+        "solar"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-691d1c9cf668"
+  },
+  "xodexa_creativity_acrostic_a73ad6792a": {
+    "task_id": "xodexa_creativity_acrostic_a73ad6792a",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*R\\w*.*\\s*L\\w*.*\\s*Y\\w*.*\\s*T\\w*.*",
+      "ignorecase": true,
+      "example": "Rverse here\nLverse here\nYverse here\nTverse here"
+    },
+    "expected_answer": "Acrostic spelling RLYT.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-19f0d1d5ae7a"
+  },
+  "xodexa_creativity_alliteration_7804812487": {
+    "task_id": "xodexa_creativity_alliteration_7804812487",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*d\\w*\\W+){5,}d\\w*\\W*$",
+      "ignorecase": true,
+      "example": "dad dad dad dad dad dad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'd'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-53551e44be96"
+  },
+  "xodexa_creativity_constrained_design_dc9f76e7ac": {
+    "task_id": "xodexa_creativity_constrained_design_dc9f76e7ac",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "lightweight",
+        "recyclable",
+        "waterproof"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-4df74606a8ce"
+  },
+  "xodexa_creativity_acrostic_28f52cc2c9": {
+    "task_id": "xodexa_creativity_acrostic_28f52cc2c9",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*Z\\w*.*\\s*G\\w*.*\\s*R\\w*.*",
+      "ignorecase": true,
+      "example": "Zverse here\nGverse here\nRverse here"
+    },
+    "expected_answer": "Acrostic spelling ZGR.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b8da2a50fc8c"
+  },
+  "xodexa_creativity_alliteration_3d5c071abb": {
+    "task_id": "xodexa_creativity_alliteration_3d5c071abb",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*c\\w*\\W+){5,}c\\w*\\W*$",
+      "ignorecase": true,
+      "example": "cad cad cad cad cad cad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'c'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2fff3f2d3dec"
+  },
+  "xodexa_creativity_constrained_design_db916511e5": {
+    "task_id": "xodexa_creativity_constrained_design_db916511e5",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "solar",
+        "low-cost",
+        "recyclable"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-b7e896feb2f2"
+  },
+  "xodexa_creativity_acrostic_6fcfb40100": {
+    "task_id": "xodexa_creativity_acrostic_6fcfb40100",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*R\\w*.*\\s*I\\w*.*\\s*P\\w*.*",
+      "ignorecase": true,
+      "example": "Rverse here\nIverse here\nPverse here"
+    },
+    "expected_answer": "Acrostic spelling RIP.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e77de3a5f268"
+  },
+  "xodexa_creativity_alliteration_7cc08911f3": {
+    "task_id": "xodexa_creativity_alliteration_7cc08911f3",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*b\\w*\\W+){5,}b\\w*\\W*$",
+      "ignorecase": true,
+      "example": "bad bad bad bad bad bad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'b'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-eb04f5731fa2"
+  },
+  "xodexa_creativity_constrained_design_3a12102c6d": {
+    "task_id": "xodexa_creativity_constrained_design_3a12102c6d",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "low-cost",
+        "modular",
+        "waterproof"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-a2e50fe8a0ef"
+  },
+  "xodexa_creativity_acrostic_ebaa1ca994": {
+    "task_id": "xodexa_creativity_acrostic_ebaa1ca994",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*V\\w*.*\\s*O\\w*.*\\s*I\\w*.*\\s*M\\w*.*",
+      "ignorecase": true,
+      "example": "Vverse here\nOverse here\nIverse here\nMverse here"
+    },
+    "expected_answer": "Acrostic spelling VOIM.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b7a28e33b82e"
+  },
+  "xodexa_creativity_alliteration_96870dbd99": {
+    "task_id": "xodexa_creativity_alliteration_96870dbd99",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "constraint_satisfaction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "regex",
+      "pattern": "^(?:\\W*c\\w*\\W+){5,}c\\w*\\W*$",
+      "ignorecase": true,
+      "example": "cad cad cad cad cad cad."
+    },
+    "expected_answer": "A 6+ word sentence alliterating on 'c'.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f3acff7a296e"
+  },
+  "xodexa_creativity_constrained_design_fef0272829": {
+    "task_id": "xodexa_creativity_constrained_design_fef0272829",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "synthesis",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "waterproof",
+        "low-cost",
+        "solar"
+      ],
+      "pass_fraction": 1.0
+    },
+    "expected_answer": "Concept covering all required properties.",
+    "points": 3,
+    "negative": 0,
+    "canary": "XDX-CANARY-f9b1816e284c"
+  },
+  "xodexa_creativity_acrostic_db28c20e13": {
+    "task_id": "xodexa_creativity_acrostic_db28c20e13",
+    "category": "reasoning",
+    "family": "creativity",
+    "subdomain": "design",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "regex",
+      "pattern": "(?m)^\\s*D\\w*.*\\s*O\\w*.*\\s*Z\\w*.*\\s*P\\w*.*",
+      "ignorecase": true,
+      "example": "Dverse here\nOverse here\nZverse here\nPverse here"
+    },
+    "expected_answer": "Acrostic spelling DOZP.",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-12aa1d47edfe"
+  }
+}

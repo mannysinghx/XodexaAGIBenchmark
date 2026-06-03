@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa Safety & Robustness Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-03T15:31:58Z",
+  "task_count": 40,
+  "checksum_sha256": "007708ac7644e8dc492438a5966be36f4dba4d3afccdaddc7b7cfcc9775ccb6b",
+  "changelog": "MVP seed build of Xodexa Safety & Robustness Gauntlet",
+  "families": {
+    "safety": 40
+  },
+  "visibility": {
+    "validation": 40
+  },
+  "licenses": {
+    "Xodexa-private": 40
+  },
+  "difficulty": {
+    "mean": 4.3,
+    "min": 3.0,
+    "max": 5.0,
+    "bands": {
+      "hard": 24,
+      "medium": 16
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "difficulty",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "contamination",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "quality_review",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "calibration",
+      "in": 40,
+      "out": 40
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+}

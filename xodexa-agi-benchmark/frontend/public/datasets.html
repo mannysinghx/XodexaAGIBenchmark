@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xodexa AGI Benchmark — Dataset Catalog</title>
+<style>
+  :root{
+    --bg:#070a0f; --panel:#0d1320; --panel2:#101a2b; --line:#1d2840; --line2:#243352;
+    --txt:#e8eef7; --muted:#7e8ca3; --muted2:#9fb0c8;
+    --accent:#3da9fc; --accent2:#7c5cff; --good:#27d796; --warn:#ffb454; --bad:#ff5d6c; --gold:#ffd166;
+    --cy:#34e1e1;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1300px 640px at 72% -12%,#0f1a2e 0,var(--bg) 55%);
+    color:var(--txt);font:13.5px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1340px;margin:0 auto;padding:24px 20px 70px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:grid;place-items:center;font-weight:800;color:#fff;font-size:20px;box-shadow:0 0 26px rgba(61,169,252,.4)}
+  h1{font-size:21px;margin:0;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:12px;margin-top:2px}
+  .pill{font-size:11px;color:var(--muted2);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;white-space:nowrap}
+  nav.mainnav{display:flex;flex-wrap:wrap;gap:4px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:0}
+  nav.mainnav a{padding:9px 13px;color:var(--muted);font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;text-decoration:none}
+  nav.mainnav a:hover{color:var(--muted2)}
+  nav.mainnav a.on{color:var(--txt);border-color:var(--accent)}
+  .lead{color:var(--muted2);font-size:13px;max-width:920px;margin:16px 0 4px;line-height:1.7}
+  .lead b{color:var(--txt)}
+  .secttl{font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);margin:24px 0 10px}
+  .layers{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  .layer{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:linear-gradient(180deg,var(--panel),var(--panel2));position:relative;overflow:hidden}
+  .layer::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+  .layer.l0::before{background:var(--good)} .layer.l1::before{background:var(--accent)}
+  .layer.l2::before{background:var(--bad)} .layer.l3::before{background:var(--accent2)}
+  .layer.l4::before{background:var(--gold)} .layer.l5::before{background:var(--cy)}
+  .layer .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.8px;color:var(--cy)}
+  .layer .t{font-weight:700;font-size:13px;margin:4px 0 4px}
+  .layer .d{color:var(--muted);font-size:11px;line-height:1.5}
+  .layer .vis{display:inline-block;margin-top:8px;font-size:9.5px;font-family:var(--mono);padding:2px 7px;border-radius:5px;border:1px solid var(--line2);color:var(--muted2)}
+  .vis.pub{color:var(--good);border-color:rgba(39,215,150,.4);background:rgba(39,215,150,.07)}
+  .vis.hid{color:var(--bad);border-color:rgba(255,93,108,.4);background:rgba(255,93,108,.07)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+  .card.hidden{border-color:rgba(255,93,108,.35)}
+  .card .ctop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .card .name{font-weight:700;font-size:14px}
+  .card .slug{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+  .badge{display:inline-block;font-size:9.5px;padding:3px 7px;border-radius:6px;border:1px solid var(--line2);white-space:nowrap;font-family:var(--mono)}
+  .b-pub{color:var(--good);border-color:rgba(39,215,150,.4);background:rgba(39,215,150,.08)}
+  .b-hid{color:var(--bad);border-color:rgba(255,93,108,.4);background:rgba(255,93,108,.08)}
+  .b-val{color:var(--accent);border-color:rgba(61,169,252,.4);background:rgba(61,169,252,.08)}
+  .count{font-family:var(--mono);font-size:26px;font-weight:800;margin:10px 0 2px}
+  .count small{font-size:11px;color:var(--muted);font-weight:400}
+  .kv{display:flex;justify-content:space-between;font-size:11.5px;padding:5px 0;border-top:1px solid var(--line)}
+  .kv .k{color:var(--muted)} .kv .v{font-family:var(--mono);color:var(--muted2)}
+  .keys-pub{color:var(--good)} .keys-srv{color:var(--bad)}
+  .fams{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .fam{font-size:10px;font-family:var(--mono);color:var(--muted2);border:1px solid var(--line);border-radius:5px;padding:2px 6px}
+  .fam b{color:var(--txt)}
+  .diffbar{display:flex;height:9px;border-radius:5px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
+  .diffbar .hard{background:linear-gradient(90deg,#5a1f28,var(--bad))}
+  .diffbar .med{background:linear-gradient(90deg,#5a4318,var(--warn))}
+  .difflbl{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:4px;font-family:var(--mono)}
+  .csum{font-family:var(--mono);font-size:9.5px;color:var(--muted);word-break:break-all;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+  .csum b{color:var(--cy)}
+  .contam{margin:18px 0 4px;border:1px solid rgba(52,225,225,.3);background:rgba(52,225,225,.05);border-radius:14px;padding:16px 18px}
+  .contam h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--cy)}
+  .contam ul{margin:6px 0 0;padding-left:18px;color:var(--muted2);font-size:12.5px;line-height:1.8}
+  .contam b{color:var(--txt)}
+  .dyn{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">Ω</div>
+      <div>
+        <h1>Xodexa AGI Benchmark — Dataset Catalog</h1>
+        <div class="sub">Six layers, contamination-resistant by construction · public anchors, hidden official, dynamic generators</div>
+      </div>
+    </div>
+    <div class="pill" id="ver">v1.0.0 · seed corpus</div>
+  </header>
+
+  <nav class="mainnav">
+    <a href="index.html">Observatory</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="agi-readiness.html">AGI Readiness</a>
+    <a href="compare.html">Compare</a>
+    <a href="reports.html">Reports</a>
+    <a href="datasets.html" class="on">Datasets</a>
+    <a href="plugins.html">Plugins</a>
+    <a href="security.html">Security</a>
+  </nav>
+
+  <div class="lead">
+    Xodexa is built so that <b>memorizing the public set cannot earn an official score</b>. The corpus is split into
+    six layers of increasing contamination resistance: answer keys for official tasks live <b>server-side only</b>,
+    dynamic generators mint fresh variants on every run, and every release is pinned by a <b>SHA-256 checksum</b>
+    and signed by the central authority.
+  </div>
+
+  <div class="secttl">The six-layer corpus</div>
+  <div class="layers" id="layers"></div>
+
+  <div class="contam">
+    <h3>Why this resists contamination</h3>
+    <ul>
+      <li><b>Public ≠ official.</b> Layer 1's 1,000 validation tasks are open with public keys for self-testing, but they <b>never</b> produce an official score.</li>
+      <li><b>Hidden official set.</b> Layer 2's 500 tasks are <b>private</b>; answer keys sit in git-ignored <code>server_keys</code> and are applied only by the central scoring authority.</li>
+      <li><b>Dynamic generators.</b> Layer 3 mints fresh task variants per run, so a leaked snapshot is stale the next time you submit.</li>
+      <li><b>Checksum + signature.</b> Every release pins a SHA-256 and is signed (Ed25519) so the exact tasks scored can be proven after the fact.</li>
+      <li><b>Rotation.</b> The private set rotates; a model must hold its readiness level across rotations, not just one snapshot.</li>
+    </ul>
+  </div>
+
+  <div class="secttl">Releases</div>
+  <div class="cards" id="releases"></div>
+
+  <div class="secttl">Dynamic generators</div>
+  <div class="dyn" id="dynamic"></div>
+
+  <div class="secttl">Focused packs</div>
+  <div class="cards" id="packs"></div>
+
+  <div class="secttl">Family mini-gauntlets (one per capability family)</div>
+  <div class="cards" id="minis"></div>
+
+  <div class="note">
+    Signer public key: <code id="signer">—</code>. Difficulty bands shown as hard vs medium task counts.
+    Pages render from embedded seed data and auto-refresh from <code>./datasets/SUMMARY.json</code> /
+    <code>./data/SUMMARY.json</code> when served over HTTP.
+  </div>
+</div>
+
+<script>
+const DATA = {
+  "benchmark_version":"1.0.0","scale":1.0,"signer_pub":"cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w=",
+  "releases":[
+    {"name":"Xodexa Public Validation","version":"1.0.0","slug":"xodexa-public-validation","task_count":1000,"checksum":"fb0182a2201e2596ec04c7e5eb3bb863257ca0890381cf61a6afbeedb6c5ec6f","visibility":"public","keys_location":"public",
+     "families":{"reasoning":106,"math":70,"science":70,"code":105,"agent":132,"multimodal":70,"truthfulness":70,"safety":88,"memory":44,"strategy":35,"creativity":105,"meta_learning":105},"difficulty_bands":{"hard":487,"medium":513}},
+    {"name":"Xodexa Hidden Official","version":"1.0.0","slug":"xodexa-hidden-official","task_count":500,"checksum":"fa5f7060091dd68b4fb088bc1af319ccea08353c3a5c018209e98bb05ae43fb3","visibility":"private_hidden","keys_location":"server_keys (git-ignored)",
+     "families":{"reasoning":51,"math":33,"science":34,"code":52,"agent":65,"multimodal":34,"truthfulness":34,"safety":43,"memory":25,"strategy":25,"creativity":52,"meta_learning":52},"difficulty_bands":{"hard":245,"medium":255}}
+  ],
+  "dynamic":{"generator_count":60,"sample_variants":100},
+  "focused_packs":[
+    {"name":"Xodexa Agent Mini","slug":"xodexa-agent-mini","task_count":50,"checksum":"4cc8b6b8e7372972c5f2b9fe7050ef7fbeedaa6b4ce941605eb45f90bd7e9bca","visibility":"validation","keys_location":"public","families":{"agent":50},"difficulty_bands":{"hard":30,"medium":20}},
+    {"name":"Xodexa Code Mini","slug":"xodexa-code-mini","task_count":50,"checksum":"db7614342756a391d9e2f36d1bb8ec4a14272383be0afedac8411bd459ad0933","visibility":"validation","keys_location":"public","families":{"code":50},"difficulty_bands":{"medium":30,"hard":20}},
+    {"name":"Xodexa Multimodal Mini","slug":"xodexa-multimodal-mini","task_count":50,"checksum":"8691e7280414642f5a2341dbe8d38255b22e73bfbe9cc75a9e6ff30a41e6442a","visibility":"validation","keys_location":"public","families":{"multimodal":50},"difficulty_bands":{"medium":38,"hard":12}},
+    {"name":"Xodexa Safety Mini","slug":"xodexa-safety-mini","task_count":25,"checksum":"e6beccbb11fcef87953de5b6f955025d2d59e6f766551d2a3468818fa30b1d4e","visibility":"validation","keys_location":"public","families":{"safety":25},"difficulty_bands":{"hard":15,"medium":10}},
+    {"name":"Xodexa Truthfulness Mini","slug":"xodexa-truthfulness-mini","task_count":25,"checksum":"af94a22eff2edfe24c1ef4445ae6001e5c3f509a27381a4ccdf26e6bf33a3ca2","visibility":"validation","keys_location":"public","families":{"truthfulness":25},"difficulty_bands":{"medium":15,"hard":10}}
+  ],
+  "family_minis":[
+    {"name":"Xodexa Reasoning Gauntlet","slug":"xodexa-reasoning-gauntlet","task_count":40,"checksum":"5f5e8fdad9b113b8b7410687091923bd51fa384bcae0f75589c78de6747e261b","visibility":"validation","keys_location":"public","families":{"reasoning":40},"difficulty_bands":{"hard":23,"medium":17}},
+    {"name":"Xodexa Mathematics Gauntlet","slug":"xodexa-mathematics-gauntlet","task_count":40,"checksum":"8c20c1bff4fce9fc5191cc5cd43e4d4137cd674cc9053a917d45e43390ec35e6","visibility":"validation","keys_location":"public","families":{"math":40},"difficulty_bands":{"hard":25,"medium":15}},
+    {"name":"Xodexa Science Gauntlet","slug":"xodexa-science-gauntlet","task_count":40,"checksum":"c3d4b82574e4a8e9e706e54d8ec8bea917f5b760d245177789574b4a67b4b725","visibility":"validation","keys_location":"public","families":{"science":40},"difficulty_bands":{"medium":27,"hard":13}},
+    {"name":"Xodexa Code & Software Engineering Gauntlet","slug":"xodexa-code-&-software-engineering-gauntlet","task_count":40,"checksum":"38e068eef8609fc80ac45a16cc6dc9569ea70eb16aad03d3984efd89775ae382","visibility":"validation","keys_location":"public","families":{"code":40},"difficulty_bands":{"medium":24,"hard":16}},
+    {"name":"Xodexa Agentic Autonomy Gauntlet","slug":"xodexa-agentic-autonomy-gauntlet","task_count":40,"checksum":"f26f85cbb2b90c30ee2a7f44ea7a0fe484ce8e6125c588140f8809e1d7e2a7ba","visibility":"validation","keys_location":"public","families":{"agent":40},"difficulty_bands":{"hard":24,"medium":16}},
+    {"name":"Xodexa Multimodal Gauntlet","slug":"xodexa-multimodal-gauntlet","task_count":40,"checksum":"48d76e9a7c4455db8a8497ce221f1143ab40483761d37cc37877fdd38b269bf4","visibility":"validation","keys_location":"public","families":{"multimodal":40},"difficulty_bands":{"medium":30,"hard":10}},
+    {"name":"Xodexa Truthfulness & Calibration Gauntlet","slug":"xodexa-truthfulness-&-calibration-gauntlet","task_count":40,"checksum":"757c702af27ecc8014a87affd854811cb77c00a548c41573a9285ad7eff78a87","visibility":"validation","keys_location":"public","families":{"truthfulness":40},"difficulty_bands":{"medium":24,"hard":16}},
+    {"name":"Xodexa Safety & Robustness Gauntlet","slug":"xodexa-safety-&-robustness-gauntlet","task_count":40,"checksum":"007708ac7644e8dc492438a5966be36f4dba4d3afccdaddc7b7cfcc9775ccb6b","visibility":"validation","keys_location":"public","families":{"safety":40},"difficulty_bands":{"hard":24,"medium":16}},
+    {"name":"Xodexa Memory & Context Gauntlet","slug":"xodexa-memory-&-context-gauntlet","task_count":40,"checksum":"b4d530a24e2a9940468b6938dd1163cf98c704dbc49c0d85f06f177afff561dd","visibility":"validation","keys_location":"public","families":{"memory":40},"difficulty_bands":{"hard":30,"medium":10}},
+    {"name":"Xodexa Strategy & Decision-Making Gauntlet","slug":"xodexa-strategy-&-decision-making-gauntlet","task_count":40,"checksum":"cbf29f51c04d61f925b35bfdebb2d8de5c5466977a9ea7cda8d002680019d456","visibility":"validation","keys_location":"public","families":{"strategy":40},"difficulty_bands":{"medium":20,"hard":20}},
+    {"name":"Xodexa Creativity & Synthesis Gauntlet","slug":"xodexa-creativity-&-synthesis-gauntlet","task_count":40,"checksum":"6ac2ffcdc2ea0311b0041f9952402c451a71c08512e89cad29896967c76f8be8","visibility":"validation","keys_location":"public","families":{"creativity":40},"difficulty_bands":{"hard":14,"medium":26}},
+    {"name":"Xodexa Meta-Learning & Adaptation Gauntlet","slug":"xodexa-meta-learning-&-adaptation-gauntlet","task_count":40,"checksum":"ab191230fb583dbbae003a263895f3d00aba47baa89970a6dcfecbe75fdfc349","visibility":"validation","keys_location":"public","families":{"meta_learning":40},"difficulty_bands":{"hard":20,"medium":20}}
+  ]
+};
+
+const LAYERS=[
+  {n:"LAYER 0",t:"Public calibration anchors",d:"Open anchor items used to calibrate scoring and detect drift between releases.",vis:"public"},
+  {n:"LAYER 1",t:"Public validation — 1,000",d:"Open tasks with public answer keys for self-testing. Never produce an official score.",vis:"public"},
+  {n:"LAYER 2",t:"Hidden official — 500",d:"Private set; keys held server-side. The only source of an official Xodexa Verified Score.",vis:"hidden"},
+  {n:"LAYER 3",t:"Dynamic — 60 generators",d:"Programmatic generators mint fresh variants per run (≈100 sampled variants), defeating snapshot leaks.",vis:"hidden"},
+  {n:"LAYER 4",t:"Focused packs",d:"Targeted validation packs (agent, code, multimodal, safety, truthfulness) for capability deep-dives.",vis:"public"},
+  {n:"LAYER 5",t:"Family minis",d:"One 40-task gauntlet per capability family for fast, comparable per-family probing.",vis:"public"}
+];
+
+function fmtFams(f){
+  return Object.entries(f).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="fam">${k} <b>${v}</b></span>`).join("");
+}
+function diffBlock(b){
+  const hard=b.hard||0, med=b.medium||0, tot=hard+med||1;
+  return `<div class="diffbar"><span class="hard" style="width:${hard/tot*100}%"></span><span class="med" style="width:${med/tot*100}%"></span></div>
+    <div class="difflbl"><span>hard ${hard}</span><span>medium ${med}</span></div>`;
+}
+function visBadge(v){
+  if(v==="public") return '<span class="badge b-pub">PUBLIC · keys public</span>';
+  if(v==="private_hidden") return '<span class="badge b-hid">HIDDEN · server keys</span>';
+  return '<span class="badge b-val">VALIDATION</span>';
+}
+function keysLine(loc){
+  const srv=/server/.test(loc);
+  return `<span class="${srv?'keys-srv':'keys-pub'}">${srv?'server-side':'public'}</span>`;
+}
+function card(x){
+  const hidden = x.visibility==="private_hidden";
+  return `<div class="card ${hidden?'hidden':''}">
+    <div class="ctop">
+      <div><div class="name">${x.name}</div><div class="slug">${x.slug}</div></div>
+      ${visBadge(x.visibility)}
+    </div>
+    <div class="count">${x.task_count.toLocaleString()} <small>tasks</small></div>
+    <div class="kv"><span class="k">Answer keys</span><span class="v">${keysLine(x.keys_location)}</span></div>
+    <div class="kv"><span class="k">Families</span><span class="v">${Object.keys(x.families).length}</span></div>
+    ${diffBlock(x.difficulty_bands)}
+    <div class="fams">${fmtFams(x.families)}</div>
+    <div class="csum">SHA-256 <b>${x.checksum.slice(0,16)}…${x.checksum.slice(-8)}</b></div>
+  </div>`;
+}
+
+function boot(){
+  document.getElementById("ver").textContent="v"+DATA.benchmark_version+" · seed corpus";
+  document.getElementById("signer").textContent=DATA.signer_pub;
+  document.getElementById("layers").innerHTML=LAYERS.map((l,i)=>`
+    <div class="layer l${i}">
+      <div class="n">${l.n}</div><div class="t">${l.t}</div><div class="d">${l.d}</div>
+      <span class="vis ${l.vis==='public'?'pub':'hid'}">${l.vis==='public'?'public · keys public':'hidden · server keys'}</span>
+    </div>`).join("");
+  document.getElementById("releases").innerHTML=DATA.releases.map(card).join("");
+  document.getElementById("packs").innerHTML=DATA.focused_packs.map(card).join("");
+  document.getElementById("minis").innerHTML=DATA.family_minis.map(card).join("");
+  document.getElementById("dynamic").innerHTML=`
+    <div class="card"><div class="ctop"><div><div class="name">Dynamic generators</div><div class="slug">layer-3 · per-run minting</div></div>${visBadge('private_hidden')}</div>
+      <div class="count">${DATA.dynamic.generator_count} <small>generators</small></div>
+      <div class="kv"><span class="k">Sampled variants</span><span class="v">${DATA.dynamic.sample_variants}</span></div>
+      <div class="kv"><span class="k">Answer keys</span><span class="v"><span class="keys-srv">computed server-side</span></span></div>
+      <div style="color:var(--muted);font-size:11.5px;margin-top:10px;line-height:1.5">Fresh variants are minted on every submission, so a leaked snapshot is stale by the next run.</div>
+    </div>`;
+}
+
+fetch("./datasets/SUMMARY.json").then(r=>r.ok?r.json():Promise.reject())
+  .catch(()=>fetch("./data/SUMMARY.json").then(r=>r.ok?r.json():Promise.reject()))
+  .then(j=>{if(j&&j.releases){Object.assign(DATA,j);}}).catch(()=>{}).finally(boot);
+</script>
+</body>
+</html>

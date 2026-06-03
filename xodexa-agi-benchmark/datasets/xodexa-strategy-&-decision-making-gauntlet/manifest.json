@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa Strategy & Decision-Making Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-03T15:31:59Z",
+  "task_count": 40,
+  "checksum_sha256": "cbf29f51c04d61f925b35bfdebb2d8de5c5466977a9ea7cda8d002680019d456",
+  "changelog": "MVP seed build of Xodexa Strategy & Decision-Making Gauntlet",
+  "families": {
+    "strategy": 40
+  },
+  "visibility": {
+    "validation": 40
+  },
+  "licenses": {
+    "Xodexa-private": 40
+  },
+  "difficulty": {
+    "mean": 4.25,
+    "min": 3.5,
+    "max": 5.0,
+    "bands": {
+      "medium": 20,
+      "hard": 20
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "difficulty",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "contamination",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "quality_review",
+      "in": 40,
+      "out": 40
+    },
+    {
+      "stage": "calibration",
+      "in": 40,
+      "out": 40
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+}

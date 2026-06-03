@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa Agent Mini",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-03T15:31:57Z",
+  "task_count": 50,
+  "checksum_sha256": "4cc8b6b8e7372972c5f2b9fe7050ef7fbeedaa6b4ce941605eb45f90bd7e9bca",
+  "changelog": "MVP seed build of Xodexa Agent Mini",
+  "families": {
+    "agent": 50
+  },
+  "visibility": {
+    "validation": 50
+  },
+  "licenses": {
+    "Xodexa-private": 50
+  },
+  "difficulty": {
+    "mean": 4.4,
+    "min": 4.0,
+    "max": 5.0,
+    "bands": {
+      "hard": 30,
+      "medium": 20
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 50,
+      "out": 50
+    },
+    {
+      "stage": "difficulty",
+      "in": 50,
+      "out": 50
+    },
+    {
+      "stage": "contamination",
+      "in": 50,
+      "out": 50
+    },
+    {
+      "stage": "quality_review",
+      "in": 50,
+      "out": 50
+    },
+    {
+      "stage": "calibration",
+      "in": 50,
+      "out": 50
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+}

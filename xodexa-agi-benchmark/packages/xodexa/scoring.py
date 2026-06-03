@@ -96,7 +96,7 @@ def _bootstrap_ci(fractions: list[float], iters: int = 2000, seed: int = 0):
 
 
 def apex_score(item_results: list[dict], external_signals: dict | None = None,
-               bonuses: dict | None = None) -> dict:
+               bonuses: dict | None = None, weights: dict | None = None) -> dict:
     """
     Compute the full Xodexa Score report from centrally re-scored item results.
 
@@ -104,15 +104,20 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
     fraction is derived as max(0, awarded)/max.
     external_signals: {signal_name: bool/float in 0..1} from central verification.
     bonuses: {"robustness":0..1, "self_correction":0..1, "efficiency":0..1} optional.
+    weights: the category-weight table to score over. Defaults to the Ω-pack's
+        9-category model (CATEGORY_WEIGHTS); the platform report layer passes the
+        canonical 12-dimension table (families.SCORE_WEIGHTS) so every family is
+        scored. Coverage is always reported over the chosen table.
     """
     external_signals = external_signals or {}
     bonuses = bonuses or {}
+    weights = weights or CATEGORY_WEIGHTS
 
     cats = category_scores(item_results)
-    covered = [c for c in cats if c in CATEGORY_WEIGHTS]
-    wsum = sum(CATEGORY_WEIGHTS[c] for c in covered) or 1.0
+    covered = [c for c in cats if c in weights]
+    wsum = sum(weights[c] for c in covered) or 1.0
 
-    capability = sum(CATEGORY_WEIGHTS[c] / wsum * cats[c]["score"] for c in covered)
+    capability = sum(weights[c] / wsum * cats[c]["score"] for c in covered)
 
     # Bonuses (bounded, additive on the 0..1 capability, small by design).
     bonus = (0.03 * bonuses.get("robustness", 0.0)
@@ -135,17 +140,17 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
     fractions = [max(0.0, r["awarded"]) / r["max"] for r in item_results if r["max"]]
     ci = _bootstrap_ci(fractions)
 
-    coverage = round(len(covered) / len(CATEGORY_WEIGHTS), 3)
+    coverage = round(len(covered) / len(weights), 3)
 
     return {
         "apex_score": score_1000,
         "grade": grade_band(score_1000),
         "ci95": ci,
         "coverage": coverage,
-        "coverage_label": f"{len(covered)}/{len(CATEGORY_WEIGHTS)} categories",
+        "coverage_label": f"{len(covered)}/{len(weights)} categories",
         "capability_raw": round(capability * 1000, 1),
-        "categories": {c: {**cats[c], "weight": CATEGORY_WEIGHTS[c]} for c in covered},
-        "categories_not_evaluated": [c for c in CATEGORY_WEIGHTS if c not in covered],
+        "categories": {c: {**cats[c], "weight": weights[c]} for c in covered},
+        "categories_not_evaluated": [c for c in weights if c not in covered],
         "bonuses_applied": round(bonus * 1000, 1),
         "external_penalties_applied": applied,
         "external_penalty_total": round(penalty * 1000, 1),
