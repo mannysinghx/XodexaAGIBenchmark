@@ -117,12 +117,28 @@ def list_models(provider: str, key: str, base_url: str | None = None) -> list[st
 
 def validate_model(provider: str, key: str, model: str, base_url: str | None = None) -> bool:
     """A model name is legitimate if the provider lists it (best-effort: if the list
-    is unavailable we accept, since some OpenAI-compatible servers don't expose /models)."""
+    is unavailable we accept, since some OpenAI-compatible servers don't expose /models).
+
+    Handles two common provider quirks:
+    - Versioned snapshot IDs: Google returns "gemini-2.5-pro-preview-05-28" but users
+      submit the stable alias "gemini-2.5-pro". We accept if the submitted name is a
+      prefix of a listed ID separated by "-".
+    - "models/" prefix: some providers include it in the id field; we strip it.
+    """
     try:
-        models = list_models(provider, key, base_url)
+        raw = list_models(provider, key, base_url)
     except ProviderError:
         return True  # endpoint may not support discovery; allow, run will surface errors
-    return (not models) or (model in models)
+    if not raw:
+        return True
+    # Normalise: strip "models/" prefix that some providers leak into the OpenAI compat layer
+    ids = {m.removeprefix("models/") for m in raw} | set(raw)
+    # 1. Exact match
+    if model in ids:
+        return True
+    # 2. Alias match: "gemini-2.5-pro" accepts "gemini-2.5-pro-preview-05-28"
+    #    Require the "-" separator so "gemini-2" cannot match "gemini-2.5-pro".
+    return any(m.startswith(model + "-") for m in ids)
 
 
 def connector(provider: str, key: str, model: str,
