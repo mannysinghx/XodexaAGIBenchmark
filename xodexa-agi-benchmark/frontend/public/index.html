@@ -238,7 +238,8 @@ function field(){
 }
 function showtip(e,d){
   const t=document.getElementById("tip");
-  t.innerHTML=d.m+" — Xodexa "+d.cap.toFixed(1)+" · acc "+d.acc.toFixed(2)+"% · CE "+d.ce.toFixed(1);
+  const ceTxt=(d.ce==null||isNaN(d.ce))?"n/a":d.ce.toFixed(1);
+  t.innerHTML=d.m+" — Xodexa "+d.cap.toFixed(1)+" · acc "+d.acc.toFixed(2)+"% · CE "+ceTxt;
   const host=document.getElementById("field").getBoundingClientRect();
   t.style.left=(e.clientX-host.left+12)+"px";t.style.top=(e.clientY-host.top-6)+"px";t.style.opacity=1;
 }

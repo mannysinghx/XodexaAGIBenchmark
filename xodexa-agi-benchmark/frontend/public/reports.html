@@ -235,10 +235,13 @@ function renderReport(d){
   document.getElementById("lvlblurb").textContent = a.level_blurb;
 
   const fm = d.frontier_metrics;
+  const nf = (x, dg=1) => (x==null || isNaN(x)) ? "—" : (+x).toFixed(dg);
+  const ce = fm.calibration_error;
   document.getElementById("kpis").innerHTML = [
-    ["Accuracy", fm.accuracy.toFixed(2)+"% ±"+fm.accuracy_ci95.toFixed(2)],
-    ["Calibration error", fm.calibration_error.toFixed(1), fm.calibration_error>=45?p.bad:fm.calibration_error>=30?p.warn:p.good],
-    ["AGI Readiness Index", (a.agi_readiness_index*100).toFixed(1)+"/100", p.cy],
+    ["Accuracy", nf(fm.accuracy,2)+"% ±"+nf(fm.accuracy_ci95,2)],
+    ["Calibration error", ce==null ? "n/a" : nf(ce,1),
+      ce==null ? null : (ce>=45?p.bad:ce>=30?p.warn:p.good)],
+    ["AGI Readiness Index", nf(a.agi_readiness_index*100,1)+"/100", p.cy],
     ["Items scored", fm.n]
   ].map(([l,n,c])=>`<div class="kpi"><div class="n" ${c?`style="color:${c}"`:""}>${n}</div><div class="l">${l}</div></div>`).join("");
 

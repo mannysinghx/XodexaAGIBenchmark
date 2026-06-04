@@ -179,9 +179,10 @@ function init(d){
 function apexCell(r){return '<span class="apex" style="color:'+r.color+'">'+r.apex.toFixed(1)+'</span>';}
 function gradeCell(r){return '<span style="color:'+r.color+';font-weight:600">'+r.grade+'</span>';}
 function agiCell(r){return 'L'+r.agi_level+' <span class="meta">'+r.agi_level_name+'</span>';}
-function accCell(r){return r.acc.toFixed(2)+' <span class="ci">±'+r.ci.toFixed(2)+'</span>';}
-function ceCell(r){const c=r.ce>=45?P.bad:r.ce>=30?P.warn:P.good;return '<span style="color:'+c+'">'+r.ce.toFixed(1)+'</span>';}
-function contamCell(r){const c=r.contam>=0.5?P.bad:r.contam>=0.2?P.warn:P.good;return '<span style="color:'+c+'">'+(r.contam*100).toFixed(0)+'%</span>';}
+function nf(x,d){return (x==null||isNaN(x))?null:(+x).toFixed(d);}
+function accCell(r){return (nf(r.acc,2)||"—")+' <span class="ci">±'+(nf(r.ci,2)||"—")+'</span>';}
+function ceCell(r){if(r.ce==null)return '<span class="muted">n/a</span>';const c=r.ce>=45?P.bad:r.ce>=30?P.warn:P.good;return '<span style="color:'+c+'">'+r.ce.toFixed(1)+'</span>';}
+function contamCell(r){if(r.contam==null)return '<span class="muted">—</span>';const c=r.contam>=0.5?P.bad:r.contam>=0.2?P.warn:P.good;return '<span style="color:'+c+'">'+(r.contam*100).toFixed(0)+'%</span>';}
 
 function bandFor(score){return GRADE_BANDS.slice().reverse().find(b=>score>=b.lo)||GRADE_BANDS[0]||{name:""};}
 
