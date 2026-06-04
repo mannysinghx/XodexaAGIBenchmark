@@ -26,6 +26,31 @@ For production scale (many concurrent runs), split the worker out and add a Key 
 
 ---
 
+## One provider, everything in one place — Railway
+
+Railway can host the **app + the database** together, so it becomes your *only* infra
+provider (no Neon, no Vercel, no Render). The repo ships `railway.json` for this.
+
+1. Railway → **New Project → Deploy from GitHub repo** → pick this repo.
+2. On the service: **Settings → Root Directory = `xodexa-agi-benchmark`** (so it finds
+   `requirements.txt` + `railway.json`). Railway builds it and runs
+   `uvicorn apps.server.main:app` (serves the API **and** the static site).
+3. **+ New → Database → Add PostgreSQL** in the same project. (This replaces Neon.)
+4. On the web service → **Variables**, set:
+   - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`  ← reference the Railway Postgres
+     (our code rewrites the scheme to `postgresql+psycopg://` automatically)
+   - `RUN_INLINE=1`, `COOKIE_SECURE=true`
+   - `KEY_ENCRYPTION_KEY`, `SESSION_SECRET` (from your `.env`), `SMTP_PASSWORD`
+   - `SMTP_HOST=mail.privateemail.com`, `SMTP_PORT=465`,
+     `SMTP_USER=info@xodexabenchmark.com`, `MAIL_FROM=info@xodexabenchmark.com`
+5. **Settings → Networking → Generate Domain.** `PUBLIC_BASE_URL` auto-detects from
+   Railway's `RAILWAY_PUBLIC_DOMAIN`, so verification links just work.
+
+That's the whole deployment on **one** provider. Scale later by adding a second service
+(`python -m apps.worker.worker`) + a Railway Redis and dropping `RUN_INLINE`.
+
+---
+
 ## Vercel frontend + external backend (optional)
 
 **Vercel cannot run this backend.** It needs a long-running FastAPI server, a separate

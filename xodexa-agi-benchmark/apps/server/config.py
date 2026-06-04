@@ -48,9 +48,12 @@ class Settings:
     # --- public URLs (verification links, CORS) ---
     # Auto-detect on common hosts (Render injects RENDER_EXTERNAL_URL) so verification
     # links work without manual config; PUBLIC_BASE_URL overrides when set.
-    public_base_url: str = (os.environ.get("PUBLIC_BASE_URL")
-                            or os.environ.get("RENDER_EXTERNAL_URL")
-                            or "http://localhost:8000")
+    public_base_url: str = (
+        os.environ.get("PUBLIC_BASE_URL")
+        or os.environ.get("RENDER_EXTERNAL_URL")
+        or (("https://" + os.environ["RAILWAY_PUBLIC_DOMAIN"])
+            if os.environ.get("RAILWAY_PUBLIC_DOMAIN") else None)
+        or "http://localhost:8000")
     cors_origins: list[str] = [
         o.strip() for o in os.environ.get("CORS_ORIGINS", "").split(",") if o.strip()
     ]

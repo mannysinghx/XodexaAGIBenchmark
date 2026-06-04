@@ -23,11 +23,25 @@ from apps.server.config import get_settings  # noqa: E402
 
 _settings = get_settings()
 
+def _normalize_db_url(url: str) -> str:
+    """Most hosts (Railway, Neon, Heroku) inject a `postgres://` / `postgresql://` URL,
+    but our driver is psycopg3 → force the `postgresql+psycopg://` SQLAlchemy scheme so
+    the platform's auto-provided DATABASE_URL works without manual editing."""
+    if url.startswith("postgresql+"):
+        return url
+    if url.startswith("postgresql://"):
+        return "postgresql+psycopg://" + url[len("postgresql://"):]
+    if url.startswith("postgres://"):
+        return "postgresql+psycopg://" + url[len("postgres://"):]
+    return url
+
+
+_db_url = _normalize_db_url(_settings.database_url)
 _connect_args = {}
-if _settings.database_url.startswith("sqlite"):
+if _db_url.startswith("sqlite"):
     _connect_args = {"check_same_thread": False}
 
-engine = create_engine(_settings.database_url, pool_pre_ping=True,
+engine = create_engine(_db_url, pool_pre_ping=True,
                        future=True, connect_args=_connect_args)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False,
                             class_=Session, future=True)
