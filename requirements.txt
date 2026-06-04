@@ -1,0 +1,6 @@
+# Repo-root shim for hosts that build from the repository root (e.g. Railway/Nixpacks
+# default). The real app + dependencies live in xodexa-agi-benchmark/. This makes a
+# root build detect Python and install the right deps without changing the service
+# Root Directory. (Setting Root Directory = xodexa-agi-benchmark also works and is
+# cleaner — either path deploys.)
+-r xodexa-agi-benchmark/requirements.txt
