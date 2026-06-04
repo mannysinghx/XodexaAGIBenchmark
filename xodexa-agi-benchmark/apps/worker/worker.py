@@ -20,6 +20,9 @@ from apps.server.db import init_db  # noqa: E402
 
 
 def main():
+    import logging
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     s = get_settings()
     if not s.redis_url:
         raise SystemExit("REDIS_URL is required to run the worker")

@@ -19,11 +19,46 @@ What it does:
 
 from __future__ import annotations
 
+import json
 import time
+import urllib.error
+import urllib.request
 
 from .crypto import KeyPair, HashChain, sha256_hex, verify
 
 RUNNER_VERSION = "0.1.0"
+
+
+class ProviderCallError(RuntimeError):
+    """A model API call failed. Carries the HTTP status + a (truncated) response body
+    so callers/logs can see the REAL reason (bad key, missing model, bad param, rate
+    limit, …) instead of a bare 'HTTPError'. Never includes the API key."""
+    def __init__(self, message: str, status: int | None = None, body: str = ""):
+        super().__init__(message)
+        self.status = status
+        self.body = body
+
+
+def _post_json(url: str, headers: dict, payload: dict, timeout: float) -> dict:
+    """POST JSON and return parsed JSON, raising ProviderCallError with status + body
+    detail on any HTTP/network/parse failure."""
+    data = json.dumps(payload).encode()
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        body = ""
+        try:
+            body = e.read().decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001
+            pass
+        raise ProviderCallError(f"HTTP {e.code} from {url}: {body[:600]}",
+                                status=e.code, body=body[:2000]) from None
+    except urllib.error.URLError as e:
+        raise ProviderCallError(f"network error to {url}: {e.reason}") from None
+    except Exception as e:  # noqa: BLE001
+        raise ProviderCallError(f"unexpected error calling {url}: {type(e).__name__}: {e}") from None
 
 
 # --------------------------------------------------------------------------- #
@@ -63,20 +98,27 @@ class OpenAICompatibleConnector(ModelConnector):
         self.timeout = timeout
 
     def complete(self, prompt: str) -> str:
-        import json
-        import urllib.request
-        body = json.dumps({
-            "model": self.model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.0,
-        }).encode()
-        req = urllib.request.Request(
-            self.base_url + "/chat/completions", data=body,
-            headers={"Authorization": "Bearer " + self.api_key,
-                     "content-type": "application/json"})
-        with urllib.request.urlopen(req, timeout=self.timeout) as r:
-            data = json.load(r)
-        return data["choices"][0]["message"]["content"]
+        url = self.base_url + "/chat/completions"
+        headers = {"Authorization": "Bearer " + self.api_key,
+                   "content-type": "application/json"}
+        payload = {"model": self.model,
+                   "messages": [{"role": "user", "content": prompt}],
+                   "temperature": 0.0}
+        try:
+            data = _post_json(url, headers, payload, self.timeout)
+        except ProviderCallError as e:
+            # Newer reasoning models (e.g. OpenAI gpt-5/o-series) reject a non-default
+            # temperature with a 400 — retry once without it rather than fail the run.
+            if e.status == 400 and "temperature" in (e.body or "").lower():
+                payload.pop("temperature", None)
+                data = _post_json(url, headers, payload, self.timeout)
+            else:
+                raise
+        try:
+            return data["choices"][0]["message"]["content"] or ""
+        except (KeyError, IndexError, TypeError):
+            raise ProviderCallError(
+                f"unexpected response shape from {url}: {json.dumps(data)[:600]}") from None
 
 
 class OllamaConnector(ModelConnector):
@@ -88,13 +130,10 @@ class OllamaConnector(ModelConnector):
         self.model = model
 
     def complete(self, prompt: str) -> str:
-        import json
-        import urllib.request
-        body = json.dumps({"model": self.model, "prompt": prompt, "stream": False}).encode()
-        req = urllib.request.Request(self.base_url + "/api/generate", data=body,
-                                     headers={"content-type": "application/json"})
-        with urllib.request.urlopen(req, timeout=300) as r:
-            return json.load(r).get("response", "")
+        data = _post_json(self.base_url + "/api/generate",
+                          {"content-type": "application/json"},
+                          {"model": self.model, "prompt": prompt, "stream": False}, 300)
+        return data.get("response", "")
 
 
 class AnthropicConnector(ModelConnector):
@@ -111,19 +150,15 @@ class AnthropicConnector(ModelConnector):
         self.base_url = base_url.rstrip("/")
 
     def complete(self, prompt: str) -> str:
-        import json
-        import urllib.request
-        body = json.dumps({
-            "model": self.model,
-            "max_tokens": self.max_tokens,
-            "messages": [{"role": "user", "content": prompt}],
-        }).encode()
-        req = urllib.request.Request(
-            self.base_url + "/v1/messages", data=body,
-            headers={"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
-                     "content-type": "application/json"})
-        with urllib.request.urlopen(req, timeout=self.timeout) as r:
-            data = json.load(r)
+        url = self.base_url + "/v1/messages"
+        headers = {"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
+                   "content-type": "application/json"}
+        payload = {"model": self.model, "max_tokens": self.max_tokens,
+                   "messages": [{"role": "user", "content": prompt}]}
+        data = _post_json(url, headers, payload, self.timeout)
+        if "content" not in data:
+            raise ProviderCallError(
+                f"unexpected response shape from {url}: {json.dumps(data)[:600]}")
         return "".join(b.get("text", "") for b in data.get("content", []))
 
 

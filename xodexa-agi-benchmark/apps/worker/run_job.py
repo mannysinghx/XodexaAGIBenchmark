@@ -16,6 +16,7 @@ aborts the run cleanly as 'failed'.
 from __future__ import annotations
 
 import datetime as dt
+import logging
 import time
 
 from apps.server import providers, security
@@ -25,6 +26,8 @@ from apps.server.models import (ProviderCredential, Report, RunEvent, WebRun,
 
 from xodexa import generators as G, schema, evaluate, report as report_mod
 from xodexa.crypto import KeyPair, sha256_hex, canonical
+
+logger = logging.getLogger("xodexa.run")
 
 
 def _now():
@@ -78,9 +81,12 @@ def execute_run(run_id: str, inline_key: str | None = None,
                               "n_tasks": len(tasks)})
         seq += 1
         db.commit()
+        logger.info("run %s start: model=%s provider=%s base_url=%s n_tasks=%d",
+                    run.id, run.model_name, run.provider, base_url or "(default)", len(tasks))
 
         responses = []
         consecutive_errors = 0
+        last_error = None
         total_tokens = 0
         total_latency = 0.0
         for i, t in enumerate(tasks):
@@ -89,9 +95,12 @@ def execute_run(run_id: str, inline_key: str | None = None,
             try:
                 out = conn.complete(t.prompt)
                 consecutive_errors = 0
-            except Exception as e:  # noqa: BLE001 — provider/network error
-                err = type(e).__name__
+            except Exception as e:  # noqa: BLE001 — provider/network error (detail kept)
+                err = f"{type(e).__name__}: {e}"
+                last_error = err
                 consecutive_errors += 1
+                logger.warning("run %s task %s (model=%s) failed [%d in a row]: %s",
+                               run.id, t.task_id, run.model_name, consecutive_errors, err)
             latency_ms = (time.perf_counter() - t0) * 1000
             toks = max(1, len(out) // 4)
             total_tokens += toks
@@ -101,16 +110,20 @@ def execute_run(run_id: str, inline_key: str | None = None,
             db.add(WebRunResponse(run_id=run.id, task_id=t.task_id, family=t.task_family,
                                   output=out, output_sha256=sha256_hex((out or "").encode()),
                                   latency_ms=round(latency_ms, 2), tokens=toks))
-            prev = _append_event(db, run.id, seq, prev, "task_response",
-                                 {"id": t.task_id, "ok": err is None,
-                                  "output_sha256": sha256_hex((out or "").encode())})
+            ev = {"id": t.task_id, "ok": err is None,
+                  "output_sha256": sha256_hex((out or "").encode())}
+            if err:
+                ev["error"] = err[:500]
+            prev = _append_event(db, run.id, seq, prev, "task_response", ev)
             seq += 1
             run.progress = int(100 * (i + 1) / len(tasks))
             if i % 5 == 0 or i == len(tasks) - 1:
                 db.commit()
-            # abort early if the provider is rejecting us (bad key / quota)
+            # abort early if the provider is rejecting us (bad key / model / quota)
             if consecutive_errors >= 5:
-                return _fail(db, run, f"provider failing repeatedly ({err}); aborted")
+                msg = f"provider call failed {consecutive_errors}× in a row — last error: {last_error}"
+                logger.error("run %s aborted: %s", run.id, msg)
+                return _fail(db, run, msg)
 
         # --- central re-scoring + signed report ---
         er = evaluate.score_pack(keys, responses)
@@ -149,7 +162,22 @@ def execute_run(run_id: str, inline_key: str | None = None,
         _append_event(db, run.id, seq, prev, "run_scored",
                       {"xodexa_score": run.xodexa_score, "agi_level": run.agi_level})
         db.commit()
+        logger.info("run %s scored: xodexa_score=%s grade=%s agi_level=%s",
+                    run.id, run.xodexa_score, run.grade, run.agi_level)
         return {"ok": True, "run_id": run.id, "xodexa_score": run.xodexa_score}
+    except Exception as e:  # noqa: BLE001 — never leave a run stuck; record the reason
+        logger.exception("run %s crashed", run_id)
+        try:
+            db.rollback()
+            run = db.get(WebRun, run_id)
+            if run and run.status not in ("scored", "failed"):
+                run.status = "failed"
+                run.error = f"internal error: {type(e).__name__}: {e}"
+                run.finished_at = _now()
+                db.commit()
+        except Exception:  # noqa: BLE001
+            logger.exception("run %s: failed to record failure", run_id)
+        return {"ok": False, "error": f"{type(e).__name__}: {e}"}
     finally:
         db.close()
 

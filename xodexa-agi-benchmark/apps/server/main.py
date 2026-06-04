@@ -25,6 +25,12 @@ except Exception:  # allow import without fastapi installed (scaffold inspection
     FastAPI = None
 
 import json  # noqa: E402
+import logging  # noqa: E402
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+)
 
 from xodexa import (ScoringAuthority, suites, families, generators, anchors,  # noqa: E402
                     registry)
