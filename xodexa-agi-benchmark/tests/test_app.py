@@ -43,7 +43,7 @@ providers.validate_key = lambda p, k, b=None: {"ok": True, "detail": "stub",
                                                "models": ["stub-model"]}
 providers.validate_model = lambda p, k, m, b=None: True
 providers.connector = lambda p, k, m, b=None: CallableConnector(
-    lambda prompt: "The answer is 42.", name="stub")
+    lambda prompt: "The answer is 42.\nConfidence: 80", name="stub")  # model states confidence
 # run synchronously so the test is deterministic
 routes_runs.enqueue_run = lambda run_id, inline_key=None, inline_base_url=None: \
     run_job.execute_run(run_id, inline_key, inline_base_url)
@@ -138,6 +138,15 @@ def run():
           "agi_readiness" in rep and "improvement_path" in rep)
     r = client.get(f"/api/runs/{run_id}/report.md")
     check("markdown export works", r.status_code == 200 and "Xodexa Score" in r.text)
+
+    # confidence elicitation → calibration is computed when responses carry confidence
+    from apps.worker.run_job import parse_confidence
+    check("confidence parsed + stripped",
+          parse_confidence("The answer is 42.\nConfidence: 80") == ("The answer is 42.", 0.8))
+    check("confidence number not left in gradeable text",
+          "80" not in parse_confidence("ans 42.\nConfidence: 80")[0])
+    fm = rep["frontier_metrics"]
+    check("calibration computed when confidence present", fm["calibration_error"] is not None)
 
     # 8. live leaderboard now shows the real run
     r = client.get("/api/leaderboard")

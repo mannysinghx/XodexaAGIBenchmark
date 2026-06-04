@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
+import re
 import time
 
 from apps.server import providers, security
@@ -28,6 +29,29 @@ from xodexa import generators as G, schema, evaluate, report as report_mod
 from xodexa.crypto import KeyPair, sha256_hex, canonical
 
 logger = logging.getLogger("xodexa.run")
+
+# Confidence elicitation: ask the model to state how sure it is, so we can compute
+# calibration (RMS-CE) on real runs. The number is parsed out AND stripped from the
+# gradeable text so it can't pollute numeric/keyword grading.
+CONFIDENCE_INSTRUCTION = (
+    "\n\nFinally, on a new line, output exactly: Confidence: N — where N is an integer "
+    "from 0 to 100 estimating the probability that your answer above is correct."
+)
+_CONF_RE = re.compile(r"confidence\s*[:=]\s*(\d{1,3})\s*%?", re.IGNORECASE)
+
+
+def parse_confidence(text: str):
+    """Return (cleaned_text, confidence_0to1_or_None). Removes the matched
+    'Confidence: N' mention from the text so grading sees only the answer."""
+    if not text:
+        return text, None
+    matches = list(_CONF_RE.finditer(text))
+    if not matches:
+        return text, None
+    m = matches[-1]
+    val = max(0, min(100, int(m.group(1)))) / 100.0
+    cleaned = (text[:m.start()] + text[m.end():]).strip()
+    return cleaned, val
 
 
 def _now():
@@ -90,10 +114,11 @@ def execute_run(run_id: str, inline_key: str | None = None,
         total_tokens = 0
         total_latency = 0.0
         for i, t in enumerate(tasks):
-            out, latency_ms, err = "", 0.0, None
+            out, conf, latency_ms, err = "", None, 0.0, None
             t0 = time.perf_counter()
             try:
-                out = conn.complete(t.prompt)
+                raw = conn.complete(t.prompt + CONFIDENCE_INSTRUCTION)
+                out, conf = parse_confidence(raw)  # strip confidence from gradeable text
                 consecutive_errors = 0
             except Exception as e:  # noqa: BLE001 — provider/network error (detail kept)
                 err = f"{type(e).__name__}: {e}"
@@ -105,8 +130,10 @@ def execute_run(run_id: str, inline_key: str | None = None,
             toks = max(1, len(out) // 4)
             total_tokens += toks
             total_latency += latency_ms
-            responses.append({"id": t.task_id, "output": out, "latency_ms": latency_ms,
-                              "tokens": toks})
+            resp = {"id": t.task_id, "output": out, "latency_ms": latency_ms, "tokens": toks}
+            if conf is not None:
+                resp["confidence"] = conf
+            responses.append(resp)
             db.add(WebRunResponse(run_id=run.id, task_id=t.task_id, family=t.task_family,
                                   output=out, output_sha256=sha256_hex((out or "").encode()),
                                   latency_ms=round(latency_ms, 2), tokens=toks))

@@ -28,6 +28,7 @@ def score_pack(answer_keys: dict, responses: list[dict]) -> dict:
     fam_agg: dict[str, list] = {}           # family -> [awarded, max]
     correct_flags: list[int] = []
     confidences: list[float] = []
+    conf_correct: list[int] = []            # correctness aligned with `confidences`
     canary_hits = 0
 
     for tid, key in answer_keys.items():
@@ -48,9 +49,13 @@ def score_pack(answer_keys: dict, responses: list[dict]) -> dict:
         fam_agg[fam][0] += aw
         fam_agg[fam][1] += mx
 
-        correct_flags.append(1 if (mx and aw >= 0.5 * mx) else 0)
-        if "confidence" in resp:
+        is_correct = 1 if (mx and aw >= 0.5 * mx) else 0
+        correct_flags.append(is_correct)
+        # Calibration is computed over items that actually carry a stated confidence,
+        # aligned with their correctness — so a few non-compliant items don't void it.
+        if resp.get("confidence") is not None:
             confidences.append(float(resp["confidence"]))
+            conf_correct.append(is_correct)
         if key.get("canary") and key["canary"] in (output or ""):
             canary_hits += 1
 
@@ -58,14 +63,15 @@ def score_pack(answer_keys: dict, responses: list[dict]) -> dict:
 
     n = len(correct_flags)
     acc_point, acc_half, _ = wilson_ci(sum(correct_flags), n)
-    calib_err = (rms_calibration_error(confidences, correct_flags)
-                 if confidences and len(confidences) == n else None)
+    calib_err = (rms_calibration_error(confidences, conf_correct)
+                 if confidences else None)
 
     return {
         "item_results": item_results,
         "per_item": per_item,
         "family_scores": family_scores,
         "frontier_metrics": {"accuracy": acc_point, "accuracy_ci95": acc_half,
-                             "calibration_error": calib_err, "n": n},
+                             "calibration_error": calib_err, "n": n,
+                             "calibration_n": len(confidences)},
         "canary_hits": canary_hits,
     }
