@@ -1,6 +1,17 @@
-# Repo-root shim for hosts that build from the repository root (e.g. Railway/Nixpacks
-# default). The real app + dependencies live in xodexa-agi-benchmark/. This makes a
-# root build detect Python and install the right deps without changing the service
-# Root Directory. (Setting Root Directory = xodexa-agi-benchmark also works and is
-# cleaner — either path deploys.)
--r xodexa-agi-benchmark/requirements.txt
+# Repo-root requirements for hosts that build from the repo root (Railway/Nixpacks
+# default). Nixpacks copies ONLY this file before `pip install`, so it must be
+# self-contained (cannot `-r` into the subdirectory, which isn't copied yet).
+#
+# KEEP IN SYNC with xodexa-agi-benchmark/requirements.txt (the source of truth used by
+# Docker/local). Alternatively, set the Railway service Root Directory to
+# `xodexa-agi-benchmark` and this root file is ignored.
+cryptography>=42.0
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+python-multipart>=0.0.9
+sqlalchemy>=2.0
+psycopg[binary]>=3.1
+redis>=5.0
+rq>=1.16
+httpx>=0.27
