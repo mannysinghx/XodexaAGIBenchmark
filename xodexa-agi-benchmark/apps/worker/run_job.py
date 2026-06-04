@@ -147,6 +147,26 @@ def execute_run(run_id: str, inline_key: str | None = None,
             if i % 5 == 0 or i == len(tasks) - 1:
                 db.commit()
             # abort early if the provider is rejecting us (bad key / model / quota)
+            if last_error:
+                _e = last_error
+                # 429 quota — retrying never helps; give a clear actionable message immediately
+                if "HTTP 429" in _e:
+                    if "quota" in _e.lower() or "limit" in _e.lower():
+                        msg = (
+                            "Provider quota exceeded — your API key has hit its rate or usage "
+                            "limit for this model. Try a smaller/faster model (e.g. "
+                            "gemini-2.5-flash instead of a pro/preview model), reduce the "
+                            "number of tasks, or enable billing on your provider account."
+                        )
+                    else:
+                        msg = "Provider rate-limit (HTTP 429) — wait a moment then try again with fewer tasks."
+                    logger.error("run %s aborted (quota): %s", run.id, _e[:300])
+                    return _fail(db, run, msg)
+                # 401/403 — bad or expired key; retrying won't help
+                if "HTTP 401" in _e or "HTTP 403" in _e:
+                    msg = "Provider rejected the API key (HTTP 401/403) — check that the key is valid and has not expired."
+                    logger.error("run %s aborted (auth): %s", run.id, _e[:300])
+                    return _fail(db, run, msg)
             if consecutive_errors >= 5:
                 msg = f"provider call failed {consecutive_errors}× in a row — last error: {last_error}"
                 logger.error("run %s aborted: %s", run.id, msg)
