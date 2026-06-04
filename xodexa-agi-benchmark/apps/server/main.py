@@ -13,6 +13,7 @@ Docs: http://localhost:8000/docs
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -71,7 +72,12 @@ if FastAPI:
 
     @app.get("/health")
     def health():
+        # `commit` lets you confirm which build is live (Railway/Render inject the SHA).
+        commit = (os.environ.get("RAILWAY_GIT_COMMIT_SHA")
+                  or os.environ.get("RENDER_GIT_COMMIT")
+                  or os.environ.get("GIT_COMMIT") or "unknown")
         return {"status": "ok", "benchmark_version": "1.0.0",
+                "commit": commit[:12],
                 "server_pub_fp": __import__("xodexa").fingerprint(AUTH.server_pub())}
 
     @app.get("/v1/benchmarks")
