@@ -87,9 +87,7 @@
         <div class="field">
           <label for="provider">Provider</label>
           <select id="provider" name="provider">
-            <option value="openai">OpenAI</option>
-            <option value="anthropic">Anthropic</option>
-            <option value="openai-compatible">OpenAI-compatible</option>
+            <!-- populated from models.js -->
           </select>
         </div>
         <div class="field">
@@ -185,9 +183,49 @@
 
   var provider = document.getElementById("provider");
   var otBaseField = document.getElementById("otBaseField");
-  provider.addEventListener("change", function(){
-    otBaseField.style.display = provider.value === "openai-compatible" ? "block" : "none";
-  });
+
+  function providerKeyHint(brand){
+    if (!brand) return "API key";
+    if (/openai/i.test(brand) || /deepseek/i.test(brand)) return "sk-…";
+    if (/anthropic/i.test(brand)) return "sk-ant-…";
+    if (/google|gemini/i.test(brand)) return "AIza…";
+    if (/xai|grok/i.test(brand)) return "xai-…";
+    return "API key";
+  }
+  function syncProviderUI(){
+    var opt = provider.options[provider.selectedIndex];
+    if (!opt) return;
+    var type = opt.getAttribute("data-providertype") || "openai-compatible";
+    var base = opt.getAttribute("data-baseurl") || "";
+    otBaseField.style.display = (type === "openai-compatible") ? "block" : "none";
+    document.getElementById("ot_base_url").value = base;
+    document.getElementById("ot_key").placeholder = providerKeyHint(opt.value);
+  }
+  provider.addEventListener("change", syncProviderUI);
+
+  // Provider brand dropdown — populated from models.js catalog.
+  function populateProviders(){
+    var sel = document.getElementById("provider");
+    sel.innerHTML = "";
+    var cat = window.XODEXA_MODELS;
+    if (cat && cat.brands){
+      cat.brands.forEach(function(g){
+        var o = document.createElement("option");
+        o.value = g.brand;
+        o.textContent = g.brand;
+        o.setAttribute("data-providertype", g.provider);
+        o.setAttribute("data-baseurl", g.base_url || "");
+        sel.appendChild(o);
+      });
+    }
+    var custom = document.createElement("option");
+    custom.value = "Custom";
+    custom.textContent = "Custom / other (OpenAI-compatible)";
+    custom.setAttribute("data-providertype", "openai-compatible");
+    custom.setAttribute("data-baseurl", "");
+    sel.appendChild(custom);
+    syncProviderUI(); // set initial placeholder + base_url visibility
+  }
 
   // Browse-models dropdown: grouped by brand, auto-fills model + provider + base URL.
   function setMode(mode){
@@ -220,19 +258,19 @@
     browse.addEventListener("change", function(){
       var opt = browse.options[browse.selectedIndex];
       if (!opt || !opt.value) return;
-      var prov = opt.getAttribute("data-provider");
+      var brandName = (opt.parentNode && opt.parentNode.label) || "";
       var base = opt.getAttribute("data-baseurl") || "";
       document.getElementById("model_name").value = opt.value;
-      provider.value = prov;
-      otBaseField.style.display = (prov === "openai-compatible") ? "block" : "none";
-      if (base) document.getElementById("ot_base_url").value = base;
-      if (prov === "openai-compatible") {
-        // these brands need their own endpoint + key → one-time mode is the path
-        setMode("onetime");
-        show("ok", "Filled " + opt.value + " — enter your " + (opt.parentNode.label || "provider") +
-          " API key below (base URL pre-filled).");
-        var k = document.getElementById("ot_key"); if (k) k.focus();
-      }
+      // sync the brand selector
+      Array.prototype.forEach.call(provider.options, function(o){
+        if (o.value === brandName) provider.value = brandName;
+      });
+      syncProviderUI();
+      setMode("onetime");
+      var keyHint = document.getElementById("ot_key").placeholder;
+      show("ok", "Filled " + opt.value + " — enter your " + (brandName || "provider") +
+        " API key below" + (base ? " (base URL pre-filled)" : "") + ".");
+      var k = document.getElementById("ot_key"); if (k) k.focus();
     });
   }
 
@@ -316,7 +354,8 @@
       body.credential_id = cid;
     } else {
       var key = document.getElementById("ot_key").value;
-      var prov = provider.value;
+      var selOpt = provider.options[provider.selectedIndex];
+      var prov = (selOpt && selOpt.getAttribute("data-providertype")) || "openai-compatible";
       body.provider = prov;
       body.save_key = false;
       if (prov === "openai-compatible") {
@@ -413,6 +452,7 @@
       '<div class="msg err" style="display:block">Run failed: ' + esc(run.error || "unknown error") + '</div>';
   }
 
+  populateProviders();
   populateBrowse();  // catalog is static (no auth needed) — fill the dropdown immediately
 
   (async function init(){
