@@ -51,7 +51,7 @@ def inventory_workflow(rng, idx, vis):
     start = stock
     lines = []
     for i in range(rng.randint(5, 8)):
-        if rng.random() < 0.5:
+        if rng.random() < 0.5 or stock == 0:   # force restock when stock is exhausted
             k = rng.randint(1, 15); stock += k; lines.append(f"- restock +{k} units")
         else:
             k = rng.randint(1, min(stock, 12)); stock -= k; lines.append(f"- sold {k} units")

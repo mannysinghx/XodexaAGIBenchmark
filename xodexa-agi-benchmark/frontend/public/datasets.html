@@ -111,10 +111,10 @@
   <div class="secttl">Layer 3 — dynamic generators</div>
   <div class="dyn" id="dynamic"></div>
 
-  <div class="secttl">Layer 4 — focused packs</div>
+  <div class="secttl">Layer 4 — focused gauntlets</div>
   <div class="cards" id="packs"></div>
 
-  <div class="secttl">Layer 5 — family mini-gauntlets (one per capability family)</div>
+  <div class="secttl">Layer 5 — family mini-gauntlets (one per family · 21 total)</div>
   <div class="cards" id="minis"></div>
 
   <div class="note">
@@ -177,8 +177,8 @@ function render(d){
     {n:"LAYER 1",t:"Public validation — "+XODEXA.fmt.int(pub.task_count),d:"Open tasks with public answer keys for self-testing. Never produce an official score.",vis:"public"},
     {n:"LAYER 2",t:"Hidden official — "+XODEXA.fmt.int(hid.task_count),d:"Private set; keys held server-side. The only source of an official Xodexa Verified Score.",vis:"hidden"},
     {n:"LAYER 3",t:"Dynamic — "+S.dynamic.generator_count+" generators",d:"Programmatic generators mint fresh variants per run (≈"+S.dynamic.sample_variants+" sampled variants), defeating snapshot leaks.",vis:"hidden"},
-    {n:"LAYER 4",t:"Focused packs — "+S.focused_packs.length,d:"Targeted validation packs for capability deep-dives.",vis:"public"},
-    {n:"LAYER 5",t:"Family minis — "+S.family_minis.length,d:"One gauntlet per capability family for fast, comparable per-family probing.",vis:"public"}
+    {n:"LAYER 4",t:"Focused gauntlets — "+S.focused_packs.length,d:"Flagship (1,000 tasks) and standard (500 tasks) gauntlets sized for statistically meaningful leaderboard discrimination (±3–4 pt CI).",vis:"public"},
+    {n:"LAYER 5",t:"Family minis — "+S.family_minis.length,d:"One 200-task mini-gauntlet per family ("+S.family_minis.length+" total: 12 capability + 9 security). Developer exploration packs — not for official ranking.",vis:"public"}
   ];
   document.getElementById("layers").innerHTML = LAYERS.map((l,i)=>
     '<div class="layer l'+i+'">'+
