@@ -13,9 +13,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
 
+from apps.server import security
 from apps.server.db import get_db
 from apps.server.models import Report, User, WebRun
 
@@ -26,12 +27,13 @@ router = APIRouter(prefix="/api", tags=["public"])
 _REPO = Path(__file__).resolve().parents[2]
 
 
-def _entry(run: WebRun, rep_json: dict, username: str) -> dict:
+def _entry(run: WebRun, rep_json: dict, username: str, mine: bool = False) -> dict:
     ar = rep_json.get("agi_readiness", {})
     fm = rep_json.get("frontier_metrics", {})
     return {
         "run_id": run.id, "model": run.model_name, "provider": run.provider,
         "submitted_by": username, "family": run.family,
+        "visibility": run.visibility, "mine": mine,
         "xodexa_score": run.xodexa_score, "grade": run.grade,
         "agi_level": run.agi_level, "agi_level_name": ar.get("level_name"),
         "agi_index": run.agi_index, "accuracy": run.accuracy,
@@ -45,31 +47,57 @@ def _entry(run: WebRun, rep_json: dict, username: str) -> dict:
     }
 
 
-@router.get("/leaderboard")
-def leaderboard(db: Session = Depends(get_db)):
-    runs = (db.query(WebRun)
-            .filter(WebRun.status == "scored", WebRun.visibility == "public")
-            .order_by(WebRun.xodexa_score.desc()).limit(500).all())
-    entries = []
+def _entries_for(db: Session, runs, viewer_id: str | None) -> list[dict]:
+    out = []
     for run in runs:
         rep = db.query(Report).filter_by(run_id=run.id).first()
         if not rep:
             continue
         user = db.get(User, run.user_id)
-        entries.append(_entry(run, rep.report_json, user.username if user else "unknown"))
-    # HLE-style rank upper bound on accuracy ± CI
+        out.append(_entry(run, rep.report_json, user.username if user else "unknown",
+                          mine=bool(viewer_id and run.user_id == viewer_id)))
+    return out
+
+
+@router.get("/leaderboard")
+def leaderboard(request: Request, db: Session = Depends(get_db)):
+    """Public scored runs (cross-user) PLUS, for a logged-in viewer, their own scored
+    runs (including private ones, visible only to them) — so a user sees all of their
+    results here, not just the public board."""
+    viewer = security.current_user(request, db)
+    viewer_id = viewer.id if viewer else None
+
+    public_runs = (db.query(WebRun)
+                   .filter(WebRun.status == "scored", WebRun.visibility == "public")
+                   .order_by(WebRun.xodexa_score.desc()).limit(500).all())
+    entries = _entries_for(db, public_runs, viewer_id)
+    seen = {e["run_id"] for e in entries}
+
+    mine_count = 0
+    if viewer_id:
+        own = (db.query(WebRun)
+               .filter(WebRun.status == "scored", WebRun.user_id == viewer_id)
+               .order_by(WebRun.xodexa_score.desc()).limit(500).all())
+        own = [r for r in own if r.id not in seen]  # public ones already included
+        own_entries = _entries_for(db, own, viewer_id)
+        mine_count = sum(1 for e in entries if e["mine"]) + len(own_entries)
+        entries.extend(own_entries)
+
+    entries.sort(key=lambda e: (e["xodexa_score"] is not None, e["xodexa_score"] or 0),
+                 reverse=True)
     if entries:
         ranked = rank_upper_bound([{"model": e["run_id"], "score": e["accuracy"] or 0,
                                     "ci": e["ci"] or 0} for e in entries])
         rmap = {r["model"]: r["rank_ub"] for r in ranked}
         for e in entries:
             e["rank_ub"] = rmap.get(e["run_id"], 1)
-    return {"benchmark_version": "1.0.0", "live": True,
-            "count": len(entries), "entries": entries}
+    return {"benchmark_version": "1.0.0", "live": True, "count": len(entries),
+            "viewer": (viewer.username if viewer else None), "yours": mine_count,
+            "entries": entries}
 
 
 @router.get("/dashboard")
-def dashboard(db: Session = Depends(get_db)):
+def dashboard(request: Request, db: Session = Depends(get_db)):
     scored = db.query(WebRun).filter(WebRun.status == "scored",
                                      WebRun.visibility == "public").all()
     n = len(scored)
@@ -84,6 +112,25 @@ def dashboard(db: Session = Depends(get_db)):
         seed_total += sum(p.get("task_count", 0) for p in summary.get(grp, []))
     seed_total += (summary.get("dynamic", {}) or {}).get("sample_variants", 0)
 
+    # personal stats for the logged-in viewer (their whole session of runs)
+    you = None
+    viewer = security.current_user(request, db)
+    if viewer:
+        mine = db.query(WebRun).filter(WebRun.user_id == viewer.id).all()
+        scored_mine = [r for r in mine if r.status == "scored"]
+        best = max((r.xodexa_score or 0 for r in scored_mine), default=None)
+        you = {
+            "username": viewer.username,
+            "total": len(mine),
+            "scored": len(scored_mine),
+            "running": sum(1 for r in mine if r.status in ("queued", "running")),
+            "failed": sum(1 for r in mine if r.status == "failed"),
+            "best_xodexa_score": best,
+            "models": sorted({r.model_name for r in scored_mine}),
+            "avg_xodexa_score": (round(sum(r.xodexa_score or 0 for r in scored_mine)
+                                       / len(scored_mine), 1) if scored_mine else None),
+        }
+
     return {
         "live": True,
         "kpis": {
@@ -97,6 +144,7 @@ def dashboard(db: Session = Depends(get_db)):
             "seed_tasks": seed_total,
         },
         "models": models,
+        "you": you,
         "empty": n == 0,
     }
 

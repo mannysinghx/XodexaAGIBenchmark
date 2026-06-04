@@ -50,6 +50,16 @@
   <div id="mount"></div>
 
   <div id="content" style="display:none">
+    <div class="dcard" id="youcard" style="display:none;margin-bottom:18px">
+      <h2 id="youtitle">Your runs</h2>
+      <div class="stats" id="youstats" style="margin-top:0"></div>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn-ghost" href="/my-reports.html" style="text-decoration:none">Open My Reports →</a>
+        <a class="btn-ghost" href="/run.html" style="text-decoration:none">+ New run</a>
+      </div>
+    </div>
+
+    <div class="secttl" style="margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted)">Public benchmark — all models</div>
     <div class="stats">
       <div class="stat"><div class="n" id="s_models">—</div><div class="l">Models Evaluated</div></div>
       <div class="stat"><div class="n" id="s_avgscore">—</div><div class="l">Average Xodexa Score</div></div>
@@ -97,7 +107,24 @@ function init(d){
   const keys=FAMKEYS.length?FAMKEYS:Object.keys(firstFs);
   const label=k=>(fam[k]&&fam[k].title?fam[k].title.replace(/ Gauntlet$/,''):XODEXA.fmt.cap(k));
 
-  const entries=[...lb.entries].sort((a,b)=>b.xodexa_score-a.xodexa_score);
+  const entries=[...lb.entries].sort((a,b)=>(b.xodexa_score||0)-(a.xodexa_score||0));
+
+  // "Your runs" panel (the logged-in viewer's own session of runs)
+  const you=dash.you;
+  if(you){
+    document.getElementById("youtitle").textContent="Your runs — "+you.username;
+    const cells=[
+      ["Total runs", you.total],
+      ["Scored", you.scored],
+      ["Running", you.running],
+      ["Failed", you.failed],
+      ["Best score", you.best_xodexa_score!=null?you.best_xodexa_score.toFixed(1):"—"],
+      ["Models", you.models.length],
+    ];
+    document.getElementById("youstats").innerHTML=cells.map(([l,n])=>
+      '<div class="stat"><div class="n">'+XAUTH.esc(String(n))+'</div><div class="l">'+l+'</div></div>').join("");
+    document.getElementById("youcard").style.display="";
+  }
 
   // KPIs from live /api/dashboard
   document.getElementById("s_models").textContent=XODEXA.fmt.int(kpis.models_evaluated);
@@ -114,11 +141,13 @@ function init(d){
   const tb=document.getElementById("lb");
   tb.innerHTML=entries.map((e,i)=>{
     const c=XODEXA.gradeColor(e.xodexa_score,P);
+    const tags=(e.mine?' <span style="color:var(--accent);font-size:10px;font-weight:600">• yours</span>':'')
+      +(e.visibility==='private'?' <span style="color:var(--warn);font-size:10px">private</span>':'');
     return '<tr><td class="rank">'+(i+1)+'</td>'+
-      '<td><div class="model">'+e.model+'</div><div class="grade">'+e.time_horizon+'</div></td>'+
-      '<td><span class="score" style="color:'+c+'">'+e.xodexa_score.toFixed(1)+'</span> <span class="ci">±'+e.ci.toFixed(2)+'</span></td>'+
-      '<td class="grade">L'+e.agi_level+' · '+e.agi_level_name+'</td>'+
-      '<td class="grade" style="color:'+c+';font-weight:600">'+e.grade+'</td></tr>';
+      '<td><div class="model">'+XAUTH.esc(e.model)+tags+'</div><div class="grade">'+(e.time_horizon||'')+'</div></td>'+
+      '<td><span class="score" style="color:'+c+'">'+(e.xodexa_score!=null?e.xodexa_score.toFixed(1):"—")+'</span> <span class="ci">±'+(e.ci!=null?e.ci.toFixed(2):"—")+'</span></td>'+
+      '<td class="grade">L'+e.agi_level+' · '+(e.agi_level_name||"")+'</td>'+
+      '<td class="grade" style="color:'+c+';font-weight:600">'+(e.grade||"")+'</td></tr>';
   }).join("");
 
   // radar — top 2 models, family sub-scores
@@ -165,7 +194,8 @@ document.addEventListener("DOMContentLoaded",async ()=>{
   mount.innerHTML='<div class="xstate"><span class="xspin"></span> Loading live results…</div>';
   try{
     const [dash,lb,catalog]=await Promise.all([XAPI.get("/dashboard"),XAPI.get("/leaderboard"),XODEXA.load("catalog.json")]);
-    if((dash&&dash.empty)||!lb||!lb.entries||!lb.entries.length){await emptyState(mount);return;}
+    // show data if ANY runs are visible to this viewer (public board OR their own runs)
+    if(!lb||!lb.entries||!lb.entries.length){await emptyState(mount);return;}
     mount.innerHTML="";
     init({dashboard:dash,leaderboard:lb,catalog:catalog});
   }catch(e){

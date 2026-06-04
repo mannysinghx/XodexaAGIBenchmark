@@ -54,7 +54,8 @@
 
   <nav class="mainnav" data-page="leaderboard"></nav>
 
-  <div class="lead" style="font-size:12.5px;margin-top:10px">Live results — scored from real models. Looking for the illustrative sample? See the DEMO menu.</div>
+  <div class="lead" style="font-size:12.5px;margin-top:10px">Live results from real models — everyone's <b>public</b> runs, plus <b>your own</b> runs
+    (private ones marked, visible only to you) when signed in. Manage your runs in <a href="/my-reports.html">My Reports</a>. Illustrative sample? See the DEMO menu.</div>
 
   <div id="mount"></div>
 
@@ -142,7 +143,7 @@ function init(d){
       m:e.model, by:e.submitted_by, apex:e.xodexa_score, grade:e.grade, color:XODEXA.gradeColor(e.xodexa_score,P),
       agi_level:e.agi_level, agi_level_name:e.agi_level_name, agi_index:e.agi_index,
       acc:e.accuracy, ci:e.ci, ce:e.calibration_error, contam:e.contamination_risk,
-      rank_ub:e.rank_ub, time_horizon:e.time_horizon
+      rank_ub:e.rank_ub, time_horizon:e.time_horizon, mine:e.mine, vis:e.visibility
     };
     FAMKEYS.forEach(k=>r["fam_"+k]=(e.family_scores||{})[k]);
     return r;
@@ -235,8 +236,10 @@ function render(){
   const body=document.getElementById("body");
   body.innerHTML=rows.map(r=>{
     let tds='<td class="l rank">'+r.rank_ub+'</td>'+
-      '<td class="l"><span class="model">'+XAUTH.esc(r.m)+'</span><br>'+
-        '<span class="meta">'+r.time_horizon+'</span></td>'+
+      '<td class="l"><span class="model">'+XAUTH.esc(r.m)+'</span>'+
+        (r.mine?' <span class="badge" style="color:var(--accent);border-color:rgba(37,99,235,.4);background:rgba(37,99,235,.08)">yours</span>':'')+
+        (r.vis==='private'?' <span class="badge" style="color:var(--warn);border-color:rgba(193,116,10,.4);background:rgba(193,116,10,.08)">private</span>':'')+
+        '<br><span class="meta">'+(r.time_horizon||'')+'</span></td>'+
       '<td class="l"><span class="meta">'+(r.by?XAUTH.esc(r.by):'—')+'</span></td>';
     COLS.filter(c=>colOn[c.k]).forEach(c=>tds+='<td>'+c.fmt(r,c.k)+'</td>');
     return '<tr>'+tds+'</tr>';
