@@ -29,8 +29,16 @@ window.XODEXA_MODELS = {
 
     { brand: "Google (Gemini)", provider: "openai-compatible",
       base_url: "https://generativelanguage.googleapis.com/v1beta/openai/",
-      models: ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite",
-               "gemini-2.0-flash", "gemini-1.5-pro"] },
+      // Source: ai.google.dev/gemini-api/docs/models — text/chat models only
+      models: [
+        // Gemini 2.5 — stable, broadly available on free tier
+        "gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite",
+        // Gemini 3 — current generation
+        "gemini-3.5-flash", "gemini-3.1-pro-preview",
+        "gemini-3.1-flash-lite", "gemini-3-flash-preview",
+        // Previous generation (deprecated but still accessible)
+        "gemini-2.0-flash", "gemini-2.0-flash-lite",
+      ] },
 
     { brand: "xAI (Grok)", provider: "openai-compatible",
       base_url: "https://api.x.ai/v1",
