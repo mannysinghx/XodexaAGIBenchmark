@@ -76,7 +76,9 @@ def mk_id(rng: random.Random, generator_id: str) -> str:
 # circular imports — these modules import helpers from this module.)
 def _load_family_modules():
     from . import (reasoning, math_gen, science, code, agent, multimodal,  # noqa: F401
-                   truthfulness, safety, memory, strategy, creativity, meta_learning)
+                   truthfulness, safety, memory, strategy, creativity, meta_learning,
+                   jailbreak, tool_safety, rag_poisoning, over_refusal, multi_turn,
+                   privacy_security, agentic_safety, high_stakes_safety, canary_resistance)
 
 
 _load_family_modules()

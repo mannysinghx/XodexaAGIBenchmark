@@ -120,6 +120,103 @@ FAMILIES: dict[str, Family] = {
         ("in_context_rule", "feedback_adaptation", "few_shot_transfer",
          "self_correction", "strategy_shift"),
     ),
+    # ---- Security-focused families (added in security upgrade) ---------------
+    "jailbreak_resistance": Family(
+        "jailbreak_resistance", "Jailbreak Resistance Gauntlet",
+        "Tests whether a model correctly refuses disallowed requests delivered via "
+        "direct jailbreaks, roleplay persona escapes, fake authority pressure, "
+        "emotional manipulation, obfuscation/encoding tricks, multi-step bypasses, "
+        "and benign-wrapper disguises.",
+        (
+            "direct_jailbreak", "roleplay_persona_escape", "authority_pressure",
+            "emotional_manipulation", "obfuscation_encoding", "multi_step_bypass",
+            "benign_wrapper",
+        ),
+    ),
+    "tool_safety": Family(
+        "tool_safety", "Tool Safety Gauntlet",
+        "Tests whether a model respects tool authorization boundaries: refusing "
+        "unauthorized tool calls, requiring confirmations before destructive actions, "
+        "detecting tool-output injection, avoiding excessive agency, and preventing "
+        "data exfiltration via tool chaining.",
+        (
+            "unauthorized_tool_call", "tool_confirmation_bypass", "tool_output_injection",
+            "excessive_agency", "data_exfiltration", "cross_tool_escalation",
+        ),
+    ),
+    "privacy_security": Family(
+        "privacy_security", "Privacy & Security Gauntlet",
+        "Tests resistance to canary leakage, PII exposure, system-prompt extraction, "
+        "secret exfiltration, and credential disclosure.",
+        (
+            "canary_leakage", "pii_exposure", "system_prompt_extraction",
+            "secret_exfiltration", "credential_exposure",
+        ),
+    ),
+    "agentic_safety": Family(
+        "agentic_safety", "Agentic Safety Gauntlet",
+        "Tests whether an agentic model stays within authorized permission boundaries, "
+        "avoids scope creep, refuses unauthorized planning, resists multi-agent "
+        "manipulation, and declines irreversible actions without explicit approval.",
+        (
+            "permission_boundary", "scope_creep", "unauthorized_planning",
+            "multi_agent_manipulation", "irreversible_action",
+        ),
+    ),
+    "over_refusal": Family(
+        "over_refusal", "Over-Refusal Gauntlet",
+        "Tests whether a model correctly answers benign educational questions without "
+        "over-refusing. Penalizes unnecessary refusals of safe requests in security "
+        "education, medical, legal, creative, historical, chemistry, financial, and "
+        "general technical domains.",
+        (
+            "benign_security_education", "medical_information", "legal_information",
+            "creative_fiction", "historical_events", "chemistry_education",
+            "benign_financial_question", "benign_technical_question",
+        ),
+    ),
+    "rag_poisoning": Family(
+        "rag_poisoning", "RAG Poisoning Gauntlet",
+        "Tests whether a model correctly ignores malicious instructions injected into "
+        "retrieved documents (indirect prompt injection), including instruction "
+        "overrides, tool-call injections, poisoned-context overrides, canary "
+        "extraction attempts, and authority spoofing via retrieved content.",
+        (
+            "indirect_rag_injection", "malicious_retrieved_instruction",
+            "poisoned_context_override", "canary_extraction_via_rag",
+            "authority_spoofing_in_rag",
+        ),
+    ),
+    "multi_turn_manipulation": Family(
+        "multi_turn_manipulation", "Multi-Turn Manipulation Gauntlet",
+        "Tests robustness against manipulation spread across multiple conversation "
+        "turns: gradual escalation, context poisoning, identity erosion, false memory "
+        "injection, and trust-building followed by exploitation.",
+        (
+            "gradual_escalation", "context_poisoning", "identity_erosion",
+            "false_memory_injection", "trust_building_exploit",
+        ),
+    ),
+    "high_stakes_safety": Family(
+        "high_stakes_safety", "High-Stakes Safety Gauntlet",
+        "Tests appropriate boundary-setting in high-stakes domains where bad advice "
+        "could cause real harm: medical, legal, financial advice boundaries, crisis "
+        "response, and dual-use information requests.",
+        (
+            "medical_advice_boundary", "legal_advice_boundary", "financial_advice_boundary",
+            "crisis_response", "dual_use_information",
+        ),
+    ),
+    "canary_resistance": Family(
+        "canary_resistance", "Canary Resistance Gauntlet",
+        "Tests whether a model refuses to reveal benchmark canary tokens under direct "
+        "and indirect extraction attempts, including paraphrase probes and multi-hop "
+        "extraction chains.",
+        (
+            "direct_canary_extraction", "indirect_canary_extraction",
+            "paraphrase_canary_probe", "multi_hop_canary_extraction",
+        ),
+    ),
 }
 
 FAMILY_KEYS = tuple(FAMILIES.keys())
@@ -164,6 +261,16 @@ FAMILY_TO_DIMENSION: dict[str, str] = {
     "strategy": "strategy",
     "creativity": "reasoning",
     "meta_learning": "reasoning",
+    # Security-focused families — all roll up into the safety dimension.
+    "jailbreak_resistance": "safety",
+    "tool_safety": "safety",
+    "privacy_security": "safety",
+    "agentic_safety": "safety",
+    "over_refusal": "safety",
+    "rag_poisoning": "safety",
+    "multi_turn_manipulation": "safety",
+    "high_stakes_safety": "safety",
+    "canary_resistance": "safety",
 }
 
 
@@ -249,6 +356,9 @@ SEVERITY = ("low", "medium", "high", "critical")
 CRITICAL_FAILURE_TYPES: frozenset[str] = frozenset({
     "unsafe_compliance", "prompt_injection_failure", "policy_violation",
     "tool_misuse", "hallucination",
+    # Security upgrade additions:
+    "canary_leakage", "secret_leakage", "unauthorized_tool_call",
+    "over_refusal", "jailbreak_success",
 })
 
 # Maps a failure type to the most likely root layer — fuels the improvement engine.

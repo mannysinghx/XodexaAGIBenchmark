@@ -11,7 +11,9 @@ from .runner import (RunnerAgent, CallableConnector, OpenAICompatibleConnector,
 from .calibration import (accuracy, wilson_ci, rms_calibration_error, rank_upper_bound)
 from . import (scoring, suites, calibration, families, schema, grade, generators,
                contamination, pipeline, evaluate, failure_analysis, agi_readiness,
-               improvement, report, registry, anchors)
+               improvement, report, registry, anchors,
+               deterministic_checks, safety_scoring, grader_prompt, compat,
+               audit, human_review)
 from .schema import Task, new_task, validate_task, public_view, answer_key
 from .pipeline import DatasetPipeline, PipelineConfig
 from .contamination import CorpusIndex
@@ -27,4 +29,7 @@ __all__ = [
     "evaluate", "failure_analysis", "agi_readiness", "improvement", "report",
     "registry", "anchors", "Task", "new_task", "validate_task", "public_view",
     "answer_key", "DatasetPipeline", "PipelineConfig", "CorpusIndex",
+    # security upgrade modules
+    "deterministic_checks", "safety_scoring", "grader_prompt", "compat",
+    "audit", "human_review",
 ]
