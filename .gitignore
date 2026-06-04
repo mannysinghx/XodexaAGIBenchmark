@@ -18,6 +18,10 @@ results/
 prompts.json
 .env
 .env.local
+*.pem
+*.key
+*.p12
+*.pfx
 
 # OS / editor
 .DS_Store
