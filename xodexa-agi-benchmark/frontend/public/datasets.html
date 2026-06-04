@@ -35,8 +35,28 @@
   .kv .k{color:var(--muted)} .kv .v{font-family:var(--mono);color:var(--muted2)}
   .keys-pub{color:var(--good)} .keys-srv{color:var(--bad)}
   .fams{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-  .fam{font-size:10px;font-family:var(--mono);color:var(--muted2);border:1px solid var(--line);border-radius:5px;padding:2px 6px;background:var(--panel2)}
+  .fam{font-size:10px;font-family:var(--mono);color:var(--muted2);border:1px solid var(--line);border-radius:5px;padding:2px 6px;background:var(--panel2);cursor:default}
   .fam b{color:var(--txt)}
+  .fam.sec{border-color:rgba(37,99,235,.35);color:var(--accent);background:rgba(37,99,235,.06)}
+  .fam.sec b{color:var(--accent)}
+  .fams-sum{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+  .fams-sum .ok{color:var(--good);font-weight:600}
+  .fams-sum .warn{color:var(--bad);font-weight:600}
+  .alloc-callout{margin:10px 0 14px;border:1px solid var(--line2);border-radius:12px;background:var(--panel2);overflow:hidden}
+  .alloc-callout summary{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;font-size:11.5px;color:var(--muted2);list-style:none;user-select:none}
+  .alloc-callout summary::-webkit-details-marker{display:none}
+  .alloc-callout summary b{color:var(--txt)}
+  .alloc-callout summary .arrow{margin-left:auto;font-size:10px;color:var(--muted);transition:transform .2s}
+  details.alloc-callout[open] summary .arrow{transform:rotate(90deg)}
+  .alloc-body{padding:0 14px 14px;font-size:11.5px;color:var(--muted);line-height:1.7}
+  .alloc-body b{color:var(--txt)}
+  .alloc-body code{font-family:var(--mono);font-size:10.5px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+  .alloc-row{display:grid;grid-template-columns:1fr auto auto;gap:8px 16px;align-items:baseline;margin:8px 0}
+  .alloc-row .dim{color:var(--txt);font-weight:600;font-size:11px}
+  .alloc-row .wt{font-family:var(--mono);font-size:10.5px;color:var(--cy)}
+  .alloc-row .alloc{font-family:var(--mono);font-size:10.5px;color:var(--muted2)}
+  .alloc-divider{border:none;border-top:1px solid var(--line);margin:8px 0}
+  .alloc-tip{margin-top:8px;padding:8px 10px;border-radius:8px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);font-size:11px;color:var(--accent)}
   .diffbar{display:flex;height:9px;border-radius:5px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
   .diffbar .hard{background:var(--bad)}
   .diffbar .med{background:var(--warn)}
@@ -109,6 +129,7 @@
   <div class="anchorgrid" id="anchors"></div>
 
   <div class="secttl">Layer 1 &amp; 2 — releases</div>
+  <div id="alloc-callout"></div>
   <div class="cards" id="releases"></div>
 
   <div class="secttl">Layer 3 — dynamic generators</div>
@@ -131,9 +152,94 @@ function famTitle(cat, key){
   return (cat.families && cat.families[key] && cat.families[key].title)
     ? cat.families[key].title.replace(/ Gauntlet$/,"") : XODEXA.fmt.cap(key);
 }
-function fmtFams(f){
-  return Object.entries(f).sort((a,b)=>b[1]-a[1])
-    .map(([k,v])=>'<span class="fam">'+k+' <b>'+v+'</b></span>').join("");
+
+// A family is a "security" family if it maps to the safety scoring dimension
+// but is NOT the original capability 'safety' family.
+function isSecFam(key, cat){
+  if(key === 'safety') return false;
+  return cat && cat.families && cat.families[key] &&
+         cat.families[key].dimension === 'safety';
+}
+
+function fmtFams(f, taskCount, cat){
+  const total = taskCount || Object.values(f).reduce((s,v)=>s+v, 0);
+  return Object.entries(f).sort((a,b)=>b[1]-a[1]).map(([k,v])=>{
+    const pct  = (v / total * 100).toFixed(1);
+    const dim  = (cat && cat.families && cat.families[k]) ? cat.families[k].dimension : '';
+    const wt   = (cat && cat.score_weights && dim) ? (cat.score_weights[dim]*100).toFixed(0)+'% dim' : '';
+    const sec  = isSecFam(k, cat);
+    const tip  = v+' tasks · '+pct+'% of pack'+(wt?' · '+wt+(sec?' shared across security families':''):'');
+    return '<span class="fam'+(sec?' sec':'')+'" title="'+tip+'">'+k+' <b>'+v+'</b></span>';
+  }).join("");
+}
+
+function famsSumLine(f, taskCount){
+  const sum = Object.values(f).reduce((s,v)=>s+v, 0);
+  const n   = Object.keys(f).length;
+  const ok  = sum === taskCount;
+  const cls = ok ? 'ok' : 'warn';
+  const chk = ok ? ' ✓' : ' ✗ (declared: '+XODEXA.fmt.int(taskCount)+')';
+  return '<div class="fams-sum"><span class="'+cls+'">'+n+' families · sum = '
+    +XODEXA.fmt.int(sum)+' tasks'+chk+'</span></div>';
+}
+
+// Build the allocation-formula callout for Layer 1 & 2.
+// Explains WHY capability families get more tasks than security ones.
+function buildAllocCallout(cat, pubTaskCount){
+  if(!cat || !cat.score_weights || !cat.families) return '';
+
+  // Group catalog families by dimension
+  const byDim = {};
+  Object.entries(cat.families).forEach(([k,f])=>{
+    const d = f.dimension || 'unknown';
+    (byDim[d] = byDim[d]||[]).push(k);
+  });
+
+  // Build rows for visible dimensions only (skip tool_use / efficiency — no direct family)
+  const rows = Object.entries(cat.score_weights)
+    .sort((a,b)=>b[1]-a[1])
+    .filter(([d])=>byDim[d])
+    .map(([d,w])=>{
+      const fams    = byDim[d]||[];
+      const perFam  = Math.round(pubTaskCount * w / fams.length);
+      const floored = Math.max(Math.round(pubTaskCount/(Object.keys(cat.families).length*4)), perFam);
+      const famStr  = fams.length === 1
+        ? '<b>'+fams[0]+'</b>'
+        : fams.length+' families';
+      return '<div class="alloc-row">'
+        +'<span class="dim">'+d+'</span>'
+        +'<span class="wt">'+Math.round(w*100)+'%</span>'
+        +'<span class="alloc">'+famStr+' → ~'+perFam+' tasks each</span>'
+        +'</div>';
+    }).join('');
+
+  return '<details class="alloc-callout" id="alloc-callout-inner">'
+    +'<summary>'
+    +'<b>Why do family task counts vary so much?</b>'
+    +'<span style="margin-left:8px;color:var(--muted);font-size:10.5px">Tap to see how tasks are allocated</span>'
+    +'<span class="arrow">▶</span>'
+    +'</summary>'
+    +'<div class="alloc-body">'
+    +'Tasks are distributed using a <b>two-level formula</b>: '
+    +'first allocate to each <b>scoring dimension</b> by its weight, '
+    +'then divide equally among the families that feed that dimension.<br><br>'
+    +'<b>Example:</b> <code>agentic_autonomy</code> gets '+(Math.round(cat.score_weights.agentic_autonomy*100))+'% of '
+    +XODEXA.fmt.int(pubTaskCount)+' tasks = ~'
+    +Math.round(pubTaskCount*cat.score_weights.agentic_autonomy)
+    +' tasks for 1 family (agent). '
+    +'The <code>safety</code> dimension also gets '+(Math.round(cat.score_weights.safety*100))+'% '
+    +'but is shared across <b>10 families</b> → ~'
+    +Math.round(pubTaskCount*cat.score_weights.safety/10)+' tasks each (floored to 15–16).<br><br>'
+    +'<b>This is by design</b> — the public validation set is a <em>broad coverage</em> set, '
+    +'not a deep-dive into any one area. '
+    +'Hover any family chip to see its exact % contribution and scoring dimension.<br>'
+    +'<div class="alloc-tip">🛡 For deep security evaluation, see <b>Layer 4 → Xodexa Safety Gauntlet</b> '
+    +'— 1,000 dedicated tasks across all 10 security families.</div>'
+    +'<hr class="alloc-divider">'
+    +'<b>Dimension weights:</b><br>'
+    +rows
+    +'</div>'
+    +'</details>';
 }
 function diffBlock(b){
   b=b||{};
@@ -166,8 +272,9 @@ function keysLine(loc){
   const srv=/server/.test(loc||"");
   return '<span class="'+(srv?'keys-srv':'keys-pub')+'">'+(srv?'server-side':'public')+'</span>';
 }
-function card(x){
+function card(x, cat){
   const hidden = x.visibility==="private_hidden";
+  const fams   = x.families||{};
   return '<div class="card '+(hidden?'hidden':'')+'">'+
     '<div class="ctop">'+
       '<div><div class="name">'+x.name+'</div><div class="slug">'+x.slug+'</div></div>'+
@@ -175,9 +282,10 @@ function card(x){
     '</div>'+
     '<div class="count">'+XODEXA.fmt.int(x.task_count)+' <small>tasks</small></div>'+
     '<div class="kv"><span class="k">Answer keys</span><span class="v">'+keysLine(x.keys_location)+'</span></div>'+
-    '<div class="kv"><span class="k">Families</span><span class="v">'+Object.keys(x.families||{}).length+'</span></div>'+
+    '<div class="kv"><span class="k">Families</span><span class="v">'+Object.keys(fams).length+'</span></div>'+
     diffBlock(x.difficulty_bands)+
-    '<div class="fams">'+fmtFams(x.families||{})+'</div>'+
+    '<div class="fams">'+fmtFams(fams, x.task_count, cat)+'</div>'+
+    famsSumLine(fams, x.task_count)+
     '<div class="csum">SHA-256 <b>'+(x.checksum||"").slice(0,16)+'…'+(x.checksum||"").slice(-8)+'</b></div>'+
   '</div>';
 }
@@ -234,10 +342,11 @@ function render(d){
       '<div class="anote">'+a.notes+'</div>'+
     '</div>').join("");
 
-  // releases / packs / minis
-  document.getElementById("releases").innerHTML = S.releases.map(card).join("");
-  document.getElementById("packs").innerHTML = S.focused_packs.map(card).join("");
-  document.getElementById("minis").innerHTML = S.family_minis.map(card).join("");
+  // releases / packs / minis — pass cat so cards can show tooltips + sum lines
+  document.getElementById("alloc-callout").innerHTML = buildAllocCallout(cat, pub ? pub.task_count : 1000);
+  document.getElementById("releases").innerHTML = S.releases.map(x=>card(x,cat)).join("");
+  document.getElementById("packs").innerHTML = S.focused_packs.map(x=>card(x,cat)).join("");
+  document.getElementById("minis").innerHTML = S.family_minis.map(x=>card(x,cat)).join("");
 
   // Layer 3 generators
   const byFam = Object.entries(gen.by_family).sort((a,b)=>b[1]-a[1]);
