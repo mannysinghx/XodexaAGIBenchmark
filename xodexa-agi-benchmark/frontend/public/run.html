@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Run a benchmark</title>
 <link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/models.js"></script>
 <script src="/assets/auth.js" defer></script>
 <style>
   .panelcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
@@ -104,8 +105,17 @@
     </div>
 
     <div class="field">
+      <label for="browse">Browse top models</label>
+      <select id="browse">
+        <option value="">— pick a brand &amp; model (auto-fills below) —</option>
+      </select>
+      <div class="hint" id="browseHint">Current top-brand models, verified from provider docs. Picking one fills the
+        model name (and, for non-OpenAI/Anthropic brands, the provider + base URL). You can edit anything.</div>
+    </div>
+
+    <div class="field">
       <label for="model_name">Model name</label>
-      <input id="model_name" name="model_name" type="text" list="modelOptions" placeholder="e.g. gpt-4o-mini" required>
+      <input id="model_name" name="model_name" type="text" list="modelOptions" placeholder="e.g. gpt-5.4-mini" required>
       <datalist id="modelOptions"></datalist>
     </div>
 
@@ -175,6 +185,53 @@
   provider.addEventListener("change", function(){
     otBaseField.style.display = provider.value === "openai-compatible" ? "block" : "none";
   });
+
+  // Browse-models dropdown: grouped by brand, auto-fills model + provider + base URL.
+  function setMode(mode){
+    var r = document.querySelector('input[name="keymode"][value="' + mode + '"]');
+    if (r) r.checked = true;
+    savedBlock.style.display = mode === "saved" ? "block" : "none";
+    onetimeBlock.style.display = mode === "onetime" ? "block" : "none";
+  }
+  function populateBrowse(){
+    var browse = document.getElementById("browse");
+    var cat = window.XODEXA_MODELS;
+    if (!browse || !cat || !cat.brands) return;
+    cat.brands.forEach(function(g){
+      var og = document.createElement("optgroup");
+      og.label = g.brand;
+      g.models.forEach(function(m){
+        var o = document.createElement("option");
+        o.value = m; o.textContent = m;
+        o.setAttribute("data-provider", g.provider);
+        o.setAttribute("data-baseurl", g.base_url || "");
+        og.appendChild(o);
+      });
+      browse.appendChild(og);
+    });
+    var hint = document.getElementById("browseHint");
+    if (hint && cat.verified) hint.textContent =
+      "Current top-brand models, verified from provider docs (" + cat.verified +
+      "). Picking one fills the model name (and, for non-OpenAI/Anthropic brands, the " +
+      "provider + base URL). You can edit anything.";
+    browse.addEventListener("change", function(){
+      var opt = browse.options[browse.selectedIndex];
+      if (!opt || !opt.value) return;
+      var prov = opt.getAttribute("data-provider");
+      var base = opt.getAttribute("data-baseurl") || "";
+      document.getElementById("model_name").value = opt.value;
+      provider.value = prov;
+      otBaseField.style.display = (prov === "openai-compatible") ? "block" : "none";
+      if (base) document.getElementById("ot_base_url").value = base;
+      if (prov === "openai-compatible") {
+        // these brands need their own endpoint + key → one-time mode is the path
+        setMode("onetime");
+        show("ok", "Filled " + opt.value + " — enter your " + (opt.parentNode.label || "provider") +
+          " API key below (base URL pre-filled).");
+        var k = document.getElementById("ot_key"); if (k) k.focus();
+      }
+    });
+  }
 
   // load families
   async function loadFamilies(){
@@ -352,6 +409,8 @@
     document.getElementById("result").innerHTML =
       '<div class="msg err" style="display:block">Run failed: ' + esc(run.error || "unknown error") + '</div>';
   }
+
+  populateBrowse();  // catalog is static (no auth needed) — fill the dropdown immediately
 
   (async function init(){
     var me = await XAUTH.guard("verified");
