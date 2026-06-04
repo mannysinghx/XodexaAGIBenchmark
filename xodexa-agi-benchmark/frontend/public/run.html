@@ -200,6 +200,7 @@
     otBaseField.style.display = (type === "openai-compatible") ? "block" : "none";
     document.getElementById("ot_base_url").value = base;
     document.getElementById("ot_key").placeholder = providerKeyHint(opt.value);
+    buildBrowseOptions(opt.value);
   }
   provider.addEventListener("change", syncProviderUI);
 
@@ -227,6 +228,35 @@
     syncProviderUI(); // set initial placeholder + base_url visibility
   }
 
+  // Rebuilds the browse dropdown, optionally filtered to one brand.
+  // Preserves the current selection so syncing provider doesn't clear a picked model.
+  function buildBrowseOptions(filterBrand){
+    var browse = document.getElementById("browse");
+    if (!browse || !window.XODEXA_MODELS) return;
+    var keepVal = browse.value;
+    browse.innerHTML = "";
+    var ph = document.createElement("option");
+    ph.value = "";
+    ph.textContent = "— pick a brand & model (auto-fills below) —";
+    browse.appendChild(ph);
+    var brands = (filterBrand && filterBrand !== "Custom")
+      ? window.XODEXA_MODELS.brands.filter(function(g){ return g.brand === filterBrand; })
+      : window.XODEXA_MODELS.brands;
+    brands.forEach(function(g){
+      var og = document.createElement("optgroup");
+      og.label = g.brand;
+      g.models.forEach(function(m){
+        var o = document.createElement("option");
+        o.value = m; o.textContent = m;
+        o.setAttribute("data-provider", g.provider);
+        o.setAttribute("data-baseurl", g.base_url || "");
+        if (m === keepVal) o.selected = true;
+        og.appendChild(o);
+      });
+      browse.appendChild(og);
+    });
+  }
+
   // Browse-models dropdown: grouped by brand, auto-fills model + provider + base URL.
   function setMode(mode){
     var r = document.querySelector('input[name="keymode"][value="' + mode + '"]');
@@ -238,23 +268,11 @@
     var browse = document.getElementById("browse");
     var cat = window.XODEXA_MODELS;
     if (!browse || !cat || !cat.brands) return;
-    cat.brands.forEach(function(g){
-      var og = document.createElement("optgroup");
-      og.label = g.brand;
-      g.models.forEach(function(m){
-        var o = document.createElement("option");
-        o.value = m; o.textContent = m;
-        o.setAttribute("data-provider", g.provider);
-        o.setAttribute("data-baseurl", g.base_url || "");
-        og.appendChild(o);
-      });
-      browse.appendChild(og);
-    });
+    buildBrowseOptions(null); // show all brands initially
     var hint = document.getElementById("browseHint");
     if (hint && cat.verified) hint.textContent =
       "Current top-brand models, verified from provider docs (" + cat.verified +
-      "). Picking one fills the model name (and, for non-OpenAI/Anthropic brands, the " +
-      "provider + base URL). You can edit anything.";
+      "). Picking one fills the model name, provider, and base URL. You can edit anything.";
     browse.addEventListener("change", function(){
       var opt = browse.options[browse.selectedIndex];
       if (!opt || !opt.value) return;
