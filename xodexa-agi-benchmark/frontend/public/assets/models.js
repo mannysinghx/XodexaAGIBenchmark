@@ -14,32 +14,41 @@
 window.XODEXA_MODELS = {
   verified: "June 2026",
   brands: [
+    // ── Native providers (no base_url required) ──────────────────────────────
+
     { brand: "OpenAI", provider: "openai", base_url: "",
-      models: ["gpt-5.5", "gpt-5.5-pro", "gpt-5.4", "gpt-5.4-mini", "gpt-5.4-nano",
+      models: ["gpt-5.5-pro", "gpt-5.5", "gpt-5.4-pro", "gpt-5.4",
+               "gpt-5.4-mini", "gpt-5.4-nano",
                "gpt-4.1", "gpt-4.1-mini"] },
 
     { brand: "Anthropic (Claude)", provider: "anthropic", base_url: "",
       models: ["claude-opus-4-8", "claude-opus-4-7", "claude-opus-4-6",
                "claude-sonnet-4-6", "claude-haiku-4-5"] },
 
+    // ── OpenAI-compatible providers (base_url pre-filled) ────────────────────
+
     { brand: "Google (Gemini)", provider: "openai-compatible",
       base_url: "https://generativelanguage.googleapis.com/v1beta/openai/",
-      models: ["gemini-3.1-pro", "gemini-3.5-flash", "gemini-3.1-flash-lite",
+      models: ["gemini-3.1-pro-preview", "gemini-3.5-flash", "gemini-3.1-flash-lite",
                "gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite"] },
 
-    { brand: "xAI (Grok)", provider: "openai-compatible", base_url: "https://api.x.ai/v1",
+    { brand: "xAI (Grok)", provider: "openai-compatible",
+      base_url: "https://api.x.ai/v1",
       models: ["grok-4.3"] },
 
-    { brand: "DeepSeek", provider: "openai-compatible", base_url: "https://api.deepseek.com",
-      models: ["deepseek-v4-pro", "deepseek-v4-flash", "deepseek-chat", "deepseek-reasoner"] },
+    { brand: "DeepSeek", provider: "openai-compatible",
+      base_url: "https://api.deepseek.com",
+      models: ["deepseek-v4-pro", "deepseek-v4-flash"] },
 
     { brand: "Meta (Llama)", provider: "openai-compatible",
       base_url: "https://api.llama.com/compat/v1/",
-      models: ["Llama-4-Maverick-17B-128E-Instruct-FP8",
-               "Llama-4-Scout-17B-16E-Instruct-FP8"] },
+      models: ["Llama-4-Maverick-17B-128E-Instruct",
+               "Llama-4-Scout-17B-16E-Instruct"] },
 
-    { brand: "Mistral AI", provider: "openai-compatible", base_url: "https://api.mistral.ai/v1",
-      models: ["mistral-large-latest", "mistral-large-2512", "mistral-small-latest"] },
+    { brand: "Mistral AI", provider: "openai-compatible",
+      base_url: "https://api.mistral.ai/v1",
+      models: ["mistral-large-latest", "mistral-large-2512",
+               "mistral-medium-latest", "mistral-small-latest"] },
 
     { brand: "Alibaba (Qwen)", provider: "openai-compatible",
       base_url: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
@@ -47,7 +56,7 @@ window.XODEXA_MODELS = {
 
     { brand: "Moonshot AI (Kimi)", provider: "openai-compatible",
       base_url: "https://api.moonshot.ai/v1",
-      models: ["kimi-k2.6"] },
+      models: ["kimi-k2.6", "kimi-k2.5"] },
 
     { brand: "Zhipu / Z.ai (GLM)", provider: "openai-compatible",
       base_url: "https://api.z.ai/api/paas/v4",
@@ -55,6 +64,6 @@ window.XODEXA_MODELS = {
 
     { brand: "Cohere (Command)", provider: "openai-compatible",
       base_url: "https://api.cohere.ai/compatibility/v1",
-      models: ["command-a-plus-05-2026", "command-a"] },
+      models: ["command-a-plus-05-2026", "command-a-03-2025"] },
   ],
 };
