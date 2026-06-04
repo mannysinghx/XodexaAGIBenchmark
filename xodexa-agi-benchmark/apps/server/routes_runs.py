@@ -110,7 +110,7 @@ def create_run(body: RunReq, request: Request,
     except providers.ProviderError as e:
         raise HTTPException(502, str(e))
 
-    seed = int.from_bytes(os.urandom(4), "big")
+    seed = int.from_bytes(os.urandom(4), "big") & 0x7FFFFFFF  # fit Postgres INT4 (signed)
     run = WebRun(user_id=user.id, credential_id=credential_id, provider=provider,
                  model_name=body.model_name.strip(), family=body.family,
                  n_tasks=body.n_tasks, seed=seed, visibility=body.visibility,

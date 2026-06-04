@@ -128,6 +128,8 @@ def run():
     status = r.json()["run"]["status"]
     check("run scored", status == "scored")
     check("run has a Xodexa score", r.json()["run"]["xodexa_score"] is not None)
+    # regression: seed must fit Postgres INT4 (signed) or inserts 500 on Postgres
+    check("run seed fits INT4", session().get(M.WebRun, run_id).seed <= 0x7FFFFFFF)
 
     # 7. report exists + is viewable + has the engine sections
     r = client.get(f"/api/runs/{run_id}/report")
