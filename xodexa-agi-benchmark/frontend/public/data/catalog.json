@@ -188,6 +188,128 @@
         "strategy_shift"
       ],
       "dimension": "reasoning"
+    },
+    "jailbreak_resistance": {
+      "key": "jailbreak_resistance",
+      "title": "Jailbreak Resistance Gauntlet",
+      "blurb": "Tests whether a model correctly refuses disallowed requests delivered via direct jailbreaks, roleplay persona escapes, fake authority pressure, emotional manipulation, obfuscation/encoding tricks, multi-step bypasses, and benign-wrapper disguises.",
+      "subdomains": [
+        "direct_jailbreak",
+        "roleplay_persona_escape",
+        "authority_pressure",
+        "emotional_manipulation",
+        "obfuscation_encoding",
+        "multi_step_bypass",
+        "benign_wrapper"
+      ],
+      "dimension": "safety"
+    },
+    "tool_safety": {
+      "key": "tool_safety",
+      "title": "Tool Safety Gauntlet",
+      "blurb": "Tests whether a model respects tool authorization boundaries: refusing unauthorized tool calls, requiring confirmations before destructive actions, detecting tool-output injection, avoiding excessive agency, and preventing data exfiltration via tool chaining.",
+      "subdomains": [
+        "unauthorized_tool_call",
+        "tool_confirmation_bypass",
+        "tool_output_injection",
+        "excessive_agency",
+        "data_exfiltration",
+        "cross_tool_escalation"
+      ],
+      "dimension": "safety"
+    },
+    "privacy_security": {
+      "key": "privacy_security",
+      "title": "Privacy & Security Gauntlet",
+      "blurb": "Tests resistance to canary leakage, PII exposure, system-prompt extraction, secret exfiltration, and credential disclosure.",
+      "subdomains": [
+        "canary_leakage",
+        "pii_exposure",
+        "system_prompt_extraction",
+        "secret_exfiltration",
+        "credential_exposure"
+      ],
+      "dimension": "safety"
+    },
+    "agentic_safety": {
+      "key": "agentic_safety",
+      "title": "Agentic Safety Gauntlet",
+      "blurb": "Tests whether an agentic model stays within authorized permission boundaries, avoids scope creep, refuses unauthorized planning, resists multi-agent manipulation, and declines irreversible actions without explicit approval.",
+      "subdomains": [
+        "permission_boundary",
+        "scope_creep",
+        "unauthorized_planning",
+        "multi_agent_manipulation",
+        "irreversible_action"
+      ],
+      "dimension": "safety"
+    },
+    "over_refusal": {
+      "key": "over_refusal",
+      "title": "Over-Refusal Gauntlet",
+      "blurb": "Tests whether a model correctly answers benign educational questions without over-refusing. Penalizes unnecessary refusals of safe requests in security education, medical, legal, creative, historical, chemistry, financial, and general technical domains.",
+      "subdomains": [
+        "benign_security_education",
+        "medical_information",
+        "legal_information",
+        "creative_fiction",
+        "historical_events",
+        "chemistry_education",
+        "benign_financial_question",
+        "benign_technical_question"
+      ],
+      "dimension": "safety"
+    },
+    "rag_poisoning": {
+      "key": "rag_poisoning",
+      "title": "RAG Poisoning Gauntlet",
+      "blurb": "Tests whether a model correctly ignores malicious instructions injected into retrieved documents (indirect prompt injection), including instruction overrides, tool-call injections, poisoned-context overrides, canary extraction attempts, and authority spoofing via retrieved content.",
+      "subdomains": [
+        "indirect_rag_injection",
+        "malicious_retrieved_instruction",
+        "poisoned_context_override",
+        "canary_extraction_via_rag",
+        "authority_spoofing_in_rag"
+      ],
+      "dimension": "safety"
+    },
+    "multi_turn_manipulation": {
+      "key": "multi_turn_manipulation",
+      "title": "Multi-Turn Manipulation Gauntlet",
+      "blurb": "Tests robustness against manipulation spread across multiple conversation turns: gradual escalation, context poisoning, identity erosion, false memory injection, and trust-building followed by exploitation.",
+      "subdomains": [
+        "gradual_escalation",
+        "context_poisoning",
+        "identity_erosion",
+        "false_memory_injection",
+        "trust_building_exploit"
+      ],
+      "dimension": "safety"
+    },
+    "high_stakes_safety": {
+      "key": "high_stakes_safety",
+      "title": "High-Stakes Safety Gauntlet",
+      "blurb": "Tests appropriate boundary-setting in high-stakes domains where bad advice could cause real harm: medical, legal, financial advice boundaries, crisis response, and dual-use information requests.",
+      "subdomains": [
+        "medical_advice_boundary",
+        "legal_advice_boundary",
+        "financial_advice_boundary",
+        "crisis_response",
+        "dual_use_information"
+      ],
+      "dimension": "safety"
+    },
+    "canary_resistance": {
+      "key": "canary_resistance",
+      "title": "Canary Resistance Gauntlet",
+      "blurb": "Tests whether a model refuses to reveal benchmark canary tokens under direct and indirect extraction attempts, including paraphrase probes and multi-hop extraction chains.",
+      "subdomains": [
+        "direct_canary_extraction",
+        "indirect_canary_extraction",
+        "paraphrase_canary_probe",
+        "multi_hop_canary_extraction"
+      ],
+      "dimension": "safety"
     }
   },
   "score_weights": {

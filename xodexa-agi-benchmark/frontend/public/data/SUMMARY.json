@@ -1,33 +1,43 @@
 {
   "benchmark_version": "1.0.0",
   "scale": 1.0,
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w=",
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0=",
   "releases": [
     {
       "name": "Xodexa Public Validation",
       "version": "1.0.0",
       "slug": "xodexa-public-validation",
       "task_count": 1000,
-      "checksum": "fb0182a2201e2596ec04c7e5eb3bb863257ca0890381cf61a6afbeedb6c5ec6f",
+      "checksum": "7bdb1ede50c1abc2428da8ea0630c70f80e7b27160dc0e86a64320ffcc5cc8eb",
       "visibility": "public",
       "keys_location": "public",
       "families": {
-        "reasoning": 106,
-        "math": 70,
-        "science": 70,
-        "code": 105,
-        "agent": 132,
-        "multimodal": 70,
-        "truthfulness": 70,
-        "safety": 88,
-        "memory": 44,
-        "strategy": 35,
-        "creativity": 105,
-        "meta_learning": 105
+        "reasoning": 44,
+        "creativity": 44,
+        "meta_learning": 44,
+        "math": 84,
+        "science": 84,
+        "code": 124,
+        "agent": 154,
+        "multimodal": 84,
+        "truthfulness": 84,
+        "safety": 16,
+        "jailbreak_resistance": 16,
+        "tool_safety": 16,
+        "privacy_security": 16,
+        "agentic_safety": 16,
+        "over_refusal": 16,
+        "rag_poisoning": 15,
+        "multi_turn_manipulation": 15,
+        "high_stakes_safety": 15,
+        "canary_resistance": 15,
+        "memory": 54,
+        "strategy": 44
       },
       "difficulty_bands": {
-        "hard": 487,
-        "medium": 513
+        "hard": 494,
+        "medium": 460,
+        "expert": 46
       }
     },
     {
@@ -35,112 +45,180 @@
       "version": "1.0.0",
       "slug": "xodexa-hidden-official",
       "task_count": 500,
-      "checksum": "fa5f7060091dd68b4fb088bc1af319ccea08353c3a5c018209e98bb05ae43fb3",
+      "checksum": "ead73ab799f02861edca508062d19d108833e55891e719211e4955ee2ca3fee9",
       "visibility": "private_hidden",
       "keys_location": "server_keys (git-ignored)",
       "families": {
-        "reasoning": 51,
-        "math": 33,
-        "science": 34,
-        "code": 52,
-        "agent": 65,
-        "multimodal": 34,
-        "truthfulness": 34,
-        "safety": 43,
-        "memory": 25,
-        "strategy": 25,
-        "creativity": 52,
-        "meta_learning": 52
+        "reasoning": 22,
+        "creativity": 22,
+        "meta_learning": 22,
+        "math": 42,
+        "science": 42,
+        "code": 62,
+        "agent": 77,
+        "multimodal": 42,
+        "truthfulness": 42,
+        "safety": 8,
+        "jailbreak_resistance": 8,
+        "tool_safety": 8,
+        "privacy_security": 8,
+        "agentic_safety": 8,
+        "over_refusal": 8,
+        "rag_poisoning": 8,
+        "multi_turn_manipulation": 8,
+        "high_stakes_safety": 7,
+        "canary_resistance": 7,
+        "memory": 27,
+        "strategy": 22
       },
       "difficulty_bands": {
-        "hard": 245,
-        "medium": 255
+        "hard": 247,
+        "medium": 229,
+        "expert": 24
       }
     }
   ],
   "dynamic": {
-    "generator_count": 60,
+    "generator_count": 115,
     "sample_variants": 100
   },
   "focused_packs": [
     {
-      "name": "Xodexa Agent Mini",
+      "name": "Xodexa Code Gauntlet",
       "version": "1.0.0",
-      "slug": "xodexa-agent-mini",
-      "task_count": 50,
-      "checksum": "4cc8b6b8e7372972c5f2b9fe7050ef7fbeedaa6b4ce941605eb45f90bd7e9bca",
+      "slug": "xodexa-code-gauntlet",
+      "task_count": 1000,
+      "checksum": "4f4bd4f0e0dd24b737665a8209499d8808c4697074147ba4e7b65db7147a5666",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "agent": 50
+        "code": 1000
       },
       "difficulty_bands": {
-        "hard": 30,
-        "medium": 20
+        "medium": 600,
+        "hard": 400
       }
     },
     {
-      "name": "Xodexa Code Mini",
+      "name": "Xodexa Agent Gauntlet",
       "version": "1.0.0",
-      "slug": "xodexa-code-mini",
-      "task_count": 50,
-      "checksum": "db7614342756a391d9e2f36d1bb8ec4a14272383be0afedac8411bd459ad0933",
+      "slug": "xodexa-agent-gauntlet",
+      "task_count": 1000,
+      "checksum": "6eec5faa2a68e387ddc53c6848d641ce4afbe3ab9b212f8f19431d49aa066970",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "code": 50
+        "agent": 1000
       },
       "difficulty_bands": {
-        "medium": 30,
-        "hard": 20
+        "hard": 600,
+        "medium": 400
       }
     },
     {
-      "name": "Xodexa Multimodal Mini",
+      "name": "Xodexa Safety Gauntlet",
       "version": "1.0.0",
-      "slug": "xodexa-multimodal-mini",
-      "task_count": 50,
-      "checksum": "8691e7280414642f5a2341dbe8d38255b22e73bfbe9cc75a9e6ff30a41e6442a",
+      "slug": "xodexa-safety-gauntlet",
+      "task_count": 1000,
+      "checksum": "6cbbb30c9a74a59ffe42fc0343f025691db66712e254229ab332cb73c1b8e019",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "multimodal": 50
+        "safety": 100,
+        "jailbreak_resistance": 200,
+        "tool_safety": 150,
+        "rag_poisoning": 150,
+        "privacy_security": 100,
+        "agentic_safety": 100,
+        "over_refusal": 100,
+        "multi_turn_manipulation": 60,
+        "high_stakes_safety": 25,
+        "canary_resistance": 15
       },
       "difficulty_bands": {
-        "medium": 38,
-        "hard": 12
+        "hard": 544,
+        "expert": 336,
+        "medium": 120
       }
     },
     {
-      "name": "Xodexa Safety Mini",
+      "name": "Xodexa Reasoning Gauntlet",
       "version": "1.0.0",
-      "slug": "xodexa-safety-mini",
-      "task_count": 25,
-      "checksum": "e6beccbb11fcef87953de5b6f955025d2d59e6f766551d2a3468818fa30b1d4e",
+      "slug": "xodexa-reasoning-gauntlet",
+      "task_count": 500,
+      "checksum": "4cd8516a5218fd9f0c0e0b10115aed4a1608eede4484ce70c593e40b147f4aa5",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "safety": 25
+        "reasoning": 500
       },
       "difficulty_bands": {
-        "hard": 15,
-        "medium": 10
+        "hard": 286,
+        "medium": 214
       }
     },
     {
-      "name": "Xodexa Truthfulness Mini",
+      "name": "Xodexa Math Gauntlet",
       "version": "1.0.0",
-      "slug": "xodexa-truthfulness-mini",
-      "task_count": 25,
-      "checksum": "af94a22eff2edfe24c1ef4445ae6001e5c3f509a27381a4ccdf26e6bf33a3ca2",
+      "slug": "xodexa-math-gauntlet",
+      "task_count": 500,
+      "checksum": "2b2b2a2fe011d0386fc533acdba5e717dbc20d7193d14cb8853f78e2863aeb69",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "truthfulness": 25
+        "math": 500
       },
       "difficulty_bands": {
-        "medium": 15,
-        "hard": 10
+        "hard": 313,
+        "medium": 187
+      }
+    },
+    {
+      "name": "Xodexa Science Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-science-gauntlet",
+      "task_count": 500,
+      "checksum": "f7f4ad818c8f9751df062b7a9e68a8e4d98e1f99e1698a0c99e5538e007c48a1",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "science": 500
+      },
+      "difficulty_bands": {
+        "medium": 333,
+        "hard": 167
+      }
+    },
+    {
+      "name": "Xodexa Truthfulness Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-truthfulness-gauntlet",
+      "task_count": 500,
+      "checksum": "a9fae6a6c3532ed22c6e8276ddc58b5ac15bb121f03d76327f5f92d882120109",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "truthfulness": 500
+      },
+      "difficulty_bands": {
+        "medium": 300,
+        "hard": 200
+      }
+    },
+    {
+      "name": "Xodexa Multimodal Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-multimodal-gauntlet",
+      "task_count": 500,
+      "checksum": "4f507b0da35af923b69911c74c744b41c7d5db45696d74f201be9695350cb74a",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "multimodal": 500
+      },
+      "difficulty_bands": {
+        "medium": 375,
+        "hard": 125
       }
     }
   ],
@@ -149,192 +227,334 @@
       "name": "Xodexa Reasoning Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-reasoning-gauntlet",
-      "task_count": 40,
-      "checksum": "5f5e8fdad9b113b8b7410687091923bd51fa384bcae0f75589c78de6747e261b",
+      "task_count": 200,
+      "checksum": "e56eeb7cf67a266b37b463a84c448816a5520aafd8915ed7cb96bc53edeb40aa",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "reasoning": 40
+        "reasoning": 200
       },
       "difficulty_bands": {
-        "hard": 23,
-        "medium": 17
+        "hard": 115,
+        "medium": 85
       }
     },
     {
       "name": "Xodexa Mathematics Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-mathematics-gauntlet",
-      "task_count": 40,
-      "checksum": "8c20c1bff4fce9fc5191cc5cd43e4d4137cd674cc9053a917d45e43390ec35e6",
+      "task_count": 200,
+      "checksum": "46a0a65a3749b5ce74aa5178a9014fb4b8d3222ac943cc32c676b953f6bfeb12",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "math": 40
+        "math": 200
       },
       "difficulty_bands": {
-        "hard": 25,
-        "medium": 15
+        "hard": 125,
+        "medium": 75
       }
     },
     {
       "name": "Xodexa Science Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-science-gauntlet",
-      "task_count": 40,
-      "checksum": "c3d4b82574e4a8e9e706e54d8ec8bea917f5b760d245177789574b4a67b4b725",
+      "task_count": 200,
+      "checksum": "b175af1107aac016c0018a401dbee5ccc5270aba3e16f60168bc29257bdbb090",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "science": 40
+        "science": 200
       },
       "difficulty_bands": {
-        "medium": 27,
-        "hard": 13
+        "medium": 133,
+        "hard": 67
       }
     },
     {
       "name": "Xodexa Code & Software Engineering Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-code-&-software-engineering-gauntlet",
-      "task_count": 40,
-      "checksum": "38e068eef8609fc80ac45a16cc6dc9569ea70eb16aad03d3984efd89775ae382",
+      "task_count": 200,
+      "checksum": "e79ef30999eb470867f0778207d292c1c26a106dd91f0d0e5341143a157556b0",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "code": 40
+        "code": 200
       },
       "difficulty_bands": {
-        "medium": 24,
-        "hard": 16
+        "medium": 120,
+        "hard": 80
       }
     },
     {
       "name": "Xodexa Agentic Autonomy Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-agentic-autonomy-gauntlet",
-      "task_count": 40,
-      "checksum": "f26f85cbb2b90c30ee2a7f44ea7a0fe484ce8e6125c588140f8809e1d7e2a7ba",
+      "task_count": 200,
+      "checksum": "f3256f85f0c878341a973187f8b1db4c7862c823af37da46c1cbc62b38ea23ec",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "agent": 40
+        "agent": 200
       },
       "difficulty_bands": {
-        "hard": 24,
-        "medium": 16
+        "hard": 120,
+        "medium": 80
       }
     },
     {
       "name": "Xodexa Multimodal Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-multimodal-gauntlet",
-      "task_count": 40,
-      "checksum": "48d76e9a7c4455db8a8497ce221f1143ab40483761d37cc37877fdd38b269bf4",
+      "task_count": 200,
+      "checksum": "f111e116beac7ced65c19eaed02c75cbd89e4a5a664e661e2b3d8d3e9d3a7c63",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "multimodal": 40
+        "multimodal": 200
       },
       "difficulty_bands": {
-        "medium": 30,
-        "hard": 10
+        "medium": 150,
+        "hard": 50
       }
     },
     {
       "name": "Xodexa Truthfulness & Calibration Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-truthfulness-&-calibration-gauntlet",
-      "task_count": 40,
-      "checksum": "757c702af27ecc8014a87affd854811cb77c00a548c41573a9285ad7eff78a87",
+      "task_count": 200,
+      "checksum": "557df669a8ecb90c506a7d3cbc9211db11aadd18d8a512bafff221e1e9f25a7e",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "truthfulness": 40
+        "truthfulness": 200
       },
       "difficulty_bands": {
-        "medium": 24,
-        "hard": 16
+        "medium": 120,
+        "hard": 80
       }
     },
     {
       "name": "Xodexa Safety & Robustness Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-safety-&-robustness-gauntlet",
-      "task_count": 40,
-      "checksum": "007708ac7644e8dc492438a5966be36f4dba4d3afccdaddc7b7cfcc9775ccb6b",
+      "task_count": 200,
+      "checksum": "74e0e09c418910483fda8c22c91d553923d2b0f1cebd45f10579e2af58bb235f",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "safety": 40
+        "safety": 200
       },
       "difficulty_bands": {
-        "hard": 24,
-        "medium": 16
+        "hard": 140,
+        "expert": 20,
+        "medium": 40
       }
     },
     {
       "name": "Xodexa Memory & Context Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-memory-&-context-gauntlet",
-      "task_count": 40,
-      "checksum": "b4d530a24e2a9940468b6938dd1163cf98c704dbc49c0d85f06f177afff561dd",
+      "task_count": 200,
+      "checksum": "932f32b63ffad8e0151bf31e29bcbcd88b2e407b6362e37136d78fe89fb8f609",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "memory": 40
+        "memory": 200
       },
       "difficulty_bands": {
-        "hard": 30,
-        "medium": 10
+        "hard": 150,
+        "medium": 50
       }
     },
     {
       "name": "Xodexa Strategy & Decision-Making Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-strategy-&-decision-making-gauntlet",
-      "task_count": 40,
-      "checksum": "cbf29f51c04d61f925b35bfdebb2d8de5c5466977a9ea7cda8d002680019d456",
+      "task_count": 200,
+      "checksum": "d0c717de4c7bc6f2fd575d524184abcc8468ee3f5648f31da79ba726351585cc",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "strategy": 40
+        "strategy": 200
       },
       "difficulty_bands": {
-        "medium": 20,
-        "hard": 20
+        "medium": 100,
+        "hard": 100
       }
     },
     {
       "name": "Xodexa Creativity & Synthesis Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-creativity-&-synthesis-gauntlet",
-      "task_count": 40,
-      "checksum": "6ac2ffcdc2ea0311b0041f9952402c451a71c08512e89cad29896967c76f8be8",
+      "task_count": 200,
+      "checksum": "1ae87e8302b2a46e4551b79cd4b9b831a8e16f1f36520ae278be294e90e1b635",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "creativity": 40
+        "creativity": 200
       },
       "difficulty_bands": {
-        "hard": 14,
-        "medium": 26
+        "hard": 67,
+        "medium": 133
       }
     },
     {
       "name": "Xodexa Meta-Learning & Adaptation Gauntlet",
       "version": "1.0.0",
       "slug": "xodexa-meta-learning-&-adaptation-gauntlet",
-      "task_count": 40,
-      "checksum": "ab191230fb583dbbae003a263895f3d00aba47baa89970a6dcfecbe75fdfc349",
+      "task_count": 200,
+      "checksum": "d17f9d3b64110f58f9a3bd4a774a3ccabb47cc76142024864ff49e4a7b89bc98",
       "visibility": "validation",
       "keys_location": "public",
       "families": {
-        "meta_learning": 40
+        "meta_learning": 200
       },
       "difficulty_bands": {
-        "hard": 20,
-        "medium": 20
+        "hard": 100,
+        "medium": 100
+      }
+    },
+    {
+      "name": "Xodexa Jailbreak Resistance Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-jailbreak-resistance-gauntlet",
+      "task_count": 200,
+      "checksum": "bf350c240d78995f799cbc1f3621309a4f598d225e3ed3e8985610e77fb3c2d1",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "jailbreak_resistance": 200
+      },
+      "difficulty_bands": {
+        "expert": 114,
+        "hard": 86
+      }
+    },
+    {
+      "name": "Xodexa Tool Safety Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-tool-safety-gauntlet",
+      "task_count": 200,
+      "checksum": "fd679da80224ba988d1ce7df33fc1dfd5c4a10b2d8c700f225a5ebb9db4cf1d2",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "tool_safety": 200
+      },
+      "difficulty_bands": {
+        "expert": 68,
+        "hard": 132
+      }
+    },
+    {
+      "name": "Xodexa Privacy & Security Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-privacy-&-security-gauntlet",
+      "task_count": 200,
+      "checksum": "9d87f366470f364fca87341d527239d39281e61a75d3c16a9ae888164c470de5",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "privacy_security": 200
+      },
+      "difficulty_bands": {
+        "hard": 200
+      }
+    },
+    {
+      "name": "Xodexa Agentic Safety Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-agentic-safety-gauntlet",
+      "task_count": 200,
+      "checksum": "08766618fe5c50535d3637e18e33002438a6e598892e22c50b8aa543712aaf57",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "agentic_safety": 200
+      },
+      "difficulty_bands": {
+        "hard": 160,
+        "expert": 40
+      }
+    },
+    {
+      "name": "Xodexa Over-Refusal Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-over-refusal-gauntlet",
+      "task_count": 200,
+      "checksum": "fc941ba2e6ac855f83db9f467d6f7b087147aea2a2ab995d1ebbd4f30a2dd879",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "over_refusal": 200
+      },
+      "difficulty_bands": {
+        "medium": 200
+      }
+    },
+    {
+      "name": "Xodexa RAG Poisoning Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-rag-poisoning-gauntlet",
+      "task_count": 200,
+      "checksum": "0cb44fa24534ef6aa5d3649115ddbaef09349f4523b3f15b3c43379e5101ab42",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "rag_poisoning": 200
+      },
+      "difficulty_bands": {
+        "hard": 80,
+        "expert": 120
+      }
+    },
+    {
+      "name": "Xodexa Multi-Turn Manipulation Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-multi-turn-manipulation-gauntlet",
+      "task_count": 200,
+      "checksum": "d470518ddfc860e7b4fb9492c2706ac6ce42ad1cad2ba18e5af70778c987074b",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "multi_turn_manipulation": 200
+      },
+      "difficulty_bands": {
+        "expert": 160,
+        "hard": 40
+      }
+    },
+    {
+      "name": "Xodexa High-Stakes Safety Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-high-stakes-safety-gauntlet",
+      "task_count": 200,
+      "checksum": "733eb2e6855386f479e6fd28df8eb0d209155f3dc55bf1e2c4da96b97bfcff7a",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "high_stakes_safety": 200
+      },
+      "difficulty_bands": {
+        "hard": 200
+      }
+    },
+    {
+      "name": "Xodexa Canary Resistance Gauntlet",
+      "version": "1.0.0",
+      "slug": "xodexa-canary-resistance-gauntlet",
+      "task_count": 200,
+      "checksum": "01e030a09594c7a493ed97ce46a22b9ad41b4acd6819a209cf934254539eb561",
+      "visibility": "validation",
+      "keys_location": "public",
+      "families": {
+        "canary_resistance": 200
+      },
+      "difficulty_bands": {
+        "hard": 150,
+        "expert": 50
       }
     }
   ]
