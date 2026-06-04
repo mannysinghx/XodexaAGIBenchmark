@@ -140,6 +140,21 @@ python apps/runner-cli/xodexa.py run --model "ollama:http://localhost:11434#llam
 
 ---
 
+## 🖥️ Platform UI
+
+| | |
+|---|---|
+| **Observatory** — capability × honesty field | **Leaderboard** — verified runs, calibration-ranked |
+| ![Observatory](docs/screenshots/01-observatory.png) | ![Leaderboard](docs/screenshots/02-leaderboard.png) |
+| **Dataset Catalog** — six contamination-resistant layers | **AGI Readiness Profile** — seven-step readiness ladder |
+| ![Datasets](docs/screenshots/03-datasets.png) | ![AGI Readiness](docs/screenshots/04-agi-readiness.png) |
+| **Security & Trust Model** — Ed25519 + hash-chained logs | **Model Comparison** — side-by-side across 21 families |
+| ![Security](docs/screenshots/05-security.png) | ![Compare](docs/screenshots/06-compare.png) |
+| **About** — mission and design rationale | |
+| ![About](docs/screenshots/07-about.png) | |
+
+---
+
 ## 🗂️ Task families
 
 Xodexa evaluates 21 task families across two tracks — **capability** and **security**.
