@@ -40,7 +40,10 @@
   .diffbar{display:flex;height:9px;border-radius:5px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
   .diffbar .hard{background:var(--bad)}
   .diffbar .med{background:var(--warn)}
-  .difflbl{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:4px;font-family:var(--mono)}
+  .diffbar .expert{background:var(--accent)}
+  .diffbar .easy{background:var(--good)}
+  .diffbar .frontier{background:var(--cy)}
+  .difflbl{display:flex;flex-wrap:wrap;gap:6px;font-size:10px;color:var(--muted);margin-top:4px;font-family:var(--mono)}
   .csum{font-family:var(--mono);font-size:9.5px;color:var(--muted);word-break:break-all;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
   .csum b{color:var(--cy)}
   .contam{margin:18px 0 4px;border:1px solid rgba(10,143,196,.3);background:rgba(10,143,196,.05);border-radius:14px;padding:16px 18px}
@@ -118,7 +121,7 @@
   <div class="cards" id="minis"></div>
 
   <div class="note">
-    Signer public key: <code id="signer">—</code>. Difficulty bands shown as hard vs medium task counts.
+    Signer public key: <code id="signer">—</code>. Difficulty bars show all bands present (easy · medium · hard · expert · frontier); counts always sum to the pack's total task count.
     Every value on this page is fetched live from <code>./data/</code> and rendered at runtime — nothing is hardcoded.
   </div>
 </div>
@@ -133,9 +136,26 @@ function fmtFams(f){
     .map(([k,v])=>'<span class="fam">'+k+' <b>'+v+'</b></span>').join("");
 }
 function diffBlock(b){
-  b=b||{}; const hard=b.hard||0, med=b.medium||0, tot=hard+med||1;
-  return '<div class="diffbar"><span class="hard" style="width:'+(hard/tot*100)+'%"></span><span class="med" style="width:'+(med/tot*100)+'%"></span></div>'+
-    '<div class="difflbl"><span>hard '+hard+'</span><span>medium '+med+'</span></div>';
+  b=b||{};
+  // All recognised bands in display order, with their bar class and label
+  const BANDS=[
+    {key:"easy",    cls:"easy",     label:"easy"},
+    {key:"medium",  cls:"med",      label:"medium"},
+    {key:"hard",    cls:"hard",     label:"hard"},
+    {key:"expert",  cls:"expert",   label:"expert"},
+    {key:"frontier",cls:"frontier", label:"frontier"},
+    {key:"superhuman",cls:"hard",   label:"superhuman"},
+  ];
+  // Compute true total across ALL bands so bar + labels always match task_count
+  const tot = BANDS.reduce((s,d)=>s+(b[d.key]||0),0)||1;
+  const present = BANDS.filter(d=>(b[d.key]||0)>0);
+  const bar = present.map(d=>
+    '<span class="'+d.cls+'" style="width:'+(b[d.key]/tot*100)+'%" title="'+d.label+' '+b[d.key]+'"></span>'
+  ).join("");
+  const lbl = present.map(d=>
+    '<span>'+d.label+' '+b[d.key]+'</span>'
+  ).join("");
+  return '<div class="diffbar">'+bar+'</div><div class="difflbl">'+lbl+'</div>';
 }
 function visBadge(v){
   if(v==="public") return '<span class="badge b-pub">PUBLIC · keys public</span>';
