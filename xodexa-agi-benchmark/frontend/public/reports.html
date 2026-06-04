@@ -209,7 +209,7 @@
 </div>
 
 <script src="/assets/data.js"></script>
-<script src="/assets/auth.js" defer></script>
+<script src="/assets/auth.js"></script>
 <script>
 let agiChart;
 let CURRENT = null;       // the report being shown
@@ -360,6 +360,10 @@ async function selectRun(run_id){
     showTemplate(true);
     renderReport(rep);
     updateDownload(run_id);
+    // refine the picker label (e.g. the placeholder "your run") to the real model
+    var sel=document.getElementById("modelsel");
+    var opt=sel && [].slice.call(sel.options).filter(function(o){return o.value===run_id;})[0];
+    if(opt && rep.model_id){ opt.textContent=rep.model_id; }
   }catch(e){
     setStatus(XAUTH.liveErrorHTML(e));
     console.error("[xodexa] report load failed:",e);
@@ -382,17 +386,22 @@ async function renderEmpty(){
 }
 
 document.addEventListener("DOMContentLoaded", async ()=>{
-  setStatus('<div class="xstate"><span class="xspin"></span> Loading live runs…</div>');
+  setStatus('<div class="xstate"><span class="xspin"></span> Loading runs…</div>');
   showTemplate(false);
-  let lb;
+  // ?run=<id> deep-link (e.g. "View report" from My Reports) — load it DIRECTLY, since
+  // it may be a private run not on the public leaderboard (owner is authorized).
+  const wanted=new URLSearchParams(location.search).get("run");
+  let lb={entries:[]};
   try{
     lb=await XAPI.get("/leaderboard");
   }catch(e){
-    setStatus(XAUTH.liveErrorHTML(e));
-    console.error("[xodexa] live load failed:",e);
-    return;
+    if(!wanted){ setStatus(XAUTH.liveErrorHTML(e)); console.error("[xodexa] live load failed:",e); return; }
   }
   RUNS=(lb.entries||[]).filter(e=>e.run_id);
+  if(wanted && !RUNS.some(r=>r.run_id===wanted)){
+    // not on the public board (e.g. a private run) — make it selectable + load directly
+    RUNS.unshift({run_id:wanted, model:"your run", submitted_by:"you"});
+  }
   if(!RUNS.length){ await renderEmpty(); return; }
   const sel=document.getElementById("modelsel");
   sel.innerHTML=RUNS.map(r=>{
@@ -400,9 +409,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     return '<option value="'+XAUTH.esc(r.run_id)+'">'+XAUTH.esc(r.model+by)+'</option>';
   }).join("");
   sel.onchange=()=>selectRun(sel.value);
-  // honor ?run=<id> deep-link (e.g. from My Reports); fall back to the first run.
-  const wanted=new URLSearchParams(location.search).get("run");
-  const pick=(wanted && RUNS.some(r=>r.run_id===wanted)) ? wanted : RUNS[0].run_id;
+  const pick = wanted || RUNS[0].run_id;
   sel.value=pick;
   await selectRun(pick);
 });
