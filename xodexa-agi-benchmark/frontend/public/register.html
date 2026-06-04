@@ -47,15 +47,32 @@
       Already have an account? <a href="/login.html">Log in</a>
     </p>
   </form>
+
+  <div class="authcard" id="done" style="display:none;text-align:center">
+    <div style="font-size:42px;line-height:1;margin-bottom:6px">📬</div>
+    <h2>Check your email</h2>
+    <p class="muted" style="margin:0 0 12px">
+      We sent a verification link to <b id="doneEmail"></b>. Open it to verify your
+      registration and activate your account — the link expires in 24 hours.
+    </p>
+    <div class="msg" id="doneMsg" role="status" aria-live="polite"></div>
+    <p class="muted" style="margin-top:6px">
+      Didn't get it? Check your spam folder, or <a href="#" id="resend">resend the link</a>.
+    </p>
+    <p class="muted" style="margin-top:14px"><a href="/login.html">Go to log in →</a></p>
+  </div>
 </div>
 
 <script>
 (function(){
   var form = document.getElementById("form");
+  var done = document.getElementById("done");
   var msg = document.getElementById("msg");
+  var doneMsg = document.getElementById("doneMsg");
   var btn = document.getElementById("submit");
+  var registeredEmail = "";
 
-  function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
+  function show(el, kind, text){ el.className = "msg " + kind; el.textContent = text; }
 
   // prime CSRF cache (also makes nav consistent)
   if (window.XAPI) XAPI.me();
@@ -67,19 +84,33 @@
     var password = document.getElementById("password").value;
 
     if (!username || !email || password.length < 8) {
-      show("err", "Please fill in all fields. Password must be at least 8 characters.");
+      show(msg, "err", "Please fill in all fields. Password must be at least 8 characters.");
       return;
     }
     btn.disabled = true; var label = btn.textContent; btn.textContent = "Creating…";
     try {
-      var r = await XAPI.post("/auth/register", { username: username, email: email, password: password });
-      show("ok", (r && r.message) ? r.message
-        : "Account created — check your email for a verification link. It expires in 24 hours.");
-      form.reset();
+      await XAPI.post("/auth/register", { username: username, email: email, password: password });
+      // swap the whole form out for the "check your email" confirmation screen
+      registeredEmail = email;
+      document.getElementById("doneEmail").textContent = email;
+      form.style.display = "none";
+      done.style.display = "";
+      window.scrollTo(0, 0);
     } catch (err) {
-      show("err", XAUTH.friendlyAuthError(err));
-    } finally {
+      show(msg, "err", XAUTH.friendlyAuthError(err));
       btn.disabled = false; btn.textContent = label;
+    }
+  });
+
+  document.getElementById("resend").addEventListener("click", async function(e){
+    e.preventDefault();
+    if (!registeredEmail) return;
+    show(doneMsg, "ok", "Sending…");
+    try {
+      await XAPI.post("/auth/resend", { email: registeredEmail });
+      show(doneMsg, "ok", "Sent again — check your inbox (and spam).");
+    } catch (err) {
+      show(doneMsg, "err", XAUTH.friendlyAuthError(err));
     }
   });
 })();
