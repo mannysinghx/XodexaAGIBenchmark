@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xodexa AGI Benchmark — Account</title>
 <link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/models.js"></script>
 <script src="/assets/auth.js"></script>
 <style>
   .acct{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:8px 0 4px}
@@ -80,9 +81,7 @@
         <div class="field">
           <label for="provider">Provider</label>
           <select id="provider" name="provider" required>
-            <option value="openai">OpenAI</option>
-            <option value="anthropic">Anthropic</option>
-            <option value="openai-compatible">OpenAI-compatible</option>
+            <!-- populated from models.js -->
           </select>
         </div>
         <div class="field">
@@ -131,14 +130,49 @@
   var providerSel = document.getElementById("provider");
   var baseUrlField = document.getElementById("baseUrlField");
   var keyOpt = document.getElementById("keyOpt");
+
+  function providerKeyHint(brand){
+    if (!brand) return "API key";
+    if (/openai/i.test(brand) || /deepseek/i.test(brand)) return "sk-…";
+    if (/anthropic/i.test(brand)) return "sk-ant-…";
+    if (/google|gemini/i.test(brand)) return "AIza…";
+    if (/xai|grok/i.test(brand)) return "xai-…";
+    return "API key";
+  }
   function syncProviderFields(){
-    var compat = providerSel.value === "openai-compatible";
-    baseUrlField.style.display = compat ? "block" : "none";
-    keyOpt.textContent = compat ? "(optional)" : "";
-    document.getElementById("base_url").required = compat;
+    var opt = providerSel.options[providerSel.selectedIndex];
+    var type = (opt && opt.getAttribute("data-providertype")) || "openai-compatible";
+    var base = (opt && opt.getAttribute("data-baseurl")) || "";
+    var isCompat = type === "openai-compatible";
+    baseUrlField.style.display = isCompat ? "block" : "none";
+    if (base) document.getElementById("base_url").value = base;
+    else if (isCompat) document.getElementById("base_url").value = "";
+    keyOpt.textContent = (opt && opt.value === "Custom") ? "(optional)" : "";
+    document.getElementById("key").placeholder = providerKeyHint(opt && opt.value);
+  }
+  function populateProviders(){
+    providerSel.innerHTML = "";
+    var cat = window.XODEXA_MODELS;
+    if (cat && cat.brands){
+      cat.brands.forEach(function(g){
+        var o = document.createElement("option");
+        o.value = g.brand;
+        o.textContent = g.brand;
+        o.setAttribute("data-providertype", g.provider);
+        o.setAttribute("data-baseurl", g.base_url || "");
+        providerSel.appendChild(o);
+      });
+    }
+    var custom = document.createElement("option");
+    custom.value = "Custom";
+    custom.textContent = "Custom / other (OpenAI-compatible)";
+    custom.setAttribute("data-providertype", "openai-compatible");
+    custom.setAttribute("data-baseurl", "");
+    providerSel.appendChild(custom);
+    syncProviderFields();
   }
   providerSel.addEventListener("change", syncProviderFields);
-  syncProviderFields();
+  populateProviders();
 
   function statusChip(s){
     var c = "chip", t = s || "unknown";
@@ -233,7 +267,8 @@
   // add credential
   document.getElementById("credForm").addEventListener("submit", async function(e){
     e.preventDefault();
-    var provider = providerSel.value;
+    var selOpt = providerSel.options[providerSel.selectedIndex];
+    var provider = (selOpt && selOpt.getAttribute("data-providertype")) || "openai-compatible";
     var label = document.getElementById("label").value.trim();
     var key = document.getElementById("key").value;
     var base_url = document.getElementById("base_url").value.trim();
