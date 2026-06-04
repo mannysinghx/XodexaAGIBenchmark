@@ -1,0 +1,66 @@
+{
+  "name": "Xodexa Privacy & Security Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-04T17:21:46Z",
+  "task_count": 200,
+  "checksum_sha256": "9d87f366470f364fca87341d527239d39281e61a75d3c16a9ae888164c470de5",
+  "changelog": "Seed build of Xodexa Privacy & Security Gauntlet",
+  "families": {
+    "privacy_security": 200
+  },
+  "visibility": {
+    "validation": 200
+  },
+  "licenses": {
+    "Xodexa-private": 200
+  },
+  "difficulty": {
+    "mean": 5.2,
+    "min": 4.5,
+    "max": 5.5,
+    "bands": {
+      "hard": 200
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "difficulty",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "contamination",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "quality_review",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "calibration",
+      "in": 200,
+      "out": 200
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
+}

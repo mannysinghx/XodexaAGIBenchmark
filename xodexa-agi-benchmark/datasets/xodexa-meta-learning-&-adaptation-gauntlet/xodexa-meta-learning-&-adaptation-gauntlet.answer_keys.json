@@ -1,286 +1,6 @@
 {
-  "xodexa_meta_learning_feedback_adaptation_338d6f5f05": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_338d6f5f05",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "feedback_adaptation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 81.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        37
-      ]
-    },
-    "expected_answer": 81,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-c53e031ffd2e"
-  },
-  "xodexa_meta_learning_few_shot_transfer_278919a333": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_278919a333",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "few_shot_transfer",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-9f50339b4a01"
-  },
-  "xodexa_meta_learning_novel_operator_c788ff0a25": {
-    "task_id": "xodexa_meta_learning_novel_operator_c788ff0a25",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "in_context_rule",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 34.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 34,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f1a10cb2af28"
-  },
-  "xodexa_meta_learning_self_correction_2a3525106e": {
-    "task_id": "xodexa_meta_learning_self_correction_2a3525106e",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "self_correction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 54.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        59
-      ]
-    },
-    "expected_answer": 54,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-b52c8dac51a4"
-  },
-  "xodexa_meta_learning_feedback_adaptation_722a689eef": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_722a689eef",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "feedback_adaptation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 96.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        42
-      ]
-    },
-    "expected_answer": 96,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-5b7e00fd8ed9"
-  },
-  "xodexa_meta_learning_few_shot_transfer_27d65c8316": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_27d65c8316",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "few_shot_transfer",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-534a1e17223c"
-  },
-  "xodexa_meta_learning_novel_operator_8ecb6337ec": {
-    "task_id": "xodexa_meta_learning_novel_operator_8ecb6337ec",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "in_context_rule",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 9.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 9,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-bf2eb44bb3a3"
-  },
-  "xodexa_meta_learning_self_correction_92fa6d7bf5": {
-    "task_id": "xodexa_meta_learning_self_correction_92fa6d7bf5",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "self_correction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 101.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        103
-      ]
-    },
-    "expected_answer": 101,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-dd87d6a5e488"
-  },
-  "xodexa_meta_learning_feedback_adaptation_4b42119f06": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_4b42119f06",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "feedback_adaptation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 63.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        31
-      ]
-    },
-    "expected_answer": 63,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-3b1b4ac26edb"
-  },
-  "xodexa_meta_learning_few_shot_transfer_6257601dab": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_6257601dab",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "few_shot_transfer",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-390f0436f327"
-  },
-  "xodexa_meta_learning_novel_operator_d42e400185": {
-    "task_id": "xodexa_meta_learning_novel_operator_d42e400185",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "in_context_rule",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 27.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 27,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-155754ab7830"
-  },
-  "xodexa_meta_learning_self_correction_4a0b141877": {
-    "task_id": "xodexa_meta_learning_self_correction_4a0b141877",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "self_correction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 114.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        116
-      ]
-    },
-    "expected_answer": 114,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-5d97d9e92d68"
-  },
-  "xodexa_meta_learning_feedback_adaptation_46f3c917f5": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_46f3c917f5",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "feedback_adaptation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 105.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        45
-      ]
-    },
-    "expected_answer": 105,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e38dd3ef26c2"
-  },
-  "xodexa_meta_learning_few_shot_transfer_e03f972743": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_e03f972743",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "few_shot_transfer",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-97b51f4a6952"
-  },
-  "xodexa_meta_learning_novel_operator_d99c712d5b": {
-    "task_id": "xodexa_meta_learning_novel_operator_d99c712d5b",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "in_context_rule",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 67.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 67,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-65297a4e73cf"
-  },
-  "xodexa_meta_learning_self_correction_a0aa1ffc35": {
-    "task_id": "xodexa_meta_learning_self_correction_a0aa1ffc35",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "self_correction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 65.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        68
-      ]
-    },
-    "expected_answer": 65,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-bbce8840303e"
-  },
-  "xodexa_meta_learning_feedback_adaptation_58a8a95463": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_58a8a95463",
+  "xodexa_meta_learning_feedback_adaptation_d0c17212f4": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_d0c17212f4",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
@@ -296,10 +16,10 @@
     "expected_answer": 117,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-8032b642a06d"
+    "canary": "XDX-CANARY-8c6e50d1b032"
   },
-  "xodexa_meta_learning_few_shot_transfer_090cda9332": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_090cda9332",
+  "xodexa_meta_learning_few_shot_transfer_b733329a7d": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_b733329a7d",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "few_shot_transfer",
@@ -312,10 +32,710 @@
     "expected_answer": 0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-7f8669723ffd"
+    "canary": "XDX-CANARY-e5b6ed274366"
   },
-  "xodexa_meta_learning_novel_operator_5a391c801b": {
-    "task_id": "xodexa_meta_learning_novel_operator_5a391c801b",
+  "xodexa_meta_learning_novel_operator_cde40a4ec1": {
+    "task_id": "xodexa_meta_learning_novel_operator_cde40a4ec1",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-52ec38c1aeef"
+  },
+  "xodexa_meta_learning_self_correction_62e6781c50": {
+    "task_id": "xodexa_meta_learning_self_correction_62e6781c50",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 123.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        127
+      ]
+    },
+    "expected_answer": 123,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-41df000f0d9b"
+  },
+  "xodexa_meta_learning_feedback_adaptation_da59c2bca3": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_da59c2bca3",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 39.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        23
+      ]
+    },
+    "expected_answer": 39,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-376e2efb2387"
+  },
+  "xodexa_meta_learning_few_shot_transfer_353e2df80b": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_353e2df80b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c74b04408368"
+  },
+  "xodexa_meta_learning_novel_operator_84f614a399": {
+    "task_id": "xodexa_meta_learning_novel_operator_84f614a399",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 16.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 16,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c7b2b4d16eaf"
+  },
+  "xodexa_meta_learning_self_correction_1353c4f059": {
+    "task_id": "xodexa_meta_learning_self_correction_1353c4f059",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 110.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        112
+      ]
+    },
+    "expected_answer": 110,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5ae9aeedc4c8"
+  },
+  "xodexa_meta_learning_feedback_adaptation_56cae3211b": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_56cae3211b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 90.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        40
+      ]
+    },
+    "expected_answer": 90,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-14fa55995bea"
+  },
+  "xodexa_meta_learning_few_shot_transfer_94e3e6f0ad": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_94e3e6f0ad",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2ae1177f85b1"
+  },
+  "xodexa_meta_learning_novel_operator_a82ec6b6df": {
+    "task_id": "xodexa_meta_learning_novel_operator_a82ec6b6df",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 24.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 24,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-93c0da404222"
+  },
+  "xodexa_meta_learning_self_correction_03fe0dc5e1": {
+    "task_id": "xodexa_meta_learning_self_correction_03fe0dc5e1",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 46.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        49
+      ]
+    },
+    "expected_answer": 46,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1d1184d96826"
+  },
+  "xodexa_meta_learning_feedback_adaptation_9a9584eb2e": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_9a9584eb2e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 114.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        48
+      ]
+    },
+    "expected_answer": 114,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eabf241bd796"
+  },
+  "xodexa_meta_learning_few_shot_transfer_cd07d1b947": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_cd07d1b947",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6a12543d0642"
+  },
+  "xodexa_meta_learning_novel_operator_9caf8c42ad": {
+    "task_id": "xodexa_meta_learning_novel_operator_9caf8c42ad",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-17507868146c"
+  },
+  "xodexa_meta_learning_self_correction_d9afd910db": {
+    "task_id": "xodexa_meta_learning_self_correction_d9afd910db",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 113.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        115
+      ]
+    },
+    "expected_answer": 113,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eb86c17a5f46"
+  },
+  "xodexa_meta_learning_feedback_adaptation_72a06a4c16": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_72a06a4c16",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        38
+      ]
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e5b82f18a68a"
+  },
+  "xodexa_meta_learning_few_shot_transfer_21bb4ca936": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_21bb4ca936",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d646f5fa4e6f"
+  },
+  "xodexa_meta_learning_novel_operator_b7f7ddeeb4": {
+    "task_id": "xodexa_meta_learning_novel_operator_b7f7ddeeb4",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 12,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-679d6e4e703a"
+  },
+  "xodexa_meta_learning_self_correction_d61f47dbe3": {
+    "task_id": "xodexa_meta_learning_self_correction_d61f47dbe3",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 110.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        114
+      ]
+    },
+    "expected_answer": 110,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8700e7857a15"
+  },
+  "xodexa_meta_learning_feedback_adaptation_a42bb99a32": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_a42bb99a32",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 33.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        21
+      ]
+    },
+    "expected_answer": 33,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-67c163c36215"
+  },
+  "xodexa_meta_learning_few_shot_transfer_f7f3dd571a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_f7f3dd571a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-95edc829fc10"
+  },
+  "xodexa_meta_learning_novel_operator_850e0a19ca": {
+    "task_id": "xodexa_meta_learning_novel_operator_850e0a19ca",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 24.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 24,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0b8cfd625e78"
+  },
+  "xodexa_meta_learning_self_correction_5bfa596ca2": {
+    "task_id": "xodexa_meta_learning_self_correction_5bfa596ca2",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        72
+      ]
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2144727bdfe9"
+  },
+  "xodexa_meta_learning_feedback_adaptation_412bd952b9": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_412bd952b9",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 93.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        41
+      ]
+    },
+    "expected_answer": 93,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6e6ecf53d9d8"
+  },
+  "xodexa_meta_learning_few_shot_transfer_493c2636bb": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_493c2636bb",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-57bd9bb7ffcd"
+  },
+  "xodexa_meta_learning_novel_operator_f14804637a": {
+    "task_id": "xodexa_meta_learning_novel_operator_f14804637a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 22.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 22,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-106b80a8ff6d"
+  },
+  "xodexa_meta_learning_self_correction_3421ff416d": {
+    "task_id": "xodexa_meta_learning_self_correction_3421ff416d",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 106.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        110
+      ]
+    },
+    "expected_answer": 106,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c346fd8f2c44"
+  },
+  "xodexa_meta_learning_feedback_adaptation_3784276a06": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_3784276a06",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 111.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        47
+      ]
+    },
+    "expected_answer": 111,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6a4a36be70bc"
+  },
+  "xodexa_meta_learning_few_shot_transfer_86e8d85635": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_86e8d85635",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-186122de7c75"
+  },
+  "xodexa_meta_learning_novel_operator_4e07a91dd4": {
+    "task_id": "xodexa_meta_learning_novel_operator_4e07a91dd4",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-38b457be4a91"
+  },
+  "xodexa_meta_learning_self_correction_d266d27084": {
+    "task_id": "xodexa_meta_learning_self_correction_d266d27084",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 69.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        72
+      ]
+    },
+    "expected_answer": 69,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc1e6c4b6781"
+  },
+  "xodexa_meta_learning_feedback_adaptation_f8fecae28f": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_f8fecae28f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 114.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        48
+      ]
+    },
+    "expected_answer": 114,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dc447fca0c45"
+  },
+  "xodexa_meta_learning_few_shot_transfer_c11dfacbbf": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_c11dfacbbf",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d7b79f5c2743"
+  },
+  "xodexa_meta_learning_novel_operator_7920fb5c09": {
+    "task_id": "xodexa_meta_learning_novel_operator_7920fb5c09",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 89.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 89,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3b705e91536b"
+  },
+  "xodexa_meta_learning_self_correction_50571939ee": {
+    "task_id": "xodexa_meta_learning_self_correction_50571939ee",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 87.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        88
+      ]
+    },
+    "expected_answer": 87,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5bfce2821945"
+  },
+  "xodexa_meta_learning_feedback_adaptation_318fcf743e": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_318fcf743e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        35
+      ]
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4b0a47bec679"
+  },
+  "xodexa_meta_learning_few_shot_transfer_735388da2e": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_735388da2e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-91d5fd947b67"
+  },
+  "xodexa_meta_learning_novel_operator_987211eb3c": {
+    "task_id": "xodexa_meta_learning_novel_operator_987211eb3c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 23.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 23,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a132073d471f"
+  },
+  "xodexa_meta_learning_self_correction_a4cdebb37a": {
+    "task_id": "xodexa_meta_learning_self_correction_a4cdebb37a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 102.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        104
+      ]
+    },
+    "expected_answer": 102,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6f159c18a1cc"
+  },
+  "xodexa_meta_learning_feedback_adaptation_299807d29e": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_299807d29e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 120.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        50
+      ]
+    },
+    "expected_answer": 120,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e7c4433485d7"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a2a3e38279": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a2a3e38279",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2bd00aad60c7"
+  },
+  "xodexa_meta_learning_novel_operator_655855df80": {
+    "task_id": "xodexa_meta_learning_novel_operator_655855df80",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "in_context_rule",
@@ -328,48 +748,188 @@
     "expected_answer": 13,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-328873094a44"
+    "canary": "XDX-CANARY-19fda7c318cd"
   },
-  "xodexa_meta_learning_self_correction_10fabc59d6": {
-    "task_id": "xodexa_meta_learning_self_correction_10fabc59d6",
+  "xodexa_meta_learning_self_correction_64411e8ceb": {
+    "task_id": "xodexa_meta_learning_self_correction_64411e8ceb",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 107.0,
+      "target": 101.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        109
+        105
       ]
     },
-    "expected_answer": 107,
+    "expected_answer": 101,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-f58194aedbac"
+    "canary": "XDX-CANARY-fbcc492a4802"
   },
-  "xodexa_meta_learning_feedback_adaptation_173bd7afa4": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_173bd7afa4",
+  "xodexa_meta_learning_feedback_adaptation_3db29c62fe": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_3db29c62fe",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 66.0,
+      "target": 99.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        32
+        43
       ]
     },
-    "expected_answer": 66,
+    "expected_answer": 99,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-62c52e966949"
+    "canary": "XDX-CANARY-9a2803aab9f4"
   },
-  "xodexa_meta_learning_few_shot_transfer_56679b1519": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_56679b1519",
+  "xodexa_meta_learning_few_shot_transfer_b229829964": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_b229829964",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b1c35a09da24"
+  },
+  "xodexa_meta_learning_novel_operator_5bc12afe44": {
+    "task_id": "xodexa_meta_learning_novel_operator_5bc12afe44",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 41.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 41,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3d170c25ddcc"
+  },
+  "xodexa_meta_learning_self_correction_191d96df0e": {
+    "task_id": "xodexa_meta_learning_self_correction_191d96df0e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 81.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        84
+      ]
+    },
+    "expected_answer": 81,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-08684e495a14"
+  },
+  "xodexa_meta_learning_feedback_adaptation_6d8cdc87c8": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_6d8cdc87c8",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        36
+      ]
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d2a7e2499daf"
+  },
+  "xodexa_meta_learning_few_shot_transfer_bbdcfd2d81": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_bbdcfd2d81",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b063e768d390"
+  },
+  "xodexa_meta_learning_novel_operator_4fd6fd5f96": {
+    "task_id": "xodexa_meta_learning_novel_operator_4fd6fd5f96",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3deec3afddfd"
+  },
+  "xodexa_meta_learning_self_correction_c4023ed8e5": {
+    "task_id": "xodexa_meta_learning_self_correction_c4023ed8e5",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        88
+      ]
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ee56a3cb8a3a"
+  },
+  "xodexa_meta_learning_feedback_adaptation_62f6e9e608": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_62f6e9e608",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 42.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        24
+      ]
+    },
+    "expected_answer": 42,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ef44c53040bd"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a4cc4e78d2": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a4cc4e78d2",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "few_shot_transfer",
@@ -382,26 +942,376 @@
     "expected_answer": 1,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-933c3b97ff7e"
+    "canary": "XDX-CANARY-18b2019f487b"
   },
-  "xodexa_meta_learning_novel_operator_e7306aa0fb": {
-    "task_id": "xodexa_meta_learning_novel_operator_e7306aa0fb",
+  "xodexa_meta_learning_novel_operator_bfe5b36c41": {
+    "task_id": "xodexa_meta_learning_novel_operator_bfe5b36c41",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "in_context_rule",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 18.0,
+      "target": 27.0,
       "tolerance": 0.001
     },
-    "expected_answer": 18,
+    "expected_answer": 27,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-cb4eb3bd0216"
+    "canary": "XDX-CANARY-5c5fbb8bc61d"
   },
-  "xodexa_meta_learning_self_correction_9a682ab93c": {
-    "task_id": "xodexa_meta_learning_self_correction_9a682ab93c",
+  "xodexa_meta_learning_self_correction_912942cacc": {
+    "task_id": "xodexa_meta_learning_self_correction_912942cacc",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 100.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        103
+      ]
+    },
+    "expected_answer": 100,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7672c23dc336"
+  },
+  "xodexa_meta_learning_feedback_adaptation_735f46cf6d": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_735f46cf6d",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 72.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        34
+      ]
+    },
+    "expected_answer": 72,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4d0875614de9"
+  },
+  "xodexa_meta_learning_few_shot_transfer_8868e208e5": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_8868e208e5",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bb2668d5ce5f"
+  },
+  "xodexa_meta_learning_novel_operator_69b08ff653": {
+    "task_id": "xodexa_meta_learning_novel_operator_69b08ff653",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 11.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 11,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-adb9756b5f72"
+  },
+  "xodexa_meta_learning_self_correction_65609b0ffd": {
+    "task_id": "xodexa_meta_learning_self_correction_65609b0ffd",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 44.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        49
+      ]
+    },
+    "expected_answer": 44,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-63cc8241d86c"
+  },
+  "xodexa_meta_learning_feedback_adaptation_70f2fa1dbc": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_70f2fa1dbc",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 72.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        34
+      ]
+    },
+    "expected_answer": 72,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cac26c29a586"
+  },
+  "xodexa_meta_learning_few_shot_transfer_1c67dab454": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_1c67dab454",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-353b199e412a"
+  },
+  "xodexa_meta_learning_novel_operator_0171355d04": {
+    "task_id": "xodexa_meta_learning_novel_operator_0171355d04",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-231f391f1e11"
+  },
+  "xodexa_meta_learning_self_correction_f1674afde9": {
+    "task_id": "xodexa_meta_learning_self_correction_f1674afde9",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 109.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        110
+      ]
+    },
+    "expected_answer": 109,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-45d5bb94d4da"
+  },
+  "xodexa_meta_learning_feedback_adaptation_7200600455": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_7200600455",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 39.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        23
+      ]
+    },
+    "expected_answer": 39,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-13bc3d923c6b"
+  },
+  "xodexa_meta_learning_few_shot_transfer_7417e8fc3a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_7417e8fc3a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec587ead0976"
+  },
+  "xodexa_meta_learning_novel_operator_9151d72c8f": {
+    "task_id": "xodexa_meta_learning_novel_operator_9151d72c8f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 45.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 45,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-52f84f1cfdb5"
+  },
+  "xodexa_meta_learning_self_correction_025fd0b481": {
+    "task_id": "xodexa_meta_learning_self_correction_025fd0b481",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 77.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        81
+      ]
+    },
+    "expected_answer": 77,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-92b72de768b8"
+  },
+  "xodexa_meta_learning_feedback_adaptation_5b96c85ad7": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_5b96c85ad7",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        36
+      ]
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cb8fb712f946"
+  },
+  "xodexa_meta_learning_few_shot_transfer_7008493bbd": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_7008493bbd",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3c73ebbd4a5f"
+  },
+  "xodexa_meta_learning_novel_operator_ebd0b8175e": {
+    "task_id": "xodexa_meta_learning_novel_operator_ebd0b8175e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 52.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 52,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de98e556eba5"
+  },
+  "xodexa_meta_learning_self_correction_24a8e8abf6": {
+    "task_id": "xodexa_meta_learning_self_correction_24a8e8abf6",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 126.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        130
+      ]
+    },
+    "expected_answer": 126,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-94acd865cea0"
+  },
+  "xodexa_meta_learning_feedback_adaptation_ae3db24aa6": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ae3db24aa6",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 99.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        43
+      ]
+    },
+    "expected_answer": 99,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f54736490737"
+  },
+  "xodexa_meta_learning_few_shot_transfer_60e0f80d5f": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_60e0f80d5f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a04d84197fb3"
+  },
+  "xodexa_meta_learning_novel_operator_37fb0af9d7": {
+    "task_id": "xodexa_meta_learning_novel_operator_37fb0af9d7",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 70.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 70,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-93c2d4e8525c"
+  },
+  "xodexa_meta_learning_self_correction_31e40c9835": {
+    "task_id": "xodexa_meta_learning_self_correction_31e40c9835",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
@@ -411,105 +1321,385 @@
       "target": 78.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        83
+        80
       ]
     },
     "expected_answer": 78,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-86161c61bc4b"
+    "canary": "XDX-CANARY-58ba106d2598"
   },
-  "xodexa_meta_learning_feedback_adaptation_eccc46ee01": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_eccc46ee01",
+  "xodexa_meta_learning_feedback_adaptation_be7ac64e78": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_be7ac64e78",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 45.0,
+      "target": 30.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        25
+        20
       ]
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c566eb5833fc"
+  },
+  "xodexa_meta_learning_few_shot_transfer_3962739c4c": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_3962739c4c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6f059372dec4"
+  },
+  "xodexa_meta_learning_novel_operator_6cd8b5273f": {
+    "task_id": "xodexa_meta_learning_novel_operator_6cd8b5273f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9521a15d4d7"
+  },
+  "xodexa_meta_learning_self_correction_52e8da379f": {
+    "task_id": "xodexa_meta_learning_self_correction_52e8da379f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 79.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        80
+      ]
+    },
+    "expected_answer": 79,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7c833221026e"
+  },
+  "xodexa_meta_learning_feedback_adaptation_e26dbe0dc1": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_e26dbe0dc1",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 93.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        41
+      ]
+    },
+    "expected_answer": 93,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-789ebe057d66"
+  },
+  "xodexa_meta_learning_few_shot_transfer_22220c35df": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_22220c35df",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fa19da363125"
+  },
+  "xodexa_meta_learning_novel_operator_e23bba55da": {
+    "task_id": "xodexa_meta_learning_novel_operator_e23bba55da",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 29.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 29,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d1beecdca8d1"
+  },
+  "xodexa_meta_learning_self_correction_a7e672dffa": {
+    "task_id": "xodexa_meta_learning_self_correction_a7e672dffa",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        76
+      ]
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0b36773368dc"
+  },
+  "xodexa_meta_learning_feedback_adaptation_5fcee1e2bb": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_5fcee1e2bb",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        35
+      ]
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4a3412818761"
+  },
+  "xodexa_meta_learning_few_shot_transfer_24e8b78a9a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_24e8b78a9a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-28a73db6cf05"
+  },
+  "xodexa_meta_learning_novel_operator_3b9763408a": {
+    "task_id": "xodexa_meta_learning_novel_operator_3b9763408a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 69.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 69,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ce088cbdc642"
+  },
+  "xodexa_meta_learning_self_correction_db444e5fcc": {
+    "task_id": "xodexa_meta_learning_self_correction_db444e5fcc",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 74.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        79
+      ]
+    },
+    "expected_answer": 74,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de2fa1882cda"
+  },
+  "xodexa_meta_learning_feedback_adaptation_30571102a0": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_30571102a0",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 60.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        30
+      ]
+    },
+    "expected_answer": 60,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d80dbfd76ead"
+  },
+  "xodexa_meta_learning_few_shot_transfer_d3da5949cc": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_d3da5949cc",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5f978353da30"
+  },
+  "xodexa_meta_learning_novel_operator_441751987f": {
+    "task_id": "xodexa_meta_learning_novel_operator_441751987f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 45.0,
+      "tolerance": 0.001
     },
     "expected_answer": 45,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b4e5ad80f81b"
+    "canary": "XDX-CANARY-f8c75254b100"
   },
-  "xodexa_meta_learning_few_shot_transfer_13fd5b3974": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_13fd5b3974",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "few_shot_transfer",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-aee5f3c2a8ef"
-  },
-  "xodexa_meta_learning_novel_operator_97702f4e13": {
-    "task_id": "xodexa_meta_learning_novel_operator_97702f4e13",
-    "category": "reasoning",
-    "family": "meta_learning",
-    "subdomain": "in_context_rule",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 34.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 34,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-ca3033efcdb5"
-  },
-  "xodexa_meta_learning_self_correction_84df9e4f6c": {
-    "task_id": "xodexa_meta_learning_self_correction_84df9e4f6c",
+  "xodexa_meta_learning_self_correction_d9f18c25cb": {
+    "task_id": "xodexa_meta_learning_self_correction_d9f18c25cb",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 63.0,
+      "target": 103.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        67
+        108
       ]
     },
-    "expected_answer": 63,
+    "expected_answer": 103,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-6441de80f7cf"
+    "canary": "XDX-CANARY-e067cd5e37fb"
   },
-  "xodexa_meta_learning_feedback_adaptation_f26124e3fb": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_f26124e3fb",
+  "xodexa_meta_learning_feedback_adaptation_918c376ac4": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_918c376ac4",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 36.0,
+      "target": 114.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        22
+        48
       ]
     },
-    "expected_answer": 36,
+    "expected_answer": 114,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-db5f6f505db6"
+    "canary": "XDX-CANARY-bbed94b36f93"
   },
-  "xodexa_meta_learning_few_shot_transfer_2da9a7a296": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_2da9a7a296",
+  "xodexa_meta_learning_few_shot_transfer_1f8d290b6b": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_1f8d290b6b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-37af5925b451"
+  },
+  "xodexa_meta_learning_novel_operator_34afd7021a": {
+    "task_id": "xodexa_meta_learning_novel_operator_34afd7021a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 44.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 44,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4cb656a87965"
+  },
+  "xodexa_meta_learning_self_correction_0c2d431f58": {
+    "task_id": "xodexa_meta_learning_self_correction_0c2d431f58",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        76
+      ]
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9485a3f8968"
+  },
+  "xodexa_meta_learning_feedback_adaptation_567d3876f5": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_567d3876f5",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        35
+      ]
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4eb9479f6f4c"
+  },
+  "xodexa_meta_learning_few_shot_transfer_ef42fda2a0": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_ef42fda2a0",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "few_shot_transfer",
@@ -522,45 +1712,185 @@
     "expected_answer": 0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-d562e7dc384e"
+    "canary": "XDX-CANARY-092a0ac8c851"
   },
-  "xodexa_meta_learning_novel_operator_8d4ad7fdd5": {
-    "task_id": "xodexa_meta_learning_novel_operator_8d4ad7fdd5",
+  "xodexa_meta_learning_novel_operator_eab89a5a0f": {
+    "task_id": "xodexa_meta_learning_novel_operator_eab89a5a0f",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "in_context_rule",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 58.0,
+      "target": 70.0,
       "tolerance": 0.001
     },
-    "expected_answer": 58,
+    "expected_answer": 70,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-56ebc823c457"
+    "canary": "XDX-CANARY-9d7153c1c901"
   },
-  "xodexa_meta_learning_self_correction_2c5aec7717": {
-    "task_id": "xodexa_meta_learning_self_correction_2c5aec7717",
+  "xodexa_meta_learning_self_correction_45af2928d7": {
+    "task_id": "xodexa_meta_learning_self_correction_45af2928d7",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 88.0,
+      "target": 72.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        93
+        74
       ]
     },
-    "expected_answer": 88,
+    "expected_answer": 72,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-d0b4a04b0f12"
+    "canary": "XDX-CANARY-8de8da7b4627"
   },
-  "xodexa_meta_learning_feedback_adaptation_b2ea4c06ad": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_b2ea4c06ad",
+  "xodexa_meta_learning_feedback_adaptation_ff75d105ca": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ff75d105ca",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 111.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        47
+      ]
+    },
+    "expected_answer": 111,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b61e7f02a3bc"
+  },
+  "xodexa_meta_learning_few_shot_transfer_1257cb6c8b": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_1257cb6c8b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aef1c0be55d1"
+  },
+  "xodexa_meta_learning_novel_operator_601e29dc05": {
+    "task_id": "xodexa_meta_learning_novel_operator_601e29dc05",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 13.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 13,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fdfe397453c9"
+  },
+  "xodexa_meta_learning_self_correction_1d47dbab65": {
+    "task_id": "xodexa_meta_learning_self_correction_1d47dbab65",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 93.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        94
+      ]
+    },
+    "expected_answer": 93,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dd38214dc91b"
+  },
+  "xodexa_meta_learning_feedback_adaptation_e746ba22f7": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_e746ba22f7",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 108.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        46
+      ]
+    },
+    "expected_answer": 108,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec5838c6ca62"
+  },
+  "xodexa_meta_learning_few_shot_transfer_627f2ff806": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_627f2ff806",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-79255b529360"
+  },
+  "xodexa_meta_learning_novel_operator_1c0fe6b33d": {
+    "task_id": "xodexa_meta_learning_novel_operator_1c0fe6b33d",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-42f2faa169bc"
+  },
+  "xodexa_meta_learning_self_correction_991661c1cb": {
+    "task_id": "xodexa_meta_learning_self_correction_991661c1cb",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 100.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        102
+      ]
+    },
+    "expected_answer": 100,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-122471d39f11"
+  },
+  "xodexa_meta_learning_feedback_adaptation_1746cca98a": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_1746cca98a",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
@@ -576,80 +1906,80 @@
     "expected_answer": 69,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-ea13b25e7778"
+    "canary": "XDX-CANARY-45f23f5165fb"
   },
-  "xodexa_meta_learning_few_shot_transfer_800bdbfbf4": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_800bdbfbf4",
+  "xodexa_meta_learning_few_shot_transfer_848de5874d": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_848de5874d",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "few_shot_transfer",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 0.0,
+      "target": 1.0,
       "tolerance": 0.001
     },
-    "expected_answer": 0,
+    "expected_answer": 1,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-119b056eff48"
+    "canary": "XDX-CANARY-d2c8e950d00b"
   },
-  "xodexa_meta_learning_novel_operator_31bbfb1a61": {
-    "task_id": "xodexa_meta_learning_novel_operator_31bbfb1a61",
+  "xodexa_meta_learning_novel_operator_d5c2cd1220": {
+    "task_id": "xodexa_meta_learning_novel_operator_d5c2cd1220",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "in_context_rule",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 22.0,
+      "target": 89.0,
       "tolerance": 0.001
     },
-    "expected_answer": 22,
+    "expected_answer": 89,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-aa3385641008"
+    "canary": "XDX-CANARY-2ab863425f1d"
   },
-  "xodexa_meta_learning_self_correction_7702e74e40": {
-    "task_id": "xodexa_meta_learning_self_correction_7702e74e40",
+  "xodexa_meta_learning_self_correction_7054bca3ef": {
+    "task_id": "xodexa_meta_learning_self_correction_7054bca3ef",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 82.0,
+      "target": 84.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        85
+        87
       ]
     },
-    "expected_answer": 82,
+    "expected_answer": 84,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-89c8b4ab1959"
+    "canary": "XDX-CANARY-2f109dc10694"
   },
-  "xodexa_meta_learning_feedback_adaptation_60174403ce": {
-    "task_id": "xodexa_meta_learning_feedback_adaptation_60174403ce",
+  "xodexa_meta_learning_feedback_adaptation_9185fc1095": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_9185fc1095",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "feedback_adaptation",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 48.0,
+      "target": 63.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        26
+        31
       ]
     },
-    "expected_answer": 48,
+    "expected_answer": 63,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-5487ef7c74b2"
+    "canary": "XDX-CANARY-376baea3fe65"
   },
-  "xodexa_meta_learning_few_shot_transfer_1d1f16a991": {
-    "task_id": "xodexa_meta_learning_few_shot_transfer_1d1f16a991",
+  "xodexa_meta_learning_few_shot_transfer_86c527dab2": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_86c527dab2",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "few_shot_transfer",
@@ -662,10 +1992,290 @@
     "expected_answer": 0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-204245391a29"
+    "canary": "XDX-CANARY-32e1f1917fc7"
   },
-  "xodexa_meta_learning_novel_operator_45582b628a": {
-    "task_id": "xodexa_meta_learning_novel_operator_45582b628a",
+  "xodexa_meta_learning_novel_operator_06749f98a7": {
+    "task_id": "xodexa_meta_learning_novel_operator_06749f98a7",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 41.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 41,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c9d6bd891497"
+  },
+  "xodexa_meta_learning_self_correction_76bd0e704a": {
+    "task_id": "xodexa_meta_learning_self_correction_76bd0e704a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 121.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        123
+      ]
+    },
+    "expected_answer": 121,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-23773c3f4e85"
+  },
+  "xodexa_meta_learning_feedback_adaptation_27a47ab5b1": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_27a47ab5b1",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 39.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        23
+      ]
+    },
+    "expected_answer": 39,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-35d8ac977519"
+  },
+  "xodexa_meta_learning_few_shot_transfer_48cfd89dfd": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_48cfd89dfd",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-59de9d3e2a87"
+  },
+  "xodexa_meta_learning_novel_operator_6919ccbf1a": {
+    "task_id": "xodexa_meta_learning_novel_operator_6919ccbf1a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 11.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 11,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7ae5425a1689"
+  },
+  "xodexa_meta_learning_self_correction_fbea7ff3cd": {
+    "task_id": "xodexa_meta_learning_self_correction_fbea7ff3cd",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        102
+      ]
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-19e958e36668"
+  },
+  "xodexa_meta_learning_feedback_adaptation_6681249ff5": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_6681249ff5",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 63.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        31
+      ]
+    },
+    "expected_answer": 63,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-97a25edb20a6"
+  },
+  "xodexa_meta_learning_few_shot_transfer_eba3d4f15b": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_eba3d4f15b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a386e314eb9e"
+  },
+  "xodexa_meta_learning_novel_operator_72ad9b973f": {
+    "task_id": "xodexa_meta_learning_novel_operator_72ad9b973f",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 11.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 11,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6ff6fee967b9"
+  },
+  "xodexa_meta_learning_self_correction_a55cce710d": {
+    "task_id": "xodexa_meta_learning_self_correction_a55cce710d",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 102.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        103
+      ]
+    },
+    "expected_answer": 102,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e99b6e6bee91"
+  },
+  "xodexa_meta_learning_feedback_adaptation_e262a29f78": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_e262a29f78",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        38
+      ]
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-91abb98213ca"
+  },
+  "xodexa_meta_learning_few_shot_transfer_fcf45a8c96": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_fcf45a8c96",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3725bc103167"
+  },
+  "xodexa_meta_learning_novel_operator_6f27779472": {
+    "task_id": "xodexa_meta_learning_novel_operator_6f27779472",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6a64e30257a8"
+  },
+  "xodexa_meta_learning_self_correction_0ca488a3d4": {
+    "task_id": "xodexa_meta_learning_self_correction_0ca488a3d4",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 81.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        86
+      ]
+    },
+    "expected_answer": 81,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ea2a581f85d6"
+  },
+  "xodexa_meta_learning_feedback_adaptation_353de5a3ea": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_353de5a3ea",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 51.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        27
+      ]
+    },
+    "expected_answer": 51,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2331861eae29"
+  },
+  "xodexa_meta_learning_few_shot_transfer_8ab6362662": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_8ab6362662",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3c32d7688694"
+  },
+  "xodexa_meta_learning_novel_operator_1158004f9c": {
+    "task_id": "xodexa_meta_learning_novel_operator_1158004f9c",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "in_context_rule",
@@ -678,25 +2288,1215 @@
     "expected_answer": 10,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-80c83c293f4e"
+    "canary": "XDX-CANARY-42ede94c189b"
   },
-  "xodexa_meta_learning_self_correction_ffc5b20361": {
-    "task_id": "xodexa_meta_learning_self_correction_ffc5b20361",
+  "xodexa_meta_learning_self_correction_a9c35e9214": {
+    "task_id": "xodexa_meta_learning_self_correction_a9c35e9214",
     "category": "reasoning",
     "family": "meta_learning",
     "subdomain": "self_correction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
+      "target": 77.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        79
+      ]
+    },
+    "expected_answer": 77,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-db6831a8bde8"
+  },
+  "xodexa_meta_learning_feedback_adaptation_de88f6f282": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_de88f6f282",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 114.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        48
+      ]
+    },
+    "expected_answer": 114,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1fa34e31aa8f"
+  },
+  "xodexa_meta_learning_few_shot_transfer_9eb39cbf91": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_9eb39cbf91",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d1ece85f486c"
+  },
+  "xodexa_meta_learning_novel_operator_e1c92bcc5c": {
+    "task_id": "xodexa_meta_learning_novel_operator_e1c92bcc5c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 45.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 45,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9a577fad92e"
+  },
+  "xodexa_meta_learning_self_correction_bee2fa73e2": {
+    "task_id": "xodexa_meta_learning_self_correction_bee2fa73e2",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 112.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        113
+      ]
+    },
+    "expected_answer": 112,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2de62ab06331"
+  },
+  "xodexa_meta_learning_feedback_adaptation_ec2ff05caf": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ec2ff05caf",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 60.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        30
+      ]
+    },
+    "expected_answer": 60,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fa3c4823bed5"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a649b1db7b": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a649b1db7b",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f4c442370bd2"
+  },
+  "xodexa_meta_learning_novel_operator_7b811b61bd": {
+    "task_id": "xodexa_meta_learning_novel_operator_7b811b61bd",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 33.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 33,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-606f67e5e783"
+  },
+  "xodexa_meta_learning_self_correction_b13eb91cf0": {
+    "task_id": "xodexa_meta_learning_self_correction_b13eb91cf0",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 85.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        90
+      ]
+    },
+    "expected_answer": 85,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-932f9c3f1381"
+  },
+  "xodexa_meta_learning_feedback_adaptation_183277dbd0": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_183277dbd0",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        36
+      ]
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-44fc3f50804d"
+  },
+  "xodexa_meta_learning_few_shot_transfer_015654701a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_015654701a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-615767eb5f71"
+  },
+  "xodexa_meta_learning_novel_operator_059973eb55": {
+    "task_id": "xodexa_meta_learning_novel_operator_059973eb55",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 12,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f60bce21c1ce"
+  },
+  "xodexa_meta_learning_self_correction_df5b583504": {
+    "task_id": "xodexa_meta_learning_self_correction_df5b583504",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        77
+      ]
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b67d673fdc3e"
+  },
+  "xodexa_meta_learning_feedback_adaptation_35466c65f1": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_35466c65f1",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        28
+      ]
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c33260145dff"
+  },
+  "xodexa_meta_learning_few_shot_transfer_9be2900276": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_9be2900276",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-af0c57f3c489"
+  },
+  "xodexa_meta_learning_novel_operator_6a498f115c": {
+    "task_id": "xodexa_meta_learning_novel_operator_6a498f115c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 52.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 52,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e977a48b991c"
+  },
+  "xodexa_meta_learning_self_correction_08247df7ea": {
+    "task_id": "xodexa_meta_learning_self_correction_08247df7ea",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        93
+      ]
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-524810af027a"
+  },
+  "xodexa_meta_learning_feedback_adaptation_15af53b34e": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_15af53b34e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 66.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        32
+      ]
+    },
+    "expected_answer": 66,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b7e9696fda9b"
+  },
+  "xodexa_meta_learning_few_shot_transfer_2930e3874a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_2930e3874a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-670112544470"
+  },
+  "xodexa_meta_learning_novel_operator_46ca984037": {
+    "task_id": "xodexa_meta_learning_novel_operator_46ca984037",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 40.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 40,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6d70460b16f2"
+  },
+  "xodexa_meta_learning_self_correction_349a03d94c": {
+    "task_id": "xodexa_meta_learning_self_correction_349a03d94c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 79.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        84
+      ]
+    },
+    "expected_answer": 79,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-73db6e97fee1"
+  },
+  "xodexa_meta_learning_feedback_adaptation_64b21c0362": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_64b21c0362",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 36.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        22
+      ]
+    },
+    "expected_answer": 36,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-94159a14e9ff"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a8b2140606": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a8b2140606",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f426c4c6971b"
+  },
+  "xodexa_meta_learning_novel_operator_0eeab8ed99": {
+    "task_id": "xodexa_meta_learning_novel_operator_0eeab8ed99",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e043a2ac7f08"
+  },
+  "xodexa_meta_learning_self_correction_649576e194": {
+    "task_id": "xodexa_meta_learning_self_correction_649576e194",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 120.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        122
+      ]
+    },
+    "expected_answer": 120,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec7d5e96eaf0"
+  },
+  "xodexa_meta_learning_feedback_adaptation_a0f7aeeaec": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_a0f7aeeaec",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        35
+      ]
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8abeed39f6de"
+  },
+  "xodexa_meta_learning_few_shot_transfer_4543bdc633": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_4543bdc633",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c67e3736fe22"
+  },
+  "xodexa_meta_learning_novel_operator_59ef4503e3": {
+    "task_id": "xodexa_meta_learning_novel_operator_59ef4503e3",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 20,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-80f599550018"
+  },
+  "xodexa_meta_learning_self_correction_a99b558731": {
+    "task_id": "xodexa_meta_learning_self_correction_a99b558731",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 112.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        115
+      ]
+    },
+    "expected_answer": 112,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-399160873e61"
+  },
+  "xodexa_meta_learning_feedback_adaptation_0d9311fd12": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_0d9311fd12",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 120.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        50
+      ]
+    },
+    "expected_answer": 120,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0f05ad44d912"
+  },
+  "xodexa_meta_learning_few_shot_transfer_90a555a59a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_90a555a59a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cefd3b829553"
+  },
+  "xodexa_meta_learning_novel_operator_7b9ba18ede": {
+    "task_id": "xodexa_meta_learning_novel_operator_7b9ba18ede",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4d4d9c9a2bde"
+  },
+  "xodexa_meta_learning_self_correction_13b3f77f84": {
+    "task_id": "xodexa_meta_learning_self_correction_13b3f77f84",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 68.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        69
+      ]
+    },
+    "expected_answer": 68,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-61856bce5162"
+  },
+  "xodexa_meta_learning_feedback_adaptation_ad644b0c80": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ad644b0c80",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 114.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        48
+      ]
+    },
+    "expected_answer": 114,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fde5cd0c0468"
+  },
+  "xodexa_meta_learning_few_shot_transfer_e7f301b715": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_e7f301b715",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2733fbfd5ef6"
+  },
+  "xodexa_meta_learning_novel_operator_68fd469c36": {
+    "task_id": "xodexa_meta_learning_novel_operator_68fd469c36",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 88.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 88,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3f42bd3ccba2"
+  },
+  "xodexa_meta_learning_self_correction_88afd374c8": {
+    "task_id": "xodexa_meta_learning_self_correction_88afd374c8",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 127.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        132
+      ]
+    },
+    "expected_answer": 127,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8be585c11cf3"
+  },
+  "xodexa_meta_learning_feedback_adaptation_2bdedc1b13": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_2bdedc1b13",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
       "target": 105.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        110
+        45
       ]
     },
     "expected_answer": 105,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c47b37dcc580"
+    "canary": "XDX-CANARY-3cffe24f47a4"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a8b8e2b158": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a8b8e2b158",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eb078eee8d90"
+  },
+  "xodexa_meta_learning_novel_operator_60bc8fe4d7": {
+    "task_id": "xodexa_meta_learning_novel_operator_60bc8fe4d7",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f8b9be511b15"
+  },
+  "xodexa_meta_learning_self_correction_651ae06f30": {
+    "task_id": "xodexa_meta_learning_self_correction_651ae06f30",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 108.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        109
+      ]
+    },
+    "expected_answer": 108,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-613ab10d6e86"
+  },
+  "xodexa_meta_learning_feedback_adaptation_499c53bd0d": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_499c53bd0d",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 33.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        21
+      ]
+    },
+    "expected_answer": 33,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-25ffa4d958f7"
+  },
+  "xodexa_meta_learning_few_shot_transfer_f021d4e5d6": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_f021d4e5d6",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-52fe19a3b297"
+  },
+  "xodexa_meta_learning_novel_operator_896e8cfe10": {
+    "task_id": "xodexa_meta_learning_novel_operator_896e8cfe10",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 69.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 69,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6f415645372e"
+  },
+  "xodexa_meta_learning_self_correction_c5b5a72627": {
+    "task_id": "xodexa_meta_learning_self_correction_c5b5a72627",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 56.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        59
+      ]
+    },
+    "expected_answer": 56,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc51f215fd51"
+  },
+  "xodexa_meta_learning_feedback_adaptation_ecce7401e2": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ecce7401e2",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 117.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        49
+      ]
+    },
+    "expected_answer": 117,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-95fb3f8e16a2"
+  },
+  "xodexa_meta_learning_few_shot_transfer_bcf73b0b5a": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_bcf73b0b5a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b90923b46b1b"
+  },
+  "xodexa_meta_learning_novel_operator_a1c5f60f96": {
+    "task_id": "xodexa_meta_learning_novel_operator_a1c5f60f96",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 89.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 89,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4d11ad03f2d"
+  },
+  "xodexa_meta_learning_self_correction_64ca7bbd19": {
+    "task_id": "xodexa_meta_learning_self_correction_64ca7bbd19",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        102
+      ]
+    },
+    "expected_answer": 98,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ea0357153893"
+  },
+  "xodexa_meta_learning_feedback_adaptation_44456fbb4c": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_44456fbb4c",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 96.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        42
+      ]
+    },
+    "expected_answer": 96,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a90939ac250d"
+  },
+  "xodexa_meta_learning_few_shot_transfer_8665ac5b88": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_8665ac5b88",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7fdc6ca4df33"
+  },
+  "xodexa_meta_learning_novel_operator_bd0a2f79ea": {
+    "task_id": "xodexa_meta_learning_novel_operator_bd0a2f79ea",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 23.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 23,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3261504044c1"
+  },
+  "xodexa_meta_learning_self_correction_ea5f573e7e": {
+    "task_id": "xodexa_meta_learning_self_correction_ea5f573e7e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        76
+      ]
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bed6580c6f81"
+  },
+  "xodexa_meta_learning_feedback_adaptation_ed53bcd7a3": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_ed53bcd7a3",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 42.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        24
+      ]
+    },
+    "expected_answer": 42,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8cf6becede5c"
+  },
+  "xodexa_meta_learning_few_shot_transfer_d1b0ffbb30": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_d1b0ffbb30",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-be5117b53ffa"
+  },
+  "xodexa_meta_learning_novel_operator_5ac9877d6a": {
+    "task_id": "xodexa_meta_learning_novel_operator_5ac9877d6a",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-03a9bdf8354c"
+  },
+  "xodexa_meta_learning_self_correction_549951ead0": {
+    "task_id": "xodexa_meta_learning_self_correction_549951ead0",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 65.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        66
+      ]
+    },
+    "expected_answer": 65,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-184671b864bd"
+  },
+  "xodexa_meta_learning_feedback_adaptation_a0ca8495cc": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_a0ca8495cc",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 30.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        20
+      ]
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2798e19d36f8"
+  },
+  "xodexa_meta_learning_few_shot_transfer_1a23a9dc5e": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_1a23a9dc5e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d2dc7f6f9536"
+  },
+  "xodexa_meta_learning_novel_operator_decc4c63c6": {
+    "task_id": "xodexa_meta_learning_novel_operator_decc4c63c6",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 20,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3fbab888b378"
+  },
+  "xodexa_meta_learning_self_correction_53e689d308": {
+    "task_id": "xodexa_meta_learning_self_correction_53e689d308",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 92.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        96
+      ]
+    },
+    "expected_answer": 92,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a7e1fad7244a"
+  },
+  "xodexa_meta_learning_feedback_adaptation_cacb680ddb": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_cacb680ddb",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 102.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        44
+      ]
+    },
+    "expected_answer": 102,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0c03424a6191"
+  },
+  "xodexa_meta_learning_few_shot_transfer_860c86c9fe": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_860c86c9fe",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ffac78c725e9"
+  },
+  "xodexa_meta_learning_novel_operator_8804604447": {
+    "task_id": "xodexa_meta_learning_novel_operator_8804604447",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 22.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 22,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f95356ff0493"
+  },
+  "xodexa_meta_learning_self_correction_ec7ac1fa78": {
+    "task_id": "xodexa_meta_learning_self_correction_ec7ac1fa78",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 74.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        77
+      ]
+    },
+    "expected_answer": 74,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b1591e8c0cab"
+  },
+  "xodexa_meta_learning_feedback_adaptation_443ebb7f2e": {
+    "task_id": "xodexa_meta_learning_feedback_adaptation_443ebb7f2e",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "feedback_adaptation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 63.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        31
+      ]
+    },
+    "expected_answer": 63,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cb2a3d97fbc8"
+  },
+  "xodexa_meta_learning_few_shot_transfer_a0b8f59985": {
+    "task_id": "xodexa_meta_learning_few_shot_transfer_a0b8f59985",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "few_shot_transfer",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ed61e508e8e5"
+  },
+  "xodexa_meta_learning_novel_operator_d0de24d811": {
+    "task_id": "xodexa_meta_learning_novel_operator_d0de24d811",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "in_context_rule",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 70.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 70,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-14c1d68062f8"
+  },
+  "xodexa_meta_learning_self_correction_d7df8a54f9": {
+    "task_id": "xodexa_meta_learning_self_correction_d7df8a54f9",
+    "category": "reasoning",
+    "family": "meta_learning",
+    "subdomain": "self_correction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 63.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        66
+      ]
+    },
+    "expected_answer": 63,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b573582c2e3f"
   }
 }

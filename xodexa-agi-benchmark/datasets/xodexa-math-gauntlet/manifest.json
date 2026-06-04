@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa Math Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-04T17:21:29Z",
+  "task_count": 500,
+  "checksum_sha256": "2b2b2a2fe011d0386fc533acdba5e717dbc20d7193d14cb8853f78e2863aeb69",
+  "changelog": "Seed build of Xodexa Math Gauntlet",
+  "families": {
+    "math": 500
+  },
+  "visibility": {
+    "validation": 500
+  },
+  "licenses": {
+    "Xodexa-private": 500
+  },
+  "difficulty": {
+    "mean": 4.25,
+    "min": 2.5,
+    "max": 5.0,
+    "bands": {
+      "hard": 313,
+      "medium": 187
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "difficulty",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "contamination",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "quality_review",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "calibration",
+      "in": 500,
+      "out": 500
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa Truthfulness Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-04T17:21:32Z",
+  "task_count": 500,
+  "checksum_sha256": "a9fae6a6c3532ed22c6e8276ddc58b5ac15bb121f03d76327f5f92d882120109",
+  "changelog": "Seed build of Xodexa Truthfulness Gauntlet",
+  "families": {
+    "truthfulness": 500
+  },
+  "visibility": {
+    "validation": 500
+  },
+  "licenses": {
+    "Xodexa-private": 500
+  },
+  "difficulty": {
+    "mean": 4.2,
+    "min": 3.5,
+    "max": 5.0,
+    "bands": {
+      "medium": 300,
+      "hard": 200
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "difficulty",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "contamination",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "quality_review",
+      "in": 500,
+      "out": 500
+    },
+    {
+      "stage": "calibration",
+      "in": 500,
+      "out": 500
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
+}

@@ -1,6 +1,6 @@
 {
-  "xodexa_reasoning_adversarial_logic_3db22b367c": {
-    "task_id": "xodexa_reasoning_adversarial_logic_3db22b367c",
+  "xodexa_reasoning_adversarial_logic_4824b3f712": {
+    "task_id": "xodexa_reasoning_adversarial_logic_4824b3f712",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "adversarial_logic",
@@ -27,10 +27,10 @@
     "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-5c26369000b9"
+    "canary": "XDX-CANARY-f553f91d5172"
   },
-  "xodexa_reasoning_analogy_transfer_0e9695af94": {
-    "task_id": "xodexa_reasoning_analogy_transfer_0e9695af94",
+  "xodexa_reasoning_analogy_transfer_994a59028e": {
+    "task_id": "xodexa_reasoning_analogy_transfer_994a59028e",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "analogy_transfer",
@@ -38,607 +38,83 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "R"
+        "Q"
       ]
     },
-    "expected_answer": "R",
+    "expected_answer": "Q",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-ad13a5ca635d"
+    "canary": "XDX-CANARY-6c74fa48c19d"
   },
-  "xodexa_reasoning_compositional_arithmetic_d659e9bd6b": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_d659e9bd6b",
+  "xodexa_reasoning_compositional_arithmetic_651423c290": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_651423c290",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "compositional",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 285.0,
+      "target": 200.0,
       "tolerance": 0.001
     },
-    "expected_answer": 285,
+    "expected_answer": 200,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-806b7e7cf4c3"
+    "canary": "XDX-CANARY-7b9539e9e4f8"
   },
-  "xodexa_reasoning_counterfactual_2c61846a8e": {
-    "task_id": "xodexa_reasoning_counterfactual_2c61846a8e",
+  "xodexa_reasoning_counterfactual_e314882fde": {
+    "task_id": "xodexa_reasoning_counterfactual_e314882fde",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "counterfactual",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 21.0,
+      "target": 28.0,
       "tolerance": 0.001,
       "penalty_if_numeric_near": [
-        9
+        12
       ]
     },
-    "expected_answer": 21,
+    "expected_answer": 28,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-95bd6e567380"
+    "canary": "XDX-CANARY-1490f3d7ad43"
   },
-  "xodexa_reasoning_hidden_rule_induction_fb8842ccc6": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_fb8842ccc6",
+  "xodexa_reasoning_hidden_rule_induction_b4a58b5d9c": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_b4a58b5d9c",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "hidden_rule_induction",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 49.0,
+      "target": 104.0,
       "tolerance": 0.001
     },
-    "expected_answer": 49,
+    "expected_answer": 104,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-4d93df4c3bb2"
+    "canary": "XDX-CANARY-0122649ed79a"
   },
-  "xodexa_reasoning_sequence_extrapolation_0bb107a185": {
-    "task_id": "xodexa_reasoning_sequence_extrapolation_0bb107a185",
+  "xodexa_reasoning_sequence_extrapolation_e75b3958ee": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_e75b3958ee",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "sequence_extrapolation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 20.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 20,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f8830d75998c"
-  },
-  "xodexa_reasoning_symbolic_strings_2b7c7fc324": {
-    "task_id": "xodexa_reasoning_symbolic_strings_2b7c7fc324",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "symbolic_strings",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "kylcqcnm"
-      ]
-    },
-    "expected_answer": "kylcqcnm",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-dde69cc648c6"
-  },
-  "xodexa_reasoning_adversarial_logic_42139d62ac": {
-    "task_id": "xodexa_reasoning_adversarial_logic_42139d62ac",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "adversarial_logic",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "premise is false",
-        "false premise",
-        "not every multiple",
-        "12 is not",
-        "4 is a multiple of 4",
-        "premise is wrong",
-        "incorrect premise",
-        "counterexample"
-      ],
-      "penalty_if_contains_any": [
-        "therefore 12 is a multiple of 8",
-        "qed",
-        "thus proven",
-        "hence 12 is a multiple of 8"
-      ]
-    },
-    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-df70ae89e2b8"
-  },
-  "xodexa_reasoning_analogy_transfer_3b3ccf6d30": {
-    "task_id": "xodexa_reasoning_analogy_transfer_3b3ccf6d30",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "analogy_transfer",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "D"
-      ]
-    },
-    "expected_answer": "D",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e83bbf1c04e1"
-  },
-  "xodexa_reasoning_compositional_arithmetic_8f3f5a899a": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_8f3f5a899a",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "compositional",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 155.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 155,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-6716f1057b05"
-  },
-  "xodexa_reasoning_counterfactual_e0d3163846": {
-    "task_id": "xodexa_reasoning_counterfactual_e0d3163846",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "counterfactual",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 13.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        8
-      ]
-    },
-    "expected_answer": 13,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2536dbbef084"
-  },
-  "xodexa_reasoning_hidden_rule_induction_844398b174": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_844398b174",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "hidden_rule_induction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 134.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 134,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-20a9498c68af"
-  },
-  "xodexa_reasoning_sequence_extrapolation_bb570fa1fe": {
-    "task_id": "xodexa_reasoning_sequence_extrapolation_bb570fa1fe",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "sequence_extrapolation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 119.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 119,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-3f96ee5d6b03"
-  },
-  "xodexa_reasoning_symbolic_strings_62d574511c": {
-    "task_id": "xodexa_reasoning_symbolic_strings_62d574511c",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "symbolic_strings",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "mlmsz"
-      ]
-    },
-    "expected_answer": "mlmsz",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2639ae5458b3"
-  },
-  "xodexa_reasoning_adversarial_logic_d2e0632077": {
-    "task_id": "xodexa_reasoning_adversarial_logic_d2e0632077",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "adversarial_logic",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "premise is false",
-        "false premise",
-        "not every multiple",
-        "12 is not",
-        "4 is a multiple of 4",
-        "premise is wrong",
-        "incorrect premise",
-        "counterexample"
-      ],
-      "penalty_if_contains_any": [
-        "therefore 12 is a multiple of 8",
-        "qed",
-        "thus proven",
-        "hence 12 is a multiple of 8"
-      ]
-    },
-    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-fcf62fcfdcd1"
-  },
-  "xodexa_reasoning_analogy_transfer_6d52ec45c6": {
-    "task_id": "xodexa_reasoning_analogy_transfer_6d52ec45c6",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "analogy_transfer",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "B"
-      ]
-    },
-    "expected_answer": "B",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-95a61cd160b7"
-  },
-  "xodexa_reasoning_compositional_arithmetic_c950c3e2cc": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_c950c3e2cc",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "compositional",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": -18.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": -18,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-37ac39a7c41c"
-  },
-  "xodexa_reasoning_counterfactual_bd038d64d1": {
-    "task_id": "xodexa_reasoning_counterfactual_bd038d64d1",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "counterfactual",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 22.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        10
-      ]
-    },
-    "expected_answer": 22,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-3178f89f761c"
-  },
-  "xodexa_reasoning_hidden_rule_induction_522627de7c": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_522627de7c",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "hidden_rule_induction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 128.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 128,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-c431a6d577fa"
-  },
-  "xodexa_reasoning_sequence_extrapolation_d71880b597": {
-    "task_id": "xodexa_reasoning_sequence_extrapolation_d71880b597",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "sequence_extrapolation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 60.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 60,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-875976d5a115"
-  },
-  "xodexa_reasoning_symbolic_strings_d73f9f8e7c": {
-    "task_id": "xodexa_reasoning_symbolic_strings_d73f9f8e7c",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "symbolic_strings",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "vqqvyo"
-      ]
-    },
-    "expected_answer": "vqqvyo",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-8f01726c2bd2"
-  },
-  "xodexa_reasoning_adversarial_logic_5598b8f99e": {
-    "task_id": "xodexa_reasoning_adversarial_logic_5598b8f99e",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "adversarial_logic",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "premise is false",
-        "false premise",
-        "not every multiple",
-        "12 is not",
-        "4 is a multiple of 4",
-        "premise is wrong",
-        "incorrect premise",
-        "counterexample"
-      ],
-      "penalty_if_contains_any": [
-        "therefore 12 is a multiple of 8",
-        "qed",
-        "thus proven",
-        "hence 12 is a multiple of 8"
-      ]
-    },
-    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-dacd3c5d4700"
-  },
-  "xodexa_reasoning_analogy_transfer_4a3cc5bb56": {
-    "task_id": "xodexa_reasoning_analogy_transfer_4a3cc5bb56",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "analogy_transfer",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "Z"
-      ]
-    },
-    "expected_answer": "Z",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-558e1f1f6240"
-  },
-  "xodexa_reasoning_compositional_arithmetic_eaaec344a2": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_eaaec344a2",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "compositional",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 31.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 31,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-20b310fcd458"
-  },
-  "xodexa_reasoning_counterfactual_2fef10dfa3": {
-    "task_id": "xodexa_reasoning_counterfactual_2fef10dfa3",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "counterfactual",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 15.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        9
-      ]
-    },
-    "expected_answer": 15,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-437a7eb79d0c"
-  },
-  "xodexa_reasoning_hidden_rule_induction_c66c83bad0": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_c66c83bad0",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "hidden_rule_induction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 55.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 55,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-b93d4abf6bd2"
-  },
-  "xodexa_reasoning_sequence_extrapolation_7e3a47df3b": {
-    "task_id": "xodexa_reasoning_sequence_extrapolation_7e3a47df3b",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "sequence_extrapolation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 95.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 95,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-aefcb3fb16b0"
-  },
-  "xodexa_reasoning_symbolic_strings_1cdffbbf15": {
-    "task_id": "xodexa_reasoning_symbolic_strings_1cdffbbf15",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "symbolic_strings",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "rkijtgd"
-      ]
-    },
-    "expected_answer": "rkijtgd",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2676be9cb61f"
-  },
-  "xodexa_reasoning_adversarial_logic_98586f1fa6": {
-    "task_id": "xodexa_reasoning_adversarial_logic_98586f1fa6",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "adversarial_logic",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "premise is false",
-        "false premise",
-        "not every multiple",
-        "12 is not",
-        "4 is a multiple of 4",
-        "premise is wrong",
-        "incorrect premise",
-        "counterexample"
-      ],
-      "penalty_if_contains_any": [
-        "therefore 12 is a multiple of 8",
-        "qed",
-        "thus proven",
-        "hence 12 is a multiple of 8"
-      ]
-    },
-    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-3f620df4e394"
-  },
-  "xodexa_reasoning_analogy_transfer_e87c80c420": {
-    "task_id": "xodexa_reasoning_analogy_transfer_e87c80c420",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "analogy_transfer",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "Y"
-      ]
-    },
-    "expected_answer": "Y",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-cf5a088b94aa"
-  },
-  "xodexa_reasoning_compositional_arithmetic_1982594385": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_1982594385",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "compositional",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 59.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 59,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-d3c9d1456096"
-  },
-  "xodexa_reasoning_counterfactual_a75a7b2810": {
-    "task_id": "xodexa_reasoning_counterfactual_a75a7b2810",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "counterfactual",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
       "target": 25.0,
-      "tolerance": 0.001,
-      "penalty_if_numeric_near": [
-        10
-      ]
+      "tolerance": 0.001
     },
     "expected_answer": 25,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c574f311878f"
+    "canary": "XDX-CANARY-88f99117a3cc"
   },
-  "xodexa_reasoning_hidden_rule_induction_54bc15ef70": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_54bc15ef70",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "hidden_rule_induction",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 65.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 65,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-db14bdbfd36d"
-  },
-  "xodexa_reasoning_sequence_extrapolation_72d3235dc5": {
-    "task_id": "xodexa_reasoning_sequence_extrapolation_72d3235dc5",
-    "category": "reasoning",
-    "family": "reasoning",
-    "subdomain": "sequence_extrapolation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 64.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 64,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-d5c8f854ddbe"
-  },
-  "xodexa_reasoning_symbolic_strings_1f34aa40a0": {
-    "task_id": "xodexa_reasoning_symbolic_strings_1f34aa40a0",
+  "xodexa_reasoning_symbolic_strings_b2f95da791": {
+    "task_id": "xodexa_reasoning_symbolic_strings_b2f95da791",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "symbolic_strings",
@@ -646,16 +122,16 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "exwqaw"
+        "hzmvodoi"
       ]
     },
-    "expected_answer": "exwqaw",
+    "expected_answer": "hzmvodoi",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-2bf522279a92"
+    "canary": "XDX-CANARY-3f2b5cffed1f"
   },
-  "xodexa_reasoning_adversarial_logic_27c991c236": {
-    "task_id": "xodexa_reasoning_adversarial_logic_27c991c236",
+  "xodexa_reasoning_adversarial_logic_258211aa9a": {
+    "task_id": "xodexa_reasoning_adversarial_logic_258211aa9a",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "adversarial_logic",
@@ -682,10 +158,10 @@
     "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-35b8caa7179a"
+    "canary": "XDX-CANARY-165fa3fb1368"
   },
-  "xodexa_reasoning_analogy_transfer_8a51310ab4": {
-    "task_id": "xodexa_reasoning_analogy_transfer_8a51310ab4",
+  "xodexa_reasoning_analogy_transfer_7191806b3a": {
+    "task_id": "xodexa_reasoning_analogy_transfer_7191806b3a",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "analogy_transfer",
@@ -693,32 +169,163 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "E"
+        "Q"
       ]
     },
-    "expected_answer": "E",
+    "expected_answer": "Q",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-61ce34db94b9"
+    "canary": "XDX-CANARY-4be877c11498"
   },
-  "xodexa_reasoning_compositional_arithmetic_a8a47bbf44": {
-    "task_id": "xodexa_reasoning_compositional_arithmetic_a8a47bbf44",
+  "xodexa_reasoning_compositional_arithmetic_019cdc54ef": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_019cdc54ef",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "compositional",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 39.0,
+      "target": 237.0,
       "tolerance": 0.001
     },
-    "expected_answer": 39,
+    "expected_answer": 237,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-d0d551a60577"
+    "canary": "XDX-CANARY-0fec4689075d"
   },
-  "xodexa_reasoning_counterfactual_233100a366": {
-    "task_id": "xodexa_reasoning_counterfactual_233100a366",
+  "xodexa_reasoning_counterfactual_d657521345": {
+    "task_id": "xodexa_reasoning_counterfactual_d657521345",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 19.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        9
+      ]
+    },
+    "expected_answer": 19,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-39c08e595818"
+  },
+  "xodexa_reasoning_hidden_rule_induction_14568deea5": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_14568deea5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 66.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 66,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b1f949524534"
+  },
+  "xodexa_reasoning_sequence_extrapolation_e977060a4c": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_e977060a4c",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 99.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 99,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d21475fd6b9f"
+  },
+  "xodexa_reasoning_symbolic_strings_6eb0ff1c63": {
+    "task_id": "xodexa_reasoning_symbolic_strings_6eb0ff1c63",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "xaepslod"
+      ]
+    },
+    "expected_answer": "xaepslod",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9c2be7beb8d9"
+  },
+  "xodexa_reasoning_adversarial_logic_be0dbd589d": {
+    "task_id": "xodexa_reasoning_adversarial_logic_be0dbd589d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b07219ffbeab"
+  },
+  "xodexa_reasoning_analogy_transfer_bd20d0e3a1": {
+    "task_id": "xodexa_reasoning_analogy_transfer_bd20d0e3a1",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "M"
+      ]
+    },
+    "expected_answer": "M",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fddc715ce257"
+  },
+  "xodexa_reasoning_compositional_arithmetic_60bdafb3e9": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_60bdafb3e9",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 9.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 9,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ef713fff4066"
+  },
+  "xodexa_reasoning_counterfactual_126552e1a5": {
+    "task_id": "xodexa_reasoning_counterfactual_126552e1a5",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "counterfactual",
@@ -734,10 +341,1451 @@
     "expected_answer": 33,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-85c045c725ef"
+    "canary": "XDX-CANARY-7448e2ad1bd8"
   },
-  "xodexa_reasoning_hidden_rule_induction_07b1cdc19b": {
-    "task_id": "xodexa_reasoning_hidden_rule_induction_07b1cdc19b",
+  "xodexa_reasoning_hidden_rule_induction_24670fee73": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_24670fee73",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 69.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 69,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-68e720ea9673"
+  },
+  "xodexa_reasoning_sequence_extrapolation_de3313b5f5": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_de3313b5f5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 89.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 89,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7675164dd9da"
+  },
+  "xodexa_reasoning_symbolic_strings_a62ff2a2c5": {
+    "task_id": "xodexa_reasoning_symbolic_strings_a62ff2a2c5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "nvtxvm"
+      ]
+    },
+    "expected_answer": "nvtxvm",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-34fad238b468"
+  },
+  "xodexa_reasoning_adversarial_logic_fc032929e4": {
+    "task_id": "xodexa_reasoning_adversarial_logic_fc032929e4",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b85b2c42d7a1"
+  },
+  "xodexa_reasoning_analogy_transfer_fcf8e1de0c": {
+    "task_id": "xodexa_reasoning_analogy_transfer_fcf8e1de0c",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "M"
+      ]
+    },
+    "expected_answer": "M",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec10bec76530"
+  },
+  "xodexa_reasoning_compositional_arithmetic_65e89a1146": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_65e89a1146",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e825f31a2787"
+  },
+  "xodexa_reasoning_counterfactual_e6cd6283dd": {
+    "task_id": "xodexa_reasoning_counterfactual_e6cd6283dd",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 13.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        7
+      ]
+    },
+    "expected_answer": 13,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-46baa9ffcfbb"
+  },
+  "xodexa_reasoning_hidden_rule_induction_baec42be91": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_baec42be91",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 187.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 187,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-12e25373c52e"
+  },
+  "xodexa_reasoning_sequence_extrapolation_9f1b90f391": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_9f1b90f391",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 38.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 38,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1dd93eab08d4"
+  },
+  "xodexa_reasoning_symbolic_strings_f6c2155bc0": {
+    "task_id": "xodexa_reasoning_symbolic_strings_f6c2155bc0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "lsfmmolf"
+      ]
+    },
+    "expected_answer": "lsfmmolf",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4fd69544c3c5"
+  },
+  "xodexa_reasoning_adversarial_logic_1a7d8015b1": {
+    "task_id": "xodexa_reasoning_adversarial_logic_1a7d8015b1",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-342261e2a9d1"
+  },
+  "xodexa_reasoning_analogy_transfer_2192a8693a": {
+    "task_id": "xodexa_reasoning_analogy_transfer_2192a8693a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "O"
+      ]
+    },
+    "expected_answer": "O",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5de97bc7b4cd"
+  },
+  "xodexa_reasoning_compositional_arithmetic_aefbacac3b": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_aefbacac3b",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9a87a2846acb"
+  },
+  "xodexa_reasoning_counterfactual_772ae1c796": {
+    "task_id": "xodexa_reasoning_counterfactual_772ae1c796",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 21.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        9
+      ]
+    },
+    "expected_answer": 21,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ca45a0454b0f"
+  },
+  "xodexa_reasoning_hidden_rule_induction_b0ce703290": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_b0ce703290",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 105.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 105,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d2976fe3f277"
+  },
+  "xodexa_reasoning_sequence_extrapolation_92996972bc": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_92996972bc",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 83.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 83,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-393bef6053bb"
+  },
+  "xodexa_reasoning_symbolic_strings_2909cefc3e": {
+    "task_id": "xodexa_reasoning_symbolic_strings_2909cefc3e",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "xfabxh"
+      ]
+    },
+    "expected_answer": "xfabxh",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-18ab304b1a0a"
+  },
+  "xodexa_reasoning_adversarial_logic_717e96fd39": {
+    "task_id": "xodexa_reasoning_adversarial_logic_717e96fd39",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b799a764c619"
+  },
+  "xodexa_reasoning_analogy_transfer_1c4432eace": {
+    "task_id": "xodexa_reasoning_analogy_transfer_1c4432eace",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "P"
+      ]
+    },
+    "expected_answer": "P",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-18e8ba6adc87"
+  },
+  "xodexa_reasoning_compositional_arithmetic_e0568fa211": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_e0568fa211",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 110.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 110,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5807f1bd5323"
+  },
+  "xodexa_reasoning_counterfactual_f4098c66d7": {
+    "task_id": "xodexa_reasoning_counterfactual_f4098c66d7",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 19.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 19,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-92152e8a1648"
+  },
+  "xodexa_reasoning_hidden_rule_induction_ae4f4bff65": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_ae4f4bff65",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 60.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 60,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-899055acd6c4"
+  },
+  "xodexa_reasoning_sequence_extrapolation_99a79aa2cb": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_99a79aa2cb",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 18,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-12ce07867b25"
+  },
+  "xodexa_reasoning_symbolic_strings_ac845da9d4": {
+    "task_id": "xodexa_reasoning_symbolic_strings_ac845da9d4",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "smncwd"
+      ]
+    },
+    "expected_answer": "smncwd",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-32754f2cc4aa"
+  },
+  "xodexa_reasoning_adversarial_logic_f07fbd72f6": {
+    "task_id": "xodexa_reasoning_adversarial_logic_f07fbd72f6",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-64bc782cfee7"
+  },
+  "xodexa_reasoning_analogy_transfer_5e50c9f070": {
+    "task_id": "xodexa_reasoning_analogy_transfer_5e50c9f070",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "O"
+      ]
+    },
+    "expected_answer": "O",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cb81d9efc817"
+  },
+  "xodexa_reasoning_compositional_arithmetic_e8de7103cd": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_e8de7103cd",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 189.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 189,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-95b9aa44f649"
+  },
+  "xodexa_reasoning_counterfactual_0982eb9192": {
+    "task_id": "xodexa_reasoning_counterfactual_0982eb9192",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 31.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 31,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5e49bc901642"
+  },
+  "xodexa_reasoning_hidden_rule_induction_af52a100a6": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_af52a100a6",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 106.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 106,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ca267866e7f1"
+  },
+  "xodexa_reasoning_sequence_extrapolation_dea2c50939": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_dea2c50939",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 32.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 32,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6879558b59a1"
+  },
+  "xodexa_reasoning_symbolic_strings_5109ca120f": {
+    "task_id": "xodexa_reasoning_symbolic_strings_5109ca120f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "fbswofq"
+      ]
+    },
+    "expected_answer": "fbswofq",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-182952141ccf"
+  },
+  "xodexa_reasoning_adversarial_logic_330fb2f56f": {
+    "task_id": "xodexa_reasoning_adversarial_logic_330fb2f56f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-e6f4f15306ec"
+  },
+  "xodexa_reasoning_analogy_transfer_fe38646824": {
+    "task_id": "xodexa_reasoning_analogy_transfer_fe38646824",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "K"
+      ]
+    },
+    "expected_answer": "K",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f808e8b33ae9"
+  },
+  "xodexa_reasoning_compositional_arithmetic_49971c029d": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_49971c029d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": -22.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": -22,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b5f2e25e1d58"
+  },
+  "xodexa_reasoning_counterfactual_65b2e48721": {
+    "task_id": "xodexa_reasoning_counterfactual_65b2e48721",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 29.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 29,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-86059263feae"
+  },
+  "xodexa_reasoning_hidden_rule_induction_60e8803493": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_60e8803493",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 117.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 117,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d5cefd01ceb9"
+  },
+  "xodexa_reasoning_sequence_extrapolation_0ad4783c22": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_0ad4783c22",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 43.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 43,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-077be45b6ab7"
+  },
+  "xodexa_reasoning_symbolic_strings_285d2e4c0c": {
+    "task_id": "xodexa_reasoning_symbolic_strings_285d2e4c0c",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "xzgqeb"
+      ]
+    },
+    "expected_answer": "xzgqeb",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-52fc05492c82"
+  },
+  "xodexa_reasoning_adversarial_logic_d21788ef63": {
+    "task_id": "xodexa_reasoning_adversarial_logic_d21788ef63",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-609c3bad18aa"
+  },
+  "xodexa_reasoning_analogy_transfer_3cbd9a84a1": {
+    "task_id": "xodexa_reasoning_analogy_transfer_3cbd9a84a1",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "F"
+      ]
+    },
+    "expected_answer": "F",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f74d2ef9f97c"
+  },
+  "xodexa_reasoning_compositional_arithmetic_a774acf423": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_a774acf423",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 95.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 95,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-daa4570428a1"
+  },
+  "xodexa_reasoning_counterfactual_73fed54301": {
+    "task_id": "xodexa_reasoning_counterfactual_73fed54301",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d5743e2fd9c8"
+  },
+  "xodexa_reasoning_hidden_rule_induction_c9175fa67a": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_c9175fa67a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 198.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 198,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4fdb8cd63e82"
+  },
+  "xodexa_reasoning_sequence_extrapolation_e8a4a7020b": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_e8a4a7020b",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 82.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 82,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-38c2e1beca6a"
+  },
+  "xodexa_reasoning_symbolic_strings_5682334282": {
+    "task_id": "xodexa_reasoning_symbolic_strings_5682334282",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "idxehf"
+      ]
+    },
+    "expected_answer": "idxehf",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5072eee0a299"
+  },
+  "xodexa_reasoning_adversarial_logic_78fe3fa584": {
+    "task_id": "xodexa_reasoning_adversarial_logic_78fe3fa584",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a8631a1dc4b7"
+  },
+  "xodexa_reasoning_analogy_transfer_79b41ee4ff": {
+    "task_id": "xodexa_reasoning_analogy_transfer_79b41ee4ff",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "U"
+      ]
+    },
+    "expected_answer": "U",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cd822128b871"
+  },
+  "xodexa_reasoning_compositional_arithmetic_b3980d52e1": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_b3980d52e1",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d3526f573cea"
+  },
+  "xodexa_reasoning_counterfactual_2334f1dcb3": {
+    "task_id": "xodexa_reasoning_counterfactual_2334f1dcb3",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 31.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 31,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-45e764ae1505"
+  },
+  "xodexa_reasoning_hidden_rule_induction_3b11c539b2": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_3b11c539b2",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6b465c3858a5"
+  },
+  "xodexa_reasoning_sequence_extrapolation_7d5e74e479": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_7d5e74e479",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 103.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 103,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0ab05cc1f49f"
+  },
+  "xodexa_reasoning_symbolic_strings_bf99b02a8f": {
+    "task_id": "xodexa_reasoning_symbolic_strings_bf99b02a8f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "nmgiq"
+      ]
+    },
+    "expected_answer": "nmgiq",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c6373df9b945"
+  },
+  "xodexa_reasoning_adversarial_logic_063bec7ce9": {
+    "task_id": "xodexa_reasoning_adversarial_logic_063bec7ce9",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-2b7cd7e17e66"
+  },
+  "xodexa_reasoning_analogy_transfer_f1dae65df0": {
+    "task_id": "xodexa_reasoning_analogy_transfer_f1dae65df0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "C"
+      ]
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f9e0a597c120"
+  },
+  "xodexa_reasoning_compositional_arithmetic_c394841ac7": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_c394841ac7",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a10d38aa1e10"
+  },
+  "xodexa_reasoning_counterfactual_2734910e86": {
+    "task_id": "xodexa_reasoning_counterfactual_2734910e86",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 41.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        13
+      ]
+    },
+    "expected_answer": 41,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dcfbec5d0608"
+  },
+  "xodexa_reasoning_hidden_rule_induction_64345b9f89": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_64345b9f89",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 207.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 207,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0f762fa20494"
+  },
+  "xodexa_reasoning_sequence_extrapolation_8425c1c53c": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_8425c1c53c",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 131.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 131,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-57b502356a33"
+  },
+  "xodexa_reasoning_symbolic_strings_2183c17426": {
+    "task_id": "xodexa_reasoning_symbolic_strings_2183c17426",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "xsbbxhof"
+      ]
+    },
+    "expected_answer": "xsbbxhof",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-217b8f8c263a"
+  },
+  "xodexa_reasoning_adversarial_logic_834ff06248": {
+    "task_id": "xodexa_reasoning_adversarial_logic_834ff06248",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-922f6e86c8d0"
+  },
+  "xodexa_reasoning_analogy_transfer_5bd001098f": {
+    "task_id": "xodexa_reasoning_analogy_transfer_5bd001098f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "X"
+      ]
+    },
+    "expected_answer": "X",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7b2cb9a7af34"
+  },
+  "xodexa_reasoning_compositional_arithmetic_46e17b70c0": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_46e17b70c0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 167.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 167,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a7985ab91a9c"
+  },
+  "xodexa_reasoning_counterfactual_26139d6b11": {
+    "task_id": "xodexa_reasoning_counterfactual_26139d6b11",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 9.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        6
+      ]
+    },
+    "expected_answer": 9,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1a6e81e73e09"
+  },
+  "xodexa_reasoning_hidden_rule_induction_bde32fc009": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_bde32fc009",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3a5571fed197"
+  },
+  "xodexa_reasoning_sequence_extrapolation_9fcefab245": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_9fcefab245",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 65.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 65,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b35b25a70274"
+  },
+  "xodexa_reasoning_symbolic_strings_b4198e88ac": {
+    "task_id": "xodexa_reasoning_symbolic_strings_b4198e88ac",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "dmchmy"
+      ]
+    },
+    "expected_answer": "dmchmy",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-402cfefb7bb9"
+  },
+  "xodexa_reasoning_adversarial_logic_d62bf39f81": {
+    "task_id": "xodexa_reasoning_adversarial_logic_d62bf39f81",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a19dcef97aa5"
+  },
+  "xodexa_reasoning_analogy_transfer_16f2cd998a": {
+    "task_id": "xodexa_reasoning_analogy_transfer_16f2cd998a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "U"
+      ]
+    },
+    "expected_answer": "U",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3e09f98f3912"
+  },
+  "xodexa_reasoning_compositional_arithmetic_cb966b3b4d": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_cb966b3b4d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 15.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 15,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7eea8ae90ebe"
+  },
+  "xodexa_reasoning_counterfactual_c18753a22f": {
+    "task_id": "xodexa_reasoning_counterfactual_c18753a22f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 17.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 17,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8bcbcad933ea"
+  },
+  "xodexa_reasoning_hidden_rule_induction_c920e3b1ae": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_c920e3b1ae",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 153.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 153,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-079c64b324e0"
+  },
+  "xodexa_reasoning_sequence_extrapolation_61a65027ba": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_61a65027ba",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 44.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 44,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-46382fa91906"
+  },
+  "xodexa_reasoning_symbolic_strings_3387c48b36": {
+    "task_id": "xodexa_reasoning_symbolic_strings_3387c48b36",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ssxlzqbo"
+      ]
+    },
+    "expected_answer": "ssxlzqbo",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1cdf4b228478"
+  },
+  "xodexa_reasoning_adversarial_logic_dd35bb2f55": {
+    "task_id": "xodexa_reasoning_adversarial_logic_dd35bb2f55",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-886ba70fc711"
+  },
+  "xodexa_reasoning_analogy_transfer_3ec5681027": {
+    "task_id": "xodexa_reasoning_analogy_transfer_3ec5681027",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "X"
+      ]
+    },
+    "expected_answer": "X",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-168489b08e72"
+  },
+  "xodexa_reasoning_compositional_arithmetic_df1ac757d0": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_df1ac757d0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 16.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 16,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f9fe36deb43c"
+  },
+  "xodexa_reasoning_counterfactual_a36ad272b7": {
+    "task_id": "xodexa_reasoning_counterfactual_a36ad272b7",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 26.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 26,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-874bf3b46b7d"
+  },
+  "xodexa_reasoning_hidden_rule_induction_80722276c3": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_80722276c3",
     "category": "reasoning",
     "family": "reasoning",
     "subdomain": "hidden_rule_induction",
@@ -750,6 +1798,1955 @@
     "expected_answer": 45,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-d4353dbc1e57"
+    "canary": "XDX-CANARY-9d7e0168308b"
+  },
+  "xodexa_reasoning_sequence_extrapolation_d04d2b9f5f": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_d04d2b9f5f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 28.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 28,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0160c2e7423e"
+  },
+  "xodexa_reasoning_symbolic_strings_eb11fdd892": {
+    "task_id": "xodexa_reasoning_symbolic_strings_eb11fdd892",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "srbcmnk"
+      ]
+    },
+    "expected_answer": "srbcmnk",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1ff1feb262f1"
+  },
+  "xodexa_reasoning_adversarial_logic_a4e4f6ca1d": {
+    "task_id": "xodexa_reasoning_adversarial_logic_a4e4f6ca1d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-5047861fba40"
+  },
+  "xodexa_reasoning_analogy_transfer_f386992668": {
+    "task_id": "xodexa_reasoning_analogy_transfer_f386992668",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "K"
+      ]
+    },
+    "expected_answer": "K",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4232627e6428"
+  },
+  "xodexa_reasoning_compositional_arithmetic_23e8f5b173": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_23e8f5b173",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0ac3c46ad6a1"
+  },
+  "xodexa_reasoning_counterfactual_85147ef143": {
+    "task_id": "xodexa_reasoning_counterfactual_85147ef143",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 31.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 31,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1621a699224d"
+  },
+  "xodexa_reasoning_hidden_rule_induction_65e5cf6926": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_65e5cf6926",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 82.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 82,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4741ffb03ab5"
+  },
+  "xodexa_reasoning_sequence_extrapolation_24e3765f10": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_24e3765f10",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 103.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 103,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6e83448c5576"
+  },
+  "xodexa_reasoning_symbolic_strings_658fe3ebd9": {
+    "task_id": "xodexa_reasoning_symbolic_strings_658fe3ebd9",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "frtpbmep"
+      ]
+    },
+    "expected_answer": "frtpbmep",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a868449a03cc"
+  },
+  "xodexa_reasoning_adversarial_logic_c6bbd11a67": {
+    "task_id": "xodexa_reasoning_adversarial_logic_c6bbd11a67",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-ba21c797f6b2"
+  },
+  "xodexa_reasoning_analogy_transfer_b50dfc3465": {
+    "task_id": "xodexa_reasoning_analogy_transfer_b50dfc3465",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "B"
+      ]
+    },
+    "expected_answer": "B",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-84402a260427"
+  },
+  "xodexa_reasoning_compositional_arithmetic_1b96317b27": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_1b96317b27",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-84b55982aee0"
+  },
+  "xodexa_reasoning_counterfactual_9554f651bf": {
+    "task_id": "xodexa_reasoning_counterfactual_9554f651bf",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 17.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 17,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8db6a7cf1dd1"
+  },
+  "xodexa_reasoning_hidden_rule_induction_cfee89c2fb": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_cfee89c2fb",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 128.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 128,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a15b95b8d5f4"
+  },
+  "xodexa_reasoning_sequence_extrapolation_606b8a8193": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_606b8a8193",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 109.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 109,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f5fc50e563e2"
+  },
+  "xodexa_reasoning_symbolic_strings_0145218a9a": {
+    "task_id": "xodexa_reasoning_symbolic_strings_0145218a9a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "qiest"
+      ]
+    },
+    "expected_answer": "qiest",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0bc944f41a2e"
+  },
+  "xodexa_reasoning_adversarial_logic_faf29a3981": {
+    "task_id": "xodexa_reasoning_adversarial_logic_faf29a3981",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-4194ec1aa997"
+  },
+  "xodexa_reasoning_analogy_transfer_4e5f36df4e": {
+    "task_id": "xodexa_reasoning_analogy_transfer_4e5f36df4e",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "O"
+      ]
+    },
+    "expected_answer": "O",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b84c8d5ee9ab"
+  },
+  "xodexa_reasoning_compositional_arithmetic_9c9dbf52e2": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_9c9dbf52e2",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 24.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 24,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8379832d2418"
+  },
+  "xodexa_reasoning_counterfactual_222c689100": {
+    "task_id": "xodexa_reasoning_counterfactual_222c689100",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        15
+      ]
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f7b156380e5d"
+  },
+  "xodexa_reasoning_hidden_rule_induction_8ee02e7350": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_8ee02e7350",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 154.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 154,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bc970d00c1cd"
+  },
+  "xodexa_reasoning_sequence_extrapolation_dd3a7cf345": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_dd3a7cf345",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 70.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 70,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-70d57efed56e"
+  },
+  "xodexa_reasoning_symbolic_strings_c1c293d4b7": {
+    "task_id": "xodexa_reasoning_symbolic_strings_c1c293d4b7",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "jtmid"
+      ]
+    },
+    "expected_answer": "jtmid",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-20a087d3d38f"
+  },
+  "xodexa_reasoning_adversarial_logic_b4e4ab4af2": {
+    "task_id": "xodexa_reasoning_adversarial_logic_b4e4ab4af2",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-533413e1c7d7"
+  },
+  "xodexa_reasoning_analogy_transfer_c3bf27a2d7": {
+    "task_id": "xodexa_reasoning_analogy_transfer_c3bf27a2d7",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "B"
+      ]
+    },
+    "expected_answer": "B",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-331ff81d9693"
+  },
+  "xodexa_reasoning_compositional_arithmetic_1e5738b0d5": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_1e5738b0d5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 87.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 87,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-65e7efd6748a"
+  },
+  "xodexa_reasoning_counterfactual_e9f0f96b88": {
+    "task_id": "xodexa_reasoning_counterfactual_e9f0f96b88",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        6
+      ]
+    },
+    "expected_answer": 10,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1be3706e536c"
+  },
+  "xodexa_reasoning_hidden_rule_induction_80151c88ab": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_80151c88ab",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 151.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 151,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5aac645457be"
+  },
+  "xodexa_reasoning_sequence_extrapolation_42d5ebe8aa": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_42d5ebe8aa",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 131.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 131,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-952890de061c"
+  },
+  "xodexa_reasoning_symbolic_strings_f770e076ad": {
+    "task_id": "xodexa_reasoning_symbolic_strings_f770e076ad",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "brlry"
+      ]
+    },
+    "expected_answer": "brlry",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-67969472a973"
+  },
+  "xodexa_reasoning_adversarial_logic_45946ee466": {
+    "task_id": "xodexa_reasoning_adversarial_logic_45946ee466",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-17e01a3b867f"
+  },
+  "xodexa_reasoning_analogy_transfer_ff970b9921": {
+    "task_id": "xodexa_reasoning_analogy_transfer_ff970b9921",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "T"
+      ]
+    },
+    "expected_answer": "T",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-09f3d5e07609"
+  },
+  "xodexa_reasoning_compositional_arithmetic_2b4e7b9233": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_2b4e7b9233",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0da4f9e0ffa5"
+  },
+  "xodexa_reasoning_counterfactual_caf656cb4a": {
+    "task_id": "xodexa_reasoning_counterfactual_caf656cb4a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 33.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        12
+      ]
+    },
+    "expected_answer": 33,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4fe07dd82cc3"
+  },
+  "xodexa_reasoning_hidden_rule_induction_345a686476": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_345a686476",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4954e0e5a907"
+  },
+  "xodexa_reasoning_sequence_extrapolation_80091d72f0": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_80091d72f0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3d396e744bb9"
+  },
+  "xodexa_reasoning_symbolic_strings_5366515c1c": {
+    "task_id": "xodexa_reasoning_symbolic_strings_5366515c1c",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "fgonolsl"
+      ]
+    },
+    "expected_answer": "fgonolsl",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8e7ccdabee88"
+  },
+  "xodexa_reasoning_adversarial_logic_82d6c6a538": {
+    "task_id": "xodexa_reasoning_adversarial_logic_82d6c6a538",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-f4bab300c830"
+  },
+  "xodexa_reasoning_analogy_transfer_80fcda42cc": {
+    "task_id": "xodexa_reasoning_analogy_transfer_80fcda42cc",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "L"
+      ]
+    },
+    "expected_answer": "L",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a01f4a63db90"
+  },
+  "xodexa_reasoning_compositional_arithmetic_50f7370037": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_50f7370037",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-724476755823"
+  },
+  "xodexa_reasoning_counterfactual_148120f64d": {
+    "task_id": "xodexa_reasoning_counterfactual_148120f64d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 29.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        11
+      ]
+    },
+    "expected_answer": 29,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e492ea831a52"
+  },
+  "xodexa_reasoning_hidden_rule_induction_2faedf6d9b": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_2faedf6d9b",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c5f385429e69"
+  },
+  "xodexa_reasoning_sequence_extrapolation_ea29068570": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_ea29068570",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 80.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 80,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc7bf97657df"
+  },
+  "xodexa_reasoning_symbolic_strings_bd52426c8d": {
+    "task_id": "xodexa_reasoning_symbolic_strings_bd52426c8d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ujehjy"
+      ]
+    },
+    "expected_answer": "ujehjy",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0cdb65b5c193"
+  },
+  "xodexa_reasoning_adversarial_logic_4d301ffe18": {
+    "task_id": "xodexa_reasoning_adversarial_logic_4d301ffe18",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-e3c4a048b55c"
+  },
+  "xodexa_reasoning_analogy_transfer_cf22380ac2": {
+    "task_id": "xodexa_reasoning_analogy_transfer_cf22380ac2",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Q"
+      ]
+    },
+    "expected_answer": "Q",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4cfb6162863a"
+  },
+  "xodexa_reasoning_compositional_arithmetic_9d6560f13e": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_9d6560f13e",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 116.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 116,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-29d0093b9a23"
+  },
+  "xodexa_reasoning_counterfactual_d7e4d809a0": {
+    "task_id": "xodexa_reasoning_counterfactual_d7e4d809a0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 43.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        13
+      ]
+    },
+    "expected_answer": 43,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1f0f079f313a"
+  },
+  "xodexa_reasoning_hidden_rule_induction_60ed803d5f": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_60ed803d5f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 56.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 56,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7c5b4b20aa44"
+  },
+  "xodexa_reasoning_sequence_extrapolation_8b743026d8": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_8b743026d8",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 129.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 129,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cfc42157158d"
+  },
+  "xodexa_reasoning_symbolic_strings_e22ec928b4": {
+    "task_id": "xodexa_reasoning_symbolic_strings_e22ec928b4",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "dngwno"
+      ]
+    },
+    "expected_answer": "dngwno",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cc18326d1cf8"
+  },
+  "xodexa_reasoning_adversarial_logic_a74eefdc1f": {
+    "task_id": "xodexa_reasoning_adversarial_logic_a74eefdc1f",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-8564ceef3f8a"
+  },
+  "xodexa_reasoning_analogy_transfer_ef66eeff89": {
+    "task_id": "xodexa_reasoning_analogy_transfer_ef66eeff89",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "T"
+      ]
+    },
+    "expected_answer": "T",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9ae10cc7637d"
+  },
+  "xodexa_reasoning_compositional_arithmetic_173a7a0e5a": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_173a7a0e5a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 277.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 277,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-278fb0fd0373"
+  },
+  "xodexa_reasoning_counterfactual_c645424085": {
+    "task_id": "xodexa_reasoning_counterfactual_c645424085",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 49.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        14
+      ]
+    },
+    "expected_answer": 49,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e0dadadc5a59"
+  },
+  "xodexa_reasoning_hidden_rule_induction_05beb41bd5": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_05beb41bd5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 144.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 144,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-39cbd0bb34dd"
+  },
+  "xodexa_reasoning_sequence_extrapolation_8228bc8ccf": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_8228bc8ccf",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 74.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 74,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2eed4a35af4e"
+  },
+  "xodexa_reasoning_symbolic_strings_9b04cac150": {
+    "task_id": "xodexa_reasoning_symbolic_strings_9b04cac150",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "iogghb"
+      ]
+    },
+    "expected_answer": "iogghb",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5443f478a6e8"
+  },
+  "xodexa_reasoning_adversarial_logic_e070fe6541": {
+    "task_id": "xodexa_reasoning_adversarial_logic_e070fe6541",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-5f04dd3d474b"
+  },
+  "xodexa_reasoning_analogy_transfer_507193ec69": {
+    "task_id": "xodexa_reasoning_analogy_transfer_507193ec69",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "U"
+      ]
+    },
+    "expected_answer": "U",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d83ce8bc2c1a"
+  },
+  "xodexa_reasoning_compositional_arithmetic_0772b05f3e": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_0772b05f3e",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 58.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 58,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-17d88dede276"
+  },
+  "xodexa_reasoning_counterfactual_5171d8fb61": {
+    "task_id": "xodexa_reasoning_counterfactual_5171d8fb61",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 17.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 17,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4c4146f50a9d"
+  },
+  "xodexa_reasoning_hidden_rule_induction_4ba83d93ea": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_4ba83d93ea",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 184.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 184,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-73a6f65e345b"
+  },
+  "xodexa_reasoning_sequence_extrapolation_7206623501": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_7206623501",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 74.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 74,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-15ce0d3d9c58"
+  },
+  "xodexa_reasoning_symbolic_strings_fe0c8a9cf9": {
+    "task_id": "xodexa_reasoning_symbolic_strings_fe0c8a9cf9",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "oxfkkovy"
+      ]
+    },
+    "expected_answer": "oxfkkovy",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-41c404389bf1"
+  },
+  "xodexa_reasoning_adversarial_logic_835acaf507": {
+    "task_id": "xodexa_reasoning_adversarial_logic_835acaf507",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-1ccd8589a962"
+  },
+  "xodexa_reasoning_analogy_transfer_451fac84b0": {
+    "task_id": "xodexa_reasoning_analogy_transfer_451fac84b0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "E"
+      ]
+    },
+    "expected_answer": "E",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3c68f86f2103"
+  },
+  "xodexa_reasoning_compositional_arithmetic_9baf04a884": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_9baf04a884",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0e2a7f63dbff"
+  },
+  "xodexa_reasoning_counterfactual_622a8d5bfa": {
+    "task_id": "xodexa_reasoning_counterfactual_622a8d5bfa",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        15
+      ]
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-851960b21ae7"
+  },
+  "xodexa_reasoning_hidden_rule_induction_eecb019591": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_eecb019591",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 142.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 142,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6cad3938c8f5"
+  },
+  "xodexa_reasoning_sequence_extrapolation_29573797c1": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_29573797c1",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 43.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 43,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-abd2d87a40db"
+  },
+  "xodexa_reasoning_symbolic_strings_58fb63af48": {
+    "task_id": "xodexa_reasoning_symbolic_strings_58fb63af48",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "sivvusl"
+      ]
+    },
+    "expected_answer": "sivvusl",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8f02f230ab0e"
+  },
+  "xodexa_reasoning_adversarial_logic_4e6062fe2e": {
+    "task_id": "xodexa_reasoning_adversarial_logic_4e6062fe2e",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-71b2e92dd364"
+  },
+  "xodexa_reasoning_analogy_transfer_747d7922a6": {
+    "task_id": "xodexa_reasoning_analogy_transfer_747d7922a6",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "W"
+      ]
+    },
+    "expected_answer": "W",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4c552671f588"
+  },
+  "xodexa_reasoning_compositional_arithmetic_6deda7b159": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_6deda7b159",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 57.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 57,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-489326edbe78"
+  },
+  "xodexa_reasoning_counterfactual_bd955233d0": {
+    "task_id": "xodexa_reasoning_counterfactual_bd955233d0",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 16.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        8
+      ]
+    },
+    "expected_answer": 16,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-15f3362d14b4"
+  },
+  "xodexa_reasoning_hidden_rule_induction_a941cfaa1d": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_a941cfaa1d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 67.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 67,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ccb52ad7f8a2"
+  },
+  "xodexa_reasoning_sequence_extrapolation_48cae0cb18": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_48cae0cb18",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 56.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 56,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ea9b46c9c945"
+  },
+  "xodexa_reasoning_symbolic_strings_36b76d8b1d": {
+    "task_id": "xodexa_reasoning_symbolic_strings_36b76d8b1d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "xsccwrd"
+      ]
+    },
+    "expected_answer": "xsccwrd",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5467bc422f74"
+  },
+  "xodexa_reasoning_adversarial_logic_2298153953": {
+    "task_id": "xodexa_reasoning_adversarial_logic_2298153953",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-1e98e5424612"
+  },
+  "xodexa_reasoning_analogy_transfer_cf889e49df": {
+    "task_id": "xodexa_reasoning_analogy_transfer_cf889e49df",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "W"
+      ]
+    },
+    "expected_answer": "W",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-791b3e88dbd7"
+  },
+  "xodexa_reasoning_compositional_arithmetic_b30548df3d": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_b30548df3d",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bcd798c1772d"
+  },
+  "xodexa_reasoning_counterfactual_730f738c75": {
+    "task_id": "xodexa_reasoning_counterfactual_730f738c75",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 21.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        9
+      ]
+    },
+    "expected_answer": 21,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dfa787e5ba88"
+  },
+  "xodexa_reasoning_hidden_rule_induction_5b0ebff616": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_5b0ebff616",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 180.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 180,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6574ad6b71a4"
+  },
+  "xodexa_reasoning_sequence_extrapolation_9d977d79c4": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_9d977d79c4",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 118.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 118,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-acdb94196dd8"
+  },
+  "xodexa_reasoning_symbolic_strings_4212a2f40b": {
+    "task_id": "xodexa_reasoning_symbolic_strings_4212a2f40b",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "pjamhs"
+      ]
+    },
+    "expected_answer": "pjamhs",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a1f517c7343e"
+  },
+  "xodexa_reasoning_adversarial_logic_3ffcc3fb30": {
+    "task_id": "xodexa_reasoning_adversarial_logic_3ffcc3fb30",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a84fe46b865c"
+  },
+  "xodexa_reasoning_analogy_transfer_95ff13bdd2": {
+    "task_id": "xodexa_reasoning_analogy_transfer_95ff13bdd2",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "N"
+      ]
+    },
+    "expected_answer": "N",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6d603a96f36b"
+  },
+  "xodexa_reasoning_compositional_arithmetic_ee675a08dd": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_ee675a08dd",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 162.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 162,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4845e67ae850"
+  },
+  "xodexa_reasoning_counterfactual_8b6a243cac": {
+    "task_id": "xodexa_reasoning_counterfactual_8b6a243cac",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 22.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        10
+      ]
+    },
+    "expected_answer": 22,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d891596688db"
+  },
+  "xodexa_reasoning_hidden_rule_induction_3b37ab2167": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_3b37ab2167",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 122.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 122,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-15267da274de"
+  },
+  "xodexa_reasoning_sequence_extrapolation_5f173a1b66": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_5f173a1b66",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d7069646b37c"
+  },
+  "xodexa_reasoning_symbolic_strings_fd0a30d839": {
+    "task_id": "xodexa_reasoning_symbolic_strings_fd0a30d839",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ipkkka"
+      ]
+    },
+    "expected_answer": "ipkkka",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-49e7efe1ae9e"
+  },
+  "xodexa_reasoning_adversarial_logic_71fb22716b": {
+    "task_id": "xodexa_reasoning_adversarial_logic_71fb22716b",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-504414ae999e"
+  },
+  "xodexa_reasoning_analogy_transfer_3a698f1663": {
+    "task_id": "xodexa_reasoning_analogy_transfer_3a698f1663",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "F"
+      ]
+    },
+    "expected_answer": "F",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-306b5addb17b"
+  },
+  "xodexa_reasoning_compositional_arithmetic_a09fbe5364": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_a09fbe5364",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 127.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 127,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1e803c8474e5"
+  },
+  "xodexa_reasoning_counterfactual_bb731f52a6": {
+    "task_id": "xodexa_reasoning_counterfactual_bb731f52a6",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 17.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        8
+      ]
+    },
+    "expected_answer": 17,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f2a697dd3c45"
+  },
+  "xodexa_reasoning_hidden_rule_induction_11d576d922": {
+    "task_id": "xodexa_reasoning_hidden_rule_induction_11d576d922",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "hidden_rule_induction",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 75.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c3775af904be"
+  },
+  "xodexa_reasoning_sequence_extrapolation_21ce997fdd": {
+    "task_id": "xodexa_reasoning_sequence_extrapolation_21ce997fdd",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "sequence_extrapolation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 121.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 121,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8be47ee5b7e2"
+  },
+  "xodexa_reasoning_symbolic_strings_1d7df95d16": {
+    "task_id": "xodexa_reasoning_symbolic_strings_1d7df95d16",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "symbolic_strings",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "jjbar"
+      ]
+    },
+    "expected_answer": "jjbar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5e55a3d3797d"
+  },
+  "xodexa_reasoning_adversarial_logic_ff5679d958": {
+    "task_id": "xodexa_reasoning_adversarial_logic_ff5679d958",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "adversarial_logic",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "premise is false",
+        "false premise",
+        "not every multiple",
+        "12 is not",
+        "4 is a multiple of 4",
+        "premise is wrong",
+        "incorrect premise",
+        "counterexample"
+      ],
+      "penalty_if_contains_any": [
+        "therefore 12 is a multiple of 8",
+        "qed",
+        "thus proven",
+        "hence 12 is a multiple of 8"
+      ]
+    },
+    "expected_answer": "Reject the premise: 12 = 4×3 is a multiple of 4 but not of 8.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-864dc8f72128"
+  },
+  "xodexa_reasoning_analogy_transfer_e3dcca75c5": {
+    "task_id": "xodexa_reasoning_analogy_transfer_e3dcca75c5",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "analogy_transfer",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "M"
+      ]
+    },
+    "expected_answer": "M",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6fcac880225a"
+  },
+  "xodexa_reasoning_compositional_arithmetic_582e9a8d4a": {
+    "task_id": "xodexa_reasoning_compositional_arithmetic_582e9a8d4a",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "compositional",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-da43412fda0a"
+  },
+  "xodexa_reasoning_counterfactual_5adedff744": {
+    "task_id": "xodexa_reasoning_counterfactual_5adedff744",
+    "category": "reasoning",
+    "family": "reasoning",
+    "subdomain": "counterfactual",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 15.0,
+      "tolerance": 0.001,
+      "penalty_if_numeric_near": [
+        9
+      ]
+    },
+    "expected_answer": 15,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d759385c0198"
   }
 }

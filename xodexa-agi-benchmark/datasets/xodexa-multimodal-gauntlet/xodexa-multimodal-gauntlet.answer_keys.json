@@ -1,310 +1,22 @@
 {
-  "xodexa_multimodal_chart_read_max_8ebbfe2b8a": {
-    "task_id": "xodexa_multimodal_chart_read_max_8ebbfe2b8a",
+  "xodexa_multimodal_chart_read_max_2680afa210": {
+    "task_id": "xodexa_multimodal_chart_read_max_2680afa210",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "chart_qa",
     "difficulty": 3.0,
     "grader": {
       "type": "numeric",
-      "target": 89.0,
+      "target": 80.0,
       "tolerance": 0.001
     },
-    "expected_answer": 89,
+    "expected_answer": 80,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-d4bded6c01d0"
+    "canary": "XDX-CANARY-f9b56ea99d86"
   },
-  "xodexa_multimodal_diagram_count_e9ce72b23b": {
-    "task_id": "xodexa_multimodal_diagram_count_e9ce72b23b",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "diagram",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 7.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 7,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-d2593cc10b94"
-  },
-  "xodexa_multimodal_table_extract_c6aa66c141": {
-    "task_id": "xodexa_multimodal_table_extract_c6aa66c141",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "table_extract",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "structured_json",
-      "expect": {
-        "key": "row3",
-        "value": 343
-      }
-    },
-    "expected_answer": {
-      "key": "row3",
-      "value": 343
-    },
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-972720d0c8e9"
-  },
-  "xodexa_multimodal_visual_contradiction_3efb74540d": {
-    "task_id": "xodexa_multimodal_visual_contradiction_3efb74540d",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "visual_contradiction",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "399",
-        "432"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 399 vs 432.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-d982aeb0d842"
-  },
-  "xodexa_multimodal_chart_read_max_fac85d2c70": {
-    "task_id": "xodexa_multimodal_chart_read_max_fac85d2c70",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "chart_qa",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "numeric",
-      "target": 73.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 73,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-41edb28402f7"
-  },
-  "xodexa_multimodal_diagram_count_ddb5df0a41": {
-    "task_id": "xodexa_multimodal_diagram_count_ddb5df0a41",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "diagram",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 7.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 7,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-ad7d23cf4efa"
-  },
-  "xodexa_multimodal_table_extract_fc9b5482cc": {
-    "task_id": "xodexa_multimodal_table_extract_fc9b5482cc",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "table_extract",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "structured_json",
-      "expect": {
-        "key": "row3",
-        "value": 420
-      }
-    },
-    "expected_answer": {
-      "key": "row3",
-      "value": 420
-    },
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-ac813563a76e"
-  },
-  "xodexa_multimodal_visual_contradiction_3f298fb204": {
-    "task_id": "xodexa_multimodal_visual_contradiction_3f298fb204",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "visual_contradiction",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "123",
-        "186"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 123 vs 186.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-91b845bf65b6"
-  },
-  "xodexa_multimodal_chart_read_max_d5cc1755f0": {
-    "task_id": "xodexa_multimodal_chart_read_max_d5cc1755f0",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "chart_qa",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "numeric",
-      "target": 65.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 65,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-93dfbc40298f"
-  },
-  "xodexa_multimodal_diagram_count_577d3d9676": {
-    "task_id": "xodexa_multimodal_diagram_count_577d3d9676",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "diagram",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 3.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 3,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-7167935cf550"
-  },
-  "xodexa_multimodal_table_extract_fec3127e6b": {
-    "task_id": "xodexa_multimodal_table_extract_fec3127e6b",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "table_extract",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "structured_json",
-      "expect": {
-        "key": "row2",
-        "value": 200
-      }
-    },
-    "expected_answer": {
-      "key": "row2",
-      "value": 200
-    },
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-d36a45d169d6"
-  },
-  "xodexa_multimodal_visual_contradiction_9873500b5b": {
-    "task_id": "xodexa_multimodal_visual_contradiction_9873500b5b",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "visual_contradiction",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "384",
-        "442"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 384 vs 442.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-8cb00ba96731"
-  },
-  "xodexa_multimodal_chart_read_max_8f16dd3f42": {
-    "task_id": "xodexa_multimodal_chart_read_max_8f16dd3f42",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "chart_qa",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "numeric",
-      "target": 45.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 45,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-bff74f990ead"
-  },
-  "xodexa_multimodal_diagram_count_7c839f1435": {
-    "task_id": "xodexa_multimodal_diagram_count_7c839f1435",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "diagram",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 8.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 8,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-fb32c818e23b"
-  },
-  "xodexa_multimodal_table_extract_bc623d4f32": {
-    "task_id": "xodexa_multimodal_table_extract_bc623d4f32",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "table_extract",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "structured_json",
-      "expect": {
-        "key": "row4",
-        "value": 255
-      }
-    },
-    "expected_answer": {
-      "key": "row4",
-      "value": 255
-    },
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-1d2ab9a34acd"
-  },
-  "xodexa_multimodal_visual_contradiction_194bbe0ef5": {
-    "task_id": "xodexa_multimodal_visual_contradiction_194bbe0ef5",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "visual_contradiction",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "288",
-        "361"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 288 vs 361.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-dfe4fae7e484"
-  },
-  "xodexa_multimodal_chart_read_max_c897d47de5": {
-    "task_id": "xodexa_multimodal_chart_read_max_c897d47de5",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "chart_qa",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "numeric",
-      "target": 41.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 41,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-6f76c3f1aa45"
-  },
-  "xodexa_multimodal_diagram_count_9099feeefa": {
-    "task_id": "xodexa_multimodal_diagram_count_9099feeefa",
+  "xodexa_multimodal_diagram_count_f99c4e3c4a": {
+    "task_id": "xodexa_multimodal_diagram_count_f99c4e3c4a",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "diagram",
@@ -317,10 +29,10 @@
     "expected_answer": 5,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-199d72c410e1"
+    "canary": "XDX-CANARY-85530cdca0b1"
   },
-  "xodexa_multimodal_table_extract_8bfdc5be16": {
-    "task_id": "xodexa_multimodal_table_extract_8bfdc5be16",
+  "xodexa_multimodal_table_extract_918d9adfab": {
+    "task_id": "xodexa_multimodal_table_extract_918d9adfab",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "table_extract",
@@ -328,20 +40,20 @@
     "grader": {
       "type": "structured_json",
       "expect": {
-        "key": "row1",
-        "value": 218
+        "key": "row2",
+        "value": 127
       }
     },
     "expected_answer": {
-      "key": "row1",
-      "value": 218
+      "key": "row2",
+      "value": 127
     },
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-bb522b587e85"
+    "canary": "XDX-CANARY-5dc99d107832"
   },
-  "xodexa_multimodal_visual_contradiction_b57eebe950": {
-    "task_id": "xodexa_multimodal_visual_contradiction_b57eebe950",
+  "xodexa_multimodal_visual_contradiction_45eae1a329": {
+    "task_id": "xodexa_multimodal_visual_contradiction_45eae1a329",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "visual_contradiction",
@@ -349,18 +61,234 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "212",
-        "288"
+        "238",
+        "277"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 212 vs 288.",
+    "expected_answer": "Contradiction: 238 vs 277.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-0b2a5bf8ed72"
+    "canary": "XDX-CANARY-b084c9e1963f"
   },
-  "xodexa_multimodal_chart_read_max_cdac0fccf6": {
-    "task_id": "xodexa_multimodal_chart_read_max_cdac0fccf6",
+  "xodexa_multimodal_chart_read_max_a224c150b2": {
+    "task_id": "xodexa_multimodal_chart_read_max_a224c150b2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 87.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 87,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fa41b49da5cb"
+  },
+  "xodexa_multimodal_diagram_count_0079e8c3a4": {
+    "task_id": "xodexa_multimodal_diagram_count_0079e8c3a4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b8c28cfd3680"
+  },
+  "xodexa_multimodal_table_extract_152edc69b4": {
+    "task_id": "xodexa_multimodal_table_extract_152edc69b4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 472
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 472
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7b75f072d344"
+  },
+  "xodexa_multimodal_visual_contradiction_8edf446237": {
+    "task_id": "xodexa_multimodal_visual_contradiction_8edf446237",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "105",
+        "188"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 105 vs 188.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3c29d66d8f17"
+  },
+  "xodexa_multimodal_chart_read_max_936801c7c0": {
+    "task_id": "xodexa_multimodal_chart_read_max_936801c7c0",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 89.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 89,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7f66ed5905e6"
+  },
+  "xodexa_multimodal_diagram_count_9596acc843": {
+    "task_id": "xodexa_multimodal_diagram_count_9596acc843",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c6d320a2a630"
+  },
+  "xodexa_multimodal_table_extract_cecdb1ef66": {
+    "task_id": "xodexa_multimodal_table_extract_cecdb1ef66",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 806
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 806
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0e3a2a4a626e"
+  },
+  "xodexa_multimodal_visual_contradiction_bb0e861281": {
+    "task_id": "xodexa_multimodal_visual_contradiction_bb0e861281",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "348",
+        "411"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 348 vs 411.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-faebe3058788"
+  },
+  "xodexa_multimodal_chart_read_max_77afc325d4": {
+    "task_id": "xodexa_multimodal_chart_read_max_77afc325d4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 88.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 88,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8e4fb6b7e978"
+  },
+  "xodexa_multimodal_diagram_count_2b79bb3d06": {
+    "task_id": "xodexa_multimodal_diagram_count_2b79bb3d06",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d5d77e57f83c"
+  },
+  "xodexa_multimodal_table_extract_a178239706": {
+    "task_id": "xodexa_multimodal_table_extract_a178239706",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 335
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 335
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-28f875f1c130"
+  },
+  "xodexa_multimodal_visual_contradiction_020c4f6641": {
+    "task_id": "xodexa_multimodal_visual_contradiction_020c4f6641",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "371",
+        "485"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 371 vs 485.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-7f6ac8257403"
+  },
+  "xodexa_multimodal_chart_read_max_50890eac95": {
+    "task_id": "xodexa_multimodal_chart_read_max_50890eac95",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "chart_qa",
@@ -373,10 +301,10 @@
     "expected_answer": 90,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-76d5e9aa208b"
+    "canary": "XDX-CANARY-da2edad9a530"
   },
-  "xodexa_multimodal_diagram_count_80544c870a": {
-    "task_id": "xodexa_multimodal_diagram_count_80544c870a",
+  "xodexa_multimodal_diagram_count_4dea33b6b2": {
+    "task_id": "xodexa_multimodal_diagram_count_4dea33b6b2",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "diagram",
@@ -389,10 +317,10 @@
     "expected_answer": 3,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-c561173afed6"
+    "canary": "XDX-CANARY-6ac72522ca75"
   },
-  "xodexa_multimodal_table_extract_d408d607ba": {
-    "task_id": "xodexa_multimodal_table_extract_d408d607ba",
+  "xodexa_multimodal_table_extract_45220fe894": {
+    "task_id": "xodexa_multimodal_table_extract_45220fe894",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "table_extract",
@@ -400,20 +328,20 @@
     "grader": {
       "type": "structured_json",
       "expect": {
-        "key": "row1",
-        "value": 344
+        "key": "row4",
+        "value": 260
       }
     },
     "expected_answer": {
-      "key": "row1",
-      "value": 344
+      "key": "row4",
+      "value": 260
     },
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-b17c47f5d8a8"
+    "canary": "XDX-CANARY-b0b03b6f6d9f"
   },
-  "xodexa_multimodal_visual_contradiction_cea961a0ef": {
-    "task_id": "xodexa_multimodal_visual_contradiction_cea961a0ef",
+  "xodexa_multimodal_visual_contradiction_eeb5a49306": {
+    "task_id": "xodexa_multimodal_visual_contradiction_eeb5a49306",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "visual_contradiction",
@@ -421,34 +349,106 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "172",
-        "280"
+        "227",
+        "259"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 172 vs 280.",
+    "expected_answer": "Contradiction: 227 vs 259.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-fd8f792cda29"
+    "canary": "XDX-CANARY-4e2cb157805a"
   },
-  "xodexa_multimodal_chart_read_max_8d6c0a7ada": {
-    "task_id": "xodexa_multimodal_chart_read_max_8d6c0a7ada",
+  "xodexa_multimodal_chart_read_max_40fc63f629": {
+    "task_id": "xodexa_multimodal_chart_read_max_40fc63f629",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "chart_qa",
     "difficulty": 3.0,
     "grader": {
       "type": "numeric",
-      "target": 90.0,
+      "target": 78.0,
       "tolerance": 0.001
     },
-    "expected_answer": 90,
+    "expected_answer": 78,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-e74028121143"
+    "canary": "XDX-CANARY-b95d2e4bb589"
   },
-  "xodexa_multimodal_diagram_count_11c9bc5c42": {
-    "task_id": "xodexa_multimodal_diagram_count_11c9bc5c42",
+  "xodexa_multimodal_diagram_count_881e5ba52d": {
+    "task_id": "xodexa_multimodal_diagram_count_881e5ba52d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a2898b41dd80"
+  },
+  "xodexa_multimodal_table_extract_64ae15d70e": {
+    "task_id": "xodexa_multimodal_table_extract_64ae15d70e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 726
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 726
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7c51bf44c562"
+  },
+  "xodexa_multimodal_visual_contradiction_b220a62df9": {
+    "task_id": "xodexa_multimodal_visual_contradiction_b220a62df9",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "306",
+        "346"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 306 vs 346.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-fb92ef35ee45"
+  },
+  "xodexa_multimodal_chart_read_max_61b1e581e7": {
+    "task_id": "xodexa_multimodal_chart_read_max_61b1e581e7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-01ede1127c00"
+  },
+  "xodexa_multimodal_diagram_count_1913db9a1f": {
+    "task_id": "xodexa_multimodal_diagram_count_1913db9a1f",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "diagram",
@@ -461,10 +461,1306 @@
     "expected_answer": 8,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-8b249b552aa5"
+    "canary": "XDX-CANARY-6ae92b6d4461"
   },
-  "xodexa_multimodal_table_extract_f89a465e87": {
-    "task_id": "xodexa_multimodal_table_extract_f89a465e87",
+  "xodexa_multimodal_table_extract_76033c97ab": {
+    "task_id": "xodexa_multimodal_table_extract_76033c97ab",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 834
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 834
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c849f5f24c58"
+  },
+  "xodexa_multimodal_visual_contradiction_24f3e90d29": {
+    "task_id": "xodexa_multimodal_visual_contradiction_24f3e90d29",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "347",
+        "420"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 347 vs 420.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-974f19a08ed8"
+  },
+  "xodexa_multimodal_chart_read_max_805a030c45": {
+    "task_id": "xodexa_multimodal_chart_read_max_805a030c45",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f0c612c9e091"
+  },
+  "xodexa_multimodal_diagram_count_6469fc6312": {
+    "task_id": "xodexa_multimodal_diagram_count_6469fc6312",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f994747c1098"
+  },
+  "xodexa_multimodal_table_extract_1028c47a9c": {
+    "task_id": "xodexa_multimodal_table_extract_1028c47a9c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 557
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 557
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1226eeaab216"
+  },
+  "xodexa_multimodal_visual_contradiction_52a416ed8f": {
+    "task_id": "xodexa_multimodal_visual_contradiction_52a416ed8f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "284",
+        "373"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 284 vs 373.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d1cfffc6a186"
+  },
+  "xodexa_multimodal_chart_read_max_98ef7ef512": {
+    "task_id": "xodexa_multimodal_chart_read_max_98ef7ef512",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 77.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 77,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f0b02e83eb14"
+  },
+  "xodexa_multimodal_diagram_count_ad36f9147f": {
+    "task_id": "xodexa_multimodal_diagram_count_ad36f9147f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8a0502f404c5"
+  },
+  "xodexa_multimodal_table_extract_f78e68dc8f": {
+    "task_id": "xodexa_multimodal_table_extract_f78e68dc8f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 979
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 979
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-441d9feea0aa"
+  },
+  "xodexa_multimodal_visual_contradiction_4c254a9c54": {
+    "task_id": "xodexa_multimodal_visual_contradiction_4c254a9c54",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "267",
+        "351"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 267 vs 351.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-0a674a28edfe"
+  },
+  "xodexa_multimodal_chart_read_max_7a333b812b": {
+    "task_id": "xodexa_multimodal_chart_read_max_7a333b812b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 68.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 68,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e38ac34f10e1"
+  },
+  "xodexa_multimodal_diagram_count_23e9209b4d": {
+    "task_id": "xodexa_multimodal_diagram_count_23e9209b4d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-74de9b4156b9"
+  },
+  "xodexa_multimodal_table_extract_24941971f8": {
+    "task_id": "xodexa_multimodal_table_extract_24941971f8",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 222
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 222
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-07d1d3637b8a"
+  },
+  "xodexa_multimodal_visual_contradiction_eccefd71d0": {
+    "task_id": "xodexa_multimodal_visual_contradiction_eccefd71d0",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "308",
+        "412"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 308 vs 412.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-9057615a4e4b"
+  },
+  "xodexa_multimodal_chart_read_max_405905f1aa": {
+    "task_id": "xodexa_multimodal_chart_read_max_405905f1aa",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 79.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 79,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-526195e218de"
+  },
+  "xodexa_multimodal_diagram_count_15e0062e21": {
+    "task_id": "xodexa_multimodal_diagram_count_15e0062e21",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8af37817f902"
+  },
+  "xodexa_multimodal_table_extract_17e9f2d3fd": {
+    "task_id": "xodexa_multimodal_table_extract_17e9f2d3fd",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 805
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 805
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ebf9ad9808f9"
+  },
+  "xodexa_multimodal_visual_contradiction_16ed57d519": {
+    "task_id": "xodexa_multimodal_visual_contradiction_16ed57d519",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "216",
+        "257"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 216 vs 257.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-77597e33af24"
+  },
+  "xodexa_multimodal_chart_read_max_9f241b0e87": {
+    "task_id": "xodexa_multimodal_chart_read_max_9f241b0e87",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 82.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 82,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4e7d2e31e30a"
+  },
+  "xodexa_multimodal_diagram_count_c7f31acafd": {
+    "task_id": "xodexa_multimodal_diagram_count_c7f31acafd",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-11e7a080f571"
+  },
+  "xodexa_multimodal_table_extract_31d8362deb": {
+    "task_id": "xodexa_multimodal_table_extract_31d8362deb",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 237
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 237
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8b2659a644f0"
+  },
+  "xodexa_multimodal_visual_contradiction_2491f2e831": {
+    "task_id": "xodexa_multimodal_visual_contradiction_2491f2e831",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "243",
+        "341"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 243 vs 341.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-58317b668afb"
+  },
+  "xodexa_multimodal_chart_read_max_2674d847b2": {
+    "task_id": "xodexa_multimodal_chart_read_max_2674d847b2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 96.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 96,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-742d731ac5f5"
+  },
+  "xodexa_multimodal_diagram_count_f918bb937b": {
+    "task_id": "xodexa_multimodal_diagram_count_f918bb937b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-421411636ba1"
+  },
+  "xodexa_multimodal_table_extract_0a18238c9d": {
+    "task_id": "xodexa_multimodal_table_extract_0a18238c9d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 554
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 554
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9aff181de839"
+  },
+  "xodexa_multimodal_visual_contradiction_7585312779": {
+    "task_id": "xodexa_multimodal_visual_contradiction_7585312779",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "103",
+        "149"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 103 vs 149.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-bcf4c678c744"
+  },
+  "xodexa_multimodal_chart_read_max_775ebb02aa": {
+    "task_id": "xodexa_multimodal_chart_read_max_775ebb02aa",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 68.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 68,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f7d85deda63c"
+  },
+  "xodexa_multimodal_diagram_count_e96db604a8": {
+    "task_id": "xodexa_multimodal_diagram_count_e96db604a8",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-93a83087e289"
+  },
+  "xodexa_multimodal_table_extract_3d66d6a32b": {
+    "task_id": "xodexa_multimodal_table_extract_3d66d6a32b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 828
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 828
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-834351202987"
+  },
+  "xodexa_multimodal_visual_contradiction_e3cd3099e7": {
+    "task_id": "xodexa_multimodal_visual_contradiction_e3cd3099e7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "109",
+        "165"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 109 vs 165.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ef3ec023fb8a"
+  },
+  "xodexa_multimodal_chart_read_max_b4ac6679df": {
+    "task_id": "xodexa_multimodal_chart_read_max_b4ac6679df",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 62.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 62,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f4fdd472edab"
+  },
+  "xodexa_multimodal_diagram_count_b670e98f08": {
+    "task_id": "xodexa_multimodal_diagram_count_b670e98f08",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e61de892f2ed"
+  },
+  "xodexa_multimodal_table_extract_ce9149fd19": {
+    "task_id": "xodexa_multimodal_table_extract_ce9149fd19",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 962
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 962
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9a950f976dd8"
+  },
+  "xodexa_multimodal_visual_contradiction_b6c9f1a04d": {
+    "task_id": "xodexa_multimodal_visual_contradiction_b6c9f1a04d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "138",
+        "257"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 138 vs 257.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2bbcaf12d0fd"
+  },
+  "xodexa_multimodal_chart_read_max_90b3059496": {
+    "task_id": "xodexa_multimodal_chart_read_max_90b3059496",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-05c02aea6b79"
+  },
+  "xodexa_multimodal_diagram_count_32bc4a77a5": {
+    "task_id": "xodexa_multimodal_diagram_count_32bc4a77a5",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0fa354b26dbc"
+  },
+  "xodexa_multimodal_table_extract_f346f12a7e": {
+    "task_id": "xodexa_multimodal_table_extract_f346f12a7e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 971
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 971
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c9eefa1c852f"
+  },
+  "xodexa_multimodal_visual_contradiction_ec6b0883d9": {
+    "task_id": "xodexa_multimodal_visual_contradiction_ec6b0883d9",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "355",
+        "430"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 355 vs 430.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a292424b249b"
+  },
+  "xodexa_multimodal_chart_read_max_aa35ff1cfe": {
+    "task_id": "xodexa_multimodal_chart_read_max_aa35ff1cfe",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 85.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 85,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-372ef232b945"
+  },
+  "xodexa_multimodal_diagram_count_e6e3241ca1": {
+    "task_id": "xodexa_multimodal_diagram_count_e6e3241ca1",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0f1866f3fa52"
+  },
+  "xodexa_multimodal_table_extract_bdf47a5881": {
+    "task_id": "xodexa_multimodal_table_extract_bdf47a5881",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 277
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 277
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f05ba855bed9"
+  },
+  "xodexa_multimodal_visual_contradiction_25865b6767": {
+    "task_id": "xodexa_multimodal_visual_contradiction_25865b6767",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "287",
+        "372"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 287 vs 372.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-dfe41835b988"
+  },
+  "xodexa_multimodal_chart_read_max_bd7b47f9b7": {
+    "task_id": "xodexa_multimodal_chart_read_max_bd7b47f9b7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 98,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0fd80c6a198c"
+  },
+  "xodexa_multimodal_diagram_count_2ceea1376e": {
+    "task_id": "xodexa_multimodal_diagram_count_2ceea1376e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e3cb6c40b3c1"
+  },
+  "xodexa_multimodal_table_extract_d726ebc7e9": {
+    "task_id": "xodexa_multimodal_table_extract_d726ebc7e9",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 921
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 921
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-647ee13982d5"
+  },
+  "xodexa_multimodal_visual_contradiction_4742d37545": {
+    "task_id": "xodexa_multimodal_visual_contradiction_4742d37545",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "165",
+        "269"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 165 vs 269.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-c35504d853a4"
+  },
+  "xodexa_multimodal_chart_read_max_a18441001f": {
+    "task_id": "xodexa_multimodal_chart_read_max_a18441001f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0a27b92d6d66"
+  },
+  "xodexa_multimodal_diagram_count_b9d4823a7a": {
+    "task_id": "xodexa_multimodal_diagram_count_b9d4823a7a",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4fcb6d6dba95"
+  },
+  "xodexa_multimodal_table_extract_4a7999eac7": {
+    "task_id": "xodexa_multimodal_table_extract_4a7999eac7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 276
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 276
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d6ce7686fe5e"
+  },
+  "xodexa_multimodal_visual_contradiction_86c91c490a": {
+    "task_id": "xodexa_multimodal_visual_contradiction_86c91c490a",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "399",
+        "443"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 399 vs 443.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-5409d1f03d9c"
+  },
+  "xodexa_multimodal_chart_read_max_94dcf4b07c": {
+    "task_id": "xodexa_multimodal_chart_read_max_94dcf4b07c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7a1b0de2258a"
+  },
+  "xodexa_multimodal_diagram_count_e5bf57c5d2": {
+    "task_id": "xodexa_multimodal_diagram_count_e5bf57c5d2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-516964781e26"
+  },
+  "xodexa_multimodal_table_extract_7d0ce44603": {
+    "task_id": "xodexa_multimodal_table_extract_7d0ce44603",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 284
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 284
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d4a7613b598a"
+  },
+  "xodexa_multimodal_visual_contradiction_976992696d": {
+    "task_id": "xodexa_multimodal_visual_contradiction_976992696d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "227",
+        "335"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 227 vs 335.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a58193d03600"
+  },
+  "xodexa_multimodal_chart_read_max_c34d4915dc": {
+    "task_id": "xodexa_multimodal_chart_read_max_c34d4915dc",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 98,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a05e8d433365"
+  },
+  "xodexa_multimodal_diagram_count_7c5a8c4688": {
+    "task_id": "xodexa_multimodal_diagram_count_7c5a8c4688",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-06a94ba72e21"
+  },
+  "xodexa_multimodal_table_extract_a48930ac84": {
+    "task_id": "xodexa_multimodal_table_extract_a48930ac84",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 460
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 460
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5c0ce323a15f"
+  },
+  "xodexa_multimodal_visual_contradiction_6a19bd015c": {
+    "task_id": "xodexa_multimodal_visual_contradiction_6a19bd015c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "166",
+        "225"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 166 vs 225.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-019ec6b8d6b7"
+  },
+  "xodexa_multimodal_chart_read_max_4123eb491c": {
+    "task_id": "xodexa_multimodal_chart_read_max_4123eb491c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-cc3228406b54"
+  },
+  "xodexa_multimodal_diagram_count_a1046714c6": {
+    "task_id": "xodexa_multimodal_diagram_count_a1046714c6",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fdd219ece4a1"
+  },
+  "xodexa_multimodal_table_extract_a05b6a2387": {
+    "task_id": "xodexa_multimodal_table_extract_a05b6a2387",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 456
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 456
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-bb212fd2d7f4"
+  },
+  "xodexa_multimodal_visual_contradiction_6dde3b4ec9": {
+    "task_id": "xodexa_multimodal_visual_contradiction_6dde3b4ec9",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "350",
+        "407"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 350 vs 407.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-7f42c8faf52e"
+  },
+  "xodexa_multimodal_chart_read_max_850a17dd03": {
+    "task_id": "xodexa_multimodal_chart_read_max_850a17dd03",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 92.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 92,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c63274a8eaf6"
+  },
+  "xodexa_multimodal_diagram_count_1386aef1a7": {
+    "task_id": "xodexa_multimodal_diagram_count_1386aef1a7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7e5fd2c8d677"
+  },
+  "xodexa_multimodal_table_extract_74c32fa9f3": {
+    "task_id": "xodexa_multimodal_table_extract_74c32fa9f3",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 420
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 420
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-99e0c8794741"
+  },
+  "xodexa_multimodal_visual_contradiction_7eb565e676": {
+    "task_id": "xodexa_multimodal_visual_contradiction_7eb565e676",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "200",
+        "253"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 200 vs 253.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-75663375146d"
+  },
+  "xodexa_multimodal_chart_read_max_e68548b994": {
+    "task_id": "xodexa_multimodal_chart_read_max_e68548b994",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 72.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 72,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ee371a107160"
+  },
+  "xodexa_multimodal_diagram_count_51c0313d3d": {
+    "task_id": "xodexa_multimodal_diagram_count_51c0313d3d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fc73ee092a10"
+  },
+  "xodexa_multimodal_table_extract_d83ccfd1ff": {
+    "task_id": "xodexa_multimodal_table_extract_d83ccfd1ff",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 927
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 927
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8df08116cada"
+  },
+  "xodexa_multimodal_visual_contradiction_4495889651": {
+    "task_id": "xodexa_multimodal_visual_contradiction_4495889651",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "350",
+        "382"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 350 vs 382.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-54900b0fb83e"
+  },
+  "xodexa_multimodal_chart_read_max_9ec721a5c4": {
+    "task_id": "xodexa_multimodal_chart_read_max_9ec721a5c4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 82.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 82,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-78437cee9045"
+  },
+  "xodexa_multimodal_diagram_count_ef88357d93": {
+    "task_id": "xodexa_multimodal_diagram_count_ef88357d93",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c97e22d26246"
+  },
+  "xodexa_multimodal_table_extract_621814caea": {
+    "task_id": "xodexa_multimodal_table_extract_621814caea",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "table_extract",
@@ -482,10 +1778,10 @@
     },
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-c4a65476e9b4"
+    "canary": "XDX-CANARY-b6518c9c1299"
   },
-  "xodexa_multimodal_visual_contradiction_154b27ab83": {
-    "task_id": "xodexa_multimodal_visual_contradiction_154b27ab83",
+  "xodexa_multimodal_visual_contradiction_82192f6933": {
+    "task_id": "xodexa_multimodal_visual_contradiction_82192f6933",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "visual_contradiction",
@@ -493,50 +1789,50 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "337",
-        "432"
+        "210",
+        "293"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 337 vs 432.",
+    "expected_answer": "Contradiction: 210 vs 293.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-7b962a8805f1"
+    "canary": "XDX-CANARY-a9db2f4bb6ee"
   },
-  "xodexa_multimodal_chart_read_max_2892df568a": {
-    "task_id": "xodexa_multimodal_chart_read_max_2892df568a",
+  "xodexa_multimodal_chart_read_max_6c6975c562": {
+    "task_id": "xodexa_multimodal_chart_read_max_6c6975c562",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "chart_qa",
     "difficulty": 3.0,
     "grader": {
       "type": "numeric",
-      "target": 74.0,
+      "target": 65.0,
       "tolerance": 0.001
     },
-    "expected_answer": 74,
+    "expected_answer": 65,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-5140ffb1dfc0"
+    "canary": "XDX-CANARY-1fb6b60fcdac"
   },
-  "xodexa_multimodal_diagram_count_1d01d1fe23": {
-    "task_id": "xodexa_multimodal_diagram_count_1d01d1fe23",
+  "xodexa_multimodal_diagram_count_f4e9e7a1d8": {
+    "task_id": "xodexa_multimodal_diagram_count_f4e9e7a1d8",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "diagram",
     "difficulty": 2.5,
     "grader": {
       "type": "numeric",
-      "target": 4.0,
+      "target": 6.0,
       "tolerance": 0.001
     },
-    "expected_answer": 4,
+    "expected_answer": 6,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-85f47efa99ff"
+    "canary": "XDX-CANARY-62a206f222b7"
   },
-  "xodexa_multimodal_table_extract_d1f78f0e64": {
-    "task_id": "xodexa_multimodal_table_extract_d1f78f0e64",
+  "xodexa_multimodal_table_extract_bbc4c77571": {
+    "task_id": "xodexa_multimodal_table_extract_bbc4c77571",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "table_extract",
@@ -544,20 +1840,20 @@
     "grader": {
       "type": "structured_json",
       "expect": {
-        "key": "row1",
-        "value": 874
+        "key": "row4",
+        "value": 307
       }
     },
     "expected_answer": {
-      "key": "row1",
-      "value": 874
+      "key": "row4",
+      "value": 307
     },
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-adcbe0340909"
+    "canary": "XDX-CANARY-c3239ee0671d"
   },
-  "xodexa_multimodal_visual_contradiction_fc62c591e0": {
-    "task_id": "xodexa_multimodal_visual_contradiction_fc62c591e0",
+  "xodexa_multimodal_visual_contradiction_50bfd31961": {
+    "task_id": "xodexa_multimodal_visual_contradiction_50bfd31961",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "visual_contradiction",
@@ -565,90 +1861,18 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "328",
-        "380"
+        "312",
+        "427"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 328 vs 380.",
+    "expected_answer": "Contradiction: 312 vs 427.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-16dc5dd0dbac"
+    "canary": "XDX-CANARY-6fd0c5ef9ad8"
   },
-  "xodexa_multimodal_chart_read_max_82f6d1f7d8": {
-    "task_id": "xodexa_multimodal_chart_read_max_82f6d1f7d8",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "chart_qa",
-    "difficulty": 3.0,
-    "grader": {
-      "type": "numeric",
-      "target": 95.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 95,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-8003ed8c18b6"
-  },
-  "xodexa_multimodal_diagram_count_80ecd1c0d1": {
-    "task_id": "xodexa_multimodal_diagram_count_80ecd1c0d1",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "diagram",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 7.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 7,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-1a5b1548b2d3"
-  },
-  "xodexa_multimodal_table_extract_56874eccd3": {
-    "task_id": "xodexa_multimodal_table_extract_56874eccd3",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "table_extract",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "structured_json",
-      "expect": {
-        "key": "row2",
-        "value": 745
-      }
-    },
-    "expected_answer": {
-      "key": "row2",
-      "value": 745
-    },
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-03328d5d6f69"
-  },
-  "xodexa_multimodal_visual_contradiction_6c56fb42bb": {
-    "task_id": "xodexa_multimodal_visual_contradiction_6c56fb42bb",
-    "category": "multimodal",
-    "family": "multimodal",
-    "subdomain": "visual_contradiction",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "147",
-        "205"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 147 vs 205.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-62535816e7be"
-  },
-  "xodexa_multimodal_chart_read_max_758d3eec63": {
-    "task_id": "xodexa_multimodal_chart_read_max_758d3eec63",
+  "xodexa_multimodal_chart_read_max_b5baa29539": {
+    "task_id": "xodexa_multimodal_chart_read_max_b5baa29539",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "chart_qa",
@@ -661,10 +1885,226 @@
     "expected_answer": 97,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-ca414f242526"
+    "canary": "XDX-CANARY-6265140ea6df"
   },
-  "xodexa_multimodal_diagram_count_caa9c8731a": {
-    "task_id": "xodexa_multimodal_diagram_count_caa9c8731a",
+  "xodexa_multimodal_diagram_count_1af6cc50a2": {
+    "task_id": "xodexa_multimodal_diagram_count_1af6cc50a2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-22d7fbb3d9ec"
+  },
+  "xodexa_multimodal_table_extract_01bec60ac7": {
+    "task_id": "xodexa_multimodal_table_extract_01bec60ac7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 863
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 863
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-bacd34101971"
+  },
+  "xodexa_multimodal_visual_contradiction_48146704fd": {
+    "task_id": "xodexa_multimodal_visual_contradiction_48146704fd",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "239",
+        "354"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 239 vs 354.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc9851042380"
+  },
+  "xodexa_multimodal_chart_read_max_660846e3a1": {
+    "task_id": "xodexa_multimodal_chart_read_max_660846e3a1",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 54.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 54,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-93c6d3c4b735"
+  },
+  "xodexa_multimodal_diagram_count_37eadb92ed": {
+    "task_id": "xodexa_multimodal_diagram_count_37eadb92ed",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f1193bdc97a8"
+  },
+  "xodexa_multimodal_table_extract_b51ac5b69c": {
+    "task_id": "xodexa_multimodal_table_extract_b51ac5b69c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 274
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 274
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-04e0dd50bdf2"
+  },
+  "xodexa_multimodal_visual_contradiction_20309f9a65": {
+    "task_id": "xodexa_multimodal_visual_contradiction_20309f9a65",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "288",
+        "343"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 288 vs 343.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-84840c615507"
+  },
+  "xodexa_multimodal_chart_read_max_ef82f8c640": {
+    "task_id": "xodexa_multimodal_chart_read_max_ef82f8c640",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 46.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 46,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-db3006f3a738"
+  },
+  "xodexa_multimodal_diagram_count_8e404da654": {
+    "task_id": "xodexa_multimodal_diagram_count_8e404da654",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-49df2622bf5b"
+  },
+  "xodexa_multimodal_table_extract_ef5808f8ed": {
+    "task_id": "xodexa_multimodal_table_extract_ef5808f8ed",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 806
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 806
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2923c2680bec"
+  },
+  "xodexa_multimodal_visual_contradiction_e7a545e47e": {
+    "task_id": "xodexa_multimodal_visual_contradiction_e7a545e47e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "109",
+        "216"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 109 vs 216.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-94ce59c63f68"
+  },
+  "xodexa_multimodal_chart_read_max_522c834665": {
+    "task_id": "xodexa_multimodal_chart_read_max_522c834665",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 59.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 59,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6da0782c36f0"
+  },
+  "xodexa_multimodal_diagram_count_00f208ecb2": {
+    "task_id": "xodexa_multimodal_diagram_count_00f208ecb2",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "diagram",
@@ -677,10 +2117,10 @@
     "expected_answer": 4,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-7b3431424055"
+    "canary": "XDX-CANARY-0e34f421b591"
   },
-  "xodexa_multimodal_table_extract_f2a7172886": {
-    "task_id": "xodexa_multimodal_table_extract_f2a7172886",
+  "xodexa_multimodal_table_extract_407eab725a": {
+    "task_id": "xodexa_multimodal_table_extract_407eab725a",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "table_extract",
@@ -689,19 +2129,19 @@
       "type": "structured_json",
       "expect": {
         "key": "row4",
-        "value": 329
+        "value": 309
       }
     },
     "expected_answer": {
       "key": "row4",
-      "value": 329
+      "value": 309
     },
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-531e36818327"
+    "canary": "XDX-CANARY-2256f6660a1c"
   },
-  "xodexa_multimodal_visual_contradiction_68281e41a4": {
-    "task_id": "xodexa_multimodal_visual_contradiction_68281e41a4",
+  "xodexa_multimodal_visual_contradiction_cdd185a72b": {
+    "task_id": "xodexa_multimodal_visual_contradiction_cdd185a72b",
     "category": "multimodal",
     "family": "multimodal",
     "subdomain": "visual_contradiction",
@@ -709,14 +2149,1454 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "172",
-        "210"
+        "262",
+        "352"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 172 vs 210.",
+    "expected_answer": "Contradiction: 262 vs 352.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-f90191739a56"
+    "canary": "XDX-CANARY-3721fe310a06"
+  },
+  "xodexa_multimodal_chart_read_max_c2aa1d873b": {
+    "task_id": "xodexa_multimodal_chart_read_max_c2aa1d873b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 59.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 59,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8e5348576158"
+  },
+  "xodexa_multimodal_diagram_count_5f6999ced7": {
+    "task_id": "xodexa_multimodal_diagram_count_5f6999ced7",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-218a22a04969"
+  },
+  "xodexa_multimodal_table_extract_2128ad391d": {
+    "task_id": "xodexa_multimodal_table_extract_2128ad391d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 293
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 293
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-607a49816224"
+  },
+  "xodexa_multimodal_visual_contradiction_8f6edb1895": {
+    "task_id": "xodexa_multimodal_visual_contradiction_8f6edb1895",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "380",
+        "426"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 380 vs 426.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-19351a713e54"
+  },
+  "xodexa_multimodal_chart_read_max_1e1091f41e": {
+    "task_id": "xodexa_multimodal_chart_read_max_1e1091f41e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 93.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 93,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2c348e2fab1c"
+  },
+  "xodexa_multimodal_diagram_count_a9aec6943e": {
+    "task_id": "xodexa_multimodal_diagram_count_a9aec6943e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ae78d14da9d2"
+  },
+  "xodexa_multimodal_table_extract_fa02eab169": {
+    "task_id": "xodexa_multimodal_table_extract_fa02eab169",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 689
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 689
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-72a220b13418"
+  },
+  "xodexa_multimodal_visual_contradiction_247d61f8db": {
+    "task_id": "xodexa_multimodal_visual_contradiction_247d61f8db",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "209",
+        "261"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 209 vs 261.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3f453222e350"
+  },
+  "xodexa_multimodal_chart_read_max_d4cc47b97d": {
+    "task_id": "xodexa_multimodal_chart_read_max_d4cc47b97d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5dbc677dc63f"
+  },
+  "xodexa_multimodal_diagram_count_9f5ee3bcf8": {
+    "task_id": "xodexa_multimodal_diagram_count_9f5ee3bcf8",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9c0f80870dfd"
+  },
+  "xodexa_multimodal_table_extract_d29991e997": {
+    "task_id": "xodexa_multimodal_table_extract_d29991e997",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 763
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 763
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d8a13baa70af"
+  },
+  "xodexa_multimodal_visual_contradiction_142985f2c3": {
+    "task_id": "xodexa_multimodal_visual_contradiction_142985f2c3",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "146",
+        "224"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 146 vs 224.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-663fcbba1b1d"
+  },
+  "xodexa_multimodal_chart_read_max_8cf2b4aebe": {
+    "task_id": "xodexa_multimodal_chart_read_max_8cf2b4aebe",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 95.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 95,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5d7054dcb892"
+  },
+  "xodexa_multimodal_diagram_count_566ce4be37": {
+    "task_id": "xodexa_multimodal_diagram_count_566ce4be37",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-83fcf784bb42"
+  },
+  "xodexa_multimodal_table_extract_bef7a7dba0": {
+    "task_id": "xodexa_multimodal_table_extract_bef7a7dba0",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 360
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 360
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-987d63bc6523"
+  },
+  "xodexa_multimodal_visual_contradiction_926b9485c2": {
+    "task_id": "xodexa_multimodal_visual_contradiction_926b9485c2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "107",
+        "207"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 107 vs 207.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-06df7c8eb45a"
+  },
+  "xodexa_multimodal_chart_read_max_198f24f7b4": {
+    "task_id": "xodexa_multimodal_chart_read_max_198f24f7b4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 93.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 93,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c7cf8c6fd4e7"
+  },
+  "xodexa_multimodal_diagram_count_1618776e06": {
+    "task_id": "xodexa_multimodal_diagram_count_1618776e06",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2a203b54f8f8"
+  },
+  "xodexa_multimodal_table_extract_d1d970c961": {
+    "task_id": "xodexa_multimodal_table_extract_d1d970c961",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 647
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 647
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-397515b897bf"
+  },
+  "xodexa_multimodal_visual_contradiction_302caf8427": {
+    "task_id": "xodexa_multimodal_visual_contradiction_302caf8427",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "200",
+        "318"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 200 vs 318.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-117600e4a046"
+  },
+  "xodexa_multimodal_chart_read_max_ed5f8fbc0f": {
+    "task_id": "xodexa_multimodal_chart_read_max_ed5f8fbc0f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 98,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-465f3f9e1f2e"
+  },
+  "xodexa_multimodal_diagram_count_c14041170b": {
+    "task_id": "xodexa_multimodal_diagram_count_c14041170b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-608928a6ae0f"
+  },
+  "xodexa_multimodal_table_extract_d910150dad": {
+    "task_id": "xodexa_multimodal_table_extract_d910150dad",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 534
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 534
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ab8ad3aca5d0"
+  },
+  "xodexa_multimodal_visual_contradiction_9dadd7310f": {
+    "task_id": "xodexa_multimodal_visual_contradiction_9dadd7310f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "228",
+        "315"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 228 vs 315.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2b4d276b13f2"
+  },
+  "xodexa_multimodal_chart_read_max_bacef02f70": {
+    "task_id": "xodexa_multimodal_chart_read_max_bacef02f70",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 96.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 96,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b30d2351ab4f"
+  },
+  "xodexa_multimodal_diagram_count_6cded89d05": {
+    "task_id": "xodexa_multimodal_diagram_count_6cded89d05",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-adc0c7292534"
+  },
+  "xodexa_multimodal_table_extract_bc883f4458": {
+    "task_id": "xodexa_multimodal_table_extract_bc883f4458",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 916
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 916
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c9e1efebfdae"
+  },
+  "xodexa_multimodal_visual_contradiction_11ae10c23e": {
+    "task_id": "xodexa_multimodal_visual_contradiction_11ae10c23e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "148",
+        "250"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 148 vs 250.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-0e31f086c720"
+  },
+  "xodexa_multimodal_chart_read_max_94fbee84c4": {
+    "task_id": "xodexa_multimodal_chart_read_max_94fbee84c4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1c4b6aa02dfd"
+  },
+  "xodexa_multimodal_diagram_count_47a49198b8": {
+    "task_id": "xodexa_multimodal_diagram_count_47a49198b8",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f1e25b214a9b"
+  },
+  "xodexa_multimodal_table_extract_04e14c678c": {
+    "task_id": "xodexa_multimodal_table_extract_04e14c678c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 278
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 278
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e1be024628f1"
+  },
+  "xodexa_multimodal_visual_contradiction_6f653b49c5": {
+    "task_id": "xodexa_multimodal_visual_contradiction_6f653b49c5",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "341",
+        "444"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 341 vs 444.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-aeddfa291755"
+  },
+  "xodexa_multimodal_chart_read_max_fe004c417b": {
+    "task_id": "xodexa_multimodal_chart_read_max_fe004c417b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a191c2f77cfa"
+  },
+  "xodexa_multimodal_diagram_count_2f037e18fa": {
+    "task_id": "xodexa_multimodal_diagram_count_2f037e18fa",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fb1d18fe0448"
+  },
+  "xodexa_multimodal_table_extract_d51a96da39": {
+    "task_id": "xodexa_multimodal_table_extract_d51a96da39",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 461
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 461
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a2f25b70f9e5"
+  },
+  "xodexa_multimodal_visual_contradiction_d80c0139cb": {
+    "task_id": "xodexa_multimodal_visual_contradiction_d80c0139cb",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "261",
+        "377"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 261 vs 377.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-791a05270a81"
+  },
+  "xodexa_multimodal_chart_read_max_1f62c043fe": {
+    "task_id": "xodexa_multimodal_chart_read_max_1f62c043fe",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 89.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 89,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-bcfa4bb46d99"
+  },
+  "xodexa_multimodal_diagram_count_893d81be2d": {
+    "task_id": "xodexa_multimodal_diagram_count_893d81be2d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b3b715587a0c"
+  },
+  "xodexa_multimodal_table_extract_f39f020c40": {
+    "task_id": "xodexa_multimodal_table_extract_f39f020c40",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 412
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 412
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4496fd3b6e15"
+  },
+  "xodexa_multimodal_visual_contradiction_0844a7794d": {
+    "task_id": "xodexa_multimodal_visual_contradiction_0844a7794d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "290",
+        "409"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 290 vs 409.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-36f48afda7d7"
+  },
+  "xodexa_multimodal_chart_read_max_2ab699eac5": {
+    "task_id": "xodexa_multimodal_chart_read_max_2ab699eac5",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 63.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 63,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b21d00f6612f"
+  },
+  "xodexa_multimodal_diagram_count_08e60a1890": {
+    "task_id": "xodexa_multimodal_diagram_count_08e60a1890",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e439f73be042"
+  },
+  "xodexa_multimodal_table_extract_bdc7e5c51c": {
+    "task_id": "xodexa_multimodal_table_extract_bdc7e5c51c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 160
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 160
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1a54aa7052a5"
+  },
+  "xodexa_multimodal_visual_contradiction_74ed832c95": {
+    "task_id": "xodexa_multimodal_visual_contradiction_74ed832c95",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "171",
+        "246"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 171 vs 246.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-685bd1ab04a8"
+  },
+  "xodexa_multimodal_chart_read_max_d40ecb4ad0": {
+    "task_id": "xodexa_multimodal_chart_read_max_d40ecb4ad0",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 98,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-76bfafbbdeb3"
+  },
+  "xodexa_multimodal_diagram_count_7d45baea9a": {
+    "task_id": "xodexa_multimodal_diagram_count_7d45baea9a",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3ca2b66b192d"
+  },
+  "xodexa_multimodal_table_extract_0aed4e4505": {
+    "task_id": "xodexa_multimodal_table_extract_0aed4e4505",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 637
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 637
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-39db26d6a265"
+  },
+  "xodexa_multimodal_visual_contradiction_c8473d2044": {
+    "task_id": "xodexa_multimodal_visual_contradiction_c8473d2044",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "341",
+        "442"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 341 vs 442.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-50626e010373"
+  },
+  "xodexa_multimodal_chart_read_max_d604eeb637": {
+    "task_id": "xodexa_multimodal_chart_read_max_d604eeb637",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 97.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 97,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a6dece32296a"
+  },
+  "xodexa_multimodal_diagram_count_775f3dae7d": {
+    "task_id": "xodexa_multimodal_diagram_count_775f3dae7d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f93c91f00770"
+  },
+  "xodexa_multimodal_table_extract_7db55971c3": {
+    "task_id": "xodexa_multimodal_table_extract_7db55971c3",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row4",
+        "value": 918
+      }
+    },
+    "expected_answer": {
+      "key": "row4",
+      "value": 918
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-807efd40688a"
+  },
+  "xodexa_multimodal_visual_contradiction_0a8a165745": {
+    "task_id": "xodexa_multimodal_visual_contradiction_0a8a165745",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "359",
+        "453"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 359 vs 453.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6473b4977417"
+  },
+  "xodexa_multimodal_chart_read_max_d99ba3400e": {
+    "task_id": "xodexa_multimodal_chart_read_max_d99ba3400e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 36.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 36,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6271665a04f4"
+  },
+  "xodexa_multimodal_diagram_count_f83498acfa": {
+    "task_id": "xodexa_multimodal_diagram_count_f83498acfa",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3876c7d3761a"
+  },
+  "xodexa_multimodal_table_extract_06784cfba2": {
+    "task_id": "xodexa_multimodal_table_extract_06784cfba2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 246
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 246
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-42c3fd5c5d7c"
+  },
+  "xodexa_multimodal_visual_contradiction_880c37045e": {
+    "task_id": "xodexa_multimodal_visual_contradiction_880c37045e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "283",
+        "375"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 283 vs 375.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-614956972745"
+  },
+  "xodexa_multimodal_chart_read_max_98f817b572": {
+    "task_id": "xodexa_multimodal_chart_read_max_98f817b572",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 88.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 88,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ad8fff36b5a7"
+  },
+  "xodexa_multimodal_diagram_count_617e991e97": {
+    "task_id": "xodexa_multimodal_diagram_count_617e991e97",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-50bb1249202d"
+  },
+  "xodexa_multimodal_table_extract_3e6f670982": {
+    "task_id": "xodexa_multimodal_table_extract_3e6f670982",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 528
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 528
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2ebf8e317239"
+  },
+  "xodexa_multimodal_visual_contradiction_ff553474d9": {
+    "task_id": "xodexa_multimodal_visual_contradiction_ff553474d9",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "292",
+        "340"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 292 vs 340.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-57ece307e22e"
+  },
+  "xodexa_multimodal_chart_read_max_6f14c8c4c4": {
+    "task_id": "xodexa_multimodal_chart_read_max_6f14c8c4c4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 83.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 83,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2427d69880d9"
+  },
+  "xodexa_multimodal_diagram_count_2d717ae3b2": {
+    "task_id": "xodexa_multimodal_diagram_count_2d717ae3b2",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e8e16095c4cc"
+  },
+  "xodexa_multimodal_table_extract_b2c9e4db7b": {
+    "task_id": "xodexa_multimodal_table_extract_b2c9e4db7b",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row3",
+        "value": 891
+      }
+    },
+    "expected_answer": {
+      "key": "row3",
+      "value": 891
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4b03f86b62e1"
+  },
+  "xodexa_multimodal_visual_contradiction_6196b6046f": {
+    "task_id": "xodexa_multimodal_visual_contradiction_6196b6046f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "171",
+        "238"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 171 vs 238.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d3b668c491f5"
+  },
+  "xodexa_multimodal_chart_read_max_2a71644d8f": {
+    "task_id": "xodexa_multimodal_chart_read_max_2a71644d8f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 82.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 82,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-cb58dfd22bc7"
+  },
+  "xodexa_multimodal_diagram_count_204814d708": {
+    "task_id": "xodexa_multimodal_diagram_count_204814d708",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d4c32736714d"
+  },
+  "xodexa_multimodal_table_extract_6a0a7b2d12": {
+    "task_id": "xodexa_multimodal_table_extract_6a0a7b2d12",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row2",
+        "value": 446
+      }
+    },
+    "expected_answer": {
+      "key": "row2",
+      "value": 446
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3368b8b38fe8"
+  },
+  "xodexa_multimodal_visual_contradiction_c00c75557d": {
+    "task_id": "xodexa_multimodal_visual_contradiction_c00c75557d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "361",
+        "464"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 361 vs 464.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ad50a80f3d7d"
+  },
+  "xodexa_multimodal_chart_read_max_5dcb9ebb96": {
+    "task_id": "xodexa_multimodal_chart_read_max_5dcb9ebb96",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 45.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 45,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-95b961b8e428"
+  },
+  "xodexa_multimodal_diagram_count_1f78b428cb": {
+    "task_id": "xodexa_multimodal_diagram_count_1f78b428cb",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-072dae2cb108"
+  },
+  "xodexa_multimodal_table_extract_95eab4e65e": {
+    "task_id": "xodexa_multimodal_table_extract_95eab4e65e",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 413
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 413
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-19c469994362"
+  },
+  "xodexa_multimodal_visual_contradiction_9c271ee84d": {
+    "task_id": "xodexa_multimodal_visual_contradiction_9c271ee84d",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "111",
+        "191"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 111 vs 191.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a4926c199672"
+  },
+  "xodexa_multimodal_chart_read_max_4e756344d4": {
+    "task_id": "xodexa_multimodal_chart_read_max_4e756344d4",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 84,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f8dec0802a49"
+  },
+  "xodexa_multimodal_diagram_count_ba553d9b3c": {
+    "task_id": "xodexa_multimodal_diagram_count_ba553d9b3c",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c2567db37d7d"
+  },
+  "xodexa_multimodal_table_extract_668e378a2f": {
+    "task_id": "xodexa_multimodal_table_extract_668e378a2f",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 913
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 913
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-331eebeb83ad"
+  },
+  "xodexa_multimodal_visual_contradiction_ebd4eb16c1": {
+    "task_id": "xodexa_multimodal_visual_contradiction_ebd4eb16c1",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "388",
+        "460"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 388 vs 460.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-768cd18c47e7"
+  },
+  "xodexa_multimodal_chart_read_max_626658f4ab": {
+    "task_id": "xodexa_multimodal_chart_read_max_626658f4ab",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "chart_qa",
+    "difficulty": 3.0,
+    "grader": {
+      "type": "numeric",
+      "target": 96.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 96,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f4ad92a44ede"
+  },
+  "xodexa_multimodal_diagram_count_3a96f019fe": {
+    "task_id": "xodexa_multimodal_diagram_count_3a96f019fe",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "diagram",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-29062ed52f91"
+  },
+  "xodexa_multimodal_table_extract_c90354b660": {
+    "task_id": "xodexa_multimodal_table_extract_c90354b660",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "table_extract",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "structured_json",
+      "expect": {
+        "key": "row1",
+        "value": 269
+      }
+    },
+    "expected_answer": {
+      "key": "row1",
+      "value": 269
+    },
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3df349928f01"
+  },
+  "xodexa_multimodal_visual_contradiction_41ba3f20db": {
+    "task_id": "xodexa_multimodal_visual_contradiction_41ba3f20db",
+    "category": "multimodal",
+    "family": "multimodal",
+    "subdomain": "visual_contradiction",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "130",
+        "197"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 130 vs 197.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8d9e0dc2ae3e"
   }
 }

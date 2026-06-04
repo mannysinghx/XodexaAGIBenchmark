@@ -2,26 +2,26 @@
   "name": "Xodexa Strategy & Decision-Making Gauntlet",
   "version": "1.0.0",
   "benchmark_schema": "xodexa-task/1.0",
-  "created_at": "2026-06-03T15:31:59Z",
-  "task_count": 40,
-  "checksum_sha256": "cbf29f51c04d61f925b35bfdebb2d8de5c5466977a9ea7cda8d002680019d456",
-  "changelog": "MVP seed build of Xodexa Strategy & Decision-Making Gauntlet",
+  "created_at": "2026-06-04T17:21:42Z",
+  "task_count": 200,
+  "checksum_sha256": "d0c717de4c7bc6f2fd575d524184abcc8468ee3f5648f31da79ba726351585cc",
+  "changelog": "Seed build of Xodexa Strategy & Decision-Making Gauntlet",
   "families": {
-    "strategy": 40
+    "strategy": 200
   },
   "visibility": {
-    "validation": 40
+    "validation": 200
   },
   "licenses": {
-    "Xodexa-private": 40
+    "Xodexa-private": 200
   },
   "difficulty": {
     "mean": 4.25,
     "min": 3.5,
     "max": 5.0,
     "bands": {
-      "medium": 20,
-      "hard": 20
+      "medium": 100,
+      "hard": 100
     }
   },
   "contamination": {
@@ -33,28 +33,28 @@
   "pipeline": [
     {
       "stage": "generate",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "difficulty",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "contamination",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "quality_review",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "calibration",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     }
   ],
   "license_summary": "Mixed; see per-task provenance.license",
@@ -63,5 +63,5 @@
     "Multimodal items are text-rendered proxies in this MVP.",
     "Difficulty is provisional until human + frontier baselines are collected."
   ],
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
 }

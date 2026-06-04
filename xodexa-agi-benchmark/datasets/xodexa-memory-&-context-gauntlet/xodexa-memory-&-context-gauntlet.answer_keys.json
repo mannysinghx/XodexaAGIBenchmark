@@ -1,6 +1,6 @@
 {
-  "xodexa_memory_contradiction_tracking_a88c678e4e": {
-    "task_id": "xodexa_memory_contradiction_tracking_a88c678e4e",
+  "xodexa_memory_contradiction_tracking_ad0c749c22": {
+    "task_id": "xodexa_memory_contradiction_tracking_ad0c749c22",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -8,34 +8,34 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1890",
-        "1932"
+        "1901",
+        "1953"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1890 vs 1932.",
+    "expected_answer": "Contradiction: 1901 vs 1953.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-314d7e8f9a72"
+    "canary": "XDX-CANARY-0cee51ad3787"
   },
-  "xodexa_memory_multi_needle_sum_92e30546dc": {
-    "task_id": "xodexa_memory_multi_needle_sum_92e30546dc",
+  "xodexa_memory_multi_needle_sum_a32f0b881c": {
+    "task_id": "xodexa_memory_multi_needle_sum_a32f0b881c",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 250.0,
+      "target": 319.0,
       "tolerance": 0.001
     },
-    "expected_answer": 250,
+    "expected_answer": 319,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-0fde1fcc2fb5"
+    "canary": "XDX-CANARY-c39dab9e860c"
   },
-  "xodexa_memory_needle_code_8b07d918b6": {
-    "task_id": "xodexa_memory_needle_code_8b07d918b6",
+  "xodexa_memory_needle_code_2df81e107a": {
+    "task_id": "xodexa_memory_needle_code_2df81e107a",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -43,168 +43,32 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "TN-4573"
+        "LK-2324"
       ]
     },
-    "expected_answer": "TN-4573",
+    "expected_answer": "LK-2324",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-d1ced9dc5fe8"
+    "canary": "XDX-CANARY-b1d9c5f75e5f"
   },
-  "xodexa_memory_state_track_d54297358c": {
-    "task_id": "xodexa_memory_state_track_d54297358c",
+  "xodexa_memory_state_track_3f8faf60b8": {
+    "task_id": "xodexa_memory_state_track_3f8faf60b8",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 169.0,
+      "target": 191.0,
       "tolerance": 0.001
     },
-    "expected_answer": 169,
+    "expected_answer": 191,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-d44f51f13575"
+    "canary": "XDX-CANARY-0ff79615de2e"
   },
-  "xodexa_memory_contradiction_tracking_a00351da3e": {
-    "task_id": "xodexa_memory_contradiction_tracking_a00351da3e",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "contradiction_tracking",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "1877",
-        "1909"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 1877 vs 1909.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-24f32fdab965"
-  },
-  "xodexa_memory_multi_needle_sum_b8b65fdde6": {
-    "task_id": "xodexa_memory_multi_needle_sum_b8b65fdde6",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "multi_needle",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 288.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 288,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-fd6f46a03e09"
-  },
-  "xodexa_memory_needle_code_6bd7b564bf": {
-    "task_id": "xodexa_memory_needle_code_6bd7b564bf",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "needle",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "RC-5518"
-      ]
-    },
-    "expected_answer": "RC-5518",
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-71529b27ac62"
-  },
-  "xodexa_memory_state_track_1f0f58d665": {
-    "task_id": "xodexa_memory_state_track_1f0f58d665",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "delayed_instruction",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "numeric",
-      "target": 120.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 120,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-539f5a0988f6"
-  },
-  "xodexa_memory_contradiction_tracking_6acecf72ea": {
-    "task_id": "xodexa_memory_contradiction_tracking_6acecf72ea",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "contradiction_tracking",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "contains_all",
-      "terms": [
-        "1919",
-        "1979"
-      ],
-      "allow_partial": true
-    },
-    "expected_answer": "Contradiction: 1919 vs 1979.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-b4daa799f06b"
-  },
-  "xodexa_memory_multi_needle_sum_476c9c9d2e": {
-    "task_id": "xodexa_memory_multi_needle_sum_476c9c9d2e",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "multi_needle",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 305.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 305,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-da2409a30131"
-  },
-  "xodexa_memory_needle_code_4f5ca1f6ff": {
-    "task_id": "xodexa_memory_needle_code_4f5ca1f6ff",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "needle",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "TU-9582"
-      ]
-    },
-    "expected_answer": "TU-9582",
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-c0e167e3df77"
-  },
-  "xodexa_memory_state_track_b81680b0d7": {
-    "task_id": "xodexa_memory_state_track_b81680b0d7",
-    "category": "memory",
-    "family": "memory",
-    "subdomain": "delayed_instruction",
-    "difficulty": 5.5,
-    "grader": {
-      "type": "numeric",
-      "target": 215.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 215,
-    "points": 3,
-    "negative": 1,
-    "canary": "XDX-CANARY-002105a102d1"
-  },
-  "xodexa_memory_contradiction_tracking_429d326c8c": {
-    "task_id": "xodexa_memory_contradiction_tracking_429d326c8c",
+  "xodexa_memory_contradiction_tracking_78761330d7": {
+    "task_id": "xodexa_memory_contradiction_tracking_78761330d7",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -213,33 +77,33 @@
       "type": "contains_all",
       "terms": [
         "1874",
-        "1908"
+        "1896"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1874 vs 1908.",
+    "expected_answer": "Contradiction: 1874 vs 1896.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-ba513da71ee3"
+    "canary": "XDX-CANARY-b0168d95091d"
   },
-  "xodexa_memory_multi_needle_sum_b9e95c298e": {
-    "task_id": "xodexa_memory_multi_needle_sum_b9e95c298e",
+  "xodexa_memory_multi_needle_sum_05f415b9db": {
+    "task_id": "xodexa_memory_multi_needle_sum_05f415b9db",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 199.0,
+      "target": 272.0,
       "tolerance": 0.001
     },
-    "expected_answer": 199,
+    "expected_answer": 272,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-846ba2093dd9"
+    "canary": "XDX-CANARY-b82b3655caaf"
   },
-  "xodexa_memory_needle_code_eb63f0ddbe": {
-    "task_id": "xodexa_memory_needle_code_eb63f0ddbe",
+  "xodexa_memory_needle_code_f204861dc0": {
+    "task_id": "xodexa_memory_needle_code_f204861dc0",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -247,32 +111,32 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "QV-7648"
+        "OV-4521"
       ]
     },
-    "expected_answer": "QV-7648",
+    "expected_answer": "OV-4521",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-86eb5eb524cc"
+    "canary": "XDX-CANARY-97e6ff08e27c"
   },
-  "xodexa_memory_state_track_54fb9e08ae": {
-    "task_id": "xodexa_memory_state_track_54fb9e08ae",
+  "xodexa_memory_state_track_74543c9101": {
+    "task_id": "xodexa_memory_state_track_74543c9101",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 12.0,
+      "target": 354.0,
       "tolerance": 0.001
     },
-    "expected_answer": 12,
+    "expected_answer": 354,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-62f948c9e7de"
+    "canary": "XDX-CANARY-e2bbc71bcd36"
   },
-  "xodexa_memory_contradiction_tracking_3a48f00f59": {
-    "task_id": "xodexa_memory_contradiction_tracking_3a48f00f59",
+  "xodexa_memory_contradiction_tracking_c7816d05b3": {
+    "task_id": "xodexa_memory_contradiction_tracking_c7816d05b3",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -280,34 +144,34 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1910",
-        "1947"
+        "1918",
+        "1961"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1910 vs 1947.",
+    "expected_answer": "Contradiction: 1918 vs 1961.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-49a5b20abcfc"
+    "canary": "XDX-CANARY-711090a898ef"
   },
-  "xodexa_memory_multi_needle_sum_ecbcf6cf6f": {
-    "task_id": "xodexa_memory_multi_needle_sum_ecbcf6cf6f",
+  "xodexa_memory_multi_needle_sum_e06d2d1190": {
+    "task_id": "xodexa_memory_multi_needle_sum_e06d2d1190",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 306.0,
+      "target": 261.0,
       "tolerance": 0.001
     },
-    "expected_answer": 306,
+    "expected_answer": 261,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-86c3ef634aa8"
+    "canary": "XDX-CANARY-e922f8de4716"
   },
-  "xodexa_memory_needle_code_a29ae3d977": {
-    "task_id": "xodexa_memory_needle_code_a29ae3d977",
+  "xodexa_memory_needle_code_4efbb2b2a4": {
+    "task_id": "xodexa_memory_needle_code_4efbb2b2a4",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -315,32 +179,32 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "BR-7116"
+        "QW-6122"
       ]
     },
-    "expected_answer": "BR-7116",
+    "expected_answer": "QW-6122",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-2a07c41f9576"
+    "canary": "XDX-CANARY-93daa0967040"
   },
-  "xodexa_memory_state_track_9f842eede4": {
-    "task_id": "xodexa_memory_state_track_9f842eede4",
+  "xodexa_memory_state_track_f6c3704b05": {
+    "task_id": "xodexa_memory_state_track_f6c3704b05",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 539.0,
+      "target": 47.0,
       "tolerance": 0.001
     },
-    "expected_answer": 539,
+    "expected_answer": 47,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-dd6925e4e5eb"
+    "canary": "XDX-CANARY-24edbf3d218c"
   },
-  "xodexa_memory_contradiction_tracking_db01c93e00": {
-    "task_id": "xodexa_memory_contradiction_tracking_db01c93e00",
+  "xodexa_memory_contradiction_tracking_4f33d17582": {
+    "task_id": "xodexa_memory_contradiction_tracking_4f33d17582",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -348,34 +212,34 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1853",
-        "1899"
+        "1857",
+        "1913"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1853 vs 1899.",
+    "expected_answer": "Contradiction: 1857 vs 1913.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-8921b41bb37e"
+    "canary": "XDX-CANARY-2399deb801b0"
   },
-  "xodexa_memory_multi_needle_sum_cf1404dbc2": {
-    "task_id": "xodexa_memory_multi_needle_sum_cf1404dbc2",
+  "xodexa_memory_multi_needle_sum_e85531b6f1": {
+    "task_id": "xodexa_memory_multi_needle_sum_e85531b6f1",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 296.0,
+      "target": 416.0,
       "tolerance": 0.001
     },
-    "expected_answer": 296,
+    "expected_answer": 416,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-fd25fd6824bf"
+    "canary": "XDX-CANARY-8241dac02d2d"
   },
-  "xodexa_memory_needle_code_88a73581f9": {
-    "task_id": "xodexa_memory_needle_code_88a73581f9",
+  "xodexa_memory_needle_code_f381b83e02": {
+    "task_id": "xodexa_memory_needle_code_f381b83e02",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -383,20 +247,395 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "IS-2916"
+        "PX-3014"
       ]
     },
-    "expected_answer": "IS-2916",
+    "expected_answer": "PX-3014",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-0bbde593317e"
+    "canary": "XDX-CANARY-024c1f527d53"
   },
-  "xodexa_memory_state_track_830b1f845b": {
-    "task_id": "xodexa_memory_state_track_830b1f845b",
+  "xodexa_memory_state_track_1424ffc8f2": {
+    "task_id": "xodexa_memory_state_track_1424ffc8f2",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 920.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 920,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6cca87514d0f"
+  },
+  "xodexa_memory_contradiction_tracking_870bccb898": {
+    "task_id": "xodexa_memory_contradiction_tracking_870bccb898",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1919",
+        "1946"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1919 vs 1946.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-637f7ffd2200"
+  },
+  "xodexa_memory_multi_needle_sum_252835b977": {
+    "task_id": "xodexa_memory_multi_needle_sum_252835b977",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 141.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 141,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c99b6462f9a9"
+  },
+  "xodexa_memory_needle_code_88dd3a645b": {
+    "task_id": "xodexa_memory_needle_code_88dd3a645b",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "AX-2347"
+      ]
+    },
+    "expected_answer": "AX-2347",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9ccb9679ad7d"
+  },
+  "xodexa_memory_state_track_5f266845c6": {
+    "task_id": "xodexa_memory_state_track_5f266845c6",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 168.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 168,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-60ceb1941af5"
+  },
+  "xodexa_memory_contradiction_tracking_3cd7c2d2c9": {
+    "task_id": "xodexa_memory_contradiction_tracking_3cd7c2d2c9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1893",
+        "1934"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1893 vs 1934.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-10b667e0a1b5"
+  },
+  "xodexa_memory_multi_needle_sum_9884d3b52c": {
+    "task_id": "xodexa_memory_multi_needle_sum_9884d3b52c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 239.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 239,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-466be9f15ac9"
+  },
+  "xodexa_memory_needle_code_b88b5af601": {
+    "task_id": "xodexa_memory_needle_code_b88b5af601",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "OA-2361"
+      ]
+    },
+    "expected_answer": "OA-2361",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e983f8e38d6f"
+  },
+  "xodexa_memory_state_track_e76ab1499b": {
+    "task_id": "xodexa_memory_state_track_e76ab1499b",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 281.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 281,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f6b6ed7c477a"
+  },
+  "xodexa_memory_contradiction_tracking_fc18b01094": {
+    "task_id": "xodexa_memory_contradiction_tracking_fc18b01094",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1884",
+        "1943"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1884 vs 1943.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-147168ecd1e7"
+  },
+  "xodexa_memory_multi_needle_sum_0f3c36a703": {
+    "task_id": "xodexa_memory_multi_needle_sum_0f3c36a703",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 367.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 367,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-93dc7b7cc959"
+  },
+  "xodexa_memory_needle_code_894a28e5d1": {
+    "task_id": "xodexa_memory_needle_code_894a28e5d1",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "RI-1256"
+      ]
+    },
+    "expected_answer": "RI-1256",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0bebb8900029"
+  },
+  "xodexa_memory_state_track_bf5c69da8f": {
+    "task_id": "xodexa_memory_state_track_bf5c69da8f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 251.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 251,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9cccb6204de3"
+  },
+  "xodexa_memory_contradiction_tracking_c51ccd2ba9": {
+    "task_id": "xodexa_memory_contradiction_tracking_c51ccd2ba9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1878",
+        "1924"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1878 vs 1924.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-41cbef08f28d"
+  },
+  "xodexa_memory_multi_needle_sum_fe4a1d24c3": {
+    "task_id": "xodexa_memory_multi_needle_sum_fe4a1d24c3",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 358.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 358,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b7661c38fd16"
+  },
+  "xodexa_memory_needle_code_c618736d4f": {
+    "task_id": "xodexa_memory_needle_code_c618736d4f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "PP-1039"
+      ]
+    },
+    "expected_answer": "PP-1039",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1b8cef2e06b0"
+  },
+  "xodexa_memory_state_track_c342206955": {
+    "task_id": "xodexa_memory_state_track_c342206955",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 162.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 162,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-109d8e0ee0ec"
+  },
+  "xodexa_memory_contradiction_tracking_b2bf51d9fa": {
+    "task_id": "xodexa_memory_contradiction_tracking_b2bf51d9fa",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1899",
+        "1950"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1899 vs 1950.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-119b62f5d69d"
+  },
+  "xodexa_memory_multi_needle_sum_0ce4ad743e": {
+    "task_id": "xodexa_memory_multi_needle_sum_0ce4ad743e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 405.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 405,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f648e2232575"
+  },
+  "xodexa_memory_needle_code_cce0bedb0b": {
+    "task_id": "xodexa_memory_needle_code_cce0bedb0b",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "RB-4206"
+      ]
+    },
+    "expected_answer": "RB-4206",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7329d4382bac"
+  },
+  "xodexa_memory_state_track_37b06a79cd": {
+    "task_id": "xodexa_memory_state_track_37b06a79cd",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 518.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 518,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-449e02ee260b"
+  },
+  "xodexa_memory_contradiction_tracking_4eb052bd86": {
+    "task_id": "xodexa_memory_contradiction_tracking_4eb052bd86",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1912",
+        "1943"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1912 vs 1943.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e39a2444e658"
+  },
+  "xodexa_memory_multi_needle_sum_1b07d96126": {
+    "task_id": "xodexa_memory_multi_needle_sum_1b07d96126",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
     "grader": {
       "type": "numeric",
       "target": 282.0,
@@ -405,10 +644,43 @@
     "expected_answer": 282,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-e4eb56adc959"
+    "canary": "XDX-CANARY-6f2decc2de32"
   },
-  "xodexa_memory_contradiction_tracking_f291c95834": {
-    "task_id": "xodexa_memory_contradiction_tracking_f291c95834",
+  "xodexa_memory_needle_code_77ca5fe4cf": {
+    "task_id": "xodexa_memory_needle_code_77ca5fe4cf",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "HH-3066"
+      ]
+    },
+    "expected_answer": "HH-3066",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7cadb64f93c5"
+  },
+  "xodexa_memory_state_track_e1e560daff": {
+    "task_id": "xodexa_memory_state_track_e1e560daff",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 189.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 189,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-20f325862900"
+  },
+  "xodexa_memory_contradiction_tracking_fc0a0ffe91": {
+    "task_id": "xodexa_memory_contradiction_tracking_fc0a0ffe91",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -416,18 +688,630 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1920",
-        "1972"
+        "1882",
+        "1938"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1920 vs 1972.",
+    "expected_answer": "Contradiction: 1882 vs 1938.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-4b7e744d20e3"
+    "canary": "XDX-CANARY-929b7e9bc7ad"
   },
-  "xodexa_memory_multi_needle_sum_4f3fe06a56": {
-    "task_id": "xodexa_memory_multi_needle_sum_4f3fe06a56",
+  "xodexa_memory_multi_needle_sum_3539034979": {
+    "task_id": "xodexa_memory_multi_needle_sum_3539034979",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 286.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 286,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c6feed015412"
+  },
+  "xodexa_memory_needle_code_01d31b9c1f": {
+    "task_id": "xodexa_memory_needle_code_01d31b9c1f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "OU-3654"
+      ]
+    },
+    "expected_answer": "OU-3654",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-57f461fcc008"
+  },
+  "xodexa_memory_state_track_52ea64ed61": {
+    "task_id": "xodexa_memory_state_track_52ea64ed61",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 130.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 130,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9ea7cb2b9f00"
+  },
+  "xodexa_memory_contradiction_tracking_c032937cf4": {
+    "task_id": "xodexa_memory_contradiction_tracking_c032937cf4",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1915",
+        "1952"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1915 vs 1952.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-82f4eb322e2e"
+  },
+  "xodexa_memory_multi_needle_sum_35dd2ee164": {
+    "task_id": "xodexa_memory_multi_needle_sum_35dd2ee164",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 430.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 430,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7610a6c32d83"
+  },
+  "xodexa_memory_needle_code_d5102bda4c": {
+    "task_id": "xodexa_memory_needle_code_d5102bda4c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "XU-6643"
+      ]
+    },
+    "expected_answer": "XU-6643",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-52c9d5234538"
+  },
+  "xodexa_memory_state_track_b89f0ced0a": {
+    "task_id": "xodexa_memory_state_track_b89f0ced0a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 116.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 116,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ec0b5f789ace"
+  },
+  "xodexa_memory_contradiction_tracking_2b322c42f5": {
+    "task_id": "xodexa_memory_contradiction_tracking_2b322c42f5",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1875",
+        "1897"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1875 vs 1897.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8015d4167f50"
+  },
+  "xodexa_memory_multi_needle_sum_b790da86c2": {
+    "task_id": "xodexa_memory_multi_needle_sum_b790da86c2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 264.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 264,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-41a4d191ddc7"
+  },
+  "xodexa_memory_needle_code_35a0ee0ca2": {
+    "task_id": "xodexa_memory_needle_code_35a0ee0ca2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "QU-6329"
+      ]
+    },
+    "expected_answer": "QU-6329",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7eac578de678"
+  },
+  "xodexa_memory_state_track_eadace07ce": {
+    "task_id": "xodexa_memory_state_track_eadace07ce",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 211.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 211,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c6602cf1133e"
+  },
+  "xodexa_memory_contradiction_tracking_4d068e70f0": {
+    "task_id": "xodexa_memory_contradiction_tracking_4d068e70f0",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1862",
+        "1885"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1862 vs 1885.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-53a6a67bbd14"
+  },
+  "xodexa_memory_multi_needle_sum_906890c8bf": {
+    "task_id": "xodexa_memory_multi_needle_sum_906890c8bf",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 134.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 134,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6e3382000cf4"
+  },
+  "xodexa_memory_needle_code_aa7242d4ae": {
+    "task_id": "xodexa_memory_needle_code_aa7242d4ae",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "TR-6446"
+      ]
+    },
+    "expected_answer": "TR-6446",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1eec2fe0cdae"
+  },
+  "xodexa_memory_state_track_ddc2d02400": {
+    "task_id": "xodexa_memory_state_track_ddc2d02400",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 71.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 71,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9e24524e8308"
+  },
+  "xodexa_memory_contradiction_tracking_af92ab677a": {
+    "task_id": "xodexa_memory_contradiction_tracking_af92ab677a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1863",
+        "1899"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1863 vs 1899.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3bc3fad9d2b3"
+  },
+  "xodexa_memory_multi_needle_sum_f1d0a955b9": {
+    "task_id": "xodexa_memory_multi_needle_sum_f1d0a955b9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 346.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 346,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-27b9765cdfb2"
+  },
+  "xodexa_memory_needle_code_4cc2ef6447": {
+    "task_id": "xodexa_memory_needle_code_4cc2ef6447",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "RK-8551"
+      ]
+    },
+    "expected_answer": "RK-8551",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0b44c9ebb142"
+  },
+  "xodexa_memory_state_track_4fec1d7538": {
+    "task_id": "xodexa_memory_state_track_4fec1d7538",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 18,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6556b8a2e842"
+  },
+  "xodexa_memory_contradiction_tracking_78d7d67e0a": {
+    "task_id": "xodexa_memory_contradiction_tracking_78d7d67e0a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1868",
+        "1914"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1868 vs 1914.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a362d7f9dca4"
+  },
+  "xodexa_memory_multi_needle_sum_62720fed75": {
+    "task_id": "xodexa_memory_multi_needle_sum_62720fed75",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 265.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 265,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a426699d126d"
+  },
+  "xodexa_memory_needle_code_c623fd9fdb": {
+    "task_id": "xodexa_memory_needle_code_c623fd9fdb",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "YX-6388"
+      ]
+    },
+    "expected_answer": "YX-6388",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5215a485127d"
+  },
+  "xodexa_memory_state_track_905b39bf91": {
+    "task_id": "xodexa_memory_state_track_905b39bf91",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 40.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 40,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-358b6b0eef13"
+  },
+  "xodexa_memory_contradiction_tracking_e42413f3e5": {
+    "task_id": "xodexa_memory_contradiction_tracking_e42413f3e5",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1871",
+        "1919"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1871 vs 1919.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a0ce67c1c338"
+  },
+  "xodexa_memory_multi_needle_sum_a983650cce": {
+    "task_id": "xodexa_memory_multi_needle_sum_a983650cce",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 317.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 317,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1eb9f40ea106"
+  },
+  "xodexa_memory_needle_code_88a1575b10": {
+    "task_id": "xodexa_memory_needle_code_88a1575b10",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "UQ-8852"
+      ]
+    },
+    "expected_answer": "UQ-8852",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-846314c08823"
+  },
+  "xodexa_memory_state_track_616f531afc": {
+    "task_id": "xodexa_memory_state_track_616f531afc",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 128.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 128,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-cf339ed622fd"
+  },
+  "xodexa_memory_contradiction_tracking_aada0a35f9": {
+    "task_id": "xodexa_memory_contradiction_tracking_aada0a35f9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1850",
+        "1910"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1850 vs 1910.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d7dea70a6067"
+  },
+  "xodexa_memory_multi_needle_sum_42dea5cd7a": {
+    "task_id": "xodexa_memory_multi_needle_sum_42dea5cd7a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 309.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 309,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d33e16ccb9a8"
+  },
+  "xodexa_memory_needle_code_6e8421d6cf": {
+    "task_id": "xodexa_memory_needle_code_6e8421d6cf",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ZQ-1471"
+      ]
+    },
+    "expected_answer": "ZQ-1471",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3574ae37d52f"
+  },
+  "xodexa_memory_state_track_dcce7b7e24": {
+    "task_id": "xodexa_memory_state_track_dcce7b7e24",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 224.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 224,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-cf0d97fbd235"
+  },
+  "xodexa_memory_contradiction_tracking_9dcd49164c": {
+    "task_id": "xodexa_memory_contradiction_tracking_9dcd49164c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1915",
+        "1973"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1915 vs 1973.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-42f421a23971"
+  },
+  "xodexa_memory_multi_needle_sum_08a2b5782d": {
+    "task_id": "xodexa_memory_multi_needle_sum_08a2b5782d",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 257.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 257,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c9235dde1d8e"
+  },
+  "xodexa_memory_needle_code_9d1c982ca2": {
+    "task_id": "xodexa_memory_needle_code_9d1c982ca2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "LB-2724"
+      ]
+    },
+    "expected_answer": "LB-2724",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2286808eff87"
+  },
+  "xodexa_memory_state_track_34cedc7380": {
+    "task_id": "xodexa_memory_state_track_34cedc7380",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 701.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 701,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-386bc353ba6b"
+  },
+  "xodexa_memory_contradiction_tracking_b0972fab9a": {
+    "task_id": "xodexa_memory_contradiction_tracking_b0972fab9a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1863",
+        "1898"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1863 vs 1898.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-096cc7866b10"
+  },
+  "xodexa_memory_multi_needle_sum_976fbe40df": {
+    "task_id": "xodexa_memory_multi_needle_sum_976fbe40df",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
@@ -440,10 +1324,10 @@
     "expected_answer": 370,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-0302bf27090c"
+    "canary": "XDX-CANARY-069183d67181"
   },
-  "xodexa_memory_needle_code_2af868fe0c": {
-    "task_id": "xodexa_memory_needle_code_2af868fe0c",
+  "xodexa_memory_needle_code_3ef2419f47": {
+    "task_id": "xodexa_memory_needle_code_3ef2419f47",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -451,32 +1335,32 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "ZH-1326"
+        "AD-2165"
       ]
     },
-    "expected_answer": "ZH-1326",
+    "expected_answer": "AD-2165",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-2d9388100102"
+    "canary": "XDX-CANARY-1c6534455461"
   },
-  "xodexa_memory_state_track_da2c1f3631": {
-    "task_id": "xodexa_memory_state_track_da2c1f3631",
+  "xodexa_memory_state_track_60f4d4ee52": {
+    "task_id": "xodexa_memory_state_track_60f4d4ee52",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 458.0,
+      "target": 74.0,
       "tolerance": 0.001
     },
-    "expected_answer": 458,
+    "expected_answer": 74,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-8164a03f0ae7"
+    "canary": "XDX-CANARY-50ccaf7736eb"
   },
-  "xodexa_memory_contradiction_tracking_e5054c8139": {
-    "task_id": "xodexa_memory_contradiction_tracking_e5054c8139",
+  "xodexa_memory_contradiction_tracking_ddca7adeae": {
+    "task_id": "xodexa_memory_contradiction_tracking_ddca7adeae",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -484,34 +1368,34 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1873",
-        "1933"
+        "1911",
+        "1944"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1873 vs 1933.",
+    "expected_answer": "Contradiction: 1911 vs 1944.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-dabfbc2772f5"
+    "canary": "XDX-CANARY-6e171d32c1a2"
   },
-  "xodexa_memory_multi_needle_sum_2a8b00998d": {
-    "task_id": "xodexa_memory_multi_needle_sum_2a8b00998d",
+  "xodexa_memory_multi_needle_sum_3a4d488f09": {
+    "task_id": "xodexa_memory_multi_needle_sum_3a4d488f09",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 240.0,
+      "target": 213.0,
       "tolerance": 0.001
     },
-    "expected_answer": 240,
+    "expected_answer": 213,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-b731df0db1da"
+    "canary": "XDX-CANARY-941fa6cee02e"
   },
-  "xodexa_memory_needle_code_22acc6f697": {
-    "task_id": "xodexa_memory_needle_code_22acc6f697",
+  "xodexa_memory_needle_code_769c09d7f7": {
+    "task_id": "xodexa_memory_needle_code_769c09d7f7",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -519,32 +1403,32 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "PY-1230"
+        "NL-6985"
       ]
     },
-    "expected_answer": "PY-1230",
+    "expected_answer": "NL-6985",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-a390ad3a9e89"
+    "canary": "XDX-CANARY-55a0d9e4bdd6"
   },
-  "xodexa_memory_state_track_665373a0ec": {
-    "task_id": "xodexa_memory_state_track_665373a0ec",
+  "xodexa_memory_state_track_344a05973f": {
+    "task_id": "xodexa_memory_state_track_344a05973f",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 172.0,
+      "target": 152.0,
       "tolerance": 0.001
     },
-    "expected_answer": 172,
+    "expected_answer": 152,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-0081f1f73385"
+    "canary": "XDX-CANARY-ab0e2d14db15"
   },
-  "xodexa_memory_contradiction_tracking_65d5c30b0c": {
-    "task_id": "xodexa_memory_contradiction_tracking_65d5c30b0c",
+  "xodexa_memory_contradiction_tracking_e12bb17add": {
+    "task_id": "xodexa_memory_contradiction_tracking_e12bb17add",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -552,18 +1436,18 @@
     "grader": {
       "type": "contains_all",
       "terms": [
-        "1887",
-        "1921"
+        "1916",
+        "1955"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1887 vs 1921.",
+    "expected_answer": "Contradiction: 1916 vs 1955.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-4f26d55c4c00"
+    "canary": "XDX-CANARY-d9e311f32c50"
   },
-  "xodexa_memory_multi_needle_sum_814637f1e8": {
-    "task_id": "xodexa_memory_multi_needle_sum_814637f1e8",
+  "xodexa_memory_multi_needle_sum_972647eff2": {
+    "task_id": "xodexa_memory_multi_needle_sum_972647eff2",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
@@ -576,10 +1460,10 @@
     "expected_answer": 254,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-550ac3f1d5ec"
+    "canary": "XDX-CANARY-38ad347e7a50"
   },
-  "xodexa_memory_needle_code_6096b9798f": {
-    "task_id": "xodexa_memory_needle_code_6096b9798f",
+  "xodexa_memory_needle_code_8a70941f10": {
+    "task_id": "xodexa_memory_needle_code_8a70941f10",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -587,32 +1471,712 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "EU-7730"
+        "PG-4979"
       ]
     },
-    "expected_answer": "EU-7730",
+    "expected_answer": "PG-4979",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-344822c43739"
+    "canary": "XDX-CANARY-b5827efb4c8b"
   },
-  "xodexa_memory_state_track_3da368f0a6": {
-    "task_id": "xodexa_memory_state_track_3da368f0a6",
+  "xodexa_memory_state_track_fee7826b1a": {
+    "task_id": "xodexa_memory_state_track_fee7826b1a",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 112.0,
+      "target": 1962.0,
       "tolerance": 0.001
     },
-    "expected_answer": 112,
+    "expected_answer": 1962,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-dd5a60343dff"
+    "canary": "XDX-CANARY-1fff9ca2dcf3"
   },
-  "xodexa_memory_contradiction_tracking_11a9b664b3": {
-    "task_id": "xodexa_memory_contradiction_tracking_11a9b664b3",
+  "xodexa_memory_contradiction_tracking_e3f3c3376a": {
+    "task_id": "xodexa_memory_contradiction_tracking_e3f3c3376a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1882",
+        "1907"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1882 vs 1907.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-efb53ef87dfd"
+  },
+  "xodexa_memory_multi_needle_sum_6c5a47d5e5": {
+    "task_id": "xodexa_memory_multi_needle_sum_6c5a47d5e5",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 281.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 281,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c68e8b39706f"
+  },
+  "xodexa_memory_needle_code_db937cbd70": {
+    "task_id": "xodexa_memory_needle_code_db937cbd70",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "SE-3331"
+      ]
+    },
+    "expected_answer": "SE-3331",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2c247efc070b"
+  },
+  "xodexa_memory_state_track_19d17a7ebe": {
+    "task_id": "xodexa_memory_state_track_19d17a7ebe",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 47.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 47,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b43cc45df71a"
+  },
+  "xodexa_memory_contradiction_tracking_c65696b2b3": {
+    "task_id": "xodexa_memory_contradiction_tracking_c65696b2b3",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1859",
+        "1903"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1859 vs 1903.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-4a53cf630154"
+  },
+  "xodexa_memory_multi_needle_sum_1a867022f4": {
+    "task_id": "xodexa_memory_multi_needle_sum_1a867022f4",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 345.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 345,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-01b353541626"
+  },
+  "xodexa_memory_needle_code_7c57b87ca2": {
+    "task_id": "xodexa_memory_needle_code_7c57b87ca2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "RI-9551"
+      ]
+    },
+    "expected_answer": "RI-9551",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d958410622c8"
+  },
+  "xodexa_memory_state_track_ea410699b7": {
+    "task_id": "xodexa_memory_state_track_ea410699b7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 206.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 206,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-554334ec674f"
+  },
+  "xodexa_memory_contradiction_tracking_ac8869411a": {
+    "task_id": "xodexa_memory_contradiction_tracking_ac8869411a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1855",
+        "1881"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1855 vs 1881.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d43e07b81b27"
+  },
+  "xodexa_memory_multi_needle_sum_408c94bc25": {
+    "task_id": "xodexa_memory_multi_needle_sum_408c94bc25",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 279.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 279,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-761e1b59bbfd"
+  },
+  "xodexa_memory_needle_code_9092e2cd9f": {
+    "task_id": "xodexa_memory_needle_code_9092e2cd9f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "LQ-2292"
+      ]
+    },
+    "expected_answer": "LQ-2292",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-dd814eae3bae"
+  },
+  "xodexa_memory_state_track_d28118ecb9": {
+    "task_id": "xodexa_memory_state_track_d28118ecb9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 108.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 108,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a67f47dbf86c"
+  },
+  "xodexa_memory_contradiction_tracking_881faa86a9": {
+    "task_id": "xodexa_memory_contradiction_tracking_881faa86a9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1905",
+        "1946"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1905 vs 1946.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-4756dd243a1f"
+  },
+  "xodexa_memory_multi_needle_sum_2892849ee0": {
+    "task_id": "xodexa_memory_multi_needle_sum_2892849ee0",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 353.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 353,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-521df3321e4d"
+  },
+  "xodexa_memory_needle_code_f52cac989d": {
+    "task_id": "xodexa_memory_needle_code_f52cac989d",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "CM-6203"
+      ]
+    },
+    "expected_answer": "CM-6203",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c4b17f619b28"
+  },
+  "xodexa_memory_state_track_5e18b1ae41": {
+    "task_id": "xodexa_memory_state_track_5e18b1ae41",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 88.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 88,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9640e0375664"
+  },
+  "xodexa_memory_contradiction_tracking_71bc989cec": {
+    "task_id": "xodexa_memory_contradiction_tracking_71bc989cec",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1854",
+        "1876"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1854 vs 1876.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-67ef7079de45"
+  },
+  "xodexa_memory_multi_needle_sum_8740d3a6d7": {
+    "task_id": "xodexa_memory_multi_needle_sum_8740d3a6d7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 372.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 372,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-abee7a61c830"
+  },
+  "xodexa_memory_needle_code_d6559df48f": {
+    "task_id": "xodexa_memory_needle_code_d6559df48f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "YO-2378"
+      ]
+    },
+    "expected_answer": "YO-2378",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-baa664537bb1"
+  },
+  "xodexa_memory_state_track_f801a03f44": {
+    "task_id": "xodexa_memory_state_track_f801a03f44",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 174.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 174,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4a3f89fe757f"
+  },
+  "xodexa_memory_contradiction_tracking_0c68b446f2": {
+    "task_id": "xodexa_memory_contradiction_tracking_0c68b446f2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1908",
+        "1956"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1908 vs 1956.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-afd463ecab5e"
+  },
+  "xodexa_memory_multi_needle_sum_9aebbdb3c7": {
+    "task_id": "xodexa_memory_multi_needle_sum_9aebbdb3c7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 256.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 256,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-08572a225348"
+  },
+  "xodexa_memory_needle_code_94e5160954": {
+    "task_id": "xodexa_memory_needle_code_94e5160954",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "BY-8564"
+      ]
+    },
+    "expected_answer": "BY-8564",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-87ef827d799b"
+  },
+  "xodexa_memory_state_track_5e4a65d504": {
+    "task_id": "xodexa_memory_state_track_5e4a65d504",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 80.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 80,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7f956bc95974"
+  },
+  "xodexa_memory_contradiction_tracking_c7532769b7": {
+    "task_id": "xodexa_memory_contradiction_tracking_c7532769b7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1899",
+        "1944"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1899 vs 1944.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec1e06ffb8ba"
+  },
+  "xodexa_memory_multi_needle_sum_38233c4c2e": {
+    "task_id": "xodexa_memory_multi_needle_sum_38233c4c2e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 359.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 359,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-29a9159ff501"
+  },
+  "xodexa_memory_needle_code_dfa39a8eaf": {
+    "task_id": "xodexa_memory_needle_code_dfa39a8eaf",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "MU-3188"
+      ]
+    },
+    "expected_answer": "MU-3188",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-01bd8f7ea985"
+  },
+  "xodexa_memory_state_track_24d5679eb8": {
+    "task_id": "xodexa_memory_state_track_24d5679eb8",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 119.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 119,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-38f7f98cec90"
+  },
+  "xodexa_memory_contradiction_tracking_8a494debcc": {
+    "task_id": "xodexa_memory_contradiction_tracking_8a494debcc",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1891",
+        "1929"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1891 vs 1929.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e97fa58c98eb"
+  },
+  "xodexa_memory_multi_needle_sum_ba7e2cb346": {
+    "task_id": "xodexa_memory_multi_needle_sum_ba7e2cb346",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 326.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 326,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-020e86f4ce6f"
+  },
+  "xodexa_memory_needle_code_08cf457218": {
+    "task_id": "xodexa_memory_needle_code_08cf457218",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ID-3159"
+      ]
+    },
+    "expected_answer": "ID-3159",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e0fd7bcf5626"
+  },
+  "xodexa_memory_state_track_16d18158eb": {
+    "task_id": "xodexa_memory_state_track_16d18158eb",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 111.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 111,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-60588253e6e5"
+  },
+  "xodexa_memory_contradiction_tracking_6e59de707e": {
+    "task_id": "xodexa_memory_contradiction_tracking_6e59de707e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1854",
+        "1882"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1854 vs 1882.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-eab0caeded4f"
+  },
+  "xodexa_memory_multi_needle_sum_2f1a9ea67d": {
+    "task_id": "xodexa_memory_multi_needle_sum_2f1a9ea67d",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 179.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 179,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b2929d372573"
+  },
+  "xodexa_memory_needle_code_f60b9dc264": {
+    "task_id": "xodexa_memory_needle_code_f60b9dc264",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "MC-9739"
+      ]
+    },
+    "expected_answer": "MC-9739",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3308cf6c3226"
+  },
+  "xodexa_memory_state_track_c6399f829f": {
+    "task_id": "xodexa_memory_state_track_c6399f829f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 171.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 171,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e519d61ee3a1"
+  },
+  "xodexa_memory_contradiction_tracking_3ca31c9a74": {
+    "task_id": "xodexa_memory_contradiction_tracking_3ca31c9a74",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1886",
+        "1935"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1886 vs 1935.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2cf605417262"
+  },
+  "xodexa_memory_multi_needle_sum_25856ae6d6": {
+    "task_id": "xodexa_memory_multi_needle_sum_25856ae6d6",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 313.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 313,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7a85d2a779cf"
+  },
+  "xodexa_memory_needle_code_78f4930d74": {
+    "task_id": "xodexa_memory_needle_code_78f4930d74",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "DR-5998"
+      ]
+    },
+    "expected_answer": "DR-5998",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-34132a7bcbdd"
+  },
+  "xodexa_memory_state_track_0d598ef27e": {
+    "task_id": "xodexa_memory_state_track_0d598ef27e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 413.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 413,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-501bd9a2e87b"
+  },
+  "xodexa_memory_contradiction_tracking_bbf01cee70": {
+    "task_id": "xodexa_memory_contradiction_tracking_bbf01cee70",
     "category": "memory",
     "family": "memory",
     "subdomain": "contradiction_tracking",
@@ -621,33 +2185,33 @@
       "type": "contains_all",
       "terms": [
         "1851",
-        "1890"
+        "1911"
       ],
       "allow_partial": true
     },
-    "expected_answer": "Contradiction: 1851 vs 1890.",
+    "expected_answer": "Contradiction: 1851 vs 1911.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-8cd60bcd1315"
+    "canary": "XDX-CANARY-3da2d9a20532"
   },
-  "xodexa_memory_multi_needle_sum_7660364070": {
-    "task_id": "xodexa_memory_multi_needle_sum_7660364070",
+  "xodexa_memory_multi_needle_sum_429096819d": {
+    "task_id": "xodexa_memory_multi_needle_sum_429096819d",
     "category": "memory",
     "family": "memory",
     "subdomain": "multi_needle",
     "difficulty": 5.0,
     "grader": {
       "type": "numeric",
-      "target": 255.0,
+      "target": 274.0,
       "tolerance": 0.001
     },
-    "expected_answer": 255,
+    "expected_answer": 274,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-a6a49861ef6a"
+    "canary": "XDX-CANARY-1c00449133ee"
   },
-  "xodexa_memory_needle_code_be0a51bc5b": {
-    "task_id": "xodexa_memory_needle_code_be0a51bc5b",
+  "xodexa_memory_needle_code_864845620c": {
+    "task_id": "xodexa_memory_needle_code_864845620c",
     "category": "memory",
     "family": "memory",
     "subdomain": "needle",
@@ -655,28 +2219,1184 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "YD-3690"
+        "JX-7201"
       ]
     },
-    "expected_answer": "YD-3690",
+    "expected_answer": "JX-7201",
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-0c64e0961549"
+    "canary": "XDX-CANARY-0f77d91a9a12"
   },
-  "xodexa_memory_state_track_d199ecebeb": {
-    "task_id": "xodexa_memory_state_track_d199ecebeb",
+  "xodexa_memory_state_track_0bcadb6629": {
+    "task_id": "xodexa_memory_state_track_0bcadb6629",
     "category": "memory",
     "family": "memory",
     "subdomain": "delayed_instruction",
     "difficulty": 5.5,
     "grader": {
       "type": "numeric",
-      "target": 376.0,
+      "target": 190.0,
       "tolerance": 0.001
     },
-    "expected_answer": 376,
+    "expected_answer": 190,
     "points": 3,
     "negative": 1,
-    "canary": "XDX-CANARY-8ca656edcbf4"
+    "canary": "XDX-CANARY-9ae8d4971163"
+  },
+  "xodexa_memory_contradiction_tracking_513aa335db": {
+    "task_id": "xodexa_memory_contradiction_tracking_513aa335db",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1901",
+        "1928"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1901 vs 1928.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-15d45a99af91"
+  },
+  "xodexa_memory_multi_needle_sum_9bf67a4c0c": {
+    "task_id": "xodexa_memory_multi_needle_sum_9bf67a4c0c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 397.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 397,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c50d2e86841d"
+  },
+  "xodexa_memory_needle_code_c118e69e52": {
+    "task_id": "xodexa_memory_needle_code_c118e69e52",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ZE-3058"
+      ]
+    },
+    "expected_answer": "ZE-3058",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ceb3a7457628"
+  },
+  "xodexa_memory_state_track_7c143eba68": {
+    "task_id": "xodexa_memory_state_track_7c143eba68",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 115.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 115,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8d61573fba7b"
+  },
+  "xodexa_memory_contradiction_tracking_87dcb9a1d6": {
+    "task_id": "xodexa_memory_contradiction_tracking_87dcb9a1d6",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1854",
+        "1914"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1854 vs 1914.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-48f3be4a7233"
+  },
+  "xodexa_memory_multi_needle_sum_4b256b6160": {
+    "task_id": "xodexa_memory_multi_needle_sum_4b256b6160",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 209.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 209,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d7f282c2508a"
+  },
+  "xodexa_memory_needle_code_86b041f3aa": {
+    "task_id": "xodexa_memory_needle_code_86b041f3aa",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "BV-2237"
+      ]
+    },
+    "expected_answer": "BV-2237",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-20aebaa60177"
+  },
+  "xodexa_memory_state_track_07936afbea": {
+    "task_id": "xodexa_memory_state_track_07936afbea",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 418.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 418,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e3d364902dd5"
+  },
+  "xodexa_memory_contradiction_tracking_722be853a1": {
+    "task_id": "xodexa_memory_contradiction_tracking_722be853a1",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1911",
+        "1938"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1911 vs 1938.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-9fd747f56a3f"
+  },
+  "xodexa_memory_multi_needle_sum_4ed1c4163f": {
+    "task_id": "xodexa_memory_multi_needle_sum_4ed1c4163f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 210.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 210,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ab7e3e1b56ba"
+  },
+  "xodexa_memory_needle_code_f46e6ff684": {
+    "task_id": "xodexa_memory_needle_code_f46e6ff684",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "AY-2762"
+      ]
+    },
+    "expected_answer": "AY-2762",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a5aa69428eef"
+  },
+  "xodexa_memory_state_track_761c69d43a": {
+    "task_id": "xodexa_memory_state_track_761c69d43a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 27.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 27,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c7dcccb96407"
+  },
+  "xodexa_memory_contradiction_tracking_f0bf4066bc": {
+    "task_id": "xodexa_memory_contradiction_tracking_f0bf4066bc",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1899",
+        "1935"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1899 vs 1935.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2b517114f205"
+  },
+  "xodexa_memory_multi_needle_sum_bc97330fe1": {
+    "task_id": "xodexa_memory_multi_needle_sum_bc97330fe1",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 462.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 462,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-dfd22d58ab65"
+  },
+  "xodexa_memory_needle_code_092767096b": {
+    "task_id": "xodexa_memory_needle_code_092767096b",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "AY-9503"
+      ]
+    },
+    "expected_answer": "AY-9503",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f504888f9149"
+  },
+  "xodexa_memory_state_track_b58b41cea8": {
+    "task_id": "xodexa_memory_state_track_b58b41cea8",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": -10.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": -10,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c226638bdb3f"
+  },
+  "xodexa_memory_contradiction_tracking_0ea9fd6dc9": {
+    "task_id": "xodexa_memory_contradiction_tracking_0ea9fd6dc9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1882",
+        "1908"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1882 vs 1908.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6daac7463443"
+  },
+  "xodexa_memory_multi_needle_sum_b8de8f8d32": {
+    "task_id": "xodexa_memory_multi_needle_sum_b8de8f8d32",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 330.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 330,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-1eb40bbefc78"
+  },
+  "xodexa_memory_needle_code_f715ffa045": {
+    "task_id": "xodexa_memory_needle_code_f715ffa045",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "ZC-9902"
+      ]
+    },
+    "expected_answer": "ZC-9902",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-c42d5f89abeb"
+  },
+  "xodexa_memory_state_track_0db5e91b77": {
+    "task_id": "xodexa_memory_state_track_0db5e91b77",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 240.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 240,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-7c70eb266c87"
+  },
+  "xodexa_memory_contradiction_tracking_79947f1eb2": {
+    "task_id": "xodexa_memory_contradiction_tracking_79947f1eb2",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1910",
+        "1939"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1910 vs 1939.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f37fa0fe6a99"
+  },
+  "xodexa_memory_multi_needle_sum_5ca89f8aa6": {
+    "task_id": "xodexa_memory_multi_needle_sum_5ca89f8aa6",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 270.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 270,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d25f6dacf3cd"
+  },
+  "xodexa_memory_needle_code_afdf80f32e": {
+    "task_id": "xodexa_memory_needle_code_afdf80f32e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "OD-1549"
+      ]
+    },
+    "expected_answer": "OD-1549",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-5615c68e4af4"
+  },
+  "xodexa_memory_state_track_bebfbca594": {
+    "task_id": "xodexa_memory_state_track_bebfbca594",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 88.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 88,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b2d27b1f2112"
+  },
+  "xodexa_memory_contradiction_tracking_5f60f89a48": {
+    "task_id": "xodexa_memory_contradiction_tracking_5f60f89a48",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1891",
+        "1947"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1891 vs 1947.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2b854702ad88"
+  },
+  "xodexa_memory_multi_needle_sum_46f71ad29c": {
+    "task_id": "xodexa_memory_multi_needle_sum_46f71ad29c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 251.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 251,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-f0e7a4c15336"
+  },
+  "xodexa_memory_needle_code_1bcfa70202": {
+    "task_id": "xodexa_memory_needle_code_1bcfa70202",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "XW-8201"
+      ]
+    },
+    "expected_answer": "XW-8201",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-8d49b1117c1a"
+  },
+  "xodexa_memory_state_track_e32c973e70": {
+    "task_id": "xodexa_memory_state_track_e32c973e70",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 17.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 17,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-0353b93ce3e7"
+  },
+  "xodexa_memory_contradiction_tracking_158442481f": {
+    "task_id": "xodexa_memory_contradiction_tracking_158442481f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1886",
+        "1926"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1886 vs 1926.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a515de56785f"
+  },
+  "xodexa_memory_multi_needle_sum_1762b427e5": {
+    "task_id": "xodexa_memory_multi_needle_sum_1762b427e5",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 402.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 402,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3005ce518871"
+  },
+  "xodexa_memory_needle_code_bb9f4a1be8": {
+    "task_id": "xodexa_memory_needle_code_bb9f4a1be8",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "NB-1146"
+      ]
+    },
+    "expected_answer": "NB-1146",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-d142feb5b69c"
+  },
+  "xodexa_memory_state_track_530d6b9762": {
+    "task_id": "xodexa_memory_state_track_530d6b9762",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1174.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1174,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-b5acf14fbd86"
+  },
+  "xodexa_memory_contradiction_tracking_9caca7f37b": {
+    "task_id": "xodexa_memory_contradiction_tracking_9caca7f37b",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1899",
+        "1955"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1899 vs 1955.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3606571c8236"
+  },
+  "xodexa_memory_multi_needle_sum_20bbb6e997": {
+    "task_id": "xodexa_memory_multi_needle_sum_20bbb6e997",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 280.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 280,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-289dea2a1c89"
+  },
+  "xodexa_memory_needle_code_53535eb098": {
+    "task_id": "xodexa_memory_needle_code_53535eb098",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "EK-7103"
+      ]
+    },
+    "expected_answer": "EK-7103",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-141043652eb5"
+  },
+  "xodexa_memory_state_track_633f36ce6d": {
+    "task_id": "xodexa_memory_state_track_633f36ce6d",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 238.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 238,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-da0676cc3b52"
+  },
+  "xodexa_memory_contradiction_tracking_4cc9b8616a": {
+    "task_id": "xodexa_memory_contradiction_tracking_4cc9b8616a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1856",
+        "1906"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1856 vs 1906.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d3ed41b09c7d"
+  },
+  "xodexa_memory_multi_needle_sum_a7831ff882": {
+    "task_id": "xodexa_memory_multi_needle_sum_a7831ff882",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 225.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 225,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ef4c888d98bb"
+  },
+  "xodexa_memory_needle_code_998a451276": {
+    "task_id": "xodexa_memory_needle_code_998a451276",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "BI-4511"
+      ]
+    },
+    "expected_answer": "BI-4511",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-57535f665a40"
+  },
+  "xodexa_memory_state_track_35d97f2c32": {
+    "task_id": "xodexa_memory_state_track_35d97f2c32",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 398.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 398,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-e403a5a068ac"
+  },
+  "xodexa_memory_contradiction_tracking_e7710a454c": {
+    "task_id": "xodexa_memory_contradiction_tracking_e7710a454c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1871",
+        "1920"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1871 vs 1920.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-beb7d0823b20"
+  },
+  "xodexa_memory_multi_needle_sum_8996271d32": {
+    "task_id": "xodexa_memory_multi_needle_sum_8996271d32",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 289.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 289,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-64d151480ee0"
+  },
+  "xodexa_memory_needle_code_885341f26c": {
+    "task_id": "xodexa_memory_needle_code_885341f26c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "FH-1142"
+      ]
+    },
+    "expected_answer": "FH-1142",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ce5bb31a5308"
+  },
+  "xodexa_memory_state_track_600983a212": {
+    "task_id": "xodexa_memory_state_track_600983a212",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 248.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 248,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-52aae7b8916a"
+  },
+  "xodexa_memory_contradiction_tracking_828bf9c7c0": {
+    "task_id": "xodexa_memory_contradiction_tracking_828bf9c7c0",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1889",
+        "1942"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1889 vs 1942.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e7ceefb70742"
+  },
+  "xodexa_memory_multi_needle_sum_66189878c9": {
+    "task_id": "xodexa_memory_multi_needle_sum_66189878c9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 300.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 300,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fad1478af844"
+  },
+  "xodexa_memory_needle_code_1478720772": {
+    "task_id": "xodexa_memory_needle_code_1478720772",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "NA-7600"
+      ]
+    },
+    "expected_answer": "NA-7600",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-dec46a0b2d49"
+  },
+  "xodexa_memory_state_track_f0b69b79f7": {
+    "task_id": "xodexa_memory_state_track_f0b69b79f7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 92.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 92,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-67a23613eb07"
+  },
+  "xodexa_memory_contradiction_tracking_d3ea99bb1e": {
+    "task_id": "xodexa_memory_contradiction_tracking_d3ea99bb1e",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1888",
+        "1948"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1888 vs 1948.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-87d4825f8c23"
+  },
+  "xodexa_memory_multi_needle_sum_f83f250cbd": {
+    "task_id": "xodexa_memory_multi_needle_sum_f83f250cbd",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 371.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 371,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fecf84be3b8c"
+  },
+  "xodexa_memory_needle_code_21806765e9": {
+    "task_id": "xodexa_memory_needle_code_21806765e9",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "EN-2483"
+      ]
+    },
+    "expected_answer": "EN-2483",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-3dc34654a8df"
+  },
+  "xodexa_memory_state_track_1479e5701f": {
+    "task_id": "xodexa_memory_state_track_1479e5701f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 61.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 61,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6e3ee0232f8a"
+  },
+  "xodexa_memory_contradiction_tracking_49bb15a088": {
+    "task_id": "xodexa_memory_contradiction_tracking_49bb15a088",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1861",
+        "1902"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1861 vs 1902.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-af3b024aebc5"
+  },
+  "xodexa_memory_multi_needle_sum_8700826297": {
+    "task_id": "xodexa_memory_multi_needle_sum_8700826297",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 432.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 432,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-4a02f38ee93e"
+  },
+  "xodexa_memory_needle_code_a4ab121cb7": {
+    "task_id": "xodexa_memory_needle_code_a4ab121cb7",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "MM-1855"
+      ]
+    },
+    "expected_answer": "MM-1855",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-162c9b3549c1"
+  },
+  "xodexa_memory_state_track_e39ba098cb": {
+    "task_id": "xodexa_memory_state_track_e39ba098cb",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2002.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2002,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-09735b96c358"
+  },
+  "xodexa_memory_contradiction_tracking_2d37f98cee": {
+    "task_id": "xodexa_memory_contradiction_tracking_2d37f98cee",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1876",
+        "1911"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1876 vs 1911.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e05dc8b763eb"
+  },
+  "xodexa_memory_multi_needle_sum_8de0d92b52": {
+    "task_id": "xodexa_memory_multi_needle_sum_8de0d92b52",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 248.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 248,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-9ded4a028727"
+  },
+  "xodexa_memory_needle_code_9f5e641c91": {
+    "task_id": "xodexa_memory_needle_code_9f5e641c91",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "WH-5370"
+      ]
+    },
+    "expected_answer": "WH-5370",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-90fa0729cf49"
+  },
+  "xodexa_memory_state_track_ef4061ca2c": {
+    "task_id": "xodexa_memory_state_track_ef4061ca2c",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 168.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 168,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-2735afdb48dc"
+  },
+  "xodexa_memory_contradiction_tracking_7ddc950ffa": {
+    "task_id": "xodexa_memory_contradiction_tracking_7ddc950ffa",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1914",
+        "1956"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1914 vs 1956.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-25c3913e9bb8"
+  },
+  "xodexa_memory_multi_needle_sum_e4f3833748": {
+    "task_id": "xodexa_memory_multi_needle_sum_e4f3833748",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 231.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 231,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-a9fbc2f4c36b"
+  },
+  "xodexa_memory_needle_code_f9bbae86eb": {
+    "task_id": "xodexa_memory_needle_code_f9bbae86eb",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "WF-7924"
+      ]
+    },
+    "expected_answer": "WF-7924",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-13e303a0c50a"
+  },
+  "xodexa_memory_state_track_3cd09dd112": {
+    "task_id": "xodexa_memory_state_track_3cd09dd112",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1331.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1331,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-ff7fba7d2f22"
+  },
+  "xodexa_memory_contradiction_tracking_763cf26b1a": {
+    "task_id": "xodexa_memory_contradiction_tracking_763cf26b1a",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "contradiction_tracking",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "contains_all",
+      "terms": [
+        "1886",
+        "1929"
+      ],
+      "allow_partial": true
+    },
+    "expected_answer": "Contradiction: 1886 vs 1929.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6040abc60fdb"
+  },
+  "xodexa_memory_multi_needle_sum_687e380f8d": {
+    "task_id": "xodexa_memory_multi_needle_sum_687e380f8d",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "multi_needle",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 251.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 251,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-809ad56ca72c"
+  },
+  "xodexa_memory_needle_code_ae8550fa7f": {
+    "task_id": "xodexa_memory_needle_code_ae8550fa7f",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "needle",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "OZ-5021"
+      ]
+    },
+    "expected_answer": "OZ-5021",
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-fe1e0878cad5"
+  },
+  "xodexa_memory_state_track_92497274a4": {
+    "task_id": "xodexa_memory_state_track_92497274a4",
+    "category": "memory",
+    "family": "memory",
+    "subdomain": "delayed_instruction",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "numeric",
+      "target": 206.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 206,
+    "points": 3,
+    "negative": 1,
+    "canary": "XDX-CANARY-6c547b054589"
   }
 }

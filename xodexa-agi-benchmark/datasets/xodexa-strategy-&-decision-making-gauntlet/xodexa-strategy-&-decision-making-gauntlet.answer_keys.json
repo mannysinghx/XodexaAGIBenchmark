@@ -1,38 +1,38 @@
 {
-  "xodexa_strategy_expected_value_9a49abef26": {
-    "task_id": "xodexa_strategy_expected_value_9a49abef26",
+  "xodexa_strategy_expected_value_b4d3cfcb9a": {
+    "task_id": "xodexa_strategy_expected_value_b4d3cfcb9a",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 65.5,
+      "target": 1.5,
       "tolerance": 0.05
     },
-    "expected_answer": 65.5,
+    "expected_answer": 1.5,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-4bbbca77df13"
+    "canary": "XDX-CANARY-3eccbc7f30ed"
   },
-  "xodexa_strategy_forecast_trend_83d48f79b9": {
-    "task_id": "xodexa_strategy_forecast_trend_83d48f79b9",
+  "xodexa_strategy_forecast_trend_f9a895e391": {
+    "task_id": "xodexa_strategy_forecast_trend_f9a895e391",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 251.0,
+      "target": 432.0,
       "tolerance": 0.001
     },
-    "expected_answer": 251,
+    "expected_answer": 432,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-789a66cf34df"
+    "canary": "XDX-CANARY-1df937931ab8"
   },
-  "xodexa_strategy_resource_allocation_7c14a259eb": {
-    "task_id": "xodexa_strategy_resource_allocation_7c14a259eb",
+  "xodexa_strategy_resource_allocation_07e17c25cf": {
+    "task_id": "xodexa_strategy_resource_allocation_07e17c25cf",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -40,16 +40,16 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "Atlas"
+        "Beacon"
       ]
     },
-    "expected_answer": "Atlas",
+    "expected_answer": "Beacon",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-33b79e92c6d4"
+    "canary": "XDX-CANARY-0c4f3eb86005"
   },
-  "xodexa_strategy_tradeoff_reasoning_edcfceb988": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_edcfceb988",
+  "xodexa_strategy_tradeoff_reasoning_148aa1521b": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_148aa1521b",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -70,42 +70,42 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-ffc7a219f465"
+    "canary": "XDX-CANARY-84d16d98ec6b"
   },
-  "xodexa_strategy_expected_value_c124c5fae1": {
-    "task_id": "xodexa_strategy_expected_value_c124c5fae1",
+  "xodexa_strategy_expected_value_44ae993f89": {
+    "task_id": "xodexa_strategy_expected_value_44ae993f89",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 13.2,
+      "target": 80.0,
       "tolerance": 0.05
     },
-    "expected_answer": 13.2,
+    "expected_answer": 80.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-5ed4ada4453e"
+    "canary": "XDX-CANARY-44c838d3448c"
   },
-  "xodexa_strategy_forecast_trend_e36ef623e0": {
-    "task_id": "xodexa_strategy_forecast_trend_e36ef623e0",
+  "xodexa_strategy_forecast_trend_96bb173c9d": {
+    "task_id": "xodexa_strategy_forecast_trend_96bb173c9d",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 396.0,
+      "target": 256.0,
       "tolerance": 0.001
     },
-    "expected_answer": 396,
+    "expected_answer": 256,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c89841df111e"
+    "canary": "XDX-CANARY-d9bbe8b1d385"
   },
-  "xodexa_strategy_resource_allocation_300ce86765": {
-    "task_id": "xodexa_strategy_resource_allocation_300ce86765",
+  "xodexa_strategy_resource_allocation_efd723190a": {
+    "task_id": "xodexa_strategy_resource_allocation_efd723190a",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -113,16 +113,16 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "Atlas"
+        "Cedar"
       ]
     },
-    "expected_answer": "Atlas",
+    "expected_answer": "Cedar",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-63b3d0a10a5e"
+    "canary": "XDX-CANARY-5651d861a4d3"
   },
-  "xodexa_strategy_tradeoff_reasoning_90ba177647": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_90ba177647",
+  "xodexa_strategy_tradeoff_reasoning_506e6eb750": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_506e6eb750",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -143,26 +143,3019 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-2a956f1e0355"
+    "canary": "XDX-CANARY-77ea9dbebb41"
   },
-  "xodexa_strategy_expected_value_4b48eec914": {
-    "task_id": "xodexa_strategy_expected_value_4b48eec914",
+  "xodexa_strategy_expected_value_e055959a24": {
+    "task_id": "xodexa_strategy_expected_value_e055959a24",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 6.75,
+      "target": 51.5,
       "tolerance": 0.05
     },
-    "expected_answer": 6.75,
+    "expected_answer": 51.5,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-aadc409d3269"
+    "canary": "XDX-CANARY-3ce63ef9fc47"
   },
-  "xodexa_strategy_forecast_trend_2df62b8111": {
-    "task_id": "xodexa_strategy_forecast_trend_2df62b8111",
+  "xodexa_strategy_forecast_trend_eb4731f67a": {
+    "task_id": "xodexa_strategy_forecast_trend_eb4731f67a",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 217.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 217,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-260c6132a97e"
+  },
+  "xodexa_strategy_resource_allocation_54a6336ed7": {
+    "task_id": "xodexa_strategy_resource_allocation_54a6336ed7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bb07068ad1ac"
+  },
+  "xodexa_strategy_tradeoff_reasoning_de1e92ea54": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_de1e92ea54",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-c314215a7183"
+  },
+  "xodexa_strategy_expected_value_59815e068e": {
+    "task_id": "xodexa_strategy_expected_value_59815e068e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 52.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 52.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b41e6f7295ea"
+  },
+  "xodexa_strategy_forecast_trend_82887c1498": {
+    "task_id": "xodexa_strategy_forecast_trend_82887c1498",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 425.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 425,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-72421d10f5eb"
+  },
+  "xodexa_strategy_resource_allocation_130413324f": {
+    "task_id": "xodexa_strategy_resource_allocation_130413324f",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3655ee6d5843"
+  },
+  "xodexa_strategy_tradeoff_reasoning_49303c8bd6": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_49303c8bd6",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-c06e133394e0"
+  },
+  "xodexa_strategy_expected_value_56d1a74645": {
+    "task_id": "xodexa_strategy_expected_value_56d1a74645",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -6.75,
+      "tolerance": 0.05
+    },
+    "expected_answer": -6.75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-636d37250435"
+  },
+  "xodexa_strategy_forecast_trend_0b88e5c004": {
+    "task_id": "xodexa_strategy_forecast_trend_0b88e5c004",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 155.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 155,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3a65d0708f95"
+  },
+  "xodexa_strategy_resource_allocation_3c0d136a77": {
+    "task_id": "xodexa_strategy_resource_allocation_3c0d136a77",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b4eb2860538a"
+  },
+  "xodexa_strategy_tradeoff_reasoning_9ede6e5844": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_9ede6e5844",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-cd3f3ca8410c"
+  },
+  "xodexa_strategy_expected_value_9acc46c260": {
+    "task_id": "xodexa_strategy_expected_value_9acc46c260",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -18.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": -18.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-57970a10cdff"
+  },
+  "xodexa_strategy_forecast_trend_c092ae5feb": {
+    "task_id": "xodexa_strategy_forecast_trend_c092ae5feb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 318.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 318,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0f735cc8fc80"
+  },
+  "xodexa_strategy_resource_allocation_b1ed5efaad": {
+    "task_id": "xodexa_strategy_resource_allocation_b1ed5efaad",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-51ac779911f4"
+  },
+  "xodexa_strategy_tradeoff_reasoning_37a0007483": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_37a0007483",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-08cf07c700fd"
+  },
+  "xodexa_strategy_expected_value_1f9bbf3933": {
+    "task_id": "xodexa_strategy_expected_value_1f9bbf3933",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -24.9,
+      "tolerance": 0.05
+    },
+    "expected_answer": -24.9,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-634494987c42"
+  },
+  "xodexa_strategy_forecast_trend_a2e32c5a6e": {
+    "task_id": "xodexa_strategy_forecast_trend_a2e32c5a6e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 285.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 285,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a5abf39f5918"
+  },
+  "xodexa_strategy_resource_allocation_5958e1df31": {
+    "task_id": "xodexa_strategy_resource_allocation_5958e1df31",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bec0422741a3"
+  },
+  "xodexa_strategy_tradeoff_reasoning_ac2f239ac7": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_ac2f239ac7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-8dc51739e6c8"
+  },
+  "xodexa_strategy_expected_value_998dbf6302": {
+    "task_id": "xodexa_strategy_expected_value_998dbf6302",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 37.2,
+      "tolerance": 0.05
+    },
+    "expected_answer": 37.2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6195b98f32ff"
+  },
+  "xodexa_strategy_forecast_trend_3c68fed23f": {
+    "task_id": "xodexa_strategy_forecast_trend_3c68fed23f",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 373.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 373,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-963314cb24a9"
+  },
+  "xodexa_strategy_resource_allocation_7e3998a8eb": {
+    "task_id": "xodexa_strategy_resource_allocation_7e3998a8eb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-240e4cd86e8e"
+  },
+  "xodexa_strategy_tradeoff_reasoning_2f7bc99c88": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_2f7bc99c88",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-a33184d80699"
+  },
+  "xodexa_strategy_expected_value_e8be611688": {
+    "task_id": "xodexa_strategy_expected_value_e8be611688",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 18.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ce3a226541fb"
+  },
+  "xodexa_strategy_forecast_trend_726ff20bec": {
+    "task_id": "xodexa_strategy_forecast_trend_726ff20bec",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 158.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 158,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-96a2a152e7f2"
+  },
+  "xodexa_strategy_resource_allocation_9aec3ceeed": {
+    "task_id": "xodexa_strategy_resource_allocation_9aec3ceeed",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-00880d4bb8f5"
+  },
+  "xodexa_strategy_tradeoff_reasoning_c35c24199d": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_c35c24199d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-4d44873bcf4f"
+  },
+  "xodexa_strategy_expected_value_4d4ac134e0": {
+    "task_id": "xodexa_strategy_expected_value_4d4ac134e0",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.2,
+      "tolerance": 0.05
+    },
+    "expected_answer": 4.2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-216b66da8e83"
+  },
+  "xodexa_strategy_forecast_trend_ff855d3295": {
+    "task_id": "xodexa_strategy_forecast_trend_ff855d3295",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 284.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 284,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ed627e7fa316"
+  },
+  "xodexa_strategy_resource_allocation_6c8964bada": {
+    "task_id": "xodexa_strategy_resource_allocation_6c8964bada",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b56b567fc423"
+  },
+  "xodexa_strategy_tradeoff_reasoning_f4fedcadad": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_f4fedcadad",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-fa9f95eb3775"
+  },
+  "xodexa_strategy_expected_value_fbfbdad0cc": {
+    "task_id": "xodexa_strategy_expected_value_fbfbdad0cc",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -27.1,
+      "tolerance": 0.05
+    },
+    "expected_answer": -27.1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2a30b7037f3c"
+  },
+  "xodexa_strategy_forecast_trend_ca20063551": {
+    "task_id": "xodexa_strategy_forecast_trend_ca20063551",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 233.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 233,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c63d7e52d59d"
+  },
+  "xodexa_strategy_resource_allocation_a1c144fcb2": {
+    "task_id": "xodexa_strategy_resource_allocation_a1c144fcb2",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-61acc2693df2"
+  },
+  "xodexa_strategy_tradeoff_reasoning_a83fb9fb2c": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_a83fb9fb2c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-3b082db4ecca"
+  },
+  "xodexa_strategy_expected_value_44987716cc": {
+    "task_id": "xodexa_strategy_expected_value_44987716cc",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 52.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 52.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b24a7f2ac742"
+  },
+  "xodexa_strategy_forecast_trend_fcaa8f8a7d": {
+    "task_id": "xodexa_strategy_forecast_trend_fcaa8f8a7d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 294.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 294,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bed969bb8488"
+  },
+  "xodexa_strategy_resource_allocation_311b95728a": {
+    "task_id": "xodexa_strategy_resource_allocation_311b95728a",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-56b4f1cd3e6b"
+  },
+  "xodexa_strategy_tradeoff_reasoning_85e86d5a43": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_85e86d5a43",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-74466c992d90"
+  },
+  "xodexa_strategy_expected_value_4866551e90": {
+    "task_id": "xodexa_strategy_expected_value_4866551e90",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.8,
+      "tolerance": 0.05
+    },
+    "expected_answer": 2.8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f6ab61052228"
+  },
+  "xodexa_strategy_forecast_trend_d8521c69c7": {
+    "task_id": "xodexa_strategy_forecast_trend_d8521c69c7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 293.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 293,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c885d4b506c1"
+  },
+  "xodexa_strategy_resource_allocation_9a2a6107ac": {
+    "task_id": "xodexa_strategy_resource_allocation_9a2a6107ac",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4febb93f058d"
+  },
+  "xodexa_strategy_tradeoff_reasoning_cb32438539": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_cb32438539",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-eb1bc33448c7"
+  },
+  "xodexa_strategy_expected_value_84125603a9": {
+    "task_id": "xodexa_strategy_expected_value_84125603a9",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 24.25,
+      "tolerance": 0.05
+    },
+    "expected_answer": 24.25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-31e02a66bf11"
+  },
+  "xodexa_strategy_forecast_trend_176248c48b": {
+    "task_id": "xodexa_strategy_forecast_trend_176248c48b",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 264.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 264,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e74cd4977eae"
+  },
+  "xodexa_strategy_resource_allocation_5a32e6dbeb": {
+    "task_id": "xodexa_strategy_resource_allocation_5a32e6dbeb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-22b797c8bc89"
+  },
+  "xodexa_strategy_tradeoff_reasoning_bed2fd34dd": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_bed2fd34dd",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-1054c8a8ad5d"
+  },
+  "xodexa_strategy_expected_value_d9ae7b0cd1": {
+    "task_id": "xodexa_strategy_expected_value_d9ae7b0cd1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -10.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": -10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-95379bfe5af8"
+  },
+  "xodexa_strategy_forecast_trend_2f7cadc2e6": {
+    "task_id": "xodexa_strategy_forecast_trend_2f7cadc2e6",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 489.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 489,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1635dfe45699"
+  },
+  "xodexa_strategy_resource_allocation_ba801ddabc": {
+    "task_id": "xodexa_strategy_resource_allocation_ba801ddabc",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f8198db75e47"
+  },
+  "xodexa_strategy_tradeoff_reasoning_649add6ae1": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_649add6ae1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-74c889a92f99"
+  },
+  "xodexa_strategy_expected_value_a836e1378c": {
+    "task_id": "xodexa_strategy_expected_value_a836e1378c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -5.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": -5.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ca996dcb28da"
+  },
+  "xodexa_strategy_forecast_trend_0f8b04b36b": {
+    "task_id": "xodexa_strategy_forecast_trend_0f8b04b36b",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 268.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 268,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-21a5985f357a"
+  },
+  "xodexa_strategy_resource_allocation_84abbeab02": {
+    "task_id": "xodexa_strategy_resource_allocation_84abbeab02",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a0d7e50e2bdf"
+  },
+  "xodexa_strategy_tradeoff_reasoning_01413597ba": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_01413597ba",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-b0ea8d4f1518"
+  },
+  "xodexa_strategy_expected_value_17994db0c3": {
+    "task_id": "xodexa_strategy_expected_value_17994db0c3",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 41.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 41.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eb6b7c7652cd"
+  },
+  "xodexa_strategy_forecast_trend_b046bda4ec": {
+    "task_id": "xodexa_strategy_forecast_trend_b046bda4ec",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 308.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 308,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-538018197eac"
+  },
+  "xodexa_strategy_resource_allocation_41c472681c": {
+    "task_id": "xodexa_strategy_resource_allocation_41c472681c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-34668218bf65"
+  },
+  "xodexa_strategy_tradeoff_reasoning_686f85a37b": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_686f85a37b",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-af2eaf9d8640"
+  },
+  "xodexa_strategy_expected_value_1f37848861": {
+    "task_id": "xodexa_strategy_expected_value_1f37848861",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 22.8,
+      "tolerance": 0.05
+    },
+    "expected_answer": 22.8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5ce5154f76b9"
+  },
+  "xodexa_strategy_forecast_trend_c27c9701b8": {
+    "task_id": "xodexa_strategy_forecast_trend_c27c9701b8",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 302.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 302,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7172db91d444"
+  },
+  "xodexa_strategy_resource_allocation_970e9674cb": {
+    "task_id": "xodexa_strategy_resource_allocation_970e9674cb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8128172a0d4f"
+  },
+  "xodexa_strategy_tradeoff_reasoning_578bedca94": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_578bedca94",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-e404436ede57"
+  },
+  "xodexa_strategy_expected_value_25d55727aa": {
+    "task_id": "xodexa_strategy_expected_value_25d55727aa",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 30.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": 30.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0b0123977233"
+  },
+  "xodexa_strategy_forecast_trend_8f9137d914": {
+    "task_id": "xodexa_strategy_forecast_trend_8f9137d914",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 296.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 296,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-badcc943e825"
+  },
+  "xodexa_strategy_resource_allocation_494309a745": {
+    "task_id": "xodexa_strategy_resource_allocation_494309a745",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-be40394ad087"
+  },
+  "xodexa_strategy_tradeoff_reasoning_12c2310b9f": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_12c2310b9f",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-572fc5107e7e"
+  },
+  "xodexa_strategy_expected_value_0f3f516341": {
+    "task_id": "xodexa_strategy_expected_value_0f3f516341",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 64.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 64.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f10a93ccc44f"
+  },
+  "xodexa_strategy_forecast_trend_01e03585b2": {
+    "task_id": "xodexa_strategy_forecast_trend_01e03585b2",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 265.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 265,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4eb80f28c9d2"
+  },
+  "xodexa_strategy_resource_allocation_fb2df956bf": {
+    "task_id": "xodexa_strategy_resource_allocation_fb2df956bf",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e9e8b6018de6"
+  },
+  "xodexa_strategy_tradeoff_reasoning_184ca7e80c": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_184ca7e80c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-216a2623f500"
+  },
+  "xodexa_strategy_expected_value_76cb8460f1": {
+    "task_id": "xodexa_strategy_expected_value_76cb8460f1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -8.2,
+      "tolerance": 0.05
+    },
+    "expected_answer": -8.2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fd4430c45260"
+  },
+  "xodexa_strategy_forecast_trend_30e4a4d203": {
+    "task_id": "xodexa_strategy_forecast_trend_30e4a4d203",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 426.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 426,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-47f18173930d"
+  },
+  "xodexa_strategy_resource_allocation_f6cc61567b": {
+    "task_id": "xodexa_strategy_resource_allocation_f6cc61567b",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-09dbefc3de1d"
+  },
+  "xodexa_strategy_tradeoff_reasoning_cdfb9f9913": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_cdfb9f9913",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-9d29b3e004d4"
+  },
+  "xodexa_strategy_expected_value_b411c9e636": {
+    "task_id": "xodexa_strategy_expected_value_b411c9e636",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -0.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": -0.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-59b208812b5d"
+  },
+  "xodexa_strategy_forecast_trend_2a758cadec": {
+    "task_id": "xodexa_strategy_forecast_trend_2a758cadec",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 441.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 441,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0d1617a993fa"
+  },
+  "xodexa_strategy_resource_allocation_6ffb0a70d1": {
+    "task_id": "xodexa_strategy_resource_allocation_6ffb0a70d1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de8844b0765e"
+  },
+  "xodexa_strategy_tradeoff_reasoning_a0db271a0c": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_a0db271a0c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-98df5f9c7a02"
+  },
+  "xodexa_strategy_expected_value_d949146c14": {
+    "task_id": "xodexa_strategy_expected_value_d949146c14",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -30.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": -30.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-87d8355b726f"
+  },
+  "xodexa_strategy_forecast_trend_68dc7f4c80": {
+    "task_id": "xodexa_strategy_forecast_trend_68dc7f4c80",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 173.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 173,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-45a902209f21"
+  },
+  "xodexa_strategy_resource_allocation_8e2e956a99": {
+    "task_id": "xodexa_strategy_resource_allocation_8e2e956a99",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cad3d907cd6b"
+  },
+  "xodexa_strategy_tradeoff_reasoning_572600e2de": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_572600e2de",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-b939aa589a3d"
+  },
+  "xodexa_strategy_expected_value_444f75a495": {
+    "task_id": "xodexa_strategy_expected_value_444f75a495",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 63.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 63.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1f73b8a33d7b"
+  },
+  "xodexa_strategy_forecast_trend_b1965de60a": {
+    "task_id": "xodexa_strategy_forecast_trend_b1965de60a",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 320.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 320,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-85236e841d94"
+  },
+  "xodexa_strategy_resource_allocation_90e10a358c": {
+    "task_id": "xodexa_strategy_resource_allocation_90e10a358c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-39c69fabb2b2"
+  },
+  "xodexa_strategy_tradeoff_reasoning_50f630d00e": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_50f630d00e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-97e62ed59608"
+  },
+  "xodexa_strategy_expected_value_8406446979": {
+    "task_id": "xodexa_strategy_expected_value_8406446979",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 78.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a5253a5759b4"
+  },
+  "xodexa_strategy_forecast_trend_6a1c70f9e4": {
+    "task_id": "xodexa_strategy_forecast_trend_6a1c70f9e4",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 487.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 487,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-849784217a25"
+  },
+  "xodexa_strategy_resource_allocation_959f53e952": {
+    "task_id": "xodexa_strategy_resource_allocation_959f53e952",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-742721f6cf8a"
+  },
+  "xodexa_strategy_tradeoff_reasoning_8e6178d628": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_8e6178d628",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-86cb005de25c"
+  },
+  "xodexa_strategy_expected_value_2704e6e5b3": {
+    "task_id": "xodexa_strategy_expected_value_2704e6e5b3",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -44.4,
+      "tolerance": 0.05
+    },
+    "expected_answer": -44.4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a143dc4c94a4"
+  },
+  "xodexa_strategy_forecast_trend_b84528636a": {
+    "task_id": "xodexa_strategy_forecast_trend_b84528636a",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 453.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 453,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1a9c83944bbe"
+  },
+  "xodexa_strategy_resource_allocation_e63d7baa8d": {
+    "task_id": "xodexa_strategy_resource_allocation_e63d7baa8d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5fcc9644269d"
+  },
+  "xodexa_strategy_tradeoff_reasoning_4a7dc5ecc9": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_4a7dc5ecc9",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-f3afb2234c84"
+  },
+  "xodexa_strategy_expected_value_71bd9ff4e8": {
+    "task_id": "xodexa_strategy_expected_value_71bd9ff4e8",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -35.2,
+      "tolerance": 0.05
+    },
+    "expected_answer": -35.2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c85993f7b598"
+  },
+  "xodexa_strategy_forecast_trend_46c4ce3a4b": {
+    "task_id": "xodexa_strategy_forecast_trend_46c4ce3a4b",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 227.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 227,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-da495c9a6705"
+  },
+  "xodexa_strategy_resource_allocation_b8297ed8b8": {
+    "task_id": "xodexa_strategy_resource_allocation_b8297ed8b8",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5b4f4ca0a3e7"
+  },
+  "xodexa_strategy_tradeoff_reasoning_dbb66b399f": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_dbb66b399f",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-b19c9ff111f9"
+  },
+  "xodexa_strategy_expected_value_c5732aa965": {
+    "task_id": "xodexa_strategy_expected_value_c5732aa965",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -1.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": -1.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-80ea78c73c92"
+  },
+  "xodexa_strategy_forecast_trend_fbccc28fa7": {
+    "task_id": "xodexa_strategy_forecast_trend_fbccc28fa7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 354.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 354,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-db439cfcce65"
+  },
+  "xodexa_strategy_resource_allocation_f190532204": {
+    "task_id": "xodexa_strategy_resource_allocation_f190532204",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-37b51db32638"
+  },
+  "xodexa_strategy_tradeoff_reasoning_7e8d86cb52": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_7e8d86cb52",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-2be4017ad0ee"
+  },
+  "xodexa_strategy_expected_value_92a7ebfd35": {
+    "task_id": "xodexa_strategy_expected_value_92a7ebfd35",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 16.4,
+      "tolerance": 0.05
+    },
+    "expected_answer": 16.4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4369f741e191"
+  },
+  "xodexa_strategy_forecast_trend_07db680865": {
+    "task_id": "xodexa_strategy_forecast_trend_07db680865",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 390.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 390,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2113e0accc0d"
+  },
+  "xodexa_strategy_resource_allocation_8c5ac00ad6": {
+    "task_id": "xodexa_strategy_resource_allocation_8c5ac00ad6",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-18a25cf60618"
+  },
+  "xodexa_strategy_tradeoff_reasoning_bb021ac5eb": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_bb021ac5eb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-a31d2a38a043"
+  },
+  "xodexa_strategy_expected_value_0bd1668ac7": {
+    "task_id": "xodexa_strategy_expected_value_0bd1668ac7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 18.4,
+      "tolerance": 0.05
+    },
+    "expected_answer": 18.4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-377843dfabe5"
+  },
+  "xodexa_strategy_forecast_trend_01439f36ef": {
+    "task_id": "xodexa_strategy_forecast_trend_01439f36ef",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 286.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 286,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e1e8145e9b99"
+  },
+  "xodexa_strategy_resource_allocation_65321aa159": {
+    "task_id": "xodexa_strategy_resource_allocation_65321aa159",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f8267440e6d1"
+  },
+  "xodexa_strategy_tradeoff_reasoning_43e9e5a6ea": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_43e9e5a6ea",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-6b79141dc702"
+  },
+  "xodexa_strategy_expected_value_554db11df1": {
+    "task_id": "xodexa_strategy_expected_value_554db11df1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -22.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": -22.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ce5c02f176ab"
+  },
+  "xodexa_strategy_forecast_trend_9c37004ee7": {
+    "task_id": "xodexa_strategy_forecast_trend_9c37004ee7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 380.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 380,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4817a252b7ea"
+  },
+  "xodexa_strategy_resource_allocation_a640fd9bec": {
+    "task_id": "xodexa_strategy_resource_allocation_a640fd9bec",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4fabcf19869e"
+  },
+  "xodexa_strategy_tradeoff_reasoning_9886e60432": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_9886e60432",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-f7b73195fea1"
+  },
+  "xodexa_strategy_expected_value_b0f8e70afc": {
+    "task_id": "xodexa_strategy_expected_value_b0f8e70afc",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 52.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 52.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8211eddd3cf"
+  },
+  "xodexa_strategy_forecast_trend_aeb5595dcb": {
+    "task_id": "xodexa_strategy_forecast_trend_aeb5595dcb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 349.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 349,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b7e0cbfb7744"
+  },
+  "xodexa_strategy_resource_allocation_09f92ce55d": {
+    "task_id": "xodexa_strategy_resource_allocation_09f92ce55d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6c5591c989ce"
+  },
+  "xodexa_strategy_tradeoff_reasoning_80e4e8c607": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_80e4e8c607",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-21329d7a263d"
+  },
+  "xodexa_strategy_expected_value_aeb2689088": {
+    "task_id": "xodexa_strategy_expected_value_aeb2689088",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": 1.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3a09810ee431"
+  },
+  "xodexa_strategy_forecast_trend_c5c5e25147": {
+    "task_id": "xodexa_strategy_forecast_trend_c5c5e25147",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 345.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 345,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9f234cfd71d"
+  },
+  "xodexa_strategy_resource_allocation_d029d05dff": {
+    "task_id": "xodexa_strategy_resource_allocation_d029d05dff",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c96824ba9ca5"
+  },
+  "xodexa_strategy_tradeoff_reasoning_79333d7d33": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_79333d7d33",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-6095d25df744"
+  },
+  "xodexa_strategy_expected_value_c82b65236f": {
+    "task_id": "xodexa_strategy_expected_value_c82b65236f",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 69.2,
+      "tolerance": 0.05
+    },
+    "expected_answer": 69.2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4f1e3cdb090e"
+  },
+  "xodexa_strategy_forecast_trend_9c641d6ad7": {
+    "task_id": "xodexa_strategy_forecast_trend_9c641d6ad7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 245.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 245,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-37f8cf2e2427"
+  },
+  "xodexa_strategy_resource_allocation_ce12c245b2": {
+    "task_id": "xodexa_strategy_resource_allocation_ce12c245b2",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6fdbd5310c41"
+  },
+  "xodexa_strategy_tradeoff_reasoning_94cf86c315": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_94cf86c315",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-c2e2d9fe43d3"
+  },
+  "xodexa_strategy_expected_value_1a72224e51": {
+    "task_id": "xodexa_strategy_expected_value_1a72224e51",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -15.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": -15.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3092b1a5e562"
+  },
+  "xodexa_strategy_forecast_trend_e8fbfec500": {
+    "task_id": "xodexa_strategy_forecast_trend_e8fbfec500",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 250.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 250,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d3de5c349ea6"
+  },
+  "xodexa_strategy_resource_allocation_a038b459d6": {
+    "task_id": "xodexa_strategy_resource_allocation_a038b459d6",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9cfc0b349324"
+  },
+  "xodexa_strategy_tradeoff_reasoning_183d879b65": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_183d879b65",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-585a5981bf62"
+  },
+  "xodexa_strategy_expected_value_2a26d30aab": {
+    "task_id": "xodexa_strategy_expected_value_2a26d30aab",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 5.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-62b3d9c17366"
+  },
+  "xodexa_strategy_forecast_trend_bb58a8d7c4": {
+    "task_id": "xodexa_strategy_forecast_trend_bb58a8d7c4",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 302.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 302,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-85cff4b37be8"
+  },
+  "xodexa_strategy_resource_allocation_bed0d99479": {
+    "task_id": "xodexa_strategy_resource_allocation_bed0d99479",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eae113f83e7f"
+  },
+  "xodexa_strategy_tradeoff_reasoning_c505aa83bb": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_c505aa83bb",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-b548744f49e8"
+  },
+  "xodexa_strategy_expected_value_2ad3c1120e": {
+    "task_id": "xodexa_strategy_expected_value_2ad3c1120e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 16.75,
+      "tolerance": 0.05
+    },
+    "expected_answer": 16.75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc2bb09043de"
+  },
+  "xodexa_strategy_forecast_trend_e2beda6f4c": {
+    "task_id": "xodexa_strategy_forecast_trend_e2beda6f4c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 312.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 312,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-61d9eef6888e"
+  },
+  "xodexa_strategy_resource_allocation_317e4e4f90": {
+    "task_id": "xodexa_strategy_resource_allocation_317e4e4f90",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7500f803d3db"
+  },
+  "xodexa_strategy_tradeoff_reasoning_12968d6a0d": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_12968d6a0d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-74ca2fa756e4"
+  },
+  "xodexa_strategy_expected_value_d88bb01317": {
+    "task_id": "xodexa_strategy_expected_value_d88bb01317",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": -1.75,
+      "tolerance": 0.05
+    },
+    "expected_answer": -1.75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-56d96346fccf"
+  },
+  "xodexa_strategy_forecast_trend_29e86953be": {
+    "task_id": "xodexa_strategy_forecast_trend_29e86953be",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 273.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 273,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aac3f5fbad28"
+  },
+  "xodexa_strategy_resource_allocation_d8520027ea": {
+    "task_id": "xodexa_strategy_resource_allocation_d8520027ea",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5e73f3f2f320"
+  },
+  "xodexa_strategy_tradeoff_reasoning_e42bf9727e": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_e42bf9727e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-471c8f83786f"
+  },
+  "xodexa_strategy_expected_value_cde08b5567": {
+    "task_id": "xodexa_strategy_expected_value_cde08b5567",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 27.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 27.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aa8fd3e65d9f"
+  },
+  "xodexa_strategy_forecast_trend_7b9014f091": {
+    "task_id": "xodexa_strategy_forecast_trend_7b9014f091",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 390.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 390,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b10c2f185c9c"
+  },
+  "xodexa_strategy_resource_allocation_e3ef2ea43e": {
+    "task_id": "xodexa_strategy_resource_allocation_e3ef2ea43e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Atlas"
+      ]
+    },
+    "expected_answer": "Atlas",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cae183d7544e"
+  },
+  "xodexa_strategy_tradeoff_reasoning_5436380f84": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_5436380f84",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-6d83dfcf6d98"
+  },
+  "xodexa_strategy_expected_value_eb02591ea7": {
+    "task_id": "xodexa_strategy_expected_value_eb02591ea7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 18.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7774a993764c"
+  },
+  "xodexa_strategy_forecast_trend_0c87726dea": {
+    "task_id": "xodexa_strategy_forecast_trend_0c87726dea",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 230.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 230,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-37f58d1582f7"
+  },
+  "xodexa_strategy_resource_allocation_2aabc9e84c": {
+    "task_id": "xodexa_strategy_resource_allocation_2aabc9e84c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2443574604aa"
+  },
+  "xodexa_strategy_tradeoff_reasoning_0106234c6d": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_0106234c6d",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-fd4430f49d7b"
+  },
+  "xodexa_strategy_expected_value_4daa203189": {
+    "task_id": "xodexa_strategy_expected_value_4daa203189",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 7.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 7.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2f7d93fe4489"
+  },
+  "xodexa_strategy_forecast_trend_03aa6f9b4e": {
+    "task_id": "xodexa_strategy_forecast_trend_03aa6f9b4e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 405.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 405,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc1939a3a9b7"
+  },
+  "xodexa_strategy_resource_allocation_91d1b5ad3e": {
+    "task_id": "xodexa_strategy_resource_allocation_91d1b5ad3e",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9fc97d8acf0d"
+  },
+  "xodexa_strategy_tradeoff_reasoning_4eb4293501": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_4eb4293501",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-d6de661ee67b"
+  },
+  "xodexa_strategy_expected_value_e07f4a2dd9": {
+    "task_id": "xodexa_strategy_expected_value_e07f4a2dd9",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 21.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 21.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ee189f531792"
+  },
+  "xodexa_strategy_forecast_trend_83c2d74160": {
+    "task_id": "xodexa_strategy_forecast_trend_83c2d74160",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 406.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 406,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de2d91fe4533"
+  },
+  "xodexa_strategy_resource_allocation_415531eec6": {
+    "task_id": "xodexa_strategy_resource_allocation_415531eec6",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ac1ad26f7b14"
+  },
+  "xodexa_strategy_tradeoff_reasoning_a64debab19": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_a64debab19",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-7d5cabe2094c"
+  },
+  "xodexa_strategy_expected_value_5f111fcfe7": {
+    "task_id": "xodexa_strategy_expected_value_5f111fcfe7",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 22.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": 22.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1561fd3d8dcd"
+  },
+  "xodexa_strategy_forecast_trend_ea38d0e155": {
+    "task_id": "xodexa_strategy_forecast_trend_ea38d0e155",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 206.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 206,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0e7cc5a977a5"
+  },
+  "xodexa_strategy_resource_allocation_49a97269f1": {
+    "task_id": "xodexa_strategy_resource_allocation_49a97269f1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7f54e653073c"
+  },
+  "xodexa_strategy_tradeoff_reasoning_d34a0f4d31": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_d34a0f4d31",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-c1242042e7a9"
+  },
+  "xodexa_strategy_expected_value_9c2f476001": {
+    "task_id": "xodexa_strategy_expected_value_9c2f476001",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 21.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 21.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1d3c780a8e1d"
+  },
+  "xodexa_strategy_forecast_trend_b164b1e4bb": {
+    "task_id": "xodexa_strategy_forecast_trend_b164b1e4bb",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
@@ -175,10 +3168,10 @@
     "expected_answer": 290,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-49314e88c3ad"
+    "canary": "XDX-CANARY-e5335b3e2e48"
   },
-  "xodexa_strategy_resource_allocation_e62a7178ff": {
-    "task_id": "xodexa_strategy_resource_allocation_e62a7178ff",
+  "xodexa_strategy_resource_allocation_7a3996a64b": {
+    "task_id": "xodexa_strategy_resource_allocation_7a3996a64b",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -192,10 +3185,10 @@
     "expected_answer": "Cedar",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-951a0e2711ae"
+    "canary": "XDX-CANARY-683c1dd4af26"
   },
-  "xodexa_strategy_tradeoff_reasoning_de8aae747b": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_de8aae747b",
+  "xodexa_strategy_tradeoff_reasoning_7446ce5683": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_7446ce5683",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -216,115 +3209,42 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-dd73a58371e8"
+    "canary": "XDX-CANARY-d5f4ad52c0bd"
   },
-  "xodexa_strategy_expected_value_529fe61222": {
-    "task_id": "xodexa_strategy_expected_value_529fe61222",
+  "xodexa_strategy_expected_value_ad387d55b2": {
+    "task_id": "xodexa_strategy_expected_value_ad387d55b2",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 26.3,
+      "target": 56.0,
       "tolerance": 0.05
     },
-    "expected_answer": 26.3,
+    "expected_answer": 56.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-8e86a1d2ca28"
+    "canary": "XDX-CANARY-d1c13475943f"
   },
-  "xodexa_strategy_forecast_trend_d3c8187488": {
-    "task_id": "xodexa_strategy_forecast_trend_d3c8187488",
+  "xodexa_strategy_forecast_trend_e2ee1ed29b": {
+    "task_id": "xodexa_strategy_forecast_trend_e2ee1ed29b",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 306.0,
+      "target": 148.0,
       "tolerance": 0.001
     },
-    "expected_answer": 306,
+    "expected_answer": 148,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-498d89551daa"
+    "canary": "XDX-CANARY-2e62b6c9fa8b"
   },
-  "xodexa_strategy_resource_allocation_3f562cf5f7": {
-    "task_id": "xodexa_strategy_resource_allocation_3f562cf5f7",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "resource_allocation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "Atlas"
-      ]
-    },
-    "expected_answer": "Atlas",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-ba91a1683a87"
-  },
-  "xodexa_strategy_tradeoff_reasoning_a4cb72227d": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_a4cb72227d",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "tradeoff",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "debt",
-        "risk",
-        "recommend"
-      ],
-      "pass_fraction": 0.66,
-      "penalty_if_contains_any": [
-        "there is no tradeoff",
-        "no downside"
-      ]
-    },
-    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
-    "points": 4,
-    "negative": 1,
-    "canary": "XDX-CANARY-08cd1431cc4e"
-  },
-  "xodexa_strategy_expected_value_c1e9d6eec5": {
-    "task_id": "xodexa_strategy_expected_value_c1e9d6eec5",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "risk_assessment",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 29.8,
-      "tolerance": 0.05
-    },
-    "expected_answer": 29.8,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-65bfea57c69c"
-  },
-  "xodexa_strategy_forecast_trend_a6b65140b2": {
-    "task_id": "xodexa_strategy_forecast_trend_a6b65140b2",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "forecasting",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 226.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 226,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-776ee2d9041f"
-  },
-  "xodexa_strategy_resource_allocation_e62fe74657": {
-    "task_id": "xodexa_strategy_resource_allocation_e62fe74657",
+  "xodexa_strategy_resource_allocation_e0314c7e17": {
+    "task_id": "xodexa_strategy_resource_allocation_e0314c7e17",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -338,10 +3258,10 @@
     "expected_answer": "Cedar",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-1d9682974744"
+    "canary": "XDX-CANARY-b4704881dd77"
   },
-  "xodexa_strategy_tradeoff_reasoning_8743a34b47": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_8743a34b47",
+  "xodexa_strategy_tradeoff_reasoning_78d4b1bf7d": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_78d4b1bf7d",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -362,42 +3282,42 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-216fe1543c4b"
+    "canary": "XDX-CANARY-4bdf70cc765f"
   },
-  "xodexa_strategy_expected_value_148978e565": {
-    "task_id": "xodexa_strategy_expected_value_148978e565",
+  "xodexa_strategy_expected_value_3eea006db4": {
+    "task_id": "xodexa_strategy_expected_value_3eea006db4",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 12.25,
+      "target": -10.0,
       "tolerance": 0.05
     },
-    "expected_answer": 12.25,
+    "expected_answer": -10.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-bb7c1a95c2ad"
+    "canary": "XDX-CANARY-7259ea32af8c"
   },
-  "xodexa_strategy_forecast_trend_c6a92ce620": {
-    "task_id": "xodexa_strategy_forecast_trend_c6a92ce620",
+  "xodexa_strategy_forecast_trend_d2afe66eed": {
+    "task_id": "xodexa_strategy_forecast_trend_d2afe66eed",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 280.0,
+      "target": 233.0,
       "tolerance": 0.001
     },
-    "expected_answer": 280,
+    "expected_answer": 233,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-a262ff2be322"
+    "canary": "XDX-CANARY-4a933314fdce"
   },
-  "xodexa_strategy_resource_allocation_7d0e8a44e8": {
-    "task_id": "xodexa_strategy_resource_allocation_7d0e8a44e8",
+  "xodexa_strategy_resource_allocation_b6977adeb1": {
+    "task_id": "xodexa_strategy_resource_allocation_b6977adeb1",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -411,10 +3331,10 @@
     "expected_answer": "Cedar",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-56325621a97f"
+    "canary": "XDX-CANARY-0d31bf40212e"
   },
-  "xodexa_strategy_tradeoff_reasoning_190d008ba1": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_190d008ba1",
+  "xodexa_strategy_tradeoff_reasoning_3bf32f0c66": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_3bf32f0c66",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -435,42 +3355,42 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-bba571563a0f"
+    "canary": "XDX-CANARY-a2699f6e7d12"
   },
-  "xodexa_strategy_expected_value_3bbd384b43": {
-    "task_id": "xodexa_strategy_expected_value_3bbd384b43",
+  "xodexa_strategy_expected_value_7e74ceea0e": {
+    "task_id": "xodexa_strategy_expected_value_7e74ceea0e",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 0.1,
+      "target": 60.2,
       "tolerance": 0.05
     },
-    "expected_answer": 0.1,
+    "expected_answer": 60.2,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-38c7482f5564"
+    "canary": "XDX-CANARY-7f72fa2b791d"
   },
-  "xodexa_strategy_forecast_trend_3957701225": {
-    "task_id": "xodexa_strategy_forecast_trend_3957701225",
+  "xodexa_strategy_forecast_trend_f74388f837": {
+    "task_id": "xodexa_strategy_forecast_trend_f74388f837",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 319.0,
+      "target": 284.0,
       "tolerance": 0.001
     },
-    "expected_answer": 319,
+    "expected_answer": 284,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-182fe6aaf101"
+    "canary": "XDX-CANARY-cfa1c4410e76"
   },
-  "xodexa_strategy_resource_allocation_ec9cdf01ed": {
-    "task_id": "xodexa_strategy_resource_allocation_ec9cdf01ed",
+  "xodexa_strategy_resource_allocation_fd4f8ecb8d": {
+    "task_id": "xodexa_strategy_resource_allocation_fd4f8ecb8d",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -478,16 +3398,16 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "Atlas"
+        "Beacon"
       ]
     },
-    "expected_answer": "Atlas",
+    "expected_answer": "Beacon",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-dc54077c8f28"
+    "canary": "XDX-CANARY-b6b4fb0d628c"
   },
-  "xodexa_strategy_tradeoff_reasoning_aaf53e1f9d": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_aaf53e1f9d",
+  "xodexa_strategy_tradeoff_reasoning_688d5267aa": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_688d5267aa",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -508,26 +3428,172 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-c0da48fa0b29"
+    "canary": "XDX-CANARY-d35ba3146da8"
   },
-  "xodexa_strategy_expected_value_17ebc6d164": {
-    "task_id": "xodexa_strategy_expected_value_17ebc6d164",
+  "xodexa_strategy_expected_value_a7780f4e1d": {
+    "task_id": "xodexa_strategy_expected_value_a7780f4e1d",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "risk_assessment",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 4.5,
+      "target": 5.0,
       "tolerance": 0.05
     },
-    "expected_answer": 4.5,
+    "expected_answer": 5.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-20c566a0dcf6"
+    "canary": "XDX-CANARY-9b0bb86806b6"
   },
-  "xodexa_strategy_forecast_trend_708458897a": {
-    "task_id": "xodexa_strategy_forecast_trend_708458897a",
+  "xodexa_strategy_forecast_trend_6f970754bf": {
+    "task_id": "xodexa_strategy_forecast_trend_6f970754bf",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 482.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 482,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fa5d8fb2dede"
+  },
+  "xodexa_strategy_resource_allocation_0a3ee03aa9": {
+    "task_id": "xodexa_strategy_resource_allocation_0a3ee03aa9",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Cedar"
+      ]
+    },
+    "expected_answer": "Cedar",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-23f24e5de246"
+  },
+  "xodexa_strategy_tradeoff_reasoning_ded524fd7a": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_ded524fd7a",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-96ee4c1a411f"
+  },
+  "xodexa_strategy_expected_value_fcde68e772": {
+    "task_id": "xodexa_strategy_expected_value_fcde68e772",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 50.6,
+      "tolerance": 0.05
+    },
+    "expected_answer": 50.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b863b14a3e8a"
+  },
+  "xodexa_strategy_forecast_trend_2914af6de2": {
+    "task_id": "xodexa_strategy_forecast_trend_2914af6de2",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "forecasting",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 310.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 310,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-34ebade92094"
+  },
+  "xodexa_strategy_resource_allocation_d7a2807961": {
+    "task_id": "xodexa_strategy_resource_allocation_d7a2807961",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "resource_allocation",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "exact",
+      "accept": [
+        "Beacon"
+      ]
+    },
+    "expected_answer": "Beacon",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eedc375686ea"
+  },
+  "xodexa_strategy_tradeoff_reasoning_f443a8efe1": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_f443a8efe1",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "tradeoff",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "debt",
+        "risk",
+        "recommend"
+      ],
+      "pass_fraction": 0.66,
+      "penalty_if_contains_any": [
+        "there is no tradeoff",
+        "no downside"
+      ]
+    },
+    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
+    "points": 4,
+    "negative": 1,
+    "canary": "XDX-CANARY-9d98f2cd9e02"
+  },
+  "xodexa_strategy_expected_value_a9ed84e09c": {
+    "task_id": "xodexa_strategy_expected_value_a9ed84e09c",
+    "category": "strategy",
+    "family": "strategy",
+    "subdomain": "risk_assessment",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 42.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 42.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bd4a43a4daa6"
+  },
+  "xodexa_strategy_forecast_trend_5359e1e770": {
+    "task_id": "xodexa_strategy_forecast_trend_5359e1e770",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "forecasting",
@@ -540,10 +3606,10 @@
     "expected_answer": 246,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-9df018e2458a"
+    "canary": "XDX-CANARY-12df719859aa"
   },
-  "xodexa_strategy_resource_allocation_5c3d088e6b": {
-    "task_id": "xodexa_strategy_resource_allocation_5c3d088e6b",
+  "xodexa_strategy_resource_allocation_b6f024bc3b": {
+    "task_id": "xodexa_strategy_resource_allocation_b6f024bc3b",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "resource_allocation",
@@ -551,16 +3617,16 @@
     "grader": {
       "type": "exact",
       "accept": [
-        "Beacon"
+        "Cedar"
       ]
     },
-    "expected_answer": "Beacon",
+    "expected_answer": "Cedar",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c3d7262dba7d"
+    "canary": "XDX-CANARY-48a7ae52ead9"
   },
-  "xodexa_strategy_tradeoff_reasoning_319c643105": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_319c643105",
+  "xodexa_strategy_tradeoff_reasoning_fe4bb5bfad": {
+    "task_id": "xodexa_strategy_tradeoff_reasoning_fe4bb5bfad",
     "category": "strategy",
     "family": "strategy",
     "subdomain": "tradeoff",
@@ -581,152 +3647,6 @@
     "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
     "points": 4,
     "negative": 1,
-    "canary": "XDX-CANARY-2e5fff4ac085"
-  },
-  "xodexa_strategy_expected_value_9cd971a2ac": {
-    "task_id": "xodexa_strategy_expected_value_9cd971a2ac",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "risk_assessment",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": -27.2,
-      "tolerance": 0.05
-    },
-    "expected_answer": -27.2,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e7498ab60c88"
-  },
-  "xodexa_strategy_forecast_trend_ce337aeece": {
-    "task_id": "xodexa_strategy_forecast_trend_ce337aeece",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "forecasting",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 442.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 442,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f9fe3cdfd2dd"
-  },
-  "xodexa_strategy_resource_allocation_4f510d8966": {
-    "task_id": "xodexa_strategy_resource_allocation_4f510d8966",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "resource_allocation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "Beacon"
-      ]
-    },
-    "expected_answer": "Beacon",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e2f51ca306b8"
-  },
-  "xodexa_strategy_tradeoff_reasoning_1e324df345": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_1e324df345",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "tradeoff",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "debt",
-        "risk",
-        "recommend"
-      ],
-      "pass_fraction": 0.66,
-      "penalty_if_contains_any": [
-        "there is no tradeoff",
-        "no downside"
-      ]
-    },
-    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
-    "points": 4,
-    "negative": 1,
-    "canary": "XDX-CANARY-0af28b68a022"
-  },
-  "xodexa_strategy_expected_value_a7e51f10d9": {
-    "task_id": "xodexa_strategy_expected_value_a7e51f10d9",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "risk_assessment",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 91.0,
-      "tolerance": 0.05
-    },
-    "expected_answer": 91.0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e68747ac91e2"
-  },
-  "xodexa_strategy_forecast_trend_af493e6fff": {
-    "task_id": "xodexa_strategy_forecast_trend_af493e6fff",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "forecasting",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 237.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 237,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-b07e8851fbda"
-  },
-  "xodexa_strategy_resource_allocation_047cd4cd28": {
-    "task_id": "xodexa_strategy_resource_allocation_047cd4cd28",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "resource_allocation",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "exact",
-      "accept": [
-        "Atlas"
-      ]
-    },
-    "expected_answer": "Atlas",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-623e9106a59e"
-  },
-  "xodexa_strategy_tradeoff_reasoning_56c82fdbbb": {
-    "task_id": "xodexa_strategy_tradeoff_reasoning_56c82fdbbb",
-    "category": "strategy",
-    "family": "strategy",
-    "subdomain": "tradeoff",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "debt",
-        "risk",
-        "recommend"
-      ],
-      "pass_fraction": 0.66,
-      "penalty_if_contains_any": [
-        "there is no tradeoff",
-        "no downside"
-      ]
-    },
-    "expected_answer": "Name speed-vs-quality tradeoff, recommend with stated risk.",
-    "points": 4,
-    "negative": 1,
-    "canary": "XDX-CANARY-970aa2ea5803"
+    "canary": "XDX-CANARY-10fae4f82a88"
   }
 }

@@ -1,0 +1,77 @@
+{
+  "name": "Xodexa Safety Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-04T17:21:27Z",
+  "task_count": 1000,
+  "checksum_sha256": "6cbbb30c9a74a59ffe42fc0343f025691db66712e254229ab332cb73c1b8e019",
+  "changelog": "Seed build of Xodexa Safety Gauntlet",
+  "families": {
+    "safety": 100,
+    "jailbreak_resistance": 200,
+    "tool_safety": 150,
+    "rag_poisoning": 150,
+    "privacy_security": 100,
+    "agentic_safety": 100,
+    "over_refusal": 100,
+    "multi_turn_manipulation": 60,
+    "high_stakes_safety": 25,
+    "canary_resistance": 15
+  },
+  "visibility": {
+    "validation": 1000
+  },
+  "licenses": {
+    "Xodexa-private": 1000
+  },
+  "difficulty": {
+    "mean": 5.55,
+    "min": 2.5,
+    "max": 7.0,
+    "bands": {
+      "hard": 544,
+      "expert": 336,
+      "medium": 120
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 1000,
+      "out": 1000
+    },
+    {
+      "stage": "difficulty",
+      "in": 1000,
+      "out": 1000
+    },
+    {
+      "stage": "contamination",
+      "in": 1000,
+      "out": 1000
+    },
+    {
+      "stage": "quality_review",
+      "in": 1000,
+      "out": 1000
+    },
+    {
+      "stage": "calibration",
+      "in": 1000,
+      "out": 1000
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
+}

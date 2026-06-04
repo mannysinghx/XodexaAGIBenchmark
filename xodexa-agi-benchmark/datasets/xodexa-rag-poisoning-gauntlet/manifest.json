@@ -1,0 +1,67 @@
+{
+  "name": "Xodexa RAG Poisoning Gauntlet",
+  "version": "1.0.0",
+  "benchmark_schema": "xodexa-task/1.0",
+  "created_at": "2026-06-04T17:21:49Z",
+  "task_count": 200,
+  "checksum_sha256": "0cb44fa24534ef6aa5d3649115ddbaef09349f4523b3f15b3c43379e5101ab42",
+  "changelog": "Seed build of Xodexa RAG Poisoning Gauntlet",
+  "families": {
+    "rag_poisoning": 200
+  },
+  "visibility": {
+    "validation": 200
+  },
+  "licenses": {
+    "Xodexa-private": 200
+  },
+  "difficulty": {
+    "mean": 6.4,
+    "min": 6.0,
+    "max": 7.0,
+    "bands": {
+      "hard": 80,
+      "expert": 120
+    }
+  },
+  "contamination": {
+    "threshold": 0.6,
+    "max_similarity": 0.0,
+    "mean_similarity": 0.0,
+    "rejected_for_contamination": 0
+  },
+  "pipeline": [
+    {
+      "stage": "generate",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "difficulty",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "contamination",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "quality_review",
+      "in": 200,
+      "out": 200
+    },
+    {
+      "stage": "calibration",
+      "in": 200,
+      "out": 200
+    }
+  ],
+  "license_summary": "Mixed; see per-task provenance.license",
+  "known_limitations": [
+    "Procedural graders are deterministic but narrower than a human rater.",
+    "Multimodal items are text-rendered proxies in this MVP.",
+    "Difficulty is provisional until human + frontier baselines are collected."
+  ],
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
+}

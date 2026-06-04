@@ -2,26 +2,26 @@
   "name": "Xodexa Science Gauntlet",
   "version": "1.0.0",
   "benchmark_schema": "xodexa-task/1.0",
-  "created_at": "2026-06-03T15:31:58Z",
-  "task_count": 40,
-  "checksum_sha256": "c3d4b82574e4a8e9e706e54d8ec8bea917f5b760d245177789574b4a67b4b725",
-  "changelog": "MVP seed build of Xodexa Science Gauntlet",
+  "created_at": "2026-06-04T17:21:35Z",
+  "task_count": 200,
+  "checksum_sha256": "b175af1107aac016c0018a401dbee5ccc5270aba3e16f60168bc29257bdbb090",
+  "changelog": "Seed build of Xodexa Science Gauntlet",
   "families": {
-    "science": 40
+    "science": 200
   },
   "visibility": {
-    "validation": 40
+    "validation": 200
   },
   "licenses": {
-    "Xodexa-private": 40
+    "Xodexa-private": 200
   },
   "difficulty": {
-    "mean": 4.24,
+    "mean": 4.25,
     "min": 3.5,
     "max": 5.5,
     "bands": {
-      "medium": 27,
-      "hard": 13
+      "medium": 133,
+      "hard": 67
     }
   },
   "contamination": {
@@ -33,28 +33,28 @@
   "pipeline": [
     {
       "stage": "generate",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "difficulty",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "contamination",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "quality_review",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "calibration",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     }
   ],
   "license_summary": "Mixed; see per-task provenance.license",
@@ -63,5 +63,5 @@
     "Multimodal items are text-rendered proxies in this MVP.",
     "Difficulty is provisional until human + frontier baselines are collected."
   ],
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
 }

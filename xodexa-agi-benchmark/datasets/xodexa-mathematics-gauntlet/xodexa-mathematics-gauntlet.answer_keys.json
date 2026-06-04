@@ -1,22 +1,22 @@
 {
-  "xodexa_math_combinatorics_choose_aa3fa81805": {
-    "task_id": "xodexa_math_combinatorics_choose_aa3fa81805",
+  "xodexa_math_combinatorics_choose_08ea8b0481": {
+    "task_id": "xodexa_math_combinatorics_choose_08ea8b0481",
     "category": "mathematics",
     "family": "math",
     "subdomain": "combinatorics",
     "difficulty": 4.5,
     "grader": {
       "type": "numeric",
-      "target": 3003.0,
+      "target": 924.0,
       "tolerance": 0.001
     },
-    "expected_answer": 3003,
+    "expected_answer": 924,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-2b8f15c6098d"
+    "canary": "XDX-CANARY-b4b37e2f4479"
   },
-  "xodexa_math_divisor_count_bfa28e8061": {
-    "task_id": "xodexa_math_divisor_count_bfa28e8061",
+  "xodexa_math_divisor_count_e9736e9b31": {
+    "task_id": "xodexa_math_divisor_count_e9736e9b31",
     "category": "mathematics",
     "family": "math",
     "subdomain": "number_theory",
@@ -29,10 +29,10 @@
     "expected_answer": 8,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-5018368bc4a0"
+    "canary": "XDX-CANARY-b26cd2e40e33"
   },
-  "xodexa_math_false_proof_primes_7005994241": {
-    "task_id": "xodexa_math_false_proof_primes_7005994241",
+  "xodexa_math_false_proof_primes_d2a4e7a00a": {
+    "task_id": "xodexa_math_false_proof_primes_d2a4e7a00a",
     "category": "mathematics",
     "family": "math",
     "subdomain": "proof",
@@ -57,10 +57,10 @@
     "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-854c4717ec4d"
+    "canary": "XDX-CANARY-67bba2b71cbf"
   },
-  "xodexa_math_gcd_pair_8b9903c728": {
-    "task_id": "xodexa_math_gcd_pair_8b9903c728",
+  "xodexa_math_gcd_pair_7af61bf29d": {
+    "task_id": "xodexa_math_gcd_pair_7af61bf29d",
     "category": "mathematics",
     "family": "math",
     "subdomain": "number_theory",
@@ -73,290 +73,10 @@
     "expected_answer": 1,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-1ca96c5919e1"
+    "canary": "XDX-CANARY-acc553a7bd39"
   },
-  "xodexa_math_linear_system_bec71bfb4c": {
-    "task_id": "xodexa_math_linear_system_bec71bfb4c",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": -2.0,
-      "tolerance": 0.01
-    },
-    "expected_answer": -2,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-7b7343fbced0"
-  },
-  "xodexa_math_modular_exponentiation_e335c3ecca": {
-    "task_id": "xodexa_math_modular_exponentiation_e335c3ecca",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 93.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 93,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-676b107d71b0"
-  },
-  "xodexa_math_probability_fraction_8345dbe449": {
-    "task_id": "xodexa_math_probability_fraction_8345dbe449",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "probability",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.555556,
-      "tolerance": 0.01
-    },
-    "expected_answer": 0.5556,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-28ea9b41e01e"
-  },
-  "xodexa_math_summation_815a550b51": {
-    "task_id": "xodexa_math_summation_815a550b51",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 1540.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 1540,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-a0942af6fa48"
-  },
-  "xodexa_math_combinatorics_choose_084046b50f": {
-    "task_id": "xodexa_math_combinatorics_choose_084046b50f",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "combinatorics",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 120.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 120,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-4dc384235a41"
-  },
-  "xodexa_math_divisor_count_59714c441f": {
-    "task_id": "xodexa_math_divisor_count_59714c441f",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 6.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 6,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-d85c216cda35"
-  },
-  "xodexa_math_false_proof_primes_bd23ff5b8b": {
-    "task_id": "xodexa_math_false_proof_primes_bd23ff5b8b",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "proof",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "2 is prime",
-        "2 is even",
-        "two is even",
-        "only even prime",
-        "premise is false",
-        "false premise",
-        "not all primes are odd"
-      ],
-      "penalty_if_contains_any": [
-        "therefore the sum is always even",
-        "qed",
-        "thus proven"
-      ]
-    },
-    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-8ff8ed0377a3"
-  },
-  "xodexa_math_gcd_pair_ccb25c8457": {
-    "task_id": "xodexa_math_gcd_pair_ccb25c8457",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 1.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 1,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-7507e34c4591"
-  },
-  "xodexa_math_linear_system_1cc345d229": {
-    "task_id": "xodexa_math_linear_system_1cc345d229",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": -4.0,
-      "tolerance": 0.01
-    },
-    "expected_answer": -4,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-b23e8a781ed6"
-  },
-  "xodexa_math_modular_exponentiation_bcb0509210": {
-    "task_id": "xodexa_math_modular_exponentiation_bcb0509210",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 1.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 1,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-22407fe9dd60"
-  },
-  "xodexa_math_probability_fraction_aa5ab34f44": {
-    "task_id": "xodexa_math_probability_fraction_aa5ab34f44",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "probability",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.75,
-      "tolerance": 0.01
-    },
-    "expected_answer": 0.75,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-89d3231e0e67"
-  },
-  "xodexa_math_summation_3dc960d91b": {
-    "task_id": "xodexa_math_summation_3dc960d91b",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 120.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 120,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-0c7e4e26cf90"
-  },
-  "xodexa_math_combinatorics_choose_8b3cb0ad29": {
-    "task_id": "xodexa_math_combinatorics_choose_8b3cb0ad29",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "combinatorics",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 66.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 66,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-a0d1f1ec8f90"
-  },
-  "xodexa_math_divisor_count_b588b56534": {
-    "task_id": "xodexa_math_divisor_count_b588b56534",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 8.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 8,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-628030b67053"
-  },
-  "xodexa_math_false_proof_primes_3fcbbe3599": {
-    "task_id": "xodexa_math_false_proof_primes_3fcbbe3599",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "proof",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "2 is prime",
-        "2 is even",
-        "two is even",
-        "only even prime",
-        "premise is false",
-        "false premise",
-        "not all primes are odd"
-      ],
-      "penalty_if_contains_any": [
-        "therefore the sum is always even",
-        "qed",
-        "thus proven"
-      ]
-    },
-    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-5b00fc892e8e"
-  },
-  "xodexa_math_gcd_pair_e3a029c78a": {
-    "task_id": "xodexa_math_gcd_pair_e3a029c78a",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 1.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 1,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-7e9b5e3c11a4"
-  },
-  "xodexa_math_linear_system_120fe55b56": {
-    "task_id": "xodexa_math_linear_system_120fe55b56",
+  "xodexa_math_linear_system_47190b2d0a": {
+    "task_id": "xodexa_math_linear_system_47190b2d0a",
     "category": "mathematics",
     "family": "math",
     "subdomain": "algebra",
@@ -369,290 +89,10 @@
     "expected_answer": -1,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-edcec3ea5924"
+    "canary": "XDX-CANARY-d70ceebf9987"
   },
-  "xodexa_math_modular_exponentiation_8c98689a51": {
-    "task_id": "xodexa_math_modular_exponentiation_8c98689a51",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 96.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 96,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-4eee018615bc"
-  },
-  "xodexa_math_probability_fraction_075f828a93": {
-    "task_id": "xodexa_math_probability_fraction_075f828a93",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "probability",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.75,
-      "tolerance": 0.01
-    },
-    "expected_answer": 0.75,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2d5dacdfc784"
-  },
-  "xodexa_math_summation_90d23f5c0a": {
-    "task_id": "xodexa_math_summation_90d23f5c0a",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 55.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 55,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-cbabfd1a7c7f"
-  },
-  "xodexa_math_combinatorics_choose_5d4afc49f7": {
-    "task_id": "xodexa_math_combinatorics_choose_5d4afc49f7",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "combinatorics",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 1287.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 1287,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-6af1de5a6931"
-  },
-  "xodexa_math_divisor_count_23ac06ca43": {
-    "task_id": "xodexa_math_divisor_count_23ac06ca43",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 6.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 6,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-5aed14bb7f4c"
-  },
-  "xodexa_math_false_proof_primes_2b4c69f120": {
-    "task_id": "xodexa_math_false_proof_primes_2b4c69f120",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "proof",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "2 is prime",
-        "2 is even",
-        "two is even",
-        "only even prime",
-        "premise is false",
-        "false premise",
-        "not all primes are odd"
-      ],
-      "penalty_if_contains_any": [
-        "therefore the sum is always even",
-        "qed",
-        "thus proven"
-      ]
-    },
-    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-2c44ecdf03aa"
-  },
-  "xodexa_math_gcd_pair_bd7a2c6feb": {
-    "task_id": "xodexa_math_gcd_pair_bd7a2c6feb",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 7.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 7,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-ed9906653f12"
-  },
-  "xodexa_math_linear_system_d8d0da7ec7": {
-    "task_id": "xodexa_math_linear_system_d8d0da7ec7",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 0.0,
-      "tolerance": 0.01
-    },
-    "expected_answer": 0,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f9fce819ad66"
-  },
-  "xodexa_math_modular_exponentiation_b7a82c55ba": {
-    "task_id": "xodexa_math_modular_exponentiation_b7a82c55ba",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 4.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 4,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-6ab0368f3980"
-  },
-  "xodexa_math_probability_fraction_560468b149": {
-    "task_id": "xodexa_math_probability_fraction_560468b149",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "probability",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "numeric",
-      "target": 0.166667,
-      "tolerance": 0.01
-    },
-    "expected_answer": 0.1667,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-253ef480914e"
-  },
-  "xodexa_math_summation_7d81cfcaeb": {
-    "task_id": "xodexa_math_summation_7d81cfcaeb",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 465.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 465,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-97742fa62bbd"
-  },
-  "xodexa_math_combinatorics_choose_ca9d29a86f": {
-    "task_id": "xodexa_math_combinatorics_choose_ca9d29a86f",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "combinatorics",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": 3060.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 3060,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-4379cbd0455a"
-  },
-  "xodexa_math_divisor_count_a443d20d2b": {
-    "task_id": "xodexa_math_divisor_count_a443d20d2b",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "numeric",
-      "target": 15.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 15,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-221135bd8323"
-  },
-  "xodexa_math_false_proof_primes_1fc881eac6": {
-    "task_id": "xodexa_math_false_proof_primes_1fc881eac6",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "proof",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "flag_false_premise",
-      "must_contain_any": [
-        "2 is prime",
-        "2 is even",
-        "two is even",
-        "only even prime",
-        "premise is false",
-        "false premise",
-        "not all primes are odd"
-      ],
-      "penalty_if_contains_any": [
-        "therefore the sum is always even",
-        "qed",
-        "thus proven"
-      ]
-    },
-    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
-    "points": 4,
-    "negative": 3,
-    "canary": "XDX-CANARY-55b9712b3732"
-  },
-  "xodexa_math_gcd_pair_d26a46b02f": {
-    "task_id": "xodexa_math_gcd_pair_d26a46b02f",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "number_theory",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 2.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 2,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2f1d16fd31f9"
-  },
-  "xodexa_math_linear_system_fcacc70049": {
-    "task_id": "xodexa_math_linear_system_fcacc70049",
-    "category": "mathematics",
-    "family": "math",
-    "subdomain": "algebra",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "numeric",
-      "target": -3.0,
-      "tolerance": 0.01
-    },
-    "expected_answer": -3,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-390b743bae08"
-  },
-  "xodexa_math_modular_exponentiation_b17fa128a8": {
-    "task_id": "xodexa_math_modular_exponentiation_b17fa128a8",
+  "xodexa_math_modular_exponentiation_3ba745a4c2": {
+    "task_id": "xodexa_math_modular_exponentiation_3ba745a4c2",
     "category": "mathematics",
     "family": "math",
     "subdomain": "number_theory",
@@ -665,10 +105,2670 @@
     "expected_answer": 9,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b33f96e9746f"
+    "canary": "XDX-CANARY-9c357a63b424"
   },
-  "xodexa_math_probability_fraction_05f1c47320": {
-    "task_id": "xodexa_math_probability_fraction_05f1c47320",
+  "xodexa_math_probability_fraction_8a639bbba2": {
+    "task_id": "xodexa_math_probability_fraction_8a639bbba2",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.875,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.875,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-81d09bfadcd1"
+  },
+  "xodexa_math_summation_9fc1c77683": {
+    "task_id": "xodexa_math_summation_9fc1c77683",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1035.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1035,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0add4213f90a"
+  },
+  "xodexa_math_combinatorics_choose_e349ebd9bf": {
+    "task_id": "xodexa_math_combinatorics_choose_e349ebd9bf",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 165.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 165,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0bd43e3d32b5"
+  },
+  "xodexa_math_divisor_count_cf5929cd05": {
+    "task_id": "xodexa_math_divisor_count_cf5929cd05",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 15.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 15,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c6d951e04747"
+  },
+  "xodexa_math_false_proof_primes_413eb20255": {
+    "task_id": "xodexa_math_false_proof_primes_413eb20255",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-890360f84724"
+  },
+  "xodexa_math_gcd_pair_d7c439e0f9": {
+    "task_id": "xodexa_math_gcd_pair_d7c439e0f9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6d7140b7b228"
+  },
+  "xodexa_math_linear_system_e41c8aa5ec": {
+    "task_id": "xodexa_math_linear_system_e41c8aa5ec",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c1e04a869111"
+  },
+  "xodexa_math_modular_exponentiation_462dbd1429": {
+    "task_id": "xodexa_math_modular_exponentiation_462dbd1429",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 73.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 73,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a8a92d0478a3"
+  },
+  "xodexa_math_probability_fraction_b046f42e7e": {
+    "task_id": "xodexa_math_probability_fraction_b046f42e7e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.545455,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5455,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-12b19546bcd4"
+  },
+  "xodexa_math_summation_d3aad62aa3": {
+    "task_id": "xodexa_math_summation_d3aad62aa3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1830.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1830,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ebd5067ae1bf"
+  },
+  "xodexa_math_combinatorics_choose_7818e92bdc": {
+    "task_id": "xodexa_math_combinatorics_choose_7818e92bdc",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 680.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 680,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-847f3842b1d5"
+  },
+  "xodexa_math_divisor_count_b6f9118b6a": {
+    "task_id": "xodexa_math_divisor_count_b6f9118b6a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-db5263cef5b8"
+  },
+  "xodexa_math_false_proof_primes_4c637f49b6": {
+    "task_id": "xodexa_math_false_proof_primes_4c637f49b6",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-23a5c16f0147"
+  },
+  "xodexa_math_gcd_pair_8dcf26f9f8": {
+    "task_id": "xodexa_math_gcd_pair_8dcf26f9f8",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6821a1f497a9"
+  },
+  "xodexa_math_linear_system_27c2c0e03a": {
+    "task_id": "xodexa_math_linear_system_27c2c0e03a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dbbfb19e850a"
+  },
+  "xodexa_math_modular_exponentiation_50da32596a": {
+    "task_id": "xodexa_math_modular_exponentiation_50da32596a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9e73741c134b"
+  },
+  "xodexa_math_probability_fraction_fbb387ad6f": {
+    "task_id": "xodexa_math_probability_fraction_fbb387ad6f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.555556,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5556,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cbdc9aa3f2a3"
+  },
+  "xodexa_math_summation_a5cb5c4c02": {
+    "task_id": "xodexa_math_summation_a5cb5c4c02",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 666.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 666,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-65c5148046a1"
+  },
+  "xodexa_math_combinatorics_choose_f2243ed970": {
+    "task_id": "xodexa_math_combinatorics_choose_f2243ed970",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 330.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 330,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-720c22871e84"
+  },
+  "xodexa_math_divisor_count_73de00b4e9": {
+    "task_id": "xodexa_math_divisor_count_73de00b4e9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5acd5622ed87"
+  },
+  "xodexa_math_false_proof_primes_2dc9ab2279": {
+    "task_id": "xodexa_math_false_proof_primes_2dc9ab2279",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b9562cb0caf3"
+  },
+  "xodexa_math_gcd_pair_bbe82a7f68": {
+    "task_id": "xodexa_math_gcd_pair_bbe82a7f68",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8d838349e21c"
+  },
+  "xodexa_math_linear_system_6161263da2": {
+    "task_id": "xodexa_math_linear_system_6161263da2",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3ae8f5066f91"
+  },
+  "xodexa_math_modular_exponentiation_366a57fcd4": {
+    "task_id": "xodexa_math_modular_exponentiation_366a57fcd4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-66c55da45a00"
+  },
+  "xodexa_math_probability_fraction_268dd317fa": {
+    "task_id": "xodexa_math_probability_fraction_268dd317fa",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.272727,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.2727,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-783e6d6d02b1"
+  },
+  "xodexa_math_summation_8b28bff6c2": {
+    "task_id": "xodexa_math_summation_8b28bff6c2",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 210.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 210,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-92b00479490a"
+  },
+  "xodexa_math_combinatorics_choose_413ed966bb": {
+    "task_id": "xodexa_math_combinatorics_choose_413ed966bb",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 330.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 330,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4f685503159c"
+  },
+  "xodexa_math_divisor_count_32c2003a62": {
+    "task_id": "xodexa_math_divisor_count_32c2003a62",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4a3645925ec6"
+  },
+  "xodexa_math_false_proof_primes_3d469856cc": {
+    "task_id": "xodexa_math_false_proof_primes_3d469856cc",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-aec4a2fec5f1"
+  },
+  "xodexa_math_gcd_pair_6edb31ccc7": {
+    "task_id": "xodexa_math_gcd_pair_6edb31ccc7",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-401c5f42e4dd"
+  },
+  "xodexa_math_linear_system_db1646b1f8": {
+    "task_id": "xodexa_math_linear_system_db1646b1f8",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -4.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d332568cf255"
+  },
+  "xodexa_math_modular_exponentiation_21b26b27be": {
+    "task_id": "xodexa_math_modular_exponentiation_21b26b27be",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6422121b020a"
+  },
+  "xodexa_math_probability_fraction_2542617227": {
+    "task_id": "xodexa_math_probability_fraction_2542617227",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.6,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-abc5c59d9f89"
+  },
+  "xodexa_math_summation_297c5e2614": {
+    "task_id": "xodexa_math_summation_297c5e2614",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 666.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 666,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-02085a0ce01e"
+  },
+  "xodexa_math_combinatorics_choose_a94577d03c": {
+    "task_id": "xodexa_math_combinatorics_choose_a94577d03c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2002.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2002,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-19684b9ffe55"
+  },
+  "xodexa_math_divisor_count_2e742e0c15": {
+    "task_id": "xodexa_math_divisor_count_2e742e0c15",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f4fef95b2f6a"
+  },
+  "xodexa_math_false_proof_primes_2ca4566364": {
+    "task_id": "xodexa_math_false_proof_primes_2ca4566364",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-6fa5b83cf785"
+  },
+  "xodexa_math_gcd_pair_86c426d499": {
+    "task_id": "xodexa_math_gcd_pair_86c426d499",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-51145503671a"
+  },
+  "xodexa_math_linear_system_a18c5ca288": {
+    "task_id": "xodexa_math_linear_system_a18c5ca288",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a157c403d978"
+  },
+  "xodexa_math_modular_exponentiation_e758d14038": {
+    "task_id": "xodexa_math_modular_exponentiation_e758d14038",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5c871647db41"
+  },
+  "xodexa_math_probability_fraction_548c2921df": {
+    "task_id": "xodexa_math_probability_fraction_548c2921df",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.625,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.625,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1d5956d379a9"
+  },
+  "xodexa_math_summation_054e3c62a4": {
+    "task_id": "xodexa_math_summation_054e3c62a4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 325.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 325,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-883caa001908"
+  },
+  "xodexa_math_combinatorics_choose_16828b555e": {
+    "task_id": "xodexa_math_combinatorics_choose_16828b555e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8568.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8568,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d5771a85119e"
+  },
+  "xodexa_math_divisor_count_77ae051e33": {
+    "task_id": "xodexa_math_divisor_count_77ae051e33",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-40b469f514c1"
+  },
+  "xodexa_math_false_proof_primes_3ef194723b": {
+    "task_id": "xodexa_math_false_proof_primes_3ef194723b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-ddcb5da5046b"
+  },
+  "xodexa_math_gcd_pair_14c3dc2889": {
+    "task_id": "xodexa_math_gcd_pair_14c3dc2889",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-938343eb4fe3"
+  },
+  "xodexa_math_linear_system_73b086f7b4": {
+    "task_id": "xodexa_math_linear_system_73b086f7b4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -6.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a104ac0cad67"
+  },
+  "xodexa_math_modular_exponentiation_9244bb991b": {
+    "task_id": "xodexa_math_modular_exponentiation_9244bb991b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3ed80c802efd"
+  },
+  "xodexa_math_probability_fraction_4c33c0d63f": {
+    "task_id": "xodexa_math_probability_fraction_4c33c0d63f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.375,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.375,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e2617d5a12f8"
+  },
+  "xodexa_math_summation_c1682bdf8c": {
+    "task_id": "xodexa_math_summation_c1682bdf8c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 946.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 946,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1f6de1b1e7df"
+  },
+  "xodexa_math_combinatorics_choose_fc1774968e": {
+    "task_id": "xodexa_math_combinatorics_choose_fc1774968e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 286.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 286,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c2cbbab8892f"
+  },
+  "xodexa_math_divisor_count_97d0fa9f89": {
+    "task_id": "xodexa_math_divisor_count_97d0fa9f89",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 12,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a5399b60d5ca"
+  },
+  "xodexa_math_false_proof_primes_0484f9edba": {
+    "task_id": "xodexa_math_false_proof_primes_0484f9edba",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-df4ee8903d27"
+  },
+  "xodexa_math_gcd_pair_6a7f9b982d": {
+    "task_id": "xodexa_math_gcd_pair_6a7f9b982d",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6930b676b4b0"
+  },
+  "xodexa_math_linear_system_174115f521": {
+    "task_id": "xodexa_math_linear_system_174115f521",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -4.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4897161709d7"
+  },
+  "xodexa_math_modular_exponentiation_206abdc919": {
+    "task_id": "xodexa_math_modular_exponentiation_206abdc919",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 12,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-df9804ea624e"
+  },
+  "xodexa_math_probability_fraction_4ce97520dd": {
+    "task_id": "xodexa_math_probability_fraction_4ce97520dd",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.166667,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.1667,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2a09aab10610"
+  },
+  "xodexa_math_summation_d6cde54589": {
+    "task_id": "xodexa_math_summation_d6cde54589",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1431.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1431,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dffa89a6ae35"
+  },
+  "xodexa_math_combinatorics_choose_d6c687010c": {
+    "task_id": "xodexa_math_combinatorics_choose_d6c687010c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3003.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3003,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e473011ceab7"
+  },
+  "xodexa_math_divisor_count_07c1565161": {
+    "task_id": "xodexa_math_divisor_count_07c1565161",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8a41c1bd7b0"
+  },
+  "xodexa_math_false_proof_primes_4bf78d71fa": {
+    "task_id": "xodexa_math_false_proof_primes_4bf78d71fa",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-29f5a26fb24e"
+  },
+  "xodexa_math_gcd_pair_8c9b0fe16d": {
+    "task_id": "xodexa_math_gcd_pair_8c9b0fe16d",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8c15f0638275"
+  },
+  "xodexa_math_linear_system_efbe25f42b": {
+    "task_id": "xodexa_math_linear_system_efbe25f42b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-86ca1ee4deb8"
+  },
+  "xodexa_math_modular_exponentiation_4d69709eac": {
+    "task_id": "xodexa_math_modular_exponentiation_4d69709eac",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e5cef2285ded"
+  },
+  "xodexa_math_probability_fraction_fcc4a3509a": {
+    "task_id": "xodexa_math_probability_fraction_fcc4a3509a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.454545,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.4545,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c7ec099b8441"
+  },
+  "xodexa_math_summation_dddd13c88b": {
+    "task_id": "xodexa_math_summation_dddd13c88b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 276.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 276,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-62011409a352"
+  },
+  "xodexa_math_combinatorics_choose_1ca39f5c43": {
+    "task_id": "xodexa_math_combinatorics_choose_1ca39f5c43",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 462.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 462,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4f2daba21591"
+  },
+  "xodexa_math_divisor_count_36c89aeff9": {
+    "task_id": "xodexa_math_divisor_count_36c89aeff9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eacadcf7e8ed"
+  },
+  "xodexa_math_false_proof_primes_4798195c71": {
+    "task_id": "xodexa_math_false_proof_primes_4798195c71",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-e888b66599af"
+  },
+  "xodexa_math_gcd_pair_01f375fa99": {
+    "task_id": "xodexa_math_gcd_pair_01f375fa99",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-81b02611d594"
+  },
+  "xodexa_math_linear_system_94036a6186": {
+    "task_id": "xodexa_math_linear_system_94036a6186",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ce9c1da80b3b"
+  },
+  "xodexa_math_modular_exponentiation_3159f59a5b": {
+    "task_id": "xodexa_math_modular_exponentiation_3159f59a5b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-225dd6fd3bd4"
+  },
+  "xodexa_math_probability_fraction_724a0ac040": {
+    "task_id": "xodexa_math_probability_fraction_724a0ac040",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d9f65d6e6bf7"
+  },
+  "xodexa_math_summation_841cee64e8": {
+    "task_id": "xodexa_math_summation_841cee64e8",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1275.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1275,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-07cfe389840b"
+  },
+  "xodexa_math_combinatorics_choose_d2043b3c86": {
+    "task_id": "xodexa_math_combinatorics_choose_d2043b3c86",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 45.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 45,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c9caba748209"
+  },
+  "xodexa_math_divisor_count_1ab5cf1fc4": {
+    "task_id": "xodexa_math_divisor_count_1ab5cf1fc4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3b311e67154b"
+  },
+  "xodexa_math_false_proof_primes_d3567cdf6a": {
+    "task_id": "xodexa_math_false_proof_primes_d3567cdf6a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-1180df7160fc"
+  },
+  "xodexa_math_gcd_pair_31223d97e9": {
+    "task_id": "xodexa_math_gcd_pair_31223d97e9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1b3eee9b5d94"
+  },
+  "xodexa_math_linear_system_b30be5d66c": {
+    "task_id": "xodexa_math_linear_system_b30be5d66c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cd81677dec6a"
+  },
+  "xodexa_math_modular_exponentiation_549a44bbb3": {
+    "task_id": "xodexa_math_modular_exponentiation_549a44bbb3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-27b0fb58e405"
+  },
+  "xodexa_math_probability_fraction_13494ddcd9": {
+    "task_id": "xodexa_math_probability_fraction_13494ddcd9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.428571,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.4286,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f7a25463a0dd"
+  },
+  "xodexa_math_summation_2256620cbc": {
+    "task_id": "xodexa_math_summation_2256620cbc",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1326.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1326,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d12b63f4d1be"
+  },
+  "xodexa_math_combinatorics_choose_d84f571b79": {
+    "task_id": "xodexa_math_combinatorics_choose_d84f571b79",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 66.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 66,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b9a8ae6f07e2"
+  },
+  "xodexa_math_divisor_count_e4c89e652c": {
+    "task_id": "xodexa_math_divisor_count_e4c89e652c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4bba951e5922"
+  },
+  "xodexa_math_false_proof_primes_578600583e": {
+    "task_id": "xodexa_math_false_proof_primes_578600583e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-8a27899ed0b8"
+  },
+  "xodexa_math_gcd_pair_39e252b99f": {
+    "task_id": "xodexa_math_gcd_pair_39e252b99f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9a7bdcc8797f"
+  },
+  "xodexa_math_linear_system_2432092f6b": {
+    "task_id": "xodexa_math_linear_system_2432092f6b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8c4a1e76fd09"
+  },
+  "xodexa_math_modular_exponentiation_61c796b697": {
+    "task_id": "xodexa_math_modular_exponentiation_61c796b697",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-40e9b4c260b5"
+  },
+  "xodexa_math_probability_fraction_cc576591e3": {
+    "task_id": "xodexa_math_probability_fraction_cc576591e3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d2ea32b7de45"
+  },
+  "xodexa_math_summation_8e14c6c125": {
+    "task_id": "xodexa_math_summation_8e14c6c125",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1711.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1711,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bcbe7ec5d7ba"
+  },
+  "xodexa_math_combinatorics_choose_1ccb739381": {
+    "task_id": "xodexa_math_combinatorics_choose_1ccb739381",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 126.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 126,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-86348148ccc2"
+  },
+  "xodexa_math_divisor_count_8191fbcba3": {
+    "task_id": "xodexa_math_divisor_count_8191fbcba3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e0b7cf0e8efc"
+  },
+  "xodexa_math_false_proof_primes_a6432b593e": {
+    "task_id": "xodexa_math_false_proof_primes_a6432b593e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-74ae9bd65ae4"
+  },
+  "xodexa_math_gcd_pair_65fd646fba": {
+    "task_id": "xodexa_math_gcd_pair_65fd646fba",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8072a7cc04d0"
+  },
+  "xodexa_math_linear_system_b623049f18": {
+    "task_id": "xodexa_math_linear_system_b623049f18",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6a536f22840b"
+  },
+  "xodexa_math_modular_exponentiation_8639dcb846": {
+    "task_id": "xodexa_math_modular_exponentiation_8639dcb846",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 744.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 744,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de7da67e0c64"
+  },
+  "xodexa_math_probability_fraction_51ce608d7f": {
+    "task_id": "xodexa_math_probability_fraction_51ce608d7f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.818182,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.8182,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a44e37e1a162"
+  },
+  "xodexa_math_summation_b241300d3e": {
+    "task_id": "xodexa_math_summation_b241300d3e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 300.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 300,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-349742469075"
+  },
+  "xodexa_math_combinatorics_choose_2faa0d1bb0": {
+    "task_id": "xodexa_math_combinatorics_choose_2faa0d1bb0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 364.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 364,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8d6b96a7938"
+  },
+  "xodexa_math_divisor_count_6750352b7c": {
+    "task_id": "xodexa_math_divisor_count_6750352b7c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 20,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7aba11bf337d"
+  },
+  "xodexa_math_false_proof_primes_4383a9a1ac": {
+    "task_id": "xodexa_math_false_proof_primes_4383a9a1ac",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-c3dd92235e81"
+  },
+  "xodexa_math_gcd_pair_5108868b92": {
+    "task_id": "xodexa_math_gcd_pair_5108868b92",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-560d3457d6fc"
+  },
+  "xodexa_math_linear_system_f3b871da66": {
+    "task_id": "xodexa_math_linear_system_f3b871da66",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9e5c32ac86a6"
+  },
+  "xodexa_math_modular_exponentiation_f9eac67af0": {
+    "task_id": "xodexa_math_modular_exponentiation_f9eac67af0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4cf17bcd7751"
+  },
+  "xodexa_math_probability_fraction_1f602f08e9": {
+    "task_id": "xodexa_math_probability_fraction_1f602f08e9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.909091,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.9091,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-744533094493"
+  },
+  "xodexa_math_summation_e7e68a2a8c": {
+    "task_id": "xodexa_math_summation_e7e68a2a8c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 666.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 666,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-42ff3480ad0e"
+  },
+  "xodexa_math_combinatorics_choose_8c03b685a0": {
+    "task_id": "xodexa_math_combinatorics_choose_8c03b685a0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5005.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5005,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-649b0e736de3"
+  },
+  "xodexa_math_divisor_count_f5e20858de": {
+    "task_id": "xodexa_math_divisor_count_f5e20858de",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-73f11a76de73"
+  },
+  "xodexa_math_false_proof_primes_0ef47a3c7c": {
+    "task_id": "xodexa_math_false_proof_primes_0ef47a3c7c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-5c78ccb4a28a"
+  },
+  "xodexa_math_gcd_pair_9aa812b1a6": {
+    "task_id": "xodexa_math_gcd_pair_9aa812b1a6",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0db0dc414ac5"
+  },
+  "xodexa_math_linear_system_55366aed5b": {
+    "task_id": "xodexa_math_linear_system_55366aed5b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c147c0869b5f"
+  },
+  "xodexa_math_modular_exponentiation_bcfc457243": {
+    "task_id": "xodexa_math_modular_exponentiation_bcfc457243",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-40eb3c0dec06"
+  },
+  "xodexa_math_probability_fraction_018987318a": {
+    "task_id": "xodexa_math_probability_fraction_018987318a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.1,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-89ded8507523"
+  },
+  "xodexa_math_summation_89d3fd4ac6": {
+    "task_id": "xodexa_math_summation_89d3fd4ac6",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 66.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 66,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0184aaf4e3ce"
+  },
+  "xodexa_math_combinatorics_choose_5fe6d74c8e": {
+    "task_id": "xodexa_math_combinatorics_choose_5fe6d74c8e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 36.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 36,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-987b64b31aff"
+  },
+  "xodexa_math_divisor_count_3f02f59ed4": {
+    "task_id": "xodexa_math_divisor_count_3f02f59ed4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 12,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-403bfe34554b"
+  },
+  "xodexa_math_false_proof_primes_129915d644": {
+    "task_id": "xodexa_math_false_proof_primes_129915d644",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b51c535488ef"
+  },
+  "xodexa_math_gcd_pair_02375bdb68": {
+    "task_id": "xodexa_math_gcd_pair_02375bdb68",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-611d08324147"
+  },
+  "xodexa_math_linear_system_e946effc98": {
+    "task_id": "xodexa_math_linear_system_e946effc98",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d9e590d86cbb"
+  },
+  "xodexa_math_modular_exponentiation_6eb65b93c4": {
+    "task_id": "xodexa_math_modular_exponentiation_6eb65b93c4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 104.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 104,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-02f859bb81b7"
+  },
+  "xodexa_math_probability_fraction_a0ffb9e8db": {
+    "task_id": "xodexa_math_probability_fraction_a0ffb9e8db",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.777778,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.7778,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ba43742643b6"
+  },
+  "xodexa_math_summation_ac00c66562": {
+    "task_id": "xodexa_math_summation_ac00c66562",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 595.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 595,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9b8087fc0310"
+  },
+  "xodexa_math_combinatorics_choose_a38bcab560": {
+    "task_id": "xodexa_math_combinatorics_choose_a38bcab560",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2380.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2380,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b93c7ae42b81"
+  },
+  "xodexa_math_divisor_count_f81bd8d7e0": {
+    "task_id": "xodexa_math_divisor_count_f81bd8d7e0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2e2a6d18aed2"
+  },
+  "xodexa_math_false_proof_primes_8464f1bf07": {
+    "task_id": "xodexa_math_false_proof_primes_8464f1bf07",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-eaa47f56ea1d"
+  },
+  "xodexa_math_gcd_pair_7a13dfb225": {
+    "task_id": "xodexa_math_gcd_pair_7a13dfb225",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4acc272f4d00"
+  },
+  "xodexa_math_linear_system_9955051452": {
+    "task_id": "xodexa_math_linear_system_9955051452",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f5abb371bac0"
+  },
+  "xodexa_math_modular_exponentiation_8b222512d1": {
+    "task_id": "xodexa_math_modular_exponentiation_8b222512d1",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 811.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 811,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4d2413c47e93"
+  },
+  "xodexa_math_probability_fraction_ecf2baa138": {
+    "task_id": "xodexa_math_probability_fraction_ecf2baa138",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.666667,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.6667,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b13af06d8e8b"
+  },
+  "xodexa_math_summation_3752bf8f03": {
+    "task_id": "xodexa_math_summation_3752bf8f03",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 820.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 820,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-79ead055ead7"
+  },
+  "xodexa_math_combinatorics_choose_faf4947c4c": {
+    "task_id": "xodexa_math_combinatorics_choose_faf4947c4c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 36.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 36,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2e07315a0423"
+  },
+  "xodexa_math_divisor_count_5823dfac22": {
+    "task_id": "xodexa_math_divisor_count_5823dfac22",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4d37eac9bdf0"
+  },
+  "xodexa_math_false_proof_primes_cffaee8440": {
+    "task_id": "xodexa_math_false_proof_primes_cffaee8440",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-3b7858cfb72a"
+  },
+  "xodexa_math_gcd_pair_e55e76b239": {
+    "task_id": "xodexa_math_gcd_pair_e55e76b239",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-292841e2739f"
+  },
+  "xodexa_math_linear_system_fe9f309490": {
+    "task_id": "xodexa_math_linear_system_fe9f309490",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -5.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fc80f67023bb"
+  },
+  "xodexa_math_modular_exponentiation_a99b782a75": {
+    "task_id": "xodexa_math_modular_exponentiation_a99b782a75",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7e1ce5a283e5"
+  },
+  "xodexa_math_probability_fraction_71df1af5e1": {
+    "task_id": "xodexa_math_probability_fraction_71df1af5e1",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.857143,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.8571,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c4820ac0c0d4"
+  },
+  "xodexa_math_summation_aacd2a2dc1": {
+    "task_id": "xodexa_math_summation_aacd2a2dc1",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1596.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1596,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-778c543e59a6"
+  },
+  "xodexa_math_combinatorics_choose_209d843866": {
+    "task_id": "xodexa_math_combinatorics_choose_209d843866",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 36.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 36,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-36faeceba776"
+  },
+  "xodexa_math_divisor_count_de1f5390a3": {
+    "task_id": "xodexa_math_divisor_count_de1f5390a3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e997ac52e8bb"
+  },
+  "xodexa_math_false_proof_primes_60f8de73e5": {
+    "task_id": "xodexa_math_false_proof_primes_60f8de73e5",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-2bc6571dacae"
+  },
+  "xodexa_math_gcd_pair_eaa8ae5433": {
+    "task_id": "xodexa_math_gcd_pair_eaa8ae5433",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fb8a5e7eb04e"
+  },
+  "xodexa_math_linear_system_85a27732db": {
+    "task_id": "xodexa_math_linear_system_85a27732db",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7f637ed70d8f"
+  },
+  "xodexa_math_modular_exponentiation_68914f9d9b": {
+    "task_id": "xodexa_math_modular_exponentiation_68914f9d9b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 521.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 521,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-de520adeb6d4"
+  },
+  "xodexa_math_probability_fraction_f096c915fd": {
+    "task_id": "xodexa_math_probability_fraction_f096c915fd",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.555556,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5556,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6990a28360d7"
+  },
+  "xodexa_math_summation_c6e1843bb5": {
+    "task_id": "xodexa_math_summation_c6e1843bb5",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 300.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 300,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e6bda3af8171"
+  },
+  "xodexa_math_combinatorics_choose_4b178419d5": {
+    "task_id": "xodexa_math_combinatorics_choose_4b178419d5",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 120.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 120,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e46e41ea24c3"
+  },
+  "xodexa_math_divisor_count_cb5649c0a2": {
+    "task_id": "xodexa_math_divisor_count_cb5649c0a2",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 16.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 16,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-85b5bf75c216"
+  },
+  "xodexa_math_false_proof_primes_f3477afa97": {
+    "task_id": "xodexa_math_false_proof_primes_f3477afa97",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-588bc254bc92"
+  },
+  "xodexa_math_gcd_pair_a1d058154b": {
+    "task_id": "xodexa_math_gcd_pair_a1d058154b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c2b6367e0334"
+  },
+  "xodexa_math_linear_system_913f79312c": {
+    "task_id": "xodexa_math_linear_system_913f79312c",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-18920271fb38"
+  },
+  "xodexa_math_modular_exponentiation_ddbfbb7ada": {
+    "task_id": "xodexa_math_modular_exponentiation_ddbfbb7ada",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-adbb370e5b53"
+  },
+  "xodexa_math_probability_fraction_1ff808dfab": {
+    "task_id": "xodexa_math_probability_fraction_1ff808dfab",
     "category": "mathematics",
     "family": "math",
     "subdomain": "probability",
@@ -681,22 +2781,722 @@
     "expected_answer": 0.7143,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-2cd10c167892"
+    "canary": "XDX-CANARY-8762f03f70a4"
   },
-  "xodexa_math_summation_27c40ff126": {
-    "task_id": "xodexa_math_summation_27c40ff126",
+  "xodexa_math_summation_07404ba7dc": {
+    "task_id": "xodexa_math_summation_07404ba7dc",
     "category": "mathematics",
     "family": "math",
     "subdomain": "algebra",
     "difficulty": 2.5,
     "grader": {
       "type": "numeric",
-      "target": 1225.0,
+      "target": 561.0,
       "tolerance": 0.001
     },
-    "expected_answer": 1225,
+    "expected_answer": 561,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-415e87f671bb"
+    "canary": "XDX-CANARY-d81c1b1ef78d"
+  },
+  "xodexa_math_combinatorics_choose_fcec2e7255": {
+    "task_id": "xodexa_math_combinatorics_choose_fcec2e7255",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 560.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 560,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-013c51411921"
+  },
+  "xodexa_math_divisor_count_157afd7729": {
+    "task_id": "xodexa_math_divisor_count_157afd7729",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8bb3af89b2d"
+  },
+  "xodexa_math_false_proof_primes_efda5c9817": {
+    "task_id": "xodexa_math_false_proof_primes_efda5c9817",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-8f98eb9abe22"
+  },
+  "xodexa_math_gcd_pair_8ae51fcd87": {
+    "task_id": "xodexa_math_gcd_pair_8ae51fcd87",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4877a15c4102"
+  },
+  "xodexa_math_linear_system_c013e963d9": {
+    "task_id": "xodexa_math_linear_system_c013e963d9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -1.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-91057782a251"
+  },
+  "xodexa_math_modular_exponentiation_eb80710360": {
+    "task_id": "xodexa_math_modular_exponentiation_eb80710360",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2f8c063383e8"
+  },
+  "xodexa_math_probability_fraction_60294d2522": {
+    "task_id": "xodexa_math_probability_fraction_60294d2522",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.888889,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.8889,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a8e8d45cfc3f"
+  },
+  "xodexa_math_summation_eedbc66152": {
+    "task_id": "xodexa_math_summation_eedbc66152",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 171.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 171,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2cad64365c72"
+  },
+  "xodexa_math_combinatorics_choose_7c4ba64cb3": {
+    "task_id": "xodexa_math_combinatorics_choose_7c4ba64cb3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6435.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6435,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c96963ec1ff7"
+  },
+  "xodexa_math_divisor_count_ed6842d2df": {
+    "task_id": "xodexa_math_divisor_count_ed6842d2df",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 18,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8f0e04565c6"
+  },
+  "xodexa_math_false_proof_primes_4fba906805": {
+    "task_id": "xodexa_math_false_proof_primes_4fba906805",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a7815eab81d1"
+  },
+  "xodexa_math_gcd_pair_44b8617b6d": {
+    "task_id": "xodexa_math_gcd_pair_44b8617b6d",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6ea4a27c5b65"
+  },
+  "xodexa_math_linear_system_fb9b974293": {
+    "task_id": "xodexa_math_linear_system_fb9b974293",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3f29112532d1"
+  },
+  "xodexa_math_modular_exponentiation_1d1be23dd9": {
+    "task_id": "xodexa_math_modular_exponentiation_1d1be23dd9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fb903ac2e9bb"
+  },
+  "xodexa_math_probability_fraction_95335e1fc4": {
+    "task_id": "xodexa_math_probability_fraction_95335e1fc4",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-266671e95884"
+  },
+  "xodexa_math_summation_cfb502461a": {
+    "task_id": "xodexa_math_summation_cfb502461a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 78.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 78,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cae7395a44ab"
+  },
+  "xodexa_math_combinatorics_choose_a16e8ef26f": {
+    "task_id": "xodexa_math_combinatorics_choose_a16e8ef26f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 126.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 126,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c82220bd54e2"
+  },
+  "xodexa_math_divisor_count_d1929540df": {
+    "task_id": "xodexa_math_divisor_count_d1929540df",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8b2b1e6ad4ee"
+  },
+  "xodexa_math_false_proof_primes_1c7fdbc93e": {
+    "task_id": "xodexa_math_false_proof_primes_1c7fdbc93e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-36c4da3c7cb0"
+  },
+  "xodexa_math_gcd_pair_a9f32101ad": {
+    "task_id": "xodexa_math_gcd_pair_a9f32101ad",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-86d9d691b261"
+  },
+  "xodexa_math_linear_system_3abc56c1c9": {
+    "task_id": "xodexa_math_linear_system_3abc56c1c9",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8d02d75726c7"
+  },
+  "xodexa_math_modular_exponentiation_d907c47b6b": {
+    "task_id": "xodexa_math_modular_exponentiation_d907c47b6b",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8ad89655fc10"
+  },
+  "xodexa_math_probability_fraction_d2f8cbebec": {
+    "task_id": "xodexa_math_probability_fraction_d2f8cbebec",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.166667,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.1667,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9a5e29e0e132"
+  },
+  "xodexa_math_summation_d4aa90d46a": {
+    "task_id": "xodexa_math_summation_d4aa90d46a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 465.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 465,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-23fe5295d0e5"
+  },
+  "xodexa_math_combinatorics_choose_56c8b33822": {
+    "task_id": "xodexa_math_combinatorics_choose_56c8b33822",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1820.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1820,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-859e373c4cd3"
+  },
+  "xodexa_math_divisor_count_d06d92e025": {
+    "task_id": "xodexa_math_divisor_count_d06d92e025",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9f85061a520"
+  },
+  "xodexa_math_false_proof_primes_9d3a43c2a1": {
+    "task_id": "xodexa_math_false_proof_primes_9d3a43c2a1",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-c420f9e5b2ad"
+  },
+  "xodexa_math_gcd_pair_9759f19dd0": {
+    "task_id": "xodexa_math_gcd_pair_9759f19dd0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ec695ed7a78a"
+  },
+  "xodexa_math_linear_system_1eddc2f149": {
+    "task_id": "xodexa_math_linear_system_1eddc2f149",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": -2.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": -2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4f42d214b04"
+  },
+  "xodexa_math_modular_exponentiation_9a1e58832a": {
+    "task_id": "xodexa_math_modular_exponentiation_9a1e58832a",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bedae98e5b4f"
+  },
+  "xodexa_math_probability_fraction_ad040fd62f": {
+    "task_id": "xodexa_math_probability_fraction_ad040fd62f",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.583333,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.5833,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-60bdd2122e37"
+  },
+  "xodexa_math_summation_c81fc11b68": {
+    "task_id": "xodexa_math_summation_c81fc11b68",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1653.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 1653,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-2ba80ba4633d"
+  },
+  "xodexa_math_combinatorics_choose_4eb5f698b0": {
+    "task_id": "xodexa_math_combinatorics_choose_4eb5f698b0",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "combinatorics",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 56.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 56,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8d3351b5ba23"
+  },
+  "xodexa_math_divisor_count_1d82db22b3": {
+    "task_id": "xodexa_math_divisor_count_1d82db22b3",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aed781de1766"
+  },
+  "xodexa_math_false_proof_primes_1f47161827": {
+    "task_id": "xodexa_math_false_proof_primes_1f47161827",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "proof",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "flag_false_premise",
+      "must_contain_any": [
+        "2 is prime",
+        "2 is even",
+        "two is even",
+        "only even prime",
+        "premise is false",
+        "false premise",
+        "not all primes are odd"
+      ],
+      "penalty_if_contains_any": [
+        "therefore the sum is always even",
+        "qed",
+        "thus proven"
+      ]
+    },
+    "expected_answer": "Reject: 2 is an even prime, so the premise is false.",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-f4ba33d0112e"
+  },
+  "xodexa_math_gcd_pair_68fcd6c75e": {
+    "task_id": "xodexa_math_gcd_pair_68fcd6c75e",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7b10dd4b41f2"
+  },
+  "xodexa_math_linear_system_19295141e6": {
+    "task_id": "xodexa_math_linear_system_19295141e6",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7fd5b97bf58a"
+  },
+  "xodexa_math_modular_exponentiation_82cad76780": {
+    "task_id": "xodexa_math_modular_exponentiation_82cad76780",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "number_theory",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-53095a459d6f"
+  },
+  "xodexa_math_probability_fraction_793b7efb97": {
+    "task_id": "xodexa_math_probability_fraction_793b7efb97",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "probability",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 0.6,
+      "tolerance": 0.01
+    },
+    "expected_answer": 0.6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-632cc558ebd3"
+  },
+  "xodexa_math_summation_b0c2b20eca": {
+    "task_id": "xodexa_math_summation_b0c2b20eca",
+    "category": "mathematics",
+    "family": "math",
+    "subdomain": "algebra",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-055d92f259fb"
   }
 }

@@ -2,26 +2,26 @@
   "name": "Xodexa Code & Software Engineering Gauntlet",
   "version": "1.0.0",
   "benchmark_schema": "xodexa-task/1.0",
-  "created_at": "2026-06-03T15:31:58Z",
-  "task_count": 40,
-  "checksum_sha256": "38e068eef8609fc80ac45a16cc6dc9569ea70eb16aad03d3984efd89775ae382",
-  "changelog": "MVP seed build of Xodexa Code & Software Engineering Gauntlet",
+  "created_at": "2026-06-04T17:21:36Z",
+  "task_count": 200,
+  "checksum_sha256": "e79ef30999eb470867f0778207d292c1c26a106dd91f0d0e5341143a157556b0",
+  "changelog": "Seed build of Xodexa Code & Software Engineering Gauntlet",
   "families": {
-    "code": 40
+    "code": 200
   },
   "visibility": {
-    "validation": 40
+    "validation": 200
   },
   "licenses": {
-    "Xodexa-private": 40
+    "Xodexa-private": 200
   },
   "difficulty": {
     "mean": 3.9,
     "min": 2.5,
     "max": 5.0,
     "bands": {
-      "medium": 24,
-      "hard": 16
+      "medium": 120,
+      "hard": 80
     }
   },
   "contamination": {
@@ -33,28 +33,28 @@
   "pipeline": [
     {
       "stage": "generate",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "difficulty",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "contamination",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "quality_review",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "calibration",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     }
   ],
   "license_summary": "Mixed; see per-task provenance.license",
@@ -63,5 +63,5 @@
     "Multimodal items are text-rendered proxies in this MVP.",
     "Difficulty is provisional until human + frontier baselines are collected."
   ],
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
 }

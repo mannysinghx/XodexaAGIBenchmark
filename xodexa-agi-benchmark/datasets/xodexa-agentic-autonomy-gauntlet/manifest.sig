@@ -1,4 +1,4 @@
 {
-  "signature": "omUlp7H4vCasUK0uTK5JA0EWofi7gOAXIZB5Cr4eleaEnuI9MfTwUiUkmosibm16HUEXFfwV+fUqvwIEcDoACg==",
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+  "signature": "zpas0L4/TlP1z7Shm6fu1TLlOaolbx4sQn5SH7yBNujNe5uhnL+pe2xWw/ooX0yn5WGL1Mypx7YLPwdVxmDABw==",
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
 }

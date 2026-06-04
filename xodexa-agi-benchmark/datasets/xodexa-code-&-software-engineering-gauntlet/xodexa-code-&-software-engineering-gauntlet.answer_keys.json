@@ -1,6 +1,6 @@
 {
-  "xodexa_code_complexity_ee8da58cc6": {
-    "task_id": "xodexa_code_complexity_ee8da58cc6",
+  "xodexa_code_complexity_ab77ea842b": {
+    "task_id": "xodexa_code_complexity_ab77ea842b",
     "category": "code",
     "family": "code",
     "subdomain": "review",
@@ -18,10 +18,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-dc236b88c7c1"
+    "canary": "XDX-CANARY-7ec5952d0409"
   },
-  "xodexa_code_off_by_one_bug_d61ef30688": {
-    "task_id": "xodexa_code_off_by_one_bug_d61ef30688",
+  "xodexa_code_off_by_one_bug_da072b99e1": {
+    "task_id": "xodexa_code_off_by_one_bug_da072b99e1",
     "category": "code",
     "family": "code",
     "subdomain": "bugfix",
@@ -42,626 +42,26 @@
     "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-9c01d8b2ae4e"
+    "canary": "XDX-CANARY-47dfc6e9bdd6"
   },
-  "xodexa_code_predict_output_89f804dcb5": {
-    "task_id": "xodexa_code_predict_output_89f804dcb5",
+  "xodexa_code_predict_output_72eaa703fd": {
+    "task_id": "xodexa_code_predict_output_72eaa703fd",
     "category": "code",
     "family": "code",
     "subdomain": "fresh_coding",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 5.0,
+      "target": 140.0,
       "tolerance": 0.001
     },
-    "expected_answer": 5,
+    "expected_answer": 140,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-0c5ecf8004f2"
+    "canary": "XDX-CANARY-e421f4f1037b"
   },
-  "xodexa_code_refactor_equiv_e7c516ca64": {
-    "task_id": "xodexa_code_refactor_equiv_e7c516ca64",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 7.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 7,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-28c5bd0773d3"
-  },
-  "xodexa_code_vuln_class_id_137709e60d": {
-    "task_id": "xodexa_code_vuln_class_id_137709e60d",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-2574dd2efa43"
-  },
-  "xodexa_code_complexity_1c826247d1": {
-    "task_id": "xodexa_code_complexity_1c826247d1",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-ef07e9e6ee58"
-  },
-  "xodexa_code_off_by_one_bug_478a9a17f9": {
-    "task_id": "xodexa_code_off_by_one_bug_478a9a17f9",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-9f796bf35910"
-  },
-  "xodexa_code_predict_output_eb61624ecc": {
-    "task_id": "xodexa_code_predict_output_eb61624ecc",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 30.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 30,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-b58d093c9c31"
-  },
-  "xodexa_code_refactor_equiv_c91d188287": {
-    "task_id": "xodexa_code_refactor_equiv_c91d188287",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 8.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 8,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-16800e9017d9"
-  },
-  "xodexa_code_vuln_class_id_36469fdda5": {
-    "task_id": "xodexa_code_vuln_class_id_36469fdda5",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-9c61be2ba3f0"
-  },
-  "xodexa_code_complexity_2dee1574da": {
-    "task_id": "xodexa_code_complexity_2dee1574da",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-6d8e15916c3c"
-  },
-  "xodexa_code_off_by_one_bug_0e6140df1b": {
-    "task_id": "xodexa_code_off_by_one_bug_0e6140df1b",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-35e1d89e720b"
-  },
-  "xodexa_code_predict_output_3fd83828d8": {
-    "task_id": "xodexa_code_predict_output_3fd83828d8",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 30.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 30,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f6f4772a62f7"
-  },
-  "xodexa_code_refactor_equiv_d343600711": {
-    "task_id": "xodexa_code_refactor_equiv_d343600711",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 6.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 6,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-eb4bdfb5c620"
-  },
-  "xodexa_code_vuln_class_id_888dd81698": {
-    "task_id": "xodexa_code_vuln_class_id_888dd81698",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-73992ebf7371"
-  },
-  "xodexa_code_complexity_162ff666bd": {
-    "task_id": "xodexa_code_complexity_162ff666bd",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-50ea7ed54d8f"
-  },
-  "xodexa_code_off_by_one_bug_c0d28e112e": {
-    "task_id": "xodexa_code_off_by_one_bug_c0d28e112e",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-37750d5c53cc"
-  },
-  "xodexa_code_predict_output_89f6130b22": {
-    "task_id": "xodexa_code_predict_output_89f6130b22",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 204.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 204,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-5429aa9f937c"
-  },
-  "xodexa_code_refactor_equiv_8b12da4813": {
-    "task_id": "xodexa_code_refactor_equiv_8b12da4813",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 2.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 2,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2366bd662ad1"
-  },
-  "xodexa_code_vuln_class_id_f646bc2ffb": {
-    "task_id": "xodexa_code_vuln_class_id_f646bc2ffb",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-9d37ddc5c23e"
-  },
-  "xodexa_code_complexity_6ec3c1fc9e": {
-    "task_id": "xodexa_code_complexity_6ec3c1fc9e",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-2801891dbbf6"
-  },
-  "xodexa_code_off_by_one_bug_e2c6ca3b63": {
-    "task_id": "xodexa_code_off_by_one_bug_e2c6ca3b63",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-635e3289b485"
-  },
-  "xodexa_code_predict_output_2a309d700f": {
-    "task_id": "xodexa_code_predict_output_2a309d700f",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 14.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 14,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-4bcfc7a2336f"
-  },
-  "xodexa_code_refactor_equiv_3d6a33f330": {
-    "task_id": "xodexa_code_refactor_equiv_3d6a33f330",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 5.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 5,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-074aac648787"
-  },
-  "xodexa_code_vuln_class_id_7296ad4587": {
-    "task_id": "xodexa_code_vuln_class_id_7296ad4587",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-a184fa4b7985"
-  },
-  "xodexa_code_complexity_197d306fa0": {
-    "task_id": "xodexa_code_complexity_197d306fa0",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-ba1f9cb7de05"
-  },
-  "xodexa_code_off_by_one_bug_63b2b38714": {
-    "task_id": "xodexa_code_off_by_one_bug_63b2b38714",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-48a79f8b81ad"
-  },
-  "xodexa_code_predict_output_5634c2e05a": {
-    "task_id": "xodexa_code_predict_output_5634c2e05a",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 91.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 91,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-7e62d1e98c53"
-  },
-  "xodexa_code_refactor_equiv_2b14cb521a": {
-    "task_id": "xodexa_code_refactor_equiv_2b14cb521a",
-    "category": "code",
-    "family": "code",
-    "subdomain": "refactor",
-    "difficulty": 2.5,
-    "grader": {
-      "type": "numeric",
-      "target": 4.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 4,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-e6ed0224650b"
-  },
-  "xodexa_code_vuln_class_id_c7b7c2c696": {
-    "task_id": "xodexa_code_vuln_class_id_c7b7c2c696",
-    "category": "code",
-    "family": "code",
-    "subdomain": "security_patch",
-    "difficulty": 5.0,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "sql injection",
-        "parameter"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no vulnerability",
-        "code is safe"
-      ]
-    },
-    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-fe170c4710b6"
-  },
-  "xodexa_code_complexity_c26807a221": {
-    "task_id": "xodexa_code_complexity_c26807a221",
-    "category": "code",
-    "family": "code",
-    "subdomain": "review",
-    "difficulty": 4.0,
-    "grader": {
-      "type": "mcq",
-      "correct": "C",
-      "options": {
-        "A": "O(1)",
-        "B": "O(n)",
-        "C": "O(n^2)",
-        "D": "O(log n)"
-      }
-    },
-    "expected_answer": "C",
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-f25757a25857"
-  },
-  "xodexa_code_off_by_one_bug_2b3c2c3774": {
-    "task_id": "xodexa_code_off_by_one_bug_2b3c2c3774",
-    "category": "code",
-    "family": "code",
-    "subdomain": "bugfix",
-    "difficulty": 4.5,
-    "grader": {
-      "type": "rubric_keywords",
-      "keywords": [
-        "off-by-one",
-        "len"
-      ],
-      "pass_fraction": 0.5,
-      "penalty_if_contains_any": [
-        "no bug",
-        "code is correct",
-        "works correctly"
-      ]
-    },
-    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
-    "points": 4,
-    "negative": 2,
-    "canary": "XDX-CANARY-f51a73f4cae1"
-  },
-  "xodexa_code_predict_output_2cdd1f384a": {
-    "task_id": "xodexa_code_predict_output_2cdd1f384a",
-    "category": "code",
-    "family": "code",
-    "subdomain": "fresh_coding",
-    "difficulty": 3.5,
-    "grader": {
-      "type": "numeric",
-      "target": 5.0,
-      "tolerance": 0.001
-    },
-    "expected_answer": 5,
-    "points": 3,
-    "negative": 2,
-    "canary": "XDX-CANARY-c1628fe15e4f"
-  },
-  "xodexa_code_refactor_equiv_7966a69a25": {
-    "task_id": "xodexa_code_refactor_equiv_7966a69a25",
+  "xodexa_code_refactor_equiv_cb11ce48c5": {
+    "task_id": "xodexa_code_refactor_equiv_cb11ce48c5",
     "category": "code",
     "family": "code",
     "subdomain": "refactor",
@@ -674,10 +74,10 @@
     "expected_answer": 3,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-060effb0acfa"
+    "canary": "XDX-CANARY-1e7f6d825b34"
   },
-  "xodexa_code_vuln_class_id_9ea3b897cf": {
-    "task_id": "xodexa_code_vuln_class_id_9ea3b897cf",
+  "xodexa_code_vuln_class_id_7d647b9016": {
+    "task_id": "xodexa_code_vuln_class_id_7d647b9016",
     "category": "code",
     "family": "code",
     "subdomain": "security_patch",
@@ -697,10 +97,10 @@
     "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-deaf296ad7df"
+    "canary": "XDX-CANARY-6e242008e355"
   },
-  "xodexa_code_complexity_1c16266366": {
-    "task_id": "xodexa_code_complexity_1c16266366",
+  "xodexa_code_complexity_b5a45bb873": {
+    "task_id": "xodexa_code_complexity_b5a45bb873",
     "category": "code",
     "family": "code",
     "subdomain": "review",
@@ -718,10 +118,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-cddf1a053b90"
+    "canary": "XDX-CANARY-0c3c0359bb83"
   },
-  "xodexa_code_off_by_one_bug_4dad274600": {
-    "task_id": "xodexa_code_off_by_one_bug_4dad274600",
+  "xodexa_code_off_by_one_bug_8c68c53f8c": {
+    "task_id": "xodexa_code_off_by_one_bug_8c68c53f8c",
     "category": "code",
     "family": "code",
     "subdomain": "bugfix",
@@ -742,26 +142,26 @@
     "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-a622087f221e"
+    "canary": "XDX-CANARY-f0cb4185d848"
   },
-  "xodexa_code_predict_output_ae5ba8de55": {
-    "task_id": "xodexa_code_predict_output_ae5ba8de55",
+  "xodexa_code_predict_output_2c2dfe5fb0": {
+    "task_id": "xodexa_code_predict_output_2c2dfe5fb0",
     "category": "code",
     "family": "code",
     "subdomain": "fresh_coding",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 204.0,
+      "target": 14.0,
       "tolerance": 0.001
     },
-    "expected_answer": 204,
+    "expected_answer": 14,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-868c33cb335e"
+    "canary": "XDX-CANARY-7ee2a6d52a30"
   },
-  "xodexa_code_refactor_equiv_f267719d2d": {
-    "task_id": "xodexa_code_refactor_equiv_f267719d2d",
+  "xodexa_code_refactor_equiv_5ed9b81e0a": {
+    "task_id": "xodexa_code_refactor_equiv_5ed9b81e0a",
     "category": "code",
     "family": "code",
     "subdomain": "refactor",
@@ -774,10 +174,10 @@
     "expected_answer": 7,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-015fe920d4b8"
+    "canary": "XDX-CANARY-ff6e02a94dca"
   },
-  "xodexa_code_vuln_class_id_20f8c2751a": {
-    "task_id": "xodexa_code_vuln_class_id_20f8c2751a",
+  "xodexa_code_vuln_class_id_5bb7dafa76": {
+    "task_id": "xodexa_code_vuln_class_id_5bb7dafa76",
     "category": "code",
     "family": "code",
     "subdomain": "security_patch",
@@ -797,6 +197,3806 @@
     "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-a4a2fabce180"
+    "canary": "XDX-CANARY-fcc2f198641a"
+  },
+  "xodexa_code_complexity_b88e3623f7": {
+    "task_id": "xodexa_code_complexity_b88e3623f7",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a4e39a94c00a"
+  },
+  "xodexa_code_off_by_one_bug_f4fe8080f2": {
+    "task_id": "xodexa_code_off_by_one_bug_f4fe8080f2",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-756a37e7dfbd"
+  },
+  "xodexa_code_predict_output_ff37d6efb3": {
+    "task_id": "xodexa_code_predict_output_ff37d6efb3",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f7a64d1f6545"
+  },
+  "xodexa_code_refactor_equiv_ce1f500268": {
+    "task_id": "xodexa_code_refactor_equiv_ce1f500268",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ff83e0455beb"
+  },
+  "xodexa_code_vuln_class_id_084e55f484": {
+    "task_id": "xodexa_code_vuln_class_id_084e55f484",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-663896662ba5"
+  },
+  "xodexa_code_complexity_830d8e7942": {
+    "task_id": "xodexa_code_complexity_830d8e7942",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-569c17d67dd0"
+  },
+  "xodexa_code_off_by_one_bug_4ec5b91112": {
+    "task_id": "xodexa_code_off_by_one_bug_4ec5b91112",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-088342fed705"
+  },
+  "xodexa_code_predict_output_ef5017cd50": {
+    "task_id": "xodexa_code_predict_output_ef5017cd50",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9a94d26e1af2"
+  },
+  "xodexa_code_refactor_equiv_7b900728f9": {
+    "task_id": "xodexa_code_refactor_equiv_7b900728f9",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b0e2f64ce4fa"
+  },
+  "xodexa_code_vuln_class_id_82c4c6adb6": {
+    "task_id": "xodexa_code_vuln_class_id_82c4c6adb6",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d58322044b61"
+  },
+  "xodexa_code_complexity_d424e06f1f": {
+    "task_id": "xodexa_code_complexity_d424e06f1f",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5ca5c2ee4f7c"
+  },
+  "xodexa_code_off_by_one_bug_f411ce3eb5": {
+    "task_id": "xodexa_code_off_by_one_bug_f411ce3eb5",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e9586b1ff9a6"
+  },
+  "xodexa_code_predict_output_d0c6bd156c": {
+    "task_id": "xodexa_code_predict_output_d0c6bd156c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3e04cff30381"
+  },
+  "xodexa_code_refactor_equiv_2b3e18e872": {
+    "task_id": "xodexa_code_refactor_equiv_2b3e18e872",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4b5235f971d0"
+  },
+  "xodexa_code_vuln_class_id_1dde6a1d55": {
+    "task_id": "xodexa_code_vuln_class_id_1dde6a1d55",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-cfa3276258bd"
+  },
+  "xodexa_code_complexity_b31c5609aa": {
+    "task_id": "xodexa_code_complexity_b31c5609aa",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-df9cc2f3f8ec"
+  },
+  "xodexa_code_off_by_one_bug_8183b20cee": {
+    "task_id": "xodexa_code_off_by_one_bug_8183b20cee",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d65f3efaa7d6"
+  },
+  "xodexa_code_predict_output_8cd5940d25": {
+    "task_id": "xodexa_code_predict_output_8cd5940d25",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 30.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e0cd9717dc61"
+  },
+  "xodexa_code_refactor_equiv_f4c2373fca": {
+    "task_id": "xodexa_code_refactor_equiv_f4c2373fca",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bc2a2ec3fcd2"
+  },
+  "xodexa_code_vuln_class_id_89bb269670": {
+    "task_id": "xodexa_code_vuln_class_id_89bb269670",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3ab6b921d382"
+  },
+  "xodexa_code_complexity_e387f7581e": {
+    "task_id": "xodexa_code_complexity_e387f7581e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9cb1c7097e05"
+  },
+  "xodexa_code_off_by_one_bug_ed772c2e90": {
+    "task_id": "xodexa_code_off_by_one_bug_ed772c2e90",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8b63da7b9eb4"
+  },
+  "xodexa_code_predict_output_2ea02eec93": {
+    "task_id": "xodexa_code_predict_output_2ea02eec93",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-386de8aec4fc"
+  },
+  "xodexa_code_refactor_equiv_60238d6c12": {
+    "task_id": "xodexa_code_refactor_equiv_60238d6c12",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-556cb1bff043"
+  },
+  "xodexa_code_vuln_class_id_576066bb91": {
+    "task_id": "xodexa_code_vuln_class_id_576066bb91",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ed9704ddb470"
+  },
+  "xodexa_code_complexity_6be5e41bcf": {
+    "task_id": "xodexa_code_complexity_6be5e41bcf",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3655e671bbbe"
+  },
+  "xodexa_code_off_by_one_bug_0cfc9224e2": {
+    "task_id": "xodexa_code_off_by_one_bug_0cfc9224e2",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-c88243c4d578"
+  },
+  "xodexa_code_predict_output_6080a8812a": {
+    "task_id": "xodexa_code_predict_output_6080a8812a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a5c43766117e"
+  },
+  "xodexa_code_refactor_equiv_1745f3a6d6": {
+    "task_id": "xodexa_code_refactor_equiv_1745f3a6d6",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-30f977e15256"
+  },
+  "xodexa_code_vuln_class_id_5f41b023e1": {
+    "task_id": "xodexa_code_vuln_class_id_5f41b023e1",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-06f6ce36bc47"
+  },
+  "xodexa_code_complexity_2be5a76585": {
+    "task_id": "xodexa_code_complexity_2be5a76585",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b2dbd9919ffb"
+  },
+  "xodexa_code_off_by_one_bug_c7130c59f9": {
+    "task_id": "xodexa_code_off_by_one_bug_c7130c59f9",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e294bb6dba5b"
+  },
+  "xodexa_code_predict_output_bde4ae9244": {
+    "task_id": "xodexa_code_predict_output_bde4ae9244",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-daf7ec3f8b31"
+  },
+  "xodexa_code_refactor_equiv_2303e0cee5": {
+    "task_id": "xodexa_code_refactor_equiv_2303e0cee5",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-12c11946b209"
+  },
+  "xodexa_code_vuln_class_id_d25198b7c7": {
+    "task_id": "xodexa_code_vuln_class_id_d25198b7c7",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-b22e41208a80"
+  },
+  "xodexa_code_complexity_dbbc710256": {
+    "task_id": "xodexa_code_complexity_dbbc710256",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a737dd08ae13"
+  },
+  "xodexa_code_off_by_one_bug_74496c0c3c": {
+    "task_id": "xodexa_code_off_by_one_bug_74496c0c3c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2d34a6f66952"
+  },
+  "xodexa_code_predict_output_6907abe912": {
+    "task_id": "xodexa_code_predict_output_6907abe912",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1109a5d89c35"
+  },
+  "xodexa_code_refactor_equiv_c72c65250b": {
+    "task_id": "xodexa_code_refactor_equiv_c72c65250b",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-101c7b578ed1"
+  },
+  "xodexa_code_vuln_class_id_64ec903661": {
+    "task_id": "xodexa_code_vuln_class_id_64ec903661",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-da38d1fe17e8"
+  },
+  "xodexa_code_complexity_4097132466": {
+    "task_id": "xodexa_code_complexity_4097132466",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-29a6ef0a3b4a"
+  },
+  "xodexa_code_off_by_one_bug_918795809d": {
+    "task_id": "xodexa_code_off_by_one_bug_918795809d",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-3623ad96d7d8"
+  },
+  "xodexa_code_predict_output_d2972e939a": {
+    "task_id": "xodexa_code_predict_output_d2972e939a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8a63edc92873"
+  },
+  "xodexa_code_refactor_equiv_0d95105dfa": {
+    "task_id": "xodexa_code_refactor_equiv_0d95105dfa",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-13c581c29fe1"
+  },
+  "xodexa_code_vuln_class_id_88de84ae5b": {
+    "task_id": "xodexa_code_vuln_class_id_88de84ae5b",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-5a14f96c1c78"
+  },
+  "xodexa_code_complexity_f960baa5df": {
+    "task_id": "xodexa_code_complexity_f960baa5df",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1268bb13b497"
+  },
+  "xodexa_code_off_by_one_bug_3659687ccb": {
+    "task_id": "xodexa_code_off_by_one_bug_3659687ccb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-1ff7b008867b"
+  },
+  "xodexa_code_predict_output_24ae463694": {
+    "task_id": "xodexa_code_predict_output_24ae463694",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b7aefada2848"
+  },
+  "xodexa_code_refactor_equiv_e262a45a6e": {
+    "task_id": "xodexa_code_refactor_equiv_e262a45a6e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5e22d76559f5"
+  },
+  "xodexa_code_vuln_class_id_807ec59040": {
+    "task_id": "xodexa_code_vuln_class_id_807ec59040",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-971eb2242e11"
+  },
+  "xodexa_code_complexity_2c9429ec2e": {
+    "task_id": "xodexa_code_complexity_2c9429ec2e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7da9e45b0606"
+  },
+  "xodexa_code_off_by_one_bug_3e906de62f": {
+    "task_id": "xodexa_code_off_by_one_bug_3e906de62f",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-90884df4c682"
+  },
+  "xodexa_code_predict_output_d254cfe6fe": {
+    "task_id": "xodexa_code_predict_output_d254cfe6fe",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 30.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-50930418b3eb"
+  },
+  "xodexa_code_refactor_equiv_a598fb9714": {
+    "task_id": "xodexa_code_refactor_equiv_a598fb9714",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ff56bd3fe69f"
+  },
+  "xodexa_code_vuln_class_id_3b8315dd73": {
+    "task_id": "xodexa_code_vuln_class_id_3b8315dd73",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-15fd92d4e81f"
+  },
+  "xodexa_code_complexity_017b61a5ad": {
+    "task_id": "xodexa_code_complexity_017b61a5ad",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-be2adbdd8558"
+  },
+  "xodexa_code_off_by_one_bug_ffdb1d3315": {
+    "task_id": "xodexa_code_off_by_one_bug_ffdb1d3315",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a947fde3fcbe"
+  },
+  "xodexa_code_predict_output_040a5cf794": {
+    "task_id": "xodexa_code_predict_output_040a5cf794",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 140.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 140,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c85de8d1ec51"
+  },
+  "xodexa_code_refactor_equiv_f67f70f427": {
+    "task_id": "xodexa_code_refactor_equiv_f67f70f427",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5e395681aaac"
+  },
+  "xodexa_code_vuln_class_id_09d5b94bb3": {
+    "task_id": "xodexa_code_vuln_class_id_09d5b94bb3",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-90260c228116"
+  },
+  "xodexa_code_complexity_10514e421e": {
+    "task_id": "xodexa_code_complexity_10514e421e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f3e3dc743d6e"
+  },
+  "xodexa_code_off_by_one_bug_826ab03562": {
+    "task_id": "xodexa_code_off_by_one_bug_826ab03562",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-4e7dfe21d596"
+  },
+  "xodexa_code_predict_output_5456f141d0": {
+    "task_id": "xodexa_code_predict_output_5456f141d0",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c84daa771dd9"
+  },
+  "xodexa_code_refactor_equiv_f7620d2171": {
+    "task_id": "xodexa_code_refactor_equiv_f7620d2171",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9ac3d05130ad"
+  },
+  "xodexa_code_vuln_class_id_cc2d21844b": {
+    "task_id": "xodexa_code_vuln_class_id_cc2d21844b",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f8c58bcd1759"
+  },
+  "xodexa_code_complexity_761d72f847": {
+    "task_id": "xodexa_code_complexity_761d72f847",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8702cf881e79"
+  },
+  "xodexa_code_off_by_one_bug_86c41b41b2": {
+    "task_id": "xodexa_code_off_by_one_bug_86c41b41b2",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6a8ad513a193"
+  },
+  "xodexa_code_predict_output_1024d841af": {
+    "task_id": "xodexa_code_predict_output_1024d841af",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3e1f8f1f56b8"
+  },
+  "xodexa_code_refactor_equiv_b271c41567": {
+    "task_id": "xodexa_code_refactor_equiv_b271c41567",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6f4ab224c189"
+  },
+  "xodexa_code_vuln_class_id_4e95d313c4": {
+    "task_id": "xodexa_code_vuln_class_id_4e95d313c4",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-287143c53dd0"
+  },
+  "xodexa_code_complexity_44dbbf2802": {
+    "task_id": "xodexa_code_complexity_44dbbf2802",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b16da22d3b69"
+  },
+  "xodexa_code_off_by_one_bug_c3ad2872fe": {
+    "task_id": "xodexa_code_off_by_one_bug_c3ad2872fe",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-360ace69a2c3"
+  },
+  "xodexa_code_predict_output_e10a227e2f": {
+    "task_id": "xodexa_code_predict_output_e10a227e2f",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-649efe71a301"
+  },
+  "xodexa_code_refactor_equiv_9f8c1f6e20": {
+    "task_id": "xodexa_code_refactor_equiv_9f8c1f6e20",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-00fcd8758821"
+  },
+  "xodexa_code_vuln_class_id_1297285fbb": {
+    "task_id": "xodexa_code_vuln_class_id_1297285fbb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-05e36c97ab4b"
+  },
+  "xodexa_code_complexity_1b2b6dac30": {
+    "task_id": "xodexa_code_complexity_1b2b6dac30",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1233fb979e26"
+  },
+  "xodexa_code_off_by_one_bug_416dc89d8a": {
+    "task_id": "xodexa_code_off_by_one_bug_416dc89d8a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-48bc00cd4bf2"
+  },
+  "xodexa_code_predict_output_d12f9a4afd": {
+    "task_id": "xodexa_code_predict_output_d12f9a4afd",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4f21ae7f89f7"
+  },
+  "xodexa_code_refactor_equiv_7c8a468698": {
+    "task_id": "xodexa_code_refactor_equiv_7c8a468698",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3bf7c2c603c5"
+  },
+  "xodexa_code_vuln_class_id_42942959bc": {
+    "task_id": "xodexa_code_vuln_class_id_42942959bc",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8b0f7e02e1e0"
+  },
+  "xodexa_code_complexity_3dd42b5501": {
+    "task_id": "xodexa_code_complexity_3dd42b5501",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a9d4c492fdb2"
+  },
+  "xodexa_code_off_by_one_bug_2cb498003d": {
+    "task_id": "xodexa_code_off_by_one_bug_2cb498003d",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-418fd9fcebe9"
+  },
+  "xodexa_code_predict_output_5b5619d6fb": {
+    "task_id": "xodexa_code_predict_output_5b5619d6fb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4e7ab70af7a"
+  },
+  "xodexa_code_refactor_equiv_b8d585a676": {
+    "task_id": "xodexa_code_refactor_equiv_b8d585a676",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cce6296eae8d"
+  },
+  "xodexa_code_vuln_class_id_1ec319e6fd": {
+    "task_id": "xodexa_code_vuln_class_id_1ec319e6fd",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6b668023a23b"
+  },
+  "xodexa_code_complexity_46e849a7ee": {
+    "task_id": "xodexa_code_complexity_46e849a7ee",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3955bd4925b8"
+  },
+  "xodexa_code_off_by_one_bug_6773f9d76a": {
+    "task_id": "xodexa_code_off_by_one_bug_6773f9d76a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-bfa860054c56"
+  },
+  "xodexa_code_predict_output_160cb5202b": {
+    "task_id": "xodexa_code_predict_output_160cb5202b",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dbefe7fb639e"
+  },
+  "xodexa_code_refactor_equiv_67dc9dca67": {
+    "task_id": "xodexa_code_refactor_equiv_67dc9dca67",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ea110abdc587"
+  },
+  "xodexa_code_vuln_class_id_96e9c6d925": {
+    "task_id": "xodexa_code_vuln_class_id_96e9c6d925",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-1dce60e89b44"
+  },
+  "xodexa_code_complexity_3a5d6c89ae": {
+    "task_id": "xodexa_code_complexity_3a5d6c89ae",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aba1f3420e10"
+  },
+  "xodexa_code_off_by_one_bug_bb584ddf18": {
+    "task_id": "xodexa_code_off_by_one_bug_bb584ddf18",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-0c9157b4cb7e"
+  },
+  "xodexa_code_predict_output_92dbd47419": {
+    "task_id": "xodexa_code_predict_output_92dbd47419",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 140.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 140,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4aa5a9b78445"
+  },
+  "xodexa_code_refactor_equiv_58f0cc58e1": {
+    "task_id": "xodexa_code_refactor_equiv_58f0cc58e1",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d83b181353af"
+  },
+  "xodexa_code_vuln_class_id_e5e9639283": {
+    "task_id": "xodexa_code_vuln_class_id_e5e9639283",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-953cbcaa285b"
+  },
+  "xodexa_code_complexity_5a087226d4": {
+    "task_id": "xodexa_code_complexity_5a087226d4",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-194b6a8343e1"
+  },
+  "xodexa_code_off_by_one_bug_00007a0d7c": {
+    "task_id": "xodexa_code_off_by_one_bug_00007a0d7c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-966ded6bc024"
+  },
+  "xodexa_code_predict_output_50b8a02073": {
+    "task_id": "xodexa_code_predict_output_50b8a02073",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 30.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-dc0a7740866b"
+  },
+  "xodexa_code_refactor_equiv_749387a133": {
+    "task_id": "xodexa_code_refactor_equiv_749387a133",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eacb04ed32ed"
+  },
+  "xodexa_code_vuln_class_id_abd988674a": {
+    "task_id": "xodexa_code_vuln_class_id_abd988674a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a6023363f0ba"
+  },
+  "xodexa_code_complexity_b6abcb168a": {
+    "task_id": "xodexa_code_complexity_b6abcb168a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3e5e4279f7c8"
+  },
+  "xodexa_code_off_by_one_bug_3725e12163": {
+    "task_id": "xodexa_code_off_by_one_bug_3725e12163",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-311f28ecef80"
+  },
+  "xodexa_code_predict_output_213adb11fb": {
+    "task_id": "xodexa_code_predict_output_213adb11fb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f40dc5894a3c"
+  },
+  "xodexa_code_refactor_equiv_0607bb2c62": {
+    "task_id": "xodexa_code_refactor_equiv_0607bb2c62",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 4,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-19299546fe10"
+  },
+  "xodexa_code_vuln_class_id_2660fe0c67": {
+    "task_id": "xodexa_code_vuln_class_id_2660fe0c67",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-9da7ace5f2e9"
+  },
+  "xodexa_code_complexity_455cf4fd14": {
+    "task_id": "xodexa_code_complexity_455cf4fd14",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-36600ebe41d7"
+  },
+  "xodexa_code_off_by_one_bug_b063097bcb": {
+    "task_id": "xodexa_code_off_by_one_bug_b063097bcb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f0c4fb6b379a"
+  },
+  "xodexa_code_predict_output_975870fa5c": {
+    "task_id": "xodexa_code_predict_output_975870fa5c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a983611ae298"
+  },
+  "xodexa_code_refactor_equiv_1c678b08c7": {
+    "task_id": "xodexa_code_refactor_equiv_1c678b08c7",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-20ebc9a84f1e"
+  },
+  "xodexa_code_vuln_class_id_8845fd9417": {
+    "task_id": "xodexa_code_vuln_class_id_8845fd9417",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-560b7018de41"
+  },
+  "xodexa_code_complexity_92c3608480": {
+    "task_id": "xodexa_code_complexity_92c3608480",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0d3ae29e2963"
+  },
+  "xodexa_code_off_by_one_bug_dec24bdf37": {
+    "task_id": "xodexa_code_off_by_one_bug_dec24bdf37",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a1acaed489d7"
+  },
+  "xodexa_code_predict_output_0f344a5f65": {
+    "task_id": "xodexa_code_predict_output_0f344a5f65",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-21322d3af40f"
+  },
+  "xodexa_code_refactor_equiv_5850394b26": {
+    "task_id": "xodexa_code_refactor_equiv_5850394b26",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-93fe624855c7"
+  },
+  "xodexa_code_vuln_class_id_ed97bcf613": {
+    "task_id": "xodexa_code_vuln_class_id_ed97bcf613",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-4f80489fe0ee"
+  },
+  "xodexa_code_complexity_85a11b4748": {
+    "task_id": "xodexa_code_complexity_85a11b4748",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d378679f5cab"
+  },
+  "xodexa_code_off_by_one_bug_239681f709": {
+    "task_id": "xodexa_code_off_by_one_bug_239681f709",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8cd0b49e60bb"
+  },
+  "xodexa_code_predict_output_32811478e1": {
+    "task_id": "xodexa_code_predict_output_32811478e1",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 204.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 204,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-89234957e591"
+  },
+  "xodexa_code_refactor_equiv_c202c13364": {
+    "task_id": "xodexa_code_refactor_equiv_c202c13364",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8cc930b246a"
+  },
+  "xodexa_code_vuln_class_id_0e9a87aab8": {
+    "task_id": "xodexa_code_vuln_class_id_0e9a87aab8",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-cc7274f32939"
+  },
+  "xodexa_code_complexity_33ec202805": {
+    "task_id": "xodexa_code_complexity_33ec202805",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8249d64ef6e8"
+  },
+  "xodexa_code_off_by_one_bug_e3bfaba7f8": {
+    "task_id": "xodexa_code_off_by_one_bug_e3bfaba7f8",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f918ec6490d2"
+  },
+  "xodexa_code_predict_output_54b1def664": {
+    "task_id": "xodexa_code_predict_output_54b1def664",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-20d3b54cace4"
+  },
+  "xodexa_code_refactor_equiv_b22aaee20b": {
+    "task_id": "xodexa_code_refactor_equiv_b22aaee20b",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a513d97cc679"
+  },
+  "xodexa_code_vuln_class_id_f10fe97085": {
+    "task_id": "xodexa_code_vuln_class_id_f10fe97085",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-cb0dbafad860"
+  },
+  "xodexa_code_complexity_91f4283649": {
+    "task_id": "xodexa_code_complexity_91f4283649",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7d1d6cfb1245"
+  },
+  "xodexa_code_off_by_one_bug_83eb3ae985": {
+    "task_id": "xodexa_code_off_by_one_bug_83eb3ae985",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ae40c077cf30"
+  },
+  "xodexa_code_predict_output_384a7cacec": {
+    "task_id": "xodexa_code_predict_output_384a7cacec",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 14.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 14,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0a47e878cd7e"
+  },
+  "xodexa_code_refactor_equiv_472627073c": {
+    "task_id": "xodexa_code_refactor_equiv_472627073c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 8,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c1ddaa7edc76"
+  },
+  "xodexa_code_vuln_class_id_4b27cbc645": {
+    "task_id": "xodexa_code_vuln_class_id_4b27cbc645",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-80a9c10ef308"
+  },
+  "xodexa_code_complexity_3f5872a6bb": {
+    "task_id": "xodexa_code_complexity_3f5872a6bb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-01bbbbe9c24f"
+  },
+  "xodexa_code_off_by_one_bug_0aa9dbf9b0": {
+    "task_id": "xodexa_code_off_by_one_bug_0aa9dbf9b0",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-349d5e270510"
+  },
+  "xodexa_code_predict_output_18c8757beb": {
+    "task_id": "xodexa_code_predict_output_18c8757beb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b6965b32d010"
+  },
+  "xodexa_code_refactor_equiv_6adaa43f29": {
+    "task_id": "xodexa_code_refactor_equiv_6adaa43f29",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7a3852c89724"
+  },
+  "xodexa_code_vuln_class_id_2bfcf27e12": {
+    "task_id": "xodexa_code_vuln_class_id_2bfcf27e12",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2b16291763ae"
+  },
+  "xodexa_code_complexity_5315ab6f24": {
+    "task_id": "xodexa_code_complexity_5315ab6f24",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-53c2025a0bc7"
+  },
+  "xodexa_code_off_by_one_bug_1e1350ea87": {
+    "task_id": "xodexa_code_off_by_one_bug_1e1350ea87",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-c06a71ac183a"
+  },
+  "xodexa_code_predict_output_b37b47bf2c": {
+    "task_id": "xodexa_code_predict_output_b37b47bf2c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c4255610db02"
+  },
+  "xodexa_code_refactor_equiv_1df11d8839": {
+    "task_id": "xodexa_code_refactor_equiv_1df11d8839",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9ac7cef8153c"
+  },
+  "xodexa_code_vuln_class_id_8d7cfe7363": {
+    "task_id": "xodexa_code_vuln_class_id_8d7cfe7363",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ead0e636a623"
+  },
+  "xodexa_code_complexity_0d263a215c": {
+    "task_id": "xodexa_code_complexity_0d263a215c",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3a580330a5b9"
+  },
+  "xodexa_code_off_by_one_bug_36861d485e": {
+    "task_id": "xodexa_code_off_by_one_bug_36861d485e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-54a7000dd6f3"
+  },
+  "xodexa_code_predict_output_e77010afcf": {
+    "task_id": "xodexa_code_predict_output_e77010afcf",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 30.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 30,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d303862aee4d"
+  },
+  "xodexa_code_refactor_equiv_fa1428254d": {
+    "task_id": "xodexa_code_refactor_equiv_fa1428254d",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9c5a9ecc6819"
+  },
+  "xodexa_code_vuln_class_id_87d496dd2a": {
+    "task_id": "xodexa_code_vuln_class_id_87d496dd2a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e51576de35f5"
+  },
+  "xodexa_code_complexity_25a7595f77": {
+    "task_id": "xodexa_code_complexity_25a7595f77",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f8656979e249"
+  },
+  "xodexa_code_off_by_one_bug_b897635245": {
+    "task_id": "xodexa_code_off_by_one_bug_b897635245",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-b2e4b675393f"
+  },
+  "xodexa_code_predict_output_f6c973cc4f": {
+    "task_id": "xodexa_code_predict_output_f6c973cc4f",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 140.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 140,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-57f8bf325dd0"
+  },
+  "xodexa_code_refactor_equiv_ab2a20fdfd": {
+    "task_id": "xodexa_code_refactor_equiv_ab2a20fdfd",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 0.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-878f3509a57b"
+  },
+  "xodexa_code_vuln_class_id_b7da9254e6": {
+    "task_id": "xodexa_code_vuln_class_id_b7da9254e6",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-b49c778fe43c"
+  },
+  "xodexa_code_complexity_1166a0162d": {
+    "task_id": "xodexa_code_complexity_1166a0162d",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fcf442ed67d1"
+  },
+  "xodexa_code_off_by_one_bug_01964c3d33": {
+    "task_id": "xodexa_code_off_by_one_bug_01964c3d33",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-0701fd6f037e"
+  },
+  "xodexa_code_predict_output_c81e0ca997": {
+    "task_id": "xodexa_code_predict_output_c81e0ca997",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-517f579dd724"
+  },
+  "xodexa_code_refactor_equiv_0f61f7a8cd": {
+    "task_id": "xodexa_code_refactor_equiv_0f61f7a8cd",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-69716dcf8316"
+  },
+  "xodexa_code_vuln_class_id_5fbbede1ce": {
+    "task_id": "xodexa_code_vuln_class_id_5fbbede1ce",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-de4e73d2d6bd"
+  },
+  "xodexa_code_complexity_87797370b2": {
+    "task_id": "xodexa_code_complexity_87797370b2",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8c41e5f6b8fe"
+  },
+  "xodexa_code_off_by_one_bug_4eeb586c9d": {
+    "task_id": "xodexa_code_off_by_one_bug_4eeb586c9d",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-593c7665b3e3"
+  },
+  "xodexa_code_predict_output_fc64e70bf7": {
+    "task_id": "xodexa_code_predict_output_fc64e70bf7",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 140.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 140,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b623d16b256b"
+  },
+  "xodexa_code_refactor_equiv_62fa5da772": {
+    "task_id": "xodexa_code_refactor_equiv_62fa5da772",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 6,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a2ce367e24df"
+  },
+  "xodexa_code_vuln_class_id_ed4d2325db": {
+    "task_id": "xodexa_code_vuln_class_id_ed4d2325db",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-7228d6abffde"
+  },
+  "xodexa_code_complexity_0171798972": {
+    "task_id": "xodexa_code_complexity_0171798972",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4674097adee"
+  },
+  "xodexa_code_off_by_one_bug_7767a64e0f": {
+    "task_id": "xodexa_code_off_by_one_bug_7767a64e0f",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-5561e28ef193"
+  },
+  "xodexa_code_predict_output_1b93c68ebc": {
+    "task_id": "xodexa_code_predict_output_1b93c68ebc",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 55.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 55,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6b27e7927a69"
+  },
+  "xodexa_code_refactor_equiv_b62e25e2fb": {
+    "task_id": "xodexa_code_refactor_equiv_b62e25e2fb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b4722875ef6d"
+  },
+  "xodexa_code_vuln_class_id_6289236bd6": {
+    "task_id": "xodexa_code_vuln_class_id_6289236bd6",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8c9200f2c39f"
+  },
+  "xodexa_code_complexity_dd29a1f368": {
+    "task_id": "xodexa_code_complexity_dd29a1f368",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-30d3f2882723"
+  },
+  "xodexa_code_off_by_one_bug_315758636a": {
+    "task_id": "xodexa_code_off_by_one_bug_315758636a",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a1b8fb4955df"
+  },
+  "xodexa_code_predict_output_94d160caf0": {
+    "task_id": "xodexa_code_predict_output_94d160caf0",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-48c65a962fa9"
+  },
+  "xodexa_code_refactor_equiv_0a9a48e0fa": {
+    "task_id": "xodexa_code_refactor_equiv_0a9a48e0fa",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 3,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-04caa3a0e6e9"
+  },
+  "xodexa_code_vuln_class_id_393e774e4e": {
+    "task_id": "xodexa_code_vuln_class_id_393e774e4e",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-df83a0ed5ab6"
+  },
+  "xodexa_code_complexity_c0aa5b28c1": {
+    "task_id": "xodexa_code_complexity_c0aa5b28c1",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-543b15e58fe2"
+  },
+  "xodexa_code_off_by_one_bug_76e632ff35": {
+    "task_id": "xodexa_code_off_by_one_bug_76e632ff35",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d00ac97892e3"
+  },
+  "xodexa_code_predict_output_6592255462": {
+    "task_id": "xodexa_code_predict_output_6592255462",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 204.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 204,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-54962eb70ce0"
+  },
+  "xodexa_code_refactor_equiv_1227d4cb21": {
+    "task_id": "xodexa_code_refactor_equiv_1227d4cb21",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c4a0aa32673b"
+  },
+  "xodexa_code_vuln_class_id_5cf755d5ec": {
+    "task_id": "xodexa_code_vuln_class_id_5cf755d5ec",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-5f651610de82"
+  },
+  "xodexa_code_complexity_769034f913": {
+    "task_id": "xodexa_code_complexity_769034f913",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3851864e1a28"
+  },
+  "xodexa_code_off_by_one_bug_9bc2c29ef6": {
+    "task_id": "xodexa_code_off_by_one_bug_9bc2c29ef6",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-b7bb8cc05f30"
+  },
+  "xodexa_code_predict_output_ec5ffe09a1": {
+    "task_id": "xodexa_code_predict_output_ec5ffe09a1",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 140.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 140,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f3a8d1941c3a"
+  },
+  "xodexa_code_refactor_equiv_7327f6ec62": {
+    "task_id": "xodexa_code_refactor_equiv_7327f6ec62",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 2,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f15c4457a8cc"
+  },
+  "xodexa_code_vuln_class_id_05c35838e0": {
+    "task_id": "xodexa_code_vuln_class_id_05c35838e0",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8d9f2590ff1a"
+  },
+  "xodexa_code_complexity_6906619a81": {
+    "task_id": "xodexa_code_complexity_6906619a81",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5386d4ae540b"
+  },
+  "xodexa_code_off_by_one_bug_916f7be518": {
+    "task_id": "xodexa_code_off_by_one_bug_916f7be518",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-bbe596a3bbe8"
+  },
+  "xodexa_code_predict_output_19ce5da9ff": {
+    "task_id": "xodexa_code_predict_output_19ce5da9ff",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 5.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-00872c095674"
+  },
+  "xodexa_code_refactor_equiv_2894626c26": {
+    "task_id": "xodexa_code_refactor_equiv_2894626c26",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-59fe72adf247"
+  },
+  "xodexa_code_vuln_class_id_c3225055e0": {
+    "task_id": "xodexa_code_vuln_class_id_c3225055e0",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-57ed313bc92a"
+  },
+  "xodexa_code_complexity_d05df975dc": {
+    "task_id": "xodexa_code_complexity_d05df975dc",
+    "category": "code",
+    "family": "code",
+    "subdomain": "review",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c4395d32ea4e"
+  },
+  "xodexa_code_off_by_one_bug_55774b5d08": {
+    "task_id": "xodexa_code_off_by_one_bug_55774b5d08",
+    "category": "code",
+    "family": "code",
+    "subdomain": "bugfix",
+    "difficulty": 4.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "off-by-one",
+        "len"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no bug",
+        "code is correct",
+        "works correctly"
+      ]
+    },
+    "expected_answer": "Off-by-one: `i <= len(xs)` should be `i < len(xs)`.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-8126645b222a"
+  },
+  "xodexa_code_predict_output_8b805e7287": {
+    "task_id": "xodexa_code_predict_output_8b805e7287",
+    "category": "code",
+    "family": "code",
+    "subdomain": "fresh_coding",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 91.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-90febfd6f040"
+  },
+  "xodexa_code_refactor_equiv_4a233e32a3": {
+    "task_id": "xodexa_code_refactor_equiv_4a233e32a3",
+    "category": "code",
+    "family": "code",
+    "subdomain": "refactor",
+    "difficulty": 2.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.0,
+      "tolerance": 0.001
+    },
+    "expected_answer": 7,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1c5e26e30562"
+  },
+  "xodexa_code_vuln_class_id_e87f18ecdb": {
+    "task_id": "xodexa_code_vuln_class_id_e87f18ecdb",
+    "category": "code",
+    "family": "code",
+    "subdomain": "security_patch",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "sql injection",
+        "parameter"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "no vulnerability",
+        "code is safe"
+      ]
+    },
+    "expected_answer": "SQL injection; fix with parameterized queries / prepared statements.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a386a38a2a2b"
   }
 }

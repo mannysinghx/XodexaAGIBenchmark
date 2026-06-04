@@ -1,6 +1,6 @@
 {
-  "xodexa_science_causal_identification_7f730afdd5": {
-    "task_id": "xodexa_science_causal_identification_7f730afdd5",
+  "xodexa_science_causal_identification_c67cf1c2b1": {
+    "task_id": "xodexa_science_causal_identification_c67cf1c2b1",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -18,10 +18,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-923fc3ea31d9"
+    "canary": "XDX-CANARY-f3f81d321519"
   },
-  "xodexa_science_confound_critique_04dd46d7be": {
-    "task_id": "xodexa_science_confound_critique_04dd46d7be",
+  "xodexa_science_confound_critique_c09c4f9dbf": {
+    "task_id": "xodexa_science_confound_critique_c09c4f9dbf",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -41,42 +41,42 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-2835d78402da"
+    "canary": "XDX-CANARY-665e1d671cfc"
   },
-  "xodexa_science_half_life_34be7f6b63": {
-    "task_id": "xodexa_science_half_life_34be7f6b63",
+  "xodexa_science_half_life_e04e1a9a6d": {
+    "task_id": "xodexa_science_half_life_e04e1a9a6d",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 25.0,
+      "target": 5.0,
       "tolerance": 0.01
     },
-    "expected_answer": 25.0,
+    "expected_answer": 5.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-2fe73e566351"
+    "canary": "XDX-CANARY-3abaa2764bc4"
   },
-  "xodexa_science_kinematics_8a32efc1f6": {
-    "task_id": "xodexa_science_kinematics_8a32efc1f6",
+  "xodexa_science_kinematics_418db18e78": {
+    "task_id": "xodexa_science_kinematics_418db18e78",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 143.5,
+      "target": 22.0,
       "tolerance": 0.05
     },
-    "expected_answer": 143.5,
+    "expected_answer": 22.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b86983358b4b"
+    "canary": "XDX-CANARY-2344564b68fd"
   },
-  "xodexa_science_stats_interpretation_20c325e30b": {
-    "task_id": "xodexa_science_stats_interpretation_20c325e30b",
+  "xodexa_science_stats_interpretation_c6c3fc6183": {
+    "task_id": "xodexa_science_stats_interpretation_c6c3fc6183",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -96,26 +96,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-0b4efe7c0917"
+    "canary": "XDX-CANARY-481244fbc431"
   },
-  "xodexa_science_stoichiometry_b573a7a6d1": {
-    "task_id": "xodexa_science_stoichiometry_b573a7a6d1",
+  "xodexa_science_stoichiometry_bc93a62abc": {
+    "task_id": "xodexa_science_stoichiometry_bc93a62abc",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 3.3571,
+      "target": 8.8125,
       "tolerance": 0.02
     },
-    "expected_answer": 3.36,
+    "expected_answer": 8.81,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-68c070d0961c"
+    "canary": "XDX-CANARY-c68d8935fdd0"
   },
-  "xodexa_science_causal_identification_62a31021de": {
-    "task_id": "xodexa_science_causal_identification_62a31021de",
+  "xodexa_science_causal_identification_4e58307e6b": {
+    "task_id": "xodexa_science_causal_identification_4e58307e6b",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -133,10 +133,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-88182e31bf28"
+    "canary": "XDX-CANARY-39a717c7f931"
   },
-  "xodexa_science_confound_critique_b02e6e9362": {
-    "task_id": "xodexa_science_confound_critique_b02e6e9362",
+  "xodexa_science_confound_critique_bc07d0889f": {
+    "task_id": "xodexa_science_confound_critique_bc07d0889f",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -156,10 +156,240 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-73fd685efe72"
+    "canary": "XDX-CANARY-74552b494b29"
   },
-  "xodexa_science_half_life_dc09c7be34": {
-    "task_id": "xodexa_science_half_life_dc09c7be34",
+  "xodexa_science_half_life_18c7cec541": {
+    "task_id": "xodexa_science_half_life_18c7cec541",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-409f52bf6f2b"
+  },
+  "xodexa_science_kinematics_5d14be963b": {
+    "task_id": "xodexa_science_kinematics_5d14be963b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 84.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b479613e7630"
+  },
+  "xodexa_science_stats_interpretation_7a99452a0d": {
+    "task_id": "xodexa_science_stats_interpretation_7a99452a0d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-fc6d8a1bff25"
+  },
+  "xodexa_science_stoichiometry_30372f6867": {
+    "task_id": "xodexa_science_stoichiometry_30372f6867",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.8636,
+      "tolerance": 0.02
+    },
+    "expected_answer": 3.86,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9a2b92fb98c9"
+  },
+  "xodexa_science_causal_identification_7f4c8135b2": {
+    "task_id": "xodexa_science_causal_identification_7f4c8135b2",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-51654a308042"
+  },
+  "xodexa_science_confound_critique_b71fa04ac7": {
+    "task_id": "xodexa_science_confound_critique_b71fa04ac7",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d14c626b23d9"
+  },
+  "xodexa_science_half_life_92dfe2a29a": {
+    "task_id": "xodexa_science_half_life_92dfe2a29a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-66e386d331d3"
+  },
+  "xodexa_science_kinematics_448bd2db9d": {
+    "task_id": "xodexa_science_kinematics_448bd2db9d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 67.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 67.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-784c248193cb"
+  },
+  "xodexa_science_stats_interpretation_1825b4712d": {
+    "task_id": "xodexa_science_stats_interpretation_1825b4712d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-27bb3a857489"
+  },
+  "xodexa_science_stoichiometry_b8e1a326f3": {
+    "task_id": "xodexa_science_stoichiometry_b8e1a326f3",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.875,
+      "tolerance": 0.02
+    },
+    "expected_answer": 1.88,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a3c448cc1ea8"
+  },
+  "xodexa_science_causal_identification_da8a517c90": {
+    "task_id": "xodexa_science_causal_identification_da8a517c90",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f52b6cd52978"
+  },
+  "xodexa_science_confound_critique_5b1cd08983": {
+    "task_id": "xodexa_science_confound_critique_5b1cd08983",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ad291a8a22c9"
+  },
+  "xodexa_science_half_life_874e9b3cbe": {
+    "task_id": "xodexa_science_half_life_874e9b3cbe",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
@@ -172,26 +402,26 @@
     "expected_answer": 10.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-bdaeb19a4ed5"
+    "canary": "XDX-CANARY-42a53058558d"
   },
-  "xodexa_science_kinematics_8566b361ac": {
-    "task_id": "xodexa_science_kinematics_8566b361ac",
+  "xodexa_science_kinematics_88bac8c442": {
+    "task_id": "xodexa_science_kinematics_88bac8c442",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 112.0,
+      "target": 208.0,
       "tolerance": 0.05
     },
-    "expected_answer": 112.0,
+    "expected_answer": 208.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c071579deab4"
+    "canary": "XDX-CANARY-67d7cc0c7409"
   },
-  "xodexa_science_stats_interpretation_eb1808252b": {
-    "task_id": "xodexa_science_stats_interpretation_eb1808252b",
+  "xodexa_science_stats_interpretation_aae3a367a7": {
+    "task_id": "xodexa_science_stats_interpretation_aae3a367a7",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -211,26 +441,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-32fbf0419cee"
+    "canary": "XDX-CANARY-8219e2ed0ee8"
   },
-  "xodexa_science_stoichiometry_4858020a4a": {
-    "task_id": "xodexa_science_stoichiometry_4858020a4a",
+  "xodexa_science_stoichiometry_2fdbf8f788": {
+    "task_id": "xodexa_science_stoichiometry_2fdbf8f788",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 5.2778,
+      "target": 1.9286,
       "tolerance": 0.02
     },
-    "expected_answer": 5.28,
+    "expected_answer": 1.93,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-f531209b440e"
+    "canary": "XDX-CANARY-2b11dcdb7dcd"
   },
-  "xodexa_science_causal_identification_cb54a68cb8": {
-    "task_id": "xodexa_science_causal_identification_cb54a68cb8",
+  "xodexa_science_causal_identification_69469993a1": {
+    "task_id": "xodexa_science_causal_identification_69469993a1",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -248,10 +478,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-ae7a3f31a28e"
+    "canary": "XDX-CANARY-a2c4a25779e5"
   },
-  "xodexa_science_confound_critique_b791037cd5": {
-    "task_id": "xodexa_science_confound_critique_b791037cd5",
+  "xodexa_science_confound_critique_bef8c55009": {
+    "task_id": "xodexa_science_confound_critique_bef8c55009",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -271,10 +501,355 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-8e5a095ed6c5"
+    "canary": "XDX-CANARY-7432042f961c"
   },
-  "xodexa_science_half_life_8fb573932a": {
-    "task_id": "xodexa_science_half_life_8fb573932a",
+  "xodexa_science_half_life_07776c9169": {
+    "task_id": "xodexa_science_half_life_07776c9169",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5f046cf220e3"
+  },
+  "xodexa_science_kinematics_282a2a9a49": {
+    "task_id": "xodexa_science_kinematics_282a2a9a49",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 44.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 44.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b09076af1d40"
+  },
+  "xodexa_science_stats_interpretation_3151397b0d": {
+    "task_id": "xodexa_science_stats_interpretation_3151397b0d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-1769b0738527"
+  },
+  "xodexa_science_stoichiometry_56e60d85ad": {
+    "task_id": "xodexa_science_stoichiometry_56e60d85ad",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 10.8333,
+      "tolerance": 0.02
+    },
+    "expected_answer": 10.83,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-15829a638d33"
+  },
+  "xodexa_science_causal_identification_749be2f16d": {
+    "task_id": "xodexa_science_causal_identification_749be2f16d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-74d2e150c645"
+  },
+  "xodexa_science_confound_critique_6aaba1c7f5": {
+    "task_id": "xodexa_science_confound_critique_6aaba1c7f5",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-04a35d45a046"
+  },
+  "xodexa_science_half_life_b9e02bcdc2": {
+    "task_id": "xodexa_science_half_life_b9e02bcdc2",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d93c2d72d3a0"
+  },
+  "xodexa_science_kinematics_dff400ccb2": {
+    "task_id": "xodexa_science_kinematics_dff400ccb2",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 128.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 128.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-42e9179a69ec"
+  },
+  "xodexa_science_stats_interpretation_8e28be86bd": {
+    "task_id": "xodexa_science_stats_interpretation_8e28be86bd",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-fb72e47fe141"
+  },
+  "xodexa_science_stoichiometry_c018f9b1ab": {
+    "task_id": "xodexa_science_stoichiometry_c018f9b1ab",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.1591,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.16,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7460d6767ed9"
+  },
+  "xodexa_science_causal_identification_7e0154c971": {
+    "task_id": "xodexa_science_causal_identification_7e0154c971",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-97fb98bcc0ad"
+  },
+  "xodexa_science_confound_critique_212a85b233": {
+    "task_id": "xodexa_science_confound_critique_212a85b233",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-792f0d000d4f"
+  },
+  "xodexa_science_half_life_04ac5028e1": {
+    "task_id": "xodexa_science_half_life_04ac5028e1",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 40.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 40.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c8393fccef97"
+  },
+  "xodexa_science_kinematics_b69ac7131c": {
+    "task_id": "xodexa_science_kinematics_b69ac7131c",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 70.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 70.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b9e55d219190"
+  },
+  "xodexa_science_stats_interpretation_0e9b9ab53f": {
+    "task_id": "xodexa_science_stats_interpretation_0e9b9ab53f",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-9ddb4e6b3fe1"
+  },
+  "xodexa_science_stoichiometry_c6c495f22e": {
+    "task_id": "xodexa_science_stoichiometry_c6c495f22e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 8.5625,
+      "tolerance": 0.02
+    },
+    "expected_answer": 8.56,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7be28ed39746"
+  },
+  "xodexa_science_causal_identification_46a3f42418": {
+    "task_id": "xodexa_science_causal_identification_46a3f42418",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-984b2896d33b"
+  },
+  "xodexa_science_confound_critique_8983af6de3": {
+    "task_id": "xodexa_science_confound_critique_8983af6de3",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-4d23f01f10e6"
+  },
+  "xodexa_science_half_life_06a43aa0cc": {
+    "task_id": "xodexa_science_half_life_06a43aa0cc",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
@@ -287,26 +862,26 @@
     "expected_answer": 25.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-ae1571c28581"
+    "canary": "XDX-CANARY-7d378a277c2b"
   },
-  "xodexa_science_kinematics_0d2d630ecd": {
-    "task_id": "xodexa_science_kinematics_0d2d630ecd",
+  "xodexa_science_kinematics_977da12398": {
+    "task_id": "xodexa_science_kinematics_977da12398",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 143.5,
+      "target": 17.5,
       "tolerance": 0.05
     },
-    "expected_answer": 143.5,
+    "expected_answer": 17.5,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-a022cdcdd8a3"
+    "canary": "XDX-CANARY-0ebef888df32"
   },
-  "xodexa_science_stats_interpretation_d8267b3082": {
-    "task_id": "xodexa_science_stats_interpretation_d8267b3082",
+  "xodexa_science_stats_interpretation_a5ce9ae45a": {
+    "task_id": "xodexa_science_stats_interpretation_a5ce9ae45a",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -326,26 +901,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-a9d1900bfe29"
+    "canary": "XDX-CANARY-c7133a6cff60"
   },
-  "xodexa_science_stoichiometry_8a268b9cc1": {
-    "task_id": "xodexa_science_stoichiometry_8a268b9cc1",
+  "xodexa_science_stoichiometry_de0192e6d8": {
+    "task_id": "xodexa_science_stoichiometry_de0192e6d8",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 4.6429,
+      "target": 3.6818,
       "tolerance": 0.02
     },
-    "expected_answer": 4.64,
+    "expected_answer": 3.68,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-0604ec5d16e4"
+    "canary": "XDX-CANARY-e90d44e100a3"
   },
-  "xodexa_science_causal_identification_642f6c624c": {
-    "task_id": "xodexa_science_causal_identification_642f6c624c",
+  "xodexa_science_causal_identification_af30301c21": {
+    "task_id": "xodexa_science_causal_identification_af30301c21",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -363,10 +938,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b8963ac7c81c"
+    "canary": "XDX-CANARY-6fdf3ace7bf1"
   },
-  "xodexa_science_confound_critique_fe1af3a525": {
-    "task_id": "xodexa_science_confound_critique_fe1af3a525",
+  "xodexa_science_confound_critique_11ccc33055": {
+    "task_id": "xodexa_science_confound_critique_11ccc33055",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -386,10 +961,355 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-4b25a0281db9"
+    "canary": "XDX-CANARY-e25092cba5d5"
   },
-  "xodexa_science_half_life_af66d6694c": {
-    "task_id": "xodexa_science_half_life_af66d6694c",
+  "xodexa_science_half_life_c8a89080dc": {
+    "task_id": "xodexa_science_half_life_c8a89080dc",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 25.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9e08463afd48"
+  },
+  "xodexa_science_kinematics_dcc88c893f": {
+    "task_id": "xodexa_science_kinematics_dcc88c893f",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 84.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 84.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-196b5e9696a4"
+  },
+  "xodexa_science_stats_interpretation_d88e2e6398": {
+    "task_id": "xodexa_science_stats_interpretation_d88e2e6398",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-393354d10b3e"
+  },
+  "xodexa_science_stoichiometry_45cf0fc23a": {
+    "task_id": "xodexa_science_stoichiometry_45cf0fc23a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.5357,
+      "tolerance": 0.02
+    },
+    "expected_answer": 6.54,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-321242ce827f"
+  },
+  "xodexa_science_causal_identification_a22b2ca0a4": {
+    "task_id": "xodexa_science_causal_identification_a22b2ca0a4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-746a143b0b7d"
+  },
+  "xodexa_science_confound_critique_159ec398d0": {
+    "task_id": "xodexa_science_confound_critique_159ec398d0",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2c14cdc0180c"
+  },
+  "xodexa_science_half_life_5d7ee4b975": {
+    "task_id": "xodexa_science_half_life_5d7ee4b975",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 25.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9ef8bacc6d06"
+  },
+  "xodexa_science_kinematics_0af5d4713d": {
+    "task_id": "xodexa_science_kinematics_0af5d4713d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 98.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 98.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-165e87868b00"
+  },
+  "xodexa_science_stats_interpretation_ec7735d857": {
+    "task_id": "xodexa_science_stats_interpretation_ec7735d857",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-28747e220636"
+  },
+  "xodexa_science_stoichiometry_5dea2b1ec4": {
+    "task_id": "xodexa_science_stoichiometry_5dea2b1ec4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.5938,
+      "tolerance": 0.02
+    },
+    "expected_answer": 1.59,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5ee31042628e"
+  },
+  "xodexa_science_causal_identification_8ed0b81a36": {
+    "task_id": "xodexa_science_causal_identification_8ed0b81a36",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-384e43cea005"
+  },
+  "xodexa_science_confound_critique_f4229d4693": {
+    "task_id": "xodexa_science_confound_critique_f4229d4693",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-13dbda329c8a"
+  },
+  "xodexa_science_half_life_275539ba44": {
+    "task_id": "xodexa_science_half_life_275539ba44",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 25.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-31ecafab0831"
+  },
+  "xodexa_science_kinematics_57190703ad": {
+    "task_id": "xodexa_science_kinematics_57190703ad",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 72.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 72.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c4f416833c4b"
+  },
+  "xodexa_science_stats_interpretation_4cafe2c294": {
+    "task_id": "xodexa_science_stats_interpretation_4cafe2c294",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-1935932109bd"
+  },
+  "xodexa_science_stoichiometry_6dff71e59e": {
+    "task_id": "xodexa_science_stoichiometry_6dff71e59e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 0.5682,
+      "tolerance": 0.02
+    },
+    "expected_answer": 0.57,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4156d2299cc"
+  },
+  "xodexa_science_causal_identification_a8ace45128": {
+    "task_id": "xodexa_science_causal_identification_a8ace45128",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0bdce2867756"
+  },
+  "xodexa_science_confound_critique_5159be3a6c": {
+    "task_id": "xodexa_science_confound_critique_5159be3a6c",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f1331003a001"
+  },
+  "xodexa_science_half_life_f3dea3b0a5": {
+    "task_id": "xodexa_science_half_life_f3dea3b0a5",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
@@ -402,26 +1322,26 @@
     "expected_answer": 10.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b912b99e5fb9"
+    "canary": "XDX-CANARY-954add825608"
   },
-  "xodexa_science_kinematics_73da4e2739": {
-    "task_id": "xodexa_science_kinematics_73da4e2739",
+  "xodexa_science_kinematics_b1e4409d5c": {
+    "task_id": "xodexa_science_kinematics_b1e4409d5c",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 102.0,
+      "target": 33.0,
       "tolerance": 0.05
     },
-    "expected_answer": 102.0,
+    "expected_answer": 33.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-da3f79bd794b"
+    "canary": "XDX-CANARY-90936f563e99"
   },
-  "xodexa_science_stats_interpretation_1707798a80": {
-    "task_id": "xodexa_science_stats_interpretation_1707798a80",
+  "xodexa_science_stats_interpretation_c123644b7e": {
+    "task_id": "xodexa_science_stats_interpretation_c123644b7e",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -441,26 +1361,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-ee05ef57438c"
+    "canary": "XDX-CANARY-56311836bfc2"
   },
-  "xodexa_science_stoichiometry_cdcb44b29f": {
-    "task_id": "xodexa_science_stoichiometry_cdcb44b29f",
+  "xodexa_science_stoichiometry_8ebfbfc01b": {
+    "task_id": "xodexa_science_stoichiometry_8ebfbfc01b",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 9.25,
+      "target": 2.9375,
       "tolerance": 0.02
     },
-    "expected_answer": 9.25,
+    "expected_answer": 2.94,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-8d5e5f3098d2"
+    "canary": "XDX-CANARY-0d79485b17f0"
   },
-  "xodexa_science_causal_identification_7f5fb1b1be": {
-    "task_id": "xodexa_science_causal_identification_7f5fb1b1be",
+  "xodexa_science_causal_identification_ce252550c9": {
+    "task_id": "xodexa_science_causal_identification_ce252550c9",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -478,10 +1398,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-c053ef367504"
+    "canary": "XDX-CANARY-d688314a5950"
   },
-  "xodexa_science_confound_critique_0b572481f6": {
-    "task_id": "xodexa_science_confound_critique_0b572481f6",
+  "xodexa_science_confound_critique_b016f394fc": {
+    "task_id": "xodexa_science_confound_critique_b016f394fc",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -501,42 +1421,42 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-9360ddca6fee"
+    "canary": "XDX-CANARY-6be1c97e8115"
   },
-  "xodexa_science_half_life_2e42359b8f": {
-    "task_id": "xodexa_science_half_life_2e42359b8f",
+  "xodexa_science_half_life_54894d2621": {
+    "task_id": "xodexa_science_half_life_54894d2621",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 6.25,
+      "target": 20.0,
       "tolerance": 0.01
     },
-    "expected_answer": 6.25,
+    "expected_answer": 20.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-b1ee996da27f"
+    "canary": "XDX-CANARY-31cea79fd506"
   },
-  "xodexa_science_kinematics_ebaed0aa95": {
-    "task_id": "xodexa_science_kinematics_ebaed0aa95",
+  "xodexa_science_kinematics_5b28f57c8b": {
+    "task_id": "xodexa_science_kinematics_5b28f57c8b",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 52.5,
+      "target": 168.0,
       "tolerance": 0.05
     },
-    "expected_answer": 52.5,
+    "expected_answer": 168.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-f9bea77bbafc"
+    "canary": "XDX-CANARY-ed573b3ad424"
   },
-  "xodexa_science_stats_interpretation_d81d9f323f": {
-    "task_id": "xodexa_science_stats_interpretation_d81d9f323f",
+  "xodexa_science_stats_interpretation_dc69fd729b": {
+    "task_id": "xodexa_science_stats_interpretation_dc69fd729b",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -556,26 +1476,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-d8f7ef656c3f"
+    "canary": "XDX-CANARY-75b3d8fcd0d5"
   },
-  "xodexa_science_stoichiometry_5c6f57d329": {
-    "task_id": "xodexa_science_stoichiometry_5c6f57d329",
+  "xodexa_science_stoichiometry_ac220402ef": {
+    "task_id": "xodexa_science_stoichiometry_ac220402ef",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 9.875,
+      "target": 6.0625,
       "tolerance": 0.02
     },
-    "expected_answer": 9.88,
+    "expected_answer": 6.06,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-6952aa25c26b"
+    "canary": "XDX-CANARY-e4546b8420cb"
   },
-  "xodexa_science_causal_identification_10ac0635ce": {
-    "task_id": "xodexa_science_causal_identification_10ac0635ce",
+  "xodexa_science_causal_identification_1005639a17": {
+    "task_id": "xodexa_science_causal_identification_1005639a17",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -593,10 +1513,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-dbcce7714cb3"
+    "canary": "XDX-CANARY-31ed8512fe3f"
   },
-  "xodexa_science_confound_critique_80ee44ef2d": {
-    "task_id": "xodexa_science_confound_critique_80ee44ef2d",
+  "xodexa_science_confound_critique_ad99d63544": {
+    "task_id": "xodexa_science_confound_critique_ad99d63544",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -616,26 +1536,716 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-400d5f06af8b"
+    "canary": "XDX-CANARY-f84e1bad0e65"
   },
-  "xodexa_science_half_life_3477fb89df": {
-    "task_id": "xodexa_science_half_life_3477fb89df",
+  "xodexa_science_half_life_e58f423777": {
+    "task_id": "xodexa_science_half_life_e58f423777",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 6.25,
+      "target": 10.0,
       "tolerance": 0.01
     },
-    "expected_answer": 6.25,
+    "expected_answer": 10.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-e7ab8a2a358f"
+    "canary": "XDX-CANARY-10b4a6136a44"
   },
-  "xodexa_science_kinematics_0c9fe93844": {
-    "task_id": "xodexa_science_kinematics_0c9fe93844",
+  "xodexa_science_kinematics_6594a68331": {
+    "task_id": "xodexa_science_kinematics_6594a68331",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 64.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 64.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ad0a40680a77"
+  },
+  "xodexa_science_stats_interpretation_acb0014f89": {
+    "task_id": "xodexa_science_stats_interpretation_acb0014f89",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-63e2ce786a7c"
+  },
+  "xodexa_science_stoichiometry_05ec62b1f7": {
+    "task_id": "xodexa_science_stoichiometry_05ec62b1f7",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 10.75,
+      "tolerance": 0.02
+    },
+    "expected_answer": 10.75,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d17a062481bd"
+  },
+  "xodexa_science_causal_identification_8e879cff3a": {
+    "task_id": "xodexa_science_causal_identification_8e879cff3a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-92fea6a39546"
+  },
+  "xodexa_science_confound_critique_6bdab5718f": {
+    "task_id": "xodexa_science_confound_critique_6bdab5718f",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-a097dab3a6bb"
+  },
+  "xodexa_science_half_life_bbb92c6532": {
+    "task_id": "xodexa_science_half_life_bbb92c6532",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b24b008149b5"
+  },
+  "xodexa_science_kinematics_675724bdb8": {
+    "task_id": "xodexa_science_kinematics_675724bdb8",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 6.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-84ade986c5ca"
+  },
+  "xodexa_science_stats_interpretation_c0288c72d1": {
+    "task_id": "xodexa_science_stats_interpretation_c0288c72d1",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-75f942e8fcfe"
+  },
+  "xodexa_science_stoichiometry_1405e2f7dc": {
+    "task_id": "xodexa_science_stoichiometry_1405e2f7dc",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.5227,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.52,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cbed845e27f2"
+  },
+  "xodexa_science_causal_identification_46fbbf50a5": {
+    "task_id": "xodexa_science_causal_identification_46fbbf50a5",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-06b83e65d669"
+  },
+  "xodexa_science_confound_critique_992bec3b3b": {
+    "task_id": "xodexa_science_confound_critique_992bec3b3b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-355be6f13152"
+  },
+  "xodexa_science_half_life_7b32c9251b": {
+    "task_id": "xodexa_science_half_life_7b32c9251b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 12.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1ef0cb35af17"
+  },
+  "xodexa_science_kinematics_ec6fba3027": {
+    "task_id": "xodexa_science_kinematics_ec6fba3027",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 136.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 136.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eb40ae09d54a"
+  },
+  "xodexa_science_stats_interpretation_7f362edaf2": {
+    "task_id": "xodexa_science_stats_interpretation_7f362edaf2",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-6406029ea448"
+  },
+  "xodexa_science_stoichiometry_a593cecd44": {
+    "task_id": "xodexa_science_stoichiometry_a593cecd44",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 1.4318,
+      "tolerance": 0.02
+    },
+    "expected_answer": 1.43,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d5729e021a59"
+  },
+  "xodexa_science_causal_identification_5cd00d50f1": {
+    "task_id": "xodexa_science_causal_identification_5cd00d50f1",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bd7354457701"
+  },
+  "xodexa_science_confound_critique_1a5fbcc49e": {
+    "task_id": "xodexa_science_confound_critique_1a5fbcc49e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-79839344aa74"
+  },
+  "xodexa_science_half_life_bd9371c102": {
+    "task_id": "xodexa_science_half_life_bd9371c102",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 2.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 2.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-22a3c6846d74"
+  },
+  "xodexa_science_kinematics_b2dfe044a8": {
+    "task_id": "xodexa_science_kinematics_b2dfe044a8",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 128.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 128.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c16c7daec4b0"
+  },
+  "xodexa_science_stats_interpretation_1287bfb326": {
+    "task_id": "xodexa_science_stats_interpretation_1287bfb326",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-0095dc5bbe48"
+  },
+  "xodexa_science_stoichiometry_11c44c4ab5": {
+    "task_id": "xodexa_science_stoichiometry_11c44c4ab5",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.375,
+      "tolerance": 0.02
+    },
+    "expected_answer": 3.38,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a438dcb4edbe"
+  },
+  "xodexa_science_causal_identification_232508adcc": {
+    "task_id": "xodexa_science_causal_identification_232508adcc",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d5a8022873bf"
+  },
+  "xodexa_science_confound_critique_9cfe357f23": {
+    "task_id": "xodexa_science_confound_critique_9cfe357f23",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-707f6b331ad2"
+  },
+  "xodexa_science_half_life_82b9d046ba": {
+    "task_id": "xodexa_science_half_life_82b9d046ba",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 25.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-57c7b205ea01"
+  },
+  "xodexa_science_kinematics_87fc2e52df": {
+    "task_id": "xodexa_science_kinematics_87fc2e52df",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 38.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 38.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bd3e07a5fa50"
+  },
+  "xodexa_science_stats_interpretation_0385787e36": {
+    "task_id": "xodexa_science_stats_interpretation_0385787e36",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-94cc3003b368"
+  },
+  "xodexa_science_stoichiometry_310af45094": {
+    "task_id": "xodexa_science_stoichiometry_310af45094",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.5,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-68047643634a"
+  },
+  "xodexa_science_causal_identification_219646680b": {
+    "task_id": "xodexa_science_causal_identification_219646680b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f4c5d21aca49"
+  },
+  "xodexa_science_confound_critique_6b74766b80": {
+    "task_id": "xodexa_science_confound_critique_6b74766b80",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-9424567dba43"
+  },
+  "xodexa_science_half_life_98946c19e4": {
+    "task_id": "xodexa_science_half_life_98946c19e4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-585278fbb48e"
+  },
+  "xodexa_science_kinematics_729a2ff36e": {
+    "task_id": "xodexa_science_kinematics_729a2ff36e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 4.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 4.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-a8329ee5d0e5"
+  },
+  "xodexa_science_stats_interpretation_b66d847f01": {
+    "task_id": "xodexa_science_stats_interpretation_b66d847f01",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-df7573f35c0f"
+  },
+  "xodexa_science_stoichiometry_22114b845f": {
+    "task_id": "xodexa_science_stoichiometry_22114b845f",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 6.9286,
+      "tolerance": 0.02
+    },
+    "expected_answer": 6.93,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-d7592d849816"
+  },
+  "xodexa_science_causal_identification_e808f21594": {
+    "task_id": "xodexa_science_causal_identification_e808f21594",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-53fd9420b937"
+  },
+  "xodexa_science_confound_critique_0ffed7c9ac": {
+    "task_id": "xodexa_science_confound_critique_0ffed7c9ac",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-5225d649a455"
+  },
+  "xodexa_science_half_life_5a96970f9b": {
+    "task_id": "xodexa_science_half_life_5a96970f9b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-608206bf42d7"
+  },
+  "xodexa_science_kinematics_f46cdea606": {
+    "task_id": "xodexa_science_kinematics_f46cdea606",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
@@ -648,10 +2258,10 @@
     "expected_answer": 40.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-22d38096bbcc"
+    "canary": "XDX-CANARY-4fd937f02ada"
   },
-  "xodexa_science_stats_interpretation_5c70ebc696": {
-    "task_id": "xodexa_science_stats_interpretation_5c70ebc696",
+  "xodexa_science_stats_interpretation_c92621e44d": {
+    "task_id": "xodexa_science_stats_interpretation_c92621e44d",
     "category": "science",
     "family": "science",
     "subdomain": "stats_interpretation",
@@ -671,26 +2281,26 @@
     "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
     "points": 4,
     "negative": 3,
-    "canary": "XDX-CANARY-81523aea94df"
+    "canary": "XDX-CANARY-c8acf9769a34"
   },
-  "xodexa_science_stoichiometry_8bcb6c625b": {
-    "task_id": "xodexa_science_stoichiometry_8bcb6c625b",
+  "xodexa_science_stoichiometry_4ba003732a": {
+    "task_id": "xodexa_science_stoichiometry_4ba003732a",
     "category": "science",
     "family": "science",
     "subdomain": "chemistry",
     "difficulty": 3.5,
     "grader": {
       "type": "numeric",
-      "target": 1.0556,
+      "target": 3.0,
       "tolerance": 0.02
     },
-    "expected_answer": 1.06,
+    "expected_answer": 3.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-937cb24ff466"
+    "canary": "XDX-CANARY-5aff903397ec"
   },
-  "xodexa_science_causal_identification_1d4d131393": {
-    "task_id": "xodexa_science_causal_identification_1d4d131393",
+  "xodexa_science_causal_identification_2e9e3b4d72": {
+    "task_id": "xodexa_science_causal_identification_2e9e3b4d72",
     "category": "science",
     "family": "science",
     "subdomain": "causal_inference",
@@ -708,10 +2318,10 @@
     "expected_answer": "C",
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-4012c0b72a15"
+    "canary": "XDX-CANARY-3d4dd9082e48"
   },
-  "xodexa_science_confound_critique_e246d9858f": {
-    "task_id": "xodexa_science_confound_critique_e246d9858f",
+  "xodexa_science_confound_critique_787134615b": {
+    "task_id": "xodexa_science_confound_critique_787134615b",
     "category": "science",
     "family": "science",
     "subdomain": "experimental_design",
@@ -731,10 +2341,815 @@
     "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
     "points": 4,
     "negative": 2,
-    "canary": "XDX-CANARY-acb4a3f438ee"
+    "canary": "XDX-CANARY-b709a78fece8"
   },
-  "xodexa_science_half_life_c04689a4f9": {
-    "task_id": "xodexa_science_half_life_c04689a4f9",
+  "xodexa_science_half_life_d74e4c30a7": {
+    "task_id": "xodexa_science_half_life_d74e4c30a7",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 25.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 25.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b50f710291f9"
+  },
+  "xodexa_science_kinematics_f3f04a239a": {
+    "task_id": "xodexa_science_kinematics_f3f04a239a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 90.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 90.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-792d3a5ce0f3"
+  },
+  "xodexa_science_stats_interpretation_88367599e3": {
+    "task_id": "xodexa_science_stats_interpretation_88367599e3",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-fbd316786dcc"
+  },
+  "xodexa_science_stoichiometry_ee1ae73f02": {
+    "task_id": "xodexa_science_stoichiometry_ee1ae73f02",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.375,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.38,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5de69ce049b5"
+  },
+  "xodexa_science_causal_identification_33356672e0": {
+    "task_id": "xodexa_science_causal_identification_33356672e0",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-7e517359de8e"
+  },
+  "xodexa_science_confound_critique_24efa065bd": {
+    "task_id": "xodexa_science_confound_critique_24efa065bd",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-864688fcdff8"
+  },
+  "xodexa_science_half_life_35275eeaff": {
+    "task_id": "xodexa_science_half_life_35275eeaff",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-0b67a6057c30"
+  },
+  "xodexa_science_kinematics_afa78ed712": {
+    "task_id": "xodexa_science_kinematics_afa78ed712",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 80.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 80.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-31ff1ec9b975"
+  },
+  "xodexa_science_stats_interpretation_6bbbd85548": {
+    "task_id": "xodexa_science_stats_interpretation_6bbbd85548",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-2e2632dfe07b"
+  },
+  "xodexa_science_stoichiometry_ebf777fb8e": {
+    "task_id": "xodexa_science_stoichiometry_ebf777fb8e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.25,
+      "tolerance": 0.02
+    },
+    "expected_answer": 7.25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-15f2d96551f3"
+  },
+  "xodexa_science_causal_identification_f419847ab7": {
+    "task_id": "xodexa_science_causal_identification_f419847ab7",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-b01c7345a5a5"
+  },
+  "xodexa_science_confound_critique_aa2d08b9a9": {
+    "task_id": "xodexa_science_confound_critique_aa2d08b9a9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d3e612f46f5f"
+  },
+  "xodexa_science_half_life_b29305dd30": {
+    "task_id": "xodexa_science_half_life_b29305dd30",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ebc8bd00998f"
+  },
+  "xodexa_science_kinematics_59ba20159b": {
+    "task_id": "xodexa_science_kinematics_59ba20159b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 164.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 164.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-22460669b09d"
+  },
+  "xodexa_science_stats_interpretation_b2af33cfdb": {
+    "task_id": "xodexa_science_stats_interpretation_b2af33cfdb",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-5098458dd559"
+  },
+  "xodexa_science_stoichiometry_c63e3a13bb": {
+    "task_id": "xodexa_science_stoichiometry_c63e3a13bb",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.9062,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f539de4d439e"
+  },
+  "xodexa_science_causal_identification_88d0764171": {
+    "task_id": "xodexa_science_causal_identification_88d0764171",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c3af88ed7c37"
+  },
+  "xodexa_science_confound_critique_a26ea26ece": {
+    "task_id": "xodexa_science_confound_critique_a26ea26ece",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-f721a6d7bf03"
+  },
+  "xodexa_science_half_life_f61180f8dd": {
+    "task_id": "xodexa_science_half_life_f61180f8dd",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e4931155dbe6"
+  },
+  "xodexa_science_kinematics_3e3429532b": {
+    "task_id": "xodexa_science_kinematics_3e3429532b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 59.5,
+      "tolerance": 0.05
+    },
+    "expected_answer": 59.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4a0e890c6ae1"
+  },
+  "xodexa_science_stats_interpretation_65244df96c": {
+    "task_id": "xodexa_science_stats_interpretation_65244df96c",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-b3f08bd30f3e"
+  },
+  "xodexa_science_stoichiometry_b25c1f96c9": {
+    "task_id": "xodexa_science_stoichiometry_b25c1f96c9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 10.375,
+      "tolerance": 0.02
+    },
+    "expected_answer": 10.38,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-18da90177178"
+  },
+  "xodexa_science_causal_identification_d163c3a76e": {
+    "task_id": "xodexa_science_causal_identification_d163c3a76e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ebb6c4f086cb"
+  },
+  "xodexa_science_confound_critique_93a28e48dd": {
+    "task_id": "xodexa_science_confound_critique_93a28e48dd",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-d2b5632bc74d"
+  },
+  "xodexa_science_half_life_6094af15e9": {
+    "task_id": "xodexa_science_half_life_6094af15e9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.25,
+      "tolerance": 0.01
+    },
+    "expected_answer": 6.25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6911bddd3476"
+  },
+  "xodexa_science_kinematics_9622353941": {
+    "task_id": "xodexa_science_kinematics_9622353941",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 60.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 60.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-eff31e3df278"
+  },
+  "xodexa_science_stats_interpretation_62a8790ec1": {
+    "task_id": "xodexa_science_stats_interpretation_62a8790ec1",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-440b138edb6e"
+  },
+  "xodexa_science_stoichiometry_b744b5d43a": {
+    "task_id": "xodexa_science_stoichiometry_b744b5d43a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.5,
+      "tolerance": 0.02
+    },
+    "expected_answer": 3.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-ff3afae620d1"
+  },
+  "xodexa_science_causal_identification_ca5a258da4": {
+    "task_id": "xodexa_science_causal_identification_ca5a258da4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f10b0c90e665"
+  },
+  "xodexa_science_confound_critique_a4b0fd8f18": {
+    "task_id": "xodexa_science_confound_critique_a4b0fd8f18",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-fa412ce0db84"
+  },
+  "xodexa_science_half_life_907dd863e9": {
+    "task_id": "xodexa_science_half_life_907dd863e9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e416332e95c2"
+  },
+  "xodexa_science_kinematics_47cb73116b": {
+    "task_id": "xodexa_science_kinematics_47cb73116b",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 22.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 22.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-fb2aca53d4e9"
+  },
+  "xodexa_science_stats_interpretation_908deeb92e": {
+    "task_id": "xodexa_science_stats_interpretation_908deeb92e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-05d2fb4c3f15"
+  },
+  "xodexa_science_stoichiometry_6be85575eb": {
+    "task_id": "xodexa_science_stoichiometry_6be85575eb",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.8125,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.81,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-948edadc46c9"
+  },
+  "xodexa_science_causal_identification_d1dc9e2171": {
+    "task_id": "xodexa_science_causal_identification_d1dc9e2171",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-224374807276"
+  },
+  "xodexa_science_confound_critique_18b5984316": {
+    "task_id": "xodexa_science_confound_critique_18b5984316",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-52ddd0a7a06a"
+  },
+  "xodexa_science_half_life_67a5b3dc22": {
+    "task_id": "xodexa_science_half_life_67a5b3dc22",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 6.25,
+      "tolerance": 0.01
+    },
+    "expected_answer": 6.25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-5f22553f9830"
+  },
+  "xodexa_science_kinematics_43ce85d161": {
+    "task_id": "xodexa_science_kinematics_43ce85d161",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 24.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 24.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-03ed72879a89"
+  },
+  "xodexa_science_stats_interpretation_04df5497e4": {
+    "task_id": "xodexa_science_stats_interpretation_04df5497e4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-16a48901dbb0"
+  },
+  "xodexa_science_stoichiometry_f6e56c46d2": {
+    "task_id": "xodexa_science_stoichiometry_f6e56c46d2",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 3.5227,
+      "tolerance": 0.02
+    },
+    "expected_answer": 3.52,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-3e79659d84b1"
+  },
+  "xodexa_science_causal_identification_13d17e082a": {
+    "task_id": "xodexa_science_causal_identification_13d17e082a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-356ca69f9b2b"
+  },
+  "xodexa_science_confound_critique_09d5179869": {
+    "task_id": "xodexa_science_confound_critique_09d5179869",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-bfa490ac5c70"
+  },
+  "xodexa_science_half_life_ad5d222d77": {
+    "task_id": "xodexa_science_half_life_ad5d222d77",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
@@ -747,22 +3162,680 @@
     "expected_answer": 40.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-aeaeb5a1af92"
+    "canary": "XDX-CANARY-d2a6a8317033"
   },
-  "xodexa_science_kinematics_b5640c5a42": {
-    "task_id": "xodexa_science_kinematics_b5640c5a42",
+  "xodexa_science_kinematics_b502317bde": {
+    "task_id": "xodexa_science_kinematics_b502317bde",
     "category": "science",
     "family": "science",
     "subdomain": "physics",
     "difficulty": 4.0,
     "grader": {
       "type": "numeric",
-      "target": 100.0,
+      "target": 65.0,
       "tolerance": 0.05
     },
-    "expected_answer": 100.0,
+    "expected_answer": 65.0,
     "points": 3,
     "negative": 2,
-    "canary": "XDX-CANARY-821aa62f7876"
+    "canary": "XDX-CANARY-4d1d377cc7f8"
+  },
+  "xodexa_science_stats_interpretation_fcf6ff7c5d": {
+    "task_id": "xodexa_science_stats_interpretation_fcf6ff7c5d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a45a3fa62370"
+  },
+  "xodexa_science_stoichiometry_fbd90e51a9": {
+    "task_id": "xodexa_science_stoichiometry_fbd90e51a9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 9.8125,
+      "tolerance": 0.02
+    },
+    "expected_answer": 9.81,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-1b27dabc1da7"
+  },
+  "xodexa_science_causal_identification_09f35c781a": {
+    "task_id": "xodexa_science_causal_identification_09f35c781a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f92807d8bd9d"
+  },
+  "xodexa_science_confound_critique_2793b8e594": {
+    "task_id": "xodexa_science_confound_critique_2793b8e594",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-41ba433d7109"
+  },
+  "xodexa_science_half_life_19155a41ec": {
+    "task_id": "xodexa_science_half_life_19155a41ec",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 3.125,
+      "tolerance": 0.01
+    },
+    "expected_answer": 3.125,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-bdcd41bb3de4"
+  },
+  "xodexa_science_kinematics_dfd5b57ad8": {
+    "task_id": "xodexa_science_kinematics_dfd5b57ad8",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 133.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 133.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-4a7c6b954853"
+  },
+  "xodexa_science_stats_interpretation_792a499586": {
+    "task_id": "xodexa_science_stats_interpretation_792a499586",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-6ae3f971aad8"
+  },
+  "xodexa_science_stoichiometry_edb2cf1d62": {
+    "task_id": "xodexa_science_stoichiometry_edb2cf1d62",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 7.25,
+      "tolerance": 0.02
+    },
+    "expected_answer": 7.25,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-533020a65676"
+  },
+  "xodexa_science_causal_identification_dac7bdfb7a": {
+    "task_id": "xodexa_science_causal_identification_dac7bdfb7a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-62fe56aa845c"
+  },
+  "xodexa_science_confound_critique_b3a5017e76": {
+    "task_id": "xodexa_science_confound_critique_b3a5017e76",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-2a66f2a3bebd"
+  },
+  "xodexa_science_half_life_b7ad0d19a5": {
+    "task_id": "xodexa_science_half_life_b7ad0d19a5",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.5,
+      "tolerance": 0.01
+    },
+    "expected_answer": 12.5,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-60fa7375c598"
+  },
+  "xodexa_science_kinematics_2580f01138": {
+    "task_id": "xodexa_science_kinematics_2580f01138",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 40.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 40.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-edc9f4b26ff3"
+  },
+  "xodexa_science_stats_interpretation_90f99e2db4": {
+    "task_id": "xodexa_science_stats_interpretation_90f99e2db4",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-eb5b69b88ba0"
+  },
+  "xodexa_science_stoichiometry_e01792f612": {
+    "task_id": "xodexa_science_stoichiometry_e01792f612",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 2.9091,
+      "tolerance": 0.02
+    },
+    "expected_answer": 2.91,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-64831ca07928"
+  },
+  "xodexa_science_causal_identification_9dc0bfb312": {
+    "task_id": "xodexa_science_causal_identification_9dc0bfb312",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-c6b1ea7dba69"
+  },
+  "xodexa_science_confound_critique_79bc409822": {
+    "task_id": "xodexa_science_confound_critique_79bc409822",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-6f35c45294f1"
+  },
+  "xodexa_science_half_life_14dc88343e": {
+    "task_id": "xodexa_science_half_life_14dc88343e",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 20.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 20.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-da976aa2fd24"
+  },
+  "xodexa_science_kinematics_ad4927022a": {
+    "task_id": "xodexa_science_kinematics_ad4927022a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 18.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 18.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-cb3a09482528"
+  },
+  "xodexa_science_stats_interpretation_fb194b7e81": {
+    "task_id": "xodexa_science_stats_interpretation_fb194b7e81",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-abce4b413990"
+  },
+  "xodexa_science_stoichiometry_d567b98acd": {
+    "task_id": "xodexa_science_stoichiometry_d567b98acd",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 0.8889,
+      "tolerance": 0.02
+    },
+    "expected_answer": 0.89,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-13bb5826bba4"
+  },
+  "xodexa_science_causal_identification_b2c0674ad6": {
+    "task_id": "xodexa_science_causal_identification_b2c0674ad6",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-550bdb493213"
+  },
+  "xodexa_science_confound_critique_e8177686fb": {
+    "task_id": "xodexa_science_confound_critique_e8177686fb",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-e95ac309013a"
+  },
+  "xodexa_science_half_life_f940f067c0": {
+    "task_id": "xodexa_science_half_life_f940f067c0",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-6e0c1aa6517b"
+  },
+  "xodexa_science_kinematics_f6fa15add5": {
+    "task_id": "xodexa_science_kinematics_f6fa15add5",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 48.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 48.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-90470bf7005f"
+  },
+  "xodexa_science_stats_interpretation_3fe520e02a": {
+    "task_id": "xodexa_science_stats_interpretation_3fe520e02a",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-cad55a4d06ef"
+  },
+  "xodexa_science_stoichiometry_5763c4f136": {
+    "task_id": "xodexa_science_stoichiometry_5763c4f136",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0556,
+      "tolerance": 0.02
+    },
+    "expected_answer": 10.06,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-f3da6336577b"
+  },
+  "xodexa_science_causal_identification_a09093eb6c": {
+    "task_id": "xodexa_science_causal_identification_a09093eb6c",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-9904070e5b02"
+  },
+  "xodexa_science_confound_critique_669b7e77b9": {
+    "task_id": "xodexa_science_confound_critique_669b7e77b9",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-0331f66a211a"
+  },
+  "xodexa_science_half_life_9485674b4d": {
+    "task_id": "xodexa_science_half_life_9485674b4d",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 10.0,
+      "tolerance": 0.01
+    },
+    "expected_answer": 10.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-029fe6ebb31e"
+  },
+  "xodexa_science_kinematics_9cad0a9f63": {
+    "task_id": "xodexa_science_kinematics_9cad0a9f63",
+    "category": "science",
+    "family": "science",
+    "subdomain": "physics",
+    "difficulty": 4.0,
+    "grader": {
+      "type": "numeric",
+      "target": 12.0,
+      "tolerance": 0.05
+    },
+    "expected_answer": 12.0,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-aff619710602"
+  },
+  "xodexa_science_stats_interpretation_c5b412e1da": {
+    "task_id": "xodexa_science_stats_interpretation_c5b412e1da",
+    "category": "science",
+    "family": "science",
+    "subdomain": "stats_interpretation",
+    "difficulty": 5.5,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "null hypothesis",
+        "if"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "yes that is correct",
+        "97% probability the drug works is correct"
+      ]
+    },
+    "expected_answer": "Incorrect: p is P(data this extreme | null true), not P(hypothesis).",
+    "points": 4,
+    "negative": 3,
+    "canary": "XDX-CANARY-a843176a581a"
+  },
+  "xodexa_science_stoichiometry_58d33e02e3": {
+    "task_id": "xodexa_science_stoichiometry_58d33e02e3",
+    "category": "science",
+    "family": "science",
+    "subdomain": "chemistry",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "numeric",
+      "target": 4.8889,
+      "tolerance": 0.02
+    },
+    "expected_answer": 4.89,
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-8dad90bd80e4"
+  },
+  "xodexa_science_causal_identification_ca660023a3": {
+    "task_id": "xodexa_science_causal_identification_ca660023a3",
+    "category": "science",
+    "family": "science",
+    "subdomain": "causal_inference",
+    "difficulty": 3.5,
+    "grader": {
+      "type": "mcq",
+      "correct": "C",
+      "options": {
+        "A": "ice cream sales",
+        "B": "drowning deaths",
+        "C": "hot weather",
+        "D": "swimsuit prices"
+      }
+    },
+    "expected_answer": "C",
+    "points": 3,
+    "negative": 2,
+    "canary": "XDX-CANARY-e1b7362751d5"
+  },
+  "xodexa_science_confound_critique_6871ca9493": {
+    "task_id": "xodexa_science_confound_critique_6871ca9493",
+    "category": "science",
+    "family": "science",
+    "subdomain": "experimental_design",
+    "difficulty": 5.0,
+    "grader": {
+      "type": "rubric_keywords",
+      "keywords": [
+        "confound",
+        "causation"
+      ],
+      "pass_fraction": 0.5,
+      "penalty_if_contains_any": [
+        "coffee definitely extends",
+        "proves coffee causes"
+      ]
+    },
+    "expected_answer": "Confounding: correlation is not causation; unadjusted confounders.",
+    "points": 4,
+    "negative": 2,
+    "canary": "XDX-CANARY-ed81208f4547"
   }
 }

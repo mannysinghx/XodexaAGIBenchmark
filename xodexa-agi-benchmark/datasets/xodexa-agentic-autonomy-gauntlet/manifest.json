@@ -2,26 +2,26 @@
   "name": "Xodexa Agentic Autonomy Gauntlet",
   "version": "1.0.0",
   "benchmark_schema": "xodexa-task/1.0",
-  "created_at": "2026-06-03T15:31:58Z",
-  "task_count": 40,
-  "checksum_sha256": "f26f85cbb2b90c30ee2a7f44ea7a0fe484ce8e6125c588140f8809e1d7e2a7ba",
-  "changelog": "MVP seed build of Xodexa Agentic Autonomy Gauntlet",
+  "created_at": "2026-06-04T17:21:37Z",
+  "task_count": 200,
+  "checksum_sha256": "f3256f85f0c878341a973187f8b1db4c7862c823af37da46c1cbc62b38ea23ec",
+  "changelog": "Seed build of Xodexa Agentic Autonomy Gauntlet",
   "families": {
-    "agent": 40
+    "agent": 200
   },
   "visibility": {
-    "validation": 40
+    "validation": 200
   },
   "licenses": {
-    "Xodexa-private": 40
+    "Xodexa-private": 200
   },
   "difficulty": {
     "mean": 4.4,
     "min": 4.0,
     "max": 5.0,
     "bands": {
-      "hard": 24,
-      "medium": 16
+      "hard": 120,
+      "medium": 80
     }
   },
   "contamination": {
@@ -33,28 +33,28 @@
   "pipeline": [
     {
       "stage": "generate",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "difficulty",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "contamination",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "quality_review",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     },
     {
       "stage": "calibration",
-      "in": 40,
-      "out": 40
+      "in": 200,
+      "out": 200
     }
   ],
   "license_summary": "Mixed; see per-task provenance.license",
@@ -63,5 +63,5 @@
     "Multimodal items are text-rendered proxies in this MVP.",
     "Difficulty is provisional until human + frontier baselines are collected."
   ],
-  "signer_pub": "cgWTxXoSbLI10xXADYp31xNJg6leAr8Lf7l6xV7qd1w="
+  "signer_pub": "lGC1tnycEml9PiA+CC835FscMJVes47DXlNfEsvOAu0="
 }
