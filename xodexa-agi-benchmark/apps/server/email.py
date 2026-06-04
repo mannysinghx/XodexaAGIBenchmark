@@ -42,16 +42,33 @@ def _send(to_email: str, subject: str, text: str, html: str | None = None) -> bo
         return False
 
     ctx = ssl.create_default_context()
-    if _settings.smtp_port == 465:
-        with smtplib.SMTP_SSL(_settings.smtp_host, _settings.smtp_port, context=ctx) as s:
-            s.login(_settings.smtp_user, _settings.smtp_password)
-            s.send_message(msg)
-    else:  # 587 STARTTLS
-        with smtplib.SMTP(_settings.smtp_host, _settings.smtp_port) as s:
-            s.starttls(context=ctx)
-            s.login(_settings.smtp_user, _settings.smtp_password)
-            s.send_message(msg)
-    return True
+    timeout = 20  # never hang the request on a slow/unreachable SMTP server
+    try:
+        if _settings.smtp_port == 465:  # implicit SSL (privateemail.com default)
+            with smtplib.SMTP_SSL(_settings.smtp_host, _settings.smtp_port,
+                                  context=ctx, timeout=timeout) as s:
+                s.login(_settings.smtp_user, _settings.smtp_password)
+                s.send_message(msg)
+        else:  # 587 STARTTLS
+            with smtplib.SMTP(_settings.smtp_host, _settings.smtp_port,
+                              timeout=timeout) as s:
+                s.starttls(context=ctx)
+                s.login(_settings.smtp_user, _settings.smtp_password)
+                s.send_message(msg)
+        return True
+    except Exception as e:  # noqa: BLE001 — never let email break registration
+        # Don't 500 the signup; the account is created and the link is recoverable here
+        # (and via /api/auth/resend). Common cause: wrong SMTP_PASSWORD.
+        print("\n" + "=" * 64)
+        print(f"  [EMAIL SEND FAILED: {type(e).__name__}: {e}]")
+        print(f"  To     : {to_email}")
+        print(f"  Subject: {subject}")
+        print("  Verification link (deliver manually / fix SMTP_PASSWORD):")
+        for line in text.splitlines():
+            if line.strip().startswith("Verify:") or "http" in line:
+                print("  " + line.strip())
+        print("=" * 64 + "\n")
+        return False
 
 
 def send_verification(to_email: str, username: str, link: str) -> bool:
