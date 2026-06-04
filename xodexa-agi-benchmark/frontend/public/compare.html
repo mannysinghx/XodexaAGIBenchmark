@@ -31,7 +31,7 @@
       <a href="/index.html" class="logo-link"><div class="logo">Ω</div></a>
       <div>
         <h1>Xodexa AGI Benchmark — Model Comparison</h1>
-        <div class="sub">Side-by-side: Xodexa Score, AGI level, 12 capability families, 10 readiness sub-scores</div>
+        <div class="sub">Side-by-side: Xodexa Score, AGI level, 21 families (12 capability + 9 security), 10 readiness sub-scores</div>
       </div>
     </div>
     <div class="pill" id="ver">best-in-row ★</div>
@@ -101,7 +101,7 @@ function render(){
   h += row("Contamination risk","lower better",models.map(m=>m.contamination_risk*100),v=>v.toFixed(0)+"%",true);
   h += row("Time horizon","autonomous",models.map(m=>m.time_horizon),v=>v,false,true);
 
-  h += section("Capability families (12)",span);
+  h += section("Families — capability (12) + security (9)",span);
   FAMS.forEach(([k,label])=>{h += row(label,"",models.map(m=>(m.family_scores?m.family_scores[k]:null)),v=>p100(v),false);});
 
   h += section("AGI readiness sub-scores (10)",span);

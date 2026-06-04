@@ -163,7 +163,10 @@
   function show(kind, text){ msg.className = "msg " + kind; msg.textContent = text; }
 
   var FALLBACK_FAMILIES = ["reasoning","math","science","code","agent","multimodal",
-    "truthfulness","safety","memory","strategy","creativity","meta_learning"];
+    "truthfulness","safety","memory","strategy","creativity","meta_learning",
+    "jailbreak_resistance","tool_safety","privacy_security","agentic_safety",
+    "over_refusal","rag_poisoning","multi_turn_manipulation",
+    "high_stakes_safety","canary_resistance"];
 
   // key mode toggle
   var savedBlock = document.getElementById("savedBlock");
