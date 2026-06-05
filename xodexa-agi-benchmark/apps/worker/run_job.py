@@ -149,21 +149,31 @@ def execute_run(run_id: str, inline_key: str | None = None,
             # abort early if the provider is rejecting us (bad key / model / quota)
             if last_error:
                 _e = last_error
-                # 429 quota — retrying never helps; give a clear actionable message immediately
                 if "HTTP 429" in _e:
-                    if "quota" in _e.lower() or "limit" in _e.lower():
+                    # Hard quota exhaustion (limit: 0) — retrying never helps
+                    if "limit: 0" in _e or "limit:0" in _e:
                         msg = (
-                            "Provider quota exceeded — your API key has hit its rate or usage "
-                            "limit for this model. Try a smaller/faster model (e.g. "
-                            "gemini-2.5-flash instead of a pro/preview model), reduce the "
-                            "number of tasks, or enable billing on your provider account."
+                            "Provider quota exhausted for this model (quota limit is 0). "
+                            "This model may not be available on your current plan, or it was "
+                            "just launched and quotas are still being provisioned. "
+                            "Try gemini-2.5-flash or gemini-2.0-flash instead."
                         )
-                    else:
-                        msg = "Provider rate-limit (HTTP 429) — wait a moment then try again with fewer tasks."
-                    logger.error("run %s aborted (quota): %s", run.id, _e[:300])
-                    return _fail(db, run, msg)
+                        logger.error("run %s aborted (hard quota): %s", run.id, _e[:400])
+                        return _fail(db, run, msg)
+                    # Soft rate-limit (RPM exceeded) — back off and let the outer retry loop handle it
+                    if consecutive_errors == 1:
+                        logger.warning("run %s rate-limited (429), backing off 60 s", run.id)
+                        time.sleep(60)
+                    elif consecutive_errors == 2:
+                        logger.warning("run %s rate-limited again (429), backing off 120 s", run.id)
+                        time.sleep(120)
+                    # After 3 consecutive rate-limit 429s, give up
+                    elif consecutive_errors >= 3:
+                        msg = "Provider rate-limit (HTTP 429) hit 3 times in a row — reduce the number of tasks or try again later."
+                        logger.error("run %s aborted (rate limit): %s", run.id, _e[:300])
+                        return _fail(db, run, msg)
                 # 401/403 — bad or expired key; retrying won't help
-                if "HTTP 401" in _e or "HTTP 403" in _e:
+                elif "HTTP 401" in _e or "HTTP 403" in _e:
                     msg = "Provider rejected the API key (HTTP 401/403) — check that the key is valid and has not expired."
                     logger.error("run %s aborted (auth): %s", run.id, _e[:300])
                     return _fail(db, run, msg)
