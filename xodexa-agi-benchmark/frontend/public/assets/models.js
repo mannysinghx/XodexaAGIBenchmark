@@ -29,14 +29,15 @@ window.XODEXA_MODELS = {
 
     { brand: "Google (Gemini)", provider: "openai-compatible",
       base_url: "https://generativelanguage.googleapis.com/v1beta/openai/",
-      // Source: ai.google.dev/gemini-api/docs/models — text/chat models only
+      // Source: ai.google.dev/pricing — free-tier models only (billing must be enabled
+      // even for $0 models; aistudio.google.com → Settings → Billing to activate).
+      // gemini-3.1-pro-preview excluded: paid-only, no free tier.
       models: [
-        // Gemini 2.5 — stable, broadly available on free tier
+        // Gemini 3 — free tier (billing enabled required)
+        "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-3-flash-preview",
+        // Gemini 2.5 — free tier (billing enabled required)
         "gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.5-flash-lite",
-        // Gemini 3 — current generation
-        "gemini-3.5-flash", "gemini-3.1-pro-preview",
-        "gemini-3.1-flash-lite", "gemini-3-flash-preview",
-        // Previous generation (deprecated but still accessible)
+        // Gemini 2.0 — free tier, no billing required (deprecated)
         "gemini-2.0-flash", "gemini-2.0-flash-lite",
       ] },
 

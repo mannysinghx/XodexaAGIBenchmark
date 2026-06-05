@@ -99,6 +99,13 @@
         <label for="ot_base_url">Base URL</label>
         <input id="ot_base_url" name="ot_base_url" type="url" placeholder="https://api.example.com/v1">
       </div>
+      <div id="googleBillingHint" class="hint" style="display:none;color:var(--warn)">
+        ⚠️ <b>Google Gemini requires billing to be enabled</b> on your Google AI project, even
+        for free-tier ($0) models — otherwise quota is 0.
+        Enable it at <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a>
+        → Settings → Billing. Start with <b>gemini-2.0-flash</b> if you don't have billing enabled yet
+        — it works without billing.
+      </div>
       <div class="hint">This key is used once and not saved (save_key=false).</div>
     </div>
 
@@ -200,6 +207,9 @@
     otBaseField.style.display = (type === "openai-compatible") ? "block" : "none";
     document.getElementById("ot_base_url").value = base;
     document.getElementById("ot_key").placeholder = providerKeyHint(opt.value);
+    // Show billing warning for Google — quota is 0 without billing even for free models
+    var billingHint = document.getElementById("googleBillingHint");
+    if (billingHint) billingHint.style.display = /google|gemini/i.test(opt.value) ? "block" : "none";
     buildBrowseOptions(opt.value);
   }
   provider.addEventListener("change", syncProviderUI);
