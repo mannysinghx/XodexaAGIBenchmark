@@ -103,6 +103,10 @@ def build_report(model_id: str, pack_name: str, eval_result: dict, *,
         "coverage": apex["coverage_label"],
         "category_breakdown": apex["categories"],
         "categories_not_evaluated": apex["categories_not_evaluated"],
+        # Honest caveats for any scored dimension measured via a proxy (e.g. multimodal is
+        # text-rendered, not real vision) — so the number isn't read as the full capability.
+        "measurement_caveats": {d: note for d, note in families.PROXY_DIMENSIONS.items()
+                                if d in apex["categories"]},
         "external_penalties": apex["external_penalties_applied"],
         "frontier_metrics": frontier,
         "agi_readiness": readiness,

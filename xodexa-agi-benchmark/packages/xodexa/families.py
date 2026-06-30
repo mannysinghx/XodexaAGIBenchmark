@@ -244,6 +244,15 @@ SCORE_WEIGHTS: dict[str, float] = {
 }
 assert abs(sum(SCORE_WEIGHTS.values()) - 1.0) < 1e-9, "score weights must sum to 1.0"
 
+# Dimensions currently measured by a PROXY rather than the real modality, so a report can
+# state the caveat honestly instead of presenting the number as the full capability. The
+# multimodal pack renders figures/tables as inline text (see generators/multimodal.py), so
+# it measures figure-reasoning over text, NOT true vision over pixels.
+PROXY_DIMENSIONS: dict[str, str] = {
+    "multimodal": ("measured via text-rendered figures/tables, not real image input — "
+                   "a proxy for figure reasoning, not a measure of true vision"),
+}
+
 # How each task family contributes to scoring dimensions. creativity and
 # meta_learning have no dedicated headline weight (the spec's weighting omits them);
 # they are folded into reasoning, and surfaced separately in the AGI Readiness

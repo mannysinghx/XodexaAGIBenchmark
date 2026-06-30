@@ -179,6 +179,8 @@ def _markdown(r: dict) -> str:
         f"± {r.get('frontier_metrics', {}).get('accuracy_ci95')}  | "
         f"calibration error {r.get('frontier_metrics', {}).get('calibration_error')}",
         f"- **Coverage**: {r.get('coverage')}",
+        *([f"- **Caveat ({d})**: {note}"
+           for d, note in (r.get("measurement_caveats") or {}).items()]),
         f"- **Failure rate**: {fa.get('failure_rate')} "
         f"({fa.get('total_failures')}/{fa.get('total_items')})",
         f"- **Time horizon**: {r.get('time_horizon', {}).get('estimated_task_horizon')}",

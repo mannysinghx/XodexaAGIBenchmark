@@ -96,8 +96,12 @@ class OpenAICompatibleConnector(ModelConnector):
         self.model = model
         self.api_key = api_key
         self.timeout = timeout
+        # Real provider token usage from the most recent call (None until/unless the
+        # provider reports it), so scoring uses true tokens instead of a len/4 estimate.
+        self.last_usage: dict | None = None
 
     def complete(self, prompt: str) -> str:
+        self.last_usage = None
         url = self.base_url + "/chat/completions"
         headers = {"Authorization": "Bearer " + self.api_key,
                    "content-type": "application/json"}
@@ -114,6 +118,7 @@ class OpenAICompatibleConnector(ModelConnector):
                 data = _post_json(url, headers, payload, self.timeout)
             else:
                 raise
+        self.last_usage = data.get("usage") if isinstance(data, dict) else None
         try:
             return data["choices"][0]["message"]["content"] or ""
         except (KeyError, IndexError, TypeError):
@@ -151,8 +156,10 @@ class AnthropicConnector(ModelConnector):
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.base_url = base_url.rstrip("/")
+        self.last_usage: dict | None = None
 
     def complete(self, prompt: str) -> str:
+        self.last_usage = None
         url = self.base_url + "/v1/messages"
         headers = {"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
                    "content-type": "application/json"}
@@ -174,7 +181,20 @@ class AnthropicConnector(ModelConnector):
         if "content" not in data:
             raise ProviderCallError(
                 f"unexpected response shape from {url}: {json.dumps(data)[:600]}")
+        self.last_usage = data.get("usage")
         return "".join(b.get("text", "") for b in data.get("content", []))
+
+
+def usage_completion_tokens(usage: dict | None) -> int | None:
+    """Normalize a provider usage dict to completion/output token count, or None.
+    OpenAI: completion_tokens; Anthropic: output_tokens."""
+    if not isinstance(usage, dict):
+        return None
+    for k in ("completion_tokens", "output_tokens"):
+        v = usage.get(k)
+        if isinstance(v, int) and v >= 0:
+            return v
+    return None
 
 
 # --------------------------------------------------------------------------- #

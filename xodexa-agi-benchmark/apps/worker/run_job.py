@@ -27,8 +27,15 @@ from apps.server.models import (ProviderCredential, Report, RunEvent, WebRun,
 
 from xodexa import generators as G, schema, evaluate, report as report_mod
 from xodexa.crypto import sha256_hex, canonical
+from xodexa.runner import usage_completion_tokens
 
 logger = logging.getLogger("xodexa.run")
+
+
+def providers_usage_tokens(conn) -> int | None:
+    """Real completion-token count from the connector's last call, if the provider
+    reported usage; else None (caller falls back to an estimate)."""
+    return usage_completion_tokens(getattr(conn, "last_usage", None))
 
 # Confidence elicitation: ask the model to state how sure it is, so we can compute
 # calibration (RMS-CE) on real runs. The number is parsed out AND stripped from the
@@ -142,7 +149,10 @@ def execute_run(run_id: str, inline_key: str | None = None,
                                    run.id, t.task_id, run.model_name, consecutive_errors, err)
                     break
             latency_ms = (time.perf_counter() - t0) * 1000
-            toks = max(1, len(out) // 4)
+            # Prefer the provider's real completion-token count; fall back to a len/4
+            # estimate only when usage isn't reported. Errored tasks have no usage.
+            real_toks = None if err else providers_usage_tokens(conn)
+            toks = real_toks if real_toks is not None else max(1, len(out) // 4)
             total_tokens += toks
             total_latency += latency_ms
             resp = {"id": t.task_id, "output": out, "latency_ms": latency_ms, "tokens": toks}
