@@ -141,10 +141,13 @@ class AnthropicConnector(ModelConnector):
     name = "anthropic"
 
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-6",
-                 max_tokens: int = 1024, timeout: float = 120.0,
+                 max_tokens: int = 4096, timeout: float = 120.0,
                  base_url: str = "https://api.anthropic.com"):
         self.api_key = api_key
         self.model = model
+        # 4096 (raised from 1024) so long reasoning/proof answers are not truncated and
+        # unfairly graded incorrect — a real risk for the frontier models this benchmark
+        # targets.
         self.max_tokens = max_tokens
         self.timeout = timeout
         self.base_url = base_url.rstrip("/")
@@ -153,9 +156,21 @@ class AnthropicConnector(ModelConnector):
         url = self.base_url + "/v1/messages"
         headers = {"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
                    "content-type": "application/json"}
-        payload = {"model": self.model, "max_tokens": self.max_tokens,
+        # temperature=0 for reproducibility — without it the API defaults to 1.0 (random
+        # sampling), which would make Claude runs non-deterministic while every other
+        # provider runs at temp 0, undermining the bootstrap CIs and re-run stability.
+        payload = {"model": self.model, "max_tokens": self.max_tokens, "temperature": 0,
                    "messages": [{"role": "user", "content": prompt}]}
-        data = _post_json(url, headers, payload, self.timeout)
+        try:
+            data = _post_json(url, headers, payload, self.timeout)
+        except ProviderCallError as e:
+            # Extended-thinking models require temperature=1; retry once without pinning
+            # it rather than failing the whole run.
+            if e.status == 400 and "temperature" in (e.body or "").lower():
+                payload.pop("temperature", None)
+                data = _post_json(url, headers, payload, self.timeout)
+            else:
+                raise
         if "content" not in data:
             raise ProviderCallError(
                 f"unexpected response shape from {url}: {json.dumps(data)[:600]}")
