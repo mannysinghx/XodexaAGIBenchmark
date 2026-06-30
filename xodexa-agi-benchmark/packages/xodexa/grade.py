@@ -123,10 +123,15 @@ def grade(grader: dict, answer: str, points: float = 1.0,
     if t == "numeric":
         vals = extract_numbers(a)
         tol = grader.get("tolerance", 1e-6)
-        if any(_near(v, grader["target"], tol) for v in vals):
+        # Anti-shotgun: if the answer scatters many DIFFERENT numbers, only its final
+        # number counts (the prompts ask to "give only the number"), so a model can't get
+        # credit by listing candidates and hoping one lands. A couple of incidental
+        # numbers (units, intermediate steps) are still tolerated.
+        cands = vals if len(set(vals)) <= 2 else vals[-1:]
+        if any(_near(v, grader["target"], tol) for v in cands):
             return pts, pts, "correct"
         for trap in grader.get("penalty_if_numeric_near", []):
-            if any(_near(v, trap, tol) for v in vals):
+            if any(_near(v, trap, tol) for v in cands):
                 return -neg, pts, "took-the-bait (penalized)"
         return 0.0, pts, "incorrect"
 

@@ -15,7 +15,6 @@ raw model outputs, with the corrections argued for in ANALYSIS.md §3.3:
 from __future__ import annotations
 
 import random
-import statistics
 
 # The full nine-category model from the spec. Weights sum to 1.0.
 CATEGORY_WEIGHTS = {
@@ -79,20 +78,30 @@ def category_scores(item_results: list[dict]) -> dict[str, dict]:
     return out
 
 
-def _bootstrap_ci(fractions: list[float], iters: int = 2000, seed: int = 0):
-    """95% CI of the mean of per-item fractional scores, on a 0-1000 scale."""
-    if not fractions:
+def _capability_over(item_results: list[dict], weights: dict) -> float:
+    """The weighted-category capability (0..1) — the exact statistic apex_score reports,
+    factored out so the bootstrap resamples the SAME quantity as the point estimate."""
+    cats = category_scores(item_results)
+    covered = [c for c in cats if c in weights]
+    wsum = sum(weights[c] for c in covered) or 1.0
+    return sum(weights[c] / wsum * cats[c]["score"] for c in covered)
+
+
+def _bootstrap_capability_ci(item_results: list[dict], weights: dict,
+                             iters: int = 2000, seed: int = 0):
+    """95% CI for the weighted capability, on a 0-1000 scale. Resamples items with
+    replacement and recomputes the *weighted* capability each time, so the interval
+    actually brackets the reported score instead of an unrelated unweighted item mean."""
+    if not item_results:
         return (0.0, 0.0)
     rng = random.Random(seed)
-    means = []
-    n = len(fractions)
+    n = len(item_results)
+    vals = []
     for _ in range(iters):
-        sample = [fractions[rng.randrange(n)] for _ in range(n)]
-        means.append(statistics.fmean(sample) * 1000)
-    means.sort()
-    lo = means[int(0.025 * iters)]
-    hi = means[int(0.975 * iters)]
-    return (round(lo, 1), round(hi, 1))
+        sample = [item_results[rng.randrange(n)] for _ in range(n)]
+        vals.append(_capability_over(sample, weights) * 1000)
+    vals.sort()
+    return (vals[int(0.025 * iters)], vals[int(0.975 * iters)])
 
 
 def apex_score(item_results: list[dict], external_signals: dict | None = None,
@@ -137,8 +146,12 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
     final = max(0.0, min(1.0, capability + bonus - penalty))
     score_1000 = round(final * 1000, 1)
 
-    fractions = [max(0.0, r["awarded"]) / r["max"] for r in item_results if r["max"]]
-    ci = _bootstrap_ci(fractions)
+    # CI brackets the reported score: bootstrap the weighted capability, then shift by the
+    # deterministic bonus/penalty offset (those are not sampling noise) and clamp to scale.
+    cap_lo, cap_hi = _bootstrap_capability_ci(item_results, weights)
+    delta = (bonus - penalty) * 1000
+    ci = (round(max(0.0, min(1000.0, cap_lo + delta)), 1),
+          round(max(0.0, min(1000.0, cap_hi + delta)), 1))
 
     coverage = round(len(covered) / len(weights), 3)
 
