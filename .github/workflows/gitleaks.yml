@@ -1,0 +1,27 @@
+name: gitleaks
+
+# Secret-scanning gate: fail the build if any real credential is committed. Runs on every
+# push and PR, scanning the FULL history so a secret introduced in any commit is caught.
+# Synthetic benchmark data is allowlisted in .gitleaks.toml.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history
+
+      - name: Run gitleaks (pinned binary, no third-party action)
+        run: |
+          VER=8.18.4
+          curl -fsSL "https://github.com/gitleaks/gitleaks/releases/download/v${VER}/gitleaks_${VER}_linux_x64.tar.gz" \
+            | tar xz gitleaks
+          ./gitleaks detect --source . --config .gitleaks.toml --redact --no-banner --exit-code 1

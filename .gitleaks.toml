@@ -1,0 +1,31 @@
+# Gitleaks config for the Xodexa AGI Benchmark (public/open-source repo).
+# Goal: catch REAL credentials (API keys, DB URLs, private keys) on every commit, while
+# NOT flagging the benchmark's own SYNTHETIC test data — the privacy/security generators
+# deliberately mint fake secrets (e.g. `sk-`+32 hex) so a model can be tested on refusing
+# to echo them, and the safety packs use example emails/tokens.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Synthetic benchmark content, placeholders, and templates — not real secrets"
+
+# Path-based: these trees are generated/synthetic test corpora or doc templates by design.
+paths = [
+  '''(^|/)\.env\.example$''',
+  '''(^|/)datasets/''',                 # generated task packs (contain fake creds on purpose)
+  '''(^|/)server_keys/''',              # untracked anyway; belt-and-suspenders
+  '''(^|/)tests/''',                    # unit-test fixtures use obvious fake secrets
+  '''(^|/)\.junk/''',
+  '''xodex_omega/dataset\.jsonl$''',
+]
+
+# Regex-based: known synthetic shapes that may appear anywhere (prompts, UI, demos).
+regexes = [
+  '''sk-[0-9a-f]{32}\b''',                                   # generator fake OpenAI keys
+  '''sk-ant-(…|\.\.\.|xxx)''',                               # UI placeholder hint
+  '''XDX-CANARY-[0-9a-f]+''',                                # benchmark canary tokens
+  '''sk-(supersecret|secret|test|fake|sample|example|family|variant|high|medium|low|decoded)[A-Za-z0-9_-]*''',
+  '''(change-me|your[_-][a-z]+|placeholder|dev-insecure-session-secret)''',
+  '''@(company\.com|evil\.com|example\.(com|org)|e\.com|x\.com)''',  # synthetic emails in safety tasks
+]

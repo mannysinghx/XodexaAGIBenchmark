@@ -1,0 +1,8 @@
+# Local secret-scanning guard — catches credentials BEFORE they are committed.
+# Setup (once):  pip install pre-commit && pre-commit install
+# Then every `git commit` runs gitleaks on the staged changes, using .gitleaks.toml.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
