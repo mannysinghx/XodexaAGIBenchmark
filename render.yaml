@@ -36,8 +36,8 @@ services:
       - key: BENCHMARK_VERSION
         value: "1.0.0"
       # --- secrets: set these in the Render dashboard (not committed) ---
-      - key: DATABASE_URL          # your Neon DIRECT url, postgresql+psycopg://...sslmode=require
-        sync: false
+      - key: DATABASE_URL          # Railway Postgres PUBLIC url (postgresql+psycopg://...@*.proxy.rlwy.net:PORT/railway)
+        sync: false                #   single source of truth shared with Railway + local; copy from local .env
       - key: KEY_ENCRYPTION_KEY    # from your local .env
         sync: false
       - key: SESSION_SECRET        # from your local .env
