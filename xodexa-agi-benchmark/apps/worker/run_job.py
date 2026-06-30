@@ -26,7 +26,7 @@ from apps.server.models import (ProviderCredential, Report, RunEvent, WebRun,
                                 WebRunItemScore, WebRunResponse)
 
 from xodexa import generators as G, schema, evaluate, report as report_mod
-from xodexa.crypto import KeyPair, sha256_hex, canonical
+from xodexa.crypto import sha256_hex, canonical
 
 logger = logging.getLogger("xodexa.run")
 
@@ -208,7 +208,9 @@ def execute_run(run_id: str, inline_key: str | None = None,
 
         # --- central re-scoring + signed report ---
         er = evaluate.score_pack(keys, responses)
-        signer = KeyPair.generate()
+        # Sign with the server's STABLE identity (not a throwaway key) so the report's
+        # verification appendix actually verifies against the published public key.
+        signer = security.report_signer()
         rep = report_mod.build_report(
             run.model_name, f"Xodexa Live ({run.provider})", er,
             telemetry={"tokens": total_tokens, "latency_ms": round(total_latency),

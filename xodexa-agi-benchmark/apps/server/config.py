@@ -32,6 +32,12 @@ class Settings:
     # Fernet key for provider-credential encryption. If unset, a dev key is derived
     # (NOT for production — stored keys would not survive a restart's key rotation).
     key_encryption_key: str = os.environ.get("KEY_ENCRYPTION_KEY", "")
+    # Stable Ed25519 private key (base64 raw, 32 bytes) the server signs reports with, so
+    # the verification appendix is anchored to a PUBLISHED public key (GET /api/verification-key)
+    # rather than a throwaway per-run key. If unset, a stable key is derived from
+    # session_secret (fine for dev; set REPORT_SIGNING_KEY in prod so it survives a
+    # secret rotation). Mint one with: python -c "from xodexa.crypto import KeyPair;print(KeyPair.generate().priv_b64)"
+    report_signing_key: str = os.environ.get("REPORT_SIGNING_KEY", "")
     session_secret: str = os.environ.get("SESSION_SECRET", "dev-insecure-session-secret")
     session_ttl_hours: int = int(os.environ.get("SESSION_TTL_HOURS", "168"))  # 7d
     cookie_secure: bool = _b(os.environ.get("COOKIE_SECURE"), False)

@@ -59,6 +59,17 @@ def _entries_for(db: Session, runs, viewer_id: str | None) -> list[dict]:
     return out
 
 
+@router.get("/verification-key")
+def verification_key():
+    """The server's published report-signing public key. A report's verification appendix
+    is trustworthy only when its `signer_pub` matches this value — pin it to verify that a
+    report was signed by this server and not re-signed after tampering."""
+    from xodexa.crypto import fingerprint
+    pub = security.report_signer_pub()
+    return {"algorithm": "ed25519", "public_key_b64": pub,
+            "fingerprint": fingerprint(pub)}
+
+
 @router.get("/leaderboard")
 def leaderboard(request: Request, db: Session = Depends(get_db)):
     """Public scored runs (cross-user) PLUS, for a logged-in viewer, their own scored

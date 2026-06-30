@@ -22,8 +22,34 @@ from cryptography.fernet import Fernet, InvalidToken
 
 from apps.server.config import get_settings
 from apps.server import models
+from xodexa.crypto import KeyPair
 
 _settings = get_settings()
+
+
+# --------------------------------------------------------------------------- #
+# Report signing identity (stable, server-wide)
+# --------------------------------------------------------------------------- #
+_REPORT_SIGNER: KeyPair | None = None
+
+
+def report_signer() -> KeyPair:
+    """The server's STABLE report-signing identity. Persistent (from REPORT_SIGNING_KEY,
+    or derived from the session secret in dev) so every report's signature verifies
+    against one published public key — see ``report_signer_pub``."""
+    global _REPORT_SIGNER
+    if _REPORT_SIGNER is None:
+        if _settings.report_signing_key:
+            _REPORT_SIGNER = KeyPair.from_private_b64(_settings.report_signing_key)
+        else:
+            _REPORT_SIGNER = KeyPair.from_seed(
+                ("report-signing:" + _settings.session_secret).encode())
+    return _REPORT_SIGNER
+
+
+def report_signer_pub() -> str:
+    """Base64 public key verifiers pin to check any report's verification appendix."""
+    return report_signer().pub_b64
 
 
 # --------------------------------------------------------------------------- #

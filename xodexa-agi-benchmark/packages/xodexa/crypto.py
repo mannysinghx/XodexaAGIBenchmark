@@ -82,6 +82,25 @@ class KeyPair:
         )
         return KeyPair(b64e(raw_priv), b64e(raw_pub))
 
+    @classmethod
+    def from_private_b64(cls, priv_b64: str) -> "KeyPair":
+        """Rebuild a persistent identity from a stored base64 raw private key, deriving
+        the matching public key. Lets the server sign with a STABLE key whose public half
+        verifiers can pin — unlike a per-run generate(), whose signature proves nothing."""
+        sk = Ed25519PrivateKey.from_private_bytes(b64d(priv_b64))
+        raw_pub = sk.public_key().public_bytes(
+            encoding=serialization.Encoding.Raw,
+            format=serialization.PublicFormat.Raw,
+        )
+        return cls(priv_b64, b64e(raw_pub))
+
+    @classmethod
+    def from_seed(cls, seed: bytes) -> "KeyPair":
+        """Deterministically derive an identity from arbitrary seed bytes (hashed to the
+        32 bytes Ed25519 needs). Used for the dev-fallback server key derived from the
+        session secret — stable across restarts so old signatures stay verifiable."""
+        return cls.from_private_b64(b64e(hashlib.sha256(seed).digest()))
+
     def _sk(self) -> Ed25519PrivateKey:
         return Ed25519PrivateKey.from_private_bytes(b64d(self.priv_b64))
 
