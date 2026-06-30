@@ -101,6 +101,13 @@ def build_report(model_id: str, pack_name: str, eval_result: dict, *,
         "grade_legacy": apex["grade"],
         "score_ci95": apex["ci95"],
         "coverage": apex["coverage_label"],
+        # Coverage-aware, anti-gaming numbers: the adjusted score discounts unproven
+        # dimensions; `provisional` marks a run that exercised too little of the benchmark
+        # to be ranked head-to-head against full runs.
+        "coverage_fraction": apex["coverage"],
+        "covered_weight_fraction": apex["covered_weight_fraction"],
+        "coverage_adjusted_score": apex["coverage_adjusted_score"],
+        "provisional": apex["provisional"],
         "category_breakdown": apex["categories"],
         "categories_not_evaluated": apex["categories_not_evaluated"],
         # Honest caveats for any scored dimension measured via a proxy (e.g. multimodal is

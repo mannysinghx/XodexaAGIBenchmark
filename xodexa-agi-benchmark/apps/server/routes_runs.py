@@ -23,6 +23,7 @@ from apps.server.models import ProviderCredential, Report, WebRun
 from apps.server.queue import enqueue_run
 
 from xodexa import families
+from xodexa.stability import rerun_stability
 
 router = APIRouter(prefix="/api", tags=["runs"])
 
@@ -129,6 +130,28 @@ def list_runs(user=Depends(require_verified), db: Session = Depends(get_db)):
     rows = (db.query(WebRun).filter_by(user_id=user.id)
             .order_by(WebRun.created_at.desc()).limit(100).all())
     return {"runs": [_run_public(r) for r in rows]}
+
+
+@router.get("/runs/stability")
+def run_stability(model_name: str, family: str | None = None,
+                  user=Depends(require_verified), db: Session = Depends(get_db)):
+    """Re-run stability for the viewer's repeated runs of one model+config: how
+    reproducible is the Xodexa Score across independent seeded runs (the reliability an
+    AGI-candidate claim needs). Run the same model 2+ times to populate this."""
+    q = (db.query(WebRun)
+         .filter(WebRun.user_id == user.id, WebRun.status == "scored",
+                 WebRun.model_name == model_name))
+    q = q.filter(WebRun.family == family) if family else q.filter(WebRun.family.is_(None))
+    runs = q.order_by(WebRun.created_at.desc()).limit(50).all()
+    scores = [r.xodexa_score for r in runs if r.xodexa_score is not None]
+    fam_scores = []
+    for r in runs:
+        rep = db.query(Report).filter_by(run_id=r.id).first()
+        if rep and rep.report_json:
+            fam_scores.append(rep.report_json.get("family_scores") or {})
+    return {"model_name": model_name, "family": family or "all",
+            "run_ids": [r.id for r in runs],
+            **rerun_stability(scores, family_scores=fam_scores)}
 
 
 @router.get("/runs/{run_id}")

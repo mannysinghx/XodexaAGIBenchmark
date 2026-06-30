@@ -35,6 +35,11 @@ def _entry(run: WebRun, rep_json: dict, username: str, mine: bool = False) -> di
         "submitted_by": username, "family": run.family,
         "visibility": run.visibility, "mine": mine,
         "xodexa_score": run.xodexa_score, "grade": run.grade,
+        # Coverage-adjusted score is the leaderboard's ranking key — a run that exercised
+        # only part of the benchmark cannot top a full run by renormalizing its weights.
+        "coverage_adjusted_score": rep_json.get("coverage_adjusted_score", run.xodexa_score),
+        "coverage_fraction": rep_json.get("coverage_fraction"),
+        "provisional": rep_json.get("provisional", False),
         "agi_level": run.agi_level, "agi_level_name": ar.get("level_name"),
         "agi_index": run.agi_index, "accuracy": run.accuracy,
         "calibration_error": run.calibration_error,
@@ -94,8 +99,13 @@ def leaderboard(request: Request, db: Session = Depends(get_db)):
         mine_count = sum(1 for e in entries if e["mine"]) + len(own_entries)
         entries.extend(own_entries)
 
-    entries.sort(key=lambda e: (e["xodexa_score"] is not None, e["xodexa_score"] or 0),
-                 reverse=True)
+    # Rank by the coverage-adjusted score so partial-coverage runs can't outrank fuller
+    # ones via weight renormalization; fall back to the raw score when absent.
+    def _rank_key(e):
+        adj = e.get("coverage_adjusted_score")
+        adj = adj if adj is not None else e.get("xodexa_score")
+        return (adj is not None, adj or 0)
+    entries.sort(key=_rank_key, reverse=True)
     if entries:
         ranked = rank_upper_bound([{"model": e["run_id"], "score": e["accuracy"] or 0,
                                     "ci": e["ci"] or 0} for e in entries])

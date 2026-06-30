@@ -29,6 +29,11 @@ CATEGORY_WEIGHTS = {
     "efficiency": 0.05,
 }
 
+# A run must demonstrate at least this fraction of the total dimension weight before its
+# headline score is treated as final rather than "provisional" (anti-gaming, see
+# apex_score). 0.6 = a majority of the weighted benchmark must actually be exercised.
+FULL_COVERAGE_MIN = 0.6
+
 GRADE_BANDS = [
     (0, 199, "Weak"),
     (200, 399, "Basic"),
@@ -155,12 +160,25 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
 
     coverage = round(len(covered) / len(weights), 3)
 
+    # Anti-gaming: capability renormalizes over covered dimensions, so a run that touches
+    # only one easy family would post a full-looking apex_score. The coverage-adjusted
+    # score discounts by the FRACTION OF TOTAL WEIGHT actually demonstrated, so unproven
+    # dimensions can't be hidden by renormalization. A run below FULL_COVERAGE_MIN is
+    # flagged provisional and should not be ranked head-to-head against full runs.
+    total_weight = sum(weights.values()) or 1.0
+    covered_weight_fraction = round(wsum / total_weight, 3)
+    coverage_adjusted_score = round(score_1000 * covered_weight_fraction, 1)
+    provisional = covered_weight_fraction < FULL_COVERAGE_MIN
+
     return {
         "apex_score": score_1000,
         "grade": grade_band(score_1000),
         "ci95": ci,
         "coverage": coverage,
         "coverage_label": f"{len(covered)}/{len(weights)} categories",
+        "covered_weight_fraction": covered_weight_fraction,
+        "coverage_adjusted_score": coverage_adjusted_score,
+        "provisional": provisional,
         "capability_raw": round(capability * 1000, 1),
         "categories": {c: {**cats[c], "weight": weights[c]} for c in covered},
         "categories_not_evaluated": [c for c in weights if c not in covered],
