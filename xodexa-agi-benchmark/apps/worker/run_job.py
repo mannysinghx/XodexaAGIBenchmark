@@ -27,15 +27,15 @@ from apps.server.models import (ProviderCredential, Report, RunEvent, WebRun,
 
 from xodexa import generators as G, schema, evaluate, report as report_mod
 from xodexa.crypto import sha256_hex, canonical
-from xodexa.runner import usage_completion_tokens
+from xodexa.runner import usage_breakdown
 
 logger = logging.getLogger("xodexa.run")
 
 
-def providers_usage_tokens(conn) -> int | None:
-    """Real completion-token count from the connector's last call, if the provider
-    reported usage; else None (caller falls back to an estimate)."""
-    return usage_completion_tokens(getattr(conn, "last_usage", None))
+def providers_usage_breakdown(conn):
+    """(prompt, completion, total) real token counts from the connector's last call, if
+    the provider reported usage; any may be None (caller falls back to an estimate)."""
+    return usage_breakdown(getattr(conn, "last_usage", None))
 
 # Confidence elicitation: ask the model to state how sure it is, so we can compute
 # calibration (RMS-CE) on real runs. The number is parsed out AND stripped from the
@@ -149,10 +149,11 @@ def execute_run(run_id: str, inline_key: str | None = None,
                                    run.id, t.task_id, run.model_name, consecutive_errors, err)
                     break
             latency_ms = (time.perf_counter() - t0) * 1000
-            # Prefer the provider's real completion-token count; fall back to a len/4
-            # estimate only when usage isn't reported. Errored tasks have no usage.
-            real_toks = None if err else providers_usage_tokens(conn)
-            toks = real_toks if real_toks is not None else max(1, len(out) // 4)
+            # Real per-task token usage from the provider; fall back to a len/4 estimate
+            # for the completion count only when usage isn't reported. Errored tasks have
+            # no usage.
+            ptok, ctok, ttok = (None, None, None) if err else providers_usage_breakdown(conn)
+            toks = ctok if ctok is not None else max(1, len(out) // 4)
             total_tokens += toks
             total_latency += latency_ms
             resp = {"id": t.task_id, "output": out, "latency_ms": latency_ms, "tokens": toks}
@@ -162,9 +163,24 @@ def execute_run(run_id: str, inline_key: str | None = None,
                 # Flag so central scoring excludes it instead of grading "" as incorrect.
                 resp["error"] = err[:500]
             responses.append(resp)
-            db.add(WebRunResponse(run_id=run.id, task_id=t.task_id, family=t.task_family,
-                                  output=out, output_sha256=sha256_hex((out or "").encode()),
-                                  latency_ms=round(latency_ms, 2), tokens=toks))
+            # Full per-task trace -> the repository. Pull the question/grader/expected from
+            # the server-held answer key for this task.
+            key = keys.get(t.task_id, {})
+            grader = key.get("grader") or {}
+            db.add(WebRunResponse(
+                run_id=run.id, task_id=t.task_id, family=t.task_family,
+                model_name=run.model_name, provider=run.provider,
+                subdomain=t.subdomain, difficulty=t.difficulty, visibility=t.visibility,
+                prompt=t.prompt + CONFIDENCE_INSTRUCTION,
+                expected_answer_type=t.expected_answer_type,
+                grader_type=grader.get("type"), grader_json=grader or None,
+                expected_answer=(None if key.get("expected_answer") is None
+                                 else str(key.get("expected_answer"))),
+                canary=key.get("canary") or None,
+                output=out, output_sha256=sha256_hex((out or "").encode()),
+                confidence=conf, error=(err[:500] if err else None),
+                latency_ms=round(latency_ms, 2),
+                tokens=toks, prompt_tokens=ptok, completion_tokens=ctok, total_tokens=ttok))
             ev = {"id": t.task_id, "ok": err is None,
                   "output_sha256": sha256_hex((out or "").encode())}
             if err:
@@ -228,11 +244,21 @@ def execute_run(run_id: str, inline_key: str | None = None,
             signer=signer)
         rep["family_scores"] = er["family_scores"]  # for the live leaderboard/compare pages
 
+        # Persist the per-item score aggregate AND backfill it onto the repository trace
+        # rows so each trace carries its central score/verdict in one place.
+        trace_by_task = {r.task_id: r for r in db.query(WebRunResponse)
+                         .filter(WebRunResponse.run_id == run.id).all()}
         for it in er["per_item"]:
             db.add(WebRunItemScore(run_id=run.id, task_id=it["task_id"], family=it["family"],
                                    category=it["category"], awarded=it["awarded"],
                                    max_points=it["max"], verdict=it["verdict"],
                                    difficulty=it.get("difficulty")))
+            tr = trace_by_task.get(it["task_id"])
+            if tr is not None:
+                tr.category = it["category"]
+                tr.awarded = it["awarded"]
+                tr.max_points = it["max"]
+                tr.verdict = it["verdict"]
         ar = rep["agi_readiness"]
         db.add(Report(run_id=run.id, user_id=run.user_id, report_json=rep,
                       xodexa_score=rep["xodexa_score"], grade=rep["grade"],

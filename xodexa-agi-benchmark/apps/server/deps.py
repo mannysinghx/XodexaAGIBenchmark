@@ -40,6 +40,13 @@ def require_verified(request: Request, db: Session = Depends(get_db)) -> User:
     return u
 
 
+def require_admin(request: Request, db: Session = Depends(get_db)) -> User:
+    u = require_user(request, db)
+    if not u.is_admin:
+        raise HTTPException(403, "admin only")
+    return u
+
+
 # --- CSRF (double-submit, bound to session via HMAC) ---------------------------
 def csrf_protect(request: Request):
     tok = request.cookies.get(_settings.cookie_name)

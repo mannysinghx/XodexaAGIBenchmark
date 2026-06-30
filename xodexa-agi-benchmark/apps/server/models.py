@@ -128,15 +128,68 @@ class WebRun(Base):
 
 
 class WebRunResponse(Base):
+    """The comprehensive per-task trace — the repository row. One per (run, task): the
+    exact prompt sent, the model's full reasoning/answer, its stated confidence, real
+    token usage (prompt/completion/total), the grader spec + expected answer, the central
+    score/verdict, timing, and any provider error. Contains answer keys, so it is
+    OWNER/ADMIN-ONLY — never served on a public endpoint."""
     __tablename__ = "web_run_responses"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    run_id: Mapped[str] = mapped_column(ForeignKey("web_runs.id", ondelete="CASCADE"))
+    run_id: Mapped[str] = mapped_column(ForeignKey("web_runs.id", ondelete="CASCADE"),
+                                        index=True)
     task_id: Mapped[str] = mapped_column(String(96), nullable=False)
     family: Mapped[str] = mapped_column(String(32))
-    output: Mapped[str | None] = mapped_column(Text)
+    # --- denormalized run context (so the repository is queryable on its own) ---
+    model_name: Mapped[str | None] = mapped_column(String(128), index=True)
+    provider: Mapped[str | None] = mapped_column(String(32))
+    subdomain: Mapped[str | None] = mapped_column(String(64))
+    difficulty: Mapped[float | None] = mapped_column(Float)
+    visibility: Mapped[str | None] = mapped_column(String(16))
+    # --- the question ---
+    prompt: Mapped[str | None] = mapped_column(Text)            # exact text sent to the model
+    expected_answer_type: Mapped[str | None] = mapped_column(String(32))
+    grader_type: Mapped[str | None] = mapped_column(String(32))
+    grader_json: Mapped[dict | None] = mapped_column(JSON)      # full deterministic grader spec
+    expected_answer: Mapped[str | None] = mapped_column(Text)
+    canary: Mapped[str | None] = mapped_column(String(64))
+    # --- the answer / reasoning ---
+    output: Mapped[str | None] = mapped_column(Text)            # full model reasoning + answer
     output_sha256: Mapped[str | None] = mapped_column(String(64))
+    confidence: Mapped[float | None] = mapped_column(Float)     # model-stated confidence 0..1
+    error: Mapped[str | None] = mapped_column(Text)             # provider error if unanswered
+    # --- usage / timing ---
     latency_ms: Mapped[float | None] = mapped_column(Float)
-    tokens: Mapped[int | None] = mapped_column(Integer)
+    tokens: Mapped[int | None] = mapped_column(Integer)         # completion tokens (legacy field)
+    prompt_tokens: Mapped[int | None] = mapped_column(Integer)
+    completion_tokens: Mapped[int | None] = mapped_column(Integer)
+    total_tokens: Mapped[int | None] = mapped_column(Integer)
+    # --- central score (filled after re-scoring; null for errored/unanswered tasks) ---
+    category: Mapped[str | None] = mapped_column(String(32))
+    awarded: Mapped[float | None] = mapped_column(Float)
+    max_points: Mapped[float | None] = mapped_column(Float)
+    verdict: Mapped[str | None] = mapped_column(String(64))
+    created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True), default=_now)
+
+    def as_trace(self) -> dict:
+        """Serialize the full trace for API/JSONL export (the repository record)."""
+        return {
+            "run_id": self.run_id, "task_id": self.task_id,
+            "model_name": self.model_name, "provider": self.provider,
+            "family": self.family, "subdomain": self.subdomain,
+            "category": self.category, "difficulty": self.difficulty,
+            "visibility": self.visibility,
+            "prompt": self.prompt, "expected_answer_type": self.expected_answer_type,
+            "grader_type": self.grader_type, "grader": self.grader_json,
+            "expected_answer": self.expected_answer, "canary": self.canary,
+            "output": self.output, "output_sha256": self.output_sha256,
+            "confidence": self.confidence, "error": self.error,
+            "latency_ms": self.latency_ms,
+            "tokens": {"prompt": self.prompt_tokens, "completion": self.completion_tokens,
+                       "total": self.total_tokens, "completion_legacy": self.tokens},
+            "score": {"awarded": self.awarded, "max": self.max_points,
+                      "verdict": self.verdict},
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }
 
 
 class WebRunItemScore(Base):

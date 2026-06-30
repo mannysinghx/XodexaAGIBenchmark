@@ -8,18 +8,19 @@ use-once key that's never persisted). Reports are free to view + export.
 
 from __future__ import annotations
 
+import json
 import os
 
 from fastapi import APIRouter, Depends, HTTPException, Request
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import PlainTextResponse, StreamingResponse
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from apps.server import providers, security
 from apps.server.db import get_db
 from apps.server.deps import (audit, csrf_protect, enforce_run_quota, record_run_started,
-                              require_verified)
-from apps.server.models import ProviderCredential, Report, WebRun
+                              require_admin, require_verified)
+from apps.server.models import ProviderCredential, Report, WebRun, WebRunResponse
 from apps.server.queue import enqueue_run
 
 from xodexa import families
@@ -174,6 +175,67 @@ def _load_report(db: Session, run_id: str, request: Request) -> tuple[WebRun, Re
     if not rep:
         raise HTTPException(404, "report not ready")
     return run, rep
+
+
+# --------------------------------------------------------------------------- #
+# The repository — full per-task traces (prompt, reasoning, answer, tokens, grader,
+# score). These rows carry ANSWER KEYS, so access is OWNER/ADMIN-ONLY (never the public
+# `visibility == public` path used for reports), to avoid leaking benchmark answers.
+# --------------------------------------------------------------------------- #
+def _own_run(db: Session, run_id: str, user: object) -> WebRun:
+    run = db.get(WebRun, run_id)
+    if not run:
+        raise HTTPException(404, "run not found")
+    if run.user_id != user.id and not getattr(user, "is_admin", False):
+        raise HTTPException(403, "not authorized to view this run's traces")
+    return run
+
+
+def _traces_for_run(db: Session, run_id: str) -> list[dict]:
+    rows = (db.query(WebRunResponse)
+            .filter(WebRunResponse.run_id == run_id)
+            .order_by(WebRunResponse.id.asc()).all())
+    return [r.as_trace() for r in rows]
+
+
+@router.get("/runs/{run_id}/traces")
+def get_run_traces(run_id: str, user=Depends(require_verified), db: Session = Depends(get_db)):
+    """Full per-task repository for one run (owner/admin only): prompt, model reasoning +
+    answer, stated confidence, real token usage, grader spec, expected answer, score."""
+    _own_run(db, run_id, user)
+    traces = _traces_for_run(db, run_id)
+    return {"run_id": run_id, "count": len(traces), "traces": traces}
+
+
+@router.get("/runs/{run_id}/traces.jsonl", response_class=PlainTextResponse)
+def get_run_traces_jsonl(run_id: str, user=Depends(require_verified),
+                         db: Session = Depends(get_db)):
+    """The run's repository as JSONL (one trace per line) for download/archival."""
+    _own_run(db, run_id, user)
+    body = "\n".join(json.dumps(t, ensure_ascii=False) for t in _traces_for_run(db, run_id))
+    return PlainTextResponse(body, media_type="application/x-ndjson", headers={
+        "Content-Disposition": f'attachment; filename="repository_{run_id}.jsonl"'})
+
+
+@router.get("/repository.jsonl")
+def export_repository(user=Depends(require_admin), db: Session = Depends(get_db),
+                      model_name: str | None = None, family: str | None = None,
+                      limit: int = 50000):
+    """Admin-only streaming export of the ENTIRE per-task repository as JSONL — every
+    question, prompt, reasoning, answer, token count and score across all runs. Optional
+    model_name / family filters."""
+    q = db.query(WebRunResponse).order_by(WebRunResponse.id.asc())
+    if model_name:
+        q = q.filter(WebRunResponse.model_name == model_name)
+    if family:
+        q = q.filter(WebRunResponse.family == family)
+    q = q.limit(max(1, min(limit, 500000)))
+
+    def _stream():
+        for r in q.yield_per(500):
+            yield json.dumps(r.as_trace(), ensure_ascii=False) + "\n"
+    return StreamingResponse(_stream(), media_type="application/x-ndjson", headers={
+        "Content-Disposition": 'attachment; filename="xodexa_repository.jsonl"'})
 
 
 @router.get("/runs/{run_id}/report")

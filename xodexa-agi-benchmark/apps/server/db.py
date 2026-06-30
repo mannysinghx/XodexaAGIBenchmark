@@ -16,8 +16,12 @@ _PKGS = Path(__file__).resolve().parents[2] / "packages"
 if str(_PKGS) not in sys.path:
     sys.path.insert(0, str(_PKGS))
 
-from sqlalchemy import create_engine  # noqa: E402
+import logging  # noqa: E402
+
+from sqlalchemy import create_engine, inspect, text  # noqa: E402
 from sqlalchemy.orm import declarative_base, sessionmaker, Session  # noqa: E402
+
+_log = logging.getLogger("xodexa.db")
 
 from apps.server.config import get_settings  # noqa: E402
 
@@ -48,10 +52,39 @@ SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False
 Base = declarative_base()
 
 
+def _sync_added_columns() -> None:
+    """Lightweight additive migration: create_all() makes new TABLES but never adds new
+    COLUMNS to a table that already exists. For each mapped table that's already present,
+    ALTER TABLE ADD COLUMN any NULLABLE column the DB is missing (e.g. the expanded
+    per-task trace fields on web_run_responses). Idempotent and portable (sqlite +
+    postgres both support ADD COLUMN); only nullable columns are added so existing rows
+    stay valid. Non-additive changes still need a real migration."""
+    insp = inspect(engine)
+    present = set(insp.get_table_names())
+    for table in Base.metadata.sorted_tables:
+        if table.name not in present:
+            continue  # create_all already made it with the full, current shape
+        have = {c["name"] for c in insp.get_columns(table.name)}
+        for col in table.columns:
+            if col.name in have or not col.nullable:
+                continue
+            ddl = (f'ALTER TABLE {table.name} '
+                   f'ADD COLUMN {col.name} {col.type.compile(dialect=engine.dialect)}')
+            try:
+                with engine.begin() as conn:
+                    conn.execute(text(ddl))
+                _log.info("db migration: added %s.%s", table.name, col.name)
+            except Exception as e:  # noqa: BLE001 — never block startup on one column
+                _log.warning("db migration: could not add %s.%s: %s",
+                             table.name, col.name, e)
+
+
 def init_db() -> None:
-    """Create all tables (idempotent). Called on app + worker startup."""
+    """Create all tables, then add any newly-introduced nullable columns (idempotent).
+    Called on app + worker startup."""
     from apps.server import models  # noqa: F401  (register mappers)
     Base.metadata.create_all(bind=engine)
+    _sync_added_columns()
 
 
 def get_db():

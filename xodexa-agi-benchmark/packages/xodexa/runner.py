@@ -188,13 +188,29 @@ class AnthropicConnector(ModelConnector):
 def usage_completion_tokens(usage: dict | None) -> int | None:
     """Normalize a provider usage dict to completion/output token count, or None.
     OpenAI: completion_tokens; Anthropic: output_tokens."""
+    return usage_breakdown(usage)[1]
+
+
+def usage_breakdown(usage: dict | None):
+    """Normalize a provider usage dict to (prompt_tokens, completion_tokens, total_tokens),
+    any of which may be None. OpenAI: prompt/completion/total; Anthropic: input/output
+    (total derived). Lets the repository record true per-task token usage."""
     if not isinstance(usage, dict):
+        return (None, None, None)
+
+    def _i(*keys):
+        for k in keys:
+            v = usage.get(k)
+            if isinstance(v, int) and v >= 0:
+                return v
         return None
-    for k in ("completion_tokens", "output_tokens"):
-        v = usage.get(k)
-        if isinstance(v, int) and v >= 0:
-            return v
-    return None
+
+    prompt = _i("prompt_tokens", "input_tokens")
+    completion = _i("completion_tokens", "output_tokens")
+    total = _i("total_tokens")
+    if total is None and prompt is not None and completion is not None:
+        total = prompt + completion
+    return (prompt, completion, total)
 
 
 # --------------------------------------------------------------------------- #
