@@ -30,9 +30,17 @@ def score_pack(answer_keys: dict, responses: list[dict]) -> dict:
     confidences: list[float] = []
     conf_correct: list[int] = []            # correctness aligned with `confidences`
     canary_hits = 0
+    errored: list[str] = []                  # tasks the provider never answered (infra)
 
     for tid, key in answer_keys.items():
         resp = by_id.get(tid, {}) or {}
+        # A task whose provider call errored (network/5xx/rate-limit) was never actually
+        # answered by the model. Scoring it as "incorrect" would penalize the model for
+        # the provider's flakiness and make the score non-reproducible. Exclude it from
+        # all scoring and report the count instead.
+        if resp.get("error"):
+            errored.append(tid)
+            continue
         output = resp.get("output", "")
         aw, mx, verdict = grade.grade(key["grader"], output, key["points"], key["negative"])
         category = key.get("category") or families.FAMILY_TO_DIMENSION.get(
@@ -72,6 +80,8 @@ def score_pack(answer_keys: dict, responses: list[dict]) -> dict:
         "family_scores": family_scores,
         "frontier_metrics": {"accuracy": acc_point, "accuracy_ci95": acc_half,
                              "calibration_error": calib_err, "n": n,
-                             "calibration_n": len(confidences)},
+                             "calibration_n": len(confidences),
+                             "errored": len(errored)},
         "canary_hits": canary_hits,
+        "errored": errored,
     }

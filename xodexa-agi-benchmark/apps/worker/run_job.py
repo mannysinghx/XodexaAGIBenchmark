@@ -113,19 +113,34 @@ def execute_run(run_id: str, inline_key: str | None = None,
         last_error = None
         total_tokens = 0
         total_latency = 0.0
+        successes = 0
         for i, t in enumerate(tasks):
             out, conf, latency_ms, err = "", None, 0.0, None
             t0 = time.perf_counter()
-            try:
-                raw = conn.complete(t.prompt + CONFIDENCE_INSTRUCTION)
-                out, conf = parse_confidence(raw)  # strip confidence from gradeable text
-                consecutive_errors = 0
-            except Exception as e:  # noqa: BLE001 — provider/network error (detail kept)
-                err = f"{type(e).__name__}: {e}"
-                last_error = err
-                consecutive_errors += 1
-                logger.warning("run %s task %s (model=%s) failed [%d in a row]: %s",
-                               run.id, t.task_id, run.model_name, consecutive_errors, err)
+            # A transient network/5xx blip should not cost the model the whole task: retry
+            # it a couple of times with a short backoff before recording an error. Auth
+            # (401/403) and rate-limit (429) are NOT transient — surface them immediately
+            # so the dedicated handlers below can abort or back off.
+            for attempt in range(3):
+                try:
+                    raw = conn.complete(t.prompt + CONFIDENCE_INSTRUCTION)
+                    out, conf = parse_confidence(raw)  # strip confidence from gradeable text
+                    consecutive_errors = 0
+                    successes += 1
+                    err = None
+                    break
+                except Exception as e:  # noqa: BLE001 — provider/network error (detail kept)
+                    err = f"{type(e).__name__}: {e}"
+                    transient = not any(s in err for s in
+                                        ("HTTP 401", "HTTP 403", "HTTP 429", "limit: 0"))
+                    if transient and attempt < 2:
+                        time.sleep(2 * (attempt + 1))
+                        continue
+                    last_error = err
+                    consecutive_errors += 1
+                    logger.warning("run %s task %s (model=%s) failed [%d in a row]: %s",
+                                   run.id, t.task_id, run.model_name, consecutive_errors, err)
+                    break
             latency_ms = (time.perf_counter() - t0) * 1000
             toks = max(1, len(out) // 4)
             total_tokens += toks
@@ -133,6 +148,9 @@ def execute_run(run_id: str, inline_key: str | None = None,
             resp = {"id": t.task_id, "output": out, "latency_ms": latency_ms, "tokens": toks}
             if conf is not None:
                 resp["confidence"] = conf
+            if err:
+                # Flag so central scoring excludes it instead of grading "" as incorrect.
+                resp["error"] = err[:500]
             responses.append(resp)
             db.add(WebRunResponse(run_id=run.id, task_id=t.task_id, family=t.task_family,
                                   output=out, output_sha256=sha256_hex((out or "").encode()),
@@ -181,6 +199,12 @@ def execute_run(run_id: str, inline_key: str | None = None,
                 msg = f"provider call failed {consecutive_errors}× in a row — last error: {last_error}"
                 logger.error("run %s aborted: %s", run.id, msg)
                 return _fail(db, run, msg)
+
+        # If the provider answered nothing, there is no model behaviour to score — fail
+        # the run with the last error rather than emitting a meaningless all-excluded 0.
+        if successes == 0:
+            return _fail(db, run, f"provider answered 0/{len(tasks)} tasks — "
+                                  f"last error: {last_error or 'unknown'}")
 
         # --- central re-scoring + signed report ---
         er = evaluate.score_pack(keys, responses)
