@@ -45,6 +45,15 @@ def char_shingles(text: str, k: int = 5) -> set[str]:
     return {t[i:i + k] for i in range(len(t) - k + 1)}
 
 
+def _token_containment(a: set, b: set) -> float:
+    """Overlap of two token SETS relative to the smaller set (order-independent).
+    Catches reordered/lightly-paraphrased reuse a short probe embedded in a longer
+    source would score high on, which char-shingle Jaccard and 8-gram overlap miss."""
+    if not a or not b:
+        return 0.0
+    return len(a & b) / min(len(a), len(b))
+
+
 def jaccard(a: set, b: set) -> float:
     if not a or not b:
         return 0.0
@@ -94,6 +103,7 @@ class CorpusIndex:
             "id": doc_id, "text": text,
             "sig": minhash_signature(text, self.num_perm),
             "shingles": char_shingles(text),
+            "tokens": set(tokens(text)),
         })
 
     def add_many(self, items: list[tuple[str, str]]):
@@ -101,17 +111,30 @@ class CorpusIndex:
             self.add(doc_id, text)
 
     def similarity(self, text: str) -> dict:
-        """Return the best match: {score, source_id, method}. score in 0..1."""
+        """Return the best match: {score, source_id, method}. score in 0..1.
+
+        Combines four signals so different contamination shapes are all caught:
+          * minhash / char-shingle Jaccard — verbatim & near-verbatim copies.
+          * 8-gram token overlap — long shared phrases.
+          * token-set containment — ORDER-INDEPENDENT bag-of-words overlap, the
+            signal that catches reordered / lightly-paraphrased items the surface
+            n-gram methods miss (audit gap 4). Uses containment (shared / smaller set)
+            rather than Jaccard so a short probe embedded in a longer source still
+            scores high.
+        """
         sig = minhash_signature(text, self.num_perm)
         sh = char_shingles(text)
+        tset = set(tokens(text))
         best = {"score": 0.0, "source_id": None, "method": "minhash"}
         for d in self._docs:
             ms = signature_similarity(sig, d["sig"])
             js = jaccard(sh, d["shingles"])
             ng = ngram_overlap(text, d["text"], n=8)
-            score = max(ms, js, ng)
+            tc = _token_containment(tset, d.get("tokens") or set(tokens(d["text"])))
+            score = max(ms, js, ng, tc)
             if score > best["score"]:
-                method = "ngram" if ng >= max(ms, js) else ("jaccard" if js >= ms else "minhash")
+                method = max((("ngram", ng), ("jaccard", js), ("minhash", ms),
+                              ("token_containment", tc)), key=lambda kv: kv[1])[0]
                 best = {"score": round(score, 4), "source_id": d["id"], "method": method}
         return best
 
