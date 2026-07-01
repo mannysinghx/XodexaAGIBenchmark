@@ -3,8 +3,9 @@
 # jobs inline (RUN_INLINE=1, so no separate Redis/worker needed for the MVP), and uses
 # your external Neon Postgres. Render auto-detects the public URL (RENDER_EXTERNAL_URL).
 #
-# Deploy: Render Dashboard → New → Blueprint → pick this repo. Then set the 4 secret
-# env vars marked "sync: false" (Render will prompt for them). That's it.
+# Deploy: Render Dashboard → New → Blueprint → pick this repo. Then set the secret
+# env vars marked "sync: false" (Render will prompt for them). Generate the three
+# crypto secrets first with:  python scripts/gen_secrets.py
 #
 # For production scale, split out a worker + a Key Value (Redis) instance and drop
 # RUN_INLINE — see docs/DEPLOY_VERCEL.md.
@@ -36,11 +37,16 @@ services:
       - key: BENCHMARK_VERSION
         value: "1.0.0"
       # --- secrets: set these in the Render dashboard (not committed) ---
+      # The app REFUSES TO BOOT in production if any of the three crypto secrets below
+      # is unset or a dev default (apps/server/config.assert_production_safe). Mint
+      # them with: python scripts/gen_secrets.py
       - key: DATABASE_URL          # Railway Postgres PUBLIC url (postgresql+psycopg://...@*.proxy.rlwy.net:PORT/railway)
         sync: false                #   single source of truth shared with Railway + local; copy from local .env
-      - key: KEY_ENCRYPTION_KEY    # from your local .env
+      - key: KEY_ENCRYPTION_KEY    # Fernet key — encrypts provider creds + answer keys at rest
         sync: false
-      - key: SESSION_SECRET        # from your local .env
+      - key: SESSION_SECRET        # signs sessions + CSRF; must not be the dev default
+        sync: false
+      - key: REPORT_SIGNING_KEY    # stable Ed25519 report-signing identity (base64 raw 32 bytes)
         sync: false
       - key: SMTP_PASSWORD         # the info@xodexabenchmark.com mailbox password
         sync: false

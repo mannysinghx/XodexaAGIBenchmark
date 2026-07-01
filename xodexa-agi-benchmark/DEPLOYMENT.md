@@ -70,11 +70,21 @@ The repo already ships `apps/server/Dockerfile` and `docker-compose.yml` as the 
 3. **Add Redis** (New → Database → Redis). Injects `REDIS_URL`.
 4. **Object storage:** add a MinIO service from a Docker image, **or** point
    `S3_ENDPOINT` at an external S3/R2 bucket for result bundles.
-5. **Set the signing key as a Railway variable** (Service → Variables), generated with:
+5. **Set the three required crypto secrets** (Service → Variables). The app **refuses
+   to boot in production** (Railway/Render, or `XODEXA_PRODUCTION=1`) if any of these is
+   unset or left at a dev default — that guard prevents forgeable sessions and a
+   derivable key for every encrypted credential and answer-key column. Mint all three:
    ```bash
-   python -c "from xodexa import KeyPair; k=KeyPair.generate(); print('APEX_SERVER_PRIVATE_KEY='+k.priv_b64); print('APEX_SERVER_PUBLIC_KEY='+k.pub_b64)"
+   python scripts/gen_secrets.py          # prints SESSION_SECRET, KEY_ENCRYPTION_KEY, REPORT_SIGNING_KEY
+   # or: python scripts/gen_secrets.py --dotenv >> .env
    ```
-   Never commit it. (Move to OpenBao/Vault in a hardening pass — see roadmap Phase 5.)
+   - `SESSION_SECRET` — signs sessions + CSRF.
+   - `KEY_ENCRYPTION_KEY` — Fernet key encrypting provider creds + answer keys at rest.
+   - `REPORT_SIGNING_KEY` — stable Ed25519 report-signing identity (its public key is
+     what verifiers pin via `GET /api/verification-key`).
+
+   Never commit them. Rotating `KEY_ENCRYPTION_KEY` makes already-encrypted rows
+   undecryptable. (Move to OpenBao/Vault in a hardening pass — see roadmap.)
 6. **Expose the service** (Settings → Networking → Generate Domain). That URL is your API.
 7. Other env vars come from `.env.example` (`BENCHMARK_VERSION`,
    `ALLOWED_RUNNER_VERSIONS`, `MIN_PLAUSIBLE_MS_PER_TASK`, etc.).

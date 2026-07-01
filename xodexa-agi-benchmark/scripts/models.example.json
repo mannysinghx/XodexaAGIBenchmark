@@ -1,0 +1,21 @@
+[
+  {
+    "name": "gpt-frontier",
+    "connector": "openai-compatible:https://api.openai.com/v1:gpt-4o",
+    "api_key_env": "OPENAI_API_KEY"
+  },
+  {
+    "name": "claude-frontier",
+    "connector": "anthropic:claude-sonnet-4-6",
+    "api_key_env": "ANTHROPIC_API_KEY"
+  },
+  {
+    "name": "local-vllm",
+    "connector": "openai-compatible:http://localhost:8000/v1:my-model",
+    "api_key_env": "VLLM_API_KEY"
+  },
+  {
+    "name": "ollama-llama",
+    "connector": "ollama:http://localhost:11434:llama3"
+  }
+]
