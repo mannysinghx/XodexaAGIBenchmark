@@ -380,10 +380,14 @@ Full methodology reference: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
   baseline sweep harness.
 - **Reliability ✅** Idempotent run resume, dynamic timeout, stale-run reaper,
   Prometheus metrics, cost caps, distributed rate limiting.
-- **Next** Adapters (lm-eval-harness & Inspect AI); public comparison packs (MMLU-Pro,
-  GPQA-Diamond, SWE-bench-Verified, GAIA, tau-bench) as comparison-only; provenance
-  (Cosign/SLSA), optional attestation (Nitro first); a published frontier leaderboard
-  from a full real-model sweep.
+- **Interop ✅** External-eval **adapters** (lm-eval-harness & Inspect AI raw outputs →
+  central re-score, comparison-only); public-benchmark **anchors** (MMLU-Pro,
+  GPQA-Diamond, SWE-bench-Verified, GAIA, tau-bench, …) as contamination-labeled
+  comparison entries; honest **attestation** verification interface (Nitro/SEV-SNP/TDX,
+  pluggable vendor root verifier — never a fake attested-true).
+- **Next** Real vendor root-cert validation behind the attestation interface;
+  provenance (Cosign/SLSA); a **published frontier leaderboard** from a full real-model
+  sweep (`scripts/frontier_sweep.py` — needs provider keys + budget).
 
 ## Benchmark adapter guide (the integration pattern)
 
