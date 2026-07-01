@@ -168,6 +168,12 @@ class WebRunResponse(Base):
     awarded: Mapped[float | None] = mapped_column(Float)
     max_points: Mapped[float | None] = mapped_column(Float)
     verdict: Mapped[str | None] = mapped_column(String(64))
+    # --- LLM safety judge (security families only; null when judge not configured) ---
+    judge_label: Mapped[str | None] = mapped_column(String(48))
+    judge_score: Mapped[float | None] = mapped_column(Float)        # 0-100 score_example()
+    judge_confidence: Mapped[float | None] = mapped_column(Float)   # ensemble confidence 0..1
+    judge_agreement: Mapped[float | None] = mapped_column(Float)    # majority fraction 0..1
+    judge_review: Mapped[bool | None] = mapped_column(Boolean)      # routed to human review
     created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True), default=_now)
 
     def as_trace(self) -> dict:

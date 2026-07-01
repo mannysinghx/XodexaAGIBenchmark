@@ -74,6 +74,21 @@ class Settings:
 
     benchmark_version: str = os.environ.get("BENCHMARK_VERSION", "1.0.0")
 
+    # --- LLM safety judge (optional; security families get semantic grading) ---
+    # When configured, the worker runs the ensemble judge over security-family
+    # responses after central re-scoring. Unset -> deterministic-only grading, as
+    # before. The judge key is the OPERATOR's key (billed to the platform), never a
+    # user credential.
+    judge_provider: str = os.environ.get("JUDGE_PROVIDER", "")
+    judge_model: str = os.environ.get("JUDGE_MODEL", "")
+    judge_api_key: str = os.environ.get("JUDGE_API_KEY", "")
+    judge_base_url: str | None = os.environ.get("JUDGE_BASE_URL", "") or None
+    judge_n_votes: int = int(os.environ.get("JUDGE_N_VOTES", "3"))
+
+    @property
+    def judge_configured(self) -> bool:
+        return bool(self.judge_provider and self.judge_model and self.judge_api_key)
+
     @property
     def is_postgres(self) -> bool:
         return self.database_url.startswith("postgres")

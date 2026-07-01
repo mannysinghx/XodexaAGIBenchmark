@@ -21,12 +21,16 @@ import re
 import time
 
 from apps.server import providers, security
+from apps.server.config import get_settings
 from apps.server.db import session
 from apps.server.models import (ProviderCredential, Report, RunEvent, WebRun,
                                 WebRunItemScore, WebRunResponse)
 
 from xodexa import generators as G, schema, evaluate, report as report_mod
 from xodexa.crypto import sha256_hex, canonical
+from xodexa.deterministic_checks import run_all_checks
+from xodexa.families import SECURITY_FAMILIES
+from xodexa.judge import EnsembleJudge
 from xodexa.runner import usage_breakdown
 
 logger = logging.getLogger("xodexa.run")
@@ -63,6 +67,75 @@ def parse_confidence(text: str):
 
 def _now():
     return dt.datetime.now(dt.timezone.utc)
+
+
+# Abstract disallowed-request placeholders embedded in safety prompts, e.g.
+# "[DISALLOWED_CYBER_REQUEST]" — extracted so the deterministic compliance check
+# knows the prompt contained one.
+_PLACEHOLDER_RE = re.compile(r"\[([A-Z][A-Z_]{3,})\]")
+
+
+def run_safety_judge(db, run, tasks, keys, responses) -> dict | None:
+    """Ensemble-judge every answered security-family response; persist per-trace
+    verdicts. Judge failures never fail the run (returns None on any setup error).
+
+    The judge's verdict is stored ALONGSIDE the deterministic central score — it does
+    not alter the official Xodexa Score until the judge-vs-human validation study
+    lands. That keeps official scoring semantics stable while real judge data accrues.
+    """
+    cfg = get_settings()
+    task_type = SECURITY_FAMILIES.get(run.family)
+    if task_type is None or not cfg.judge_configured:
+        return None
+    try:
+        conn = providers.connector(cfg.judge_provider, cfg.judge_api_key,
+                                   cfg.judge_model, cfg.judge_base_url)
+    except Exception as e:  # noqa: BLE001 — misconfigured judge must not fail the run
+        logger.warning("run %s: judge connector unavailable: %s", run.id, e)
+        return None
+    judge = EnsembleJudge(conn, n_votes=cfg.judge_n_votes)
+
+    by_task = {t.task_id: t for t in tasks}
+    trace_rows = {r.task_id: r for r in db.query(WebRunResponse)
+                  .filter(WebRunResponse.run_id == run.id).all()}
+    judged, review_count, score_sum = 0, 0, 0.0
+    for resp in responses:
+        if resp.get("error") is not None:
+            continue
+        t = by_task.get(resp["id"])
+        tr = trace_rows.get(resp["id"])
+        if t is None or tr is None:
+            continue
+        canary = (keys.get(t.task_id) or {}).get("canary")
+        det = run_all_checks(
+            resp.get("output", ""),
+            canary_tokens=[canary] if canary else None,
+            disallowed_placeholders=_PLACEHOLDER_RE.findall(t.prompt) or None,
+        )
+        try:
+            v = judge.judge(
+                task_family=t.task_family, subdomain=t.subdomain,
+                user_prompt=t.prompt, model_response=resp.get("output", ""),
+                det_result=det, task_type=task_type,
+                run_id=run.id, task_id=t.task_id,
+                canary_tokens=[canary] if canary else None,
+            )
+        except Exception as e:  # noqa: BLE001 — one bad case must not kill the loop
+            logger.warning("run %s: judge failed on task %s: %s", run.id, t.task_id, e)
+            continue
+        tr.judge_label = v.label
+        tr.judge_score = v.final_score
+        tr.judge_confidence = v.confidence
+        tr.judge_agreement = v.agreement
+        tr.judge_review = v.human_review_required
+        judged += 1
+        review_count += 1 if v.human_review_required else 0
+        score_sum += v.final_score
+    if not judged:
+        return None
+    return {"judged": judged, "review_flagged": review_count,
+            "mean_judge_score": round(score_sum / judged, 2),
+            "judge_model": cfg.judge_model, "n_votes": cfg.judge_n_votes}
 
 
 def _append_event(db, run_id: str, seq: int, prev_hash: str, kind: str, data: dict) -> str:
@@ -259,6 +332,14 @@ def execute_run(run_id: str, inline_key: str | None = None,
                 tr.awarded = it["awarded"]
                 tr.max_points = it["max"]
                 tr.verdict = it["verdict"]
+        # --- optional LLM safety judge (security families; env-gated) ---
+        judge_summary = run_safety_judge(db, run, tasks, keys, responses)
+        if judge_summary:
+            rep["safety_judge"] = judge_summary
+            prev = _append_event(db, run.id, seq, prev, "safety_judged", judge_summary)
+            seq += 1
+            logger.info("run %s safety-judged: %s", run.id, judge_summary)
+
         ar = rep["agi_readiness"]
         db.add(Report(run_id=run.id, user_id=run.user_id, report_json=rep,
                       xodexa_score=rep["xodexa_score"], grade=rep["grade"],

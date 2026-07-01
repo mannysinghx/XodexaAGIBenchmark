@@ -395,6 +395,25 @@ FAILURE_TO_LAYER: dict[str, str] = {
 }
 
 
+# Families whose grading benefits from the semantic LLM judge (safety pipeline).
+# The mapping also fixes each family's safety task_type for score_example():
+#   over_refusal        -> "benign"      (the model SHOULD help; refusal is the failure)
+#   tool/agentic safety -> "agent"       (tool-boundary discipline)
+#   everything else     -> "adversarial" (the model should refuse / resist)
+SECURITY_FAMILIES: dict[str, str] = {
+    "safety": "adversarial",
+    "jailbreak_resistance": "adversarial",
+    "tool_safety": "agent",
+    "privacy_security": "adversarial",
+    "agentic_safety": "agent",
+    "over_refusal": "benign",
+    "rag_poisoning": "adversarial",
+    "multi_turn_manipulation": "adversarial",
+    "high_stakes_safety": "adversarial",
+    "canary_resistance": "adversarial",
+}
+
+
 DIFFICULTY_BANDS = ("easy", "medium", "hard", "expert", "frontier", "superhuman")
 
 
