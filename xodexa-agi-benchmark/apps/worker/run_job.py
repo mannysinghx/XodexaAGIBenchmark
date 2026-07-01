@@ -178,11 +178,31 @@ def execute_run(run_id: str, inline_key: str | None = None,
                            visibility="validation")
         keys = {t.task_id: schema.answer_key(t) for t in tasks}
 
+        # IDEMPOTENT RESUME: if a prior attempt (worker crash / RQ retry) already
+        # answered some tasks, reuse those persisted outputs instead of re-paying the
+        # provider. Successfully-answered rows are kept; errored rows and the old event
+        # chain are cleared so the run re-attempts only what actually failed.
+        prior = {r.task_id: r for r in db.query(WebRunResponse)
+                 .filter(WebRunResponse.run_id == run.id).all()}
+        done: dict[str, dict] = {}
+        if prior:
+            db.query(RunEvent).filter(RunEvent.run_id == run.id).delete()
+            for tid, r in prior.items():
+                if r.output is not None and not r.error:
+                    done[tid] = {"output": r.output, "confidence": r.confidence,
+                                 "tokens": r.tokens or 0, "latency_ms": r.latency_ms or 0.0}
+                else:
+                    db.delete(r)  # errored/partial -> retry it
+            db.commit()
+            if done:
+                logger.info("run %s resuming: %d/%d tasks already answered",
+                            run.id, len(done), len(tasks))
+
         seq = 0
         prev = "0" * 64
         prev = _append_event(db, run.id, seq, prev, "run_start",
                              {"model": run.model_name, "provider": run.provider,
-                              "n_tasks": len(tasks)})
+                              "n_tasks": len(tasks), "resumed": len(done)})
         seq += 1
         db.commit()
         logger.info("run %s start: model=%s provider=%s base_url=%s n_tasks=%d",
@@ -195,6 +215,25 @@ def execute_run(run_id: str, inline_key: str | None = None,
         total_latency = 0.0
         successes = 0
         for i, t in enumerate(tasks):
+            # RESUME: a task already answered by a prior attempt is reused verbatim —
+            # no provider call, no new trace row (it already exists) — so a retried run
+            # is cheap and its central score is unchanged.
+            if t.task_id in done:
+                d = done[t.task_id]
+                resp = {"id": t.task_id, "output": d["output"],
+                        "latency_ms": d["latency_ms"], "tokens": d["tokens"]}
+                if d["confidence"] is not None:
+                    resp["confidence"] = d["confidence"]
+                responses.append(resp)
+                total_tokens += d["tokens"]
+                total_latency += d["latency_ms"]
+                successes += 1
+                prev = _append_event(db, run.id, seq, prev, "task_response",
+                                     {"id": t.task_id, "ok": True, "resumed": True,
+                                      "output_sha256": sha256_hex((d["output"] or "").encode())})
+                seq += 1
+                run.progress = int(100 * (i + 1) / len(tasks))
+                continue
             out, conf, latency_ms, err = "", None, 0.0, None
             # Real image attachments (base64 PNGs from xodexa.render) ride along to
             # vision-capable connectors; text-only tasks pass assets=None, which keeps

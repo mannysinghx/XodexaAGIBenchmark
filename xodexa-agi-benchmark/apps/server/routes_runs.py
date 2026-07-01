@@ -17,6 +17,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from apps.server import providers, security
+from apps.server.config import get_settings
 from apps.server.db import get_db
 from apps.server.deps import (audit, csrf_protect, enforce_run_quota, record_run_started,
                               require_admin, require_verified)
@@ -112,6 +113,15 @@ def create_run(body: RunReq, request: Request,
     except providers.ProviderError as e:
         raise HTTPException(502, str(e))
 
+    # Pre-flight cost guard: reject before spending the user's provider budget.
+    from apps.server.runtime import estimate_cost
+    cost = estimate_cost(body.n_tasks, provider)
+    settings = get_settings()
+    if settings.max_run_cost_usd and cost["est_usd"] > settings.max_run_cost_usd:
+        raise HTTPException(
+            402, f"estimated run cost ${cost['est_usd']:.2f} exceeds the per-run cap "
+                 f"${settings.max_run_cost_usd:.2f}; reduce n_tasks")
+
     seed = int.from_bytes(os.urandom(4), "big") & 0x7FFFFFFF  # fit Postgres INT4 (signed)
     run = WebRun(user_id=user.id, credential_id=credential_id, provider=provider,
                  model_name=body.model_name.strip(), family=body.family,
@@ -122,8 +132,10 @@ def create_run(body: RunReq, request: Request,
     record_run_started(db, user.id, body.n_tasks)
     audit(db, request, "run_created", user_id=user.id, run_id=run.id,
           provider=provider, model=run.model_name, n_tasks=run.n_tasks)
-    enqueue_run(run.id, inline_key=inline_key, inline_base_url=base_url if inline_key is not None else None)
-    return {"ok": True, "run": _run_public(run)}
+    enqueue_run(run.id, inline_key=inline_key,
+                inline_base_url=base_url if inline_key is not None else None,
+                n_tasks=body.n_tasks)
+    return {"ok": True, "run": _run_public(run), "cost_estimate": cost}
 
 
 @router.get("/runs")

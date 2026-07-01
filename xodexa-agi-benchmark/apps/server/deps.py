@@ -8,7 +8,6 @@ quota enforcement (anti-runaway), and a tiny in-memory rate limiter for auth rou
 from __future__ import annotations
 
 import datetime as dt
-import time
 
 from fastapi import Depends, HTTPException, Request
 from sqlalchemy.orm import Session
@@ -108,16 +107,9 @@ def record_run_started(db: Session, user_id: str, n_tasks: int) -> None:
     db.commit()
 
 
-# --- simple in-memory rate limiter for auth routes -----------------------------
-_BUCKET: dict[str, list[float]] = {}
-
-
+# --- rate limiter for auth routes (Redis-backed when available) ----------------
 def rate_limit(request: Request, key: str, limit: int = 5, window: float = 60.0):
+    from apps.server import ratelimit
     ip = client_ip(request) or "anon"
-    bkey = f"{key}:{ip}"
-    now = time.time()
-    hits = [t for t in _BUCKET.get(bkey, []) if now - t < window]
-    if len(hits) >= limit:
+    if not ratelimit.allow(f"{key}:{ip}", limit, window):
         raise HTTPException(429, "too many requests; slow down")
-    hits.append(now)
-    _BUCKET[bkey] = hits

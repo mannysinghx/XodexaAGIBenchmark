@@ -195,7 +195,23 @@ if FastAPI:
         # Fail fast: a production host must never run on dev-default secrets
         # (forgeable sessions + derivable encryption key). Raises RuntimeError.
         _settings.assert_production_safe()
+        if _settings.json_logs:
+            import logging
+            from apps.server.runtime import configure_json_logging
+            configure_json_logging(logging.INFO)
         _init_db()
+        # Reap any run left 'running' by a crash before this boot, so the live
+        # leaderboard/metrics never show a permanently-stuck run.
+        try:
+            from apps.server.db import session
+            from apps.server.runtime import reap_stale_runs
+            db = session()
+            try:
+                reap_stale_runs(db, max_running_seconds=_settings.max_run_seconds)
+            finally:
+                db.close()
+        except Exception:  # noqa: BLE001 — never block startup on the reaper
+            pass
 
     app.include_router(routes_auth.router)
     app.include_router(routes_keys.router)

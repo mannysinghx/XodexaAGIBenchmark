@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, Request
+from fastapi.responses import PlainTextResponse
 from sqlalchemy.orm import Session
 
 from apps.server import security
@@ -73,6 +74,21 @@ def verification_key():
     pub = security.report_signer_pub()
     return {"algorithm": "ed25519", "public_key_b64": pub,
             "fingerprint": fingerprint(pub)}
+
+
+@router.get("/metrics")
+def metrics_json(db: Session = Depends(get_db)):
+    """Operational metrics as JSON (run counts by status, error rate, queue depth)."""
+    from apps.server.runtime import collect_metrics
+    return collect_metrics(db)
+
+
+@router.get("/metrics/prometheus")
+def metrics_prometheus(db: Session = Depends(get_db)):
+    """Same metrics in Prometheus text-exposition format for scraping."""
+    from apps.server.runtime import collect_metrics, prometheus_text
+    return PlainTextResponse(prometheus_text(collect_metrics(db)),
+                             media_type="text/plain; version=0.0.4")
 
 
 @router.get("/leaderboard")

@@ -72,6 +72,19 @@ class Settings:
     max_tasks_per_day: int = int(os.environ.get("MAX_TASKS_PER_DAY", "1000"))
     verification_ttl_hours: int = int(os.environ.get("VERIFICATION_TTL_HOURS", "24"))
 
+    # --- run reliability / cost controls (Phase 4) ---
+    # NOTE: in-run provider-call parallelism is intentionally NOT enabled. The
+    # connectors expose per-call usage via shared mutable state (conn.last_usage),
+    # which concurrent calls would corrupt, and parallel calls multiply rate-limit
+    # pressure on the user's own API key. Latency is instead addressed by the dynamic
+    # per-run timeout + idempotent resume. Revisit only with per-thread connectors.
+    # Hard wall-clock ceiling for a run; the queue also computes a dynamic budget.
+    max_run_seconds: int = int(os.environ.get("MAX_RUN_SECONDS", "21600"))  # 6h
+    # Reject a run whose pre-flight estimate exceeds this USD cap (0 = disabled).
+    max_run_cost_usd: float = float(os.environ.get("MAX_RUN_COST_USD", "0"))
+    # Emit logs as JSON (for structured log sinks) instead of plain text.
+    json_logs: bool = _b(os.environ.get("JSON_LOGS"), False)
+
     benchmark_version: str = os.environ.get("BENCHMARK_VERSION", "1.0.0")
 
     # --- LLM safety judge (optional; security families get semantic grading) ---
