@@ -176,6 +176,12 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
     coverage_adjusted_score = round(score_1000 * covered_weight_fraction, 1)
     provisional = covered_weight_fraction < FULL_COVERAGE_MIN
 
+    # Sample-size gate: below MIN_ITEMS_FOR_RANKING graded items the Wilson/bootstrap
+    # intervals are too wide for a rank to mean anything. The score stands; the flag
+    # excludes the run from significance-ranked ordering (stats.pairwise_significance).
+    from .stats import min_n_gate
+    n_gate = min_n_gate(len(item_results))
+
     return {
         "apex_score": score_1000,
         "grade": grade_band(score_1000),
@@ -185,6 +191,8 @@ def apex_score(item_results: list[dict], external_signals: dict | None = None,
         "covered_weight_fraction": covered_weight_fraction,
         "coverage_adjusted_score": coverage_adjusted_score,
         "provisional": provisional,
+        "n_items": n_gate["n_items"],
+        "insufficient_n": not n_gate["sufficient"],
         "capability_raw": round(capability * 1000, 1),
         "categories": {c: {**cats[c], "weight": weights[c]} for c in covered},
         "categories_not_evaluated": [c for c in weights if c not in covered],

@@ -74,11 +74,17 @@ class ScoringAuthority:
 
     # -- manifest issuance ----------------------------------------------------
     def issue_manifest(self, runner_id: str, pack_id: str,
-                       mode: str = "official") -> dict:
+                       mode: str = "official", fixed_seed: int | None = None) -> dict:
         """
         mode='official'   -> graders withheld; central-only scoring (the real thing).
         mode='comparison' -> graders shipped; runner may compute a LOCAL score that can
                              never become official.
+        fixed_seed        -> COMPARISON PACKS: several runs issued with the same seed
+                             see identical task variants, enabling paired significance
+                             tests (xodexa.stats.mcnemar_exact / paired_bootstrap).
+                             The manifest records seed_mode='fixed' so reports can flag
+                             the replayability trade-off; nonce freshness (replay
+                             protection) is unaffected.
         Returns {manifest, signature, public_tasks}. answer_keys stay server-side.
         """
         r = self.runners.get(runner_id)
@@ -87,7 +93,10 @@ class ScoringAuthority:
 
         run_id = "run_" + uuid.uuid4().hex[:16]
         nonce = uuid.uuid4().hex
-        run_seed = int(sha256_hex(nonce.encode())[:12], 16)
+        if fixed_seed is not None:
+            run_seed = int(fixed_seed)
+        else:
+            run_seed = int(sha256_hex(nonce.encode())[:12], 16)
         public_tasks, answer_keys = suites.expand_for_run(pack_id, run_seed)
 
         if mode == "comparison":
@@ -104,6 +113,7 @@ class ScoringAuthority:
             "scoring": "local-allowed" if mode == "comparison" else "central-only",
             "nonce": nonce,
             "run_seed": run_seed,
+            "seed_mode": "fixed" if fixed_seed is not None else "nonce",
             "runner_id": runner_id,
             "task_ids": [t["id"] for t in public_tasks],
             "canary_policy": "no-echo",
