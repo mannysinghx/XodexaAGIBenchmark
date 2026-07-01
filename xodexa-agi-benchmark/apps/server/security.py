@@ -104,6 +104,45 @@ def generate_fernet_key() -> str:
 
 
 # --------------------------------------------------------------------------- #
+# Answer-key at-rest encryption (repository trace rows)
+# --------------------------------------------------------------------------- #
+# WebRunResponse rows carry the grading spec + expected answer — the hidden set's
+# crown jewels. Encrypting these columns means a DB snapshot/backup leak or a
+# read-only DB operator does NOT compromise the answer keys (the KEK lives in the
+# app environment, not the database). The prefix makes decryption transparent and
+# keeps legacy plaintext rows readable.
+
+_ANSWER_ENC_PREFIX = "encv1:"
+
+
+def encrypt_answer_field(value) -> str | None:
+    """Encrypt an answer-key field for storage. dicts/lists are JSON-encoded first;
+    None passes through (errored/keyless tasks)."""
+    if value is None:
+        return None
+    import json as _json
+    text = value if isinstance(value, str) else _json.dumps(value, sort_keys=True)
+    return _ANSWER_ENC_PREFIX + _fernet().encrypt(text.encode()).decode()
+
+
+def decrypt_answer_field(stored, parse_json: bool = False):
+    """Transparent read: decrypts ``encv1:`` values; legacy plaintext (or already-
+    structured JSON-column dicts) pass through unchanged."""
+    if stored is None:
+        return None
+    if isinstance(stored, str) and stored.startswith(_ANSWER_ENC_PREFIX):
+        try:
+            text = _fernet().decrypt(stored[len(_ANSWER_ENC_PREFIX):].encode()).decode()
+        except InvalidToken as e:
+            raise ValueError("could not decrypt stored answer key (key rotated?)") from e
+        if parse_json:
+            import json as _json
+            return _json.loads(text)
+        return text
+    return stored
+
+
+# --------------------------------------------------------------------------- #
 # Sessions + CSRF
 # --------------------------------------------------------------------------- #
 def _hash_token(token: str) -> str:

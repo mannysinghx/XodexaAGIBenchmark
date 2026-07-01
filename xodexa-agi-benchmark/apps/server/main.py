@@ -192,6 +192,9 @@ if FastAPI:
 
     @app.on_event("startup")
     def _startup():
+        # Fail fast: a production host must never run on dev-default secrets
+        # (forgeable sessions + derivable encryption key). Raises RuntimeError.
+        _settings.assert_production_safe()
         _init_db()
 
     app.include_router(routes_auth.router)

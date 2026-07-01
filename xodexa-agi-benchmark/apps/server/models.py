@@ -177,7 +177,11 @@ class WebRunResponse(Base):
     created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True), default=_now)
 
     def as_trace(self) -> dict:
-        """Serialize the full trace for API/JSONL export (the repository record)."""
+        """Serialize the full trace for API/JSONL export (the repository record).
+        Answer-key columns are encrypted at rest; this is the decrypt point — it only
+        runs behind the owner/admin gate in routes_runs."""
+        # Local import: security imports models at module level (session deps).
+        from apps.server.security import decrypt_answer_field
         return {
             "run_id": self.run_id, "task_id": self.task_id,
             "model_name": self.model_name, "provider": self.provider,
@@ -185,8 +189,10 @@ class WebRunResponse(Base):
             "category": self.category, "difficulty": self.difficulty,
             "visibility": self.visibility,
             "prompt": self.prompt, "expected_answer_type": self.expected_answer_type,
-            "grader_type": self.grader_type, "grader": self.grader_json,
-            "expected_answer": self.expected_answer, "canary": self.canary,
+            "grader_type": self.grader_type,
+            "grader": decrypt_answer_field(self.grader_json, parse_json=True),
+            "expected_answer": decrypt_answer_field(self.expected_answer),
+            "canary": self.canary,
             "output": self.output, "output_sha256": self.output_sha256,
             "confidence": self.confidence, "error": self.error,
             "latency_ms": self.latency_ms,
@@ -194,6 +200,11 @@ class WebRunResponse(Base):
                        "total": self.total_tokens, "completion_legacy": self.tokens},
             "score": {"awarded": self.awarded, "max": self.max_points,
                       "verdict": self.verdict},
+            "judge": ({"label": self.judge_label, "score": self.judge_score,
+                       "confidence": self.judge_confidence,
+                       "agreement": self.judge_agreement,
+                       "review": self.judge_review}
+                      if self.judge_label else None),
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }
 

@@ -94,6 +94,38 @@ class Settings:
         return self.database_url.startswith("postgres")
 
     @property
+    def is_production(self) -> bool:
+        """True on managed hosts (Railway/Render inject their domain envs) or when
+        XODEXA_PRODUCTION is set explicitly. Read live so tests can toggle it."""
+        return _b(os.environ.get("XODEXA_PRODUCTION"), False) or bool(
+            os.environ.get("RAILWAY_PUBLIC_DOMAIN")
+            or os.environ.get("RENDER_EXTERNAL_URL"))
+
+    def assert_production_safe(self) -> None:
+        """Refuse to boot a production deployment on dev-default secrets.
+
+        A prod instance running with the dev session secret means forgeable sessions
+        AND (via the derived-KEK fallback) a guessable encryption key for every stored
+        provider credential and answer-key column. Failing fast at startup is the only
+        safe behavior. Raises RuntimeError listing every offending setting.
+        """
+        if not self.is_production:
+            return
+        problems = []
+        if self.session_secret == "dev-insecure-session-secret":
+            problems.append("SESSION_SECRET is the dev default")
+        if not self.key_encryption_key:
+            problems.append("KEY_ENCRYPTION_KEY is unset (credential/answer-key "
+                            "encryption would fall back to a secret-derived dev key)")
+        if not self.report_signing_key:
+            problems.append("REPORT_SIGNING_KEY is unset (report signing identity "
+                            "would rotate with the session secret)")
+        if problems:
+            raise RuntimeError(
+                "refusing to start in production with insecure secrets: "
+                + "; ".join(problems))
+
+    @property
     def email_configured(self) -> bool:
         return bool(self.smtp_host and self.smtp_user and self.smtp_password)
 

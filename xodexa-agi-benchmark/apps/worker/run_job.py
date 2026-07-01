@@ -246,9 +246,13 @@ def execute_run(run_id: str, inline_key: str | None = None,
                 subdomain=t.subdomain, difficulty=t.difficulty, visibility=t.visibility,
                 prompt=t.prompt + CONFIDENCE_INSTRUCTION,
                 expected_answer_type=t.expected_answer_type,
-                grader_type=grader.get("type"), grader_json=grader or None,
-                expected_answer=(None if key.get("expected_answer") is None
-                                 else str(key.get("expected_answer"))),
+                grader_type=grader.get("type"),
+                # Answer-key material is Fernet-encrypted at rest — a DB leak must not
+                # compromise the grading specs. as_trace() decrypts transparently.
+                grader_json=security.encrypt_answer_field(grader) if grader else None,
+                expected_answer=security.encrypt_answer_field(
+                    None if key.get("expected_answer") is None
+                    else str(key.get("expected_answer"))),
                 canary=key.get("canary") or None,
                 output=out, output_sha256=sha256_hex((out or "").encode()),
                 confidence=conf, error=(err[:500] if err else None),
