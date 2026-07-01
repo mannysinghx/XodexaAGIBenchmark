@@ -66,20 +66,38 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: float) -> dict:
 # --------------------------------------------------------------------------- #
 
 class ModelConnector:
-    """Base connector. Implement `complete(prompt) -> str`."""
+    """Base connector. Implement `complete(prompt, assets=None) -> str`.
+
+    ``assets`` is an optional list of task input_assets dicts; entries with a
+    ``base64`` key (media type in ``type``, e.g. "image/png") are image attachments
+    for vision-capable providers. ``assets=None`` MUST behave exactly like the
+    legacy text-only call, so non-vision connectors can simply ignore it."""
     name = "base"
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, assets: list | None = None) -> str:
         raise NotImplementedError
 
 
 class CallableConnector(ModelConnector):
-    """Wrap any python callable as a model (used in tests/demos)."""
+    """Wrap any python callable as a model (used in tests/demos). If the callable
+    accepts a second positional argument, assets are passed through; otherwise they
+    are ignored."""
     def __init__(self, fn, name="callable"):
         self.fn = fn
         self.name = name
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, assets: list | None = None) -> str:
+        import inspect
+        try:
+            params = [p for p in inspect.signature(self.fn).parameters.values()
+                      if p.kind in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD,
+                                    p.VAR_POSITIONAL)]
+            takes_assets = len(params) >= 2 or any(
+                p.kind == p.VAR_POSITIONAL for p in params)
+        except (TypeError, ValueError):
+            takes_assets = False
+        if takes_assets:
+            return self.fn(prompt, assets)
         return self.fn(prompt)
 
 
@@ -100,13 +118,23 @@ class OpenAICompatibleConnector(ModelConnector):
         # provider reports it), so scoring uses true tokens instead of a len/4 estimate.
         self.last_usage: dict | None = None
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, assets: list | None = None) -> str:
         self.last_usage = None
         url = self.base_url + "/chat/completions"
         headers = {"Authorization": "Bearer " + self.api_key,
                    "content-type": "application/json"}
+        # Text-only stays a plain string (byte-identical to the legacy payload);
+        # vision requests use the OpenAI content-parts array with data: URLs.
+        content = prompt
+        images = [a for a in (assets or []) if a.get("base64")]
+        if images:
+            content = [{"type": "text", "text": prompt}] + [
+                {"type": "image_url",
+                 "image_url": {"url": "data:%s;base64,%s" % (
+                     a.get("type") or "image/png", a["base64"])}}
+                for a in images]
         payload = {"model": self.model,
-                   "messages": [{"role": "user", "content": prompt}],
+                   "messages": [{"role": "user", "content": content}],
                    "temperature": 0.0}
         try:
             data = _post_json(url, headers, payload, self.timeout)
@@ -134,7 +162,9 @@ class OllamaConnector(ModelConnector):
         self.base_url = base_url.rstrip("/")
         self.model = model
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, assets: list | None = None) -> str:
+        # assets accepted for interface compatibility; the native generate endpoint
+        # here is text-only, so they are ignored.
         data = _post_json(self.base_url + "/api/generate",
                           {"content-type": "application/json"},
                           {"model": self.model, "prompt": prompt, "stream": False}, 300)
@@ -158,16 +188,26 @@ class AnthropicConnector(ModelConnector):
         self.base_url = base_url.rstrip("/")
         self.last_usage: dict | None = None
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, assets: list | None = None) -> str:
         self.last_usage = None
         url = self.base_url + "/v1/messages"
         headers = {"x-api-key": self.api_key, "anthropic-version": "2023-06-01",
                    "content-type": "application/json"}
+        # Text-only stays a plain string (byte-identical to the legacy payload);
+        # vision requests use Messages-API content blocks, images before the text.
+        content = prompt
+        images = [a for a in (assets or []) if a.get("base64")]
+        if images:
+            content = [{"type": "image",
+                        "source": {"type": "base64",
+                                   "media_type": a.get("type") or "image/png",
+                                   "data": a["base64"]}}
+                       for a in images] + [{"type": "text", "text": prompt}]
         # temperature=0 for reproducibility — without it the API defaults to 1.0 (random
         # sampling), which would make Claude runs non-deterministic while every other
         # provider runs at temp 0, undermining the bootstrap CIs and re-run stability.
         payload = {"model": self.model, "max_tokens": self.max_tokens, "temperature": 0,
-                   "messages": [{"role": "user", "content": prompt}]}
+                   "messages": [{"role": "user", "content": content}]}
         try:
             data = _post_json(url, headers, payload, self.timeout)
         except ProviderCallError as e:

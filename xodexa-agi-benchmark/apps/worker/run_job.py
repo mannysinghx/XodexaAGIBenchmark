@@ -196,6 +196,10 @@ def execute_run(run_id: str, inline_key: str | None = None,
         successes = 0
         for i, t in enumerate(tasks):
             out, conf, latency_ms, err = "", None, 0.0, None
+            # Real image attachments (base64 PNGs from xodexa.render) ride along to
+            # vision-capable connectors; text-only tasks pass assets=None, which keeps
+            # the provider payload byte-identical to the legacy text call.
+            assets = [a for a in (t.input_assets or []) if a.get("base64")] or None
             t0 = time.perf_counter()
             # A transient network/5xx blip should not cost the model the whole task: retry
             # it a couple of times with a short backoff before recording an error. Auth
@@ -203,7 +207,7 @@ def execute_run(run_id: str, inline_key: str | None = None,
             # so the dedicated handlers below can abort or back off.
             for attempt in range(3):
                 try:
-                    raw = conn.complete(t.prompt + CONFIDENCE_INSTRUCTION)
+                    raw = conn.complete(t.prompt + CONFIDENCE_INSTRUCTION, assets=assets)
                     out, conf = parse_confidence(raw)  # strip confidence from gradeable text
                     consecutive_errors = 0
                     successes += 1

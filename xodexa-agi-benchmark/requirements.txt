@@ -11,6 +11,7 @@ psycopg[binary]>=3.1     # postgres driver
 redis>=5.0               # queue backend
 rq>=1.16                 # async benchmark-run worker
 httpx>=0.27              # provider API calls (OpenAI / Anthropic / OpenAI-compatible)
+pillow>=10.0             # deterministic PNG rendering for real multimodal tasks (xodexa.render)
 
 # --- deferred (uncomment as phases land) ---
 # boto3>=1.34            # MinIO/S3

@@ -80,9 +80,10 @@ def _load_family_modules():
                    jailbreak, tool_safety, rag_poisoning, over_refusal, multi_turn,
                    privacy_security, agentic_safety, high_stakes_safety, canary_resistance)
     # Phase 2 real-eval generators (execution-graded code, live BM25 RAG,
-    # long-context, verifiable instruction-following).
+    # long-context, verifiable instruction-following, real rendered-image
+    # multimodal, and interactive tool-sandbox agent tasks).
     from . import (code_exec, rag_live, longcontext,  # noqa: F401
-                   instruction_following)
+                   instruction_following, multimodal_render, agent_env)
 
 
 _load_family_modules()
