@@ -96,7 +96,13 @@ def _bootstrap_capability_ci(item_results: list[dict], weights: dict,
                              iters: int = 2000, seed: int = 0):
     """95% CI for the weighted capability, on a 0-1000 scale. Resamples items with
     replacement and recomputes the *weighted* capability each time, so the interval
-    actually brackets the reported score instead of an unrelated unweighted item mean."""
+    actually brackets the reported score instead of an unrelated unweighted item mean.
+
+    NOTE ON DETERMINISM: the resampling seed is fixed so the same item results always
+    yield the same interval (reports are reproducible and re-verifiable byte-for-byte).
+    The interval therefore quantifies *item-sampling* uncertainty only — it does NOT
+    capture run-to-run model stochasticity. Cross-run variance is reported separately
+    by xodexa.stability (re-run dispersion) and by repeated-sampling (pass@k) metrics."""
     if not item_results:
         return (0.0, 0.0)
     rng = random.Random(seed)

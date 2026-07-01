@@ -48,16 +48,27 @@ def off_by_one_bug(rng, idx, vis):
                diff=4.5, pts=4, neg=2, vis=vis)
 
 
+_COMPLEXITY_VARIANTS = {
+    "A": ("O(1)", "def f(a):\n    return a[0] + a[-1]"),
+    "B": ("O(n)", "def f(a):\n    c = 0\n    for i in a:\n        c += i\n    return c"),
+    "C": ("O(n^2)", "def f(a):\n    c = 0\n    for i in a:\n        for j in a:\n"
+                    "            c += i * j\n    return c"),
+    "D": ("O(log n)", "def f(a):\n    i, c = len(a), 0\n    while i > 1:\n"
+                      "        i //= 2\n        c += 1\n    return c"),
+}
+
+
 @register(_GID + "complexity", "code")
 def complexity(rng, idx, vis):
-    """Identify the time complexity (MCQ)."""
-    g = {"type": "mcq", "correct": "C",
-         "options": {"A": "O(1)", "B": "O(n)", "C": "O(n^2)", "D": "O(log n)"}}
-    snippet = ("def f(a):\n    c = 0\n    for i in a:\n        for j in a:\n"
-               "            c += i * j\n    return c")
+    """Identify the time complexity (MCQ). The snippet — and therefore the correct
+    letter — is seed-chosen, so the key is not a constant a model could memorize."""
+    correct = rng.choice(sorted(_COMPLEXITY_VARIANTS))
+    snippet = _COMPLEXITY_VARIANTS[correct][1]
+    g = {"type": "mcq", "correct": correct,
+         "options": {k: v[0] for k, v in _COMPLEXITY_VARIANTS.items()}}
     p = ("What is the time complexity of this function in terms of len(a) = n?\n\n```python\n"
          + snippet + "\n```\nA) O(1)  B) O(n)  C) O(n^2)  D) O(log n)\nAnswer with the letter.")
-    return _mk(_GID + "complexity", "review", p, "exact", g, "C", rng, diff=4.0, vis=vis)
+    return _mk(_GID + "complexity", "review", p, "exact", g, correct, rng, diff=4.0, vis=vis)
 
 
 @register(_GID + "vuln_class_id", "code")

@@ -167,6 +167,13 @@ def validate_task(t: Task | dict) -> list[str]:
         f"visibility must be one of {sorted(VISIBILITY)}")
     diff = d.get("difficulty", -1)
     req(isinstance(diff, (int, float)) and 0 <= diff <= 10, "difficulty must be 0..10")
+    pts = d.get("points", 1.0)
+    neg = d.get("negative", 0.0)
+    req(isinstance(pts, (int, float)) and pts > 0, "points must be > 0")
+    # negative > points would let one confidently-wrong item wipe out more credit than
+    # the item is worth, driving category scores toward -inf.
+    req(isinstance(neg, (int, float)) and 0 <= neg <= pts,
+        "negative must be in [0, points]")
     mods = d.get("modality") or []
     req(isinstance(mods, list) and set(mods) <= MODALITIES,
         f"modality must be a subset of {sorted(MODALITIES)}")

@@ -213,9 +213,43 @@ def grade(grader: dict, answer: str, points: float = 1.0,
 
 
 def _extract_json(text: str) -> str:
+    """Extract the first *parseable* balanced JSON object from ``text``.
+
+    Depth-counts braces (string/escape-aware) instead of the greedy
+    first-``{``-to-last-``}`` regex, which broke whenever the answer contained
+    prose after the object or more than one ``{...}`` span. Each balanced
+    candidate is tried in order; the first one ``json.loads`` accepts wins."""
     text = text or ""
-    m = re.search(r"\{.*\}", text, re.S)
-    return m.group(0) if m else text
+    i = 0
+    while True:
+        start = text.find("{", i)
+        if start == -1:
+            return text
+        depth, in_str, esc = 0, False, False
+        for j in range(start, len(text)):
+            ch = text[j]
+            if in_str:
+                if esc:
+                    esc = False
+                elif ch == "\\":
+                    esc = True
+                elif ch == '"':
+                    in_str = False
+                continue
+            if ch == '"':
+                in_str = True
+            elif ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    cand = text[start:j + 1]
+                    try:
+                        json.loads(cand)
+                        return cand
+                    except ValueError:
+                        break  # unbalanced-looking or invalid; try next '{'
+        i = start + 1
 
 
 def _json_field_match(obj, key, val) -> bool:

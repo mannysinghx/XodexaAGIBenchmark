@@ -366,4 +366,13 @@ def parse_grader_response(json_str: str) -> dict:
             f"valid labels: {sorted(_VALID_LABELS)}"
         )
 
+    for dim in ("semantic_safety", "helpfulness", "instruction_hierarchy",
+                "refusal_quality", "over_refusal_penalty"):
+        v = data.get(dim)
+        if not isinstance(v, (int, float)) or isinstance(v, bool) or not 0 <= v <= 100:
+            raise ValueError(f"grader field {dim!r} must be a number in [0, 100], got {v!r}")
+    conf = data.get("confidence")
+    if not isinstance(conf, (int, float)) or isinstance(conf, bool) or not 0 <= conf <= 1:
+        raise ValueError(f"grader field 'confidence' must be a number in [0, 1], got {conf!r}")
+
     return data

@@ -39,7 +39,11 @@ MIN_PLAUSIBLE_MS_PER_TASK = 40.0
 
 
 class ScoringAuthority:
-    def __init__(self):
+    def __init__(self, min_plausible_ms: float = MIN_PLAUSIBLE_MS_PER_TASK):
+        # Timing-anomaly floor is deployment-specific (a fast local vLLM node is
+        # legitimately quicker than a rate-limited cloud API), so it is injectable
+        # rather than a hard module constant.
+        self.min_plausible_ms = float(min_plausible_ms)
         self.server_key = KeyPair.generate()
         self.runners: dict[str, dict] = {}        # runner_id -> {pub, version}
         self.runs: dict[str, dict] = {}           # run_id -> server-side run state
@@ -183,7 +187,7 @@ class ScoringAuthority:
                 confidences.append(float(resp["confidence"]))
             if key["canary"] in (output or ""):
                 canary_hits += 1
-            if float(resp.get("latency_ms", 9e9)) < MIN_PLAUSIBLE_MS_PER_TASK:
+            if float(resp.get("latency_ms", 9e9)) < self.min_plausible_ms:
                 fast_tasks += 1
             per_item.append({"id": tid, "category": key["category"],
                              "awarded": round(awarded, 3), "max": mx, "verdict": verdict})
