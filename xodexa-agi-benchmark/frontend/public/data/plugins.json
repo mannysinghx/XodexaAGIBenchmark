@@ -56,8 +56,8 @@
         "sbom": "spdx:example",
         "description": "Code & SWE gauntlet pack with hidden pytest scorers.",
         "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
-        "signer_pub": "fbeZUmYl9uEKAOZQEutcFMNc25GYrD5G7svXodM787A=",
-        "signature": "rVnjhjPFwyWIBW/A7hWBQabDPiNO6+musbL6dXTGf4ReFs1CxuQUYY4Lo1EQ8g/KBIt2xUF6eoljZvytlIJ6CA=="
+        "signer_pub": "T64ocxwt91JDK0H8lt279LPjpxBXirwIIuxk4KE81XE=",
+        "signature": "vp0sShHQUa1+JUtdD13Nem38UF+MG8AKjRucR2bQZ3MpkFDIo+wP8yBGgnuUjD+ek83PR9pGAqt176nnxzxHBw=="
       },
       "valid": true
     },
@@ -85,8 +85,8 @@
         "sbom": "spdx:example",
         "description": "Imports lm-evaluation-harness suites as Layer-0 calibration anchors.",
         "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
-        "signer_pub": "fbeZUmYl9uEKAOZQEutcFMNc25GYrD5G7svXodM787A=",
-        "signature": "FkC8WcrOR77yeX/bje0fcSyObkB+c5BJQ1DkhSj5aGxaQour7SWpwkq9weC2FCwWEAdsbJEpHk2A2RdTgAjbBA=="
+        "signer_pub": "T64ocxwt91JDK0H8lt279LPjpxBXirwIIuxk4KE81XE=",
+        "signature": "DcP6ps8y6OhQCWjSUwzsNVVGMDaOCwGVh9FAZ7aTt3SvWEaYfRsaxtj+pQNAxDZ6dcH6dCKbAqs71p+ga2XVDw=="
       },
       "valid": true
     },
@@ -114,8 +114,8 @@
         "sbom": "spdx:example",
         "description": "Sandboxed airline-domain tool environment for agentic tasks.",
         "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
-        "signer_pub": "fbeZUmYl9uEKAOZQEutcFMNc25GYrD5G7svXodM787A=",
-        "signature": "xRpmqTqp52uj1dfiq2SKHa0F5Gd0+iL9o6Ua65oF2lSTfHFOb7oQVCSFGX10gCv8EGGDnLTJXD4u0+8n+Ed3CA=="
+        "signer_pub": "T64ocxwt91JDK0H8lt279LPjpxBXirwIIuxk4KE81XE=",
+        "signature": "PiMZTyBMB//00YDiE2Ayr/FqLWe5Cskza7fQxfYzbr0Iyr9Jkyr4cm7k8Nvnj/uqnCnVrVcs6ThYIW2hVxwJDQ=="
       },
       "valid": true
     },
@@ -143,8 +143,8 @@
         "sbom": "spdx:example",
         "description": "Benign, abstracted prompt-injection & instruction-hierarchy probes.",
         "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
-        "signer_pub": "fbeZUmYl9uEKAOZQEutcFMNc25GYrD5G7svXodM787A=",
-        "signature": "GY3n9opzMaI2GHJ6/24pRG2PP7bw4x9VqEfcq5DtDYv/MpsPKjPEM8Jq7VfxQqL17GX/U3/nVKzPbw8cY1zCAw=="
+        "signer_pub": "T64ocxwt91JDK0H8lt279LPjpxBXirwIIuxk4KE81XE=",
+        "signature": "EyWfbTW5RT8/UwtI6o2XE0SvZTnnIUxuCszSGWeaPkvcrUkWN8Sx0eF2cfa8xMjWclH8sMla0cJUUaS667V3Bg=="
       },
       "valid": true
     }
@@ -172,7 +172,7 @@
     "sbom": "spdx:example",
     "description": "Code & SWE gauntlet pack with hidden pytest scorers.",
     "checksum": "968ed3cf7c3fc2a84e5d3b88d42ec6d5056db1a3a51038524d34f1bc25c70dd3",
-    "signer_pub": "fbeZUmYl9uEKAOZQEutcFMNc25GYrD5G7svXodM787A=",
-    "signature": "rVnjhjPFwyWIBW/A7hWBQabDPiNO6+musbL6dXTGf4ReFs1CxuQUYY4Lo1EQ8g/KBIt2xUF6eoljZvytlIJ6CA=="
+    "signer_pub": "T64ocxwt91JDK0H8lt279LPjpxBXirwIIuxk4KE81XE=",
+    "signature": "vp0sShHQUa1+JUtdD13Nem38UF+MG8AKjRucR2bQZ3MpkFDIo+wP8yBGgnuUjD+ek83PR9pGAqt176nnxzxHBw=="
   }
 }

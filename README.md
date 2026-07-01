@@ -11,8 +11,8 @@
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg?logo=fastapi&logoColor=white)](#)
 [![Crypto](https://img.shields.io/badge/verification-Ed25519%20signed-7c5cff.svg)](#-the-trust-model-the-hard-part)
 [![Status](https://img.shields.io/badge/status-Phase%201%20(capability%20%2B%20safety)-27d796.svg)](#-roadmap)
-[![Families](https://img.shields.io/badge/task%20families-21%20(12%20capability%20%2B%209%20security)-ff5d6c.svg)](#-task-families)
-[![Tests](https://img.shields.io/badge/tests-54%20passing-brightgreen.svg)](#)
+[![Families](https://img.shields.io/badge/task%20families-22%20(13%20capability%20%2B%209%20security)-ff5d6c.svg)](#-task-families)
+[![Tests](https://img.shields.io/badge/tests-222%20passing-brightgreen.svg)](#)
 
 *Open-source-first · self-hostable · cryptographically verified central scoring · calibration-aware*
 
@@ -84,7 +84,7 @@ XodexaAGIBenchmark/
 │   │   └── authority.py · runner.py · pipeline.py · evaluate.py · …
 │   ├── apps/server/               #     FastAPI scoring authority (central, trusted)
 │   ├── apps/runner-cli/           #     `xodexa` CLI — the open-source self-hosted runner
-│   ├── tests/                     #     54 tests (capability + safety + grader + compat)
+│   ├── tests/                     #     222 tests (capability + safety + judge + evals + stats + infra)
 │   ├── demo/e2e_demo.py           #     End-to-end proof incl. tamper tests (fails closed)
 │   ├── frontend/public/           #     The "Frontier Observatory" front page + data views
 │   ├── db/schema.sql · api/openapi.yaml · docker-compose.yml
@@ -358,18 +358,27 @@ authority. Full guide, env vars, and step-by-step:
 
 ## 🗺️ Roadmap
 
+Full methodology: [`xodexa-agi-benchmark/docs/METHODOLOGY.md`](xodexa-agi-benchmark/docs/METHODOLOGY.md).
+
 - **Phase 0 ✅** Trust kernel + Xodexa-Ω pack + CLI + tamper-proof e2e demo
-- **Phase 1 ✅** Platform layer: 21 task families, 110+ generators, scoring engine, calibration,
+- **Phase 1 ✅** Platform layer: task families, 110+ generators, scoring engine, calibration,
   AGI Readiness Index, failure analysis, improvement roadmap, plugin registry
 - **Phase 1.5 ✅** Safety upgrade: 9 security families, deterministic violation gate,
   3-formula safety scoring, LLM judge with calibrated labels, backward-compat migration,
-  audit log, human review queue — 54 tests passing
-- **Phase 2** Adapters: lm-eval-harness & Inspect AI first, then HELM / OpenCompass / OpenAI-Evals
-- **Phase 3** Data engine: public packs (MMLU-Pro, GPQA-Diamond, SWE-bench-Verified,
-  LiveCodeBench, BigCodeBench, GAIA, tau-bench) as comparison-only + Layer-3 private rotation
-- **Phase 4** Agentic gauntlets over hardened, deterministic, replayable tool sandboxes
-- **Phase 5** Cosign/SLSA/in-toto provenance, optional attestation, signed plugin marketplace
-- **Phase 6** Full Next.js UI depth (radar / heatmap / failure-matrix / compare / reports)
+  audit log, human review queue
+- **Defensibility ✅** Ensemble LLM judge (majority vote + deterministic overrides +
+  human-review routing); paired comparisons (McNemar / paired bootstrap), BH-FDR, pass@k,
+  min-n gating; answer-key encryption at rest + production secret boot guard
+- **Real evals ✅** Sandboxed code execution vs hidden tests; real rendered images (true
+  vision); interactive tool-sandbox agent tasks with trajectory grading; 20k–300k-char
+  long context; live BM25 RAG; verifiable instruction following
+- **Calibration ✅** Empirical IRT difficulty (CTT + 2PL); paraphrase-aware contamination
+  detection; seeded hidden-set rotation; frontier baseline sweep harness
+- **Reliability ✅** Idempotent run resume, dynamic timeout, stale-run reaper, Prometheus
+  metrics, cost caps, distributed rate limiting
+- **Next** Adapters (lm-eval-harness & Inspect AI); public comparison packs (MMLU-Pro,
+  GPQA-Diamond, SWE-bench-Verified, GAIA, tau-bench); provenance (Cosign/SLSA) + optional
+  attestation; a published frontier leaderboard from a full real-model sweep
 
 ---
 

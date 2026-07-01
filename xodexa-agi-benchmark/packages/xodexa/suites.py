@@ -111,9 +111,11 @@ def expand_for_run(pack_id: str, run_seed: int):
 
 def _empirical_difficulty(item) -> float:
     """
-    Placeholder for IRT-style empirical difficulty (ANALYSIS.md §3.4). Until human +
-    frontier pass-rate data exists, derive a provisional 0-10 difficulty from the
-    item's negative-marking weight (harder items carry bigger confident-error traps).
+    Provisional 0-10 difficulty derived from the item's negative-marking weight
+    (harder items carry bigger confident-error traps), used at generation time before
+    any run data exists. Once a run fleet has answered a pack, ``xodexa.irt`` replaces
+    this with empirical CTT/2PL difficulty fitted to real pass-rates (see
+    scripts/frontier_sweep.py and ANALYSIS.md §3.4).
     """
     pts = item.get("points", 1)
     neg = item.get("negative", 0)

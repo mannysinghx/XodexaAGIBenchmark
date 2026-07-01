@@ -45,7 +45,7 @@ providers.validate_model = lambda p, k, m, b=None: True
 providers.connector = lambda p, k, m, b=None: CallableConnector(
     lambda prompt: "The answer is 42.\nConfidence: 80", name="stub")  # model states confidence
 # run synchronously so the test is deterministic
-routes_runs.enqueue_run = lambda run_id, inline_key=None, inline_base_url=None: \
+routes_runs.enqueue_run = lambda run_id, inline_key=None, inline_base_url=None, n_tasks=40: \
     run_job.execute_run(run_id, inline_key, inline_base_url)
 
 client = TestClient(main.app)

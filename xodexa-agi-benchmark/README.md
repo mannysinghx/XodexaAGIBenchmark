@@ -358,23 +358,32 @@ look up answers during inference. The defenses that actually matter, in order:
 tests, and scoring are centrally controlled or remotely attested. Xodexa reduces — not
 eliminates — cheating risk, and says so.
 
-## Roadmap (see ANALYSIS.md §5 for the full build order)
+## Roadmap
+
+Full methodology reference: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 
 - **Phase 0 ✅** Trust kernel + Xodexa-Ω pack + CLI + tamper-proof e2e demo.
-- **Phase 1 ✅** Platform layer: 21 task families, 110+ generators, scoring engine,
+- **Phase 1 ✅** Platform layer: task families, 110+ generators, scoring engine,
   calibration, AGI Readiness Index, failure analysis, improvement roadmap, plugin registry.
 - **Phase 1.5 ✅** Safety upgrade: 9 security families, deterministic violation gate,
   3-formula safety scoring, LLM judge with calibrated labels, backward-compat migration,
-  audit log, human review queue — 54 tests passing.
-- **Phase 2** Adapters: lm-eval-harness & Inspect AI first, then HELM / OpenCompass /
-  OpenAI-Evals import-export (all feeding raw outputs into central scoring).
-- **Phase 3** Data engine: wire Layer-1 public packs (MMLU-Pro, GPQA-Diamond,
-  SWE-bench-Verified, LiveCodeBench, BigCodeBench, GAIA, tau-bench) as comparison-only;
-  Layer-3 private rotation + canary leak detection.
-- **Phase 4** Agentic gauntlets over hardened, deterministic, replayable tool sandboxes.
-- **Phase 5** Cosign/SLSA/in-toto provenance; optional attestation (Nitro first); signed
-  plugin marketplace with static analysis; multi-tenant private-eval isolation.
-- **Phase 6** Full Next.js UI depth (radar/heatmap/failure-matrix/compare/reports).
+  audit log, human review queue.
+- **Defensibility ✅** End-to-end **ensemble** LLM judge (majority vote, deterministic
+  overrides, human-review routing); paired comparisons (McNemar / paired bootstrap),
+  Benjamini–Hochberg FDR, pass@k, min-n gating; answer-key encryption at rest +
+  production secret boot guard.
+- **Real evals ✅** Sandboxed **code execution** vs hidden unit tests; **real rendered
+  images** (true vision); interactive **tool-sandbox** agent tasks with trajectory
+  grading; 20k–300k-char long context; **live BM25 RAG**; verifiable instruction following.
+- **Calibration ✅** Empirical **IRT difficulty** (CTT + 2PL) from run data;
+  paraphrase-aware contamination detection; seeded **hidden-set rotation**; frontier
+  baseline sweep harness.
+- **Reliability ✅** Idempotent run resume, dynamic timeout, stale-run reaper,
+  Prometheus metrics, cost caps, distributed rate limiting.
+- **Next** Adapters (lm-eval-harness & Inspect AI); public comparison packs (MMLU-Pro,
+  GPQA-Diamond, SWE-bench-Verified, GAIA, tau-bench) as comparison-only; provenance
+  (Cosign/SLSA), optional attestation (Nitro first); a published frontier leaderboard
+  from a full real-model sweep.
 
 ## Benchmark adapter guide (the integration pattern)
 

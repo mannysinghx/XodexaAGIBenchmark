@@ -67,6 +67,33 @@
   .verif .sig{color:var(--good)}
   .verif .vnote{color:var(--muted);font-family:ui-sans-serif,system-ui;font-size:11px;margin-top:10px;border-top:1px solid var(--line2);padding-top:8px}
   .sealed{display:inline-flex;align-items:center;gap:7px;color:var(--good);font-size:11.5px;border:1px solid rgba(14,157,110,.4);border-radius:999px;padding:4px 11px;background:rgba(14,157,110,.07)}
+  /* safety-judge summary card */
+  .sjcard{border:1px solid rgba(216,58,75,.25);background:rgba(216,58,75,.04)}
+  .sjrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .sjpill{border:1px solid var(--line2);border-radius:10px;padding:8px 12px;background:var(--panel2);min-width:96px}
+  .sjpill .n{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--txt)}
+  .sjpill .l{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.6px;margin-top:3px}
+  /* per-task traces panel */
+  .trace-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:4px 0 10px}
+  .trace-tools input[type=text]{font:inherit;font-size:12.5px;color:var(--txt);background:var(--panel2);
+    border:1px solid var(--line2);border-radius:9px;padding:7px 11px;min-width:220px;flex:1}
+  .trace-tools label{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted2);cursor:pointer}
+  .trace-tools .cnt{color:var(--muted);font-size:11px;font-family:var(--mono);margin-left:auto}
+  table.traces{table-layout:auto}
+  table.traces tbody tr.trow{cursor:pointer}
+  table.traces tbody tr.trow:hover td{background:var(--panel2)}
+  table.traces tr.fail td{background:rgba(216,58,75,.06)}
+  table.traces tr.fail td:first-child{box-shadow:inset 3px 0 0 var(--bad)}
+  table.traces tr.review td:first-child{box-shadow:inset 3px 0 0 var(--warn)}
+  .tpill{font-size:10.5px;font-family:var(--mono);padding:2px 7px;border-radius:6px;border:1px solid var(--line2);color:var(--muted2);white-space:nowrap}
+  .tpill.ok{color:var(--good);border-color:rgba(14,157,110,.35);background:rgba(14,157,110,.07)}
+  .tpill.bad{color:var(--bad);border-color:rgba(216,58,75,.35);background:rgba(216,58,75,.07)}
+  .tpill.rev{color:var(--warn);border-color:rgba(211,150,20,.35);background:rgba(211,150,20,.08)}
+  tr.tdetail td{background:var(--panel2);padding:0}
+  .tdetail-in{padding:12px 14px;display:grid;gap:12px}
+  .tdetail-in h5{margin:0 0 5px;font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
+  .tdetail-in pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:11.5px;
+    line-height:1.55;color:var(--muted2);background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px 12px;max-height:340px;overflow:auto}
   @media(max-width:760px){.hero,.grid2,.roadmap{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -111,6 +138,12 @@
       </div>
     </div>
     <div class="kpis" id="kpis"></div>
+  </div>
+
+  <div class="card sjcard" id="sjcard" style="display:none">
+    <h2>Safety Judge</h2>
+    <div class="hint">LLM safety-judge summary over security-family tasks. Flags responses routed to human review.</div>
+    <div class="sjrow" id="sjrow"></div>
   </div>
 
   <div class="card">
@@ -201,6 +234,24 @@
       <div class="vnote" id="vnote">—</div>
     </div>
   </div>
+
+  <div class="card" id="tracecard" style="display:none">
+    <h2>Per-task traces</h2>
+    <div class="hint">Full per-task record — prompt, model output, and answer key. Owner/admin only. Click a row to expand.</div>
+    <div class="trace-tools">
+      <input type="text" id="tracefilter" placeholder="Filter by task, family, or verdict…" autocomplete="off">
+      <label><input type="checkbox" id="tracefail"> Failures only</label>
+      <span class="cnt" id="tracecnt"></span>
+    </div>
+    <table class="traces">
+      <thead><tr>
+        <th>Task</th><th>Family / subdomain</th><th style="text-align:right">Diff</th>
+        <th>Verdict</th><th class="num">Awarded</th><th class="num">Conf</th>
+        <th class="num">Latency</th><th>Judge</th>
+      </tr></thead>
+      <tbody id="tracebody"></tbody>
+    </table>
+  </div>
   </div>
 
   <div class="note">
@@ -214,6 +265,7 @@
 let agiChart;
 let CURRENT = null;       // the report being shown
 let RUNS = [];            // [{run_id, model, submitted_by}, ...] from /leaderboard
+let TRACES = [];          // per-task traces for the selected run (owner/admin only)
 const P = () => XODEXA.palette();
 
 function pct(x){return (x*100).toFixed(1);}
@@ -341,7 +393,114 @@ function renderReport(d){
   document.getElementById("vsigner").textContent = v.signer_pub;
   document.getElementById("vsig").textContent = v.signature;
   document.getElementById("vnote").textContent = v.note;
+
+  renderSafetyJudge(d.safety_judge);
 }
+
+// optional safety-judge summary block (only present on some reports)
+function renderSafetyJudge(sj){
+  const card = document.getElementById("sjcard");
+  if(!sj){ card.style.display="none"; return; }
+  const nf = (x, dg=2) => (x==null || isNaN(x)) ? "—" : (+x).toFixed(dg);
+  const cells = [
+    ["Judged", sj.judged!=null ? XODEXA.fmt.int(sj.judged) : "—"],
+    ["Flagged for review", sj.review_flagged!=null ? XODEXA.fmt.int(sj.review_flagged) : "—"],
+    ["Mean judge score", nf(sj.mean_judge_score,1)],
+    ["Votes / task", sj.n_votes!=null ? XODEXA.fmt.int(sj.n_votes) : "—"],
+    ["Judge model", sj.judge_model || "—"]
+  ];
+  document.getElementById("sjrow").innerHTML = cells
+    .map(([l,n])=>`<div class="sjpill"><div class="n">${XAUTH.esc(String(n))}</div><div class="l">${l}</div></div>`).join("");
+  card.style.display="";
+}
+
+// ---- per-task traces (owner/admin only) ----
+function traceIsFail(t){
+  const aw = t.score && t.score.awarded;
+  return (aw!=null && aw<=0) || !!t.error;
+}
+function shortTask(id){ return String(id||"").replace(/^xodexa_/,""); }
+function fmtNum(x, dg){ return (x==null || isNaN(x)) ? "—" : (+x).toFixed(dg); }
+
+function renderTraces(){
+  const body = document.getElementById("tracebody");
+  const p = P();
+  const q = (document.getElementById("tracefilter").value||"").trim().toLowerCase();
+  const failOnly = document.getElementById("tracefail").checked;
+  const rows = TRACES.filter(t=>{
+    if(failOnly && !traceIsFail(t)) return false;
+    if(!q) return true;
+    const verdict = (t.score && t.score.verdict) || "";
+    const hay = [t.task_id, t.family, t.subdomain, verdict].join(" ").toLowerCase();
+    return hay.indexOf(q) !== -1;
+  });
+  document.getElementById("tracecnt").textContent =
+    rows.length+" / "+TRACES.length+" tasks";
+  body.innerHTML = rows.map((t,i)=>{
+    const sc = t.score || {};
+    const fail = traceIsFail(t);
+    const review = !!(t.judge && t.judge.review);
+    const cls = "trow"+(fail?" fail":"")+(review&&!fail?" review":"");
+    const verdict = sc.verdict || (t.error ? "error" : "—");
+    const vcls = fail ? "bad" : "ok";
+    const fam = XAUTH.esc(t.family||"—") + (t.subdomain ? '<br><small style="color:var(--muted);font-family:var(--mono)">'+XAUTH.esc(t.subdomain)+'</small>' : "");
+    const awColor = (sc.awarded!=null && sc.awarded<=0) ? p.bad : p.muted2;
+    let judge = "—";
+    if(t.judge){
+      const jcls = t.judge.review ? "rev" : "";
+      judge = '<span class="tpill '+jcls+'">'+XAUTH.esc(String(t.judge.label||"?"))
+        +" "+fmtNum(t.judge.score,0)+(t.judge.review?" ⚑":"")+'</span>';
+    }
+    return `<tr class="${cls}" data-idx="${i}">
+      <td style="font-family:var(--mono);font-size:10.5px">${XAUTH.esc(shortTask(t.task_id))}</td>
+      <td>${fam}</td>
+      <td class="num">${fmtNum(t.difficulty,1)}</td>
+      <td><span class="tpill ${vcls}">${XAUTH.esc(verdict)}</span></td>
+      <td class="num" style="color:${awColor}">${fmtNum(sc.awarded,1)}/${fmtNum(sc.max,0)}</td>
+      <td class="num">${t.confidence!=null?(t.confidence*100).toFixed(0)+"%":"—"}</td>
+      <td class="num">${t.latency_ms!=null?Math.round(t.latency_ms)+"ms":"—"}</td>
+      <td>${judge}</td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="8" style="color:var(--muted)">No matching tasks.</td></tr>`;
+  // wire row expansion against the filtered list
+  [].forEach.call(body.querySelectorAll("tr.trow"), tr=>{
+    tr.onclick=()=>toggleTraceDetail(tr, rows[+tr.getAttribute("data-idx")]);
+  });
+}
+
+function toggleTraceDetail(tr, t){
+  const next = tr.nextElementSibling;
+  if(next && next.classList.contains("tdetail")){ next.remove(); return; }
+  const grader = t.grader==null ? "" : (typeof t.grader==="string"?t.grader:JSON.stringify(t.grader,null,2));
+  const det = document.createElement("tr");
+  det.className="tdetail";
+  det.innerHTML = `<td colspan="8"><div class="tdetail-in">
+    <div><h5>Prompt</h5><pre>${XAUTH.esc(t.prompt||"—")}</pre></div>
+    <div><h5>Model output</h5><pre>${XAUTH.esc(t.output||t.error||"—")}</pre></div>
+    <div><h5>Expected answer</h5><pre>${XAUTH.esc(t.expected_answer!=null?String(t.expected_answer):"—")}</pre></div>
+    <div><h5>Grader${t.grader_type?" ("+XAUTH.esc(t.grader_type)+")":""}</h5><pre>${XAUTH.esc(grader||"—")}</pre></div>
+  </div></td>`;
+  tr.parentNode.insertBefore(det, tr.nextElementSibling);
+}
+
+async function loadTraces(run_id){
+  TRACES = [];
+  const card = document.getElementById("tracecard");
+  card.style.display="none";
+  try{
+    const r = await XAPI.get("/runs/"+encodeURIComponent(run_id)+"/traces");
+    TRACES = (r && r.traces) || [];
+    if(!TRACES.length) return;              // nothing to show
+    card.style.display="";
+    renderTraces();
+  }catch(e){
+    // 403 (viewer isn't owner/admin) or any error → hide the panel gracefully
+    console.debug("[xodexa] traces unavailable:", e && (e.status||e.message||e));
+  }
+}
+
+document.getElementById("tracefilter").addEventListener("input", renderTraces);
+document.getElementById("tracefail").addEventListener("change", renderTraces);
 
 window.addEventListener("resize",()=>agiChart&&agiChart.resize());
 
@@ -367,6 +526,8 @@ async function selectRun(run_id){
     var sel=document.getElementById("modelsel");
     var opt=sel && [].slice.call(sel.options).filter(function(o){return o.value===run_id;})[0];
     if(opt && rep.model_id){ opt.textContent=rep.model_id; }
+    // owner/admin-only per-task traces — hidden gracefully on 403/error
+    loadTraces(run_id);
   }catch(e){
     setStatus(XAUTH.liveErrorHTML(e));
     console.error("[xodexa] report load failed:",e);
