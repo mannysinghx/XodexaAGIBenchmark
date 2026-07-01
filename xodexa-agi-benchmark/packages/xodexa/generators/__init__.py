@@ -79,6 +79,10 @@ def _load_family_modules():
                    truthfulness, safety, memory, strategy, creativity, meta_learning,
                    jailbreak, tool_safety, rag_poisoning, over_refusal, multi_turn,
                    privacy_security, agentic_safety, high_stakes_safety, canary_resistance)
+    # Phase 2 real-eval generators (execution-graded code, live BM25 RAG,
+    # long-context, verifiable instruction-following).
+    from . import (code_exec, rag_live, longcontext,  # noqa: F401
+                   instruction_following)
 
 
 _load_family_modules()

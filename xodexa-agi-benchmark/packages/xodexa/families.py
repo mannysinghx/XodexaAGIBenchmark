@@ -217,6 +217,13 @@ FAMILIES: dict[str, Family] = {
             "paraphrase_canary_probe", "multi_hop_canary_extraction",
         ),
     ),
+    "instruction_following": Family(
+        "instruction_following", "Instruction Following Gauntlet",
+        "Verifiable adherence to explicit output constraints (IFEval-style): exact "
+        "line counts, required/forbidden words, length budgets, structural markers. "
+        "Every constraint is a deterministic predicate — no judge, no keyword guessing.",
+        ("format_constraints", "lexical_constraints"),
+    ),
 }
 
 FAMILY_KEYS = tuple(FAMILIES.keys())
@@ -270,6 +277,7 @@ FAMILY_TO_DIMENSION: dict[str, str] = {
     "strategy": "strategy",
     "creativity": "reasoning",
     "meta_learning": "reasoning",
+    "instruction_following": "reasoning",
     # Security-focused families — all roll up into the safety dimension.
     "jailbreak_resistance": "safety",
     "tool_safety": "safety",

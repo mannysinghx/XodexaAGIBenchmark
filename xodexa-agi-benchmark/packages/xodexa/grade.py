@@ -209,7 +209,51 @@ def grade(grader: dict, answer: str, points: float = 1.0,
             return pts, pts, "correct JSON"
         return round(pts * frac, 3), pts, f"{hit}/{len(want)} fields"
 
+    if t == "code_exec":
+        # Real execution against hidden unit tests (see xodexa.sandbox). Lazy import
+        # keeps this module import-light for the air-gapped runner unless the grader
+        # is actually used.
+        from .sandbox import run_hidden_tests
+        r = run_hidden_tests(a, grader["func_name"], grader["tests"],
+                             timeout_s=grader.get("timeout_s", 8.0))
+        if r["fatal"]:
+            return 0.0, pts, f"code failed: {r['fatal']}"
+        frac = r["passed"] / r["total"] if r["total"] else 0.0
+        if frac == 1.0:
+            return pts, pts, f"all {r['total']} hidden tests pass"
+        return round(pts * frac, 3), pts, f"{r['passed']}/{r['total']} hidden tests"
+
+    if t == "constraints":
+        # Verifiable instruction following (IFEval-style): every check is a small
+        # deterministic predicate over the answer; credit is proportional.
+        checks = grader["checks"]
+        passed = sum(1 for c in checks if _constraint_ok(c, a, na))
+        frac = passed / len(checks) if checks else 0.0
+        if frac == 1.0:
+            return pts, pts, "all constraints met"
+        return round(pts * frac, 3), pts, f"{passed}/{len(checks)} constraints"
+
     raise ValueError("unknown grader type: " + t)
+
+
+def _constraint_ok(check: dict, raw: str, normalized: str) -> bool:
+    kind = check["kind"]
+    lines = [ln for ln in (raw or "").splitlines() if ln.strip()]
+    if kind == "line_count":
+        return len(lines) == check["n"]
+    if kind == "each_line_contains":
+        return bool(lines) and all(norm(check["term"]) in norm(ln) for ln in lines)
+    if kind == "line_prefix":
+        return bool(lines) and all(ln.lstrip().startswith(check["prefix"]) for ln in lines)
+    if kind == "must_contain":
+        return norm(check["term"]) in normalized
+    if kind == "must_not_contain":
+        return norm(check["term"]) not in normalized
+    if kind == "max_words":
+        return len((raw or "").split()) <= check["n"]
+    if kind == "min_words":
+        return len((raw or "").split()) >= check["n"]
+    raise ValueError("unknown constraint kind: " + kind)
 
 
 def _extract_json(text: str) -> str:
@@ -294,6 +338,11 @@ def synth_good(grader: dict) -> str:
         return " ".join(grader["keywords"])
     if t == "structured_json":
         return json.dumps(grader["expect"])
+    if t == "code_exec":
+        # Generators ship a reference solution so grader satisfiability is testable.
+        return "```python\n" + grader["reference"] + "\n```"
+    if t == "constraints":
+        return grader["example"]
     return ""
 
 
@@ -329,4 +378,10 @@ def synth_bad(grader: dict) -> str:
         return bad[0] if bad else "irrelevant assertion"
     if t == "structured_json":
         return "{}"
+    if t == "code_exec":
+        return "```python\ndef " + grader["func_name"] + "(*args):\n    return None\n```"
+    if t == "constraints":
+        bad = [c["term"] for c in grader["checks"] if c["kind"] == "must_not_contain"]
+        return (bad[0] + " — one line, ignoring the rules.") if bad \
+            else "one line, ignoring every formatting rule"
     return "wrong"
