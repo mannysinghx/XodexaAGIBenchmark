@@ -13,7 +13,7 @@ from . import (scoring, suites, calibration, families, schema, grade, generators
                contamination, pipeline, evaluate, failure_analysis, agi_readiness,
                improvement, report, registry, anchors,
                deterministic_checks, safety_scoring, grader_prompt, compat,
-               audit, human_review)
+               audit, human_review, attestation)
 from .schema import Task, new_task, validate_task, public_view, answer_key
 from .pipeline import DatasetPipeline, PipelineConfig
 from .contamination import CorpusIndex
@@ -31,5 +31,5 @@ __all__ = [
     "answer_key", "DatasetPipeline", "PipelineConfig", "CorpusIndex",
     # security upgrade modules
     "deterministic_checks", "safety_scoring", "grader_prompt", "compat",
-    "audit", "human_review",
+    "audit", "human_review", "attestation",
 ]

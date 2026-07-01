@@ -27,6 +27,7 @@ import time
 import uuid
 
 from . import suites
+from . import attestation as attest
 from .crypto import KeyPair, HashChain, sha256_hex, verify, fingerprint
 from .scoring import apex_score
 from .calibration import accuracy, wilson_ci, rms_calibration_error
@@ -256,6 +257,19 @@ class ScoringAuthority:
             report["verification_status"] = ("Verified + Attested" if attested
                                              else "Verified, non-attested")
         report["attestation"] = bundle.get("environment", {}).get("attestation", "none")
+
+        # Structured attestation verification (roadmap: hardware-attested runs).
+        # This is ADDITIVE and does not alter the string field above or the existing
+        # "Verified, non-attested" status. The bundle's attestation may be a bare
+        # platform string (legacy) or a full quote document; parse_attestation handles
+        # both. We bind verification to THIS run by passing the run's nonce as the
+        # expected nonce. With no attestation supplied the block is status "none";
+        # with a document present but no injected vendor-root verifier the honest
+        # ceiling is "unverified" (never a fabricated attested-true).
+        report["attestation_verification"] = attest.attestation_status_for_report(
+            bundle.get("environment", {}).get("attestation", "none"),
+            expected_nonce=run["manifest"]["nonce"],
+        )
 
         # finalize + sign the official record (tamper-evident)
         run["finalized"] = True
